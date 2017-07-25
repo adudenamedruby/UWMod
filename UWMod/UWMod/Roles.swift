@@ -8,12 +8,8 @@
 
 import Foundation
 
-struct Werewolf {
-    let name = "Werewolf"
-    let description = "Each night, wake with the other werewolves and choose a player to eliminate."
-}
-
-struct Werewolf {
-    let name = ""
-    let description = ""
+struct Role {
+    var name: String
+    var description: String
+    var impact: Int
 }
