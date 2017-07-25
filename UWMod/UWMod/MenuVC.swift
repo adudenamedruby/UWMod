@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MenuVC.swift
 //  UWMod
 //
 //  Created by roux g. buciu on 2017-07-24.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MenuVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
