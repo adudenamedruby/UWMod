@@ -14,11 +14,25 @@ var rolesInCurrentGame = [Role]()
 
 // Roles in the game
 
-let werewolf = Role(name: "Werewolf", description: "Each night, wake with the other werewolves and choose a player to eliminate.", impact: -6)
+let werewolf = Role(name: "Werewolf",
+                    description: "Each night, wake with the other werewolves and choose a player to eliminate.",
+                    impact: -6,
+                    priority: 1,
+                    powerChoice: false)
 
-let wolfCub = Role(name: "Wolf Cub", description: "Each night, wake with the other Werewolves. If you are eliminated, the Werewolves eliminate two players the following night.", impact: -8)
+let wolfCub = Role(name: "Wolf Cub",
+                   description: "Each night, wake with the other Werewolves. If you are eliminated, the Werewolves eliminate two players the following night.",
+                   impact: -8,
+                   priority: 1,
+                   powerChoice: false)
 
-let sorceress = Role(name: "Sorceress", description: "Each night, look for the seer. You are on the werewolf team.", impact: -3)
+let sorceress = Role(name: "Sorceress",
+                     description: "Each night, look for the seer. You are on the werewolf team.",
+                     impact: -3,
+                     priority: 1,
+                     powerChoice: false)
+
+let witch =
 
 let allRolesInGame = [werewolf, wolfCub, sorceress]
 
