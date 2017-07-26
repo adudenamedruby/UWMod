@@ -9,22 +9,31 @@
 import Foundation
 
 class Role {
-    var name: String
-    var description: String
-    var impact: Int
-    var priority: Int
+    let name: String
+    let description: String
+    let impact: Int
+    let priority: Int
+    let groupTogether: Bool
     var powerChoice: Bool
     
-    init(name: String, description: String, impact: Int, priority: Int, powerChoice: Bool) {
+    init(name: String, description: String, impact: Int, priority: Int, groupWithLikeRoles: Bool?, powerChoice: Bool) {
         self.name = name
         self.description = description
         self.impact = impact
         self.priority = priority
+        self.groupTogether = groupWithLikeRoles ?? false
         self.powerChoice = powerChoice
     }
 }
 
 class Witch: Role {
-    var playerToPoison = Player()
-    var playerToSave = Player()
+    var playerToPoison: Player?
+    var playerToSave: Player?
+    
+    init(name: String, description: String, impact: Int, priority: Int, groupWithLikeRoles: Bool?, powerChoice: Bool, playerToPoison: Player?, playerToSave: Player?) {
+        super.init(name: name, description: description, impact: impact, priority: priority, groupWithLikeRoles: groupWithLikeRoles, powerChoice: powerChoice)
+
+        self.playerToPoison = playerToPoison
+        self.playerToSave = playerToSave
+    }
 }
