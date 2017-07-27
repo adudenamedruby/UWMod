@@ -10,5 +10,5 @@ import Foundation
 
 let citrineOfFortune = Artifact(name: "The Citrine of Fortune",
                                 description: "Exchange this Artifact card for a new one which must be revealed instantly.",
-                                effectType: EffectType.oneTimeEffect,
+                                effectType: .Ongoing,
                                 effectUsed: false)

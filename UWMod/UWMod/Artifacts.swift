@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct EffectType {
-    static let ongoingEffect = "Ongoing"
-    static let oneTimeEffect = "Single use"
+enum UWEffectType: String {
+    case Ongoing = "Ongoing"
+    case SingeUse = "Single use"
 }
 
 class Artifact {
     let name: String
     let description: String
-    let effectType: String
+    let effectType: UWEffectType
     var effectUsed: Bool?
     
-    init(name: String, description: String, effectType: String, effectUsed:Bool?) {
+    init(name: String, description: String, effectType: UWEffectType, effectUsed:Bool?) {
         self.name = name
         self.description = description
         self.effectType = effectType

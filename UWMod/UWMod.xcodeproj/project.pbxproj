@@ -101,13 +101,13 @@
 		12EC77D51F26D4F70026C667 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				12EC77D31F26D4DC0026C667 /* Roles.swift */,
-				12EC77E21F29881F0026C667 /* RoleConstants.swift */,
-				12EC77D81F26DD250026C667 /* Constants.swift */,
-				12EC77DA1F27541A0026C667 /* Player.swift */,
-				12EC77DC1F2831C90026C667 /* Game.swift */,
 				12EC77DE1F2978920026C667 /* Artifacts.swift */,
 				12EC77E01F297A3E0026C667 /* ArtifactConstants.swift */,
+				12EC77D81F26DD250026C667 /* Constants.swift */,
+				12EC77DC1F2831C90026C667 /* Game.swift */,
+				12EC77DA1F27541A0026C667 /* Player.swift */,
+				12EC77D31F26D4DC0026C667 /* Roles.swift */,
+				12EC77E21F29881F0026C667 /* RoleConstants.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";

@@ -14,8 +14,6 @@ class Game {
     var currentDay: Int
     var availableRoles: [Role]
     var playerRoles: [Player]
-    var livingPlayers: [Player]
-    var deadPlayers: [Player]
     
     init(availableRoles: [Role]) {
         // Sort the roles by the role priority. This makes it easier to present the 
@@ -25,7 +23,5 @@ class Game {
         self.firstNight = true
         self.currentDay = 1
         self.playerRoles = [Player]()
-        self.livingPlayers = [Player]()
-        self.deadPlayers = [Player]()
     }
 }
