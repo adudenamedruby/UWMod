@@ -42,11 +42,6 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func startGameButton(_ sender: Any) {
-        print("Tapped")
-    }
-    
-    
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
         transition.startingPoint = aboutButton.center
@@ -62,8 +57,14 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let secondVC = segue.destination as! AboutVC
-        secondVC.transitioningDelegate = self
-        secondVC.modalPresentationStyle = .custom
+        if segue.identifier == "aboutSegue" {
+            let secondVC = segue.destination as! AboutVC
+            secondVC.transitioningDelegate = self
+            secondVC.modalPresentationStyle = .custom
+        } else if segue.identifier == "startGameSegue" {
+            let secondVC = segue.destination as! PlayerSelectVC
+            secondVC.transitioningDelegate = self
+            secondVC.modalPresentationStyle = .custom
+        }
     }
 }

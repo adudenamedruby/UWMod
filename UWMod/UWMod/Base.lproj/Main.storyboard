@@ -79,9 +79,6 @@
                                         <state key="normal" title="Start Game">
                                             <color key="titleColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
-                                        <connections>
-                                            <action selector="startGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FTB-gm-eRc"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oN8-Ty-Hyq">
                                         <rect key="frame" x="140" y="202" width="95" height="49"/>
@@ -90,7 +87,7 @@
                                             <color key="titleColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <segue destination="n0u-sl-cK3" kind="show" id="fOW-E5-EBo"/>
+                                            <segue destination="n0u-sl-cK3" kind="show" identifier="aboutSegue" id="fOW-E5-EBo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -134,41 +131,47 @@
             </objects>
             <point key="canvasLocation" x="341.60000000000002" y="92.203898050974516"/>
         </scene>
-        <!--Player SelectVC-->
-        <scene sceneID="Ych-S9-11j">
+        <!--View Controller-->
+        <scene sceneID="BIM-Sj-ase">
             <objects>
-                <viewController storyboardIdentifier="PlayerSelect" id="ge5-Bt-GqX" customClass="PlayerSelectVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4rb-Z3-Wdw" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="G5f-Mu-gQL"/>
-                        <viewControllerLayoutGuide type="bottom" id="Lau-oF-Vcu"/>
+                        <viewControllerLayoutGuide type="top" id="BCs-bA-p4d"/>
+                        <viewControllerLayoutGuide type="bottom" id="egH-CV-BTf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mQS-xv-GJ8">
+                    <view key="view" contentMode="scaleToFill" id="WLo-Dk-Wji">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veT-ov-L0g">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRA-l7-cLQ">
+                                        <rect key="frame" x="18.5" y="33" width="337.5" height="600"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="hRA-l7-cLQ" firstAttribute="width" secondItem="veT-ov-L0g" secondAttribute="width" multiplier="0.9" id="U0R-wE-PE9"/>
+                                    <constraint firstItem="hRA-l7-cLQ" firstAttribute="centerY" secondItem="veT-ov-L0g" secondAttribute="centerY" id="Uo2-Gk-Cfz"/>
+                                    <constraint firstItem="hRA-l7-cLQ" firstAttribute="height" secondItem="veT-ov-L0g" secondAttribute="height" multiplier="0.9" id="bl2-5u-szE"/>
+                                    <constraint firstItem="hRA-l7-cLQ" firstAttribute="centerX" secondItem="veT-ov-L0g" secondAttribute="centerX" id="kZm-NF-heo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="veT-ov-L0g" secondAttribute="trailing" id="0fH-EY-0qr"/>
+                            <constraint firstItem="veT-ov-L0g" firstAttribute="leading" secondItem="WLo-Dk-Wji" secondAttribute="leading" id="3jL-g4-Gg9"/>
+                            <constraint firstItem="veT-ov-L0g" firstAttribute="top" secondItem="WLo-Dk-Wji" secondAttribute="top" id="Uz4-IW-lQ8"/>
+                            <constraint firstItem="egH-CV-BTf" firstAttribute="top" secondItem="veT-ov-L0g" secondAttribute="bottom" id="xdL-Sy-6gf"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UB0-i2-ujb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9S-5a-Mu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="90"/>
-        </scene>
-        <!--Role SelectVC-->
-        <scene sceneID="q8L-8Z-wUJ">
-            <objects>
-                <viewController storyboardIdentifier="RoleSelect" id="6xJ-xf-GTB" customClass="RoleSelectVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vjj-Y7-R7N"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZBE-dQ-WD4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GFc-Px-caN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ikI-lt-XhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2022" y="91"/>
+            <point key="canvasLocation" x="1152.8" y="92.203898050974516"/>
         </scene>
         <!--AboutVC-->
         <scene sceneID="92H-Py-R30">
@@ -237,15 +240,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjZ-m0-V0c">
                                         <rect key="frame" x="0.0" y="73" width="300" height="312"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFX-ug-hTw">
-                                                <rect key="frame" x="100" y="242" width="100" height="30"/>
-                                                <color key="backgroundColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFX-ug-hTw">
+                                                <rect key="frame" x="125" y="222" width="50" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="MWW-ha-PBK"/>
-                                                    <constraint firstAttribute="width" constant="100" id="gOV-LA-FJD"/>
+                                                    <constraint firstAttribute="height" constant="50" id="MWW-ha-PBK"/>
+                                                    <constraint firstAttribute="width" constant="50" id="gOV-LA-FJD"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                                <state key="normal" title="Return">
+                                                <state key="normal" image="backArrow">
                                                     <color key="titleColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
@@ -253,7 +255,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjG-Dy-yQl">
-                                                <rect key="frame" x="20" y="20" width="260" height="202"/>
+                                                <rect key="frame" x="20" y="20" width="260" height="182"/>
                                                 <string key="text">Developed by ACME Labs
 
 Copyright info about Bezier Games and Ted Alspach can go here if this actually get's released.</string>
@@ -308,4 +310,7 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
             <point key="canvasLocation" x="341.60000000000002" y="779.46026986506752"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backArrow" width="512" height="512"/>
+    </resources>
 </document>
