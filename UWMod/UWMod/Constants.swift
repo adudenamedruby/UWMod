@@ -20,6 +20,7 @@ enum UWTeam: String {
     case TeamVamprie = "Vampire"
     case TeamZombie = "Zombie"
     case TeamBoegyman = "Boegyman"
+    case UnknownTeam = "No Team"
 }
 
 enum UWNights: Int {

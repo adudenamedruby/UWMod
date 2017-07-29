@@ -110,7 +110,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oN8-Ty-Hyq" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="77.5" y="265" width="220" height="50"/>
+                                        <rect key="frame" x="78" y="265" width="220" height="50"/>
                                         <color key="backgroundColor" red="0.46274509800000002" green="0.76078431369999999" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="PXp-7d-R1A"/>
@@ -283,6 +283,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="goToSelectRolesButton:" destination="4rb-Z3-Wdw" eventType="touchUpInside" id="bX6-ff-vPK"/>
                                             <segue destination="7Pw-Ep-Lh3" kind="show" identifier="selectRoleSegue" id="hfv-91-q6q"/>
                                         </connections>
                                     </button>
@@ -360,6 +361,7 @@
                     </view>
                     <connections>
                         <outlet property="addPlayersButton" destination="iCc-1T-bIt" id="BnE-VZ-ix7"/>
+                        <outlet property="forwardButton" destination="S0G-rq-jAp" id="V81-52-8y7"/>
                         <outlet property="mainCard" destination="hRA-l7-cLQ" id="7VH-Mp-Fum"/>
                         <outlet property="playerNumberLabel" destination="JoW-qG-sLM" id="mXe-O2-oDb"/>
                         <outlet property="tableView" destination="8qc-UI-p46" id="3hM-is-Lua"/>
@@ -422,6 +424,9 @@
                                             <constraint firstAttribute="width" constant="45" id="oip-7m-6nt"/>
                                         </constraints>
                                         <state key="normal" image="backArrow"/>
+                                        <connections>
+                                            <action selector="dismissButton:" destination="7Pw-Ep-Lh3" eventType="touchUpInside" id="Pef-EZ-2pM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgF-ZD-TgM" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
                                         <rect key="frame" x="267" y="542" width="45" height="45"/>
@@ -458,6 +463,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="8ge-b5-6M8" id="1S4-sJ-mMF"/>
+                        <outlet property="forwardButton" destination="sgF-ZD-TgM" id="pPK-5u-7hB"/>
                         <outlet property="mainCardView" destination="hhz-Fz-6Cw" id="5Vm-Lq-FuO"/>
                     </connections>
                 </viewController>
