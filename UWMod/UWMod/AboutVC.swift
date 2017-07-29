@@ -20,12 +20,6 @@ class AboutVC: UIViewController {
         returnButton.layer.cornerRadius = 10
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
     @IBAction func dismissAboutVC(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

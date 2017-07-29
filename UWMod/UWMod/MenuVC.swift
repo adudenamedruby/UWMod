@@ -20,7 +20,17 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        presentSmoke()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // Create smoke particles at the bottom of the screen
+    func presentSmoke() {
         let sk: SKView = SKView()
         sk.frame = mainView.bounds
         sk.backgroundColor = .clear
@@ -36,12 +46,8 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
         scene.addChild(particles!)
         sk.presentScene(scene)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    // Setup the presenting animation
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
         transition.startingPoint = aboutButton.center
@@ -49,6 +55,7 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
         return transition
     }
     
+    // Setup the dismissing animation
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
         transition.startingPoint = aboutButton.center
