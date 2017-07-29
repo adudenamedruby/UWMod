@@ -23,7 +23,6 @@ class AddPlayerVC: UIViewController {
         
         mainCard.layer.cornerRadius = 10
         savedPlayers = standardDefaults.object(forKey: PLAYERS) as? [String] ?? [String]()
-        print(savedPlayers)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
                                                name: NSNotification.Name.UIKeyboardWillShow,

@@ -41,22 +41,17 @@ class PlayerSelectVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("viewDidAppear")
         loadPlayers()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("viewWillAppear")
     }
     
     
     func loadPlayers() {
-        print(savedPlayers)
         if let temp = defaults.object(forKey: PLAYERS) as? [String] {
-            self.savedPlayers = temp
-            print(savedPlayers)
-            
+            self.savedPlayers = temp            
         }
         tableView.reloadData()
     }
