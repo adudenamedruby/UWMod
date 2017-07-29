@@ -29,3 +29,6 @@ enum UWNights: Int {
     case Third = 3
 }
 
+
+// Global Variables
+let PLAYERS = "UserPlayers"
