@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1209820A1F26BBE700EC5D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120982091F26BBE700EC5D21 /* AppDelegate.swift */; };
-		1209820C1F26BBE700EC5D21 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1209820B1F26BBE700EC5D21 /* MenuVC.swift */; };
 		1209820F1F26BBE700EC5D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1209820D1F26BBE700EC5D21 /* Main.storyboard */; };
 		120982111F26BBE700EC5D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 120982101F26BBE700EC5D21 /* Assets.xcassets */; };
 		120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120982121F26BBE700EC5D21 /* LaunchScreen.storyboard */; };
@@ -20,12 +19,24 @@
 		12EC77DF1F2978920026C667 /* Artifacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77DE1F2978920026C667 /* Artifacts.swift */; };
 		12EC77E11F297A3E0026C667 /* ArtifactConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77E01F297A3E0026C667 /* ArtifactConstants.swift */; };
 		12EC77E31F29881F0026C667 /* RoleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77E21F29881F0026C667 /* RoleConstants.swift */; };
+		12EC77E51F2BDAB00026C667 /* RoleSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77E41F2BDAB00026C667 /* RoleSelectVC.swift */; };
+		12EC77E71F2BDAC00026C667 /* PlayerSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77E61F2BDAC00026C667 /* PlayerSelectVC.swift */; };
+		12EC77E91F2BDAE00026C667 /* NightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77E81F2BDAE00026C667 /* NightVC.swift */; };
+		12EC77EB1F2BDAEA0026C667 /* DayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77EA1F2BDAEA0026C667 /* DayVC.swift */; };
+		12EC77F41F2BDBD90026C667 /* NightPhase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12EC77F31F2BDBD90026C667 /* NightPhase.storyboard */; };
+		12EC77F61F2BDBE40026C667 /* DayPhase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12EC77F51F2BDBE40026C667 /* DayPhase.storyboard */; };
+		12EC77FB1F2BE1D40026C667 /* Old Wise Sketch.otf in Resources */ = {isa = PBXBuildFile; fileRef = 12EC77FA1F2BE1D40026C667 /* Old Wise Sketch.otf */; };
+		12EC78001F2BE2FE0026C667 /* TisprCardStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77FD1F2BE2FE0026C667 /* TisprCardStackViewCell.swift */; };
+		12EC78011F2BE2FE0026C667 /* TisprCardStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77FE1F2BE2FE0026C667 /* TisprCardStackViewController.swift */; };
+		12EC78021F2BE2FE0026C667 /* TisprCardStackViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77FF1F2BE2FE0026C667 /* TisprCardStackViewLayout.swift */; };
+		12EC78041F2BE8AA0026C667 /* screenSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12EC78031F2BE8AA0026C667 /* screenSmoke.sks */; };
+		12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC78071F2BE9E50026C667 /* MenuVC.swift */; };
+		12EC780D1F2C02990026C667 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC780C1F2C02990026C667 /* CircularTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		120982061F26BBE700EC5D21 /* UWMod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UWMod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		120982091F26BBE700EC5D21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1209820B1F26BBE700EC5D21 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		1209820E1F26BBE700EC5D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		120982101F26BBE700EC5D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		120982131F26BBE700EC5D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +49,19 @@
 		12EC77DE1F2978920026C667 /* Artifacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artifacts.swift; sourceTree = "<group>"; };
 		12EC77E01F297A3E0026C667 /* ArtifactConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtifactConstants.swift; sourceTree = "<group>"; };
 		12EC77E21F29881F0026C667 /* RoleConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleConstants.swift; sourceTree = "<group>"; };
+		12EC77E41F2BDAB00026C667 /* RoleSelectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleSelectVC.swift; sourceTree = "<group>"; };
+		12EC77E61F2BDAC00026C667 /* PlayerSelectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerSelectVC.swift; sourceTree = "<group>"; };
+		12EC77E81F2BDAE00026C667 /* NightVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightVC.swift; sourceTree = "<group>"; };
+		12EC77EA1F2BDAEA0026C667 /* DayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayVC.swift; sourceTree = "<group>"; };
+		12EC77F31F2BDBD90026C667 /* NightPhase.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NightPhase.storyboard; sourceTree = "<group>"; };
+		12EC77F51F2BDBE40026C667 /* DayPhase.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DayPhase.storyboard; sourceTree = "<group>"; };
+		12EC77FA1F2BE1D40026C667 /* Old Wise Sketch.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Old Wise Sketch.otf"; sourceTree = "<group>"; };
+		12EC77FD1F2BE2FE0026C667 /* TisprCardStackViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewCell.swift; sourceTree = "<group>"; };
+		12EC77FE1F2BE2FE0026C667 /* TisprCardStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewController.swift; sourceTree = "<group>"; };
+		12EC77FF1F2BE2FE0026C667 /* TisprCardStackViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewLayout.swift; sourceTree = "<group>"; };
+		12EC78031F2BE8AA0026C667 /* screenSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = screenSmoke.sks; sourceTree = "<group>"; };
+		12EC78071F2BE9E50026C667 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		12EC780C1F2C02990026C667 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +94,11 @@
 		120982081F26BBE700EC5D21 /* UWMod */ = {
 			isa = PBXGroup;
 			children = (
-				120982091F26BBE700EC5D21 /* AppDelegate.swift */,
+				12EC77F81F2BDBFA0026C667 /* Main App Files */,
 				12EC77D51F26D4F70026C667 /* Model */,
-				12EC77D21F26D4BA0026C667 /* ViewControllers */,
 				12EC77CF1F26D4430026C667 /* Storyboards */,
+				12EC77F71F2BDBF20026C667 /* Utilities */,
+				12EC77D21F26D4BA0026C667 /* ViewControllers */,
 				120982101F26BBE700EC5D21 /* Assets.xcassets */,
 				120982151F26BBE700EC5D21 /* Info.plist */,
 			);
@@ -83,8 +108,10 @@
 		12EC77CF1F26D4430026C667 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				1209820D1F26BBE700EC5D21 /* Main.storyboard */,
 				120982121F26BBE700EC5D21 /* LaunchScreen.storyboard */,
+				1209820D1F26BBE700EC5D21 /* Main.storyboard */,
+				12EC77F31F2BDBD90026C667 /* NightPhase.storyboard */,
+				12EC77F51F2BDBE40026C667 /* DayPhase.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -92,8 +119,12 @@
 		12EC77D21F26D4BA0026C667 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1209820B1F26BBE700EC5D21 /* MenuVC.swift */,
+				12EC78071F2BE9E50026C667 /* MenuVC.swift */,
 				12EC77D01F26D4AA0026C667 /* AboutVC.swift */,
+				12EC77E41F2BDAB00026C667 /* RoleSelectVC.swift */,
+				12EC77E61F2BDAC00026C667 /* PlayerSelectVC.swift */,
+				12EC77E81F2BDAE00026C667 /* NightVC.swift */,
+				12EC77EA1F2BDAEA0026C667 /* DayVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -108,8 +139,53 @@
 				12EC77DA1F27541A0026C667 /* Player.swift */,
 				12EC77D31F26D4DC0026C667 /* Roles.swift */,
 				12EC77E21F29881F0026C667 /* RoleConstants.swift */,
+				12EC78031F2BE8AA0026C667 /* screenSmoke.sks */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		12EC77F71F2BDBF20026C667 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				12EC78091F2BFE820026C667 /* Circle Transition */,
+				12EC77FC1F2BE2EC0026C667 /* Tispr */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		12EC77F81F2BDBFA0026C667 /* Main App Files */ = {
+			isa = PBXGroup;
+			children = (
+				12EC77F91F2BE1A70026C667 /* Fonts */,
+				120982091F26BBE700EC5D21 /* AppDelegate.swift */,
+			);
+			name = "Main App Files";
+			sourceTree = "<group>";
+		};
+		12EC77F91F2BE1A70026C667 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				12EC77FA1F2BE1D40026C667 /* Old Wise Sketch.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		12EC77FC1F2BE2EC0026C667 /* Tispr */ = {
+			isa = PBXGroup;
+			children = (
+				12EC77FD1F2BE2FE0026C667 /* TisprCardStackViewCell.swift */,
+				12EC77FE1F2BE2FE0026C667 /* TisprCardStackViewController.swift */,
+				12EC77FF1F2BE2FE0026C667 /* TisprCardStackViewLayout.swift */,
+			);
+			name = Tispr;
+			sourceTree = "<group>";
+		};
+		12EC78091F2BFE820026C667 /* Circle Transition */ = {
+			isa = PBXGroup;
+			children = (
+				12EC780C1F2C02990026C667 /* CircularTransition.swift */,
+			);
+			name = "Circle Transition";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +220,7 @@
 				TargetAttributes = {
 					120982051F26BBE700EC5D21 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 8DD4C7KK4P;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -172,7 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */,
+				12EC77F61F2BDBE40026C667 /* DayPhase.storyboard in Resources */,
 				120982111F26BBE700EC5D21 /* Assets.xcassets in Resources */,
+				12EC77F41F2BDBD90026C667 /* NightPhase.storyboard in Resources */,
+				12EC78041F2BE8AA0026C667 /* screenSmoke.sks in Resources */,
+				12EC77FB1F2BE1D40026C667 /* Old Wise Sketch.otf in Resources */,
 				1209820F1F26BBE700EC5D21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,15 +266,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				12EC77D91F26DD250026C667 /* Constants.swift in Sources */,
+				12EC77E91F2BDAE00026C667 /* NightVC.swift in Sources */,
+				12EC77E71F2BDAC00026C667 /* PlayerSelectVC.swift in Sources */,
 				12EC77E31F29881F0026C667 /* RoleConstants.swift in Sources */,
-				1209820C1F26BBE700EC5D21 /* MenuVC.swift in Sources */,
+				12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */,
 				12EC77DD1F2831C90026C667 /* Game.swift in Sources */,
+				12EC78011F2BE2FE0026C667 /* TisprCardStackViewController.swift in Sources */,
 				12EC77DF1F2978920026C667 /* Artifacts.swift in Sources */,
+				12EC78021F2BE2FE0026C667 /* TisprCardStackViewLayout.swift in Sources */,
 				1209820A1F26BBE700EC5D21 /* AppDelegate.swift in Sources */,
 				12EC77D11F26D4AA0026C667 /* AboutVC.swift in Sources */,
 				12EC77E11F297A3E0026C667 /* ArtifactConstants.swift in Sources */,
 				12EC77DB1F27541A0026C667 /* Player.swift in Sources */,
+				12EC780D1F2C02990026C667 /* CircularTransition.swift in Sources */,
+				12EC77E51F2BDAB00026C667 /* RoleSelectVC.swift in Sources */,
 				12EC77D41F26D4DC0026C667 /* Roles.swift in Sources */,
+				12EC77EB1F2BDAEA0026C667 /* DayVC.swift in Sources */,
+				12EC78001F2BE2FE0026C667 /* TisprCardStackViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +405,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8DD4C7KK4P;
 				INFOPLIST_FILE = UWMod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.UWMod;
@@ -328,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8DD4C7KK4P;
 				INFOPLIST_FILE = UWMod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.UWMod;

@@ -9,9 +9,23 @@
 import Foundation
 
 enum UWTeam: String {
-    case Wolves = "Wolves"
-    case Village = "Villager"
-    case Cult = "The Cult"
-    case Blob = "The Blob"
+    case TeamWerewolf = "Werewolf"
+    case TeamVillage = "Village"
+    case TeamCult = "The Cult"
+    case TeamBlob = "The Blob"
+    case TeamChupacabra = "Chupacabra"
+    case TeamCountDracula = "Dracula"
+    case TeamHoodlum = "Hoodlum"
+    case TeamTanner = "Tanner"
+    case TeamVamprie = "Vampire"
+    case TeamZombie = "Zombie"
+    case TeamBoegyman = "Boegyman"
+}
+
+enum UWNights: Int {
+    case EveryNight = 0
+    case First = 1
+    case Second = 2
+    case Third = 3
 }
 
