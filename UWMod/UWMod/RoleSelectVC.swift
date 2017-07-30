@@ -21,16 +21,19 @@ class RoleSelectVC: UIViewController {
         super.viewDidLoad()
         
         self.mainCardView.layer.cornerRadius = 10
-        
-        for x in players! {
-            print(x.name)
-        }
-
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func startGameButton(_ sender: Any) {
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: "NightPhase", bundle: nil)
+        let newView = storyboard.instantiateViewController(withIdentifier: "NightPhase") as! NightVC
+        //self.present(newView, animated: true, completion: nil)
+        self.view.window!.rootViewController?.present(newView, animated: true, completion: nil)
     }
     
     @IBAction func dismissButton(_ sender: Any) {

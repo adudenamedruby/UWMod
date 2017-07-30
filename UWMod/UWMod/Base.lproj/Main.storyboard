@@ -435,6 +435,9 @@
                                             <constraint firstAttribute="width" constant="45" id="xGb-Ox-vRE"/>
                                         </constraints>
                                         <state key="normal" image="forwardArrow"/>
+                                        <connections>
+                                            <action selector="startGameButton:" destination="7Pw-Ep-Lh3" eventType="touchUpInside" id="Rpf-a4-cv0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -450,7 +453,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dcr-n9-iBu" secondAttribute="trailing" id="6mT-el-ZX2"/>
                             <constraint firstItem="yuC-C9-uDZ" firstAttribute="top" secondItem="dcr-n9-iBu" secondAttribute="bottom" id="Df8-LA-t6N"/>
