@@ -121,21 +121,6 @@ class RoleSelectVC: UIViewController {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "returnToPlayerSelect"), object: nil)
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    // MARK: - Label text manipulation
-    
-    func firstLetter(text: String) -> String {
-        let index = text.index(text.startIndex, offsetBy: 0)
-        
-        return String(text[index])
-    }
-    
-    func restOfString(text: String) -> String {
-        let index = text.index(text.startIndex, offsetBy: 1)
-        
-        return text.substring(from: index)
-    }
 }
 
 extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -155,8 +140,8 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
         
         let index = indexPath.row
         
-        cell.firstLetter.text = firstLetter(text: ALL_GAME_ROLES[index].name)
-        cell.remainingCharacters.text = restOfString(text: ALL_GAME_ROLES[index].name)
+        cell.firstLetter.text = ALL_GAME_ROLES[index].name.firstLetter()
+        cell.remainingCharacters.text = ALL_GAME_ROLES[index].name.restOfString()
         cell.roleImage.image = ALL_GAME_ROLES[index].image
         cell.alpha = 0.5
         cell.configureCell()
@@ -171,12 +156,12 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
         let selectedIndexPaths = collectionView.indexPathsForSelectedItems
         
         if (selectedIndexPaths?.count)! > (players?.count)! {
-            let alert: UIAlertController = UIAlertController(title: "Were-Warning!",
-                                                             message: "You have chosen more roles than players!",
-                                                             preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            
-            self.present(alert, animated: true, completion: nil)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
+            vc.modalTransitionStyle = .crossDissolve
+            vc.alertName = "Warning"
+            vc.alertText = "You've selected more roles than there are players in the game."
+            self.present(vc, animated: true, completion: nil)
         }
     }
     

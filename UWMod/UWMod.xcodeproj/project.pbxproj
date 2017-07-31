@@ -13,6 +13,7 @@
 		120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120982121F26BBE700EC5D21 /* LaunchScreen.storyboard */; };
 		123BD0D31F2F6BF600B99019 /* Alerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123BD0D21F2F6BF600B99019 /* Alerts.storyboard */; };
 		123BD0D51F2F6C1600B99019 /* AlertsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0D41F2F6C1600B99019 /* AlertsVC.swift */; };
+		123BD0D71F2FE66400B99019 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0D61F2FE66400B99019 /* StringExtensions.swift */; };
 		1260ED331F2C2A78001A8F7B /* AddPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */; };
 		12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */; };
 		12D15E201F2E82870057905E /* RoleSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */; };
@@ -52,6 +53,7 @@
 		120982151F26BBE700EC5D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		123BD0D21F2F6BF600B99019 /* Alerts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alerts.storyboard; sourceTree = "<group>"; };
 		123BD0D41F2F6C1600B99019 /* AlertsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsVC.swift; sourceTree = "<group>"; };
+		123BD0D61F2FE66400B99019 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerVC.swift; sourceTree = "<group>"; };
 		12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSuperButton.swift; sourceTree = "<group>"; };
 		12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleSelectionCell.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				12D15E261F2EB0AB0057905E /* FadeAnimations.swift */,
 				12D15E281F2EBCCA0057905E /* ColourDefinitions.swift */,
 				12D15E2A1F2EC5420057905E /* ArrayExtension.swift */,
+				123BD0D61F2FE66400B99019 /* StringExtensions.swift */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -182,9 +185,9 @@
 		12EC77D21F26D4BA0026C667 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				123BD0D41F2F6C1600B99019 /* AlertsVC.swift */,
 				12D15E241F2EA85B0057905E /* PreGameVCs */,
 				12D15E251F2EA8660057905E /* GameVCs */,
-				123BD0D41F2F6C1600B99019 /* AlertsVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				12EC77D11F26D4AA0026C667 /* AboutVC.swift in Sources */,
 				12EC77E11F297A3E0026C667 /* ArtifactConstants.swift in Sources */,
 				12EC77DB1F27541A0026C667 /* Player.swift in Sources */,
+				123BD0D71F2FE66400B99019 /* StringExtensions.swift in Sources */,
 				12EC780D1F2C02990026C667 /* CircularTransition.swift in Sources */,
 				12EC77E51F2BDAB00026C667 /* RoleSelectVC.swift in Sources */,
 				12EC77D41F26D4DC0026C667 /* Roles.swift in Sources */,

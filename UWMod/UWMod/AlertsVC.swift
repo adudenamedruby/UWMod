@@ -11,11 +11,22 @@ import UIKit
 class AlertsVC: UIViewController {
 
     @IBOutlet weak var mainAlertView: UIView!
+    @IBOutlet weak var alertTitleFirstLetter: UILabel!
+    @IBOutlet weak var alertTitleRemainingLabel: UILabel!
+    @IBOutlet weak var alertTextLabel: UILabel!
+    
+    var alertName: String?
+    var alertText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         mainAlertView.layer.cornerRadius = 10
+        
+        alertTitleFirstLetter.text = alertName?.firstLetter()
+        alertTitleRemainingLabel.text = alertName?.restOfString()
+        
+        alertTextLabel.text = alertText
     }
 
     override func didReceiveMemoryWarning() {

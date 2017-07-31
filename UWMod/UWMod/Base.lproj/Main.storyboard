@@ -52,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="267" width="375" height="400"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxG-Lc-QGQ">
-                                        <rect key="frame" x="58" y="5" width="260.5" height="70"/>
+                                        <rect key="frame" x="57.5" y="5" width="260.5" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFk-jz-icU">
                                                 <rect key="frame" x="0.0" y="0.0" width="65.5" height="70"/>
@@ -208,16 +208,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="73"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J54-xu-uYd">
-                                                <rect key="frame" x="56" y="24.5" width="226.5" height="40"/>
+                                                <rect key="frame" x="56.5" y="25" width="226.5" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk2-db-F9n">
-                                                        <rect key="frame" x="0.0" y="0.0" width="23" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.5" width="23" height="40"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                         <color key="textColor" red="0.64536405460000001" green="0.1161611183" blue="0.12310011999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfT-u5-Wiw">
-                                                        <rect key="frame" x="23" y="0.0" width="203.5" height="40"/>
+                                                        <rect key="frame" x="23" y="0.5" width="203.5" height="40"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                         <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -394,16 +394,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="337" height="73"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1QH-vr-paT">
-                                                <rect key="frame" x="68" y="24.5" width="202.5" height="40"/>
+                                                <rect key="frame" x="67.5" y="25" width="202.5" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zum-nw-VZT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="23" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.5" width="23" height="40"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                         <color key="textColor" red="0.64536405460000001" green="0.1161611183" blue="0.12310011999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Roles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tuq-TL-lce">
-                                                        <rect key="frame" x="23" y="0.0" width="179.5" height="40"/>
+                                                        <rect key="frame" x="23" y="0.5" width="179.5" height="40"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                         <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
