@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--AlertsVC-->
+        <scene sceneID="FM5-dk-Krf">
+            <objects>
+                <viewController id="JPT-HN-339" customClass="AlertsVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bCK-fb-slS"/>
+                        <viewControllerLayoutGuide type="bottom" id="VF1-XY-0xS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vh2-AI-0a5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZ9-8f-Yp3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAe-hJ-BYF">
+                                <rect key="frame" x="67" y="258" width="240" height="150"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHa-iw-YoI">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="52.5"/>
+                                        <color key="backgroundColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja6-fw-Fji" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="75" y="110" width="90" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="ATZ-CH-7Aq"/>
+                                            <constraint firstAttribute="height" constant="25" id="Y1t-am-Jqu"/>
+                                        </constraints>
+                                        <state key="normal" title="OK"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="gradientEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                                <color key="value" red="0.48914084029999999" green="0.82907677660000001" blue="0.48015020889999999" alpha="0.84144905820000004" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                                <color key="value" red="0.46274509800000002" green="0.76078431369999999" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="okButtonPressed:" destination="JPT-HN-339" eventType="touchUpInside" id="3FA-4b-7qh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="cHa-iw-YoI" firstAttribute="leading" secondItem="qAe-hJ-BYF" secondAttribute="leading" id="4C6-oV-vLb"/>
+                                    <constraint firstItem="cHa-iw-YoI" firstAttribute="height" secondItem="qAe-hJ-BYF" secondAttribute="height" multiplier="0.35" id="TG4-T3-IKA"/>
+                                    <constraint firstItem="ja6-fw-Fji" firstAttribute="centerX" secondItem="qAe-hJ-BYF" secondAttribute="centerX" id="THp-gc-Oyf"/>
+                                    <constraint firstAttribute="trailing" secondItem="cHa-iw-YoI" secondAttribute="trailing" id="Tf5-AP-X2g"/>
+                                    <constraint firstAttribute="width" constant="240" id="eK3-TU-WCq"/>
+                                    <constraint firstAttribute="height" constant="150" id="hFm-G4-TV7"/>
+                                    <constraint firstAttribute="bottom" secondItem="ja6-fw-Fji" secondAttribute="bottom" constant="15" id="iaz-Qp-D6P"/>
+                                    <constraint firstItem="cHa-iw-YoI" firstAttribute="top" secondItem="qAe-hJ-BYF" secondAttribute="top" id="p9i-iT-Jaz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iZ9-8f-Yp3" secondAttribute="trailing" id="28d-Ca-cX7"/>
+                            <constraint firstItem="VF1-XY-0xS" firstAttribute="top" secondItem="iZ9-8f-Yp3" secondAttribute="bottom" id="G8h-RX-5RK"/>
+                            <constraint firstItem="iZ9-8f-Yp3" firstAttribute="top" secondItem="vh2-AI-0a5" secondAttribute="top" id="MYf-79-qvz"/>
+                            <constraint firstItem="qAe-hJ-BYF" firstAttribute="centerY" secondItem="vh2-AI-0a5" secondAttribute="centerY" id="PhI-8L-WYv"/>
+                            <constraint firstItem="iZ9-8f-Yp3" firstAttribute="leading" secondItem="vh2-AI-0a5" secondAttribute="leading" id="eje-Q0-Vc7"/>
+                            <constraint firstItem="qAe-hJ-BYF" firstAttribute="centerX" secondItem="vh2-AI-0a5" secondAttribute="centerX" id="gXJ-3R-U3d"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainAlertView" destination="qAe-hJ-BYF" id="KO6-NK-IBE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tDm-Lv-q2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-514.39999999999998" y="127.28635682158921"/>
+        </scene>
+    </scenes>
+</document>

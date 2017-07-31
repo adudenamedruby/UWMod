@@ -90,18 +90,30 @@ class RoleSelectVC: UIViewController {
     // MARK: - Navigation Buttons
     
     @IBAction func startGameButton(_ sender: Any) {
-        GAME = Game(availableRoles: self.selectedRoles,
-                    availablePlayers: self.players!)
+        if (self.selectedRoles.count < (self.players?.count)!) {
+            
+            let alert: UIAlertController = UIAlertController(title: "Warning",
+                                                             message: "You do not have enough roles for the number of players in the game.",
+                                                             preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        } else {
         
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let masterGameView = storyboard.instantiateViewController(withIdentifier: "MasterGameWindow") as! MainGameVC
-        let presentingVC = self.presentingViewController
-        let masterParentVC = presentingVC?.presentingViewController
-        self.dismiss(animated: false, completion: { () -> Void   in
-            presentingVC!.dismiss(animated: false, completion: { () -> Void in
-            masterParentVC!.present(masterGameView, animated: false, completion: nil)
+            GAME = Game(availableRoles: self.selectedRoles,
+                        availablePlayers: self.players!)
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let masterGameView = storyboard.instantiateViewController(withIdentifier: "MasterGameWindow") as! MainGameVC
+            let presentingVC = self.presentingViewController
+            let masterParentVC = presentingVC?.presentingViewController
+            self.dismiss(animated: false, completion: { () -> Void   in
+                presentingVC!.dismiss(animated: false, completion: { () -> Void in
+                masterParentVC!.present(masterGameView, animated: false, completion: nil)
+                })
             })
-        })
+        }
     }
     
     @IBAction func dismissButton(_ sender: Any) {
@@ -155,6 +167,17 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.cellForItem(at: indexPath)?.alpha = 1
         updateGameBalance()
+        
+        let selectedIndexPaths = collectionView.indexPathsForSelectedItems
+        
+        if (selectedIndexPaths?.count)! > (players?.count)! {
+            let alert: UIAlertController = UIAlertController(title: "Were-Warning!",
+                                                             message: "You have chosen more roles than players!",
+                                                             preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
