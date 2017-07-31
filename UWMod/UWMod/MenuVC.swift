@@ -21,13 +21,16 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        presentSmoke()
+        //presentSmoke()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: - Animation for effect
     
     // Create smoke particles at the bottom of the screen
     func presentSmoke() {
@@ -46,6 +49,20 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
         scene.addChild(particles!)
         sk.presentScene(scene)
     }
+    
+    
+    // MARK: - Buttons
+    
+    @IBAction func startGameButton(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newView = storyboard.instantiateViewController(withIdentifier: "playerSelect") as! PlayerSelectVC
+        newView.transitioningDelegate = self
+        newView.modalPresentationStyle = .custom
+        self.present(newView, animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - Transition setup
     
     // Setup the presenting animation
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -66,10 +83,6 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "aboutSegue" {
             let secondVC = segue.destination as! AboutVC
-            secondVC.transitioningDelegate = self
-            secondVC.modalPresentationStyle = .custom
-        } else if segue.identifier == "startGameSegue" {
-            let secondVC = segue.destination as! PlayerSelectVC
             secondVC.transitioningDelegate = self
             secondVC.modalPresentationStyle = .custom
         }

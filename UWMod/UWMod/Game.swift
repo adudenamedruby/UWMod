@@ -42,6 +42,7 @@ class Game {
     
     // MARK: - Game setup
     
+    // Game settings will be added in a later iteration.
     func startWithSettings() {
         
     }

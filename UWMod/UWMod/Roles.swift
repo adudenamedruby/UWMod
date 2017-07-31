@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Role {
     let name: String
@@ -14,18 +15,20 @@ class Role {
     let notes: String
     let impact: Int
     let priority: Int
+    let image: UIImage
     
     var wakeTime: UWNights
     var powerChoice: Bool
     var powerUsed: Bool
     var team: UWTeam
     
-    init(name: String, description: String, notes: String, impact: Int, priority: Int, powerChoice: Bool, team: UWTeam, wakeTime: UWNights) {
+    init(name: String, description: String, notes: String, impact: Int, priority: Int, powerChoice: Bool, team: UWTeam, wakeTime: UWNights, image: UIImage) {
         self.name = name
         self.description = description
         self.notes = notes
         self.impact = impact
         self.priority = priority
+        self.image = image
         
         self.team = team
         self.wakeTime = wakeTime
