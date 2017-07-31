@@ -10,6 +10,10 @@ import UIKit
 
 class NightVC: UIViewController {
 
+    @IBAction func goAway(_ sender: Any) {
+        GAME.finishNight()
+        self.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

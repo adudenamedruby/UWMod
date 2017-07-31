@@ -457,7 +457,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.9882352941176471" green="0.93725490196078431" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="lh3-94-7XA" firstAttribute="centerX" secondItem="hhz-Fz-6Cw" secondAttribute="centerX" id="62u-kM-bdv"/>
                                     <constraint firstAttribute="trailing" secondItem="gJa-nz-lZZ" secondAttribute="trailing" id="D0b-UD-3VG"/>
@@ -521,13 +521,13 @@
                                                             <rect key="frame" x="0.0" y="133" width="98" height="21"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eyE-5m-vwZ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="7" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="8" height="21"/>
                                                                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
                                                                     <color key="textColor" red="0.64536405460000001" green="0.1161611183" blue="0.12310011999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eenage Werewolf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bJc-zr-MtH">
-                                                                    <rect key="frame" x="7" y="0.0" width="91" height="21"/>
+                                                                    <rect key="frame" x="8" y="0.0" width="90" height="21"/>
                                                                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
                                                                     <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
@@ -764,14 +764,17 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icp-nz-gis">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night falls..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAI-qt-uPY">
-                                        <rect key="frame" x="90" y="314" width="194" height="39"/>
-                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="37"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nighttime" translatesAutoresizingMaskIntoConstraints="NO" id="8rK-b6-pjt">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night falls..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="PAI-qt-uPY">
+                                        <rect key="frame" x="20" y="112.5" width="335" height="42"/>
+                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
                                         <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gi4-o7-Pjt" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="162" y="523" width="50" height="50"/>
+                                        <rect key="frame" x="162" y="567" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="CSp-R8-q4D"/>
                                             <constraint firstAttribute="height" constant="50" id="TSI-ew-rQ1"/>
@@ -793,10 +796,16 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="PAI-qt-uPY" firstAttribute="leading" secondItem="icp-nz-gis" secondAttribute="leading" constant="20" id="16L-z3-575"/>
                                     <constraint firstItem="Gi4-o7-Pjt" firstAttribute="centerX" secondItem="icp-nz-gis" secondAttribute="centerX" id="Csn-ne-2NC"/>
-                                    <constraint firstAttribute="bottom" secondItem="Gi4-o7-Pjt" secondAttribute="bottom" constant="94" id="Raz-nm-wBT"/>
+                                    <constraint firstItem="8rK-b6-pjt" firstAttribute="centerY" secondItem="icp-nz-gis" secondAttribute="centerY" id="DJQ-ix-SWH"/>
+                                    <constraint firstAttribute="trailing" secondItem="PAI-qt-uPY" secondAttribute="trailing" constant="20" id="LR3-f1-AK2"/>
+                                    <constraint firstItem="8rK-b6-pjt" firstAttribute="width" secondItem="icp-nz-gis" secondAttribute="width" id="OJU-Jp-ZtC"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gi4-o7-Pjt" secondAttribute="bottom" constant="50" id="Raz-nm-wBT"/>
                                     <constraint firstItem="PAI-qt-uPY" firstAttribute="centerX" secondItem="icp-nz-gis" secondAttribute="centerX" id="fBG-MY-f1o"/>
-                                    <constraint firstItem="PAI-qt-uPY" firstAttribute="centerY" secondItem="icp-nz-gis" secondAttribute="centerY" id="pq6-7h-g11"/>
+                                    <constraint firstItem="8rK-b6-pjt" firstAttribute="centerX" secondItem="icp-nz-gis" secondAttribute="centerX" id="ifQ-RB-3pW"/>
+                                    <constraint firstItem="8rK-b6-pjt" firstAttribute="height" secondItem="icp-nz-gis" secondAttribute="height" id="pN4-ho-6U0"/>
+                                    <constraint firstItem="PAI-qt-uPY" firstAttribute="centerY" secondItem="icp-nz-gis" secondAttribute="centerY" constant="-200" id="pq6-7h-g11"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -809,6 +818,7 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundImage" destination="8rK-b6-pjt" id="YRG-k4-FoV"/>
                         <outlet property="forwardButton" destination="Gi4-o7-Pjt" id="vor-M9-Mi8"/>
                         <outlet property="titleLabel" destination="PAI-qt-uPY" id="dQ8-f5-sUT"/>
                     </connections>
@@ -933,5 +943,6 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
     <resources>
         <image name="backArrow" width="512" height="512"/>
         <image name="forwardArrow" width="512" height="512"/>
+        <image name="nighttime" width="1242" height="2208"/>
     </resources>
 </document>
