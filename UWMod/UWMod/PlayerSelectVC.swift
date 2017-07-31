@@ -20,10 +20,12 @@ class PlayerSelectVC: UIViewController {
     let transition = CircularTransition()
     let textCellIndentifier = "PlayerNameCell"
 
-
     var savedPlayers: [String] = ["Ted Alspach"]
     var villageSize: Int = 0
     var selectedPlayers: [Player] = []
+    
+    
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,7 @@ class PlayerSelectVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(emptySelectedPlayers),
                                               name: NSNotification.Name(rawValue: "returnToPlayerSelect"),
                                               object: nil)
+        
         loadPlayers()
     }
     
@@ -49,22 +52,37 @@ class PlayerSelectVC: UIViewController {
         loadPlayers()
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    // MARK: - Player list names
     
     func loadPlayers() {
         if let temp = defaults.object(forKey: PLAYERS) as? [String] {
-            self.savedPlayers = temp            
+            self.savedPlayers = temp.sorted()
         }
+        
         tableView.reloadData()
+    }
+    
+    func removePlayerName(player: String) {
+        
+        if var tempPlayers = defaults.object(forKey: PLAYERS) as? [String] {
+            
+            if tempPlayers.contains(player) {
+                let playerIndex = tempPlayers.index(of: player)
+                tempPlayers.remove(at: playerIndex!)
+            }
+            
+            defaults.set(tempPlayers, forKey: PLAYERS)
+        }
     }
     
     func emptySelectedPlayers() {
         self.selectedPlayers.removeAll()
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -97,7 +115,6 @@ class PlayerSelectVC: UIViewController {
             self.selectedPlayers.append(newPlayer)
         }
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectRoleSegue" {
@@ -145,6 +162,17 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
         villageSize -= 1
         playerNumberLabel.text = String(villageSize)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            removePlayerName(player: self.savedPlayers[indexPath.row])
+            loadPlayers()
+        }
     }
 }
 
