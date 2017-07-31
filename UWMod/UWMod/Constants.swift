@@ -20,6 +20,7 @@ enum UWTeam: String {
     case TeamVamprie = "Vampire"
     case TeamZombie = "Zombie"
     case TeamBoegyman = "Boegyman"
+    case UnknownTeam = "No Team"
 }
 
 enum UWNights: Int {
@@ -32,3 +33,4 @@ enum UWNights: Int {
 
 // Global Variables
 let PLAYERS = "UserPlayers"
+var GAME: Game = Game(availableRoles: [], availablePlayers: [])

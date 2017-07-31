@@ -12,7 +12,7 @@
         <!--NightVC-->
         <scene sceneID="RI2-3v-fzb">
             <objects>
-                <viewController storyboardIdentifier="NightPhase" id="Ngs-BR-XGE" customClass="NightVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainNightPhase" id="Ngs-BR-XGE" customClass="NightVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Dv-8y-oRf"/>
                         <viewControllerLayoutGuide type="bottom" id="sU8-QK-0sN"/>

@@ -13,6 +13,7 @@ class PlayerSelectVC: UIViewController {
     @IBOutlet weak var mainCard: UIView!
     @IBOutlet weak var addPlayersButton: UIButton!
     @IBOutlet weak var playerNumberLabel: UILabel!
+    @IBOutlet weak var forwardButton: PMSuperButton!
     @IBOutlet weak var tableView: UITableView!
     
     let defaults = UserDefaults.standard
@@ -22,6 +23,7 @@ class PlayerSelectVC: UIViewController {
 
     var savedPlayers: [String] = ["Ted Alspach"]
     var villageSize: Int = 0
+    var selectedPlayers: [Player] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,16 +38,15 @@ class PlayerSelectVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(loadPlayers),
                                                name: NSNotification.Name(rawValue: "reloadTable"),
                                                object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(emptySelectedPlayers),
+                                              name: NSNotification.Name(rawValue: "returnToPlayerSelect"),
+                                              object: nil)
         loadPlayers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadPlayers()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     
@@ -56,15 +57,52 @@ class PlayerSelectVC: UIViewController {
         tableView.reloadData()
     }
     
+    func emptySelectedPlayers() {
+        self.selectedPlayers.removeAll()
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: - Navigation and data passing
+    
+    @IBAction func goToSelectRolesButton(_ sender: Any) {
+        createPlayers()
+    }
+    
+    func findSelectedPlayers() -> [String] {
+        var playerNames: [String] = []
+        let selectedIndexPaths = tableView.indexPathsForSelectedRows
+        for indexPath in selectedIndexPaths! {
+            let cell = tableView.cellForRow(at: indexPath)
+            let text: String = (cell?.textLabel?.text)!
+            playerNames.append(text)
+        }
+        
+        playerNames.sort()
+        
+        return playerNames
+    }
+    
+    func createPlayers() {
+        
+        let playersToCreate: [String] = findSelectedPlayers()
+        
+        for playerName in playersToCreate {
+            let newPlayer: Player = Player(name: playerName)
+            self.selectedPlayers.append(newPlayer)
+        }
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectRoleSegue" {
             let secondVC = segue.destination as! RoleSelectVC
+            secondVC.players = selectedPlayers
             secondVC.transitioningDelegate = self
             secondVC.modalPresentationStyle = .custom
         } else if segue.identifier == "addPlayerSegue" {
@@ -107,13 +145,14 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
         villageSize -= 1
         playerNumberLabel.text = String(villageSize)
-    }}
+    }
+}
 
 extension PlayerSelectVC: UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
-        transition.startingPoint = addPlayersButton.center
+        transition.startingPoint = forwardButton.center
         transition.circleColour = UIColor.black
         return transition
     }
