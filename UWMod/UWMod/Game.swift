@@ -18,8 +18,8 @@ class Game {
     var availableRoles: [Role]
     var availablePlayers: [Player]
     var nightActors: [Player]
-    var livingPlayers: [Player]
-    var deadPlayers: [Player]
+    var livingActors: [Player]
+    var deadActors: [Player]
     var teams: [UWTeam: [Player]]
     
     init(availableRoles: [Role], availablePlayers: [Player]) {
@@ -33,10 +33,10 @@ class Game {
         self.currentDay = 1
         self.nighttimeEliminations = 1
         self.daytimeEliminations = 1
-        self.nightActors = [Player]()
-        self.livingPlayers = [Player]()
-        self.deadPlayers = [Player]()
-        self.teams = [UWTeam: [Player]]()
+        self.nightActors = []
+        self.livingActors = []
+        self.deadActors = []
+        self.teams = [:]
     }
 
     
@@ -55,10 +55,10 @@ class Game {
     }
     
     func eliminatePlayer(victim: Player) {
-        if self.livingPlayers.contains(where: { $0 === victim }) {
-            self.deadPlayers.append(victim)
-            if let tempIndex = self.livingPlayers.index(where: { $0 === victim }) {
-                self.livingPlayers.remove(at: tempIndex)
+        if self.livingActors.contains(where: { $0 === victim }) {
+            self.deadActors.append(victim)
+            if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
+                self.livingActors.remove(at: tempIndex)
             }
         }
     }
@@ -66,15 +66,18 @@ class Game {
     
     // MARK: - Night functions
     
-    func night() {
-        if self.firstNight == true {
-            firstNightRoleCall()
-            
+    func finishNight() {
+        if firstNight {
+            firstNight = false
         }
+        
+        currentNight += 1
     }
     
-    func firstNightRoleCall() {
-        
+    // MARK: - Day functions
+    
+    func finishDay() {
+        currentDay += 1
     }
     
 }

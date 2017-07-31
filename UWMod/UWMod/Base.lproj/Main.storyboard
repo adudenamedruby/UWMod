@@ -411,7 +411,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.24705882352941178" green="0.16862745098039217" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="1QH-vr-paT" firstAttribute="centerY" secondItem="gJa-nz-lZZ" secondAttribute="centerY" constant="8" id="Lur-6W-faD"/>
                                             <constraint firstItem="1QH-vr-paT" firstAttribute="centerX" secondItem="gJa-nz-lZZ" secondAttribute="centerX" id="WRD-hz-Ngb"/>
@@ -440,7 +440,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="lh3-94-7XA">
-                                        <rect key="frame" x="96" y="554.5" width="144" height="20"/>
+                                        <rect key="frame" x="96" y="555" width="144" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Balance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xF8-tU-8bf">
                                                 <rect key="frame" x="0.0" y="1.5" width="113" height="18.5"/>
@@ -770,9 +770,31 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
                                         <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gi4-o7-Pjt" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="162" y="523" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="CSp-R8-q4D"/>
+                                            <constraint firstAttribute="height" constant="50" id="TSI-ew-rQ1"/>
+                                        </constraints>
+                                        <state key="normal" image="forwardArrow"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.5940082471231708" green="0.9813808692893401" blue="0.88853156040338799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continueForward:" destination="nVl-WY-qEf" eventType="touchUpInside" id="uNv-Mz-7o2"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Gi4-o7-Pjt" firstAttribute="centerX" secondItem="icp-nz-gis" secondAttribute="centerX" id="Csn-ne-2NC"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gi4-o7-Pjt" secondAttribute="bottom" constant="94" id="Raz-nm-wBT"/>
                                     <constraint firstItem="PAI-qt-uPY" firstAttribute="centerX" secondItem="icp-nz-gis" secondAttribute="centerX" id="fBG-MY-f1o"/>
                                     <constraint firstItem="PAI-qt-uPY" firstAttribute="centerY" secondItem="icp-nz-gis" secondAttribute="centerY" id="pq6-7h-g11"/>
                                 </constraints>
@@ -786,6 +808,10 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
                             <constraint firstItem="icp-nz-gis" firstAttribute="leading" secondItem="Ch6-zB-UgU" secondAttribute="leading" id="xuG-Gx-f30"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="forwardButton" destination="Gi4-o7-Pjt" id="vor-M9-Mi8"/>
+                        <outlet property="titleLabel" destination="PAI-qt-uPY" id="dQ8-f5-sUT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIj-M8-Jbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

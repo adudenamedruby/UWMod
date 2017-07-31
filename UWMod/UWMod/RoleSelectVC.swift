@@ -96,9 +96,11 @@ class RoleSelectVC: UIViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let masterGameView = storyboard.instantiateViewController(withIdentifier: "MasterGameWindow") as! MainGameVC
         let presentingVC = self.presentingViewController
+        let masterParentVC = presentingVC?.presentingViewController
         self.dismiss(animated: false, completion: { () -> Void   in
-            presentingVC!.present(masterGameView, animated: false, completion: nil)
-            UIApplication.shared.keyWindow?.rootViewController = masterGameView
+            presentingVC!.dismiss(animated: false, completion: { () -> Void in
+            masterParentVC!.present(masterGameView, animated: false, completion: nil)
+            })
         })
     }
     

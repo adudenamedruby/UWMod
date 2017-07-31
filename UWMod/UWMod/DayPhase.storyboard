@@ -12,7 +12,7 @@
         <!--DayVC-->
         <scene sceneID="LMG-Z8-7Sj">
             <objects>
-                <viewController storyboardIdentifier="DayPhase" id="rK0-Z0-k4W" customClass="DayVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainDayPhase" id="rK0-Z0-k4W" customClass="DayVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UlE-na-9nk"/>
                         <viewControllerLayoutGuide type="bottom" id="fcN-BZ-pLS"/>
