@@ -15,18 +15,18 @@ class Game {
     var currentDay: Int
     var nighttimeEliminations: Int
     var daytimeEliminations: Int
-    var availableRoles: [Role]
+    var availableRoster: [String]
     var availablePlayers: [Player]
     var nightActors: [Player]
     var livingActors: [Player]
     var deadActors: [Player]
     var teams: [UWTeam: [Player]]
     
-    init(availableRoles: [Role], availablePlayers: [Player]) {
+    init(availableRoster: [String], availablePlayers: [Player]) {
         // Sort the roles by the role priority. This makes it easier to present the 
         // player list in some semblance of a correct order.
-        self.availableRoles = availableRoles.sorted(by: { $0.priority > $1.priority })
-        self.availablePlayers = availablePlayers
+        self.availablePlayers = availablePlayers.sorted(by: { ($0.role.priority) > ($1.role.priority) })
+        self.availableRoster = availableRoster
 
         self.firstNight = true
         self.currentNight = 1

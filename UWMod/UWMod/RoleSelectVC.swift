@@ -27,8 +27,9 @@ class RoleSelectVC: UIViewController {
     let reuseIdentifier = "RoleCell"
     
     var gameBalance: Int = 0
-    var players: [Player]?
+    var players: [String]?
     var selectedRoles: [Role] = []
+    var gameActors: [Player] = []
     
     
     // MARK: - View lifetime
@@ -87,22 +88,34 @@ class RoleSelectVC: UIViewController {
     }
     
     
+    // MARK: - Player prep for game start
+    
+    func createPlayers() {
+        
+        for role in self.selectedRoles {
+            let newPlayer = Player(name: role.name, role: role)
+            self.gameActors.append(newPlayer)
+        }
+        
+    }
+    
+    
     // MARK: - Navigation Buttons
     
     @IBAction func startGameButton(_ sender: Any) {
+        
         if (self.selectedRoles.count < (self.players?.count)!) {
-            
-            let alert: UIAlertController = UIAlertController(title: "Warning",
-                                                             message: "You do not have enough roles for the number of players in the game.",
-                                                             preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            
-            self.present(alert, animated: true, completion: nil)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
+            vc.alertName = "Warning"
+            vc.alertText = "You do not have enough roles for the number of players in the game."
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
             
         } else {
         
-            GAME = Game(availableRoles: self.selectedRoles,
-                        availablePlayers: self.players!)
+            createPlayers()
+            GAME = Game(availableRoster: players!, availablePlayers: gameActors)
             
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let masterGameView = storyboard.instantiateViewController(withIdentifier: "MasterGameWindow") as! MainGameVC

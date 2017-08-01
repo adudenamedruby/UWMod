@@ -33,4 +33,4 @@ enum UWNights: Int {
 
 // Global Variables
 let PLAYERS = "UserPlayers"
-var GAME: Game = Game(availableRoles: [], availablePlayers: [])
+var GAME: Game = Game(availableRoster: [], availablePlayers: [])

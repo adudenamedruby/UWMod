@@ -22,7 +22,7 @@ class PlayerSelectVC: UIViewController {
 
     var savedPlayers: [String] = ["Ted Alspach"]
     var villageSize: Int = 0
-    var selectedPlayers: [Player] = []
+    var selectedPlayers: [String] = []
     
     
     // MARK: - View lifecycle
@@ -89,7 +89,7 @@ class PlayerSelectVC: UIViewController {
     // MARK: - Navigation and data passing
     
     @IBAction func goToSelectRolesButton(_ sender: Any) {
-        createPlayers()
+        self.selectedPlayers = findSelectedPlayers()
     }
     
     func findSelectedPlayers() -> [String] {
@@ -104,16 +104,6 @@ class PlayerSelectVC: UIViewController {
         playerNames.sort()
         
         return playerNames
-    }
-    
-    func createPlayers() {
-        
-        let playersToCreate: [String] = findSelectedPlayers()
-        
-        for playerName in playersToCreate {
-            let newPlayer: Player = Player(name: playerName)
-            self.selectedPlayers.append(newPlayer)
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

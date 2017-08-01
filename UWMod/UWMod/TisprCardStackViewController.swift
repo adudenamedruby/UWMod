@@ -37,7 +37,9 @@ open class TisprCardStackViewController: UICollectionViewController, UIGestureRe
         }
     }
     
-    open var layout: TisprCardStackViewLayout { return collectionViewLayout as! TisprCardStackViewLayout }
+    open var layout: TisprCardStackViewLayout {
+        return collectionViewLayout as! TisprCardStackViewLayout
+    }
     
     override open func viewDidLoad() {
         super.viewDidLoad()

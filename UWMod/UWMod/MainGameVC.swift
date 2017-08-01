@@ -68,7 +68,7 @@ class MainGameVC: UIViewController {
             })
         } else {
             let storyboard: UIStoryboard = UIStoryboard(name: "NightPhase", bundle: nil)
-            let newView = storyboard.instantiateViewController(withIdentifier: "mainNightPhase") as! NightVC
+            let newView = storyboard.instantiateViewController(withIdentifier: "mainNightPhase") as! MainNightVC
             self.present(newView, animated: true, completion: { () -> Void in
                 self.resetElementAlpha()
                 self.backgroundImage.image = #imageLiteral(resourceName: "daytime")

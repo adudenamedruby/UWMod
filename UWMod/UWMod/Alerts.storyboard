@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNT-jQ-OUN">
-                                                <rect key="frame" x="101" y="13.5" width="49.5" height="36.5"/>
+                                                <rect key="frame" x="100.5" y="13" width="49.5" height="36.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60a-cu-Pmf">
                                                         <rect key="frame" x="0.0" y="0.0" width="34.5" height="36.5"/>
