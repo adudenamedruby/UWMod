@@ -22,6 +22,8 @@ class RoleSelectVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var gameBalanceLabel: UILabel!
     @IBOutlet weak var teamBalanceLabel: UILabel!
+    @IBOutlet weak var roleCountLabel: UILabel!
+    
     
     let transition = CircularTransition()
     let reuseIdentifier = "RoleCell"
@@ -40,6 +42,8 @@ class RoleSelectVC: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = true
+        
+        updateRoleCountLabel()
         
         gameBalanceLabel.text = String(gameBalance)
         self.mainCardView.layer.cornerRadius = 10
@@ -87,6 +91,11 @@ class RoleSelectVC: UIViewController {
         }
     }
     
+    func updateRoleCountLabel() {
+        let roleCount = collectionView.indexPathsForSelectedItems?.count
+
+        roleCountLabel.text = "\(roleCount!)/\(players!.count)"
+    }
     
     // MARK: - Player prep for game start
     
@@ -105,6 +114,7 @@ class RoleSelectVC: UIViewController {
     @IBAction func startGameButton(_ sender: Any) {
         
         if (self.selectedRoles.count < (self.players?.count)!) {
+            
             let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.alertName = "Warning"
@@ -168,6 +178,8 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
         
         let selectedIndexPaths = collectionView.indexPathsForSelectedItems
         
+        updateRoleCountLabel()
+        
         if (selectedIndexPaths?.count)! > (players?.count)! {
             let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
@@ -180,6 +192,8 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         collectionView.cellForItem(at: indexPath)?.alpha = 0.5
+        
+        updateRoleCountLabel()
         updateGameBalance()
     }
 }

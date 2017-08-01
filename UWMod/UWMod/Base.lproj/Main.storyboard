@@ -439,34 +439,45 @@
                                             <action selector="startGameButton:" destination="7Pw-Ep-Lh3" eventType="touchUpInside" id="Rpf-a4-cv0"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="lh3-94-7XA">
-                                        <rect key="frame" x="96" y="555" width="144" height="20"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="P9r-Ya-85Q">
+                                        <rect key="frame" x="96.5" y="537" width="144" height="45"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Balance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xF8-tU-8bf">
-                                                <rect key="frame" x="0.0" y="1.5" width="113" height="18.5"/>
-                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
-                                                <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1j-Ax-2KL">
-                                                <rect key="frame" x="117" y="0.0" width="27" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9T-sY-scg">
+                                                <rect key="frame" x="48" y="0.0" width="48" height="20"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                                <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="lh3-94-7XA">
+                                                <rect key="frame" x="0.0" y="25" width="144" height="20"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Balance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xF8-tU-8bf">
+                                                        <rect key="frame" x="0.0" y="1.5" width="113" height="18.5"/>
+                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
+                                                        <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1j-Ax-2KL">
+                                                        <rect key="frame" x="117" y="0.0" width="27" height="20"/>
+                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                                        <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.9882352941176471" green="0.93725490196078431" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="lh3-94-7XA" firstAttribute="centerX" secondItem="hhz-Fz-6Cw" secondAttribute="centerX" id="62u-kM-bdv"/>
+                                    <constraint firstItem="P9r-Ya-85Q" firstAttribute="centerY" secondItem="sgF-ZD-TgM" secondAttribute="centerY" constant="-5" id="A2B-vR-6aA"/>
                                     <constraint firstAttribute="trailing" secondItem="gJa-nz-lZZ" secondAttribute="trailing" id="D0b-UD-3VG"/>
                                     <constraint firstItem="8ge-b5-6M8" firstAttribute="leading" secondItem="hhz-Fz-6Cw" secondAttribute="leading" constant="26" id="Umk-Qg-oIo"/>
                                     <constraint firstItem="gJa-nz-lZZ" firstAttribute="leading" secondItem="hhz-Fz-6Cw" secondAttribute="leading" id="bQV-Yk-gYW"/>
+                                    <constraint firstItem="P9r-Ya-85Q" firstAttribute="centerX" secondItem="hhz-Fz-6Cw" secondAttribute="centerX" id="biM-4B-672"/>
                                     <constraint firstAttribute="trailing" secondItem="sgF-ZD-TgM" secondAttribute="trailing" constant="25" id="fLX-N9-cd6"/>
                                     <constraint firstItem="gJa-nz-lZZ" firstAttribute="height" secondItem="hhz-Fz-6Cw" secondAttribute="height" multiplier="0.12" id="hdh-qv-ILR"/>
                                     <constraint firstItem="gJa-nz-lZZ" firstAttribute="top" secondItem="hhz-Fz-6Cw" secondAttribute="top" id="qfB-Sj-EKs"/>
-                                    <constraint firstItem="lh3-94-7XA" firstAttribute="centerY" secondItem="sgF-ZD-TgM" secondAttribute="centerY" id="tft-lK-C9F"/>
                                     <constraint firstAttribute="bottom" secondItem="8ge-b5-6M8" secondAttribute="bottom" constant="20" id="u7S-UI-a0M"/>
                                     <constraint firstAttribute="bottom" secondItem="sgF-ZD-TgM" secondAttribute="bottom" constant="20" id="xQm-Ba-DA2"/>
                                 </constraints>
@@ -606,6 +617,7 @@
                         <outlet property="forwardButton" destination="sgF-ZD-TgM" id="pPK-5u-7hB"/>
                         <outlet property="gameBalanceLabel" destination="D1j-Ax-2KL" id="CYD-s7-DH2"/>
                         <outlet property="mainCardView" destination="hhz-Fz-6Cw" id="5Vm-Lq-FuO"/>
+                        <outlet property="roleCountLabel" destination="c9T-sY-scg" id="4xV-so-bDs"/>
                         <outlet property="teamBalanceLabel" destination="fFb-jc-Pgw" id="ted-nG-iTT"/>
                     </connections>
                 </viewController>
@@ -775,6 +787,7 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gi4-o7-Pjt" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
                                         <rect key="frame" x="162" y="567" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="CSp-R8-q4D"/>
                                             <constraint firstAttribute="height" constant="50" id="TSI-ew-rQ1"/>
@@ -783,7 +796,7 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                                <color key="value" red="0.5940082471231708" green="0.9813808692893401" blue="0.88853156040338799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="value" red="0.48914084029999999" green="0.82907677660000001" blue="0.48015020889999999" alpha="0.84144905820000004" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
                                                 <real key="value" value="0.5"/>

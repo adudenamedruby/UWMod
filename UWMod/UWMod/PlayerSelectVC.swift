@@ -50,6 +50,9 @@ class PlayerSelectVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadPlayers()
+        villageSize = 0
+        playerNumberLabel.text = "0"
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -85,11 +88,21 @@ class PlayerSelectVC: UIViewController {
         self.selectedPlayers.removeAll()
     }
     
-    
     // MARK: - Navigation and data passing
     
     @IBAction func goToSelectRolesButton(_ sender: Any) {
         self.selectedPlayers = findSelectedPlayers()
+        
+        if (self.selectedPlayers.count <= 3) {
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
+            vc.alertName = "Warning"
+            vc.alertText = "You need at least three people to play a game of Ultimate Werewolf."
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
+            
+        }
     }
     
     func findSelectedPlayers() -> [String] {
@@ -104,6 +117,23 @@ class PlayerSelectVC: UIViewController {
         playerNames.sort()
         
         return playerNames
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if (self.selectedPlayers.count <= 3) {
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
+            vc.alertName = "Warning"
+            vc.alertText = "You need at least three people to play a game of Ultimate Werewolf."
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
+            
+            return false
+        }
+        
+        return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
