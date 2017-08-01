@@ -44,6 +44,8 @@
 		12EC78041F2BE8AA0026C667 /* screenSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12EC78031F2BE8AA0026C667 /* screenSmoke.sks */; };
 		12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC78071F2BE9E50026C667 /* MenuVC.swift */; };
 		12EC780D1F2C02990026C667 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC780C1F2C02990026C667 /* CircularTransition.swift */; };
+		77F9E1201F31040600E48211 /* OldTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9E11F1F31040600E48211 /* OldTextLabels.swift */; };
+		77F9E1221F310CCE00E48211 /* RegularTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		12EC78031F2BE8AA0026C667 /* screenSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = screenSmoke.sks; sourceTree = "<group>"; };
 		12EC78071F2BE9E50026C667 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		12EC780C1F2C02990026C667 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
+		77F9E11F1F31040600E48211 /* OldTextLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldTextLabels.swift; sourceTree = "<group>"; };
+		77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularTextLabels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 				12D15E281F2EBCCA0057905E /* ColourDefinitions.swift */,
 				12D15E2A1F2EC5420057905E /* ArrayExtension.swift */,
 				123BD0D61F2FE66400B99019 /* StringExtensions.swift */,
+				77F9E11F1F31040600E48211 /* OldTextLabels.swift */,
+				77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -280,7 +286,7 @@
 				TargetAttributes = {
 					120982051F26BBE700EC5D21 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 8DD4C7KK4P;
+						DevelopmentTeam = APUSKU89ZG;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -328,9 +334,11 @@
 			files = (
 				12D15E2B1F2EC5420057905E /* ArrayExtension.swift in Sources */,
 				123BD0D51F2F6C1600B99019 /* AlertsVC.swift in Sources */,
+				77F9E1221F310CCE00E48211 /* RegularTextLabels.swift in Sources */,
 				12EC77D91F26DD250026C667 /* Constants.swift in Sources */,
 				12EC77E91F2BDAE00026C667 /* NightVC.swift in Sources */,
 				12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */,
+				77F9E1201F31040600E48211 /* OldTextLabels.swift in Sources */,
 				12D15E231F2EA8470057905E /* MainGameVC.swift in Sources */,
 				12D15E201F2E82870057905E /* RoleSelectionCell.swift in Sources */,
 				12EC77E71F2BDAC00026C667 /* PlayerSelectVC.swift in Sources */,
@@ -477,7 +485,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DEVELOPMENT_TEAM = APUSKU89ZG;
 				INFOPLIST_FILE = UWMod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.UWMod;
@@ -490,7 +498,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DEVELOPMENT_TEAM = APUSKU89ZG;
 				INFOPLIST_FILE = UWMod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.UWMod;

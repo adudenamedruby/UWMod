@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension UIColor {
+    
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
         assert(green >= 0 && green <= 255, "Invalid green component")
@@ -23,8 +24,9 @@ extension UIColor {
 }
 
 extension UIColor {
-    struct ColourTheme {
-        static let Tan = UIColor(netHex: 0xFCEFC5)
+    struct WerewolfTheme {
+        static let LightTan = UIColor(netHex: 0xFCEFC5)
         static let ChocolateBrown = UIColor(netHex: 0x3F2B23)
+        static let BloodRed = UIColor(netHex: 0xffffff)
     }
 }

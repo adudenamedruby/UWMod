@@ -10,8 +10,14 @@ import UIKit
 
 class AddPlayerVC: UIViewController {
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var mainCard: UIView!
+    @IBOutlet var headerView: UIView!
+    
+    
+    // MARK: - Variables
     
     let standardDefaults = UserDefaults.standard
     var savedPlayers: [String]?
@@ -19,9 +25,12 @@ class AddPlayerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainCard.backgroundColor = UIColor.WerewolfTheme.LightTan
+        headerView.backgroundColor = UIColor.WerewolfTheme.ChocolateBrown
+        mainCard.layer.cornerRadius = 10
+        
         nameField.delegate = self
         
-        mainCard.layer.cornerRadius = 10
         savedPlayers = standardDefaults.object(forKey: PLAYERS) as? [String] ?? [String]()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),

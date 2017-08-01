@@ -10,9 +10,14 @@ import UIKit
 
 class MainGameVC: UIViewController {
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var forwardButton: PMSuperButton!
     @IBOutlet weak var backgroundImage: UIImageView!
+    
+    
+    // MARK: - Variables
     
     let nightPhrases = ["Night falls...",
                         "The moon rises...",
@@ -24,6 +29,9 @@ class MainGameVC: UIViewController {
                           "The rooster crows...",
                           "Another night ends..."]
     
+    
+    // MARK: - View lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleLabel.alpha = 0
@@ -33,12 +41,18 @@ class MainGameVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if GAME.currentDay < GAME.currentNight {
-            self.titleLabel.textColor = UIColor.ColourTheme.ChocolateBrown
-            self.titleLabel.text = daytimePhrases.randomElement()
+        if GAME.firstNight {
+            self.titleLabel.textColor = UIColor.WerewolfTheme.LightTan
+            self.titleLabel.text = "The first night begins..."
         } else {
-            self.titleLabel.textColor = UIColor.ColourTheme.Tan
-            self.titleLabel.text = nightPhrases.randomElement()
+        
+            if GAME.currentDay < GAME.currentNight {
+                self.titleLabel.textColor = UIColor.WerewolfTheme.ChocolateBrown
+                self.titleLabel.text = daytimePhrases.randomElement()
+            } else {
+                self.titleLabel.textColor = UIColor.WerewolfTheme.LightTan
+                self.titleLabel.text = nightPhrases.randomElement()
+            }
         }
         
         self.titleLabel.fadeIn(completion: {
@@ -52,10 +66,7 @@ class MainGameVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func resetElementAlpha() {
-        self.titleLabel.alpha = 0
-        self.forwardButton.alpha = 0
-    }
+    // MARK: - Button functions
     
     @IBAction func continueForward(_ sender: Any) {
         
@@ -75,4 +86,10 @@ class MainGameVC: UIViewController {
             })
         }
     }
+    
+    func resetElementAlpha() {
+        self.titleLabel.alpha = 0
+        self.forwardButton.alpha = 0
+    }
+    
 }

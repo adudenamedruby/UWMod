@@ -10,11 +10,18 @@ import UIKit
 
 class PlayerSelectVC: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var mainCard: UIView!
+    @IBOutlet var headerView: UIView!
+    
     @IBOutlet weak var addPlayersButton: UIButton!
-    @IBOutlet weak var playerNumberLabel: UILabel!
     @IBOutlet weak var forwardButton: PMSuperButton!
+    
+    @IBOutlet weak var playerNumberLabel: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Variables
     
     let defaults = UserDefaults.standard
     let transition = CircularTransition()
@@ -35,6 +42,9 @@ class PlayerSelectVC: UIViewController {
         tableView.allowsMultipleSelection = true
 
         mainCard.layer.cornerRadius = 10
+        mainCard.backgroundColor = UIColor.WerewolfTheme.LightTan
+        headerView.backgroundColor = UIColor.WerewolfTheme.ChocolateBrown
+        
         addPlayersButton.layer.cornerRadius = 10
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadPlayers),
@@ -93,16 +103,16 @@ class PlayerSelectVC: UIViewController {
     @IBAction func goToSelectRolesButton(_ sender: Any) {
         self.selectedPlayers = findSelectedPlayers()
         
-        if (self.selectedPlayers.count <= 3) {
-            
-            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
-            vc.alertName = "Warning"
-            vc.alertText = "You need at least three people to play a game of Ultimate Werewolf."
-            vc.modalTransitionStyle = .crossDissolve
-            self.present(vc, animated: true, completion: nil)
-            
-        }
+//        if (self.selectedPlayers.count < 3) {
+//            
+//            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
+//            vc.alertName = "Warning"
+//            vc.alertText = "You need at least three people to play a game of Ultimate Werewolf."
+//            vc.modalTransitionStyle = .crossDissolve
+//            self.present(vc, animated: true, completion: nil)
+//            
+//        }
     }
     
     func findSelectedPlayers() -> [String] {
@@ -123,7 +133,7 @@ class PlayerSelectVC: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        if ((identifier == "selectRoleSegue") && (self.selectedPlayers.count < 2)) {
+        if ((identifier == "selectRoleSegue") && (self.selectedPlayers.count < 3)) {
             
             let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC

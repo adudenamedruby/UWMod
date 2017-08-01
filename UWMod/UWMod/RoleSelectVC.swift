@@ -16,14 +16,23 @@ enum RoleUpdateReason {
 
 class RoleSelectVC: UIViewController {
     
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var mainCardView: UIView!
+    @IBOutlet var headerView: UIView!
+    
     @IBOutlet weak var backButton: PMSuperButton!
     @IBOutlet weak var forwardButton: PMSuperButton!
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    
     @IBOutlet weak var gameBalanceLabel: UILabel!
     @IBOutlet weak var teamBalanceLabel: UILabel!
     @IBOutlet weak var roleCountLabel: UILabel!
     
+    
+    // MARK: - Variables
     
     let transition = CircularTransition()
     let reuseIdentifier = "RoleCell"
@@ -38,6 +47,9 @@ class RoleSelectVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainCardView.backgroundColor = UIColor.WerewolfTheme.LightTan
+        headerView.backgroundColor = UIColor.WerewolfTheme.ChocolateBrown
         
         collectionView.delegate = self
         collectionView.dataSource = self

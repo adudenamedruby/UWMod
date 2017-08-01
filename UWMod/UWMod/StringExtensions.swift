@@ -10,6 +10,9 @@ import Foundation
 
 extension String {
     
+    
+    // Format strings for title - split strings into first letter and the rest of
+    // the letters
     func firstLetter() -> String {
         let index = self.index(self.startIndex, offsetBy: 0)
         

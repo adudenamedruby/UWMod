@@ -10,13 +10,20 @@ import UIKit
 
 class AboutVC: UIViewController {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var aboutCard: UIView!
+    @IBOutlet var headerView: UIView!
+    @IBOutlet var bottomView: UIView!
     @IBOutlet weak var returnButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         aboutCard.layer.cornerRadius = 10
+        headerView.backgroundColor = UIColor.WerewolfTheme.ChocolateBrown
+        bottomView.backgroundColor = UIColor.WerewolfTheme.LightTan
+        
         returnButton.layer.cornerRadius = 10
     }
     
