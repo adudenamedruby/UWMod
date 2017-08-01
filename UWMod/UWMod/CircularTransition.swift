@@ -8,6 +8,10 @@
 
 import UIKit
 
+
+/// @abstract This class governs how the cirular transition implemented behaves
+/// To be implemented in a VC, a CircularTransition object must be declared and animationController(forPresented/forDismissed) must also be defined with
+///     .transitionMode     .startingPoint      .circleColour
 class CircularTransition: NSObject {
     
     var circle = UIView()
