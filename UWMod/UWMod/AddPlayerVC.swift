@@ -65,12 +65,16 @@ class AddPlayerVC: UIViewController {
             savedPlayers?.append(text)
             standardDefaults.set(savedPlayers, forKey: PLAYERS)
             notifyTable()
+            self.dismiss(animated: true, completion: {})
+
         } else {
-            let alert = UIAlertController(title: "Error!", message: "Cannot save an empty text field.", preferredStyle: UIAlertControllerStyle.alert)
-            self.present(alert, animated: true, completion: nil)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
+            vc.alertName = "Error"
+            vc.alertText = "Please enter a name."
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
         }
-        
-        self.dismiss(animated: true, completion: {})
     }
     
     @IBAction func dismissButton(_ sender: Any) {

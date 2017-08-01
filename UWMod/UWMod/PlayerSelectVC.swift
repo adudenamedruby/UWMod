@@ -107,11 +107,13 @@ class PlayerSelectVC: UIViewController {
     
     func findSelectedPlayers() -> [String] {
         var playerNames: [String] = []
-        let selectedIndexPaths = tableView.indexPathsForSelectedRows
-        for indexPath in selectedIndexPaths! {
-            let cell = tableView.cellForRow(at: indexPath)
-            let text: String = (cell?.textLabel?.text)!
-            playerNames.append(text)
+        let selectedIndexPaths = tableView.indexPathsForSelectedRows ?? []
+        if selectedIndexPaths.count > 1 {
+            for indexPath in selectedIndexPaths {
+                let cell = tableView.cellForRow(at: indexPath)
+                let text: String = (cell?.textLabel?.text)!
+                playerNames.append(text)
+            }
         }
         
         playerNames.sort()
@@ -121,7 +123,7 @@ class PlayerSelectVC: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        if (self.selectedPlayers.count <= 3) {
+        if ((identifier == "selectRoleSegue") && (self.selectedPlayers.count < 2)) {
             
             let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
