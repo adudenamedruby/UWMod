@@ -6,8 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Old Wise Sketch.otf">
+            <string>OldWiseSketch</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--DayVC-->
         <scene sceneID="LMG-Z8-7Sj">
@@ -21,21 +27,196 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYK-QV-f6Z">
-                                <rect key="frame" x="164" y="277" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="daytime" translatesAutoresizingMaskIntoConstraints="NO" id="zNd-1k-KdH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYK-QV-f6Z">
+                                <rect key="frame" x="212.5" y="567" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8iJ-y2-hhm"/>
+                                    <constraint firstAttribute="width" constant="50" id="q0f-Ms-agR"/>
+                                </constraints>
+                                <state key="normal" image="forwardArrow"/>
                                 <connections>
-                                    <action selector="goAway:" destination="rK0-Z0-k4W" eventType="touchUpInside" id="lag-F6-sDZ"/>
+                                    <action selector="finishDayButton:" destination="rK0-Z0-k4W" eventType="touchUpInside" id="nTg-3Q-Jar"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxX-TW-xh6">
+                                <rect key="frame" x="112.5" y="567" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="AFu-ju-Gbt"/>
+                                    <constraint firstAttribute="height" constant="50" id="hya-KF-cX9"/>
+                                </constraints>
+                                <state key="normal" image="backArrow"/>
+                                <connections>
+                                    <action selector="continueDayButton:" destination="rK0-Z0-k4W" eventType="touchUpInside" id="Bkc-T2-4ap"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBF-QD-oM1">
+                                <rect key="frame" x="58" y="476" width="259" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0G-ME-NL9" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="21.5" height="41"/>
+                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nd Day Phase?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxN-ua-e0J" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="21.5" y="0.0" width="237.5" height="41"/>
+                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4j-ep-MX8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QwX-db-Fid">
+                                        <rect key="frame" x="10" y="20" width="355" height="573.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkz-UD-vyc">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="57"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wro-u3-tqJ">
+                                                        <rect key="frame" x="81.5" y="5.5" width="192.5" height="47"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3og-L8-RSW" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="28.5" height="47"/>
+                                                                <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ay Phase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-aX-9Rv" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="28.5" y="0.0" width="164" height="47"/>
+                                                                <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstItem="wro-u3-tqJ" firstAttribute="centerX" secondItem="Gkz-UD-vyc" secondAttribute="centerX" id="UD0-Lf-hro"/>
+                                                    <constraint firstItem="wro-u3-tqJ" firstAttribute="centerY" secondItem="Gkz-UD-vyc" secondAttribute="centerY" id="b2f-gS-i6C"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="Gkz-UD-vyc" firstAttribute="top" secondItem="QwX-db-Fid" secondAttribute="top" id="BNt-sY-q7a"/>
+                                            <constraint firstAttribute="trailing" secondItem="Gkz-UD-vyc" secondAttribute="trailing" id="ZAF-87-mlb"/>
+                                            <constraint firstItem="Gkz-UD-vyc" firstAttribute="height" secondItem="QwX-db-Fid" secondAttribute="height" multiplier="0.1" id="h72-FP-K43"/>
+                                            <constraint firstItem="Gkz-UD-vyc" firstAttribute="leading" secondItem="QwX-db-Fid" secondAttribute="leading" id="zN6-DH-vPi"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRB-Xk-5WN" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="12" y="607" width="167" height="40"/>
+                                        <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="dpk-k0-T7w"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                        <state key="normal" title="Lynch">
+                                            <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.090196078430000007" green="0.49803921569999998" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="lynchPressed:" destination="rK0-Z0-k4W" eventType="touchUpInside" id="rVr-Lz-MhZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-Co-CpR" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="196" y="607" width="167" height="40"/>
+                                        <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="gXr-JV-KW3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                        <state key="normal" title="End Day">
+                                            <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.090196078430000007" green="0.49803921569999998" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="endDayPressed:" destination="rK0-Z0-k4W" eventType="touchUpInside" id="g25-eL-C4m"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="HRB-Xk-5WN" firstAttribute="width" secondItem="Trs-Co-CpR" secondAttribute="width" id="29n-aa-ZAg"/>
+                                    <constraint firstAttribute="trailing" secondItem="QwX-db-Fid" secondAttribute="trailing" constant="10" id="5K0-dN-Cex"/>
+                                    <constraint firstAttribute="bottom" secondItem="Trs-Co-CpR" secondAttribute="bottom" constant="20" id="6ck-b2-QiI"/>
+                                    <constraint firstItem="QwX-db-Fid" firstAttribute="top" secondItem="q4j-ep-MX8" secondAttribute="top" constant="20" id="BKW-we-HRQ"/>
+                                    <constraint firstItem="Trs-Co-CpR" firstAttribute="width" secondItem="QwX-db-Fid" secondAttribute="width" multiplier="0.47" id="JyY-qe-nmO"/>
+                                    <constraint firstItem="QwX-db-Fid" firstAttribute="height" secondItem="q4j-ep-MX8" secondAttribute="height" multiplier="0.86" id="KMm-kE-pRv"/>
+                                    <constraint firstAttribute="trailing" secondItem="Trs-Co-CpR" secondAttribute="trailing" constant="12" id="Xr1-xP-mqn"/>
+                                    <constraint firstAttribute="bottom" secondItem="HRB-Xk-5WN" secondAttribute="bottom" constant="20" id="qZi-j4-xjx"/>
+                                    <constraint firstItem="HRB-Xk-5WN" firstAttribute="leading" secondItem="q4j-ep-MX8" secondAttribute="leading" constant="12" id="vpD-Ot-FPd"/>
+                                    <constraint firstItem="QwX-db-Fid" firstAttribute="leading" secondItem="q4j-ep-MX8" secondAttribute="leading" constant="10" id="zUw-0L-o46"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WYK-QV-f6Z" firstAttribute="centerX" secondItem="5tg-qX-rTP" secondAttribute="centerX" constant="50" id="2Ky-pB-ioQ"/>
+                            <constraint firstItem="TxX-TW-xh6" firstAttribute="centerX" secondItem="5tg-qX-rTP" secondAttribute="centerX" constant="-50" id="7Yq-tX-Erj"/>
+                            <constraint firstItem="q4j-ep-MX8" firstAttribute="leading" secondItem="5tg-qX-rTP" secondAttribute="leading" id="9rT-aI-gqe"/>
+                            <constraint firstAttribute="trailing" secondItem="zNd-1k-KdH" secondAttribute="trailing" id="C4W-YF-z1c"/>
+                            <constraint firstItem="HBF-QD-oM1" firstAttribute="centerX" secondItem="5tg-qX-rTP" secondAttribute="centerX" id="CEB-j7-rzg"/>
+                            <constraint firstItem="TxX-TW-xh6" firstAttribute="centerY" secondItem="WYK-QV-f6Z" secondAttribute="centerY" id="DVD-iS-dpK"/>
+                            <constraint firstAttribute="trailing" secondItem="q4j-ep-MX8" secondAttribute="trailing" id="IGe-RU-okg"/>
+                            <constraint firstItem="zNd-1k-KdH" firstAttribute="top" secondItem="5tg-qX-rTP" secondAttribute="top" id="Jg9-Pk-ZvI"/>
+                            <constraint firstItem="fcN-BZ-pLS" firstAttribute="top" secondItem="zNd-1k-KdH" secondAttribute="bottom" id="TT0-ix-hIS"/>
+                            <constraint firstItem="WYK-QV-f6Z" firstAttribute="top" secondItem="HBF-QD-oM1" secondAttribute="bottom" constant="50" id="WkE-ga-Bax"/>
+                            <constraint firstItem="fcN-BZ-pLS" firstAttribute="top" secondItem="q4j-ep-MX8" secondAttribute="bottom" id="atc-7a-Pfq"/>
+                            <constraint firstItem="q4j-ep-MX8" firstAttribute="top" secondItem="5tg-qX-rTP" secondAttribute="top" id="bJV-B3-Ybf"/>
+                            <constraint firstItem="fcN-BZ-pLS" firstAttribute="top" secondItem="WYK-QV-f6Z" secondAttribute="bottom" constant="50" id="qiW-86-nvi"/>
+                            <constraint firstItem="zNd-1k-KdH" firstAttribute="leading" secondItem="5tg-qX-rTP" secondAttribute="leading" id="vRt-Nz-2pR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="TxX-TW-xh6" id="m8Q-Wt-ukO"/>
+                        <outlet property="dayContainerView" destination="q4j-ep-MX8" id="Jrz-be-plo"/>
+                        <outlet property="daytimeBackground" destination="zNd-1k-KdH" id="scf-HB-OfZ"/>
+                        <outlet property="endDayButton" destination="Trs-Co-CpR" id="w3l-xe-Ubg"/>
+                        <outlet property="endDayTitleLabel" destination="HBF-QD-oM1" id="Z9e-N8-0If"/>
+                        <outlet property="forwardButton" destination="WYK-QV-f6Z" id="kRS-Qn-0Qg"/>
+                        <outlet property="headerView" destination="Gkz-UD-vyc" id="gYi-eI-hOK"/>
+                        <outlet property="lynchButton" destination="HRB-Xk-5WN" id="N0p-VY-oa9"/>
+                        <outlet property="mainCardView" destination="QwX-db-Fid" id="bwL-xg-svi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FZ-CH-RKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153" y="179"/>
+            <point key="canvasLocation" x="152.80000000000001" y="178.56071964017991"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backArrow" width="512" height="512"/>
+        <image name="daytime" width="1242" height="2208"/>
+        <image name="forwardArrow" width="512" height="512"/>
+    </resources>
 </document>

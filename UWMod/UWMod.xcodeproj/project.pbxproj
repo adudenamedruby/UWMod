@@ -147,12 +147,22 @@
 			name = "Night XIBs";
 			sourceTree = "<group>";
 		};
-		123BD0E71F31489500B99019 /* NightVCs */ = {
+		123BD0E71F31489500B99019 /* NightVIews */ = {
 			isa = PBXGroup;
 			children = (
 				123BD0ED1F31555B00B99019 /* AssignPlayer.swift */,
 			);
-			name = NightVCs;
+			name = NightVIews;
+			sourceTree = "<group>";
+		};
+		123BD0EF1F32456300B99019 /* Night */ = {
+			isa = PBXGroup;
+			children = (
+				123BD0DB1F3000A000B99019 /* MainNightVC.swift */,
+				12EC77E81F2BDAE00026C667 /* NightVC.swift */,
+				123BD0E71F31489500B99019 /* NightVIews */,
+			);
+			name = Night;
 			sourceTree = "<group>";
 		};
 		12D15E1A1F2D2D0B0057905E /* Categories */ = {
@@ -196,9 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				12D15E221F2EA8470057905E /* MainGameVC.swift */,
-				123BD0DB1F3000A000B99019 /* MainNightVC.swift */,
-				12EC77E81F2BDAE00026C667 /* NightVC.swift */,
-				123BD0E71F31489500B99019 /* NightVCs */,
+				123BD0EF1F32456300B99019 /* Night */,
 				12EC77EA1F2BDAEA0026C667 /* DayVC.swift */,
 			);
 			name = GameVCs;

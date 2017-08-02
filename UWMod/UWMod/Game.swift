@@ -67,9 +67,17 @@ class Game {
     }
     
     
+    // MARK: - Common functions
+    
+    func eliminatePlayer(player: Player) {
+        
+    }
+    
+    
     // MARK: - Night functions
     
     func finishNight() {
+        
         if firstNight {
             firstNight = false
         }

@@ -31,6 +31,12 @@ class MainNightVC: UIViewController, EndNightPotocol {
         collectionVC.didMove(toParentViewController: self)
     
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -47,8 +53,11 @@ class MainNightVC: UIViewController, EndNightPotocol {
     }
     
     @IBAction func acceptNightEnd(_ sender: Any) {
-        endNightGameCleanup()
-        self.dismiss(animated: true, completion: nil)
+        GAME.finishNight()
+        self.dismiss(animated: true, completion: {
+            self.containerView.isHidden = false
+            self.containerView.alpha = 1
+        })
     }
     
     @IBAction func goBack(_ sender: Any) {
@@ -69,14 +78,5 @@ class MainNightVC: UIViewController, EndNightPotocol {
             self.containerView.isHidden = false
             self.containerView.fadeIn()
         })
-    }
-    
-    func endNightGameCleanup() {
-        
-        GAME.currentNight += 1
-        
-        if GAME.firstNight {
-            GAME.firstNight = false
-        }
     }
 }
