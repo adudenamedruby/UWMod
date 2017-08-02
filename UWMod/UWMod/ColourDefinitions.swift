@@ -25,8 +25,11 @@ extension UIColor {
 
 extension UIColor {
     struct WerewolfTheme {
-        static let LightTan = UIColor(netHex: 0xFCEFC5)
-        static let ChocolateBrown = UIColor(netHex: 0x3F2B23)
-        static let BloodRed = UIColor(netHex: 0xffffff)
+        static let LightTan = UIColor(netHex: 0xEAE3D6)
+        static let DarkTan = UIColor(netHex: 0xB7A588)
+        static let ChocolateBrown = UIColor(netHex: 0x4F4235)
+        static let BloodRed = UIColor(netHex: 0x9E1422)
+        static let TurqoiseGreen = UIColor(netHex: 0x21B6A8)
+        static let MutedGreen = UIColor(netHex: 0x177F75)
     }
 }

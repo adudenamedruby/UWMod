@@ -41,12 +41,10 @@ class PlayerSelectVC: UIViewController {
         tableView.dataSource = self
         tableView.allowsMultipleSelection = true
 
-        mainCard.layer.cornerRadius = 10
-        mainCard.backgroundColor = UIColor.WerewolfTheme.LightTan
-        headerView.backgroundColor = UIColor.WerewolfTheme.ChocolateBrown
-        
-        addPlayersButton.layer.cornerRadius = 10
-        
+        mainCard.layer.cornerRadius = STYLE.CornerRadius
+        mainCard.backgroundColor = STYLE.Tan
+        headerView.backgroundColor = STYLE.Brown
+                
         NotificationCenter.default.addObserver(self, selector: #selector(loadPlayers),
                                                name: NSNotification.Name(rawValue: "reloadTable"),
                                                object: nil)
@@ -178,6 +176,7 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         
         let row = indexPath.row
         cell.textLabel?.text = savedPlayers[row]
+        cell.textLabel?.textColor = STYLE.Brown
         cell.accessoryType = cell.isSelected ? .checkmark : .none
         cell.selectionStyle = .none
         

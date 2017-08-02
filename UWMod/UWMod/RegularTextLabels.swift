@@ -22,7 +22,7 @@ class RegularTextTanLabel: UILabel {
     }
     
     func commonInit(){
-        self.textColor = UIColor.WerewolfTheme.LightTan
+        self.textColor = STYLE.Tan
     }
 
 }
@@ -41,7 +41,7 @@ class RegularTextBrownLabel: UILabel {
     }
     
     func commonInit(){
-        self.textColor = UIColor.WerewolfTheme.ChocolateBrown
+        self.textColor = STYLE.Brown
     }
     
 }
@@ -60,7 +60,7 @@ class RegularTextRedLabel: UILabel {
     }
     
     func commonInit(){
-        self.textColor = UIColor.WerewolfTheme.BloodRed
+        self.textColor = STYLE.Red
     }
     
 }

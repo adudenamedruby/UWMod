@@ -11,9 +11,12 @@ import UIKit
 class NightCell: TisprCardStackViewCell {
     
     @IBOutlet weak var cardBorder: UIView!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var roleIconImage: UIImageView!
     @IBOutlet weak var titleFirstLetterLabel: UILabel!
     @IBOutlet weak var titleRemainingLabel: UILabel!
+    @IBOutlet weak var playerNameLabel: RegularTextBrownLabel!
     @IBOutlet weak var roleDescritpionLabel: UILabel!
     
     var player: Player?
@@ -21,7 +24,9 @@ class NightCell: TisprCardStackViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        cardBorder.layer.cornerRadius = 10
+        cardBorder.layer.cornerRadius = STYLE.CornerRadius
+        cardBorder.backgroundColor = STYLE.Tan
+        headerView.backgroundColor = STYLE.Brown
     }
     
     func configureCell() {
@@ -29,5 +34,29 @@ class NightCell: TisprCardStackViewCell {
         titleFirstLetterLabel.text = player?.role.name.firstLetter()
         titleRemainingLabel.text = player?.role.name.restOfString()
         roleDescritpionLabel.text = player?.role.description
+        loadPlayerName()
+        
+        if !(player?.playerAssigned)! {
+            assignPlayer()
+        } else {
+            for subUIView in containerView.subviews as [UIView] {
+                subUIView.removeFromSuperview()
+            }
+        }
     }
+    
+    func assignPlayer() {
+        let localizedActionView = AssignPlayer(frame: CGRect(x: 0, y: 0, width: 310, height: 140))
+        localizedActionView.player = player
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    func loadPlayerName() {
+        if (player?.playerAssigned)! {
+            playerNameLabel.text = "(\((player?.name)!))"
+        } else {
+            playerNameLabel.text = ""
+        }
+    }
+    
 }

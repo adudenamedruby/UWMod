@@ -16,6 +16,7 @@ class Player {
     var mute: Bool
     var canVote: Bool
     var nightActivePlayer: Bool
+    var playerAssigned: Bool
     
     // Role affected states
     var protected: Bool
@@ -36,6 +37,7 @@ class Player {
         self.mute = false
         self.canVote = true
         self.nightActivePlayer = true
+        self.playerAssigned = false
         
         self.protected = false
         self.hynotized = false

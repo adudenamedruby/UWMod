@@ -15,6 +15,8 @@ class Game {
     var currentDay: Int
     var nighttimeEliminations: Int
     var daytimeEliminations: Int
+    
+    /// Player names before they are assigned
     var availableRoster: [String]
     var availablePlayers: [Player]
     var nightActors: [Player]
@@ -50,8 +52,9 @@ class Game {
     
     // MARK: - Player-related functions
     
-    func assignRoles(player: Player, role: Role) {
-        
+    func assignRoles(player: Player, name: String) {
+        player.name = name
+        player.playerAssigned = true
     }
     
     func eliminatePlayer(victim: Player) {

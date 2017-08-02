@@ -11,6 +11,7 @@ import UIKit
 class AlertsVC: UIViewController {
 
     @IBOutlet weak var mainAlertView: UIView!
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var alertTitleFirstLetter: UILabel!
     @IBOutlet weak var alertTitleRemainingLabel: UILabel!
     @IBOutlet weak var alertTextLabel: UILabel!
@@ -21,10 +22,14 @@ class AlertsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mainAlertView.layer.cornerRadius = 10
+        mainAlertView.layer.cornerRadius = STYLE.CornerRadius
+        mainAlertView.backgroundColor = STYLE.Tan
+        headerView.backgroundColor = STYLE.Brown
         
         alertTitleFirstLetter.text = alertName?.firstLetter()
+        alertTitleFirstLetter.textColor = STYLE.Red
         alertTitleRemainingLabel.text = alertName?.restOfString()
+        alertTitleRemainingLabel.textColor = STYLE.Tan
         
         alertTextLabel.text = alertText
     }

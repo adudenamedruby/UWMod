@@ -21,13 +21,16 @@ class AddPlayerVC: UIViewController {
     
     let standardDefaults = UserDefaults.standard
     var savedPlayers: [String]?
+    
+    
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainCard.backgroundColor = UIColor.WerewolfTheme.LightTan
-        headerView.backgroundColor = UIColor.WerewolfTheme.ChocolateBrown
-        mainCard.layer.cornerRadius = 10
+        mainCard.backgroundColor = STYLE.Tan
+        headerView.backgroundColor = STYLE.Brown
+        mainCard.layer.cornerRadius = STYLE.CornerRadius
         
         nameField.delegate = self
         
@@ -39,6 +42,11 @@ class AddPlayerVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
                                                name: NSNotification.Name.UIKeyboardWillHide,
                                                object: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     
@@ -60,14 +68,15 @@ class AddPlayerVC: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
+    // MARK: - Notifications
     
     func notifyTable() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTable"), object: nil)
     }
+    
+    
+    // MARK: - Button functionality
     
     @IBAction func savePlayerButton(_ sender: Any) {
         if let text = nameField.text, !text.isEmpty {

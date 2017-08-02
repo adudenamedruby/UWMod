@@ -22,7 +22,7 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainCardView.layer.cornerRadius = 10
+        mainCardView.layer.cornerRadius = STYLE.CornerRadius
         
         mainCardView.backgroundColor = UIColor.WerewolfTheme.LightTan
         brownView.backgroundColor = UIColor.WerewolfTheme.ChocolateBrown

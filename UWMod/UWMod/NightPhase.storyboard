@@ -97,41 +97,60 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agw-cW-VDg">
-                                                    <rect key="frame" x="130.5" y="234" width="70.5" height="52.5"/>
+                                                    <rect key="frame" x="62.5" y="234" width="206.5" height="23.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-Pz-mUn" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="49" height="52.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="49" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="50"/>
                                                             <color key="textColor" red="0.64536405460000001" green="0.1161611183" blue="0.12310011999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="DPi-9e-CxI" customClass="OldTextBrownLabel" customModule="UWMod" customModuleProvider="target">
-                                                            <rect key="frame" x="49" y="0.0" width="21.5" height="52.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ewewolf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="DPi-9e-CxI" customClass="OldTextBrownLabel" customModule="UWMod" customModuleProvider="target">
+                                                            <rect key="frame" x="49" y="0.0" width="157.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="50"/>
                                                             <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-3n-Ybh" customClass="RegularTextBrownLabel" customModule="UWMod" customModuleProvider="target">
-                                                    <rect key="frame" x="20.5" y="321.5" width="289.5" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(John)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="nMC-fN-ITG" customClass="RegularTextBrownLabel" customModule="UWMod" customModuleProvider="target">
+                                                    <rect key="frame" x="136" y="257.5" width="57" height="20"/>
                                                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                     <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-3n-Ybh" customClass="RegularTextBrownLabel" customModule="UWMod" customModuleProvider="target">
+                                                    <rect key="frame" x="20.5" y="287.5" width="289.5" height="98.5"/>
+                                                    <string key="text">Once per game following the elimination of a Werewolf during the day, you may turn the Werewolves target into a Werewolf instead of eliminating him.</string>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                                    <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0p5-D9-xB8">
+                                                    <rect key="frame" x="10" y="403" width="310" height="140"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="140" id="5XA-oK-cVl"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
-                                                <constraint firstItem="ZIa-3n-Ybh" firstAttribute="top" secondItem="agw-cW-VDg" secondAttribute="bottom" constant="35" id="4fu-zF-Ohr"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZIa-3n-Ybh" secondAttribute="bottom" constant="100" id="N2R-uC-EM4"/>
+                                                <constraint firstItem="ZIa-3n-Ybh" firstAttribute="top" secondItem="agw-cW-VDg" secondAttribute="bottom" constant="30" id="4fu-zF-Ohr"/>
+                                                <constraint firstItem="0p5-D9-xB8" firstAttribute="centerX" secondItem="GMg-MV-EH6" secondAttribute="centerX" id="5GM-md-SLm"/>
+                                                <constraint firstItem="0p5-D9-xB8" firstAttribute="width" secondItem="GMg-MV-EH6" secondAttribute="width" multiplier="0.94" id="Dmk-23-fTB"/>
+                                                <constraint firstAttribute="bottom" secondItem="0p5-D9-xB8" secondAttribute="bottom" constant="22" id="G9y-G5-aW1"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZIa-3n-Ybh" secondAttribute="trailing" constant="20" id="REy-lb-TCw"/>
                                                 <constraint firstItem="agw-cW-VDg" firstAttribute="top" secondItem="OPT-mT-Ica" secondAttribute="bottom" constant="7.5" id="auY-aY-sMJ"/>
                                                 <constraint firstItem="ZIa-3n-Ybh" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" constant="20" id="dDE-Hz-Mca"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZIa-3n-Ybh" secondAttribute="bottom" constant="179" id="dgN-i2-kOq"/>
                                                 <constraint firstItem="OPT-mT-Ica" firstAttribute="top" secondItem="GMg-MV-EH6" secondAttribute="top" id="fEY-jT-Bux"/>
                                                 <constraint firstAttribute="trailing" secondItem="OPT-mT-Ica" secondAttribute="trailing" id="hVp-4i-aEJ"/>
                                                 <constraint firstItem="OPT-mT-Ica" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" id="ipE-R8-On4"/>
+                                                <constraint firstItem="nMC-fN-ITG" firstAttribute="centerX" secondItem="GMg-MV-EH6" secondAttribute="centerX" id="lxI-m9-wWc"/>
                                                 <constraint firstItem="agw-cW-VDg" firstAttribute="centerX" secondItem="GMg-MV-EH6" secondAttribute="centerX" id="mDN-2C-KFp"/>
                                                 <constraint firstItem="OPT-mT-Ica" firstAttribute="height" secondItem="GMg-MV-EH6" secondAttribute="height" multiplier="0.4" id="obY-Jv-Z2n"/>
+                                                <constraint firstItem="nMC-fN-ITG" firstAttribute="top" secondItem="agw-cW-VDg" secondAttribute="bottom" id="wpU-h9-yPl"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -145,6 +164,9 @@
                                 <size key="customSize" width="330" height="565"/>
                                 <connections>
                                     <outlet property="cardBorder" destination="GMg-MV-EH6" id="mKm-fr-9R7"/>
+                                    <outlet property="containerView" destination="0p5-D9-xB8" id="eUW-y2-QYB"/>
+                                    <outlet property="headerView" destination="OPT-mT-Ica" id="TH3-Q5-xGp"/>
+                                    <outlet property="playerNameLabel" destination="nMC-fN-ITG" id="Rvs-SE-6bI"/>
                                     <outlet property="roleDescritpionLabel" destination="ZIa-3n-Ybh" id="7bb-d9-21P"/>
                                     <outlet property="roleIconImage" destination="ADL-2L-x3K" id="NMk-UR-rtn"/>
                                     <outlet property="titleFirstLetterLabel" destination="sdS-Pz-mUn" id="sY8-pn-kt7"/>

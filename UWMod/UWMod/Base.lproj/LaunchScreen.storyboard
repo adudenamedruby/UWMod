@@ -24,15 +24,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FxV-dQ-G5k">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
-                                <color key="backgroundColor" red="0.24842420312033431" green="0.16904838323362154" blue="0.13596698558478604" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAy-2K-hLF">
-                                <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
-                                <color key="backgroundColor" red="0.9882352941176471" green="0.93533202956281247" blue="0.77355562365100883" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="werewolf" translatesAutoresizingMaskIntoConstraints="NO" id="Idf-sa-yrh">
-                                <rect key="frame" x="76" y="179.5" width="225" height="307"/>
+                                <rect key="frame" x="75" y="179.5" width="225" height="307"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Idf-sa-yrh" secondAttribute="height" multiplier="375:512" id="VvA-5V-3e8"/>
                                 </constraints>
@@ -43,14 +39,10 @@
                             <constraint firstAttribute="trailing" secondItem="FxV-dQ-G5k" secondAttribute="trailing" id="1G3-DP-gd6"/>
                             <constraint firstItem="FxV-dQ-G5k" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="1W6-Ru-NjN"/>
                             <constraint firstItem="Idf-sa-yrh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4I5-cM-onp"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="aAy-2K-hLF" secondAttribute="bottom" id="Up6-oR-Vbj"/>
-                            <constraint firstItem="aAy-2K-hLF" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.5" id="WTM-Fe-0Je"/>
-                            <constraint firstItem="aAy-2K-hLF" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="cgb-Cy-TAW"/>
-                            <constraint firstItem="FxV-dQ-G5k" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.5" id="eJo-sY-eQA"/>
+                            <constraint firstItem="FxV-dQ-G5k" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="eJo-sY-eQA"/>
                             <constraint firstItem="FxV-dQ-G5k" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="hHZ-Gt-YY6"/>
                             <constraint firstItem="Idf-sa-yrh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hPf-rb-L8j"/>
                             <constraint firstItem="Idf-sa-yrh" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.6" id="yCx-N8-oa6"/>
-                            <constraint firstAttribute="trailing" secondItem="aAy-2K-hLF" secondAttribute="trailing" id="yWZ-UO-Rox"/>
                         </constraints>
                     </view>
                 </viewController>

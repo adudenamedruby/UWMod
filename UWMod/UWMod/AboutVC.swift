@@ -20,11 +20,10 @@ class AboutVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        aboutCard.layer.cornerRadius = 10
+        aboutCard.layer.cornerRadius = STYLE.CornerRadius
         headerView.backgroundColor = UIColor.WerewolfTheme.ChocolateBrown
         bottomView.backgroundColor = UIColor.WerewolfTheme.LightTan
         
-        returnButton.layer.cornerRadius = 10
     }
     
     @IBAction func dismissAboutVC(_ sender: Any) {

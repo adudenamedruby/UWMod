@@ -21,8 +21,14 @@ class RoleSelectionCell: UICollectionViewCell {
     
     
     func configureCell() {
-        borderView.layer.cornerRadius = 10
-        mainView.layer.cornerRadius = 10
-        imageBackgroundViewTop.layer.cornerRadius = 10
+        borderView.layer.cornerRadius = STYLE.CornerRadius
+        mainView.layer.cornerRadius = STYLE.CornerRadius
+        imageBackgroundViewTop.layer.cornerRadius = STYLE.CornerRadius
+        
+        borderView.backgroundColor = STYLE.Brown
+        mainView.backgroundColor = STYLE.Tan
+        imageBackgroundViewTop.backgroundColor = STYLE.Brown
+        imageBackgroundView.backgroundColor = STYLE.Brown
+        
     }
 }

@@ -64,6 +64,7 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
     }
     
     func cardDidChangeState(_ cardIndex: Int) {
+        collectionView?.reloadData()
     }
     
 }

@@ -48,8 +48,9 @@ class RoleSelectVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainCardView.backgroundColor = UIColor.WerewolfTheme.LightTan
-        headerView.backgroundColor = UIColor.WerewolfTheme.ChocolateBrown
+        mainCardView.layer.cornerRadius = STYLE.CornerRadius
+        mainCardView.backgroundColor = STYLE.Tan
+        headerView.backgroundColor = STYLE.Brown
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -58,7 +59,6 @@ class RoleSelectVC: UIViewController {
         updateRoleCountLabel()
         
         gameBalanceLabel.text = String(gameBalance)
-        self.mainCardView.layer.cornerRadius = 10
     }
     
     override func didReceiveMemoryWarning() {
@@ -117,7 +117,6 @@ class RoleSelectVC: UIViewController {
             let newPlayer = Player(name: role.name, role: role)
             self.gameActors.append(newPlayer)
         }
-        
     }
     
     
