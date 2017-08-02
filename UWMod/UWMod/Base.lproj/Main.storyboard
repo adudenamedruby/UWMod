@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="284.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ultimate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juw-fP-CU1" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="66" y="211.5" width="223.5" height="70"/>
+                                                <rect key="frame" x="76" y="218.5" width="203.5" height="63"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="60"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -51,16 +51,16 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxG-Lc-QGQ">
-                                        <rect key="frame" x="38" y="289.5" width="280" height="78.5"/>
+                                        <rect key="frame" x="48" y="289.5" width="260.5" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFk-jz-icU" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="62.5" height="78.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="65.5" height="70"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="67"/>
                                                 <color key="textColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erewolf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3c9-GO-c9q" customClass="OldTextBrownLabel" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="62.5" y="0.0" width="217.5" height="78.5"/>
+                                                <rect key="frame" x="65.5" y="0.0" width="195" height="70"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="67"/>
                                                 <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moderator Tool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKv-XV-DKN">
-                                        <rect key="frame" x="115" y="368" width="126" height="20"/>
+                                        <rect key="frame" x="115" y="359.5" width="126" height="20"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                         <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -203,16 +203,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="73"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J54-xu-uYd">
-                                                <rect key="frame" x="49" y="23" width="242" height="44.5"/>
+                                                <rect key="frame" x="56" y="16.5" width="226.5" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk2-db-F9n" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.5" width="25" height="44.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="23" height="40"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                         <color key="textColor" red="0.64536405460000001" green="0.1161611183" blue="0.12310011999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfT-u5-Wiw" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="25" y="0.5" width="217" height="44.5"/>
+                                                        <rect key="frame" x="23" y="0.0" width="203.5" height="40"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                         <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -223,7 +223,7 @@
                                         <color key="backgroundColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="J54-xu-uYd" firstAttribute="centerX" secondItem="czc-ce-jJH" secondAttribute="centerX" id="kRi-EA-C4d"/>
-                                            <constraint firstItem="J54-xu-uYd" firstAttribute="centerY" secondItem="czc-ce-jJH" secondAttribute="centerY" constant="8" id="rDX-RP-2nb"/>
+                                            <constraint firstItem="J54-xu-uYd" firstAttribute="centerY" secondItem="czc-ce-jJH" secondAttribute="centerY" id="rDX-RP-2nb"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCc-1T-bIt" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
@@ -384,16 +384,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="337" height="73"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1QH-vr-paT">
-                                                <rect key="frame" x="63" y="22.5" width="213" height="44.5"/>
+                                                <rect key="frame" x="67.5" y="16.5" width="202.5" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zum-nw-VZT" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.5" width="25" height="44.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="23" height="40"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                         <color key="textColor" red="0.64536405460000001" green="0.1161611183" blue="0.12310011999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Roles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tuq-TL-lce" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="25" y="0.5" width="188" height="44.5"/>
+                                                        <rect key="frame" x="23" y="0.0" width="179.5" height="40"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                         <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -403,7 +403,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.24705882352941178" green="0.16862745098039217" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="1QH-vr-paT" firstAttribute="centerY" secondItem="gJa-nz-lZZ" secondAttribute="centerY" constant="8" id="Lur-6W-faD"/>
+                                            <constraint firstItem="1QH-vr-paT" firstAttribute="centerY" secondItem="gJa-nz-lZZ" secondAttribute="centerY" id="Lur-6W-faD"/>
                                             <constraint firstItem="1QH-vr-paT" firstAttribute="centerX" secondItem="gJa-nz-lZZ" secondAttribute="centerX" id="WRD-hz-Ngb"/>
                                         </constraints>
                                     </view>
@@ -657,16 +657,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="73"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkk-Kl-bJ9">
-                                                <rect key="frame" x="44" y="27.5" width="212.5" height="34.5"/>
+                                                <rect key="frame" x="44" y="19.5" width="212.5" height="34.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMq-jK-DCy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="32.5" height="34.5"/>
+                                                        <rect key="frame" x="0.0" y="0.5" width="32.5" height="34.5"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="33"/>
                                                         <color key="textColor" red="0.64536405460000001" green="0.1161611183" blue="0.12310011999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bout UWMod" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQv-Nl-JmZ">
-                                                        <rect key="frame" x="32.5" y="0.0" width="180" height="34.5"/>
+                                                        <rect key="frame" x="32.5" y="0.5" width="180" height="34.5"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="33"/>
                                                         <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -677,7 +677,7 @@
                                         <color key="backgroundColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="Rkk-Kl-bJ9" firstAttribute="centerX" secondItem="DZL-c8-WhM" secondAttribute="centerX" id="UWe-Bh-4zT"/>
-                                            <constraint firstItem="Rkk-Kl-bJ9" firstAttribute="centerY" secondItem="DZL-c8-WhM" secondAttribute="centerY" constant="8" id="fB1-WH-WWX"/>
+                                            <constraint firstItem="Rkk-Kl-bJ9" firstAttribute="centerY" secondItem="DZL-c8-WhM" secondAttribute="centerY" id="fB1-WH-WWX"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjZ-m0-V0c">
@@ -847,7 +847,7 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rog-iF-BcL">
-                                                <rect key="frame" x="50" y="22" width="201" height="42"/>
+                                                <rect key="frame" x="50" y="14" width="201" height="42"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cq0-Vn-sMf" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="39" height="42"/>
@@ -866,7 +866,7 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
                                         </subviews>
                                         <color key="backgroundColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="Rog-iF-BcL" firstAttribute="centerY" secondItem="7un-Yq-MCI" secondAttribute="centerY" constant="8" id="aOv-3J-pCk"/>
+                                            <constraint firstItem="Rog-iF-BcL" firstAttribute="centerY" secondItem="7un-Yq-MCI" secondAttribute="centerY" id="aOv-3J-pCk"/>
                                             <constraint firstItem="Rog-iF-BcL" firstAttribute="centerX" secondItem="7un-Yq-MCI" secondAttribute="centerX" id="wFH-Do-uLm"/>
                                         </constraints>
                                     </view>

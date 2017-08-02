@@ -170,14 +170,17 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! RoleSelectionCell
-
         
         let index = indexPath.row
         
         cell.firstLetter.text = ALL_GAME_ROLES[index].name.firstLetter()
         cell.remainingCharacters.text = ALL_GAME_ROLES[index].name.restOfString()
         cell.roleImage.image = ALL_GAME_ROLES[index].image
-        cell.alpha = 0.5
+        if cell.isSelected {
+            cell.alpha = 1
+        } else {
+            cell.alpha = 0.5
+        }
         cell.configureCell()
         
         return cell
