@@ -10,16 +10,22 @@ import UIKit
 import SpriteKit
 
 class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
-
+    
     @IBOutlet weak var aboutButton: UIButton!
+    
     @IBOutlet var mainView: UIView!
+    @IBOutlet var mainCardView: UIView!
     @IBOutlet weak var brownView: UIView!
-    @IBOutlet weak var bottomView: UIView!
     
     let transition = CircularTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainCardView.layer.cornerRadius = STYLE.CornerRadius
+        
+        mainCardView.backgroundColor = UIColor.WerewolfTheme.LightTan
+        brownView.backgroundColor = UIColor.WerewolfTheme.ChocolateBrown
 
         //presentSmoke()
     }
@@ -37,7 +43,7 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
         let sk: SKView = SKView()
         sk.frame = mainView.bounds
         sk.backgroundColor = .clear
-        bottomView.addSubview(sk)
+        mainCardView.addSubview(sk)
         
         let scene: SKScene = SKScene(size: mainView.bounds.size)
         scene.scaleMode = .aspectFit

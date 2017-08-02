@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum UWTeam: String {
     case TeamWerewolf = "Werewolf"
@@ -20,17 +21,31 @@ enum UWTeam: String {
     case TeamVamprie = "Vampire"
     case TeamZombie = "Zombie"
     case TeamBoegyman = "Boegyman"
-    case UnknownTeam = "No Team"
 }
 
-enum UWNights: Int {
-    case EveryNight = 0
-    case First = 1
-    case Second = 2
-    case Third = 3
+enum UWNights {
+    case Never
+    case EveryNight
+    case First
+    case Second
+    case Third
+}
+
+struct StyleConstants {
+    
+    let CornerRadius = CGFloat(15)
+    
+    let Brown = UIColor.WerewolfTheme.ChocolateBrown
+    let Tan = UIColor.WerewolfTheme.LightTan
+    let Beige = UIColor.WerewolfTheme.DarkTan
+    let Red = UIColor.WerewolfTheme.BloodRed
+    let Turqoise = UIColor.WerewolfTheme.TurqoiseGreen
+    let Green = UIColor.WerewolfTheme.MutedGreen
 }
 
 
 // Global Variables
+let localizedActionFinishedNotification = "localizedActionFinishedNotification"
 let PLAYERS = "UserPlayers"
-var GAME: Game = Game(availableRoles: [], availablePlayers: [])
+let STYLE = StyleConstants()
+var GAME: Game = Game(availableRoster: [], availablePlayers: [])

@@ -16,19 +16,31 @@ enum RoleUpdateReason {
 
 class RoleSelectVC: UIViewController {
     
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var mainCardView: UIView!
+    @IBOutlet var headerView: UIView!
+    
     @IBOutlet weak var backButton: PMSuperButton!
     @IBOutlet weak var forwardButton: PMSuperButton!
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    
     @IBOutlet weak var gameBalanceLabel: UILabel!
     @IBOutlet weak var teamBalanceLabel: UILabel!
+    @IBOutlet weak var roleCountLabel: UILabel!
+    
+    
+    // MARK: - Variables
     
     let transition = CircularTransition()
     let reuseIdentifier = "RoleCell"
     
     var gameBalance: Int = 0
-    var players: [Player]?
+    var players: [String]?
     var selectedRoles: [Role] = []
+    var gameActors: [Player] = []
     
     
     // MARK: - View lifetime
@@ -36,12 +48,17 @@ class RoleSelectVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainCardView.layer.cornerRadius = STYLE.CornerRadius
+        mainCardView.backgroundColor = STYLE.Tan
+        headerView.backgroundColor = STYLE.Brown
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = true
         
+        updateRoleCountLabel()
+        
         gameBalanceLabel.text = String(gameBalance)
-        self.mainCardView.layer.cornerRadius = 10
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,41 +103,57 @@ class RoleSelectVC: UIViewController {
         }
     }
     
+    func updateRoleCountLabel() {
+        let roleCount = collectionView.indexPathsForSelectedItems?.count
+
+        roleCountLabel.text = "\(roleCount!)/\(players!.count)"
+    }
+    
+    // MARK: - Player prep for game start
+    
+    func createPlayers() {
+        
+        for role in self.selectedRoles {
+            let newPlayer = Player(name: role.name, role: role)
+            self.gameActors.append(newPlayer)
+        }
+    }
+    
     
     // MARK: - Navigation Buttons
     
     @IBAction func startGameButton(_ sender: Any) {
-        GAME = Game(availableRoles: self.selectedRoles,
-                    availablePlayers: self.players!)
         
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let masterGameView = storyboard.instantiateViewController(withIdentifier: "MasterGameWindow") as! MainGameVC
-        let presentingVC = self.presentingViewController
-        self.dismiss(animated: false, completion: { () -> Void   in
-            presentingVC!.present(masterGameView, animated: false, completion: nil)
-            UIApplication.shared.keyWindow?.rootViewController = masterGameView
-        })
+        if (self.selectedRoles.count < (self.players?.count)!) {
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
+            vc.alertName = "Warning"
+            vc.alertText = "You do not have enough roles for the number of players in the game."
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
+            
+        } else {
+        
+            createPlayers()
+            GAME = Game(availableRoster: players!, availablePlayers: gameActors)
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let masterGameView = storyboard.instantiateViewController(withIdentifier: "MasterGameWindow") as! MainGameVC
+            let presentingVC = self.presentingViewController
+            let masterParentVC = presentingVC?.presentingViewController
+            self.dismiss(animated: false, completion: { () -> Void   in
+                presentingVC!.dismiss(animated: false, completion: { () -> Void in
+                masterParentVC!.present(masterGameView, animated: false, completion: nil)
+                })
+            })
+        }
     }
     
     @IBAction func dismissButton(_ sender: Any) {
         self.players?.removeAll()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "returnToPlayerSelect"), object: nil)
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    
-    // MARK: - Label text manipulation
-    
-    func firstLetter(text: String) -> String {
-        let index = text.index(text.startIndex, offsetBy: 0)
-        
-        return String(text[index])
-    }
-    
-    func restOfString(text: String) -> String {
-        let index = text.index(text.startIndex, offsetBy: 1)
-        
-        return text.substring(from: index)
     }
 }
 
@@ -137,14 +170,17 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! RoleSelectionCell
-
         
         let index = indexPath.row
         
-        cell.firstLetter.text = firstLetter(text: ALL_GAME_ROLES[index].name)
-        cell.remainingCharacters.text = restOfString(text: ALL_GAME_ROLES[index].name)
+        cell.firstLetter.text = ALL_GAME_ROLES[index].name.firstLetter()
+        cell.remainingCharacters.text = ALL_GAME_ROLES[index].name.restOfString()
         cell.roleImage.image = ALL_GAME_ROLES[index].image
-        cell.alpha = 0.5
+        if cell.isSelected {
+            cell.alpha = 1
+        } else {
+            cell.alpha = 0.5
+        }
         cell.configureCell()
         
         return cell
@@ -153,10 +189,25 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.cellForItem(at: indexPath)?.alpha = 1
         updateGameBalance()
+        
+        let selectedIndexPaths = collectionView.indexPathsForSelectedItems
+        
+        updateRoleCountLabel()
+        
+        if (selectedIndexPaths?.count)! > (players?.count)! {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
+            vc.modalTransitionStyle = .crossDissolve
+            vc.alertName = "Warning"
+            vc.alertText = "You've selected more roles than there are players in the game."
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         collectionView.cellForItem(at: indexPath)?.alpha = 0.5
+        
+        updateRoleCountLabel()
         updateGameBalance()
     }
 }

@@ -10,12 +10,13 @@ import Foundation
 
 class Player {
     var name: String
-    var role: Role?
+    var role: Role
     var alive: Bool
     var team: [UWTeam]
     var mute: Bool
     var canVote: Bool
     var nightActivePlayer: Bool
+    var playerAssigned: Bool
     
     // Role affected states
     var protected: Bool
@@ -27,13 +28,16 @@ class Player {
     var canBeMutedBySpellcaster: Bool
     var hasBrains: Bool
     
-    init (name: String) {
+    init (name: String, role: Role) {
         self.name = name
+        self.role = role
+        self.team = [role.team]
+
         self.alive = true
-        self.team = [.UnknownTeam]
         self.mute = false
         self.canVote = true
         self.nightActivePlayer = true
+        self.playerAssigned = false
         
         self.protected = false
         self.hynotized = false
@@ -45,10 +49,8 @@ class Player {
         self.hasBrains = true
     }
     
-    func assignRole(role: Role) {
-        self.role = role
-        self.team.removeFirst()
-        addToTeam(team: role.team)
+    func assignPlayer(playerName: String) {
+        self.name = playerName
     }
     
     func addToTeam(team: UWTeam) {

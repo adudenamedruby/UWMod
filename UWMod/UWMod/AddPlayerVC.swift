@@ -10,18 +10,30 @@ import UIKit
 
 class AddPlayerVC: UIViewController {
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var mainCard: UIView!
+    @IBOutlet var headerView: UIView!
+    
+    
+    // MARK: - Variables
     
     let standardDefaults = UserDefaults.standard
     var savedPlayers: [String]?
+    
+    
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainCard.backgroundColor = STYLE.Tan
+        headerView.backgroundColor = STYLE.Brown
+        mainCard.layer.cornerRadius = STYLE.CornerRadius
+        
         nameField.delegate = self
         
-        mainCard.layer.cornerRadius = 10
         savedPlayers = standardDefaults.object(forKey: PLAYERS) as? [String] ?? [String]()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
@@ -30,6 +42,11 @@ class AddPlayerVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
                                                name: NSNotification.Name.UIKeyboardWillHide,
                                                object: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     
@@ -51,26 +68,31 @@ class AddPlayerVC: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
+    // MARK: - Notifications
     
     func notifyTable() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTable"), object: nil)
     }
+    
+    
+    // MARK: - Button functionality
     
     @IBAction func savePlayerButton(_ sender: Any) {
         if let text = nameField.text, !text.isEmpty {
             savedPlayers?.append(text)
             standardDefaults.set(savedPlayers, forKey: PLAYERS)
             notifyTable()
+            self.dismiss(animated: true, completion: {})
+
         } else {
-            let alert = UIAlertController(title: "Error!", message: "Cannot save an empty text field.", preferredStyle: UIAlertControllerStyle.alert)
-            self.present(alert, animated: true, completion: nil)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
+            vc.alertName = "Error"
+            vc.alertText = "Please enter a name."
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
         }
-        
-        self.dismiss(animated: true, completion: {})
     }
     
     @IBAction func dismissButton(_ sender: Any) {

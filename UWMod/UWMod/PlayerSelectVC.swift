@@ -10,20 +10,29 @@ import UIKit
 
 class PlayerSelectVC: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var mainCard: UIView!
+    @IBOutlet var headerView: UIView!
+    
     @IBOutlet weak var addPlayersButton: UIButton!
-    @IBOutlet weak var playerNumberLabel: UILabel!
     @IBOutlet weak var forwardButton: PMSuperButton!
+    
+    @IBOutlet weak var playerNumberLabel: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Variables
     
     let defaults = UserDefaults.standard
     let transition = CircularTransition()
     let textCellIndentifier = "PlayerNameCell"
 
-
     var savedPlayers: [String] = ["Ted Alspach"]
     var villageSize: Int = 0
-    var selectedPlayers: [Player] = []
+    var selectedPlayers: [String] = []
+    
+    
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,35 +41,27 @@ class PlayerSelectVC: UIViewController {
         tableView.dataSource = self
         tableView.allowsMultipleSelection = true
 
-        mainCard.layer.cornerRadius = 10
-        addPlayersButton.layer.cornerRadius = 10
-        
+        mainCard.layer.cornerRadius = STYLE.CornerRadius
+        mainCard.backgroundColor = STYLE.Tan
+        headerView.backgroundColor = STYLE.Brown
+                
         NotificationCenter.default.addObserver(self, selector: #selector(loadPlayers),
                                                name: NSNotification.Name(rawValue: "reloadTable"),
                                                object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(emptySelectedPlayers),
                                               name: NSNotification.Name(rawValue: "returnToPlayerSelect"),
                                               object: nil)
+        
         loadPlayers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadPlayers()
+        villageSize = 0
+        playerNumberLabel.text = "0"
+        
     }
-    
-    
-    func loadPlayers() {
-        if let temp = defaults.object(forKey: PLAYERS) as? [String] {
-            self.savedPlayers = temp            
-        }
-        tableView.reloadData()
-    }
-    
-    func emptySelectedPlayers() {
-        self.selectedPlayers.removeAll()
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -68,19 +69,48 @@ class PlayerSelectVC: UIViewController {
     }
     
     
+    // MARK: - Player list names
+    
+    func loadPlayers() {
+        if let temp = defaults.object(forKey: PLAYERS) as? [String] {
+            self.savedPlayers = temp.sorted()
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func removePlayerName(player: String) {
+        
+        if var tempPlayers = defaults.object(forKey: PLAYERS) as? [String] {
+            
+            if tempPlayers.contains(player) {
+                let playerIndex = tempPlayers.index(of: player)
+                tempPlayers.remove(at: playerIndex!)
+            }
+            
+            defaults.set(tempPlayers, forKey: PLAYERS)
+        }
+    }
+    
+    func emptySelectedPlayers() {
+        self.selectedPlayers.removeAll()
+    }
+    
     // MARK: - Navigation and data passing
     
     @IBAction func goToSelectRolesButton(_ sender: Any) {
-        createPlayers()
+        self.selectedPlayers = findSelectedPlayers()
     }
     
     func findSelectedPlayers() -> [String] {
         var playerNames: [String] = []
-        let selectedIndexPaths = tableView.indexPathsForSelectedRows
-        for indexPath in selectedIndexPaths! {
-            let cell = tableView.cellForRow(at: indexPath)
-            let text: String = (cell?.textLabel?.text)!
-            playerNames.append(text)
+        let selectedIndexPaths = tableView.indexPathsForSelectedRows ?? []
+        if selectedIndexPaths.count > 1 {
+            for indexPath in selectedIndexPaths {
+                let cell = tableView.cellForRow(at: indexPath)
+                let text: String = (cell?.textLabel?.text)!
+                playerNames.append(text)
+            }
         }
         
         playerNames.sort()
@@ -88,16 +118,22 @@ class PlayerSelectVC: UIViewController {
         return playerNames
     }
     
-    func createPlayers() {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        let playersToCreate: [String] = findSelectedPlayers()
-        
-        for playerName in playersToCreate {
-            let newPlayer: Player = Player(name: playerName)
-            self.selectedPlayers.append(newPlayer)
+        if ((identifier == "selectRoleSegue") && (self.selectedPlayers.count < 3)) {
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
+            vc.alertName = "Warning"
+            vc.alertText = "You need at least three people to play a game of Ultimate Werewolf."
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
+            
+            return false
         }
+        
+        return true
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectRoleSegue" {
@@ -129,6 +165,7 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         
         let row = indexPath.row
         cell.textLabel?.text = savedPlayers[row]
+        cell.textLabel?.textColor = STYLE.Brown
         cell.accessoryType = cell.isSelected ? .checkmark : .none
         cell.selectionStyle = .none
         
@@ -145,6 +182,17 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
         villageSize -= 1
         playerNumberLabel.text = String(villageSize)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            removePlayerName(player: self.savedPlayers[indexPath.row])
+            loadPlayers()
+        }
     }
 }
 

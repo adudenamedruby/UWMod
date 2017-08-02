@@ -15,28 +15,30 @@ class Game {
     var currentDay: Int
     var nighttimeEliminations: Int
     var daytimeEliminations: Int
-    var availableRoles: [Role]
+    
+    /// Player names before they are assigned
+    var availableRoster: [String]
     var availablePlayers: [Player]
     var nightActors: [Player]
-    var livingPlayers: [Player]
-    var deadPlayers: [Player]
+    var livingActors: [Player]
+    var deadActors: [Player]
     var teams: [UWTeam: [Player]]
     
-    init(availableRoles: [Role], availablePlayers: [Player]) {
+    init(availableRoster: [String], availablePlayers: [Player]) {
         // Sort the roles by the role priority. This makes it easier to present the 
         // player list in some semblance of a correct order.
-        self.availableRoles = availableRoles.sorted(by: { $0.priority > $1.priority })
-        self.availablePlayers = availablePlayers
+        self.availablePlayers = availablePlayers.sorted(by: { ($0.role.priority) > ($1.role.priority) })
+        self.availableRoster = availableRoster
 
         self.firstNight = true
         self.currentNight = 1
         self.currentDay = 1
         self.nighttimeEliminations = 1
         self.daytimeEliminations = 1
-        self.nightActors = [Player]()
-        self.livingPlayers = [Player]()
-        self.deadPlayers = [Player]()
-        self.teams = [UWTeam: [Player]]()
+        self.nightActors = []
+        self.livingActors = []
+        self.deadActors = []
+        self.teams = [:]
     }
 
     
@@ -50,15 +52,16 @@ class Game {
     
     // MARK: - Player-related functions
     
-    func assignRoles(player: Player, role: Role) {
-        
+    func assignRoles(player: Player, name: String) {
+        player.name = name
+        player.playerAssigned = true
     }
     
     func eliminatePlayer(victim: Player) {
-        if self.livingPlayers.contains(where: { $0 === victim }) {
-            self.deadPlayers.append(victim)
-            if let tempIndex = self.livingPlayers.index(where: { $0 === victim }) {
-                self.livingPlayers.remove(at: tempIndex)
+        if self.livingActors.contains(where: { $0 === victim }) {
+            self.deadActors.append(victim)
+            if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
+                self.livingActors.remove(at: tempIndex)
             }
         }
     }
@@ -66,15 +69,20 @@ class Game {
     
     // MARK: - Night functions
     
-    func night() {
-        if self.firstNight == true {
-            firstNightRoleCall()
-            
+    func finishNight() {
+        
+        if firstNight {
+            firstNight = false
+            livingActors = availablePlayers
         }
+        
+        currentNight += 1
     }
     
-    func firstNightRoleCall() {
-        
+    // MARK: - Day functions
+    
+    func finishDay() {
+        currentDay += 1
     }
     
 }
