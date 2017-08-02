@@ -100,17 +100,6 @@ class PlayerSelectVC: UIViewController {
     
     @IBAction func goToSelectRolesButton(_ sender: Any) {
         self.selectedPlayers = findSelectedPlayers()
-        
-//        if (self.selectedPlayers.count < 3) {
-//            
-//            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
-//            vc.alertName = "Warning"
-//            vc.alertText = "You need at least three people to play a game of Ultimate Werewolf."
-//            vc.modalTransitionStyle = .crossDissolve
-//            self.present(vc, animated: true, completion: nil)
-//            
-//        }
     }
     
     func findSelectedPlayers() -> [String] {

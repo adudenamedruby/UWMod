@@ -8,9 +8,13 @@
 
 import UIKit
 
+protocol EndNightPotocol: class {
+    func endNight()
+}
+
 class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegate {
 
-    
+    weak var endNightDelegate: EndNightPotocol?
     let temp = 6
     
     // MARK: - View lifecycle
@@ -65,6 +69,24 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
     
     func cardDidChangeState(_ cardIndex: Int) {
         collectionView?.reloadData()
+        
+//        if GAME.firstNight {
+//            if checkPlayerAssignment() {
+//                
+//            }
+//        } else
+        if cardIndex == GAME.availablePlayers.count {
+            endNight()
+        }
+    }
+    
+    func checkPlayerAssignment() -> Bool {
+        
+        return true
+    }
+    
+    func endNight() {
+        self.endNightDelegate?.endNight()
     }
     
 }

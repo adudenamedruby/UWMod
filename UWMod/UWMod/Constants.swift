@@ -21,14 +21,14 @@ enum UWTeam: String {
     case TeamVamprie = "Vampire"
     case TeamZombie = "Zombie"
     case TeamBoegyman = "Boegyman"
-    case UnknownTeam = "No Team"
 }
 
-enum UWNights: Int {
-    case EveryNight = 0
-    case First = 1
-    case Second = 2
-    case Third = 3
+enum UWNights {
+    case Never
+    case EveryNight
+    case First
+    case Second
+    case Third
 }
 
 struct StyleConstants {

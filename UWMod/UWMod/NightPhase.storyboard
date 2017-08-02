@@ -31,6 +31,45 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nighttime" translatesAutoresizingMaskIntoConstraints="NO" id="Ga9-H1-OrQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifx-u0-wPx">
+                                <rect key="frame" x="50" y="465.5" width="275.5" height="36.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4L-kv-cMb" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="24.5" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nd Night Phase?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQQ-0I-u5l" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="24.5" y="0.0" width="251" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4y-IZ-EmM">
+                                <rect key="frame" x="212.5" y="552" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="42f-5z-xj9"/>
+                                    <constraint firstAttribute="width" constant="50" id="Imd-Be-A26"/>
+                                </constraints>
+                                <state key="normal" image="forwardArrow"/>
+                                <connections>
+                                    <action selector="acceptNightEnd:" destination="Ngs-BR-XGE" eventType="touchUpInside" id="nFs-o4-D3d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JC-2X-veb">
+                                <rect key="frame" x="112.5" y="552" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="B3A-iB-wKo"/>
+                                    <constraint firstAttribute="height" constant="50" id="a8k-GZ-kOU"/>
+                                </constraints>
+                                <state key="normal" image="backArrow"/>
+                                <connections>
+                                    <action selector="goBack:" destination="Ngs-BR-XGE" eventType="touchUpInside" id="NpY-BS-AyA"/>
+                                </connections>
+                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzW-tp-M53">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -42,17 +81,26 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="pzW-tp-M53" secondAttribute="trailing" id="3H8-zc-vIB"/>
+                            <constraint firstItem="Ifx-u0-wPx" firstAttribute="centerX" secondItem="Ga9-H1-OrQ" secondAttribute="centerX" id="41H-hA-xci"/>
                             <constraint firstItem="pzW-tp-M53" firstAttribute="top" secondItem="TFg-tg-XVy" secondAttribute="top" id="AgZ-bF-gYo"/>
                             <constraint firstItem="Ga9-H1-OrQ" firstAttribute="leading" secondItem="TFg-tg-XVy" secondAttribute="leading" id="Qqd-KF-0qY"/>
                             <constraint firstItem="sU8-QK-0sN" firstAttribute="top" secondItem="pzW-tp-M53" secondAttribute="bottom" id="Xkg-Tw-aLY"/>
+                            <constraint firstItem="N4y-IZ-EmM" firstAttribute="centerX" secondItem="Ga9-H1-OrQ" secondAttribute="centerX" constant="50" id="ZFG-Jn-Bt4"/>
+                            <constraint firstItem="Ifx-u0-wPx" firstAttribute="centerY" secondItem="Ga9-H1-OrQ" secondAttribute="centerY" constant="150" id="dwY-co-3ak"/>
                             <constraint firstAttribute="trailing" secondItem="Ga9-H1-OrQ" secondAttribute="trailing" id="g6Q-Lq-ZeE"/>
                             <constraint firstItem="sU8-QK-0sN" firstAttribute="top" secondItem="Ga9-H1-OrQ" secondAttribute="bottom" id="g8d-5e-ovg"/>
+                            <constraint firstItem="N4y-IZ-EmM" firstAttribute="top" secondItem="Ifx-u0-wPx" secondAttribute="bottom" constant="50" id="lGd-Ci-Ulo"/>
+                            <constraint firstItem="6JC-2X-veb" firstAttribute="centerY" secondItem="N4y-IZ-EmM" secondAttribute="centerY" id="mqe-aD-GyF"/>
                             <constraint firstItem="pzW-tp-M53" firstAttribute="leading" secondItem="TFg-tg-XVy" secondAttribute="leading" id="uEs-K5-jrT"/>
+                            <constraint firstItem="6JC-2X-veb" firstAttribute="centerX" secondItem="Ga9-H1-OrQ" secondAttribute="centerX" constant="-50" id="xVN-Xq-A3l"/>
                             <constraint firstItem="Ga9-H1-OrQ" firstAttribute="top" secondItem="TFg-tg-XVy" secondAttribute="top" id="ycp-Na-LYr"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="6JC-2X-veb" id="oMG-Fa-TGO"/>
                         <outlet property="containerView" destination="pzW-tp-M53" id="ksm-yt-Bfa"/>
+                        <outlet property="endNightTitleLabel" destination="Ifx-u0-wPx" id="nnJ-pl-Sgp"/>
+                        <outlet property="forwardButton" destination="N4y-IZ-EmM" id="yNj-Da-gI2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChP-di-13c" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -204,6 +252,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backArrow" width="512" height="512"/>
+        <image name="forwardArrow" width="512" height="512"/>
         <image name="nighttime" width="1242" height="2208"/>
     </resources>
 </document>

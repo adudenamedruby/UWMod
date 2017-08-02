@@ -42,15 +42,15 @@ class MainGameVC: UIViewController {
         super.viewDidAppear(animated)
         
         if GAME.firstNight {
-            self.titleLabel.textColor = UIColor.WerewolfTheme.LightTan
+            self.titleLabel.textColor = STYLE.Tan
             self.titleLabel.text = "The first night begins..."
         } else {
         
             if GAME.currentDay < GAME.currentNight {
-                self.titleLabel.textColor = UIColor.WerewolfTheme.ChocolateBrown
+                self.titleLabel.textColor = STYLE.Brown
                 self.titleLabel.text = daytimePhrases.randomElement()
             } else {
-                self.titleLabel.textColor = UIColor.WerewolfTheme.LightTan
+                self.titleLabel.textColor = STYLE.Tan
                 self.titleLabel.text = nightPhrases.randomElement()
             }
         }

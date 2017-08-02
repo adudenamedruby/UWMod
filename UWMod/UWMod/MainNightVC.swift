@@ -8,16 +8,24 @@
 
 import UIKit
 
-class MainNightVC: UIViewController {
+class MainNightVC: UIViewController, EndNightPotocol {
     
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var forwardButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var endNightTitleLabel: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        forwardButton.alpha = 0
+        backButton.alpha = 0
+        endNightTitleLabel.alpha = 0
 
         let storyboard: UIStoryboard = UIStoryboard(name: "NightPhase", bundle: nil)
         let collectionVC = storyboard.instantiateViewController(withIdentifier: "cardView") as! NightVC
         self.addChildViewController(collectionVC)
+        collectionVC.endNightDelegate = self
         collectionVC.view.frame = CGRect(x: 0, y: 0, width: self.containerView.frame.size.width, height: self.containerView.frame.size.height)
         self.containerView.addSubview(collectionVC.view)
         collectionVC.didMove(toParentViewController: self)
@@ -27,5 +35,46 @@ class MainNightVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func endNight() {
+        self.containerView?.fadeOut(duration: 1, delay: 0, completion: {
+            (finished: Bool) -> Void in
+            self.containerView.isHidden = true
+        })
+        
+        fadeNightControlsIn()
+    }
+    
+    @IBAction func acceptNightEnd(_ sender: Any) {
+        endNightGameCleanup()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func goBack(_ sender: Any) {
+        fadeNightControlsOut()
+    }
+    
+    func fadeNightControlsIn() {
+        self.endNightTitleLabel.fadeIn(duration: 1, delay: 0)
+        self.forwardButton.fadeIn(duration: 1, delay: 0)
+        self.backButton.fadeIn(duration: 1, delay: 0)
+    }
+    
+    func fadeNightControlsOut() {
+        self.endNightTitleLabel.fadeOut(duration: 1, delay: 0)
+        self.backButton.fadeOut(duration: 1, delay: 0)
+        self.forwardButton.fadeOut(duration: 1, delay: 0, completion: {
+            (finished: Bool) -> Void in
+            self.containerView.isHidden = false
+            self.containerView.fadeIn()
+        })
+    }
+    
+    func endNightGameCleanup() {
+        
+        if GAME.firstNight {
+            GAME.firstNight = false
+        }
     }
 }

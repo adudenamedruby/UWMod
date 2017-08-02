@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NightCell: TisprCardStackViewCell {
+class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
     @IBOutlet weak var cardBorder: UIView!
     @IBOutlet weak var headerView: UIView!
@@ -36,18 +36,22 @@ class NightCell: TisprCardStackViewCell {
         roleDescritpionLabel.text = player?.role.description
         loadPlayerName()
         
-        if !(player?.playerAssigned)! {
+        if (GAME.firstNight && !(player?.playerAssigned)!) {
             assignPlayer()
         } else {
-            for subUIView in containerView.subviews as [UIView] {
-                subUIView.removeFromSuperview()
-            }
+            clearSubview()
+        }
+    }
+    
+    func clearSubview() {
+        for subUIView in containerView.subviews as [UIView] {
+            subUIView.removeFromSuperview()
         }
     }
     
     func assignPlayer() {
-        let localizedActionView = AssignPlayer(frame: CGRect(x: 0, y: 0, width: 310, height: 140))
-        localizedActionView.player = player
+        let localizedActionView = AssignPlayer(frame: CGRect(x: 0, y: 0, width: 310, height: 140), withPlayer: player!)
+        localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }
     
@@ -59,4 +63,7 @@ class NightCell: TisprCardStackViewCell {
         }
     }
     
+    func updateCard() {
+        configureCell()
+    }
 }

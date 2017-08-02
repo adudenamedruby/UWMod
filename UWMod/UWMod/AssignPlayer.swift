@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol UpdateCardDelegate: class {
+    func updateCard()
+}
+
 class AssignPlayer: UIView {
 
     // MARK: - Initializers
@@ -16,12 +20,15 @@ class AssignPlayer: UIView {
     @IBOutlet weak var assignButton: PMSuperButton!
     @IBOutlet weak var okButton: PMSuperButton!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var roleNotes: UILabel!
     
+    weak var delegate: UpdateCardDelegate?
     var chosenPlayerName: String!
     var player: Player?
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, withPlayer player: Player) {
         super.init(frame: frame)
+        self.player = player
         setupView()
     }
     
@@ -41,6 +48,7 @@ class AssignPlayer: UIView {
         
         contentView.backgroundColor = STYLE.Tan
         
+        roleNotes.text = player?.role.notes
         pickerView.isHidden = true
         okButton.isHidden = true
         
@@ -53,6 +61,7 @@ class AssignPlayer: UIView {
     @IBAction func assignButtonTapped(_ sender: Any) {
         assignButton.isEnabled = false
         assignButton.isHidden = true
+        roleNotes.isHidden = true
         
         pickerView.isHidden = false
         okButton.isHidden = false
@@ -64,8 +73,7 @@ class AssignPlayer: UIView {
         let index = GAME.availableRoster.index(of: chosenPlayerName)
         GAME.availableRoster.remove(at: index!)
         GAME.assignRoles(player: player!, name: chosenPlayerName!)
-        
-        self.removeFromSuperview()
+        delegate?.updateCard()
     }
 }
 

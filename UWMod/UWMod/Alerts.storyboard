@@ -38,16 +38,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNT-jQ-OUN">
-                                                <rect key="frame" x="101" y="13.5" width="49.5" height="36.5"/>
+                                                <rect key="frame" x="99.5" y="11.5" width="53" height="41"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60a-cu-Pmf" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="34.5" height="36.5"/>
+                                                        <rect key="frame" x="0.0" y="0.5" width="32.5" height="41"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                         <color key="textColor" red="0.64536405460000001" green="0.1161611183" blue="0.12310011999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U9-mB-IlF" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="34.5" y="0.0" width="15" height="36.5"/>
+                                                        <rect key="frame" x="32.5" y="0.5" width="20.5" height="41"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                         <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>

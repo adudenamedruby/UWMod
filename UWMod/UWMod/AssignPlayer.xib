@@ -16,6 +16,7 @@
                 <outlet property="contentView" destination="iN0-l3-epB" id="Uhh-Rr-DT8"/>
                 <outlet property="okButton" destination="sYY-4B-klm" id="cKj-N4-1WZ"/>
                 <outlet property="pickerView" destination="by8-KS-Hkb" id="d4Y-Lr-1jc"/>
+                <outlet property="roleNotes" destination="cgv-eq-3RM" id="LKA-HN-X8N"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -24,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBD-p6-axM" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                    <rect key="frame" x="70" y="54" width="170" height="32"/>
+                    <rect key="frame" x="70" y="108" width="170" height="32"/>
                     <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="170" id="UNg-Nk-eFO"/>
@@ -78,6 +79,12 @@
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="by8-KS-Hkb">
                     <rect key="frame" x="0.0" y="0.0" width="310" height="91"/>
                 </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="cgv-eq-3RM" customClass="RegularTextBrownLabel" customModule="UWMod" customModuleProvider="target">
+                    <rect key="frame" x="10" y="10" width="290" height="17.5"/>
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                    <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -85,10 +92,14 @@
                 <constraint firstItem="by8-KS-Hkb" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.65" id="6c0-EC-rty"/>
                 <constraint firstAttribute="bottom" secondItem="sYY-4B-klm" secondAttribute="bottom" id="7uJ-YD-ABm"/>
                 <constraint firstItem="wBD-p6-axM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9ka-ug-5av"/>
+                <constraint firstAttribute="trailing" secondItem="cgv-eq-3RM" secondAttribute="trailing" constant="10" id="DHa-5Q-FHh"/>
+                <constraint firstItem="cgv-eq-3RM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="N3b-9L-6I1"/>
+                <constraint firstItem="wBD-p6-axM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cgv-eq-3RM" secondAttribute="bottom" constant="15" id="YB3-V7-Lzr"/>
+                <constraint firstItem="cgv-eq-3RM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="c2P-VJ-8zg"/>
                 <constraint firstItem="by8-KS-Hkb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dQA-TG-2XZ"/>
                 <constraint firstItem="sYY-4B-klm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dSO-tr-xI8"/>
+                <constraint firstAttribute="bottom" secondItem="wBD-p6-axM" secondAttribute="bottom" id="eCL-D4-WPV"/>
                 <constraint firstAttribute="trailing" secondItem="by8-KS-Hkb" secondAttribute="trailing" id="h2D-l2-cCA"/>
-                <constraint firstItem="wBD-p6-axM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jVm-Ue-KAy"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
