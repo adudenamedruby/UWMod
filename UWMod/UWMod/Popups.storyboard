@@ -258,7 +258,7 @@
         <!--Role ExplanationVC-->
         <scene sceneID="Ul8-Fb-Jts">
             <objects>
-                <viewController storyboardIdentifier="eliminatePlayer" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="tqw-Zu-9al" customClass="RoleExplanationVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="roleExplanation" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="tqw-Zu-9al" customClass="RoleExplanationVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YJo-ME-T58"/>
                         <viewControllerLayoutGuide type="bottom" id="ebf-U5-AXE"/>
@@ -272,13 +272,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXa-e4-mFY">
-                                <rect key="frame" x="27" y="183.5" width="320" height="300"/>
+                                <rect key="frame" x="27" y="58.5" width="320" height="550"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyC-5c-Is3">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="82.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVE-kB-jOC">
-                                                <rect key="frame" x="29" y="10.5" width="263" height="36.5"/>
+                                                <rect key="frame" x="29" y="23.5" width="263" height="36.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWp-Gp-oWH" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="28.5" height="36.5"/>
@@ -302,7 +302,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrv-Rr-B7k" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="135" y="230" width="50" height="50"/>
+                                        <rect key="frame" x="135" y="480" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="K9H-gb-XUH"/>
                                             <constraint firstAttribute="height" constant="50" id="f6e-FI-rV8"/>
@@ -316,33 +316,32 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="eliminatePlayerPressed:" destination="tqw-Zu-9al" eventType="touchUpInside" id="Jh8-jG-Pu8"/>
+                                            <action selector="dismissButton:" destination="tqw-Zu-9al" eventType="touchUpInside" id="ois-TC-ImO"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a player to eliminate. Be careful as this cannot be undone." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRg-vw-v5K" customClass="OldTextBrownLabel" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="77" width="280" height="39.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="39.5" id="QNt-1L-xTZ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpZ-Z0-ipF">
+                                        <rect key="frame" x="10" y="92.5" width="300" height="362.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="LRg-vw-v5K" secondAttribute="trailing" constant="20" id="2tr-WQ-ng7"/>
-                                    <constraint firstAttribute="height" constant="300" id="3cu-HP-cv4"/>
-                                    <constraint firstItem="LRg-vw-v5K" firstAttribute="top" secondItem="LyC-5c-Is3" secondAttribute="bottom" constant="20" id="EY2-gw-Zfp"/>
-                                    <constraint firstItem="LRg-vw-v5K" firstAttribute="leading" secondItem="GXa-e4-mFY" secondAttribute="leading" constant="20" id="TcX-Xa-Glm"/>
+                                    <constraint firstItem="GpZ-Z0-ipF" firstAttribute="leading" secondItem="GXa-e4-mFY" secondAttribute="leading" constant="10" id="0B7-eZ-1qi"/>
+                                    <constraint firstAttribute="height" constant="550" id="3cu-HP-cv4"/>
+                                    <constraint firstItem="GpZ-Z0-ipF" firstAttribute="top" secondItem="LyC-5c-Is3" secondAttribute="bottom" constant="10" id="5IT-QG-QnB"/>
+                                    <constraint firstItem="Xrv-Rr-B7k" firstAttribute="top" secondItem="GpZ-Z0-ipF" secondAttribute="bottom" constant="25" id="9QS-m4-okU"/>
                                     <constraint firstAttribute="width" constant="320" id="ToH-IT-zgT"/>
                                     <constraint firstAttribute="trailing" secondItem="LyC-5c-Is3" secondAttribute="trailing" id="V7V-il-Aym"/>
                                     <constraint firstItem="LyC-5c-Is3" firstAttribute="top" secondItem="GXa-e4-mFY" secondAttribute="top" id="W3L-EL-SDl"/>
-                                    <constraint firstItem="LRg-vw-v5K" firstAttribute="centerX" secondItem="GXa-e4-mFY" secondAttribute="centerX" id="ccp-dw-t21"/>
-                                    <constraint firstItem="LyC-5c-Is3" firstAttribute="height" secondItem="GXa-e4-mFY" secondAttribute="height" multiplier="0.19" id="ho7-pq-Bkg"/>
+                                    <constraint firstItem="LyC-5c-Is3" firstAttribute="height" secondItem="GXa-e4-mFY" secondAttribute="height" multiplier="0.15" id="ho7-pq-Bkg"/>
                                     <constraint firstItem="Xrv-Rr-B7k" firstAttribute="centerX" secondItem="GXa-e4-mFY" secondAttribute="centerX" id="kES-WH-5cD"/>
                                     <constraint firstItem="LyC-5c-Is3" firstAttribute="leading" secondItem="GXa-e4-mFY" secondAttribute="leading" id="nak-zo-klp"/>
                                     <constraint firstAttribute="bottom" secondItem="Xrv-Rr-B7k" secondAttribute="bottom" constant="20" id="pR9-KB-LpR"/>
+                                    <constraint firstAttribute="trailing" secondItem="GpZ-Z0-ipF" secondAttribute="trailing" constant="10" id="sgx-Xr-y9s"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -357,14 +356,18 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="eliminateButton" destination="Xrv-Rr-B7k" id="gtp-Xk-8Ho"/>
+                        <outlet property="backButton" destination="Xrv-Rr-B7k" id="eNN-gI-zL6"/>
+                        <outlet property="firstLetterLabel" destination="tWp-Gp-oWH" id="QRQ-M5-CnL"/>
+                        <outlet property="headerCardView" destination="LyC-5c-Is3" id="szH-zI-nxX"/>
                         <outlet property="headerView" destination="LyC-5c-Is3" id="PfE-io-RrH"/>
-                        <outlet property="mainCardView" destination="GXa-e4-mFY" id="uHd-Jz-LP9"/>
+                        <outlet property="mainCardView" destination="GXa-e4-mFY" id="pVp-T7-v68"/>
+                        <outlet property="remainingTitleLabel" destination="VIM-0F-S7z" id="OMu-tV-0PM"/>
+                        <outlet property="scrollTextView" destination="GpZ-Z0-ipF" id="jJn-4z-Yrc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqX-r9-63E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="127"/>
+            <point key="canvasLocation" x="928.79999999999995" y="126.38680659670166"/>
         </scene>
     </scenes>
     <resources>
