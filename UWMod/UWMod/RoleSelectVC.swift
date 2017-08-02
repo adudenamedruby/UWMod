@@ -126,7 +126,7 @@ class RoleSelectVC: UIViewController {
         
         if (self.selectedRoles.count < (self.players?.count)!) {
             
-            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.alertName = "Warning"
             vc.alertText = "You do not have enough roles for the number of players in the game."
@@ -195,7 +195,7 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
         updateRoleCountLabel()
         
         if (selectedIndexPaths?.count)! > (players?.count)! {
-            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.modalTransitionStyle = .crossDissolve
             vc.alertName = "Warning"

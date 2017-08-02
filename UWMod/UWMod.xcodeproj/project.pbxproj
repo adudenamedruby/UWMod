@@ -11,7 +11,7 @@
 		1209820F1F26BBE700EC5D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1209820D1F26BBE700EC5D21 /* Main.storyboard */; };
 		120982111F26BBE700EC5D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 120982101F26BBE700EC5D21 /* Assets.xcassets */; };
 		120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120982121F26BBE700EC5D21 /* LaunchScreen.storyboard */; };
-		123BD0D31F2F6BF600B99019 /* Alerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123BD0D21F2F6BF600B99019 /* Alerts.storyboard */; };
+		123BD0D31F2F6BF600B99019 /* Popups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123BD0D21F2F6BF600B99019 /* Popups.storyboard */; };
 		123BD0D51F2F6C1600B99019 /* AlertsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0D41F2F6C1600B99019 /* AlertsVC.swift */; };
 		123BD0D71F2FE66400B99019 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0D61F2FE66400B99019 /* StringExtensions.swift */; };
 		123BD0DA1F2FF34D00B99019 /* NightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0D91F2FF34D00B99019 /* NightCell.swift */; };
@@ -19,6 +19,8 @@
 		123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123BD0E51F31474A00B99019 /* AssignPlayer.xib */; };
 		123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0ED1F31555B00B99019 /* AssignPlayer.swift */; };
 		1260ED331F2C2A78001A8F7B /* AddPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */; };
+		1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */; };
+		1261C2B51F32642C0099D759 /* RoleExplanationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B41F32642C0099D759 /* RoleExplanationVC.swift */; };
 		12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */; };
 		12D15E201F2E82870057905E /* RoleSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */; };
 		12D15E231F2EA8470057905E /* MainGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E221F2EA8470057905E /* MainGameVC.swift */; };
@@ -57,7 +59,7 @@
 		120982101F26BBE700EC5D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		120982131F26BBE700EC5D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		120982151F26BBE700EC5D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		123BD0D21F2F6BF600B99019 /* Alerts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alerts.storyboard; sourceTree = "<group>"; };
+		123BD0D21F2F6BF600B99019 /* Popups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popups.storyboard; sourceTree = "<group>"; };
 		123BD0D41F2F6C1600B99019 /* AlertsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsVC.swift; sourceTree = "<group>"; };
 		123BD0D61F2FE66400B99019 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		123BD0D91F2FF34D00B99019 /* NightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightCell.swift; sourceTree = "<group>"; };
@@ -65,6 +67,8 @@
 		123BD0E51F31474A00B99019 /* AssignPlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignPlayer.xib; sourceTree = "<group>"; };
 		123BD0ED1F31555B00B99019 /* AssignPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignPlayer.swift; sourceTree = "<group>"; };
 		1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerVC.swift; sourceTree = "<group>"; };
+		1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EliminatePlayerVC.swift; sourceTree = "<group>"; };
+		1261C2B41F32642C0099D759 /* RoleExplanationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleExplanationVC.swift; sourceTree = "<group>"; };
 		12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSuperButton.swift; sourceTree = "<group>"; };
 		12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleSelectionCell.swift; sourceTree = "<group>"; };
 		12D15E221F2EA8470057905E /* MainGameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGameVC.swift; sourceTree = "<group>"; };
@@ -165,6 +169,16 @@
 			name = Night;
 			sourceTree = "<group>";
 		};
+		1261C2B11F325A6C0099D759 /* PopUpVCs */ = {
+			isa = PBXGroup;
+			children = (
+				123BD0D41F2F6C1600B99019 /* AlertsVC.swift */,
+				1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */,
+				1261C2B41F32642C0099D759 /* RoleExplanationVC.swift */,
+			);
+			name = PopUpVCs;
+			sourceTree = "<group>";
+		};
 		12D15E1A1F2D2D0B0057905E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,7 +234,7 @@
 				12EC77F31F2BDBD90026C667 /* NightPhase.storyboard */,
 				123BD0E31F3146FA00B99019 /* Night XIBs */,
 				12EC77F51F2BDBE40026C667 /* DayPhase.storyboard */,
-				123BD0D21F2F6BF600B99019 /* Alerts.storyboard */,
+				123BD0D21F2F6BF600B99019 /* Popups.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -228,7 +242,7 @@
 		12EC77D21F26D4BA0026C667 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				123BD0D41F2F6C1600B99019 /* AlertsVC.swift */,
+				1261C2B11F325A6C0099D759 /* PopUpVCs */,
 				12D15E241F2EA85B0057905E /* PreGameVCs */,
 				12D15E251F2EA8660057905E /* GameVCs */,
 			);
@@ -347,7 +361,7 @@
 				120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */,
 				12EC77F61F2BDBE40026C667 /* DayPhase.storyboard in Resources */,
 				120982111F26BBE700EC5D21 /* Assets.xcassets in Resources */,
-				123BD0D31F2F6BF600B99019 /* Alerts.storyboard in Resources */,
+				123BD0D31F2F6BF600B99019 /* Popups.storyboard in Resources */,
 				12EC77F41F2BDBD90026C667 /* NightPhase.storyboard in Resources */,
 				12EC78041F2BE8AA0026C667 /* screenSmoke.sks in Resources */,
 				12EC77FB1F2BE1D40026C667 /* Old Wise Sketch.otf in Resources */,
@@ -379,6 +393,7 @@
 				12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */,
 				123BD0DA1F2FF34D00B99019 /* NightCell.swift in Sources */,
 				12D15E291F2EBCCA0057905E /* ColourDefinitions.swift in Sources */,
+				1261C2B51F32642C0099D759 /* RoleExplanationVC.swift in Sources */,
 				12EC77DD1F2831C90026C667 /* Game.swift in Sources */,
 				12EC78011F2BE2FE0026C667 /* TisprCardStackViewController.swift in Sources */,
 				123BD0DC1F3000A000B99019 /* MainNightVC.swift in Sources */,
@@ -394,6 +409,7 @@
 				12EC77D41F26D4DC0026C667 /* Roles.swift in Sources */,
 				12EC77EB1F2BDAEA0026C667 /* DayVC.swift in Sources */,
 				12EC78001F2BE2FE0026C667 /* TisprCardStackViewCell.swift in Sources */,
+				1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */,
 				123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

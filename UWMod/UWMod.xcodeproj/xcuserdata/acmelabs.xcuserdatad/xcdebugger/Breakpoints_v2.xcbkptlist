@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UWMod/MainNightVC.swift"
-            timestampString = "523390989.32062"
+            filePath = "UWMod/DayVC.swift"
+            timestampString = "523395912.767363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UWMod/MainNightVC.swift"
-            timestampString = "523391013.858043"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "lynchPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

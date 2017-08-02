@@ -64,6 +64,9 @@ class Player {
             }
             addToTeam(team: to)
         }
-        
+    }
+    
+    func reconcileDeath() {
+        role.reconcileDeath()
     }
 }
