@@ -73,6 +73,8 @@ class MainNightVC: UIViewController, EndNightPotocol {
     
     func endNightGameCleanup() {
         
+        GAME.currentNight += 1
+        
         if GAME.firstNight {
             GAME.firstNight = false
         }
