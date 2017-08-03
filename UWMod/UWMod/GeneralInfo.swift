@@ -19,7 +19,9 @@ class GeneralInfo: UITableViewCell {
     @IBOutlet weak var timeLabel: RegularTextBrownLabel!
     
     //MARK: - Variables
-    
+    private var timer: Timer!
+    private var counter = 10
+    private var isTrackingTime = false
     
     //MARK: - View Lifecycle & Configuration
     
@@ -43,10 +45,43 @@ class GeneralInfo: UITableViewCell {
     
     
     func configureCell() {
+        startTimer()
         
     }
     @IBAction func info(_ sender: Any) {
         
         print("I'mA live")
+    }
+    
+    func startTimer() {
+        if !isTrackingTime {
+            self.timer = Timer.scheduledTimer(timeInterval: 1,
+                                              target: self,
+                                              selector: #selector(GeneralInfo.updateTimerLabel),
+                                              userInfo: nil,
+                                              repeats: true)
+            
+            isTrackingTime = true
+        }
+    }
+    
+    func stopTimer() {
+        self.timer.invalidate()
+        self.counter = 0
+        isTrackingTime = false
+    }
+    
+    func updateTimerLabel() {
+        counter += 1
+        timeLabel.text = timeString(time: TimeInterval(counter))
+    }
+    
+    func timeString(time:TimeInterval) -> String {
+        
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
 }
