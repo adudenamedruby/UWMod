@@ -19,8 +19,8 @@ class Player {
     var playerAssigned: Bool
     
     // Role affected states
-    var protected: Bool
-    var hynotized: Bool
+    var isProtected: Bool
+    var isHynotized: Bool
     var canBeSavedByLeprechaun: Bool
     var canBeSavedByWitch: Bool
     var canBeChosenByMentalist: Bool
@@ -39,8 +39,8 @@ class Player {
         self.nightActivePlayer = true
         self.playerAssigned = false
         
-        self.protected = false
-        self.hynotized = false
+        self.isProtected = false
+        self.isHynotized = false
         self.canBeSavedByLeprechaun = true
         self.canBeSavedByWitch = true
         self.canBeChosenByMentalist = true

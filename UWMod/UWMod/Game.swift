@@ -19,6 +19,8 @@ class Game {
     /// Player names before they are assigned
     var availableRoster: [String]
     var availablePlayers: [Player]
+    var playersEliminatedThisPhase: String
+    var playersProtectedThisPhase: String
     var nightActors: [Player]
     var livingActors: [Player]
     var deadActors: [Player]
@@ -38,6 +40,8 @@ class Game {
         self.nightActors = []
         self.livingActors = []
         self.deadActors = []
+        self.playersEliminatedThisPhase = ""
+        self.playersProtectedThisPhase = ""
         self.teams = [:]
     }
 
@@ -51,6 +55,7 @@ class Game {
     
     
     // MARK: - Player-related functions
+    // TODO: populate the playersEliminatedThisPhase and playersProtectedThisPhase array for night/day end, and the clean it
     
     func assignRoles(player: Player, name: String) {
         player.name = name
@@ -64,6 +69,21 @@ class Game {
                 self.livingActors.remove(at: tempIndex)
             }
         }
+    }
+    
+    func addToPhaseReport(player: Player) {
+        let textToAdd = "\(player.name)\n"
+        
+        if player.isProtected {
+            playersProtectedThisPhase = playersProtectedThisPhase + textToAdd
+        } else {
+            playersEliminatedThisPhase = playersEliminatedThisPhase + textToAdd
+        }
+    }
+    
+    func clearPhaseReport() {
+        playersEliminatedThisPhase = ""
+        playersProtectedThisPhase = ""
     }
     
     
