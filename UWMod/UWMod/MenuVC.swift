@@ -67,7 +67,6 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
         self.present(newView, animated: true, completion: nil)
     }
     
-    
     // MARK: - Transition setup
     
     // Setup the presenting animation
@@ -89,6 +88,10 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "aboutSegue" {
             let secondVC = segue.destination as! AboutVC
+            secondVC.transitioningDelegate = self
+            secondVC.modalPresentationStyle = .custom
+        } else if segue.identifier == "helpSegue" {
+            let secondVC = segue.destination as! HelpVC
             secondVC.transitioningDelegate = self
             secondVC.modalPresentationStyle = .custom
         }
