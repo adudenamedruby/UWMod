@@ -6,18 +6,114 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="GeneralInfo" customModule="UWMod" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="generalInfoCell" rowHeight="320" id="KGk-i7-Jjw" customClass="GeneralInfo" customModule="UWMod" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="320"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="339" height="319.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTC-EW-g0X">
+                        <rect key="frame" x="5" y="5" width="329" height="309"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jn7-x6-MpX">
+                                <rect key="frame" x="1" y="0.0" width="327" height="308"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gg-I4-Frn">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="46"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9a-OR-PUL">
+                                                <rect key="frame" x="100.5" y="10" width="127.5" height="27"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVe-vq-BXv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="27"/>
+                                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="22"/>
+                                                        <color key="textColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eneral Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2G-yJ-heH">
+                                                        <rect key="frame" x="16" y="0.0" width="111.5" height="27"/>
+                                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                                        <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="M9a-OR-PUL" firstAttribute="centerX" secondItem="3gg-I4-Frn" secondAttribute="centerX" id="Hl4-CR-L2a"/>
+                                            <constraint firstItem="M9a-OR-PUL" firstAttribute="centerY" secondItem="3gg-I4-Frn" secondAttribute="centerY" id="fHo-Bd-6iF"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="X0y-Wx-4GB">
+                                        <rect key="frame" x="74.5" y="60" width="178.5" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWN-I7-Hlq" customClass="RegularTextBrownLabel" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="92" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib5-rq-mg1" customClass="RegularTextBrownLabel" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="107" y="0.0" width="71.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ml-1F-s6X">
+                                        <rect key="frame" x="131" y="177" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="info:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="D0s-2n-rqI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="3gg-I4-Frn" firstAttribute="top" secondItem="Jn7-x6-MpX" secondAttribute="top" id="9oo-j9-W7M"/>
+                                    <constraint firstItem="X0y-Wx-4GB" firstAttribute="top" secondItem="3gg-I4-Frn" secondAttribute="bottom" constant="14" id="BJY-wY-n2I"/>
+                                    <constraint firstItem="3gg-I4-Frn" firstAttribute="height" secondItem="Jn7-x6-MpX" secondAttribute="height" multiplier="0.15" id="QY9-xf-6Z8"/>
+                                    <constraint firstItem="3gg-I4-Frn" firstAttribute="leading" secondItem="Jn7-x6-MpX" secondAttribute="leading" id="Seu-ra-2z4"/>
+                                    <constraint firstAttribute="trailing" secondItem="3gg-I4-Frn" secondAttribute="trailing" id="fMm-cE-muS"/>
+                                    <constraint firstItem="X0y-Wx-4GB" firstAttribute="centerX" secondItem="Jn7-x6-MpX" secondAttribute="centerX" id="niM-4v-jvW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Jn7-x6-MpX" secondAttribute="trailing" constant="1" id="2qc-ht-Ibu"/>
+                            <constraint firstItem="Jn7-x6-MpX" firstAttribute="top" secondItem="oTC-EW-g0X" secondAttribute="top" id="FO9-Ot-LvV"/>
+                            <constraint firstItem="Jn7-x6-MpX" firstAttribute="leading" secondItem="oTC-EW-g0X" secondAttribute="leading" constant="1" id="i7K-XL-EGp"/>
+                            <constraint firstAttribute="bottom" secondItem="Jn7-x6-MpX" secondAttribute="bottom" constant="1" id="lKU-LL-Vfx"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="oTC-EW-g0X" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="QzM-fP-0eX"/>
+                    <constraint firstAttribute="trailing" secondItem="oTC-EW-g0X" secondAttribute="trailing" constant="5" id="Uwf-oU-pGX"/>
+                    <constraint firstAttribute="bottom" secondItem="oTC-EW-g0X" secondAttribute="bottom" constant="5" id="lEX-hi-KkK"/>
+                    <constraint firstItem="oTC-EW-g0X" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="mbU-1d-ajr"/>
+                </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="headerView" destination="3gg-I4-Frn" id="ifc-Wk-aod"/>
+                <outlet property="mainCardView" destination="Jn7-x6-MpX" id="pjO-cu-BHT"/>
+                <outlet property="outlineView" destination="oTC-EW-g0X" id="V7o-ol-atC"/>
+                <outlet property="timeLabel" destination="Ib5-rq-mg1" id="HEW-8s-Upk"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="192"/>
         </tableViewCell>
     </objects>
 </document>

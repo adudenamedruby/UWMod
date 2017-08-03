@@ -203,7 +203,7 @@
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NON-22-8Vn">
                                         <rect key="frame" x="10" y="126" width="300" height="104"/>
                                     </pickerView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a player to eliminate. Be careful as this cannot be undone." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxL-Dw-UGD" customClass="OldTextBrownLabel" customModule="UWMod" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a player to eliminate. Be careful as this cannot be undone." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxL-Dw-UGD" customClass="RegularTextBrownLabel" customModule="UWMod" customModuleProvider="target">
                                         <rect key="frame" x="20" y="77" width="280" height="39.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39.5" id="lTy-To-deS"/>

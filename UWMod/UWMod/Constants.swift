@@ -41,6 +41,11 @@ struct StyleConstants {
     let Red = UIColor.WerewolfTheme.BloodRed
     let Turqoise = UIColor.WerewolfTheme.TurqoiseGreen
     let Green = UIColor.WerewolfTheme.MutedGreen
+    
+    let OldStandard = UIFont(name: "OldWiseSketch", size: 35)
+    let OldLarge = UIFont(name: "OldWiseSketch", size: 60)
+    let RegStandard = UIFont(name: "AmericanTypewriter", size: 16)
+    let RegLarge = UIFont(name: "AmericanTypewriter", size: 17)
 }
 
 

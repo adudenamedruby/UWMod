@@ -24,14 +24,19 @@ class DayVC: UIViewController {
     @IBOutlet weak var mainCardView: UIView!
     @IBOutlet weak var headerView: UIView!
     
+    @IBOutlet weak var tableView: UITableView!
+    
     
     // MARK: - Variables
+
     
     
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupTableView()
 
         endDayTitleLabel.alpha = 0
         forwardButton.alpha = 0
@@ -47,11 +52,6 @@ class DayVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         daytimeBackground.alpha = 1
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -98,6 +98,38 @@ class DayVC: UIViewController {
         })
     }
     
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "GeneralInfo", bundle: nil),
+                           forCellReuseIdentifier: "generalInfoCell")
+
+    }
+}
+
+extension DayVC: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "generalInfoCell", for: indexPath) as! GeneralInfo
+        
+        cell.configureCell()
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 320
+        }
+        
+        return 100
+    }
 }

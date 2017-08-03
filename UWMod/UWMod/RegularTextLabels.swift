@@ -23,6 +23,7 @@ class RegularTextTanLabel: UILabel {
     
     func commonInit(){
         self.textColor = STYLE.Tan
+        self.font = STYLE.RegStandard
     }
 
 }
@@ -42,6 +43,7 @@ class RegularTextBrownLabel: UILabel {
     
     func commonInit(){
         self.textColor = STYLE.Brown
+        self.font = STYLE.RegStandard
     }
     
 }
@@ -61,6 +63,7 @@ class RegularTextRedLabel: UILabel {
     
     func commonInit(){
         self.textColor = STYLE.Red
+        self.font = STYLE.RegStandard
     }
     
 }
