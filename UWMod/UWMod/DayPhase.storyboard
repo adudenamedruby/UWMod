@@ -112,13 +112,13 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRB-Xk-5WN" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="607" width="167" height="40"/>
-                                        <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="12" y="607" width="192" height="40"/>
+                                        <color key="backgroundColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="dpk-k0-T7w"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                        <state key="normal" title="Lynch">
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
+                                        <state key="normal" title="Eliminate Player">
                                             <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -138,7 +138,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-Co-CpR" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="196" y="607" width="167" height="40"/>
+                                        <rect key="frame" x="221" y="607" width="142" height="40"/>
                                         <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="gXr-JV-KW3"/>
@@ -166,11 +166,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="HRB-Xk-5WN" firstAttribute="width" secondItem="Trs-Co-CpR" secondAttribute="width" id="29n-aa-ZAg"/>
+                                    <constraint firstItem="HRB-Xk-5WN" firstAttribute="width" secondItem="Trs-Co-CpR" secondAttribute="width" constant="50" id="29n-aa-ZAg"/>
                                     <constraint firstAttribute="trailing" secondItem="QwX-db-Fid" secondAttribute="trailing" constant="10" id="5K0-dN-Cex"/>
                                     <constraint firstAttribute="bottom" secondItem="Trs-Co-CpR" secondAttribute="bottom" constant="20" id="6ck-b2-QiI"/>
                                     <constraint firstItem="QwX-db-Fid" firstAttribute="top" secondItem="q4j-ep-MX8" secondAttribute="top" constant="20" id="BKW-we-HRQ"/>
-                                    <constraint firstItem="Trs-Co-CpR" firstAttribute="width" secondItem="QwX-db-Fid" secondAttribute="width" multiplier="0.47" id="JyY-qe-nmO"/>
+                                    <constraint firstItem="Trs-Co-CpR" firstAttribute="width" secondItem="QwX-db-Fid" secondAttribute="width" multiplier="0.4" id="JyY-qe-nmO"/>
                                     <constraint firstItem="QwX-db-Fid" firstAttribute="height" secondItem="q4j-ep-MX8" secondAttribute="height" multiplier="0.86" id="KMm-kE-pRv"/>
                                     <constraint firstAttribute="trailing" secondItem="Trs-Co-CpR" secondAttribute="trailing" constant="12" id="Xr1-xP-mqn"/>
                                     <constraint firstAttribute="bottom" secondItem="HRB-Xk-5WN" secondAttribute="bottom" constant="20" id="qZi-j4-xjx"/>

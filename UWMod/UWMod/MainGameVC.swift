@@ -49,6 +49,7 @@ class MainGameVC: UIViewController {
             if GAME.currentDay < GAME.currentNight {
                 self.titleLabel.textColor = STYLE.Brown
                 self.titleLabel.text = daytimePhrases.randomElement()
+                reportNightDeaths()
             } else {
                 self.titleLabel.textColor = STYLE.Tan
                 self.titleLabel.text = nightPhrases.randomElement()
@@ -90,6 +91,10 @@ class MainGameVC: UIViewController {
     func resetElementAlpha() {
         self.titleLabel.alpha = 0
         self.forwardButton.alpha = 0
+    }
+    
+    func reportNightDeaths() {
+        // TODO: Report all players eliminated during the night
     }
     
 }
