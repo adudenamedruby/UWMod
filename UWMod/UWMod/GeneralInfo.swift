@@ -30,10 +30,10 @@ class GeneralInfo: UITableViewCell {
         // Initialization code
         
         outlineView.layer.cornerRadius = STYLE.CornerRadius
-        outlineView.backgroundColor = STYLE.Brown
+        outlineView.backgroundColor = STYLE.Beige
         mainCardView.layer.cornerRadius = STYLE.CornerRadius
         mainCardView.backgroundColor = STYLE.Tan
-        headerView.backgroundColor = STYLE.Brown
+        headerView.backgroundColor = STYLE.Beige
         
     }
 

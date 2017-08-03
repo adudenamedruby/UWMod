@@ -24,13 +24,13 @@ class HelpTableViewHeader: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         
         // Content View
-        contentView.backgroundColor = STYLE.Brown
+        contentView.backgroundColor = STYLE.Beige
         
         let marginGuide = contentView.layoutMarginsGuide
         
         // Arrow label
         contentView.addSubview(arrowLabel)
-        arrowLabel.textColor = UIColor.white
+        arrowLabel.textColor = STYLE.Brown
         arrowLabel.translatesAutoresizingMaskIntoConstraints = false
         arrowLabel.widthAnchor.constraint(equalToConstant: 12).isActive = true
         arrowLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
@@ -39,7 +39,7 @@ class HelpTableViewHeader: UITableViewHeaderFooterView {
         
         // Title label
         contentView.addSubview(titleLabel)
-        titleLabel.textColor = STYLE.Tan
+        titleLabel.textColor = STYLE.Brown
         titleLabel.font = STYLE.RegBold
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true

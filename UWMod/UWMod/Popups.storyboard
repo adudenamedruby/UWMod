@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -38,7 +37,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNT-jQ-OUN">
-                                                <rect key="frame" x="101" y="13.5" width="49.5" height="36.5"/>
+                                                <rect key="frame" x="100.5" y="13" width="49.5" height="36.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60a-cu-Pmf" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="34.5" height="36.5"/>
@@ -57,6 +56,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="1Kt-F3-doI"/>
                                             <constraint firstItem="eNT-jQ-OUN" firstAttribute="centerX" secondItem="cHa-iw-YoI" secondAttribute="centerX" id="B07-Ny-zjW"/>
                                             <constraint firstItem="eNT-jQ-OUN" firstAttribute="centerY" secondItem="cHa-iw-YoI" secondAttribute="centerY" constant="3" id="wFj-Dm-O39"/>
                                         </constraints>
@@ -101,7 +101,6 @@
                                     <constraint firstItem="cHa-iw-YoI" firstAttribute="leading" secondItem="qAe-hJ-BYF" secondAttribute="leading" id="4C6-oV-vLb"/>
                                     <constraint firstAttribute="trailing" secondItem="O3R-hb-4CP" secondAttribute="trailing" constant="15" id="I6k-le-PCO"/>
                                     <constraint firstItem="ja6-fw-Fji" firstAttribute="top" relation="greaterThanOrEqual" secondItem="O3R-hb-4CP" secondAttribute="bottom" constant="5" id="KSm-Vl-Qid"/>
-                                    <constraint firstItem="cHa-iw-YoI" firstAttribute="height" secondItem="qAe-hJ-BYF" secondAttribute="height" multiplier="0.35" id="TG4-T3-IKA"/>
                                     <constraint firstItem="ja6-fw-Fji" firstAttribute="centerX" secondItem="qAe-hJ-BYF" secondAttribute="centerX" id="THp-gc-Oyf"/>
                                     <constraint firstAttribute="trailing" secondItem="cHa-iw-YoI" secondAttribute="trailing" id="Tf5-AP-X2g"/>
                                     <constraint firstItem="O3R-hb-4CP" firstAttribute="top" secondItem="cHa-iw-YoI" secondAttribute="bottom" constant="10" id="UPB-TV-Hqf"/>
@@ -154,10 +153,10 @@
                                 <rect key="frame" x="27" y="183.5" width="320" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVK-w9-aLK">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHq-YD-IHk">
-                                                <rect key="frame" x="29" y="10.5" width="263" height="36.5"/>
+                                                <rect key="frame" x="28.5" y="12.5" width="263" height="36.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7X8-05-uaE" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="28.5" height="36.5"/>
@@ -178,6 +177,7 @@
                                         <constraints>
                                             <constraint firstItem="bHq-YD-IHk" firstAttribute="centerY" secondItem="yVK-w9-aLK" secondAttribute="centerY" id="59K-iT-wQk"/>
                                             <constraint firstItem="bHq-YD-IHk" firstAttribute="centerX" secondItem="yVK-w9-aLK" secondAttribute="centerX" id="6ck-6t-nmo"/>
+                                            <constraint firstAttribute="height" constant="60" id="phL-kC-gY1"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7B-nQ-8cp" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
@@ -201,10 +201,10 @@
                                         </connections>
                                     </button>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NON-22-8Vn">
-                                        <rect key="frame" x="10" y="126" width="300" height="104"/>
+                                        <rect key="frame" x="10" y="129" width="300" height="101"/>
                                     </pickerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a player to eliminate. Be careful as this cannot be undone." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxL-Dw-UGD" customClass="RegularTextBrownLabel" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="77" width="280" height="39.5"/>
+                                        <rect key="frame" x="20" y="80" width="280" height="39.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39.5" id="lTy-To-deS"/>
                                         </constraints>
@@ -217,7 +217,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="5c4-ZX-XYJ"/>
                                     <constraint firstItem="gxL-Dw-UGD" firstAttribute="top" secondItem="yVK-w9-aLK" secondAttribute="bottom" constant="20" id="5d9-PW-KIW"/>
-                                    <constraint firstItem="yVK-w9-aLK" firstAttribute="height" secondItem="Gfm-gC-UaT" secondAttribute="height" multiplier="0.19" id="6aN-ig-j3C"/>
                                     <constraint firstItem="yVK-w9-aLK" firstAttribute="leading" secondItem="Gfm-gC-UaT" secondAttribute="leading" id="JCQ-0B-X2t"/>
                                     <constraint firstItem="gxL-Dw-UGD" firstAttribute="centerX" secondItem="Gfm-gC-UaT" secondAttribute="centerX" id="M1E-gu-kpO"/>
                                     <constraint firstItem="J7B-nQ-8cp" firstAttribute="top" secondItem="NON-22-8Vn" secondAttribute="bottom" constant="10" id="Nuh-bv-s9x"/>

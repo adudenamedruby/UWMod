@@ -111,7 +111,7 @@
         <scene sceneID="bbH-zT-s6u">
             <objects>
                 <collectionViewController storyboardIdentifier="cardView" modalTransitionStyle="crossDissolve" id="Qeg-zw-pMz" customClass="NightVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="HbN-T4-Ls4">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="HbN-T4-Ls4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -161,7 +161,7 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agw-cW-VDg">
-                                                    <rect key="frame" x="62" y="234" width="206.5" height="23.5"/>
+                                                    <rect key="frame" x="62.5" y="234" width="206.5" height="23.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-Pz-mUn" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="49" height="23.5"/>
@@ -208,7 +208,7 @@
                                                             <rect key="frame" x="1" y="1" width="278" height="393"/>
                                                             <subviews>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H16-Cc-ua2">
-                                                                    <rect key="frame" x="10" y="67" width="258" height="231"/>
+                                                                    <rect key="frame" x="10" y="71" width="258" height="227"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                     <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -227,10 +227,10 @@
                                                                     </connections>
                                                                 </button>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dN7-Fv-Fgs">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="278" height="59"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="278" height="63"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Geg-lE-yjh">
-                                                                            <rect key="frame" x="63" y="12" width="152" height="36.5"/>
+                                                                            <rect key="frame" x="63" y="13.5" width="152" height="36.5"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-85-MBo" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="38" height="36.5"/>
@@ -249,6 +249,7 @@
                                                                     </subviews>
                                                                     <color key="backgroundColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="height" constant="63" id="83O-q4-cRF"/>
                                                                         <constraint firstItem="Geg-lE-yjh" firstAttribute="centerX" secondItem="dN7-Fv-Fgs" secondAttribute="centerX" id="OlF-H4-6wK"/>
                                                                         <constraint firstItem="Geg-lE-yjh" firstAttribute="centerY" secondItem="dN7-Fv-Fgs" secondAttribute="centerY" id="RaD-ko-fx7"/>
                                                                     </constraints>
@@ -265,7 +266,6 @@
                                                                 <constraint firstItem="ENH-0t-qzF" firstAttribute="top" secondItem="H16-Cc-ua2" secondAttribute="bottom" constant="25" id="cdd-vj-gh3"/>
                                                                 <constraint firstItem="H16-Cc-ua2" firstAttribute="top" secondItem="dN7-Fv-Fgs" secondAttribute="bottom" constant="8" id="jxP-O4-QPq"/>
                                                                 <constraint firstItem="dN7-Fv-Fgs" firstAttribute="top" secondItem="ZN7-Hw-sjF" secondAttribute="top" id="k4D-LV-Lo3"/>
-                                                                <constraint firstItem="dN7-Fv-Fgs" firstAttribute="height" secondItem="ZN7-Hw-sjF" secondAttribute="height" multiplier="0.15" id="lM2-lY-Xaz"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>

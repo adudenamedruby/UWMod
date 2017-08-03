@@ -214,8 +214,8 @@
 				123BD0D61F2FE66400B99019 /* StringExtensions.swift */,
 				77F9E11F1F31040600E48211 /* OldTextLabels.swift */,
 				77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */,
-				12EC78031F2BE8AA0026C667 /* screenSmoke.sks */,
 				7736D0971F33A2C600555037 /* UIViewExtensions.swift */,
+				12EC78031F2BE8AA0026C667 /* screenSmoke.sks */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
