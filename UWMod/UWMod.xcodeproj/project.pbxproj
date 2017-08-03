@@ -51,6 +51,11 @@
 		12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC78071F2BE9E50026C667 /* MenuVC.swift */; };
 		12EC780D1F2C02990026C667 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC780C1F2C02990026C667 /* CircularTransition.swift */; };
 		7736D0921F3399BC00555037 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0911F3399BC00555037 /* HelpVC.swift */; };
+		7736D0941F33A24200555037 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0931F33A24200555037 /* Help.swift */; };
+		7736D0961F33A25100555037 /* HelpConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0951F33A25100555037 /* HelpConstants.swift */; };
+		7736D0981F33A2C600555037 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0971F33A2C600555037 /* UIViewExtensions.swift */; };
+		7736D09A1F33A32000555037 /* HelpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0991F33A32000555037 /* HelpCell.swift */; };
+		7736D09C1F33A36700555037 /* HelpCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D09B1F33A36700555037 /* HelpCellHeader.swift */; };
 		77F9E1201F31040600E48211 /* OldTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9E11F1F31040600E48211 /* OldTextLabels.swift */; };
 		77F9E1221F310CCE00E48211 /* RegularTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */; };
 /* End PBXBuildFile section */
@@ -102,6 +107,11 @@
 		12EC78071F2BE9E50026C667 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		12EC780C1F2C02990026C667 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		7736D0911F3399BC00555037 /* HelpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
+		7736D0931F33A24200555037 /* Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		7736D0951F33A25100555037 /* HelpConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpConstants.swift; sourceTree = "<group>"; };
+		7736D0971F33A2C600555037 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		7736D0991F33A32000555037 /* HelpCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCell.swift; sourceTree = "<group>"; };
+		7736D09B1F33A36700555037 /* HelpCellHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCellHeader.swift; sourceTree = "<group>"; };
 		77F9E11F1F31040600E48211 /* OldTextLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldTextLabels.swift; sourceTree = "<group>"; };
 		77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularTextLabels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +215,7 @@
 				77F9E11F1F31040600E48211 /* OldTextLabels.swift */,
 				77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */,
 				12EC78031F2BE8AA0026C667 /* screenSmoke.sks */,
+				7736D0971F33A2C600555037 /* UIViewExtensions.swift */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -214,6 +225,8 @@
 			children = (
 				12EC78071F2BE9E50026C667 /* MenuVC.swift */,
 				7736D0911F3399BC00555037 /* HelpVC.swift */,
+				7736D0991F33A32000555037 /* HelpCell.swift */,
+				7736D09B1F33A36700555037 /* HelpCellHeader.swift */,
 				12EC77D01F26D4AA0026C667 /* AboutVC.swift */,
 				12EC77E61F2BDAC00026C667 /* PlayerSelectVC.swift */,
 				1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */,
@@ -268,6 +281,8 @@
 				12EC77D31F26D4DC0026C667 /* Roles.swift */,
 				12EC77E21F29881F0026C667 /* RoleConstants.swift */,
 				1261C2B61F3265DA0099D759 /* File.swift */,
+				7736D0931F33A24200555037 /* Help.swift */,
+				7736D0951F33A25100555037 /* HelpConstants.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -339,7 +354,7 @@
 				TargetAttributes = {
 					120982051F26BBE700EC5D21 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 8DD4C7KK4P;
+						DevelopmentTeam = GPR64ZMTT3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -403,11 +418,13 @@
 				12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */,
 				123BD0DA1F2FF34D00B99019 /* NightCell.swift in Sources */,
 				12D15E291F2EBCCA0057905E /* ColourDefinitions.swift in Sources */,
+				7736D0981F33A2C600555037 /* UIViewExtensions.swift in Sources */,
 				1261C2BE1F32AA960099D759 /* GeneralInfo.swift in Sources */,
 				12EC77DD1F2831C90026C667 /* Game.swift in Sources */,
 				12EC78011F2BE2FE0026C667 /* TisprCardStackViewController.swift in Sources */,
 				123BD0DC1F3000A000B99019 /* MainNightVC.swift in Sources */,
 				12EC77DF1F2978920026C667 /* Artifacts.swift in Sources */,
+				7736D0941F33A24200555037 /* Help.swift in Sources */,
 				12EC78021F2BE2FE0026C667 /* TisprCardStackViewLayout.swift in Sources */,
 				1209820A1F26BBE700EC5D21 /* AppDelegate.swift in Sources */,
 				12EC77D11F26D4AA0026C667 /* AboutVC.swift in Sources */,
@@ -418,11 +435,14 @@
 				12EC77E51F2BDAB00026C667 /* RoleSelectVC.swift in Sources */,
 				12EC77D41F26D4DC0026C667 /* Roles.swift in Sources */,
 				1261C2B71F3265DA0099D759 /* File.swift in Sources */,
+				7736D0961F33A25100555037 /* HelpConstants.swift in Sources */,
+				7736D09A1F33A32000555037 /* HelpCell.swift in Sources */,
 				12EC77EB1F2BDAEA0026C667 /* DayVC.swift in Sources */,
 				12EC78001F2BE2FE0026C667 /* TisprCardStackViewCell.swift in Sources */,
 				7736D0921F3399BC00555037 /* HelpVC.swift in Sources */,
 				1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */,
 				123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */,
+				7736D09C1F33A36700555037 /* HelpCellHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DEVELOPMENT_TEAM = GPR64ZMTT3;
 				INFOPLIST_FILE = UWMod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.UWMod;
@@ -558,7 +578,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DEVELOPMENT_TEAM = GPR64ZMTT3;
 				INFOPLIST_FILE = UWMod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.UWMod;
