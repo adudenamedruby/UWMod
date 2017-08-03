@@ -73,7 +73,7 @@ class PlayerSelectVC: UIViewController {
     
     func loadPlayers() {
         if let temp = defaults.object(forKey: PLAYERS) as? [String] {
-            self.savedPlayers = temp.sorted()
+            self.savedPlayers = temp.sorted{$0.localizedCaseInsensitiveCompare($1) == .orderedAscending}
         }
         
         tableView.reloadData()

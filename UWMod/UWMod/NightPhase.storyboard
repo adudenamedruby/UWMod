@@ -31,17 +31,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nighttime" translatesAutoresizingMaskIntoConstraints="NO" id="Ga9-H1-OrQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifx-u0-wPx">
-                                <rect key="frame" x="50" y="466" width="275.5" height="36.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Ifx-u0-wPx">
+                                <rect key="frame" x="48.5" y="462.5" width="278.5" height="42"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4L-kv-cMb" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="24.5" height="36.5"/>
-                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="27.5" height="42"/>
+                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nd Night Phase?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQQ-0I-u5l" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="24.5" y="0.0" width="251" height="36.5"/>
+                                        <rect key="frame" x="27.5" y="0.0" width="251" height="42"/>
                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4y-IZ-EmM">
-                                <rect key="frame" x="212.5" y="552.5" width="50" height="50"/>
+                                <rect key="frame" x="212.5" y="554.5" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="42f-5z-xj9"/>
                                     <constraint firstAttribute="width" constant="50" id="Imd-Be-A26"/>
@@ -60,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JC-2X-veb">
-                                <rect key="frame" x="112.5" y="552.5" width="50" height="50"/>
+                                <rect key="frame" x="112.5" y="554.5" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="B3A-iB-wKo"/>
                                     <constraint firstAttribute="height" constant="50" id="a8k-GZ-kOU"/>
