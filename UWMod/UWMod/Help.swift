@@ -26,7 +26,7 @@ public struct Section {
     var items: [Item]
     var collapsed: Bool
     
-    public init(name: String, items: [Item], collapsed: Bool = false) {
+    public init(name: String, items: [Item], collapsed: Bool = true) {
         self.name = name
         self.items = items
         self.collapsed = collapsed

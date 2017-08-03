@@ -29,6 +29,5 @@ class RoleSelectionCell: UICollectionViewCell {
         mainView.backgroundColor = STYLE.Tan
         imageBackgroundViewTop.backgroundColor = STYLE.Brown
         imageBackgroundView.backgroundColor = STYLE.Brown
-        
     }
 }

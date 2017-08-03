@@ -41,6 +41,7 @@ class RoleSelectVC: UIViewController {
     var players: [String]?
     var selectedRoles: [Role] = []
     var gameActors: [Player] = []
+    var suggestedWerewolves: Int = 0
     
     
     // MARK: - View lifetime
@@ -56,6 +57,8 @@ class RoleSelectVC: UIViewController {
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = true
         
+        teamBalanceLabel.text = suggestRoles()
+        
         updateRoleCountLabel()
         
         gameBalanceLabel.text = String(gameBalance)
@@ -68,6 +71,24 @@ class RoleSelectVC: UIViewController {
     
     
     // MARK: - Role selection
+    
+    func suggestRoles() -> String {
+
+        let numberOfPlayers = (players?.count)!
+        var numberOfWerewolves: Int
+        
+        if numberOfPlayers < 4 {
+            numberOfWerewolves = 1
+        } else {
+            numberOfWerewolves = numberOfPlayers / 4
+        }
+        
+        let numberOfVillagers = numberOfPlayers - numberOfWerewolves - 1
+        
+        let suggestion = "Suggested roles: 1 Seer \(numberOfVillagers) Villagers \(numberOfWerewolves) Werewolves"
+        
+        return suggestion
+    }
     
     func updateRoles() {
         var chosenRoles: [Role] = []
@@ -156,6 +177,7 @@ class RoleSelectVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 }
+
 
 extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
     

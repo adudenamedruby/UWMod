@@ -26,7 +26,8 @@ class HelpCell: UITableViewCell {
         nameLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         nameLabel.numberOfLines = 0
-        nameLabel.font = UIFont.systemFont(ofSize: 16)
+        nameLabel.font = STYLE.RegBold
+        nameLabel.textColor = STYLE.Brown
         
         // configure detailLabel
         contentView.addSubview(detailLabel)
@@ -37,8 +38,8 @@ class HelpCell: UITableViewCell {
         detailLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         detailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5).isActive = true
         detailLabel.numberOfLines = 0
-        detailLabel.font = UIFont.systemFont(ofSize: 12)
-        detailLabel.textColor = UIColor.lightGray
+        detailLabel.font = STYLE.RegSmall
+        detailLabel.textColor = STYLE.Brown
     }
     
     required init?(coder aDecoder: NSCoder) {
