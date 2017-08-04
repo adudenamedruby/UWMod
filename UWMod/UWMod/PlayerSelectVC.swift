@@ -54,14 +54,13 @@ class PlayerSelectVC: UIViewController {
                                               object: nil)
         
         loadPlayers()
+        resetVillageSizeLabel()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadPlayers()
-        villageSize = 0
-        playerNumberLabel.text = "0"
-        
+        resetVillageSizeLabel()
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,10 +68,16 @@ class PlayerSelectVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func resetVillageSizeLabel() {
+        villageSize = 0
+        playerNumberLabel.text = "0"
+    }
+    
     
     // MARK: - Player list names
     
     func loadPlayers() {
+        resetVillageSizeLabel()
         if let temp = defaults.object(forKey: PLAYERS) as? [String] {
             self.savedPlayers = temp.sorted{$0.localizedCaseInsensitiveCompare($1) == .orderedAscending}
         }

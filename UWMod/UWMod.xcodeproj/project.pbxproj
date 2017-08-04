@@ -21,7 +21,7 @@
 		124787611F34150A00518532 /* SelectedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124787601F34150A00518532 /* SelectedItem.swift */; };
 		1260ED331F2C2A78001A8F7B /* AddPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */; };
 		1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */; };
-		1261C2B71F3265DA0099D759 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B61F3265DA0099D759 /* File.swift */; };
+		1261C2B71F3265DA0099D759 /* BasicAlertObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */; };
 		1261C2BE1F32AA960099D759 /* GeneralInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2BC1F32AA960099D759 /* GeneralInfo.swift */; };
 		1261C2BF1F32AA960099D759 /* GeneralInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1261C2BD1F32AA960099D759 /* GeneralInfo.xib */; };
 		12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */; };
@@ -57,6 +57,8 @@
 		7736D0981F33A2C600555037 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0971F33A2C600555037 /* UIViewExtensions.swift */; };
 		7736D09A1F33A32000555037 /* HelpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0991F33A32000555037 /* HelpCell.swift */; };
 		7736D09C1F33A36700555037 /* HelpCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D09B1F33A36700555037 /* HelpCellHeader.swift */; };
+		77B2B0061F34D7AC0032A36B /* Graveyard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2B0041F34D7AC0032A36B /* Graveyard.swift */; };
+		77B2B0071F34D7AC0032A36B /* Graveyard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B2B0051F34D7AC0032A36B /* Graveyard.xib */; };
 		77F9E1201F31040600E48211 /* OldTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9E11F1F31040600E48211 /* OldTextLabels.swift */; };
 		77F9E1221F310CCE00E48211 /* RegularTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */; };
 /* End PBXBuildFile section */
@@ -78,7 +80,7 @@
 		124787601F34150A00518532 /* SelectedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedItem.swift; sourceTree = "<group>"; };
 		1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerVC.swift; sourceTree = "<group>"; };
 		1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EliminatePlayerVC.swift; sourceTree = "<group>"; };
-		1261C2B61F3265DA0099D759 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAlertObject.swift; sourceTree = "<group>"; };
 		1261C2BC1F32AA960099D759 /* GeneralInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralInfo.swift; sourceTree = "<group>"; };
 		1261C2BD1F32AA960099D759 /* GeneralInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralInfo.xib; sourceTree = "<group>"; };
 		12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSuperButton.swift; sourceTree = "<group>"; };
@@ -114,6 +116,8 @@
 		7736D0971F33A2C600555037 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		7736D0991F33A32000555037 /* HelpCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCell.swift; sourceTree = "<group>"; };
 		7736D09B1F33A36700555037 /* HelpCellHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCellHeader.swift; sourceTree = "<group>"; };
+		77B2B0041F34D7AC0032A36B /* Graveyard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graveyard.swift; sourceTree = "<group>"; };
+		77B2B0051F34D7AC0032A36B /* Graveyard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Graveyard.xib; sourceTree = "<group>"; };
 		77F9E11F1F31040600E48211 /* OldTextLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldTextLabels.swift; sourceTree = "<group>"; };
 		77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularTextLabels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				1261C2BD1F32AA960099D759 /* GeneralInfo.xib */,
+				77B2B0051F34D7AC0032A36B /* Graveyard.xib */,
 			);
 			name = "Day XIBs";
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 		1261C2BB1F32AA650099D759 /* Day */ = {
 			isa = PBXGroup;
 			children = (
+				77B2B0041F34D7AC0032A36B /* Graveyard.swift */,
 				12EC77EA1F2BDAEA0026C667 /* DayVC.swift */,
 				1261C2BC1F32AA960099D759 /* GeneralInfo.swift */,
 			);
@@ -276,14 +282,14 @@
 				12EC77DE1F2978920026C667 /* Artifacts.swift */,
 				12EC77E01F297A3E0026C667 /* ArtifactConstants.swift */,
 				12EC77D81F26DD250026C667 /* Constants.swift */,
+				1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */,
 				12EC77DC1F2831C90026C667 /* Game.swift */,
-				12EC77DA1F27541A0026C667 /* Player.swift */,
-				12EC77D31F26D4DC0026C667 /* Roles.swift */,
-				124787601F34150A00518532 /* SelectedItem.swift */,
-				12EC77E21F29881F0026C667 /* RoleConstants.swift */,
-				1261C2B61F3265DA0099D759 /* File.swift */,
 				7736D0931F33A24200555037 /* Help.swift */,
 				7736D0951F33A25100555037 /* HelpConstants.swift */,
+				12EC77DA1F27541A0026C667 /* Player.swift */,
+				12EC77D31F26D4DC0026C667 /* Roles.swift */,
+				12EC77E21F29881F0026C667 /* RoleConstants.swift */,
+				124787601F34150A00518532 /* SelectedItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -357,7 +363,7 @@
 				TargetAttributes = {
 					120982051F26BBE700EC5D21 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 8DD4C7KK4P;
+						DevelopmentTeam = GPR64ZMTT3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -388,6 +394,7 @@
 				120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */,
 				12EC77F61F2BDBE40026C667 /* DayPhase.storyboard in Resources */,
 				120982111F26BBE700EC5D21 /* Assets.xcassets in Resources */,
+				77B2B0071F34D7AC0032A36B /* Graveyard.xib in Resources */,
 				123BD0D31F2F6BF600B99019 /* Popups.storyboard in Resources */,
 				12EC77F41F2BDBD90026C667 /* NightPhase.storyboard in Resources */,
 				12EC77FB1F2BE1D40026C667 /* Old Wise Sketch.otf in Resources */,
@@ -438,11 +445,12 @@
 				12EC780D1F2C02990026C667 /* CircularTransition.swift in Sources */,
 				12EC77E51F2BDAB00026C667 /* RoleSelectVC.swift in Sources */,
 				12EC77D41F26D4DC0026C667 /* Roles.swift in Sources */,
-				1261C2B71F3265DA0099D759 /* File.swift in Sources */,
+				1261C2B71F3265DA0099D759 /* BasicAlertObject.swift in Sources */,
 				7736D0961F33A25100555037 /* HelpConstants.swift in Sources */,
 				7736D09A1F33A32000555037 /* HelpCell.swift in Sources */,
 				12EC77EB1F2BDAEA0026C667 /* DayVC.swift in Sources */,
 				12EC78001F2BE2FE0026C667 /* TisprCardStackViewCell.swift in Sources */,
+				77B2B0061F34D7AC0032A36B /* Graveyard.swift in Sources */,
 				7736D0921F3399BC00555037 /* HelpVC.swift in Sources */,
 				1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */,
 				123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */,
@@ -569,7 +577,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DEVELOPMENT_TEAM = GPR64ZMTT3;
 				INFOPLIST_FILE = UWMod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.UWMod;
@@ -582,7 +590,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DEVELOPMENT_TEAM = GPR64ZMTT3;
 				INFOPLIST_FILE = UWMod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.UWMod;

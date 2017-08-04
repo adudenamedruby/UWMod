@@ -40,7 +40,7 @@ class HelpTableViewHeader: UITableViewHeaderFooterView {
         // Title label
         contentView.addSubview(titleLabel)
         titleLabel.textColor = STYLE.Brown
-        titleLabel.font = STYLE.RegBold
+        titleLabel.font = STYLE.RegBoldHeaderFont
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true

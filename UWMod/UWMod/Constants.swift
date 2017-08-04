@@ -42,12 +42,17 @@ struct StyleConstants {
     let Turqoise = UIColor.WerewolfTheme.TurqoiseGreen
     let Green = UIColor.WerewolfTheme.MutedGreen
     
-    let OldStandard = UIFont(name: "OldWiseSketch", size: 35)
-    let OldLarge = UIFont(name: "OldWiseSketch", size: 60)
-    let RegStandard = UIFont(name: "AmericanTypewriter", size: 15)
-    let RegSmall = UIFont(name: "AmericanTypewriter", size: 13)
-    let RegBold = UIFont(name: "AmericanTypewriter-Bold", size: 16)
-    let RegLarge = UIFont(name: "AmericanTypewriter", size: 17)
+    let OldStandardFont = UIFont(name: "OldWiseSketch", size: 35)
+    let OldFirstLetterFont = UIFont(name: "OldWiseSketch", size: 38)
+    let OldMenuTopFont = UIFont(name: "OldWiseSketch", size: 60)
+    let OldMenuBottomFont = UIFont(name: "OldWiseSketch", size: 70)
+    let OldRoleFont = UIFont(name: "OldWiseSketch", size: 50)
+    let OldRoleFirstFont = UIFont(name: "OldWiseSketch", size: 55)
+    let RegStandardFont = UIFont(name: "AmericanTypewriter", size: 15)
+    let RegSmallFont = UIFont(name: "AmericanTypewriter", size: 13)
+    let RegBoldFont = UIFont(name: "AmericanTypewriter-Bold", size: 16)
+    let RegBoldHeaderFont = UIFont(name: "AmericanTypewriter-Bold", size: 19)
+    let RegLargeFont = UIFont(name: "AmericanTypewriter", size: 18)
 }
 
 

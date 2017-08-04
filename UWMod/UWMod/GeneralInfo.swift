@@ -16,7 +16,11 @@ class GeneralInfo: UITableViewCell {
     @IBOutlet weak var mainCardView: UIView!
     @IBOutlet weak var headerView: UIView!
     
-    @IBOutlet weak var timeLabel: RegularTextBrownLabel!
+    @IBOutlet var playersAliveLabel: RegGreenBold!
+    @IBOutlet var playersDeadLabel: RegRedBold!
+    @IBOutlet var totalPlayersLabel: RegBrownBold!
+    
+    @IBOutlet weak var timeLabel: RegBrown!
     
     //MARK: - Variables
     private var timer: Timer!
@@ -45,6 +49,9 @@ class GeneralInfo: UITableViewCell {
     
     
     func configureCell() {
+        playersAliveLabel.text = "\(GAME.livingActors.count)"
+        playersDeadLabel.text = "\(GAME.deadActors.count)"
+        totalPlayersLabel.text = "\(GAME.livingActors.count + GAME.deadActors.count)"
         startTimer()
         
     }

@@ -34,13 +34,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Ifx-u0-wPx">
                                 <rect key="frame" x="48.5" y="462.5" width="278.5" height="42"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4L-kv-cMb" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4L-kv-cMb" customClass="OldRedHeader" customModule="UWMod" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="27.5" height="42"/>
                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nd Night Phase?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQQ-0I-u5l" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nd Night Phase?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQQ-0I-u5l" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
                                         <rect key="frame" x="27.5" y="0.0" width="251" height="42"/>
                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                         <nil key="textColor"/>
@@ -111,7 +111,7 @@
         <scene sceneID="bbH-zT-s6u">
             <objects>
                 <collectionViewController storyboardIdentifier="cardView" modalTransitionStyle="crossDissolve" id="Qeg-zw-pMz" customClass="NightVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="HbN-T4-Ls4">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="HbN-T4-Ls4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -160,30 +160,30 @@
                                                         <constraint firstItem="ADL-2L-x3K" firstAttribute="centerY" secondItem="OPT-mT-Ica" secondAttribute="centerY" id="qLq-ib-Aiv"/>
                                                     </constraints>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agw-cW-VDg">
-                                                    <rect key="frame" x="50" y="234" width="231" height="23.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="agw-cW-VDg">
+                                                    <rect key="frame" x="62" y="234" width="206.5" height="23.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-Pz-mUn" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="46.5" height="23.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-Pz-mUn" customClass="OldRedRole" customModule="UWMod" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="49" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="50"/>
                                                             <color key="textColor" red="0.64536405460000001" green="0.1161611183" blue="0.12310011999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ewewolf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="DPi-9e-CxI" customClass="OldTextBrownLabel" customModule="UWMod" customModuleProvider="target">
-                                                            <rect key="frame" x="46.5" y="0.0" width="184.5" height="23.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ewewolf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="DPi-9e-CxI" customClass="OldBrownRole" customModule="UWMod" customModuleProvider="target">
+                                                            <rect key="frame" x="49" y="0.0" width="157.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="50"/>
                                                             <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(John)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="nMC-fN-ITG" customClass="RegularTextBrownLabel" customModule="UWMod" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(John)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="nMC-fN-ITG" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
                                                     <rect key="frame" x="136" y="257.5" width="57" height="20"/>
                                                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                     <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-3n-Ybh" customClass="RegularTextBrownLabel" customModule="UWMod" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-3n-Ybh" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
                                                     <rect key="frame" x="20.5" y="287.5" width="289.5" height="98.5"/>
                                                     <string key="text">Once per game following the elimination of a Werewolf during the day, you may turn the Werewolves target into a Werewolf instead of eliminating him.</string>
                                                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
@@ -230,16 +230,16 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="278" height="63"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Geg-lE-yjh">
-                                                                            <rect key="frame" x="62.5" y="10" width="153" height="41"/>
+                                                                            <rect key="frame" x="63" y="14" width="152" height="36.5"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-85-MBo" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="24" height="41"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-85-MBo" customClass="OldRedHeader" customModule="UWMod" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="38" height="36.5"/>
                                                                                     <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                                                     <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ole Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8e8-N3-50z" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
-                                                                                    <rect key="frame" x="24" y="0.0" width="129" height="41"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ole Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8e8-N3-50z" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
+                                                                                    <rect key="frame" x="38" y="0.0" width="114" height="36.5"/>
                                                                                     <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                                                     <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                     <nil key="highlightedColor"/>

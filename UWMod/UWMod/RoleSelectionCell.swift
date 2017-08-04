@@ -16,8 +16,10 @@ class RoleSelectionCell: UICollectionViewCell {
     @IBOutlet weak var imageBackgroundView: UIView!
     
     @IBOutlet weak var roleImage: UIImageView!
-    @IBOutlet weak var firstLetter: UILabel!
     @IBOutlet weak var remainingCharacters: UILabel!
+    
+    var roleName: String!
+    var roleIcon: UIImage!
     
     
     func configureCell() {
@@ -29,5 +31,14 @@ class RoleSelectionCell: UICollectionViewCell {
         mainView.backgroundColor = STYLE.Tan
         imageBackgroundViewTop.backgroundColor = STYLE.Brown
         imageBackgroundView.backgroundColor = STYLE.Brown
+        
+        let attributedText = NSMutableAttributedString(string: roleName,
+                                                       attributes: [NSFontAttributeName:STYLE.RegStandardFont!])
+        attributedText.addAttribute(NSForegroundColorAttributeName,
+                                    value: STYLE.Red,
+                                    range: NSRange(location:0,length:1))
+        
+        remainingCharacters.attributedText = attributedText
+        roleImage.image = roleIcon
     }
 }

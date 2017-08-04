@@ -53,16 +53,16 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBF-QD-oM1">
-                                <rect key="frame" x="58" y="476" width="259" height="41"/>
+                                <rect key="frame" x="62" y="480.5" width="251" height="36.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0G-ME-NL9" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="21.5" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="24.5" height="36.5"/>
                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nd Day Phase?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxN-ua-e0J" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="21.5" y="0.0" width="237.5" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nd Day Phase?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxN-ua-e0J" customClass="OldBrown" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="24.5" y="0.0" width="226.5" height="36.5"/>
                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -79,16 +79,16 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="70"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wro-u3-tqJ">
-                                                        <rect key="frame" x="81.5" y="11.5" width="192.5" height="47"/>
+                                                        <rect key="frame" x="83" y="14" width="189.5" height="42"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3og-L8-RSW" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="28.5" height="47"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3og-L8-RSW" customClass="OldRedHeader" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="29.5" height="42"/>
                                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ay Phase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-aX-9Rv" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
-                                                                <rect key="frame" x="28.5" y="0.0" width="164" height="47"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ay Phase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-aX-9Rv" customClass="OldBrown" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="29.5" y="0.0" width="160" height="42"/>
                                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -130,15 +130,15 @@
                                             <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                                <color key="value" red="0.090196078430000007" green="0.49803921569999998" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="value" red="0.18473772320000001" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
                                                 <real key="value" value="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
