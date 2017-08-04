@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
+class MenuVC: UIViewController {
     
     @IBOutlet weak var aboutButton: UIButton!
     
@@ -24,36 +24,13 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
         
         mainCardView.layer.cornerRadius = STYLE.CornerRadius
         
-        mainCardView.backgroundColor = UIColor.WerewolfTheme.LightTan
-        brownView.backgroundColor = UIColor.WerewolfTheme.ChocolateBrown
-
-        //presentSmoke()
+        mainCardView.backgroundColor = STYLE.Tan
+        brownView.backgroundColor = STYLE.Brown
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    
-    // MARK: - Animation for effect
-    
-    // Create smoke particles at the bottom of the screen
-    func presentSmoke() {
-        let sk: SKView = SKView()
-        sk.frame = mainView.bounds
-        sk.backgroundColor = .clear
-        mainCardView.addSubview(sk)
-        
-        let scene: SKScene = SKScene(size: mainView.bounds.size)
-        scene.scaleMode = .aspectFit
-        scene.backgroundColor = .clear
-        
-        let particles = SKEmitterNode(fileNamed: "screenSmoke.sks")
-        particles?.position = CGPoint(x: 0, y: 200)
-        
-        scene.addChild(particles!)
-        sk.presentScene(scene)
     }
     
     
@@ -76,6 +53,9 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
         transition.circleColour = brownView.backgroundColor!
         return transition
     }
+}
+
+extension MenuVC: UIViewControllerTransitioningDelegate {
     
     // Setup the dismissing animation
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -96,4 +76,5 @@ class MenuVC: UIViewController, UIViewControllerTransitioningDelegate {
             secondVC.modalPresentationStyle = .custom
         }
     }
+
 }

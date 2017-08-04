@@ -48,7 +48,6 @@
 		12EC78001F2BE2FE0026C667 /* TisprCardStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77FD1F2BE2FE0026C667 /* TisprCardStackViewCell.swift */; };
 		12EC78011F2BE2FE0026C667 /* TisprCardStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77FE1F2BE2FE0026C667 /* TisprCardStackViewController.swift */; };
 		12EC78021F2BE2FE0026C667 /* TisprCardStackViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77FF1F2BE2FE0026C667 /* TisprCardStackViewLayout.swift */; };
-		12EC78041F2BE8AA0026C667 /* screenSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12EC78031F2BE8AA0026C667 /* screenSmoke.sks */; };
 		12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC78071F2BE9E50026C667 /* MenuVC.swift */; };
 		12EC780D1F2C02990026C667 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC780C1F2C02990026C667 /* CircularTransition.swift */; };
 		7736D0901F3378C200555037 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D08F1F3378C200555037 /* Notes.swift */; };
@@ -106,7 +105,6 @@
 		12EC77FD1F2BE2FE0026C667 /* TisprCardStackViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewCell.swift; sourceTree = "<group>"; };
 		12EC77FE1F2BE2FE0026C667 /* TisprCardStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewController.swift; sourceTree = "<group>"; };
 		12EC77FF1F2BE2FE0026C667 /* TisprCardStackViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewLayout.swift; sourceTree = "<group>"; };
-		12EC78031F2BE8AA0026C667 /* screenSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = screenSmoke.sks; sourceTree = "<group>"; };
 		12EC78071F2BE9E50026C667 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		12EC780C1F2C02990026C667 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		7736D08F1F3378C200555037 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 				77F9E11F1F31040600E48211 /* OldTextLabels.swift */,
 				77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */,
 				7736D0971F33A2C600555037 /* UIViewExtensions.swift */,
-				12EC78031F2BE8AA0026C667 /* screenSmoke.sks */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -393,7 +390,6 @@
 				120982111F26BBE700EC5D21 /* Assets.xcassets in Resources */,
 				123BD0D31F2F6BF600B99019 /* Popups.storyboard in Resources */,
 				12EC77F41F2BDBD90026C667 /* NightPhase.storyboard in Resources */,
-				12EC78041F2BE8AA0026C667 /* screenSmoke.sks in Resources */,
 				12EC77FB1F2BE1D40026C667 /* Old Wise Sketch.otf in Resources */,
 				1209820F1F26BBE700EC5D21 /* Main.storyboard in Resources */,
 				1261C2BF1F32AA960099D759 /* GeneralInfo.xib in Resources */,
