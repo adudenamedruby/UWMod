@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="65.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNg-8h-diS">
-                                                <rect key="frame" x="84" y="15" width="157" height="36.5"/>
+                                                <rect key="frame" x="84" y="14.5" width="157" height="36.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ab-N7-xMC" customClass="OldRedHeader" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="26.5" height="36.5"/>
@@ -154,9 +154,9 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxG-Lc-QGQ">
-                                        <rect key="frame" x="47.5" y="289.5" width="260.5" height="70"/>
+                                        <rect key="frame" x="48" y="289.5" width="260.5" height="70"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFk-jz-icU" customClass="OldMenuRedBottom">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFk-jz-icU" customClass="OldMenuRedBottom" customModule="UWMod" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="65.5" height="70"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="67"/>
                                                 <color key="textColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -341,7 +341,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J54-xu-uYd">
-                                                <rect key="frame" x="56.5" y="15.5" width="226.5" height="40"/>
+                                                <rect key="frame" x="56" y="15" width="226.5" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk2-db-F9n" customClass="OldRedHeader" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="23" height="40"/>
@@ -416,13 +416,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="u4F-gm-ZV7">
                                         <rect key="frame" x="111.5" y="502" width="115.5" height="20"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Village Size:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjl-cE-UsS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Village Size:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjl-cE-UsS" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="98.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoW-qG-sLM">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoW-qG-sLM" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
                                                 <rect key="frame" x="104.5" y="0.0" width="11" height="20"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -522,7 +522,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="337" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1QH-vr-paT">
-                                                <rect key="frame" x="68" y="15.5" width="202.5" height="40"/>
+                                                <rect key="frame" x="67.5" y="15" width="202.5" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zum-nw-VZT" customClass="OldRedHeader" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="23" height="40"/>
@@ -656,36 +656,26 @@
                                                                 <constraint firstAttribute="bottom" secondItem="hGg-1a-uHA" secondAttribute="bottom" constant="12" id="qal-iR-omW"/>
                                                             </constraints>
                                                         </view>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="JcO-8W-PCt">
-                                                            <rect key="frame" x="5" y="134.5" width="88" height="21"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eyE-5m-vwZ" customClass="RegRed" customModule="UWMod" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="7.5" height="21"/>
-                                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
-                                                                    <color key="textColor" red="0.64536405460000001" green="0.1161611183" blue="0.12310011999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eenage Werewolf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bJc-zr-MtH" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                                                    <rect key="frame" x="7.5" y="3" width="80.5" height="17.5"/>
-                                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
-                                                                    <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eenage Werewolf" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bJc-zr-MtH" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
+                                                            <rect key="frame" x="5" y="133" width="88" height="26"/>
+                                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                                            <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstItem="Tiy-Bu-HSC" firstAttribute="leading" secondItem="IWB-2I-aDg" secondAttribute="leading" constant="1" id="1FO-SM-UV1"/>
                                                         <constraint firstItem="wYV-Me-D4f" firstAttribute="top" secondItem="IWB-2I-aDg" secondAttribute="top" constant="15" id="4E5-8a-N2f"/>
                                                         <constraint firstAttribute="trailing" secondItem="wYV-Me-D4f" secondAttribute="trailing" constant="1" id="DGo-ev-b5T"/>
+                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bJc-zr-MtH" secondAttribute="bottom" constant="5" id="Jp2-p9-a5y"/>
                                                         <constraint firstItem="wYV-Me-D4f" firstAttribute="leading" secondItem="IWB-2I-aDg" secondAttribute="leading" constant="1" id="L0C-NF-DGD"/>
                                                         <constraint firstItem="Tiy-Bu-HSC" firstAttribute="top" secondItem="IWB-2I-aDg" secondAttribute="top" constant="1" id="NWy-9R-v2d"/>
-                                                        <constraint firstItem="JcO-8W-PCt" firstAttribute="width" secondItem="IWB-2I-aDg" secondAttribute="width" multiplier="0.9" id="TgV-Hy-5LN"/>
+                                                        <constraint firstItem="bJc-zr-MtH" firstAttribute="leading" secondItem="IWB-2I-aDg" secondAttribute="leading" constant="5" id="S3j-0J-nHk"/>
+                                                        <constraint firstItem="bJc-zr-MtH" firstAttribute="top" secondItem="wYV-Me-D4f" secondAttribute="bottom" constant="5" id="T9R-nn-PCP"/>
                                                         <constraint firstItem="wYV-Me-D4f" firstAttribute="height" secondItem="IWB-2I-aDg" secondAttribute="height" multiplier="0.69" id="Uu9-Yc-4pc"/>
                                                         <constraint firstAttribute="trailing" secondItem="Tiy-Bu-HSC" secondAttribute="trailing" constant="1" id="a5G-bi-fZo"/>
-                                                        <constraint firstItem="JcO-8W-PCt" firstAttribute="centerY" secondItem="IWB-2I-aDg" secondAttribute="centerY" constant="63" id="hY2-k4-pa0"/>
-                                                        <constraint firstItem="JcO-8W-PCt" firstAttribute="centerX" secondItem="IWB-2I-aDg" secondAttribute="centerX" id="uB6-ni-3wu"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bJc-zr-MtH" secondAttribute="trailing" constant="5" id="szQ-h1-5Jp"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -702,7 +692,6 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="borderView" destination="jGV-fS-Rlj" id="jDo-3p-HHF"/>
-                                            <outlet property="firstLetter" destination="eyE-5m-vwZ" id="HWP-gy-KAX"/>
                                             <outlet property="imageBackgroundView" destination="wYV-Me-D4f" id="f6u-rR-SOq"/>
                                             <outlet property="imageBackgroundViewTop" destination="Tiy-Bu-HSC" id="wdz-e4-MAZ"/>
                                             <outlet property="mainView" destination="IWB-2I-aDg" id="hOU-Cx-DGx"/>

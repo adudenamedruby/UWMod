@@ -57,6 +57,8 @@
 		7736D0981F33A2C600555037 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0971F33A2C600555037 /* UIViewExtensions.swift */; };
 		7736D09A1F33A32000555037 /* HelpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0991F33A32000555037 /* HelpCell.swift */; };
 		7736D09C1F33A36700555037 /* HelpCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D09B1F33A36700555037 /* HelpCellHeader.swift */; };
+		77B2B0061F34D7AC0032A36B /* Graveyard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2B0041F34D7AC0032A36B /* Graveyard.swift */; };
+		77B2B0071F34D7AC0032A36B /* Graveyard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B2B0051F34D7AC0032A36B /* Graveyard.xib */; };
 		77F9E1201F31040600E48211 /* OldTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9E11F1F31040600E48211 /* OldTextLabels.swift */; };
 		77F9E1221F310CCE00E48211 /* RegularTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */; };
 /* End PBXBuildFile section */
@@ -114,6 +116,8 @@
 		7736D0971F33A2C600555037 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		7736D0991F33A32000555037 /* HelpCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCell.swift; sourceTree = "<group>"; };
 		7736D09B1F33A36700555037 /* HelpCellHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCellHeader.swift; sourceTree = "<group>"; };
+		77B2B0041F34D7AC0032A36B /* Graveyard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graveyard.swift; sourceTree = "<group>"; };
+		77B2B0051F34D7AC0032A36B /* Graveyard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Graveyard.xib; sourceTree = "<group>"; };
 		77F9E11F1F31040600E48211 /* OldTextLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldTextLabels.swift; sourceTree = "<group>"; };
 		77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularTextLabels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				1261C2BD1F32AA960099D759 /* GeneralInfo.xib */,
+				77B2B0051F34D7AC0032A36B /* Graveyard.xib */,
 			);
 			name = "Day XIBs";
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 		1261C2BB1F32AA650099D759 /* Day */ = {
 			isa = PBXGroup;
 			children = (
+				77B2B0041F34D7AC0032A36B /* Graveyard.swift */,
 				12EC77EA1F2BDAEA0026C667 /* DayVC.swift */,
 				1261C2BC1F32AA960099D759 /* GeneralInfo.swift */,
 			);
@@ -388,6 +394,7 @@
 				120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */,
 				12EC77F61F2BDBE40026C667 /* DayPhase.storyboard in Resources */,
 				120982111F26BBE700EC5D21 /* Assets.xcassets in Resources */,
+				77B2B0071F34D7AC0032A36B /* Graveyard.xib in Resources */,
 				123BD0D31F2F6BF600B99019 /* Popups.storyboard in Resources */,
 				12EC77F41F2BDBD90026C667 /* NightPhase.storyboard in Resources */,
 				12EC77FB1F2BE1D40026C667 /* Old Wise Sketch.otf in Resources */,
@@ -443,6 +450,7 @@
 				7736D09A1F33A32000555037 /* HelpCell.swift in Sources */,
 				12EC77EB1F2BDAEA0026C667 /* DayVC.swift in Sources */,
 				12EC78001F2BE2FE0026C667 /* TisprCardStackViewCell.swift in Sources */,
+				77B2B0061F34D7AC0032A36B /* Graveyard.swift in Sources */,
 				7736D0921F3399BC00555037 /* HelpVC.swift in Sources */,
 				1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */,
 				123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */,

@@ -161,7 +161,7 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="agw-cW-VDg">
-                                                    <rect key="frame" x="62.5" y="234" width="206.5" height="23.5"/>
+                                                    <rect key="frame" x="62" y="234" width="206.5" height="23.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-Pz-mUn" customClass="OldRedRole" customModule="UWMod" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="49" height="23.5"/>
@@ -230,7 +230,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="278" height="63"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Geg-lE-yjh">
-                                                                            <rect key="frame" x="63" y="13.5" width="152" height="36.5"/>
+                                                                            <rect key="frame" x="63" y="14" width="152" height="36.5"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-85-MBo" customClass="OldRedHeader" customModule="UWMod" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="38" height="36.5"/>

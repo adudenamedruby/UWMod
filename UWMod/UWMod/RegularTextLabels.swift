@@ -156,7 +156,7 @@ class RegTanHeader: UILabel {
     
     func commonInit(){
         self.textColor = STYLE.Tan
-        self.font = STYLE.RegStandardFont
+        self.font = STYLE.RegBoldHeaderFont
     }
     
 }
@@ -179,6 +179,83 @@ class RegBrownHeader: UILabel {
     }
     
 }
+
+class RegRedBold: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Red
+        self.font = STYLE.RegBoldHeaderFont
+    }
+    
+}
+
+class RegBrownBold: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Brown
+        self.font = STYLE.RegBoldHeaderFont
+    }
+    
+}
+
+class RegGreenBold: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Green
+        self.font = STYLE.RegBoldHeaderFont
+    }
+    
+}
+
+class RegBrownSmall: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Brown
+        self.font = STYLE.RegSmallFont
+    }
+    
+}
+
 
 
 
