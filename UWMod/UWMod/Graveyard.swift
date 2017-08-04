@@ -16,7 +16,7 @@ class Graveyard: UITableViewCell {
     @IBOutlet var mainCardView: UIView!
     @IBOutlet var headerView: UIView!
     
-    @IBOutlet var playerLabel: RegBrown!
+    @IBOutlet var playerLabel: RegGrey!
     
     
     // MARK: - Variables

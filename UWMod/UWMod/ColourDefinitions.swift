@@ -31,5 +31,14 @@ extension UIColor {
         static let BloodRed = UIColor(netHex: 0x9E1422)
         static let TurqoiseGreen = UIColor(netHex: 0x21B6A8)
         static let MutedGreen = UIColor(netHex: 0x177F75)
+        static let VillageBlue = UIColor(netHex: 0x3B6D93)
+        static let ZombieBlue = UIColor(netHex: 0x75DBCD)
+        static let BogeymanBrown = UIColor(netHex: 0x1E1B06)
+        static let CountDraculaPurple = UIColor(netHex: 0x440381)
+        static let VampirePurple = UIColor(netHex: 0x420129)
+        static let HoodlumBrown = UIColor(netHex: 0x8C271E)
+        static let TannerBrown = UIColor(netHex: 0x704E2E)
+        static let BlobGreen = UIColor(netHex: 0x5FAD41)
+        static let ChupacabraBrown = UIColor(netHex: 0x2D170E)
     }
 }
