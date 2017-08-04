@@ -72,13 +72,17 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
     func cardDidChangeState(_ cardIndex: Int) {
         collectionView?.reloadData()
         
-//        if GAME.firstNight {
+        if GAME.firstNight {
 //            if checkPlayerAssignment() {
 //                
 //            }
-//        } else
-        if cardIndex == GAME.availablePlayers.count {
-            endNight()
+            if cardIndex == GAME.availablePlayers.count {
+                endNight()
+            }
+        } else {
+            if cardIndex == GAME.livingActors.count {
+                endNight()
+            }
         }
     }
     

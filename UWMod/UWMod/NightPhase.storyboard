@@ -161,16 +161,16 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agw-cW-VDg">
-                                                    <rect key="frame" x="62.5" y="234" width="206.5" height="23.5"/>
+                                                    <rect key="frame" x="50" y="234" width="231" height="23.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-Pz-mUn" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="49" height="23.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="46.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="50"/>
                                                             <color key="textColor" red="0.64536405460000001" green="0.1161611183" blue="0.12310011999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ewewolf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="DPi-9e-CxI" customClass="OldTextBrownLabel" customModule="UWMod" customModuleProvider="target">
-                                                            <rect key="frame" x="49" y="0.0" width="157.5" height="23.5"/>
+                                                            <rect key="frame" x="46.5" y="0.0" width="184.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="50"/>
                                                             <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
@@ -230,16 +230,16 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="278" height="63"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Geg-lE-yjh">
-                                                                            <rect key="frame" x="63" y="13.5" width="152" height="36.5"/>
+                                                                            <rect key="frame" x="62.5" y="10" width="153" height="41"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-85-MBo" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="38" height="36.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="24" height="41"/>
                                                                                     <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                                                     <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ole Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8e8-N3-50z" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
-                                                                                    <rect key="frame" x="38" y="0.0" width="114" height="36.5"/>
+                                                                                    <rect key="frame" x="24" y="0.0" width="129" height="41"/>
                                                                                     <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                                                     <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                     <nil key="highlightedColor"/>
