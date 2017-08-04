@@ -130,6 +130,7 @@ class RoleSelectVC: UIViewController {
         roleCountLabel.text = "\(roleCount!)/\(players!.count)"
     }
     
+    
     // MARK: - Player prep for game start
     
     func createPlayers() {
@@ -146,7 +147,7 @@ class RoleSelectVC: UIViewController {
     @IBAction func startGameButton(_ sender: Any) {
         
         if (self.selectedRoles.count < (self.players?.count)!) {
-            
+            // Make sure there are an equal number of roles and players.
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.alertName = "Warning"
@@ -154,8 +155,17 @@ class RoleSelectVC: UIViewController {
             vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true, completion: nil)
             
+        } else if (self.selectedRoles.count > (self.players?.count)!) {
+            // Make sure there are an equal number of roles and players.
+            let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
+            vc.alertName = "Warning"
+            vc.alertText = "You have too many roles for the selected number of players in the game."
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
+            
         } else {
-        
+            // Begin the game
             createPlayers()
             GAME = Game(availableRoster: players!, availablePlayers: gameActors)
             

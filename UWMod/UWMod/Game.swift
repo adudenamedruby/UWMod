@@ -87,7 +87,7 @@ class Game {
     }
     
     func addToPhaseReport(player: Player) {
-        let textToAdd = "\(player.name)\n"
+        let textToAdd = "\(player.name) (\(player.role.name))\n"
         
         if player.isProtected {
             playersProtectedThisPhase = playersProtectedThisPhase + textToAdd
