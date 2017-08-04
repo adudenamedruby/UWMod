@@ -21,11 +21,13 @@ class Game {
     var availablePlayers: [Player]
     var playersEliminatedThisPhase: String
     var playersProtectedThisPhase: String
+    var daytimeInfoCards: [DaytimeInfoCard]
     var nightActors: [Player]
     var livingActors: [Player]
     var playersToBeEliminated: [Player]
     var deadActors: [Player]
     var teams: [UWTeam: [Player]]
+    var areThereDeadPlayers: Bool
     
     init(availableRoster: [String], availablePlayers: [Player]) {
         // Sort the roles by the role priority. This makes it easier to present the 
@@ -34,6 +36,7 @@ class Game {
         self.availableRoster = availableRoster
 
         self.firstNight = true
+        self.areThereDeadPlayers = false
         self.currentNight = 1
         self.currentDay = 1
         self.nighttimeEliminations = 1
@@ -45,6 +48,7 @@ class Game {
         self.playersEliminatedThisPhase = ""
         self.playersProtectedThisPhase = ""
         self.teams = [:]
+        self.daytimeInfoCards = []
     }
 
     
@@ -57,7 +61,6 @@ class Game {
     
     
     // MARK: - Player-related functions
-    // TODO: populate the playersEliminatedThisPhase and playersProtectedThisPhase array for night/day end, and the clean it
     
     func assignRoles(player: Player, name: String) {
         player.name = name
@@ -65,7 +68,9 @@ class Game {
     }
     
     func prepareToEliminatePlayer(victim: Player) {
-        playersToBeEliminated.append(victim)
+        if !self.playersToBeEliminated.contains(where: { $0 === victim }) {
+            playersToBeEliminated.append(victim)
+        }
     }
     
     func eliminatePlayers() {
@@ -87,13 +92,53 @@ class Game {
     }
     
     func addToPhaseReport(player: Player) {
-        let textToAdd = "\(player.name) (\(player.role.name))\n"
+        let textToAdd = retrievePlayerNameWithRole(player: player)
         
         if player.isProtected {
             playersProtectedThisPhase = playersProtectedThisPhase + textToAdd
         } else {
             playersEliminatedThisPhase = playersEliminatedThisPhase + textToAdd
         }
+    }
+    
+    
+    // MARK: - Player name retrieval functions for various uses
+    
+    // THis fetches all players in a list and returns the appropriate string
+    func fetchPlayers(fromList: [Player], withRole: Bool = false, separatedByComma: Bool = false) -> String {
+        var players = ""
+        
+        for player in fromList {
+            var temp: String
+            
+            if withRole {
+                temp = retrievePlayerNameWithRole(player: player, separatedByComma: separatedByComma)
+            } else {
+                temp = retrievePlayerNameWithoutRole(player: player, separatedByComma: separatedByComma)
+            }
+            
+            players = players + temp
+        }
+        
+        return players
+    }
+
+    func retrievePlayerNameWithRole(player: Player, separatedByComma: Bool = false) -> String {
+        var separator = "\n"
+        if separatedByComma {
+            separator = ", "
+        }
+        
+        return "\(player.name) (\(player.role.name))\(separator)"
+    }
+    
+    func retrievePlayerNameWithoutRole(player: Player, separatedByComma: Bool = false) -> String {
+        var separator = "\n"
+        if separatedByComma {
+            separator = ", "
+        }
+        
+        return "\(player.name)\(separator)"
     }
     
     func clearPhaseReport() {
@@ -108,9 +153,13 @@ class Game {
         
         if firstNight {
             firstNight = false
-            eliminatePlayers()
             livingActors = availablePlayers
         }
+        
+        clearPhaseReport()
+        eliminatePlayers()
+        setDeadPlayerCheck()
+        setupInfoCards()
         
         currentNight += 1
     }
@@ -118,8 +167,38 @@ class Game {
     // MARK: - Day functions
     
     func finishDay() {
+        
+        clearPhaseReport()
         eliminatePlayers()
+        setDeadPlayerCheck()
+        
         currentDay += 1
+    }
+    
+    func setDeadPlayerCheck() {
+        if !areThereDeadPlayers {
+            if deadActors.count > 0 {
+                areThereDeadPlayers = true
+            }
+        }
+    }
+    
+    func setupInfoCards() {
+        var tempArray: [DaytimeInfoCard] = [.GeneralInfo]
+        
+//        for player in livingActors {
+//            let kindOfRole = ROLE_TO_DAYINFO[player.role.type]!
+//            if !tempArray.contains(kindOfRole) {
+//                tempArray.append(kindOfRole)
+//            }
+//        }
+        
+        if areThereDeadPlayers {
+            tempArray.append(.Graveyard)
+        }
+        
+        self.daytimeInfoCards.removeAll()
+        self.daytimeInfoCards = tempArray
     }
     
 }

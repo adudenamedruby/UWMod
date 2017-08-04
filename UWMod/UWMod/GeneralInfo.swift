@@ -55,10 +55,6 @@ class GeneralInfo: UITableViewCell {
         startTimer()
         
     }
-    @IBAction func info(_ sender: Any) {
-        
-        print("I'mA live")
-    }
     
     func startTimer() {
         if !isTrackingTime {

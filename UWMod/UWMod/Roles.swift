@@ -15,6 +15,12 @@ enum RoleType {
     case Werewolf
 }
 
+enum DaytimeInfoCard {
+    case GeneralInfo
+    case WerewolfTeam
+    case Graveyard
+}
+
 class Role {
     let name: String
     let type: RoleType

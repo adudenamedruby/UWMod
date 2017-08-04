@@ -9,16 +9,41 @@
 import UIKit
 
 class Graveyard: UITableViewCell {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet var outlineView: UIView!
+    @IBOutlet var mainCardView: UIView!
+    @IBOutlet var headerView: UIView!
+    
+    @IBOutlet var playerLabel: RegBrown!
+    
+    
+    // MARK: - Variables
+    
+    var deadPlayers: String!
+    
+    // MARK: - View Lifecycle
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        outlineView.layer.cornerRadius = STYLE.CornerRadius
+        outlineView.backgroundColor = STYLE.Grey
+        mainCardView.layer.cornerRadius = STYLE.CornerRadius
+        mainCardView.backgroundColor = STYLE.Tan
+        headerView.backgroundColor = STYLE.Grey
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureCell() {
+        self.playerLabel.text = deadPlayers
     }
     
 }
