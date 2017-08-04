@@ -50,7 +50,7 @@ class EliminatePlayerVC: UIViewController {
     }
     
     func eliminatePlayer(player: Player) {
-        GAME.eliminatePlayer(victim: player)
+        GAME.prepareToEliminatePlayer(victim: player)
     }
 
 }

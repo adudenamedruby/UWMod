@@ -23,6 +23,7 @@ class Game {
     var playersProtectedThisPhase: String
     var nightActors: [Player]
     var livingActors: [Player]
+    var playersToBeEliminated: [Player]
     var deadActors: [Player]
     var teams: [UWTeam: [Player]]
     
@@ -39,6 +40,7 @@ class Game {
         self.daytimeEliminations = 1
         self.nightActors = []
         self.livingActors = []
+        self.playersToBeEliminated = []
         self.deadActors = []
         self.playersEliminatedThisPhase = ""
         self.playersProtectedThisPhase = ""
@@ -62,13 +64,23 @@ class Game {
         player.playerAssigned = true
     }
     
-    func eliminatePlayer(victim: Player) {
-        if self.livingActors.contains(where: { $0 === victim }) {
-            self.deadActors.append(victim)
-            if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
-                self.livingActors.remove(at: tempIndex)
+    func prepareToEliminatePlayer(victim: Player) {
+        playersToBeEliminated.append(victim)
+    }
+    
+    func eliminatePlayers() {
+        for victim in playersToBeEliminated {
+            if !victim.protected {
+                if self.livingActors.contains(where: { $0 === victim }) {
+                    self.deadActors.append(victim)
+                    if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
+                        self.livingActors.remove(at: tempIndex)
+                    }
+                }
             }
         }
+        
+        playersToBeEliminated.removeAll()
     }
     
     func addToPhaseReport(player: Player) {
@@ -93,6 +105,7 @@ class Game {
         
         if firstNight {
             firstNight = false
+            eliminatePlayers()
             livingActors = availablePlayers
         }
         
@@ -102,6 +115,7 @@ class Game {
     // MARK: - Day functions
     
     func finishDay() {
+        eliminatePlayers()
         currentDay += 1
     }
     
