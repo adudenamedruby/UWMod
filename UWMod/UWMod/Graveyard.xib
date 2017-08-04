@@ -53,7 +53,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0o-pa-AfN" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="55" width="302" height="20.5"/>
+                                        <rect key="frame" x="15" y="55" width="302" height="124.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                                     <constraint firstAttribute="trailing" secondItem="XJs-kk-5Y1" secondAttribute="trailing" id="Eyt-VA-S0j"/>
                                     <constraint firstAttribute="trailing" secondItem="N0o-pa-AfN" secondAttribute="trailing" constant="10" id="ik6-rW-Q35"/>
                                     <constraint firstItem="XJs-kk-5Y1" firstAttribute="leading" secondItem="FkR-pG-7xn" secondAttribute="leading" id="pH5-NC-Hgc"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="N0o-pa-AfN" secondAttribute="bottom" constant="25" id="rVC-zN-NpE"/>
+                                    <constraint firstAttribute="bottom" secondItem="N0o-pa-AfN" secondAttribute="bottom" constant="25" id="rVC-zN-NpE"/>
                                     <constraint firstItem="N0o-pa-AfN" firstAttribute="top" secondItem="XJs-kk-5Y1" secondAttribute="bottom" constant="10" id="t8B-Ej-ETt"/>
                                 </constraints>
                             </view>
@@ -88,6 +88,7 @@
                     <constraint firstAttribute="trailing" secondItem="yGJ-u4-b7x" secondAttribute="trailing" constant="5" id="z33-Cg-uFH"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="headerView" destination="XJs-kk-5Y1" id="Ek2-ts-fqb"/>
                 <outlet property="mainCardView" destination="FkR-pG-7xn" id="pBv-2J-79Y"/>

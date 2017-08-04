@@ -58,12 +58,10 @@ class DayVC: UIViewController {
     // MARK: - Navigation
 
     @IBAction func lynchPressed(_ sender: Any) {
-        
         let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
         let lynchView = storyboard.instantiateViewController(withIdentifier: "eliminatePlayer") as! EliminatePlayerVC
         lynchView.modalTransitionStyle = .crossDissolve
         self.present(lynchView, animated: true, completion: nil)
-        
     }
     
     @IBAction func endDayPressed(_ sender: Any) {
@@ -101,6 +99,10 @@ class DayVC: UIViewController {
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 75.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // Register ALL the nibs that will be loaded into the tableView here
         tableView.register(UINib(nibName: "GeneralInfo", bundle: nil),
                            forCellReuseIdentifier: "generalInfoCell")
         tableView.register(UINib(nibName: "Graveyard", bundle: nil),
@@ -127,11 +129,11 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 320
-        }
+//        if indexPath.row == 0 {
+//            return 320
+//        }
         
-        return 100
+        return UITableViewAutomaticDimension
     }
     
     func selectCell(indexPath: IndexPath) -> UITableViewCell {
@@ -144,6 +146,7 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if currentType == .Graveyard {
             let cell = tableView.dequeueReusableCell(withIdentifier: "graveyardCell", for: indexPath) as! Graveyard
+            cell.deadPlayers = GAME.fetchPlayers(fromList: GAME.deadActors, withRole: true, separatedByComma: false)
             cell.configureCell()
             return cell
         }

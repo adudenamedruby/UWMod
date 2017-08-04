@@ -18,11 +18,10 @@ class MainGameVC: UIViewController {
     
     @IBOutlet var phaseReportView: UIView!
     @IBOutlet var headerView: UIView!
-    @IBOutlet var eliminatedLabel: RegBrown!
-    @IBOutlet var playersEliminatedTextView: UITextView!
-    @IBOutlet var savedLabel: RegBrown!
-    @IBOutlet var playersProtectedTextView: UITextView!
-    
+    @IBOutlet weak var statusLabel: RegBrown!
+    @IBOutlet weak var playersReportedLabel: UITextView!
+    @IBOutlet weak var eliminatedButton: PMSuperButton!
+    @IBOutlet weak var savedButton: PMSuperButton!
     
     // MARK: - Variables
     
@@ -49,9 +48,6 @@ class MainGameVC: UIViewController {
         self.phaseReportView.layer.cornerRadius = STYLE.CornerRadius
         self.phaseReportView.backgroundColor = STYLE.Tan
         self.headerView.backgroundColor = STYLE.Brown
-        self.playersEliminatedTextView.textColor = STYLE.Red
-        self.playersProtectedTextView.textColor = STYLE.Green
-        self.resetPhaseView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -89,6 +85,14 @@ class MainGameVC: UIViewController {
     
     // MARK: - Button functions
     
+    @IBAction func eliminatedPlayersPressed(_ sender: Any) {
+        reportEliminations()
+    }
+    
+    @IBAction func savedPlayersPressed(_ sender: Any) {
+        reportProtected()
+    }
+    
     @IBAction func continueForward(_ sender: Any) {
         
         if GAME.currentDay < GAME.currentNight {
@@ -96,7 +100,6 @@ class MainGameVC: UIViewController {
             let newView = storyboard.instantiateViewController(withIdentifier: "mainDayPhase") as! DayVC
             self.present(newView, animated: true, completion: { () -> Void in
                 self.resetElementAlpha()
-                self.resetPhaseView()
                 self.backgroundImage.image = #imageLiteral(resourceName: "nighttime")
             })
         } else {
@@ -104,7 +107,6 @@ class MainGameVC: UIViewController {
             let newView = storyboard.instantiateViewController(withIdentifier: "mainNightPhase") as! MainNightVC
             self.present(newView, animated: true, completion: { () -> Void in
                 self.resetElementAlpha()
-                self.resetPhaseView()
                 self.backgroundImage.image = #imageLiteral(resourceName: "daytime")
             })
         }
@@ -116,37 +118,38 @@ class MainGameVC: UIViewController {
         self.phaseReportView.alpha = 0
     }
     
-    func resetPhaseView() {
-        eliminatedLabel.isHidden = true
-        playersEliminatedTextView.isHidden = true
-        savedLabel.isHidden = true
-        playersProtectedTextView.isHidden = true
-    }
-    
     func reportPhaseEliminationResults() {
-        // TODO: Report all players eliminated during the night
-        
         if GAME.playersEliminatedThisPhase != "" || GAME.playersProtectedThisPhase != "" {
-            
-            if GAME.playersEliminatedThisPhase != "" {
-                eliminatedLabel.isHidden = false
-                playersEliminatedTextView.isHidden = false
-                playersEliminatedTextView.text = GAME.playersEliminatedThisPhase
-            }
-            
-            if GAME.playersProtectedThisPhase != "" {
-                savedLabel.isHidden = false
-                playersProtectedTextView.isHidden = false
-                playersProtectedTextView.text = GAME.playersProtectedThisPhase
-            }
-            
             self.showReportCard()
         }
         
         forwardButton.fadeIn(duration: 1, delay: 0)
     }
     
+    func reportEliminations() {
+        statusLabel.text = "Players eliminated this phase:"
+        if GAME.playersEliminatedThisPhase != "" {
+            playersReportedLabel.text = GAME.playersEliminatedThisPhase
+        } else {
+            playersReportedLabel.text = "No one was eliminated this phase. :)"
+        }
+        eliminatedButton.backgroundColor = STYLE.Red
+        savedButton.backgroundColor = STYLE.Beige
+    }
+    
+    func reportProtected() {
+        statusLabel.text = "Players protected this phase:"
+        if GAME.playersProtectedThisPhase != "" {
+            playersReportedLabel.text = GAME.playersProtectedThisPhase
+        } else {
+            playersReportedLabel.text = "No one was protected this phase. :("
+        }
+        eliminatedButton.backgroundColor = STYLE.Beige
+        savedButton.backgroundColor = STYLE.Green
+    }
+    
     func showReportCard() {
+        reportEliminations()
         self.phaseReportView.fadeIn(duration: 1, delay: 0)
     }
     

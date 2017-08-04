@@ -19,6 +19,8 @@
 		123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123BD0E51F31474A00B99019 /* AssignPlayer.xib */; };
 		123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0ED1F31555B00B99019 /* AssignPlayer.swift */; };
 		124787611F34150A00518532 /* SelectedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124787601F34150A00518532 /* SelectedItem.swift */; };
+		124F74EB1F3530A200F03E49 /* WerewolfTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124F74E91F3530A200F03E49 /* WerewolfTeamCell.swift */; };
+		124F74EC1F3530A200F03E49 /* WerewolfTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */; };
 		1260ED331F2C2A78001A8F7B /* AddPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */; };
 		1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */; };
 		1261C2B71F3265DA0099D759 /* BasicAlertObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */; };
@@ -78,6 +80,8 @@
 		123BD0E51F31474A00B99019 /* AssignPlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignPlayer.xib; sourceTree = "<group>"; };
 		123BD0ED1F31555B00B99019 /* AssignPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignPlayer.swift; sourceTree = "<group>"; };
 		124787601F34150A00518532 /* SelectedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedItem.swift; sourceTree = "<group>"; };
+		124F74E91F3530A200F03E49 /* WerewolfTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WerewolfTeamCell.swift; sourceTree = "<group>"; };
+		124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WerewolfTeamCell.xib; sourceTree = "<group>"; };
 		1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerVC.swift; sourceTree = "<group>"; };
 		1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EliminatePlayerVC.swift; sourceTree = "<group>"; };
 		1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAlertObject.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				1261C2BD1F32AA960099D759 /* GeneralInfo.xib */,
+				124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */,
 				77B2B0051F34D7AC0032A36B /* Graveyard.xib */,
 			);
 			name = "Day XIBs";
@@ -206,6 +211,7 @@
 				12EC77EA1F2BDAEA0026C667 /* DayVC.swift */,
 				1261C2BC1F32AA960099D759 /* GeneralInfo.swift */,
 				77B2B0041F34D7AC0032A36B /* Graveyard.swift */,
+				124F74E91F3530A200F03E49 /* WerewolfTeamCell.swift */,
 			);
 			name = Day;
 			sourceTree = "<group>";
@@ -363,7 +369,7 @@
 				TargetAttributes = {
 					120982051F26BBE700EC5D21 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = GPR64ZMTT3;
+						DevelopmentTeam = 8DD4C7KK4P;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -393,6 +399,7 @@
 			files = (
 				120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */,
 				12EC77F61F2BDBE40026C667 /* DayPhase.storyboard in Resources */,
+				124F74EC1F3530A200F03E49 /* WerewolfTeamCell.xib in Resources */,
 				120982111F26BBE700EC5D21 /* Assets.xcassets in Resources */,
 				77B2B0071F34D7AC0032A36B /* Graveyard.xib in Resources */,
 				123BD0D31F2F6BF600B99019 /* Popups.storyboard in Resources */,
@@ -439,6 +446,7 @@
 				1209820A1F26BBE700EC5D21 /* AppDelegate.swift in Sources */,
 				7736D0901F3378C200555037 /* Notes.swift in Sources */,
 				12EC77D11F26D4AA0026C667 /* AboutVC.swift in Sources */,
+				124F74EB1F3530A200F03E49 /* WerewolfTeamCell.swift in Sources */,
 				12EC77E11F297A3E0026C667 /* ArtifactConstants.swift in Sources */,
 				12EC77DB1F27541A0026C667 /* Player.swift in Sources */,
 				123BD0D71F2FE66400B99019 /* StringExtensions.swift in Sources */,
@@ -577,7 +585,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GPR64ZMTT3;
+				DEVELOPMENT_TEAM = 8DD4C7KK4P;
 				INFOPLIST_FILE = UWMod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.UWMod;
@@ -590,7 +598,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GPR64ZMTT3;
+				DEVELOPMENT_TEAM = 8DD4C7KK4P;
 				INFOPLIST_FILE = UWMod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.UWMod;

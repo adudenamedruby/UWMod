@@ -11,32 +11,32 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="generalInfoCell" rowHeight="320" id="KGk-i7-Jjw" customClass="GeneralInfo" customModule="UWMod" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="339" height="320"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="generalInfoCell" rowHeight="195" id="KGk-i7-Jjw" customClass="GeneralInfo" customModule="UWMod" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="195"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="339" height="319.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="339" height="194.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTC-EW-g0X">
-                        <rect key="frame" x="5" y="5" width="329" height="309"/>
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTC-EW-g0X">
+                        <rect key="frame" x="5" y="5" width="329" height="185.5"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jn7-x6-MpX">
-                                <rect key="frame" x="1" y="0.0" width="327" height="308"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jn7-x6-MpX">
+                                <rect key="frame" x="1" y="0.0" width="327" height="184.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gg-I4-Frn">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gg-I4-Frn">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9a-OR-PUL">
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M9a-OR-PUL">
                                                 <rect key="frame" x="20" y="9.5" width="127.5" height="27"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVe-vq-BXv" customClass="RegRedHeader" customModule="UWMod" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVe-vq-BXv" customClass="RegRedHeader" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="16" height="27"/>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="22"/>
                                                         <color key="textColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eneral Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2G-yJ-heH" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="eneral Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2G-yJ-heH" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="0.0" width="111.5" height="27"/>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
                                                         <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -52,16 +52,16 @@
                                             <constraint firstItem="M9a-OR-PUL" firstAttribute="leading" secondItem="3gg-I4-Frn" secondAttribute="leading" constant="20" id="iUA-2u-FOW"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="X0y-Wx-4GB">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="X0y-Wx-4GB">
                                         <rect key="frame" x="74.5" y="59" width="178.5" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWN-I7-Hlq" customClass="RegBrownLarge" customModule="UWMod" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Round Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWN-I7-Hlq" customClass="RegBrownLarge" customModule="UWMod" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="92" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib5-rq-mg1" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib5-rq-mg1" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
                                                 <rect key="frame" x="107" y="0.0" width="71.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -69,78 +69,74 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ml-1F-s6X">
-                                        <rect key="frame" x="140" y="259" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="info:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="D0s-2n-rqI"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ap-bE-svY" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="114.5" y="131.5" width="29.5" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Alive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ap-bE-svY" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="95.5" y="118.5" width="29.5" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuK-Cz-trC" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="19" y="111" width="55.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuK-Cz-trC" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="111" width="55.5" height="23.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="PZ4-NW-k1z"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf7-AS-5Kn" customClass="RegRedBold" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="197.5" y="111" width="17.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf7-AS-5Kn" customClass="RegRedBold" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="209" y="114.5" width="17.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42b-1s-7EA" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="274" y="111" width="17.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42b-1s-7EA" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="284" y="114.5" width="17.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eliminated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUK-S6-yoq" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="174.5" y="131.5" width="63" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dead" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUK-S6-yoq" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="169.5" y="118.5" width="32" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNa-IH-a2p" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="267.5" y="131.5" width="30" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsU-oS-Kvp" customClass="RegGreenBold" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="132" y="114" width="17.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsU-oS-Kvp" customClass="RegGreenBold" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="120.5" y="111" width="17.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNa-IH-a2p" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="246.5" y="119" width="30" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="UUK-S6-yoq" firstAttribute="centerY" secondItem="8ap-bE-svY" secondAttribute="centerY" id="2V6-g6-KF4"/>
-                                    <constraint firstItem="8ap-bE-svY" firstAttribute="top" secondItem="JsU-oS-Kvp" secondAttribute="bottom" id="4oZ-Mv-KIq"/>
+                                    <constraint firstItem="JsU-oS-Kvp" firstAttribute="leading" secondItem="8ap-bE-svY" secondAttribute="trailing" constant="7" id="9c0-Eb-lrL"/>
                                     <constraint firstItem="3gg-I4-Frn" firstAttribute="top" secondItem="Jn7-x6-MpX" secondAttribute="top" id="9oo-j9-W7M"/>
+                                    <constraint firstItem="NNa-IH-a2p" firstAttribute="leading" secondItem="Zf7-AS-5Kn" secondAttribute="trailing" constant="20" id="9z6-ff-LhG"/>
                                     <constraint firstItem="X0y-Wx-4GB" firstAttribute="top" secondItem="3gg-I4-Frn" secondAttribute="bottom" constant="14" id="BJY-wY-n2I"/>
-                                    <constraint firstItem="UUK-S6-yoq" firstAttribute="leading" secondItem="8ap-bE-svY" secondAttribute="trailing" constant="30" id="N6q-nW-nqv"/>
-                                    <constraint firstItem="Zf7-AS-5Kn" firstAttribute="centerX" secondItem="UUK-S6-yoq" secondAttribute="centerX" id="Nzy-Qs-ZF1"/>
+                                    <constraint firstItem="Zf7-AS-5Kn" firstAttribute="leading" secondItem="UUK-S6-yoq" secondAttribute="trailing" constant="7.5" id="FJx-qC-ody"/>
+                                    <constraint firstItem="Zf7-AS-5Kn" firstAttribute="bottom" secondItem="UUK-S6-yoq" secondAttribute="bottom" id="LVB-JH-O6n"/>
+                                    <constraint firstItem="42b-1s-7EA" firstAttribute="bottom" secondItem="NNa-IH-a2p" secondAttribute="bottom" id="POT-E5-ifK"/>
                                     <constraint firstItem="3gg-I4-Frn" firstAttribute="leading" secondItem="Jn7-x6-MpX" secondAttribute="leading" id="Seu-ra-2z4"/>
-                                    <constraint firstItem="JsU-oS-Kvp" firstAttribute="centerX" secondItem="8ap-bE-svY" secondAttribute="centerX" id="UAf-oM-zPI"/>
-                                    <constraint firstItem="NNa-IH-a2p" firstAttribute="centerY" secondItem="UUK-S6-yoq" secondAttribute="centerY" id="WL1-AS-ie9"/>
+                                    <constraint firstItem="8ap-bE-svY" firstAttribute="leading" secondItem="vuK-Cz-trC" secondAttribute="trailing" constant="30" id="UC8-7W-8Gk"/>
                                     <constraint firstItem="vuK-Cz-trC" firstAttribute="top" secondItem="3gg-I4-Frn" secondAttribute="bottom" constant="66" id="bDi-NH-zca"/>
-                                    <constraint firstItem="Zf7-AS-5Kn" firstAttribute="centerY" secondItem="JsU-oS-Kvp" secondAttribute="centerY" id="dEK-bE-cWR"/>
+                                    <constraint firstItem="42b-1s-7EA" firstAttribute="leading" secondItem="NNa-IH-a2p" secondAttribute="trailing" constant="7.5" id="boc-ec-t2H"/>
+                                    <constraint firstItem="JsU-oS-Kvp" firstAttribute="bottom" secondItem="8ap-bE-svY" secondAttribute="bottom" id="cPU-qh-gaG"/>
                                     <constraint firstAttribute="trailing" secondItem="3gg-I4-Frn" secondAttribute="trailing" id="fMm-cE-muS"/>
-                                    <constraint firstItem="42b-1s-7EA" firstAttribute="centerX" secondItem="NNa-IH-a2p" secondAttribute="centerX" id="gxd-6n-xb4"/>
-                                    <constraint firstItem="42b-1s-7EA" firstAttribute="centerY" secondItem="Zf7-AS-5Kn" secondAttribute="centerY" id="hD9-Ul-Zpr"/>
-                                    <constraint firstItem="vuK-Cz-trC" firstAttribute="leading" secondItem="Jn7-x6-MpX" secondAttribute="leading" constant="19" id="kOy-c9-DEn"/>
+                                    <constraint firstAttribute="bottom" secondItem="vuK-Cz-trC" secondAttribute="bottom" constant="50" id="g0u-Q3-QDA"/>
+                                    <constraint firstItem="NNa-IH-a2p" firstAttribute="bottom" secondItem="Zf7-AS-5Kn" secondAttribute="bottom" id="kC6-CJ-I44"/>
+                                    <constraint firstItem="vuK-Cz-trC" firstAttribute="leading" secondItem="Jn7-x6-MpX" secondAttribute="leading" constant="10" id="kOy-c9-DEn"/>
                                     <constraint firstItem="X0y-Wx-4GB" firstAttribute="centerX" secondItem="Jn7-x6-MpX" secondAttribute="centerX" id="niM-4v-jvW"/>
-                                    <constraint firstItem="8ap-bE-svY" firstAttribute="leading" secondItem="vuK-Cz-trC" secondAttribute="trailing" constant="40" id="tBg-2c-sqn"/>
-                                    <constraint firstItem="NNa-IH-a2p" firstAttribute="leading" secondItem="UUK-S6-yoq" secondAttribute="trailing" constant="30" id="uqR-j3-U7D"/>
-                                    <constraint firstItem="JsU-oS-Kvp" firstAttribute="centerY" secondItem="vuK-Cz-trC" secondAttribute="centerY" id="y2B-mX-TpE"/>
+                                    <constraint firstItem="UUK-S6-yoq" firstAttribute="leading" secondItem="JsU-oS-Kvp" secondAttribute="trailing" constant="20" id="sRc-GX-WIu"/>
+                                    <constraint firstItem="8ap-bE-svY" firstAttribute="bottom" secondItem="vuK-Cz-trC" secondAttribute="bottom" id="t7C-hI-J9I"/>
+                                    <constraint firstItem="UUK-S6-yoq" firstAttribute="bottom" secondItem="JsU-oS-Kvp" secondAttribute="bottom" id="x2M-x7-3b4"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -171,7 +167,7 @@
                 <outlet property="timeLabel" destination="Ib5-rq-mg1" id="HEW-8s-Upk"/>
                 <outlet property="totalPlayersLabel" destination="42b-1s-7EA" id="u4a-Px-i57"/>
             </connections>
-            <point key="canvasLocation" x="-78.5" y="192"/>
+            <point key="canvasLocation" x="-78.5" y="170.5"/>
         </tableViewCell>
     </objects>
 </document>

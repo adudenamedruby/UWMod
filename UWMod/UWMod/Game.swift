@@ -61,7 +61,6 @@ class Game {
     
     
     // MARK: - Player-related functions
-    // TODO: populate the playersEliminatedThisPhase and playersProtectedThisPhase array for night/day end, and the clean it
     
     func assignRoles(player: Player, name: String) {
         player.name = name
@@ -69,7 +68,9 @@ class Game {
     }
     
     func prepareToEliminatePlayer(victim: Player) {
-        playersToBeEliminated.append(victim)
+        if !self.playersToBeEliminated.contains(where: { $0 === victim }) {
+            playersToBeEliminated.append(victim)
+        }
     }
     
     func eliminatePlayers() {
@@ -101,18 +102,19 @@ class Game {
     }
     
     
-    // MARK: - Player retrieval functions
+    // MARK: - Player name retrieval functions for various uses
     
-    func fetchPlayers(fromList: [Player], withRole: Bool = false) -> String {
+    // THis fetches all players in a list and returns the appropriate string
+    func fetchPlayers(fromList: [Player], withRole: Bool = false, separatedByComma: Bool = false) -> String {
         var players = ""
         
         for player in fromList {
             var temp: String
             
             if withRole {
-                temp = retrievePlayerNameWithRole(player: player)
+                temp = retrievePlayerNameWithRole(player: player, separatedByComma: separatedByComma)
             } else {
-                temp = retrievePlayerNameWithoutRole(player: player)
+                temp = retrievePlayerNameWithoutRole(player: player, separatedByComma: separatedByComma)
             }
             
             players = players + temp
@@ -121,12 +123,22 @@ class Game {
         return players
     }
 
-    func retrievePlayerNameWithRole(player: Player) -> String {
-        return "\(player.name) (\(player.role.name))\n"
+    func retrievePlayerNameWithRole(player: Player, separatedByComma: Bool = false) -> String {
+        var separator = "\n"
+        if separatedByComma {
+            separator = ", "
+        }
+        
+        return "\(player.name) (\(player.role.name))\(separator)"
     }
     
-    func retrievePlayerNameWithoutRole(player: Player) -> String {
-        return "\(player.name)\n"
+    func retrievePlayerNameWithoutRole(player: Player, separatedByComma: Bool = false) -> String {
+        var separator = "\n"
+        if separatedByComma {
+            separator = ", "
+        }
+        
+        return "\(player.name)\(separator)"
     }
     
     func clearPhaseReport() {
