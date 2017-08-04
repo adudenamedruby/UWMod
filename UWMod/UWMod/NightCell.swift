@@ -47,6 +47,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         titleRemainingLabel.text = player?.role.name.restOfString()
         roleDescritpionLabel.text = player?.role.description
         textView.text = player?.role.roleExplanation
+        textView.setContentOffset(CGPoint.zero, animated: false)
         resetHelpView()
         loadPlayerName()
         

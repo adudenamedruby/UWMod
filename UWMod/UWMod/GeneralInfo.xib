@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="46"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9a-OR-PUL">
-                                                <rect key="frame" x="100.5" y="10" width="127.5" height="27"/>
+                                                <rect key="frame" x="20" y="10" width="127.5" height="27"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVe-vq-BXv">
                                                         <rect key="frame" x="0.0" y="0.0" width="16" height="27"/>
@@ -48,8 +48,8 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="M9a-OR-PUL" firstAttribute="centerX" secondItem="3gg-I4-Frn" secondAttribute="centerX" id="Hl4-CR-L2a"/>
                                             <constraint firstItem="M9a-OR-PUL" firstAttribute="centerY" secondItem="3gg-I4-Frn" secondAttribute="centerY" id="fHo-Bd-6iF"/>
+                                            <constraint firstItem="M9a-OR-PUL" firstAttribute="leading" secondItem="3gg-I4-Frn" secondAttribute="leading" constant="20" id="iUA-2u-FOW"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="X0y-Wx-4GB">

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  BasicAlertObject.swift
 //  UWMod
 //
 //  Created by roux g. buciu on 2017-08-02.
