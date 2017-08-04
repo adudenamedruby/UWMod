@@ -44,12 +44,22 @@ class EliminatePlayerVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: - Button functionality
+    
     @IBAction func eliminatePlayerPressed(_ sender: Any) {
         eliminatePlayer(player: chosenPlayer)
         self.dismiss(animated: true, completion: nil)
     }
     
-    func eliminatePlayer(player: Player) {
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - Utility functions
+    
+    private func eliminatePlayer(player: Player) {
         GAME.prepareToEliminatePlayer(victim: player)
     }
 
