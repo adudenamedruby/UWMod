@@ -107,6 +107,8 @@ class DayVC: UIViewController {
                            forCellReuseIdentifier: "generalInfoCell")
         tableView.register(UINib(nibName: "Graveyard", bundle: nil),
                            forCellReuseIdentifier: "graveyardCell")
+        tableView.register(UINib(nibName: "WerewolfTeamCell", bundle: nil),
+                           forCellReuseIdentifier: "werewolfTeamCell")
 
     }
 }
@@ -129,10 +131,6 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if indexPath.row == 0 {
-//            return 320
-//        }
-        
         return UITableViewAutomaticDimension
     }
     
@@ -147,6 +145,11 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
         } else if currentType == .Graveyard {
             let cell = tableView.dequeueReusableCell(withIdentifier: "graveyardCell", for: indexPath) as! Graveyard
             cell.deadPlayers = GAME.fetchPlayers(fromList: GAME.deadActors, withRole: true, separatedByComma: false)
+            cell.configureCell()
+            return cell
+        } else if currentType == .WerewolfTeam {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "werewolfTeamCell", for: indexPath) as! WerewolfTeamCell
+            cell.werewolfTeamPlayers = GAME.fetchPlayers(fromList: GAME.livingActors, withRole: true, separatedByComma: false)
             cell.configureCell()
             return cell
         }

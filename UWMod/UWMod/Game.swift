@@ -186,12 +186,12 @@ class Game {
     func setupInfoCards() {
         var tempArray: [DaytimeInfoCard] = [.GeneralInfo]
         
-//        for player in livingActors {
-//            let kindOfRole = ROLE_TO_DAYINFO[player.role.type]!
-//            if !tempArray.contains(kindOfRole) {
-//                tempArray.append(kindOfRole)
-//            }
-//        }
+        for player in livingActors {
+            let kindOfRole = ROLE_TO_DAYINFO[player.role.type]!
+            if !tempArray.contains(kindOfRole) {
+                tempArray.append(kindOfRole)
+            }
+        }
         
         if areThereDeadPlayers {
             tempArray.append(.Graveyard)

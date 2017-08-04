@@ -199,8 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				1261C2BD1F32AA960099D759 /* GeneralInfo.xib */,
-				124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */,
 				77B2B0051F34D7AC0032A36B /* Graveyard.xib */,
+				124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */,
 			);
 			name = "Day XIBs";
 			sourceTree = "<group>";
