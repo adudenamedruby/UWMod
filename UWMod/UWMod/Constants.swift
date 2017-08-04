@@ -41,6 +41,7 @@ struct StyleConstants {
     let Red = UIColor.WerewolfTheme.BloodRed
     let Turqoise = UIColor.WerewolfTheme.TurqoiseGreen
     let Green = UIColor.WerewolfTheme.MutedGreen
+    let Grey = UIColor.darkGray
     
     let OldStandardFont = UIFont(name: "OldWiseSketch", size: 35)
     let OldFirstLetterFont = UIFont(name: "OldWiseSketch", size: 38)
@@ -61,3 +62,7 @@ let localizedActionFinishedNotification = "localizedActionFinishedNotification"
 let PLAYERS = "UserPlayers"
 let STYLE = StyleConstants()
 var GAME: Game = Game(availableRoster: [], availablePlayers: [])
+
+let ROLE_TO_DAYINFO: [RoleType:DaytimeInfoCard] = [.Werewolf:.WerewolfTeam]
+
+

@@ -28,7 +28,7 @@ class DayVC: UIViewController {
     
     
     // MARK: - Variables
-
+    
     
     
     // MARK: - View lifecycle
@@ -103,6 +103,8 @@ class DayVC: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "GeneralInfo", bundle: nil),
                            forCellReuseIdentifier: "generalInfoCell")
+        tableView.register(UINib(nibName: "Graveyard", bundle: nil),
+                           forCellReuseIdentifier: "graveyardCell")
 
     }
 }
@@ -114,18 +116,14 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return GAME.daytimeInfoCards.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "generalInfoCell", for: indexPath) as! GeneralInfo
-            cell.configureCell()
-            return cell
-        }
+        let cell = selectCell(indexPath: indexPath)
         
-        return UITableViewCell()
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -135,4 +133,22 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
         
         return 100
     }
+    
+    func selectCell(indexPath: IndexPath) -> UITableViewCell {
+        
+        let currentType = GAME.daytimeInfoCards[indexPath.row]
+        
+        if currentType == .GeneralInfo {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "generalInfoCell", for: indexPath) as! GeneralInfo
+            cell.configureCell()
+            return cell
+        } else if currentType == .Graveyard {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "graveyardCell", for: indexPath) as! Graveyard
+            cell.configureCell()
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
 }

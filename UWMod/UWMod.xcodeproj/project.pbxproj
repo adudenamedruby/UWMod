@@ -203,9 +203,9 @@
 		1261C2BB1F32AA650099D759 /* Day */ = {
 			isa = PBXGroup;
 			children = (
-				77B2B0041F34D7AC0032A36B /* Graveyard.swift */,
 				12EC77EA1F2BDAEA0026C667 /* DayVC.swift */,
 				1261C2BC1F32AA960099D759 /* GeneralInfo.swift */,
+				77B2B0041F34D7AC0032A36B /* Graveyard.swift */,
 			);
 			name = Day;
 			sourceTree = "<group>";

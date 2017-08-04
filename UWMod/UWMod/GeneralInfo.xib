@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -26,10 +25,10 @@
                                 <rect key="frame" x="1" y="0.0" width="327" height="308"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gg-I4-Frn">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9a-OR-PUL">
-                                                <rect key="frame" x="20" y="10" width="127.5" height="27"/>
+                                                <rect key="frame" x="20" y="9.5" width="127.5" height="27"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVe-vq-BXv" customClass="RegRedHeader" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="16" height="27"/>
@@ -48,12 +47,13 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="3l9-Ef-HZg"/>
                                             <constraint firstItem="M9a-OR-PUL" firstAttribute="centerY" secondItem="3gg-I4-Frn" secondAttribute="centerY" id="fHo-Bd-6iF"/>
                                             <constraint firstItem="M9a-OR-PUL" firstAttribute="leading" secondItem="3gg-I4-Frn" secondAttribute="leading" constant="20" id="iUA-2u-FOW"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="X0y-Wx-4GB">
-                                        <rect key="frame" x="74.5" y="60" width="178.5" height="20.5"/>
+                                        <rect key="frame" x="74.5" y="59" width="178.5" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWN-I7-Hlq" customClass="RegBrownLarge" customModule="UWMod" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="92" height="20.5"/>
@@ -78,43 +78,43 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ap-bE-svY" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="114.5" y="132.5" width="29.5" height="16"/>
+                                        <rect key="frame" x="114.5" y="131.5" width="29.5" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuK-Cz-trC" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="19" y="112" width="55.5" height="20.5"/>
+                                        <rect key="frame" x="19" y="111" width="55.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf7-AS-5Kn" customClass="RegRedBold" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="197.5" y="112" width="17.5" height="20.5"/>
+                                        <rect key="frame" x="197.5" y="111" width="17.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42b-1s-7EA" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="274" y="112" width="17.5" height="20.5"/>
+                                        <rect key="frame" x="274" y="111" width="17.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eliminated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUK-S6-yoq" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="174.5" y="132.5" width="63" height="16"/>
+                                        <rect key="frame" x="174.5" y="131.5" width="63" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNa-IH-a2p" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="267.5" y="132.5" width="30" height="16"/>
+                                        <rect key="frame" x="267.5" y="131.5" width="30" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsU-oS-Kvp" customClass="RegGreenBold" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="120.5" y="112" width="17.5" height="20.5"/>
+                                        <rect key="frame" x="120.5" y="111" width="17.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -128,7 +128,6 @@
                                     <constraint firstItem="X0y-Wx-4GB" firstAttribute="top" secondItem="3gg-I4-Frn" secondAttribute="bottom" constant="14" id="BJY-wY-n2I"/>
                                     <constraint firstItem="UUK-S6-yoq" firstAttribute="leading" secondItem="8ap-bE-svY" secondAttribute="trailing" constant="30" id="N6q-nW-nqv"/>
                                     <constraint firstItem="Zf7-AS-5Kn" firstAttribute="centerX" secondItem="UUK-S6-yoq" secondAttribute="centerX" id="Nzy-Qs-ZF1"/>
-                                    <constraint firstItem="3gg-I4-Frn" firstAttribute="height" secondItem="Jn7-x6-MpX" secondAttribute="height" multiplier="0.15" id="QY9-xf-6Z8"/>
                                     <constraint firstItem="3gg-I4-Frn" firstAttribute="leading" secondItem="Jn7-x6-MpX" secondAttribute="leading" id="Seu-ra-2z4"/>
                                     <constraint firstItem="JsU-oS-Kvp" firstAttribute="centerX" secondItem="8ap-bE-svY" secondAttribute="centerX" id="UAf-oM-zPI"/>
                                     <constraint firstItem="NNa-IH-a2p" firstAttribute="centerY" secondItem="UUK-S6-yoq" secondAttribute="centerY" id="WL1-AS-ie9"/>
@@ -172,7 +171,7 @@
                 <outlet property="timeLabel" destination="Ib5-rq-mg1" id="HEW-8s-Upk"/>
                 <outlet property="totalPlayersLabel" destination="42b-1s-7EA" id="u4a-Px-i57"/>
             </connections>
-            <point key="canvasLocation" x="-78" y="192"/>
+            <point key="canvasLocation" x="-78.5" y="192"/>
         </tableViewCell>
     </objects>
 </document>
