@@ -41,6 +41,7 @@ class MainGameVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.titleLabel.alpha = 0
         self.forwardButton.alpha = 0
         
@@ -64,7 +65,6 @@ class MainGameVC: UIViewController {
             if GAME.currentDay < GAME.currentNight {
                 self.titleLabel.textColor = STYLE.Brown
                 self.titleLabel.text = daytimePhrases.randomElement()
-                reportNightDeaths()
             } else {
                 self.titleLabel.textColor = STYLE.Tan
                 self.titleLabel.text = nightPhrases.randomElement()
@@ -73,7 +73,11 @@ class MainGameVC: UIViewController {
         
         self.titleLabel.fadeIn(completion: {
             (finished: Bool) -> Void in
-            self.reportNightDeaths()
+            if GAME.firstNight {
+                self.forwardButton.fadeIn(duration: 1, delay: 0)
+            } else {
+                self.reportPhaseEliminationResults()
+            }
         })
     }
 
@@ -119,7 +123,7 @@ class MainGameVC: UIViewController {
         playersProtectedTextView.isHidden = true
     }
     
-    func reportNightDeaths() {
+    func reportPhaseEliminationResults() {
         // TODO: Report all players eliminated during the night
         
         if GAME.playersEliminatedThisPhase != "" || GAME.playersProtectedThisPhase != "" {

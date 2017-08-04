@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="65.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNg-8h-diS">
-                                                <rect key="frame" x="84" y="14.5" width="157" height="36.5"/>
+                                                <rect key="frame" x="84" y="15" width="157" height="36.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ab-N7-xMC" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="26.5" height="36.5"/>
@@ -154,7 +154,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxG-Lc-QGQ">
-                                        <rect key="frame" x="48" y="289.5" width="260.5" height="70"/>
+                                        <rect key="frame" x="47.5" y="289.5" width="260.5" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFk-jz-icU">
                                                 <rect key="frame" x="0.0" y="0.0" width="65.5" height="70"/>
@@ -341,7 +341,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J54-xu-uYd">
-                                                <rect key="frame" x="56" y="16.5" width="226.5" height="40"/>
+                                                <rect key="frame" x="56.5" y="15.5" width="226.5" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk2-db-F9n" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="23" height="40"/>
@@ -522,7 +522,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="337" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1QH-vr-paT">
-                                                <rect key="frame" x="67.5" y="16.5" width="202.5" height="40"/>
+                                                <rect key="frame" x="68" y="15.5" width="202.5" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zum-nw-VZT" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="23" height="40"/>
@@ -795,16 +795,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkk-Kl-bJ9">
-                                                <rect key="frame" x="44" y="19.5" width="212.5" height="34.5"/>
+                                                <rect key="frame" x="37.5" y="17" width="225.5" height="36.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMq-jK-DCy" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="34.5" height="36.5"/>
+                                                        <rect key="frame" x="0.0" y="0.5" width="34.5" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                         <color key="textColor" red="0.64536405460000001" green="0.1161611183" blue="0.12310011999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bout UWMod" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQv-Nl-JmZ" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="34.5" y="0.0" width="191" height="36.5"/>
+                                                        <rect key="frame" x="34.5" y="0.5" width="191" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                         <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -929,13 +929,13 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
                                         </connections>
                                     </button>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="La2-OU-NkV">
-                                        <rect key="frame" x="40" y="224" width="295" height="170"/>
+                                        <rect key="frame" x="40" y="224" width="295" height="200"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEH-ck-2Gr">
-                                                <rect key="frame" x="0.0" y="0.0" width="295" height="58"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="60"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiv-7L-lS8">
-                                                        <rect key="frame" x="39" y="11" width="217" height="36.5"/>
+                                                        <rect key="frame" x="39" y="12.5" width="217" height="36.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dF4-pc-g5G" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="28.5" height="36.5"/>
@@ -954,24 +954,25 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="0WS-l3-dJJ"/>
                                                     <constraint firstItem="eiv-7L-lS8" firstAttribute="centerY" secondItem="nEH-ck-2Gr" secondAttribute="centerY" id="Nm4-LB-v91"/>
                                                     <constraint firstItem="eiv-7L-lS8" firstAttribute="centerX" secondItem="nEH-ck-2Gr" secondAttribute="centerX" id="cmf-Vi-1NW"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yD-NZ-7H8" customClass="RegularTextBrownLabel" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="228" y="64.5" width="47" height="20.5"/>
+                                                <rect key="frame" x="228" y="66.5" width="47" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eliminated" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQg-7O-Gvz" customClass="RegularTextBrownLabel" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="65" width="79.5" height="20.5"/>
+                                                <rect key="frame" x="20" y="67" width="79.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfZ-RB-ghM">
-                                                <rect key="frame" x="20" y="85.5" width="125" height="79.5"/>
+                                                <rect key="frame" x="20" y="87.5" width="125" height="107.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="125" id="oYi-ck-R2D"/>
@@ -981,7 +982,7 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KL-r8-3Cj">
-                                                <rect key="frame" x="150" y="85" width="125" height="79.5"/>
+                                                <rect key="frame" x="150" y="87" width="125" height="107.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
@@ -997,12 +998,11 @@ Copyright info about Bezier Games and Ted Alspach can go here if this actually g
                                             <constraint firstItem="MQg-7O-Gvz" firstAttribute="top" secondItem="nEH-ck-2Gr" secondAttribute="bottom" constant="7" id="Drd-ek-yL5"/>
                                             <constraint firstItem="4KL-r8-3Cj" firstAttribute="height" secondItem="dfZ-RB-ghM" secondAttribute="height" id="FhT-Dh-v3S"/>
                                             <constraint firstItem="dfZ-RB-ghM" firstAttribute="leading" secondItem="MQg-7O-Gvz" secondAttribute="leading" id="IJK-Xv-pd9"/>
-                                            <constraint firstItem="nEH-ck-2Gr" firstAttribute="height" secondItem="La2-OU-NkV" secondAttribute="height" multiplier="0.34" id="N0N-nt-E0i"/>
                                             <constraint firstAttribute="bottom" secondItem="dfZ-RB-ghM" secondAttribute="bottom" constant="5" id="Npd-dO-sxt"/>
                                             <constraint firstItem="4KL-r8-3Cj" firstAttribute="width" secondItem="dfZ-RB-ghM" secondAttribute="width" id="OJX-Hn-sbH"/>
                                             <constraint firstItem="4KL-r8-3Cj" firstAttribute="centerY" secondItem="dfZ-RB-ghM" secondAttribute="centerY" id="QOj-f2-oy1"/>
                                             <constraint firstItem="3yD-NZ-7H8" firstAttribute="centerY" secondItem="MQg-7O-Gvz" secondAttribute="centerY" id="W5k-7r-FZy"/>
-                                            <constraint firstAttribute="height" constant="170" id="bIC-Wa-pH7"/>
+                                            <constraint firstAttribute="height" constant="200" id="bIC-Wa-pH7"/>
                                             <constraint firstAttribute="trailing" secondItem="nEH-ck-2Gr" secondAttribute="trailing" id="gcO-6K-frt"/>
                                             <constraint firstAttribute="trailing" secondItem="3yD-NZ-7H8" secondAttribute="trailing" constant="20" id="hz9-uE-hRd"/>
                                             <constraint firstItem="dfZ-RB-ghM" firstAttribute="top" secondItem="MQg-7O-Gvz" secondAttribute="bottom" id="vmM-9A-WfA"/>

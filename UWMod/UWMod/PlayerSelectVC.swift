@@ -29,7 +29,8 @@ class PlayerSelectVC: UIViewController {
 
     var savedPlayers: [String] = ["Ted Alspach"]
     var villageSize: Int = 0
-    var selectedPlayers: [String] = []
+    var selectedPlayers: [Int:String] = [:]
+    var passedPlayers: [String] = []
     
     
     // MARK: - View lifecycle
@@ -48,7 +49,7 @@ class PlayerSelectVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(loadPlayers),
                                                name: NSNotification.Name(rawValue: "reloadTable"),
                                                object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(emptySelectedPlayers),
+        NotificationCenter.default.addObserver(self, selector: #selector(resetPlayerSelection),
                                               name: NSNotification.Name(rawValue: "returnToPlayerSelect"),
                                               object: nil)
         
@@ -92,40 +93,60 @@ class PlayerSelectVC: UIViewController {
         }
     }
     
-    func emptySelectedPlayers() {
+    func resetPlayerSelection() {
         self.selectedPlayers.removeAll()
+        self.passedPlayers.removeAll()
+        villageSize = 0
+        playerNumberLabel.text = "0"
+        tableView.reloadData()
     }
     
     // MARK: - Navigation and data passing
     
     @IBAction func goToSelectRolesButton(_ sender: Any) {
-        self.selectedPlayers = findSelectedPlayers()
+        self.passedPlayers = collateSelectedPlayers()
     }
     
-    func findSelectedPlayers() -> [String] {
-        var playerNames: [String] = []
-        let selectedIndexPaths = tableView.indexPathsForSelectedRows ?? []
-        if selectedIndexPaths.count > 1 {
-            for indexPath in selectedIndexPaths {
-                let cell = tableView.cellForRow(at: indexPath)
-                let text: String = (cell?.textLabel?.text)!
-                playerNames.append(text)
-            }
+    func collateSelectedPlayers() -> [String] {
+        
+        var tempArray: [String] = []
+        
+        for (_, name) in selectedPlayers {
+            tempArray.append(name)
         }
         
-        playerNames.sort()
+        tempArray.sort()
         
-        return playerNames
+        return tempArray
+    }
+    
+    func addSelectedPlayer(index: Int, name: String) {
+        selectedPlayers[index] = name
+    }
+    
+    func removeSelectedPlayer(index: Int, name: String) {
+        selectedPlayers.removeValue(forKey: index)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        if ((identifier == "selectRoleSegue") && (self.selectedPlayers.count < 3)) {
+        if ((identifier == "selectRoleSegue") && (self.passedPlayers.count < 3)) {
             
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.alertName = "Warning"
             vc.alertText = "You need at least three people to play a game of Ultimate Werewolf."
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
+            
+            return false
+            
+        } else if ((identifier == "selectRoleSegue") && (self.passedPlayers.count > 75)) {
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
+            vc.alertName = "Warning"
+            vc.alertText = "You can only play Ultimate Werewolf with a maximum of 75 people."
             vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true, completion: nil)
             
@@ -138,7 +159,7 @@ class PlayerSelectVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectRoleSegue" {
             let secondVC = segue.destination as! RoleSelectVC
-            secondVC.players = selectedPlayers
+            secondVC.players = passedPlayers
             secondVC.transitioningDelegate = self
             secondVC.modalPresentationStyle = .custom
         } else if segue.identifier == "addPlayerSegue" {
@@ -176,12 +197,20 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         villageSize += 1
         playerNumberLabel.text = String(villageSize)
+        
+        //let cell = tableView.cellForRow(at: indexPath)
+        let text = tableView.cellForRow(at: indexPath)?.textLabel?.text
+        addSelectedPlayer(index: indexPath.row, name: text!)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
         villageSize -= 1
         playerNumberLabel.text = String(villageSize)
+        
+        //let cell = tableView.cellForRow(at: indexPath)
+        let text = tableView.cellForRow(at: indexPath)?.textLabel?.text
+        removeSelectedPlayer(index: indexPath.row, name: text!)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

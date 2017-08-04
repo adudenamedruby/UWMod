@@ -70,13 +70,16 @@ class Game {
     
     func eliminatePlayers() {
         for victim in playersToBeEliminated {
-            if !victim.protected {
+            if !victim.isProtected {
                 if self.livingActors.contains(where: { $0 === victim }) {
+                    addToPhaseReport(player: victim)
                     self.deadActors.append(victim)
                     if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
                         self.livingActors.remove(at: tempIndex)
                     }
                 }
+            } else if victim.isProtected {
+                addToPhaseReport(player: victim)
             }
         }
         
