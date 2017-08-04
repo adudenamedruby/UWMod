@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -41,13 +40,13 @@
                                                 <rect key="frame" x="100.5" y="13" width="49.5" height="36.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60a-cu-Pmf" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.5" width="34.5" height="36.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="34.5" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                         <color key="textColor" red="0.64536405460000001" green="0.1161611183" blue="0.12310011999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U9-mB-IlF" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="34.5" y="0.5" width="15" height="36.5"/>
+                                                        <rect key="frame" x="34.5" y="0.0" width="15" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                         <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -57,6 +56,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="1Kt-F3-doI"/>
                                             <constraint firstItem="eNT-jQ-OUN" firstAttribute="centerX" secondItem="cHa-iw-YoI" secondAttribute="centerX" id="B07-Ny-zjW"/>
                                             <constraint firstItem="eNT-jQ-OUN" firstAttribute="centerY" secondItem="cHa-iw-YoI" secondAttribute="centerY" constant="3" id="wFj-Dm-O39"/>
                                         </constraints>
@@ -101,7 +101,6 @@
                                     <constraint firstItem="cHa-iw-YoI" firstAttribute="leading" secondItem="qAe-hJ-BYF" secondAttribute="leading" id="4C6-oV-vLb"/>
                                     <constraint firstAttribute="trailing" secondItem="O3R-hb-4CP" secondAttribute="trailing" constant="15" id="I6k-le-PCO"/>
                                     <constraint firstItem="ja6-fw-Fji" firstAttribute="top" relation="greaterThanOrEqual" secondItem="O3R-hb-4CP" secondAttribute="bottom" constant="5" id="KSm-Vl-Qid"/>
-                                    <constraint firstItem="cHa-iw-YoI" firstAttribute="height" secondItem="qAe-hJ-BYF" secondAttribute="height" multiplier="0.35" id="TG4-T3-IKA"/>
                                     <constraint firstItem="ja6-fw-Fji" firstAttribute="centerX" secondItem="qAe-hJ-BYF" secondAttribute="centerX" id="THp-gc-Oyf"/>
                                     <constraint firstAttribute="trailing" secondItem="cHa-iw-YoI" secondAttribute="trailing" id="Tf5-AP-X2g"/>
                                     <constraint firstItem="O3R-hb-4CP" firstAttribute="top" secondItem="cHa-iw-YoI" secondAttribute="bottom" constant="10" id="UPB-TV-Hqf"/>
@@ -133,6 +132,127 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDm-Lv-q2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-514.39999999999998" y="127.28635682158921"/>
+        </scene>
+        <!--Eliminate PlayerVC-->
+        <scene sceneID="Rjc-bd-ADy">
+            <objects>
+                <viewController storyboardIdentifier="eliminatePlayer" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="Moq-c8-roo" customClass="EliminatePlayerVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qSI-4C-O9K"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yty-3H-bbj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Ev-2s-XWD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2y-ct-kPI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gfm-gC-UaT">
+                                <rect key="frame" x="27" y="183.5" width="320" height="300"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVK-w9-aLK">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHq-YD-IHk">
+                                                <rect key="frame" x="28.5" y="12.5" width="263" height="36.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7X8-05-uaE" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="28.5" height="36.5"/>
+                                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="layer Elimination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysf-QK-dWI" customClass="OldTextTanLabel" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="28.5" y="0.0" width="234.5" height="36.5"/>
+                                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="bHq-YD-IHk" firstAttribute="centerY" secondItem="yVK-w9-aLK" secondAttribute="centerY" id="59K-iT-wQk"/>
+                                            <constraint firstItem="bHq-YD-IHk" firstAttribute="centerX" secondItem="yVK-w9-aLK" secondAttribute="centerX" id="6ck-6t-nmo"/>
+                                            <constraint firstAttribute="height" constant="60" id="phL-kC-gY1"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7B-nQ-8cp" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="75" y="240" width="170" height="40"/>
+                                        <color key="backgroundColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="170" id="02F-aG-LZG"/>
+                                            <constraint firstAttribute="height" constant="40" id="mX5-Va-wKq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                        <state key="normal" title="Eliminate Player">
+                                            <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="eliminatePlayerPressed:" destination="Moq-c8-roo" eventType="touchUpInside" id="vGY-yX-hPl"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NON-22-8Vn">
+                                        <rect key="frame" x="10" y="129" width="300" height="101"/>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a player to eliminate. Be careful as this cannot be undone." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxL-Dw-UGD" customClass="RegularTextBrownLabel" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="80" width="280" height="39.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39.5" id="lTy-To-deS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="5c4-ZX-XYJ"/>
+                                    <constraint firstItem="gxL-Dw-UGD" firstAttribute="top" secondItem="yVK-w9-aLK" secondAttribute="bottom" constant="20" id="5d9-PW-KIW"/>
+                                    <constraint firstItem="yVK-w9-aLK" firstAttribute="leading" secondItem="Gfm-gC-UaT" secondAttribute="leading" id="JCQ-0B-X2t"/>
+                                    <constraint firstItem="gxL-Dw-UGD" firstAttribute="centerX" secondItem="Gfm-gC-UaT" secondAttribute="centerX" id="M1E-gu-kpO"/>
+                                    <constraint firstItem="J7B-nQ-8cp" firstAttribute="top" secondItem="NON-22-8Vn" secondAttribute="bottom" constant="10" id="Nuh-bv-s9x"/>
+                                    <constraint firstItem="J7B-nQ-8cp" firstAttribute="centerX" secondItem="Gfm-gC-UaT" secondAttribute="centerX" id="Omx-0i-tr3"/>
+                                    <constraint firstAttribute="trailing" secondItem="NON-22-8Vn" secondAttribute="trailing" constant="10" id="QNN-g4-Iks"/>
+                                    <constraint firstItem="yVK-w9-aLK" firstAttribute="top" secondItem="Gfm-gC-UaT" secondAttribute="top" id="Rwg-5e-YYv"/>
+                                    <constraint firstItem="NON-22-8Vn" firstAttribute="top" secondItem="gxL-Dw-UGD" secondAttribute="bottom" constant="10" id="at5-25-rlD"/>
+                                    <constraint firstItem="NON-22-8Vn" firstAttribute="leading" secondItem="Gfm-gC-UaT" secondAttribute="leading" constant="10" id="g9f-ee-4ep"/>
+                                    <constraint firstAttribute="trailing" secondItem="yVK-w9-aLK" secondAttribute="trailing" id="j2q-Ed-rw6"/>
+                                    <constraint firstAttribute="height" constant="300" id="jLe-8Y-V9o"/>
+                                    <constraint firstAttribute="bottom" secondItem="J7B-nQ-8cp" secondAttribute="bottom" constant="20" id="pWs-ab-2XD"/>
+                                    <constraint firstItem="gxL-Dw-UGD" firstAttribute="leading" secondItem="Gfm-gC-UaT" secondAttribute="leading" constant="20" id="usW-9i-qiC"/>
+                                    <constraint firstAttribute="trailing" secondItem="gxL-Dw-UGD" secondAttribute="trailing" constant="20" id="yxv-4N-IbH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yty-3H-bbj" firstAttribute="top" secondItem="r2y-ct-kPI" secondAttribute="bottom" id="1qy-dm-REw"/>
+                            <constraint firstItem="Gfm-gC-UaT" firstAttribute="centerY" secondItem="2Ev-2s-XWD" secondAttribute="centerY" id="9lW-xV-ctH"/>
+                            <constraint firstItem="Gfm-gC-UaT" firstAttribute="centerX" secondItem="2Ev-2s-XWD" secondAttribute="centerX" id="Yjg-mB-9lU"/>
+                            <constraint firstAttribute="trailing" secondItem="r2y-ct-kPI" secondAttribute="trailing" id="gWa-4d-uCA"/>
+                            <constraint firstItem="r2y-ct-kPI" firstAttribute="top" secondItem="2Ev-2s-XWD" secondAttribute="top" id="moi-Tv-GUH"/>
+                            <constraint firstItem="r2y-ct-kPI" firstAttribute="leading" secondItem="2Ev-2s-XWD" secondAttribute="leading" id="oO6-Zd-Xjh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="eliminateButton" destination="J7B-nQ-8cp" id="vQz-US-Khh"/>
+                        <outlet property="headerView" destination="yVK-w9-aLK" id="z3J-PZ-EMQ"/>
+                        <outlet property="mainCardView" destination="Gfm-gC-UaT" id="aP2-yq-xaQ"/>
+                        <outlet property="pickerView" destination="NON-22-8Vn" id="y9R-ms-HoS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5rb-cL-G6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="192.80000000000001" y="126.38680659670166"/>
         </scene>
     </scenes>
 </document>

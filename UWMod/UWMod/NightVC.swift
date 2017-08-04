@@ -32,8 +32,8 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
         cardStackDelegate = self
         
         //configuration of stacks
-        layout.topStackMaximumSize = 3
-        layout.bottomStackMaximumSize = 20
+        layout.topStackMaximumSize = 2
+        layout.bottomStackMaximumSize = 7
         layout.bottomStackCardHeight = 20
     }
     
@@ -41,6 +41,8 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     // MARK: - Tispr functions
     

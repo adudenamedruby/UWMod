@@ -73,7 +73,7 @@ class PlayerSelectVC: UIViewController {
     
     func loadPlayers() {
         if let temp = defaults.object(forKey: PLAYERS) as? [String] {
-            self.savedPlayers = temp.sorted()
+            self.savedPlayers = temp.sorted{$0.localizedCaseInsensitiveCompare($1) == .orderedAscending}
         }
         
         tableView.reloadData()
@@ -122,7 +122,7 @@ class PlayerSelectVC: UIViewController {
         
         if ((identifier == "selectRoleSegue") && (self.selectedPlayers.count < 3)) {
             
-            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.alertName = "Warning"
             vc.alertText = "You need at least three people to play a game of Ultimate Werewolf."

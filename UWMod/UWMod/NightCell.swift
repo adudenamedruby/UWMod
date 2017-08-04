@@ -19,6 +19,12 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     @IBOutlet weak var playerNameLabel: RegularTextBrownLabel!
     @IBOutlet weak var roleDescritpionLabel: UILabel!
     
+    @IBOutlet weak var helpButton: UIButton!
+    @IBOutlet weak var popupOuterView: UIView!
+    @IBOutlet weak var popupInnerView: UIView!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var darknessView: UIView!
+    
     var player: Player?
     
     override func awakeFromNib() {
@@ -27,6 +33,12 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         cardBorder.layer.cornerRadius = STYLE.CornerRadius
         cardBorder.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
+        
+        popupInnerView.layer.cornerRadius = STYLE.CornerRadius
+        popupInnerView.backgroundColor = STYLE.Tan
+        popupOuterView.layer.cornerRadius = STYLE.CornerRadius
+        popupOuterView.backgroundColor = STYLE.Beige
+        resetHelpView()
     }
     
     func configureCell() {
@@ -34,6 +46,8 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         titleFirstLetterLabel.text = player?.role.name.firstLetter()
         titleRemainingLabel.text = player?.role.name.restOfString()
         roleDescritpionLabel.text = player?.role.description
+        textView.text = player?.role.roleExplanation
+        resetHelpView()
         loadPlayerName()
         
         if (GAME.firstNight && !(player?.playerAssigned)!) {
@@ -41,6 +55,40 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         } else {
             clearSubview()
         }
+    }
+    
+    @IBAction func helpPressed(_ sender: Any) {
+        fadePopupIn()
+    }
+    @IBAction func backButtonPRessed(_ sender: Any) {
+        fadePopupOut()
+    }
+    
+    func fadePopupIn() {
+        darknessView.isHidden = false
+        darknessView.fadeIn(duration: 0.2, delay: 0)
+
+        popupOuterView.isHidden = false
+        popupOuterView.fadeIn(duration: 0.2, delay: 0)
+    }
+    
+    func fadePopupOut() {
+        popupOuterView.fadeOut(duration: 0.2, delay: 0, completion: {
+            (finished: Bool) -> Void in
+            self.popupOuterView.isHidden = true
+        })
+
+        darknessView.fadeOut(duration: 0.2, delay: 0, completion: {
+            (finished: Bool) -> Void in
+            self.darknessView.isHidden = true
+        })
+    }
+    
+    func resetHelpView() {
+        popupOuterView.isHidden = true
+        popupOuterView.alpha = 0
+        darknessView.isHidden = true
+        darknessView.alpha = 0
     }
     
     func clearSubview() {

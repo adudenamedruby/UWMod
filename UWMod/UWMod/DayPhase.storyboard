@@ -76,10 +76,10 @@
                                         <rect key="frame" x="10" y="20" width="355" height="573.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkz-UD-vyc">
-                                                <rect key="frame" x="0.0" y="0.0" width="355" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="70"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wro-u3-tqJ">
-                                                        <rect key="frame" x="83" y="8" width="189.5" height="42"/>
+                                                        <rect key="frame" x="83" y="14.5" width="189.5" height="42"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3og-L8-RSW" customClass="OldTextRedLabel" customModule="UWMod" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="29.5" height="42"/>
@@ -100,25 +100,33 @@
                                                 <constraints>
                                                     <constraint firstItem="wro-u3-tqJ" firstAttribute="centerX" secondItem="Gkz-UD-vyc" secondAttribute="centerX" id="UD0-Lf-hro"/>
                                                     <constraint firstItem="wro-u3-tqJ" firstAttribute="centerY" secondItem="Gkz-UD-vyc" secondAttribute="centerY" id="b2f-gS-i6C"/>
+                                                    <constraint firstAttribute="height" constant="70" id="dGr-ZS-moa"/>
                                                 </constraints>
                                             </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1TP-tu-QAf">
+                                                <rect key="frame" x="8" y="75" width="339" height="491"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="Gkz-UD-vyc" firstAttribute="top" secondItem="QwX-db-Fid" secondAttribute="top" id="BNt-sY-q7a"/>
+                                            <constraint firstAttribute="trailing" secondItem="1TP-tu-QAf" secondAttribute="trailing" constant="8" id="SE5-BL-5KY"/>
+                                            <constraint firstItem="1TP-tu-QAf" firstAttribute="top" secondItem="Gkz-UD-vyc" secondAttribute="bottom" constant="5" id="Ysc-Ge-UMQ"/>
                                             <constraint firstAttribute="trailing" secondItem="Gkz-UD-vyc" secondAttribute="trailing" id="ZAF-87-mlb"/>
-                                            <constraint firstItem="Gkz-UD-vyc" firstAttribute="height" secondItem="QwX-db-Fid" secondAttribute="height" multiplier="0.1" id="h72-FP-K43"/>
+                                            <constraint firstAttribute="bottom" secondItem="1TP-tu-QAf" secondAttribute="bottom" constant="7.5" id="reU-23-8kp"/>
+                                            <constraint firstItem="1TP-tu-QAf" firstAttribute="leading" secondItem="QwX-db-Fid" secondAttribute="leading" constant="8" id="uUY-EI-MT7"/>
                                             <constraint firstItem="Gkz-UD-vyc" firstAttribute="leading" secondItem="QwX-db-Fid" secondAttribute="leading" id="zN6-DH-vPi"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRB-Xk-5WN" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="607" width="167" height="40"/>
-                                        <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="12" y="607" width="192" height="40"/>
+                                        <color key="backgroundColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="dpk-k0-T7w"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                        <state key="normal" title="Lynch">
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
+                                        <state key="normal" title="Eliminate Player">
                                             <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -138,7 +146,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-Co-CpR" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="196" y="607" width="167" height="40"/>
+                                        <rect key="frame" x="221" y="607" width="142" height="40"/>
                                         <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="gXr-JV-KW3"/>
@@ -166,11 +174,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="HRB-Xk-5WN" firstAttribute="width" secondItem="Trs-Co-CpR" secondAttribute="width" id="29n-aa-ZAg"/>
+                                    <constraint firstItem="HRB-Xk-5WN" firstAttribute="width" secondItem="Trs-Co-CpR" secondAttribute="width" constant="50" id="29n-aa-ZAg"/>
                                     <constraint firstAttribute="trailing" secondItem="QwX-db-Fid" secondAttribute="trailing" constant="10" id="5K0-dN-Cex"/>
                                     <constraint firstAttribute="bottom" secondItem="Trs-Co-CpR" secondAttribute="bottom" constant="20" id="6ck-b2-QiI"/>
                                     <constraint firstItem="QwX-db-Fid" firstAttribute="top" secondItem="q4j-ep-MX8" secondAttribute="top" constant="20" id="BKW-we-HRQ"/>
-                                    <constraint firstItem="Trs-Co-CpR" firstAttribute="width" secondItem="QwX-db-Fid" secondAttribute="width" multiplier="0.47" id="JyY-qe-nmO"/>
+                                    <constraint firstItem="Trs-Co-CpR" firstAttribute="width" secondItem="QwX-db-Fid" secondAttribute="width" multiplier="0.4" id="JyY-qe-nmO"/>
                                     <constraint firstItem="QwX-db-Fid" firstAttribute="height" secondItem="q4j-ep-MX8" secondAttribute="height" multiplier="0.86" id="KMm-kE-pRv"/>
                                     <constraint firstAttribute="trailing" secondItem="Trs-Co-CpR" secondAttribute="trailing" constant="12" id="Xr1-xP-mqn"/>
                                     <constraint firstAttribute="bottom" secondItem="HRB-Xk-5WN" secondAttribute="bottom" constant="20" id="qZi-j4-xjx"/>
@@ -207,6 +215,7 @@
                         <outlet property="headerView" destination="Gkz-UD-vyc" id="gYi-eI-hOK"/>
                         <outlet property="lynchButton" destination="HRB-Xk-5WN" id="N0p-VY-oa9"/>
                         <outlet property="mainCardView" destination="QwX-db-Fid" id="bwL-xg-svi"/>
+                        <outlet property="tableView" destination="1TP-tu-QAf" id="b2g-Mc-oPn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FZ-CH-RKa" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -24,14 +24,19 @@ class DayVC: UIViewController {
     @IBOutlet weak var mainCardView: UIView!
     @IBOutlet weak var headerView: UIView!
     
+    @IBOutlet weak var tableView: UITableView!
+    
     
     // MARK: - Variables
+
     
     
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupTableView()
 
         endDayTitleLabel.alpha = 0
         forwardButton.alpha = 0
@@ -49,15 +54,16 @@ class DayVC: UIViewController {
         daytimeBackground.alpha = 1
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     // MARK: - Navigation
 
     @IBAction func lynchPressed(_ sender: Any) {
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+        let lynchView = storyboard.instantiateViewController(withIdentifier: "eliminatePlayer") as! EliminatePlayerVC
+        lynchView.modalTransitionStyle = .crossDissolve
+        self.present(lynchView, animated: true, completion: nil)
+        
     }
     
     @IBAction func endDayPressed(_ sender: Any) {
@@ -92,6 +98,41 @@ class DayVC: UIViewController {
         })
     }
     
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "GeneralInfo", bundle: nil),
+                           forCellReuseIdentifier: "generalInfoCell")
+
+    }
+}
+
+extension DayVC: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "generalInfoCell", for: indexPath) as! GeneralInfo
+            cell.configureCell()
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 320
+        }
+        
+        return 100
+    }
 }

@@ -86,7 +86,7 @@ class AddPlayerVC: UIViewController {
             self.dismiss(animated: true, completion: {})
 
         } else {
-            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.alertName = "Error"
             vc.alertText = "Please enter a name."

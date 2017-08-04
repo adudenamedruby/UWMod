@@ -41,6 +41,7 @@ class RoleSelectVC: UIViewController {
     var players: [String]?
     var selectedRoles: [Role] = []
     var gameActors: [Player] = []
+    var suggestedWerewolves: Int = 0
     
     
     // MARK: - View lifetime
@@ -56,6 +57,8 @@ class RoleSelectVC: UIViewController {
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = true
         
+        teamBalanceLabel.text = suggestRoles()
+        
         updateRoleCountLabel()
         
         gameBalanceLabel.text = String(gameBalance)
@@ -68,6 +71,24 @@ class RoleSelectVC: UIViewController {
     
     
     // MARK: - Role selection
+    
+    func suggestRoles() -> String {
+
+        let numberOfPlayers = (players?.count)!
+        var numberOfWerewolves: Int
+        
+        if numberOfPlayers < 4 {
+            numberOfWerewolves = 1
+        } else {
+            numberOfWerewolves = numberOfPlayers / 4
+        }
+        
+        let numberOfVillagers = numberOfPlayers - numberOfWerewolves - 1
+        
+        let suggestion = "Suggested roles: 1 Seer \(numberOfVillagers) Villagers \(numberOfWerewolves) Werewolves"
+        
+        return suggestion
+    }
     
     func updateRoles() {
         var chosenRoles: [Role] = []
@@ -126,7 +147,7 @@ class RoleSelectVC: UIViewController {
         
         if (self.selectedRoles.count < (self.players?.count)!) {
             
-            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.alertName = "Warning"
             vc.alertText = "You do not have enough roles for the number of players in the game."
@@ -156,6 +177,7 @@ class RoleSelectVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 }
+
 
 extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -195,7 +217,7 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
         updateRoleCountLabel()
         
         if (selectedIndexPaths?.count)! > (players?.count)! {
-            let storyboard: UIStoryboard = UIStoryboard(name: "Alerts", bundle: nil)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.modalTransitionStyle = .crossDissolve
             vc.alertName = "Warning"

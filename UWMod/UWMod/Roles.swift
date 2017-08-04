@@ -47,6 +47,10 @@ class Role {
         self.powerUsed = false
         self.canWake = true
     }
+    
+    func reconcileDeath() {
+        
+    }
 }
 
 //class Witch: Role {
