@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegularTextTanLabel: UILabel {
+class RegTan: UILabel {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -23,17 +23,16 @@ class RegularTextTanLabel: UILabel {
     
     func commonInit(){
         self.textColor = STYLE.Tan
-        self.font = STYLE.RegStandard
+        self.font = STYLE.RegStandardFont
     }
 
 }
 
-class RegularTextBrownLabel: UILabel {
+class RegBrown: UILabel {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         self.commonInit()
-        
     }
     
     override init(frame: CGRect) {
@@ -43,17 +42,16 @@ class RegularTextBrownLabel: UILabel {
     
     func commonInit(){
         self.textColor = STYLE.Brown
-        self.font = STYLE.RegStandard
+        self.font = STYLE.RegStandardFont
     }
     
 }
 
-class RegularTextRedLabel: UILabel {
+class RegRed: UILabel {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         self.commonInit()
-        
     }
     
     override init(frame: CGRect) {
@@ -63,9 +61,124 @@ class RegularTextRedLabel: UILabel {
     
     func commonInit(){
         self.textColor = STYLE.Red
-        self.font = STYLE.RegStandard
+        self.font = STYLE.RegStandardFont
     }
     
 }
+
+class RegTanLarge: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Tan
+        self.font = STYLE.RegLargeFont
+    }
+    
+}
+
+class RegBrownLarge: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Brown
+        self.font = STYLE.RegLargeFont
+    }
+    
+}
+
+class RegRedLarge: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Red
+        self.font = STYLE.RegLargeFont
+    }
+    
+}
+
+class RegRedHeader: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Red
+        self.font = STYLE.RegBoldHeaderFont
+    }
+    
+}
+
+class RegTanHeader: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Tan
+        self.font = STYLE.RegStandardFont
+    }
+    
+}
+
+class RegBrownHeader: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Brown
+        self.font = STYLE.RegStandardFont
+    }
+    
+}
+
 
 

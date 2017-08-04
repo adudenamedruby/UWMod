@@ -8,12 +8,11 @@
 
 import UIKit
 
-class OldTextTanLabel: UILabel {
+class OldTan: UILabel {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         self.commonInit()
-        
     }
     
     override init(frame: CGRect) {
@@ -23,12 +22,11 @@ class OldTextTanLabel: UILabel {
     
     func commonInit(){
         self.textColor = STYLE.Tan
-        self.font = STYLE.OldStandard
+        self.font = STYLE.OldStandardFont
     }
-
 }
 
-class OldTextBrownLabel: UILabel {
+class OldBrown: UILabel {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -43,12 +41,12 @@ class OldTextBrownLabel: UILabel {
     
     func commonInit(){
         self.textColor = STYLE.Brown
-        self.font = STYLE.OldStandard
+        self.font = STYLE.OldStandardFont
     }
     
 }
 
-class OldTextRedLabel: UILabel {
+class OldRed: UILabel {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -63,12 +61,12 @@ class OldTextRedLabel: UILabel {
     
     func commonInit(){
         self.textColor = STYLE.Red
-        self.font = STYLE.OldStandard
+        self.font = STYLE.OldStandardFont
     }
     
 }
 
-class OldRedLargeText: UILabel {
+class OldRedHeader: UILabel {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -83,12 +81,12 @@ class OldRedLargeText: UILabel {
     
     func commonInit(){
         self.textColor = STYLE.Red
-        self.font = STYLE.OldLarge
+        self.font = STYLE.OldFirstLetterFont
     }
     
 }
 
-class OldTanLargeText: UILabel {
+class OldMenuTop: UILabel {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -103,12 +101,12 @@ class OldTanLargeText: UILabel {
     
     func commonInit(){
         self.textColor = STYLE.Tan
-        self.font = STYLE.OldLarge
+        self.font = STYLE.OldMenuTopFont
     }
     
 }
 
-class OldBrownLargeText: UILabel {
+class OldMenuBottom: UILabel {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -123,7 +121,66 @@ class OldBrownLargeText: UILabel {
     
     func commonInit(){
         self.textColor = STYLE.Brown
-        self.font = STYLE.OldLarge
+        self.font = STYLE.OldMenuBottomFont
+    }
+    
+}
+
+class OldMenuRedBottom: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Red
+        self.font = STYLE.OldMenuBottomFont
+    }
+    
+}
+
+class OldRedRole: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+        
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Red
+        self.font = STYLE.OldRoleFirstFont
+    }
+    
+}
+
+class OldBrownRole: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+        
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Brown
+        self.font = STYLE.OldRoleFont
     }
     
 }

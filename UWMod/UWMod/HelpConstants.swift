@@ -23,7 +23,7 @@ public var helpSectionsData: [Section] = [
         Item(name: "The bodyguard protected X, but I can still choose to eliminate them?!", detail: "That's intended! The game carries out phase effects at the end of each phase, in order to account for all possible permutations. Just enter all the information asked for in the app and everything will take care of itself."),
         Item(name: "What about 'special' roles?", detail: "Roles like the INSERT ROLE HERE, roles that people are unsure whether they are in the game or not")
         ]),
-    Section(name: "Feedback/Comments/Praise", items: [
+    Section(name: "Feedback", items: [
         Item(name: "UWMod hasn't been updated in forever!", detail: "First, I should mention that while this project is very much a labour of love, it is a side-project and, as such, may only see sporadic updates. I will do my best to try and address game-breaking bugs as soon as possible; after that, as time allows, I will endeavour to introduce new features or improve the app as time goes on."),
         Item(name: "How do I get in touch?", detail: "Glad you asked! Your feedback and advice is important to me, and while I don't have the manpower to answer every question or comment - I do my best to read everything!\n\nHaving said that, if you have questions, comments, ideas, or just want to send praise/encouraging words, please send an e-mail to info@acmelabs.ca.")
         ])

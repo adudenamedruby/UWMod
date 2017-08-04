@@ -26,7 +26,7 @@ class HelpCell: UITableViewCell {
         nameLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         nameLabel.numberOfLines = 0
-        nameLabel.font = STYLE.RegBold
+        nameLabel.font = STYLE.RegBoldFont
         nameLabel.textColor = STYLE.Brown
         
         // configure detailLabel
@@ -38,7 +38,7 @@ class HelpCell: UITableViewCell {
         detailLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         detailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5).isActive = true
         detailLabel.numberOfLines = 0
-        detailLabel.font = STYLE.RegSmall
+        detailLabel.font = STYLE.RegSmallFont
         detailLabel.textColor = STYLE.Brown
     }
     

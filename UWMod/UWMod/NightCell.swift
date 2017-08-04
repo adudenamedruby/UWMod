@@ -16,7 +16,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     @IBOutlet weak var roleIconImage: UIImageView!
     @IBOutlet weak var titleFirstLetterLabel: UILabel!
     @IBOutlet weak var titleRemainingLabel: UILabel!
-    @IBOutlet weak var playerNameLabel: RegularTextBrownLabel!
+    @IBOutlet weak var playerNameLabel: RegBrown!
     @IBOutlet weak var roleDescritpionLabel: UILabel!
     
     @IBOutlet weak var helpButton: UIButton!
@@ -34,6 +34,8 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         cardBorder.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
         
+        textView.setContentOffset(CGPoint.zero, animated: false)
+        
         popupInnerView.layer.cornerRadius = STYLE.CornerRadius
         popupInnerView.backgroundColor = STYLE.Tan
         popupOuterView.layer.cornerRadius = STYLE.CornerRadius
@@ -47,7 +49,6 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         titleRemainingLabel.text = player?.role.name.restOfString()
         roleDescritpionLabel.text = player?.role.description
         textView.text = player?.role.roleExplanation
-        textView.setContentOffset(CGPoint.zero, animated: false)
         resetHelpView()
         loadPlayerName()
         

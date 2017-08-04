@@ -16,7 +16,7 @@ class GeneralInfo: UITableViewCell {
     @IBOutlet weak var mainCardView: UIView!
     @IBOutlet weak var headerView: UIView!
     
-    @IBOutlet weak var timeLabel: RegularTextBrownLabel!
+    @IBOutlet weak var timeLabel: RegBrown!
     
     //MARK: - Variables
     private var timer: Timer!

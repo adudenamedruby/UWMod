@@ -18,9 +18,9 @@ class MainGameVC: UIViewController {
     
     @IBOutlet var phaseReportView: UIView!
     @IBOutlet var headerView: UIView!
-    @IBOutlet var eliminatedLabel: RegularTextBrownLabel!
+    @IBOutlet var eliminatedLabel: RegBrown!
     @IBOutlet var playersEliminatedTextView: UITextView!
-    @IBOutlet var savedLabel: RegularTextBrownLabel!
+    @IBOutlet var savedLabel: RegBrown!
     @IBOutlet var playersProtectedTextView: UITextView!
     
     
