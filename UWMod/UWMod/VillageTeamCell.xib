@@ -93,69 +93,7 @@
                 <outlet property="outlineView" destination="8q3-s1-4iI" id="lxa-dF-yHl"/>
                 <outlet property="playerLabel" destination="Rcg-HX-6Wl" id="mEf-NU-T7Q"/>
             </connections>
-            <point key="canvasLocation" x="-65" y="273"/>
+            <point key="canvasLocation" x="-489" y="292"/>
         </tableViewCell>
-        <view contentMode="scaleToFill" id="dyf-Fl-n5i">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEZ-ij-ihN">
-                    <rect key="frame" x="1" y="0.0" width="373" height="666"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTU-dq-ivR">
-                            <rect key="frame" x="0.0" y="0.0" width="373" height="45"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcX-JU-lZ8">
-                                    <rect key="frame" x="20" y="8.5" width="159.5" height="27"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5G-tW-6IH" customClass="RegBeigeHeader" customModule="UWMod" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="22.5" height="27"/>
-                                            <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="22"/>
-                                            <color key="textColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erewolf Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfF-WA-w6k" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
-                                            <rect key="frame" x="22.5" y="0.0" width="137" height="27"/>
-                                            <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
-                                            <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
-                            </subviews>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="HcX-JU-lZ8" firstAttribute="centerY" secondItem="lTU-dq-ivR" secondAttribute="centerY" id="BGT-a5-kTu"/>
-                                <constraint firstItem="HcX-JU-lZ8" firstAttribute="leading" secondItem="lTU-dq-ivR" secondAttribute="leading" constant="20" id="TGd-W1-n2o"/>
-                                <constraint firstAttribute="height" constant="45" id="br8-DV-c72"/>
-                            </constraints>
-                        </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EJ-sz-PNe" customClass="RegRed" customModule="UWMod" customModuleProvider="target">
-                            <rect key="frame" x="15" y="55" width="348" height="601"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="lTU-dq-ivR" secondAttribute="trailing" id="5Ce-zl-1ci"/>
-                        <constraint firstItem="lTU-dq-ivR" firstAttribute="leading" secondItem="vEZ-ij-ihN" secondAttribute="leading" id="6Hw-e2-rNz"/>
-                        <constraint firstItem="4EJ-sz-PNe" firstAttribute="leading" secondItem="vEZ-ij-ihN" secondAttribute="leading" constant="15" id="8ew-q4-1zc"/>
-                        <constraint firstAttribute="bottom" secondItem="4EJ-sz-PNe" secondAttribute="bottom" constant="10" id="KQa-cE-RrF"/>
-                        <constraint firstItem="4EJ-sz-PNe" firstAttribute="top" secondItem="lTU-dq-ivR" secondAttribute="bottom" constant="10" id="Zg2-7Y-xQq"/>
-                        <constraint firstAttribute="trailing" secondItem="4EJ-sz-PNe" secondAttribute="trailing" constant="10" id="smW-YD-Wuq"/>
-                        <constraint firstItem="lTU-dq-ivR" firstAttribute="top" secondItem="vEZ-ij-ihN" secondAttribute="top" id="wiZ-Fz-l0Y"/>
-                    </constraints>
-                </view>
-            </subviews>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="vEZ-ij-ihN" secondAttribute="trailing" constant="1" id="0bf-Ie-5RB"/>
-                <constraint firstItem="vEZ-ij-ihN" firstAttribute="top" secondItem="dyf-Fl-n5i" secondAttribute="top" id="dsQ-CE-RK7"/>
-                <constraint firstItem="vEZ-ij-ihN" firstAttribute="leading" secondItem="dyf-Fl-n5i" secondAttribute="leading" constant="1" id="fJX-W0-NZ1"/>
-                <constraint firstAttribute="bottom" secondItem="vEZ-ij-ihN" secondAttribute="bottom" constant="1" id="wk4-0m-MoW"/>
-            </constraints>
-        </view>
     </objects>
 </document>
