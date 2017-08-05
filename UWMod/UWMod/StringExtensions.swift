@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     
@@ -25,4 +26,13 @@ extension String {
         return self.substring(from: index)
     }
     
+    func colourFirstCharacter(withStringFont font: UIFont, withColour colour: UIColor) -> NSAttributedString  {
+        let attributedText = NSMutableAttributedString(string: self,
+                                                       attributes: [NSFontAttributeName:font])
+        attributedText.addAttribute(NSForegroundColorAttributeName,
+                                    value: colour,
+                                    range: NSRange(location:0,length:1))
+        
+        return attributedText
+    }
 }

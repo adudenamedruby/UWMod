@@ -72,7 +72,7 @@ class AssignPlayer: UIView {
             
         let index = GAME.availableRoster.index(of: chosenPlayerName)
         GAME.availableRoster.remove(at: index!)
-        GAME.assignRoles(player: player!, name: chosenPlayerName!)
+        GAME.assignRoleToPlayer(player: player!, name: chosenPlayerName!)
         delegate?.updateCard()
     }
 }

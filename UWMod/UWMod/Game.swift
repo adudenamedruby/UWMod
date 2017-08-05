@@ -64,9 +64,15 @@ class Game {
     
     // MARK: - Player-related functions
     
-    func assignRoles(player: Player, name: String) {
+    func assignRoleToPlayer(player: Player, name: String) {
         player.name = name
         player.playerAssigned = true
+    }
+    
+    func assignInfoCardsToPlayers() {
+        for actor in livingActors {
+            actor.determineDaytimeInfoCardForPlayer()
+        }
     }
     
     func prepareToEliminatePlayer(victim: Player) {
@@ -110,22 +116,10 @@ class Game {
         }
     }
     
-    func evaluateNightActorsOrder() {
-        self.nightActors.sort(by: { $0.role.priority < $1.role.priority})
-    }
-    
-    func populateNightActors() {
-        for actor in self.livingActors {
-            if actor.isNightActivePlayer {
-                nightActors.append(actor)
-            }
-        }
-    }
-    
     
     // MARK: - Player name retrieval functions for various uses
     
-    // THis fetches all players in a list and returns the appropriate string
+    // This fetches all players in a list and returns the appropriate string
     
     func fetchPlayersWithTeamType(fromList: [Player], ofTeamType: UWTeam, withRole: Bool = false, separatedByComma: Bool = false) -> String {
         var players = ""
@@ -179,7 +173,6 @@ class Game {
     
     }
 
-
     func retrievePlayerNameWithRole(player: Player, separatedByComma: Bool = false) -> String {
         var separator = "\n"
         if separatedByComma {
@@ -211,16 +204,15 @@ class Game {
         if firstNight {
             firstNight = false
             livingActors = availablePlayers
-            
             populateNightActors()
         }
         
         clearPhaseReport()
+        assignInfoCardsToPlayers()
         eliminatePlayers()
         evaluateNightActorsOrder()
         setDeadPlayerCheck()
         setupInfoCards()
-        werewolfEliminationsPerNight = 1 // TODO: Turn this into a function!
         
         currentNight += 1
     }
@@ -230,6 +222,7 @@ class Game {
     func finishDay() {
         
         clearPhaseReport()
+        assignInfoCardsToPlayers()
         eliminatePlayers()
         evaluateNightActorsOrder()
         setDeadPlayerCheck()
@@ -268,9 +261,19 @@ class Game {
         self.daytimeInfoCards = tempArray
     }
     
-    func assignInfoCardsToPlayers() {
-        for actor in livingActors {
-            actor.determineDaytimeInfoCardForPlayer()
+    func determineNumberOfWerewolfEliminations() {
+        werewolfEliminationsPerNight = 1
+    }
+    
+    func evaluateNightActorsOrder() {
+        self.nightActors.sort(by: { $0.role.priority < $1.role.priority})
+    }
+    
+    func populateNightActors() {
+        for actor in self.livingActors {
+            if actor.isNightActivePlayer {
+                nightActors.append(actor)
+            }
         }
     }
 }

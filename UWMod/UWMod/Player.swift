@@ -52,10 +52,6 @@ class Player {
         
     }
     
-    func assignPlayer(playerName: String) {
-        self.name = playerName
-    }
-    
     func addToTeam(team: UWTeam) {
         self.team.append(team)
     }
@@ -74,7 +70,7 @@ class Player {
         for teamX in self.team {
             if teamX == .TeamWerewolf {
                 let daytimeCard: DaytimeCardType = .WerewolfTeamCard
-                if !daytimeInfoCards.contains(DaytimeCardType) {
+                if !daytimeInfoCards.contains(daytimeCard) {
                     daytimeInfoCards.append(daytimeCard)
                 }
             }
