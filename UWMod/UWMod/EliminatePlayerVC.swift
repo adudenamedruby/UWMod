@@ -22,6 +22,8 @@ class EliminatePlayerVC: UIViewController {
     // MARK: - Variables
     
     var chosenPlayer: Player!
+    var eliminatedBy: RoleType?
+    var updateCardDelegate: UpdateCardDelegate?
     
     // MARK: - View Lifecycle
     
@@ -48,8 +50,20 @@ class EliminatePlayerVC: UIViewController {
     // MARK: - Button functionality
     
     @IBAction func eliminatePlayerPressed(_ sender: Any) {
+        
+        print(GAME.werewolfEliminationsPerNight)
         eliminatePlayer(player: chosenPlayer)
-        self.dismiss(animated: true, completion: nil)
+        
+        if eliminatedBy == .Werewolf {
+            GAME.werewolfEliminationsPerNight -= 1
+            print(GAME.werewolfEliminationsPerNight)
+        }
+        
+        self.dismiss(animated: true, completion: {
+            if self.eliminatedBy == .Werewolf {
+                self.updateCardDelegate?.updateCard()
+            }
+        })
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
