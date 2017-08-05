@@ -79,6 +79,23 @@ enum RoleType {
     case Zombie
 }
 
+enum NightActiveStatus {
+    case NightActiveRole
+    case NotNightActiveRole
+    case Conditional
+    
+    var currentStatus: Bool {
+        switch self {
+        case .NightActiveRole:
+            return true
+        case .NotNightActiveRole:
+            return false
+        case .Conditional:
+            return true
+        }
+    }
+}
+
 class Role {
     let name: String
     let type: RoleType
@@ -95,8 +112,10 @@ class Role {
     var powerUsed: Bool
     var team: UWTeam
     var daytimeInfoCard: [DaytimeCardType]
+    var isNightActiveRole: NightActiveStatus
+    var isActivated: Bool
     
-    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: UWTeam, daytimeInfoCard: [DaytimeCardType], wakeTime: [UWNights], image: UIImage, notes: String = "") {
+    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: UWTeam, daytimeInfoCard: [DaytimeCardType], wakeTime: [UWNights], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
         self.name = name
         self.type = type
         self.description = description
@@ -112,10 +131,16 @@ class Role {
         self.powerChoice = powerChoice
         self.powerUsed = false
         self.canWake = true
+        self.isNightActiveRole = isNightActiveRole
+        self.isActivated = true
     }
     
     func reconcileDeath() {
         
+    }
+    
+    func determineNightActivity() -> Bool {
+        return true
     }
 }
 

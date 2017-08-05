@@ -52,7 +52,7 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
             return GAME.availablePlayers.count
         }
         
-        return GAME.livingActors.count
+        return GAME.nightActors.count
     }
     
     override func card(_ collectionView: UICollectionView, cardForItemAtIndexPath indexPath: IndexPath) -> TisprCardStackViewCell {
@@ -61,7 +61,7 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
         if GAME.firstNight {
             cell.player = GAME.availablePlayers[indexPath.row]
         } else {
-            cell.player = GAME.livingActors[indexPath.row]
+            cell.player = GAME.nightActors[indexPath.row]
         }
         
         cell.configureCell()
@@ -80,7 +80,7 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
                 endNight()
             }
         } else {
-            if cardIndex == GAME.livingActors.count {
+            if cardIndex == GAME.nightActors.count {
                 endNight()
             }
         }

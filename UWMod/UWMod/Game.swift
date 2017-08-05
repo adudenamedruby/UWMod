@@ -112,6 +112,14 @@ class Game {
         self.nightActors.sort(by: { $0.role.priority < $1.role.priority})
     }
     
+    func populateNightActors() {
+        for actor in self.livingActors {
+            if actor.isNightActivePlayer {
+                nightActors.append(actor)
+            }
+        }
+    }
+    
     
     // MARK: - Player name retrieval functions for various uses
     
@@ -201,7 +209,7 @@ class Game {
         if firstNight {
             firstNight = false
             livingActors = availablePlayers
-            nightActors = availablePlayers
+            populateNightActors()
         }
         
         clearPhaseReport()
