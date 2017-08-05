@@ -10,47 +10,47 @@ import Foundation
 
 class Game {
     
-    var firstNight: Bool
-    var currentNight: Int
-    var currentDay: Int
-    var nighttimeEliminations: Int
-    var daytimeEliminations: Int
+    var firstNight:                         Bool
+    var currentNight:                       Int
+    var currentDay:                         Int
+    var nighttimeEliminations:              Int
+    var daytimeEliminations:                Int
     
     /// Player names before they are assigned
-    var availableRoster: [String]
-    var availablePlayers: [Player]
-    var playersEliminatedThisPhase: String
-    var playersProtectedThisPhase: String
-    var daytimeInfoCards: [DaytimeCardType]
-    var nightActors: [Player]
-    var livingActors: [Player]
-    var playersToBeEliminated: [Player]
-    var deadActors: [Player]
-    var teams: [UWTeam: [Player]]
-    var areThereDeadPlayers: Bool
-    var werewolfEliminationsPerNight: Int
+    var availableRoster:                    [String]
+    var availablePlayers:                   [Player]
+    var playersEliminatedThisPhase:         String
+    var playersProtectedThisPhase:          String
+    var daytimeInfoCards:                   [DaytimeCardType]
+    var nightActors:                        [Player]
+    var livingActors:                       [Player]
+    var playersToBeEliminated:              [Player]
+    var deadActors:                         [Player]
+    var teams:                              [UWTeam: [Player]]
+    var areThereDeadPlayers:                Bool
+    var werewolfEliminationsPerNight:       Int
     
     init(availableRoster: [String], availablePlayers: [Player]) {
         // Sort the roles by the role priority. This makes it easier to present the 
         // player list in some semblance of a correct order.
-        self.availablePlayers = availablePlayers.sorted(by: { ($0.role.priority) > ($1.role.priority) })
-        self.availableRoster = availableRoster
+        self.availablePlayers               = availablePlayers.sorted(by: { ($0.role.priority) > ($1.role.priority) })
+        self.availableRoster                = availableRoster
 
-        self.firstNight = true
-        self.areThereDeadPlayers = false
-        self.currentNight = 1
-        self.currentDay = 1
-        self.nighttimeEliminations = 1
-        self.daytimeEliminations = 1
-        self.nightActors = []
-        self.livingActors = []
-        self.playersToBeEliminated = []
-        self.deadActors = []
-        self.playersEliminatedThisPhase = ""
-        self.playersProtectedThisPhase = ""
-        self.teams = [:]
-        self.daytimeInfoCards = []
-        self.werewolfEliminationsPerNight = 0
+        self.firstNight                     = true
+        self.areThereDeadPlayers            = false
+        self.currentNight                   = 1
+        self.currentDay                     = 1
+        self.nighttimeEliminations          = 1
+        self.daytimeEliminations            = 1
+        self.nightActors                    = []
+        self.livingActors                   = []
+        self.playersToBeEliminated          = []
+        self.deadActors                     = []
+        self.playersEliminatedThisPhase     = ""
+        self.playersProtectedThisPhase      = ""
+        self.teams                          = [:]
+        self.daytimeInfoCards               = []
+        self.werewolfEliminationsPerNight   = 0
     }
 
     
@@ -211,6 +211,7 @@ class Game {
         if firstNight {
             firstNight = false
             livingActors = availablePlayers
+            
             populateNightActors()
         }
         
@@ -244,12 +245,15 @@ class Game {
         }
     }
     
+    
+    // MARK: - General game functions
+    
     func setupInfoCards() {
         var tempArray: [DaytimeCardType] = [.GeneralInfoCard]
         
         for player in livingActors {
-            let daytimeCardInfo = player.role.daytimeInfoCard
-            for cardType in daytimeCardInfo {
+            let daytimeInfoCards = player.daytimeInfoCards
+            for cardType in daytimeInfoCards {
                 if !tempArray.contains(cardType) {
                     tempArray.append(cardType)
                 }
@@ -264,4 +268,9 @@ class Game {
         self.daytimeInfoCards = tempArray
     }
     
+    func assignInfoCardsToPlayers() {
+        for actor in livingActors {
+            actor.determineDaytimeInfoCardForPlayer()
+        }
+    }
 }

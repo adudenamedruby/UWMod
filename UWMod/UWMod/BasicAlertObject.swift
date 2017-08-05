@@ -9,15 +9,15 @@
 import Foundation
 
 class BasicAlertObject {
-    let title: String
-    let text: String
-    let buttonName: String
-    let additionalInformation: String
+    let title:                          String
+    let text:                           String
+    let buttonName:                     String
+    let additionalInformation:          String
     
     init(title: String, text: String, buttonName: String = "", additionalInformation: String = "") {
-        self.title = title
-        self.text = text
-        self.buttonName = buttonName
-        self.additionalInformation = additionalInformation
+        self.title                      = title
+        self.text                       = text
+        self.buttonName                 = buttonName
+        self.additionalInformation      = additionalInformation
     }
 }

@@ -97,50 +97,40 @@ enum NightActiveStatus {
 }
 
 class Role {
-    let name: String
-    let type: RoleType
-    let description: String
-    let roleExplanation: String
-    let notes: String?
-    let impact: Int
-    let priority: Int
-    let image: UIImage
+    let name:                       String
+    let type:                       RoleType
+    let description:                String
+    let roleExplanation:            String
+    let notes:                      String?
+    let impact:                     Int
+    let priority:                   Int
+    let image:                      UIImage
     
-    var wakeTime: [UWNights]
-    var canWake: Bool
-    var powerChoice: Bool
-    var powerUsed: Bool
-    var team: UWTeam
-    var daytimeInfoCard: [DaytimeCardType]
-    var isNightActiveRole: NightActiveStatus
-    var isActivated: Bool
+    var wakeTime:                   [UWNights]
+    var canWake:                    Bool
+    var powerChoice:                Bool
+    var powerUsed:                  Bool
+    var team:                       [UWTeam]
+    var isNightActiveRole:          NightActiveStatus
+    var isActivated:                Bool
     
-    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: UWTeam, daytimeInfoCard: [DaytimeCardType], wakeTime: [UWNights], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
-        self.name = name
-        self.type = type
-        self.description = description
-        self.roleExplanation = roleExplanation
-        self.notes = notes
-        self.impact = impact
-        self.priority = priority
-        self.image = image
+    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], wakeTime: [UWNights], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
+        self.name                   = name
+        self.type                   = type
+        self.description            = description
+        self.roleExplanation        = roleExplanation
+        self.notes                  = notes
+        self.impact                 = impact
+        self.priority               = priority
+        self.image                  = image
         
-        self.team = team
-        self.daytimeInfoCard = daytimeInfoCard
-        self.wakeTime = wakeTime
-        self.powerChoice = powerChoice
-        self.powerUsed = false
-        self.canWake = true
-        self.isNightActiveRole = isNightActiveRole
-        self.isActivated = true
-    }
-    
-    func reconcileDeath() {
-        
-    }
-    
-    func determineNightActivity() -> Bool {
-        return true
+        self.team                   = team
+        self.wakeTime               = wakeTime
+        self.powerChoice            = powerChoice
+        self.powerUsed              = false
+        self.canWake                = true
+        self.isNightActiveRole      = isNightActiveRole
+        self.isActivated            = true
     }
 }
 

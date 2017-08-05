@@ -9,44 +9,46 @@
 import Foundation
 
 class Player {
-    var name: String
-    var role: Role
-    var alive: Bool
-    var team: [UWTeam]
-    var mute: Bool
-    var canVote: Bool
-    var playerAssigned: Bool
+    var name:                               String
+    var role:                               Role
+    var alive:                              Bool
+    var team:                               [UWTeam]
+    var daytimeInfoCards:                   [DaytimeCardType]
+    var mute:                               Bool
+    var canVote:                            Bool
+    var playerAssigned:                     Bool
     
     // Role affected states
-    var isProtected: Bool
-    var isHynotized: Bool
-    var canBeSavedByLeprechaun: Bool
-    var canBeSavedByWitch: Bool
-    var canBeChosenByMentalist: Bool
-    var canBeChosenByOldHag: Bool
-    var canBeMutedBySpellcaster: Bool
-    var hasBrains: Bool
-    var isNightActivePlayer: Bool
+    var isProtected:                        Bool
+    var isHynotized:                        Bool
+    var canBeSavedByLeprechaun:             Bool
+    var canBeSavedByWitch:                  Bool
+    var canBeChosenByMentalist:             Bool
+    var canBeChosenByOldHag:                Bool
+    var canBeMutedBySpellcaster:            Bool
+    var hasBrains:                          Bool
+    var isNightActivePlayer:                Bool
     
     init (name: String, role: Role) {
-        self.name = name
-        self.role = role
-        self.team = [role.team]
+        self.name                           = name
+        self.role                           = role
+        self.team                           = role.team
+        self.daytimeInfoCards               = []
 
-        self.alive = true
-        self.mute = false
-        self.canVote = true
-        self.playerAssigned = false
-        self.isNightActivePlayer = role.isNightActiveRole.currentStatus
+        self.alive                          = true
+        self.mute                           = false
+        self.canVote                        = true
+        self.playerAssigned                 = false
+        self.isNightActivePlayer            = role.isNightActiveRole.currentStatus
         
-        self.isProtected = false
-        self.isHynotized = false
-        self.canBeSavedByLeprechaun = true
-        self.canBeSavedByWitch = true
-        self.canBeChosenByMentalist = true
-        self.canBeChosenByOldHag = true
-        self.canBeMutedBySpellcaster = true
-        self.hasBrains = true
+        self.isProtected                    = false
+        self.isHynotized                    = false
+        self.canBeSavedByLeprechaun         = true
+        self.canBeSavedByWitch              = true
+        self.canBeChosenByMentalist         = true
+        self.canBeChosenByOldHag            = true
+        self.canBeMutedBySpellcaster        = true
+        self.hasBrains                      = true
         
     }
     
@@ -67,7 +69,15 @@ class Player {
         }
     }
     
-    func reconcileDeath() {
-        role.reconcileDeath()
+    func determineDaytimeInfoCardForPlayer() {
+        
+        for teamX in self.team {
+            if teamX == .TeamWerewolf {
+                let daytimeCard: DaytimeCardType = .WerewolfTeamCard
+                if !daytimeInfoCards.contains(DaytimeCardType) {
+                    daytimeInfoCards.append(daytimeCard)
+                }
+            }
+        }
     }
 }

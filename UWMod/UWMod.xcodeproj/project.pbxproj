@@ -56,6 +56,7 @@
 		12EC78021F2BE2FE0026C667 /* TisprCardStackViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77FF1F2BE2FE0026C667 /* TisprCardStackViewLayout.swift */; };
 		12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC78071F2BE9E50026C667 /* MenuVC.swift */; };
 		12EC780D1F2C02990026C667 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC780C1F2C02990026C667 /* CircularTransition.swift */; };
+		12F584081F361F5F00A98764 /* GeneralEnumerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F584071F361F5F00A98764 /* GeneralEnumerators.swift */; };
 		7736D0901F3378C200555037 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D08F1F3378C200555037 /* Notes.swift */; };
 		7736D0921F3399BC00555037 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0911F3399BC00555037 /* HelpVC.swift */; };
 		7736D0941F33A24200555037 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0931F33A24200555037 /* Help.swift */; };
@@ -121,6 +122,7 @@
 		12EC77FF1F2BE2FE0026C667 /* TisprCardStackViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewLayout.swift; sourceTree = "<group>"; };
 		12EC78071F2BE9E50026C667 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		12EC780C1F2C02990026C667 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
+		12F584071F361F5F00A98764 /* GeneralEnumerators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralEnumerators.swift; sourceTree = "<group>"; };
 		7736D08F1F3378C200555037 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		7736D0911F3399BC00555037 /* HelpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		7736D0931F33A24200555037 /* Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
@@ -299,8 +301,9 @@
 			children = (
 				12EC77DE1F2978920026C667 /* Artifacts.swift */,
 				12EC77E01F297A3E0026C667 /* ArtifactConstants.swift */,
-				12EC77D81F26DD250026C667 /* Constants.swift */,
 				1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */,
+				12EC77D81F26DD250026C667 /* Constants.swift */,
+				12F584071F361F5F00A98764 /* GeneralEnumerators.swift */,
 				12EC77DC1F2831C90026C667 /* Game.swift */,
 				7736D0931F33A24200555037 /* Help.swift */,
 				7736D0951F33A25100555037 /* HelpConstants.swift */,
@@ -449,6 +452,7 @@
 				12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */,
 				123BD0DA1F2FF34D00B99019 /* NightCell.swift in Sources */,
 				12D15E291F2EBCCA0057905E /* ColourDefinitions.swift in Sources */,
+				12F584081F361F5F00A98764 /* GeneralEnumerators.swift in Sources */,
 				7736D0981F33A2C600555037 /* UIViewExtensions.swift in Sources */,
 				1261C2BE1F32AA960099D759 /* GeneralInfo.swift in Sources */,
 				12EC77DD1F2831C90026C667 /* Game.swift in Sources */,

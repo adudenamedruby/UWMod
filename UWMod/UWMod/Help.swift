@@ -12,23 +12,23 @@ import Foundation
 // MARK: - Help Section Data Structure
 
 public struct Item {
-    var name: String
-    var detail: String
+    var name:               String
+    var detail:             String
     
     public init(name: String, detail: String) {
-        self.name = name
-        self.detail = detail
+        self.name           = name
+        self.detail         = detail
     }
 }
 
 public struct Section {
-    var name: String
-    var items: [Item]
-    var collapsed: Bool
+    var name:               String
+    var items:              [Item]
+    var collapsed:          Bool
     
     public init(name: String, items: [Item], collapsed: Bool = true) {
-        self.name = name
-        self.items = items
-        self.collapsed = collapsed
+        self.name           = name
+        self.items          = items
+        self.collapsed      = collapsed
     }
 }
