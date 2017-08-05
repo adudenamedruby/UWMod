@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 enum RoleType {
+    
+    case AnyRole
+    
     case AlphaWolf
     case ApprenticeSeer
     case AuraSeer

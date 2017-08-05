@@ -112,26 +112,63 @@ class Game {
         self.nightActors.sort(by: { $0.role.priority < $1.role.priority})
     }
     
+    
     // MARK: - Player name retrieval functions for various uses
     
     // THis fetches all players in a list and returns the appropriate string
-    func fetchPlayers(fromList: [Player], withRole: Bool = false, separatedByComma: Bool = false) -> String {
+    
+    func fetchPlayersWithTeamType(fromList: [Player], ofTeamType: UWTeam, withRole: Bool = false, separatedByComma: Bool = false) -> String {
         var players = ""
         
         for player in fromList {
-            var temp: String
-            
-            if withRole {
-                temp = retrievePlayerNameWithRole(player: player, separatedByComma: separatedByComma)
-            } else {
-                temp = retrievePlayerNameWithoutRole(player: player, separatedByComma: separatedByComma)
+            for teamType in player.team {
+                if teamType == ofTeamType {
+                    let temp = fetchSinglePlayer(player: player, withRole: withRole, separatedByComma: separatedByComma)
+                    players = players + temp
+                }
             }
-            
+        }
+        
+        return players
+    }
+    
+    func fetchPlayersWithRoleType(fromList: [Player], ofRoleType: RoleType, withRole: Bool = false, separatedByComma: Bool = false) -> String {
+        var players = ""
+        
+        for player in fromList {
+            if player.role.type == ofRoleType {
+                let temp = fetchSinglePlayer(player: player, withRole: withRole, separatedByComma: separatedByComma)
+                players = players + temp
+            }
+        }
+        
+        return players
+    }
+    
+    func fetchAllPlayers(fromList: [Player], withRole: Bool = false, separatedByComma: Bool = false) -> String {
+        var players = ""
+        
+        for player in fromList {
+            let temp = fetchSinglePlayer(player: player, withRole: withRole, separatedByComma: separatedByComma)
             players = players + temp
         }
         
         return players
     }
+    
+    func fetchSinglePlayer(player: Player, withRole: Bool, separatedByComma: Bool = false) -> String {
+        var temp: String
+        
+        if withRole {
+            temp = retrievePlayerNameWithRole(player: player, separatedByComma: separatedByComma)
+        } else {
+            temp = retrievePlayerNameWithoutRole(player: player, separatedByComma: separatedByComma)
+        }
+        
+        return temp
+    
+    }
+
 
     func retrievePlayerNameWithRole(player: Player, separatedByComma: Bool = false) -> String {
         var separator = "\n"

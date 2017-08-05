@@ -147,19 +147,19 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
             
         } else if currentType == .VillageTeamCard {
             let cell = tableView.dequeueReusableCell(withIdentifier: "villageTeamCell", for: indexPath) as! VillageTeamCell
-            cell.villageTeamPlayers = GAME.fetchPlayers(fromList: GAME.livingActors, withRole: true, separatedByComma: false)
+            cell.villageTeamPlayers = GAME.fetchPlayersWithTeamType(fromList: GAME.livingActors, ofTeamType: .TeamVillage, withRole: true)
             cell.configureCell()
             return cell
             
         } else if currentType == .WerewolfTeamCard {
             let cell = tableView.dequeueReusableCell(withIdentifier: "werewolfTeamCell", for: indexPath) as! WerewolfTeamCell
-            cell.werewolfTeamPlayers = GAME.fetchPlayers(fromList: GAME.livingActors, withRole: true, separatedByComma: false)
+            cell.werewolfTeamPlayers = GAME.fetchPlayersWithTeamType(fromList: GAME.livingActors, ofTeamType: .TeamWerewolf, withRole: true)
             cell.configureCell()
             return cell
             
         } else if currentType == .GraveyardCard {
             let cell = tableView.dequeueReusableCell(withIdentifier: "graveyardCell", for: indexPath) as! Graveyard
-            cell.deadPlayers = GAME.fetchPlayers(fromList: GAME.deadActors, withRole: true, separatedByComma: false)
+            cell.deadPlayers = GAME.fetchAllPlayers(fromList: GAME.deadActors, withRole: true)
             cell.configureCell()
             return cell
         }
