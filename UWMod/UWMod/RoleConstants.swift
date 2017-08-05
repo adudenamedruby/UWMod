@@ -18,7 +18,7 @@ let tempRoles: [Role] = [VILLAGER_ONE, VILLAGER_TWO, VILLAGER_THREE, VILLAGER_FO
 let ALL_GAME_ROLES: [Role] = tempRoles.sorted(by: { $0.name < $1.name})
 
 
-
+// Roles get instantiated here! Fancy!
 
 let SEER = Role(name: "Seer", type: .Seer, description: "Test description", roleExplanation: "Each night, the Seer points at a player, and the Moderator shows her a “V” for Villager or “W” for Werewolf. To be extra clear that the Seer knows that a targeted player is a Werewolf, the Moderator may use another indicator (such as a thumbs up and thumbs down).\n\nLorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", impact: 4, priority: 2, powerChoice: false, team: .TeamVillage, daytimeInfoCard: [.VillageTeamCard], wakeTime: [.EveryNight], image: #imageLiteral(resourceName: "seerImage"))
 

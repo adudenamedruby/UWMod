@@ -74,14 +74,21 @@ class Game {
     }
     
     func eliminatePlayers() {
+        
         for victim in playersToBeEliminated {
             if !victim.isProtected {
                 if self.livingActors.contains(where: { $0 === victim }) {
                     addToPhaseReport(player: victim)
                     self.deadActors.append(victim)
+                    
                     if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
                         self.livingActors.remove(at: tempIndex)
                     }
+                    
+                    if let tempIndex = self.nightActors.index(where: { $0 === victim }) {
+                        self.nightActors.remove(at: tempIndex)
+                    }
+
                 }
             } else if victim.isProtected {
                 addToPhaseReport(player: victim)
@@ -101,6 +108,9 @@ class Game {
         }
     }
     
+    func evaluateNightActorsOrder() {
+        self.nightActors.sort(by: { $0.role.priority < $1.role.priority})
+    }
     
     // MARK: - Player name retrieval functions for various uses
     
@@ -154,10 +164,12 @@ class Game {
         if firstNight {
             firstNight = false
             livingActors = availablePlayers
+            nightActors = availablePlayers
         }
         
         clearPhaseReport()
         eliminatePlayers()
+        evaluateNightActorsOrder()
         setDeadPlayerCheck()
         setupInfoCards()
         
@@ -170,6 +182,7 @@ class Game {
         
         clearPhaseReport()
         eliminatePlayers()
+        evaluateNightActorsOrder()
         setDeadPlayerCheck()
         
         currentDay += 1

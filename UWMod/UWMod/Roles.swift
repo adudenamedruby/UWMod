@@ -10,9 +10,70 @@ import Foundation
 import UIKit
 
 enum RoleType {
+    case AlphaWolf
+    case ApprenticeSeer
+    case AuraSeer
+    case Beholder
+    case BigBadWolf
+    case BloodyMary
+    case Bodyguard
+    case Bogeyman
+    case Chupacabra
+    case CountDracula
+    case CultLeader
+    case Cupid
+    case Cursed
+    case DireWolf
+    case Diseased
+    case Doppelganger
+    case Dreamwolf
+    case Drunk
+    case FangFace
+    case FrankensteinsMonster
+    case FruitBrute
+    case Ghost
+    case Hoodlum
+    case Hunter
+    case Huntress
+    case Insomniac
+    case Leprechaun
+    case LoneWolf
+    case Lycan
+    case MadBomber
+    case Mason
+    case Mayor
+    case Mentalist
+    case Minion
+    case MysticSeer
+    case Nostradamus
+    case OldHag
+    case ParanormalInvestigator
+    case Pacifist
+    case Priest
+    case Prince
+    case Revealer
+    case Sasquatch
     case Seer
+    case Sorceress
+    case Spellcaster
+    case Tanner
+    case TeenageWerewolf
+    case TheBlob
+    case TheCount
+    case TheMummy
+    case TheThing
+    case ToughGuy
+    case Troublemaker
+    case Vamprie
+    case VillageIdiot
     case Villager
+    case VirginiaWoolf
     case Werewolf
+    case Witch
+    case WolfCub
+    case WolfMan
+    case Wolverine
+    case Zombie
 }
 
 class Role {
