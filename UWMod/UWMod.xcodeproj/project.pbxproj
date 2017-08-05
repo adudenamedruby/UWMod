@@ -23,6 +23,8 @@
 		124F74EC1F3530A200F03E49 /* WerewolfTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */; };
 		124F74EF1F3549BB00F03E49 /* VillageTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124F74ED1F3549BB00F03E49 /* VillageTeamCell.swift */; };
 		124F74F01F3549BB00F03E49 /* VillageTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F74EE1F3549BB00F03E49 /* VillageTeamCell.xib */; };
+		124F74F41F35FF3000F03E49 /* WerewolfAssassination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */; };
+		124F74F81F35FF4D00F03E49 /* WerewolfAssassination.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */; };
 		1260ED331F2C2A78001A8F7B /* AddPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */; };
 		1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */; };
 		1261C2B71F3265DA0099D759 /* BasicAlertObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */; };
@@ -86,6 +88,8 @@
 		124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WerewolfTeamCell.xib; sourceTree = "<group>"; };
 		124F74ED1F3549BB00F03E49 /* VillageTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VillageTeamCell.swift; sourceTree = "<group>"; };
 		124F74EE1F3549BB00F03E49 /* VillageTeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VillageTeamCell.xib; sourceTree = "<group>"; };
+		124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WerewolfAssassination.swift; sourceTree = "<group>"; };
+		124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WerewolfAssassination.xib; sourceTree = "<group>"; };
 		1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerVC.swift; sourceTree = "<group>"; };
 		1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EliminatePlayerVC.swift; sourceTree = "<group>"; };
 		1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAlertObject.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				123BD0E51F31474A00B99019 /* AssignPlayer.xib */,
+				124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */,
 			);
 			name = "Night XIBs";
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				12EC77E81F2BDAE00026C667 /* NightVC.swift */,
 				123BD0D91F2FF34D00B99019 /* NightCell.swift */,
 				123BD0ED1F31555B00B99019 /* AssignPlayer.swift */,
+				124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */,
 			);
 			name = Night;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 				12EC77FB1F2BE1D40026C667 /* Old Wise Sketch.otf in Resources */,
 				1209820F1F26BBE700EC5D21 /* Main.storyboard in Resources */,
 				1261C2BF1F32AA960099D759 /* GeneralInfo.xib in Resources */,
+				124F74F81F35FF4D00F03E49 /* WerewolfAssassination.xib in Resources */,
 				123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */,
 				124F74F01F3549BB00F03E49 /* VillageTeamCell.xib in Resources */,
 			);
@@ -464,6 +471,7 @@
 				1261C2B71F3265DA0099D759 /* BasicAlertObject.swift in Sources */,
 				7736D0961F33A25100555037 /* HelpConstants.swift in Sources */,
 				7736D09A1F33A32000555037 /* HelpCell.swift in Sources */,
+				124F74F41F35FF3000F03E49 /* WerewolfAssassination.swift in Sources */,
 				12EC77EB1F2BDAEA0026C667 /* DayVC.swift in Sources */,
 				12EC78001F2BE2FE0026C667 /* TisprCardStackViewCell.swift in Sources */,
 				77B2B0061F34D7AC0032A36B /* Graveyard.swift in Sources */,

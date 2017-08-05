@@ -50,12 +50,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         textView.setContentOffset(CGPoint.zero, animated: false)
         resetHelpView()
         loadPlayerName()
-        
-        if (GAME.firstNight && !(player?.playerAssigned)!) {
-            assignPlayer()
-        } else {
-            clearSubview()
-        }
+        loadSubviews()
     }
     
     @IBAction func helpPressed(_ sender: Any) {
@@ -92,18 +87,6 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         darknessView.alpha = 0
     }
     
-    func clearSubview() {
-        for subUIView in containerView.subviews as [UIView] {
-            subUIView.removeFromSuperview()
-        }
-    }
-    
-    func assignPlayer() {
-        let localizedActionView = AssignPlayer(frame: CGRect(x: 0, y: 0, width: 310, height: 140), withPlayer: player!)
-        localizedActionView.delegate = self
-        self.containerView.addSubview(localizedActionView)
-    }
-    
     func loadPlayerName() {
         if (player?.playerAssigned)! {
             playerNameLabel.text = "(\((player?.name)!))"
@@ -114,5 +97,41 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
     func updateCard() {
         configureCell()
+    }
+    
+    
+    // MARK: - Manage & load specific subviews
+    
+    func loadSubviews() {
+        
+        if (GAME.firstNight && !(player?.playerAssigned)!) {
+            presentAssignPlayer()
+            
+        } else if player?.role.type == .Werewolf {
+            clearSubview()
+            if !GAME.firstNight && GAME.werewolfEliminationsPerNight != 0 {
+                presentWerewolfAssassination()
+            }
+        } else {
+            clearSubview()
+        }
+    }
+    
+    func clearSubview() {
+        for subUIView in containerView.subviews as [UIView] {
+            subUIView.removeFromSuperview()
+        }
+    }
+    
+    func presentAssignPlayer() {
+        let localizedActionView = AssignPlayer(frame: CGRect(x: 0, y: 0, width: 310, height: 140), withPlayer: player!)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    func presentWerewolfAssassination() {
+        let localizedActionView = WerewolfAssassination(frame: CGRect(x: 0, y: 0, width: 310, height: 140))
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
     }
 }

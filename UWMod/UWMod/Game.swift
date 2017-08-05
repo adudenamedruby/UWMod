@@ -28,6 +28,7 @@ class Game {
     var deadActors: [Player]
     var teams: [UWTeam: [Player]]
     var areThereDeadPlayers: Bool
+    var werewolfEliminationsPerNight: Int
     
     init(availableRoster: [String], availablePlayers: [Player]) {
         // Sort the roles by the role priority. This makes it easier to present the 
@@ -49,6 +50,7 @@ class Game {
         self.playersProtectedThisPhase = ""
         self.teams = [:]
         self.daytimeInfoCards = []
+        self.werewolfEliminationsPerNight = 0
     }
 
     
@@ -217,6 +219,7 @@ class Game {
         evaluateNightActorsOrder()
         setDeadPlayerCheck()
         setupInfoCards()
+        werewolfEliminationsPerNight = 1 // TODO: Turn this into a function!
         
         currentNight += 1
     }
