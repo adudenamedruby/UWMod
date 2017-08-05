@@ -24,7 +24,7 @@ class GeneralInfo: UITableViewCell {
     
     //MARK: - Variables
     private var timer: Timer!
-    private var counter = 10
+    private var counter = 0
     private var isTrackingTime = false
     
     //MARK: - View Lifecycle & Configuration

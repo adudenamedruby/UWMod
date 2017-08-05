@@ -21,6 +21,8 @@
 		124787611F34150A00518532 /* SelectedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124787601F34150A00518532 /* SelectedItem.swift */; };
 		124F74EB1F3530A200F03E49 /* WerewolfTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124F74E91F3530A200F03E49 /* WerewolfTeamCell.swift */; };
 		124F74EC1F3530A200F03E49 /* WerewolfTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */; };
+		124F74EF1F3549BB00F03E49 /* VillageTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124F74ED1F3549BB00F03E49 /* VillageTeamCell.swift */; };
+		124F74F01F3549BB00F03E49 /* VillageTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F74EE1F3549BB00F03E49 /* VillageTeamCell.xib */; };
 		1260ED331F2C2A78001A8F7B /* AddPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */; };
 		1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */; };
 		1261C2B71F3265DA0099D759 /* BasicAlertObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */; };
@@ -82,6 +84,8 @@
 		124787601F34150A00518532 /* SelectedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedItem.swift; sourceTree = "<group>"; };
 		124F74E91F3530A200F03E49 /* WerewolfTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WerewolfTeamCell.swift; sourceTree = "<group>"; };
 		124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WerewolfTeamCell.xib; sourceTree = "<group>"; };
+		124F74ED1F3549BB00F03E49 /* VillageTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VillageTeamCell.swift; sourceTree = "<group>"; };
+		124F74EE1F3549BB00F03E49 /* VillageTeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VillageTeamCell.xib; sourceTree = "<group>"; };
 		1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerVC.swift; sourceTree = "<group>"; };
 		1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EliminatePlayerVC.swift; sourceTree = "<group>"; };
 		1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAlertObject.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 			children = (
 				1261C2BD1F32AA960099D759 /* GeneralInfo.xib */,
 				77B2B0051F34D7AC0032A36B /* Graveyard.xib */,
+				124F74EE1F3549BB00F03E49 /* VillageTeamCell.xib */,
 				124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */,
 			);
 			name = "Day XIBs";
@@ -211,6 +216,7 @@
 				12EC77EA1F2BDAEA0026C667 /* DayVC.swift */,
 				1261C2BC1F32AA960099D759 /* GeneralInfo.swift */,
 				77B2B0041F34D7AC0032A36B /* Graveyard.swift */,
+				124F74ED1F3549BB00F03E49 /* VillageTeamCell.swift */,
 				124F74E91F3530A200F03E49 /* WerewolfTeamCell.swift */,
 			);
 			name = Day;
@@ -408,6 +414,7 @@
 				1209820F1F26BBE700EC5D21 /* Main.storyboard in Resources */,
 				1261C2BF1F32AA960099D759 /* GeneralInfo.xib in Resources */,
 				123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */,
+				124F74F01F3549BB00F03E49 /* VillageTeamCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +428,7 @@
 				12D15E2B1F2EC5420057905E /* ArrayExtension.swift in Sources */,
 				123BD0D51F2F6C1600B99019 /* AlertsVC.swift in Sources */,
 				77F9E1221F310CCE00E48211 /* RegularTextLabels.swift in Sources */,
+				124F74EF1F3549BB00F03E49 /* VillageTeamCell.swift in Sources */,
 				12EC77D91F26DD250026C667 /* Constants.swift in Sources */,
 				12EC77E91F2BDAE00026C667 /* NightVC.swift in Sources */,
 				12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */,

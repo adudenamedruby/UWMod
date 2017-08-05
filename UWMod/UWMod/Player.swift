@@ -15,7 +15,6 @@ class Player {
     var team: [UWTeam]
     var mute: Bool
     var canVote: Bool
-    var nightActivePlayer: Bool
     var playerAssigned: Bool
     
     // Role affected states
@@ -27,6 +26,7 @@ class Player {
     var canBeChosenByOldHag: Bool
     var canBeMutedBySpellcaster: Bool
     var hasBrains: Bool
+    var isNightActivePlayer: Bool
     
     init (name: String, role: Role) {
         self.name = name
@@ -36,8 +36,8 @@ class Player {
         self.alive = true
         self.mute = false
         self.canVote = true
-        self.nightActivePlayer = true
         self.playerAssigned = false
+        self.isNightActivePlayer = role.isNightActiveRole.currentStatus
         
         self.isProtected = false
         self.isHynotized = false
@@ -47,6 +47,7 @@ class Player {
         self.canBeChosenByOldHag = true
         self.canBeMutedBySpellcaster = true
         self.hasBrains = true
+        
     }
     
     func assignPlayer(playerName: String) {

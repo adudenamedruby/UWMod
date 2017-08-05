@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvl-PK-sfO">
-                        <rect key="frame" x="5" y="5" width="500" height="429.5"/>
+                        <rect key="frame" x="10" y="10" width="490" height="419.5"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pah-H4-Q3j">
-                                <rect key="frame" x="1" y="0.0" width="498" height="428.5"/>
+                                <rect key="frame" x="1" y="0.0" width="488" height="418.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mxc-4o-ZUw">
-                                        <rect key="frame" x="0.0" y="0.0" width="498" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="488" height="45"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-Qn-oKq">
                                                 <rect key="frame" x="20" y="8.5" width="159.5" height="27"/>
@@ -53,7 +53,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2W-8N-Zha" customClass="RegRed" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="55" width="473" height="363.5"/>
+                                        <rect key="frame" x="15" y="55" width="463" height="353.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -82,10 +82,10 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="fvl-PK-sfO" secondAttribute="trailing" constant="5" id="Iva-Wb-vyI"/>
-                    <constraint firstItem="fvl-PK-sfO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="axU-ih-gto"/>
-                    <constraint firstItem="fvl-PK-sfO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="mTh-5A-aGE"/>
-                    <constraint firstAttribute="bottom" secondItem="fvl-PK-sfO" secondAttribute="bottom" constant="5" id="pHk-zN-mwv"/>
+                    <constraint firstAttribute="trailing" secondItem="fvl-PK-sfO" secondAttribute="trailing" constant="10" id="Iva-Wb-vyI"/>
+                    <constraint firstItem="fvl-PK-sfO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="axU-ih-gto"/>
+                    <constraint firstItem="fvl-PK-sfO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="mTh-5A-aGE"/>
+                    <constraint firstAttribute="bottom" secondItem="fvl-PK-sfO" secondAttribute="bottom" constant="10" id="pHk-zN-mwv"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

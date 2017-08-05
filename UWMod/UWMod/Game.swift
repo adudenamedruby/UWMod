@@ -21,7 +21,7 @@ class Game {
     var availablePlayers: [Player]
     var playersEliminatedThisPhase: String
     var playersProtectedThisPhase: String
-    var daytimeInfoCards: [DaytimeInfoCard]
+    var daytimeInfoCards: [DaytimeCardType]
     var nightActors: [Player]
     var livingActors: [Player]
     var playersToBeEliminated: [Player]
@@ -74,14 +74,21 @@ class Game {
     }
     
     func eliminatePlayers() {
+        
         for victim in playersToBeEliminated {
             if !victim.isProtected {
                 if self.livingActors.contains(where: { $0 === victim }) {
                     addToPhaseReport(player: victim)
                     self.deadActors.append(victim)
+                    
                     if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
                         self.livingActors.remove(at: tempIndex)
                     }
+                    
+                    if let tempIndex = self.nightActors.index(where: { $0 === victim }) {
+                        self.nightActors.remove(at: tempIndex)
+                    }
+
                 }
             } else if victim.isProtected {
                 addToPhaseReport(player: victim)
@@ -101,27 +108,75 @@ class Game {
         }
     }
     
+    func evaluateNightActorsOrder() {
+        self.nightActors.sort(by: { $0.role.priority < $1.role.priority})
+    }
+    
+    func populateNightActors() {
+        for actor in self.livingActors {
+            if actor.isNightActivePlayer {
+                nightActors.append(actor)
+            }
+        }
+    }
+    
     
     // MARK: - Player name retrieval functions for various uses
     
     // THis fetches all players in a list and returns the appropriate string
-    func fetchPlayers(fromList: [Player], withRole: Bool = false, separatedByComma: Bool = false) -> String {
+    
+    func fetchPlayersWithTeamType(fromList: [Player], ofTeamType: UWTeam, withRole: Bool = false, separatedByComma: Bool = false) -> String {
         var players = ""
         
         for player in fromList {
-            var temp: String
-            
-            if withRole {
-                temp = retrievePlayerNameWithRole(player: player, separatedByComma: separatedByComma)
-            } else {
-                temp = retrievePlayerNameWithoutRole(player: player, separatedByComma: separatedByComma)
+            for teamType in player.team {
+                if teamType == ofTeamType {
+                    let temp = fetchSinglePlayer(player: player, withRole: withRole, separatedByComma: separatedByComma)
+                    players = players + temp
+                }
             }
-            
+        }
+        
+        return players
+    }
+    
+    func fetchPlayersWithRoleType(fromList: [Player], ofRoleType: RoleType, withRole: Bool = false, separatedByComma: Bool = false) -> String {
+        var players = ""
+        
+        for player in fromList {
+            if player.role.type == ofRoleType {
+                let temp = fetchSinglePlayer(player: player, withRole: withRole, separatedByComma: separatedByComma)
+                players = players + temp
+            }
+        }
+        
+        return players
+    }
+    
+    func fetchAllPlayers(fromList: [Player], withRole: Bool = false, separatedByComma: Bool = false) -> String {
+        var players = ""
+        
+        for player in fromList {
+            let temp = fetchSinglePlayer(player: player, withRole: withRole, separatedByComma: separatedByComma)
             players = players + temp
         }
         
         return players
     }
+    
+    func fetchSinglePlayer(player: Player, withRole: Bool, separatedByComma: Bool = false) -> String {
+        var temp: String
+        
+        if withRole {
+            temp = retrievePlayerNameWithRole(player: player, separatedByComma: separatedByComma)
+        } else {
+            temp = retrievePlayerNameWithoutRole(player: player, separatedByComma: separatedByComma)
+        }
+        
+        return temp
+    
+    }
+
 
     func retrievePlayerNameWithRole(player: Player, separatedByComma: Bool = false) -> String {
         var separator = "\n"
@@ -154,10 +209,12 @@ class Game {
         if firstNight {
             firstNight = false
             livingActors = availablePlayers
+            populateNightActors()
         }
         
         clearPhaseReport()
         eliminatePlayers()
+        evaluateNightActorsOrder()
         setDeadPlayerCheck()
         setupInfoCards()
         
@@ -170,6 +227,7 @@ class Game {
         
         clearPhaseReport()
         eliminatePlayers()
+        evaluateNightActorsOrder()
         setDeadPlayerCheck()
         
         currentDay += 1
@@ -184,17 +242,19 @@ class Game {
     }
     
     func setupInfoCards() {
-        var tempArray: [DaytimeInfoCard] = [.GeneralInfo]
+        var tempArray: [DaytimeCardType] = [.GeneralInfoCard]
         
         for player in livingActors {
-            let kindOfRole = ROLE_TO_DAYINFO[player.role.type]!
-            if !tempArray.contains(kindOfRole) {
-                tempArray.append(kindOfRole)
+            let daytimeCardInfo = player.role.daytimeInfoCard
+            for cardType in daytimeCardInfo {
+                if !tempArray.contains(cardType) {
+                    tempArray.append(cardType)
+                }
             }
         }
         
         if areThereDeadPlayers {
-            tempArray.append(.Graveyard)
+            tempArray.append(.GraveyardCard)
         }
         
         self.daytimeInfoCards.removeAll()

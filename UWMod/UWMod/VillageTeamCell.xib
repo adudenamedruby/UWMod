@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="villageTeamCell" rowHeight="482" id="KGk-i7-Jjw" customClass="VillageTeamCell" customModule="UWMod" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="518" height="482"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="518" height="481.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8q3-s1-4iI">
+                        <rect key="frame" x="10" y="10" width="498" height="461.5"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKs-LD-bSD">
+                                <rect key="frame" x="1" y="0.0" width="496" height="460.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLJ-f5-bno">
+                                        <rect key="frame" x="0.0" y="0.0" width="496" height="45"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQd-iY-VkJ">
+                                                <rect key="frame" x="20" y="8.5" width="133.5" height="27"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I86-WO-cjt" customClass="RegRedHeader" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="17" height="27"/>
+                                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="22"/>
+                                                        <color key="textColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="illage Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byb-pM-AXx" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="17" y="0.0" width="116.5" height="27"/>
+                                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                                        <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="NQd-iY-VkJ" firstAttribute="leading" secondItem="oLJ-f5-bno" secondAttribute="leading" constant="20" id="NY7-HF-lgZ"/>
+                                            <constraint firstItem="NQd-iY-VkJ" firstAttribute="centerY" secondItem="oLJ-f5-bno" secondAttribute="centerY" id="WEQ-27-xdz"/>
+                                            <constraint firstAttribute="height" constant="45" id="oQP-sX-58s"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-HX-6Wl" customClass="RegVillageBlue" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="55" width="471" height="395.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Rcg-HX-6Wl" secondAttribute="trailing" constant="10" id="D1k-rp-yfQ"/>
+                                    <constraint firstItem="Rcg-HX-6Wl" firstAttribute="leading" secondItem="MKs-LD-bSD" secondAttribute="leading" constant="15" id="FvQ-qo-S15"/>
+                                    <constraint firstAttribute="trailing" secondItem="oLJ-f5-bno" secondAttribute="trailing" id="e73-8U-Uq7"/>
+                                    <constraint firstItem="Rcg-HX-6Wl" firstAttribute="top" secondItem="oLJ-f5-bno" secondAttribute="bottom" constant="10" id="fCr-lO-t8N"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rcg-HX-6Wl" secondAttribute="bottom" constant="10" id="jqB-TJ-RUK"/>
+                                    <constraint firstItem="oLJ-f5-bno" firstAttribute="leading" secondItem="MKs-LD-bSD" secondAttribute="leading" id="rNu-u7-Gy8"/>
+                                    <constraint firstItem="oLJ-f5-bno" firstAttribute="top" secondItem="MKs-LD-bSD" secondAttribute="top" id="zix-0y-etX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="MKs-LD-bSD" secondAttribute="bottom" constant="1" id="3Cn-rd-a8R"/>
+                            <constraint firstItem="MKs-LD-bSD" firstAttribute="top" secondItem="8q3-s1-4iI" secondAttribute="top" id="Qdl-Qo-f4C"/>
+                            <constraint firstItem="MKs-LD-bSD" firstAttribute="leading" secondItem="8q3-s1-4iI" secondAttribute="leading" constant="1" id="a30-DS-daL"/>
+                            <constraint firstAttribute="trailing" secondItem="MKs-LD-bSD" secondAttribute="trailing" constant="1" id="cJ6-yh-3oV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="8q3-s1-4iI" secondAttribute="trailing" constant="10" id="08b-px-VGG"/>
+                    <constraint firstItem="8q3-s1-4iI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="3N9-aW-lhq"/>
+                    <constraint firstAttribute="bottom" secondItem="8q3-s1-4iI" secondAttribute="bottom" constant="10" id="9ny-MH-N14"/>
+                    <constraint firstItem="8q3-s1-4iI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="q0J-lF-C3T"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="headerView" destination="oLJ-f5-bno" id="v2W-20-ecD"/>
+                <outlet property="mainCardView" destination="MKs-LD-bSD" id="mFj-ce-cln"/>
+                <outlet property="outlineView" destination="8q3-s1-4iI" id="lxa-dF-yHl"/>
+                <outlet property="playerLabel" destination="Rcg-HX-6Wl" id="mEf-NU-T7Q"/>
+            </connections>
+            <point key="canvasLocation" x="-489" y="292"/>
+        </tableViewCell>
+    </objects>
+</document>
