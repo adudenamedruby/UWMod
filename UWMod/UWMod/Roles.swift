@@ -15,12 +15,6 @@ enum RoleType {
     case Werewolf
 }
 
-enum DaytimeInfoCard {
-    case GeneralInfo
-    case WerewolfTeam
-    case Graveyard
-}
-
 class Role {
     let name: String
     let type: RoleType
@@ -36,8 +30,9 @@ class Role {
     var powerChoice: Bool
     var powerUsed: Bool
     var team: UWTeam
+    var daytimeInfoCard: [DaytimeCardType]
     
-    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: UWTeam, wakeTime: [UWNights], image: UIImage, notes: String = "") {
+    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: UWTeam, daytimeInfoCard: [DaytimeCardType], wakeTime: [UWNights], image: UIImage, notes: String = "") {
         self.name = name
         self.type = type
         self.description = description
@@ -48,6 +43,7 @@ class Role {
         self.image = image
         
         self.team = team
+        self.daytimeInfoCard = daytimeInfoCard
         self.wakeTime = wakeTime
         self.powerChoice = powerChoice
         self.powerUsed = false

@@ -109,6 +109,8 @@ class DayVC: UIViewController {
                            forCellReuseIdentifier: "graveyardCell")
         tableView.register(UINib(nibName: "WerewolfTeamCell", bundle: nil),
                            forCellReuseIdentifier: "werewolfTeamCell")
+        tableView.register(UINib(nibName: "VillageTeamCell", bundle: nil),
+                           forCellReuseIdentifier: "villageTeamCell")
 
     }
 }
@@ -138,18 +140,26 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
         
         let currentType = GAME.daytimeInfoCards[indexPath.row]
         
-        if currentType == .GeneralInfo {
+        if currentType == .GeneralInfoCard {
             let cell = tableView.dequeueReusableCell(withIdentifier: "generalInfoCell", for: indexPath) as! GeneralInfo
             cell.configureCell()
             return cell
-        } else if currentType == .Graveyard {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "graveyardCell", for: indexPath) as! Graveyard
-            cell.deadPlayers = GAME.fetchPlayers(fromList: GAME.deadActors, withRole: true, separatedByComma: false)
+            
+        } else if currentType == .VillageTeamCard {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "villageTeamCell", for: indexPath) as! VillageTeamCell
+            cell.villageTeamPlayers = GAME.fetchPlayers(fromList: GAME.livingActors, withRole: true, separatedByComma: false)
             cell.configureCell()
             return cell
-        } else if currentType == .WerewolfTeam {
+            
+        } else if currentType == .WerewolfTeamCard {
             let cell = tableView.dequeueReusableCell(withIdentifier: "werewolfTeamCell", for: indexPath) as! WerewolfTeamCell
             cell.werewolfTeamPlayers = GAME.fetchPlayers(fromList: GAME.livingActors, withRole: true, separatedByComma: false)
+            cell.configureCell()
+            return cell
+            
+        } else if currentType == .GraveyardCard {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "graveyardCell", for: indexPath) as! Graveyard
+            cell.deadPlayers = GAME.fetchPlayers(fromList: GAME.deadActors, withRole: true, separatedByComma: false)
             cell.configureCell()
             return cell
         }

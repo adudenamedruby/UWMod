@@ -1,5 +1,5 @@
 //
-//  WerewolfTeamCell.swift
+//  VillageTeamCell.swift
 //  UWMod
 //
 //  Created by roux g. buciu on 2017-08-04.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WerewolfTeamCell: UITableViewCell {
+class VillageTeamCell: UITableViewCell {
 
     // MARK: - Outlets
     
@@ -21,7 +21,7 @@ class WerewolfTeamCell: UITableViewCell {
     
     // MARK: - Variables
     
-    var werewolfTeamPlayers: String!
+    var villageTeamPlayers: String!
     
     // MARK: - View Lifecycle
     
@@ -30,8 +30,8 @@ class WerewolfTeamCell: UITableViewCell {
         // Initialization code
         
         outlineView.layer.cornerRadius = STYLE.CornerRadius
-        outlineView.backgroundColor = STYLE.Red
-        headerView.backgroundColor = STYLE.Red
+        outlineView.backgroundColor = STYLE.VillageBlue
+        headerView.backgroundColor = STYLE.VillageBlue
         mainCardView.layer.cornerRadius = STYLE.CornerRadius
         mainCardView.backgroundColor = STYLE.Tan
     }
@@ -43,7 +43,7 @@ class WerewolfTeamCell: UITableViewCell {
     }
     
     func configureCell() {
-        self.playerLabel.text = werewolfTeamPlayers
+        self.playerLabel.text = villageTeamPlayers
     }
     
 }

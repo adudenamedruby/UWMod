@@ -21,7 +21,7 @@ class Game {
     var availablePlayers: [Player]
     var playersEliminatedThisPhase: String
     var playersProtectedThisPhase: String
-    var daytimeInfoCards: [DaytimeInfoCard]
+    var daytimeInfoCards: [DaytimeCardType]
     var nightActors: [Player]
     var livingActors: [Player]
     var playersToBeEliminated: [Player]
@@ -184,17 +184,19 @@ class Game {
     }
     
     func setupInfoCards() {
-        var tempArray: [DaytimeInfoCard] = [.GeneralInfo]
+        var tempArray: [DaytimeCardType] = [.GeneralInfoCard]
         
         for player in livingActors {
-            let kindOfRole = ROLE_TO_DAYINFO[player.role.type]!
-            if !tempArray.contains(kindOfRole) {
-                tempArray.append(kindOfRole)
+            let daytimeCardInfo = player.role.daytimeInfoCard
+            for cardType in daytimeCardInfo {
+                if !tempArray.contains(cardType) {
+                    tempArray.append(cardType)
+                }
             }
         }
         
         if areThereDeadPlayers {
-            tempArray.append(.Graveyard)
+            tempArray.append(.GraveyardCard)
         }
         
         self.daytimeInfoCards.removeAll()
