@@ -41,7 +41,7 @@ class GeneralInfo: UITableViewCell {
         headerView.backgroundColor = STYLE.Beige
         
         let headerTitle = "General Info"
-        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.RegStandardFont!, withColour: STYLE.Red)
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.RegBoldFont!, withColour: STYLE.Red)
         
     }
 

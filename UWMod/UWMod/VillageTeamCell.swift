@@ -37,7 +37,7 @@ class VillageTeamCell: UITableViewCell {
         mainCardView.backgroundColor = STYLE.Tan
         
         let headerTitle = "Village Team"
-        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.RegStandardFont!, withColour: STYLE.Red)
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.RegBoldFont!, withColour: STYLE.Red)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

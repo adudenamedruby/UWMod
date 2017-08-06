@@ -37,7 +37,7 @@ class Graveyard: UITableViewCell {
         headerView.backgroundColor = STYLE.Grey
         
         let headerTitle = "The Graveyard"
-        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.RegStandardFont!, withColour: STYLE.Red)
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.RegBoldFont!, withColour: STYLE.Red)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
