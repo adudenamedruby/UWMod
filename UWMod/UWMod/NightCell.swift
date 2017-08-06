@@ -26,6 +26,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     @IBOutlet weak var headerTitleLabel: OldTan!
     
     var player: Player?
+    var role: Role?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,13 +51,14 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     }
     
     func configureCell() {
-        roleIconImage.image = player?.role.image
-        let headerTitle = player?.role.name
-        roleTitleLabel.attributedText = headerTitle?.colourFirstCharacter(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
-        roleDescritpionLabel.text = player?.role.description
-        textView.text = player?.role.roleExplanation
-        textView.setContentOffset(CGPoint.zero, animated: false)
+        player = nil
+        
+        if GAME.firstNight {
+            magicallyAssignLastPlayer()
+        }
+        
         resetHelpView()
+        setupCardTextBasedOnPlayerOrRole()
         loadPlayerName()
         loadSubviews()
     }
@@ -96,10 +98,62 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     }
     
     func loadPlayerName() {
-        if (player?.playerAssigned)! {
+        if player != nil {
             playerNameLabel.text = "(\((player?.name)!))"
         } else {
             playerNameLabel.text = ""
+        }
+    }
+    
+    func setupCardTextBasedOnPlayerOrRole() {
+        
+        if GAME.firstNight {
+            for player in GAME.availablePlayers {
+                if player.isAssigned {
+                    if player.role === role {
+                        self.player = player
+                    }
+                }
+            }
+        }
+        
+        if player != nil {
+            roleIconImage.image = player?.role.image
+            let roleTitle = player?.role.name
+            roleTitleLabel.attributedText = roleTitle?.colourFirstCharacter(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
+            roleDescritpionLabel.text = player?.role.description
+            textView.text = player?.role.roleExplanation
+            
+        } else {
+            roleIconImage.image = role?.image
+            let roleTitle = role?.name
+            roleTitleLabel.attributedText = roleTitle?.colourFirstCharacter(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
+            roleDescritpionLabel.text = role?.description
+            textView.text = role?.roleExplanation
+        }
+        
+        textView.setContentOffset(CGPoint.zero, animated: false)
+    }
+    
+    func unassignedPlayerList() -> [Player] {
+        var unassignedPlayerList: [Player] = []
+        
+        for player in GAME.availablePlayers {
+            if !player.isAssigned {
+                unassignedPlayerList.append(player)
+            }
+        }
+        
+        return unassignedPlayerList
+    }
+    
+    func magicallyAssignLastPlayer() {
+        let unassignedPlayers = unassignedPlayerList()
+        if unassignedPlayers.count == 1 {
+            // if there's only one player left unassigned, the assign him to the last role
+            player = unassignedPlayers[0]
+            player?.assignRole(role: GAME.availableRoster.last!)
+            GAME.addPlayerToLivingActors(player: player!)
         }
     }
     
@@ -111,17 +165,15 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     // MARK: - Manage & load specific subviews
     
     func loadSubviews() {
+        clearSubview()
         
-        if (GAME.firstNight && !(player?.playerAssigned)!) {
+        if (GAME.firstNight && player == nil) {
             presentAssignPlayer()
             
         } else if player?.role.type == .Werewolf {
-            clearSubview()
             if !GAME.firstNight && GAME.werewolfEliminationsPerNight != 0 {
                 presentWerewolfAssassination()
             }
-        } else {
-            clearSubview()
         }
     }
     
@@ -132,7 +184,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     }
     
     func presentAssignPlayer() {
-        let localizedActionView = AssignPlayer(frame: CGRect(x: 0, y: 0, width: 310, height: 140), withPlayer: player!)
+        let localizedActionView = AssignPlayer(frame: CGRect(x: 0, y: 0, width: 310, height: 140), withRole: role!)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }

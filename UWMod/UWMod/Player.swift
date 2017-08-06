@@ -10,13 +10,13 @@ import Foundation
 
 class Player {
     var name:                               String
-    var role:                               Role
+    var role:                               Role!
     var alive:                              Bool
     var team:                               [UWTeam]
     var daytimeInfoCards:                   [DaytimeCardType]
     var mute:                               Bool
     var canVote:                            Bool
-    var playerAssigned:                     Bool
+    var isAssigned:                     Bool
     
     // Role affected states
     var isProtected:                        Bool
@@ -29,17 +29,16 @@ class Player {
     var hasBrains:                          Bool
     var isNightActivePlayer:                Bool
     
-    init (name: String, role: Role) {
+    init (name: String) {
         self.name                           = name
-        self.role                           = role
-        self.team                           = role.team
+        self.team                           = []
         self.daytimeInfoCards               = []
 
         self.alive                          = true
         self.mute                           = false
         self.canVote                        = true
-        self.playerAssigned                 = false
-        self.isNightActivePlayer            = role.isNightActiveRole.currentStatus
+        self.isAssigned                     = false
+        self.isNightActivePlayer            = false
         
         self.isProtected                    = false
         self.isHynotized                    = false
@@ -50,6 +49,13 @@ class Player {
         self.canBeMutedBySpellcaster        = true
         self.hasBrains                      = true
         
+    }
+    
+    func assignRole(role: Role) {
+        self.role                           = role
+        self.team                           = role.team
+        self.isNightActivePlayer            = role.isNightActiveRole.currentStatus
+        self.isAssigned                     = true
     }
     
     func addToTeam(team: UWTeam) {

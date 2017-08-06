@@ -49,7 +49,7 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
     override func numberOfCards() -> Int {
         
         if GAME.firstNight {
-            return GAME.availablePlayers.count
+            return GAME.availableRoster.count
         }
         
         return GAME.nightActors.count
@@ -59,7 +59,7 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NightCell", for: indexPath as IndexPath) as! NightCell
         
         if GAME.firstNight {
-            cell.player = GAME.availablePlayers[indexPath.row]
+            cell.role = GAME.availableRoster[indexPath.row]
         } else {
             cell.player = GAME.nightActors[indexPath.row]
         }
@@ -76,7 +76,7 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
 //            if checkPlayerAssignment() {
 //                
 //            }
-            if cardIndex == GAME.availablePlayers.count {
+            if cardIndex == GAME.availableRoster.count {
                 endNight()
             }
         } else {
@@ -94,5 +94,4 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
     func endNight() {
         self.endNightDelegate?.endNight()
     }
-    
 }

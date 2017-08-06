@@ -16,9 +16,10 @@ class Game {
     var nighttimeEliminations:              Int
     var daytimeEliminations:                Int
     
-    /// Player names before they are assigned
-    var availableRoster:                    [String]
+    /// Player & roles before they are assigned
+    var availableRoster:                    [Role]
     var availablePlayers:                   [Player]
+    
     var playersEliminatedThisPhase:         String
     var playersProtectedThisPhase:          String
     var daytimeInfoCards:                   [DaytimeCardType]
@@ -30,11 +31,11 @@ class Game {
     var areThereDeadPlayers:                Bool
     var werewolfEliminationsPerNight:       Int
     
-    init(availableRoster: [String], availablePlayers: [Player]) {
+    init(availableRoster: [Role], availablePlayers: [Player]) {
         // Sort the roles by the role priority. This makes it easier to present the 
         // player list in some semblance of a correct order.
-        self.availablePlayers               = availablePlayers.sorted(by: { ($0.role.priority) > ($1.role.priority) })
-        self.availableRoster                = availableRoster
+        self.availablePlayers               = availablePlayers.sorted(by: { ($0.name) < ($1.name) })
+        self.availableRoster                = availableRoster.sorted(by: { ($0.priority) < ($1.priority) })
 
         self.firstNight                     = true
         self.areThereDeadPlayers            = false
@@ -64,9 +65,8 @@ class Game {
     
     // MARK: - Player-related functions
     
-    func assignRoleToPlayer(player: Player, name: String) {
-        player.name = name
-        player.playerAssigned = true
+    func addPlayerToLivingActors(player: Player) {
+        livingActors.append(player)
     }
     
     func assignInfoCardsToPlayers() {
@@ -203,7 +203,6 @@ class Game {
         
         if firstNight {
             firstNight = false
-            livingActors = availablePlayers
             populateNightActors()
         }
         
