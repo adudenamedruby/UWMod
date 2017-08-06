@@ -55,11 +55,15 @@ class Game {
     }
 
     
-    // MARK: - Game setup
+    // MARK: - Game setup & teardown
     
-    // Game settings will be added in a later iteration.
+    // Game settings will be added in a later version.
     func startWithSettings() {
         
+    }
+    
+    func endGameAndReset() {
+        GAME = Game(availableRoster: [], availablePlayers: [])
     }
     
     
@@ -88,14 +92,16 @@ class Game {
                 if self.livingActors.contains(where: { $0 === victim }) {
                     addToPhaseReport(player: victim)
                     self.deadActors.append(victim)
+                    victim.isAlive = false
                     
                     if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
                         self.livingActors.remove(at: tempIndex)
                     }
                     
-                    if let tempIndex = self.nightActors.index(where: { $0 === victim }) {
-                        self.nightActors.remove(at: tempIndex)
-                    }
+                    // Do not remove players from the nightActor's list to prevent role reveal
+//                    if let tempIndex = self.nightActors.index(where: { $0 === victim }) {
+//                        self.nightActors.remove(at: tempIndex)
+//                    }
 
                 }
             } else if victim.isProtected {

@@ -41,7 +41,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         headerView.backgroundColor = STYLE.Brown
         
         let headerTitle = "Role Help"
-        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         popupInnerView.layer.cornerRadius = STYLE.CornerRadius
         popupInnerView.backgroundColor = STYLE.Tan
@@ -51,15 +51,16 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     }
     
     func configureCell() {
-        player = nil
         
         if GAME.firstNight {
+            player = nil
             magicallyAssignLastPlayer()
         }
         
         resetHelpView()
         setupCardTextBasedOnPlayerOrRole()
         loadPlayerName()
+        checkPlayerForLife()
         loadSubviews()
     }
     
@@ -105,6 +106,19 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         }
     }
     
+    func checkPlayerForLife() {
+        if player != nil {
+            if !(player?.isAlive)! {
+                roleTitleLabel.textColor = STYLE.Grey
+                roleTitleLabel.alpha = 0.5
+                playerNameLabel.textColor = STYLE.Grey
+                playerNameLabel.alpha = 0.5
+                roleDescritpionLabel.textColor = STYLE.Grey
+                roleDescritpionLabel.alpha = 0.5
+            }
+        }
+    }
+    
     func setupCardTextBasedOnPlayerOrRole() {
         
         if GAME.firstNight {
@@ -120,14 +134,14 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         if player != nil {
             roleIconImage.image = player?.role.image
             let roleTitle = player?.role.name
-            roleTitleLabel.attributedText = roleTitle?.colourFirstCharacter(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
+            roleTitleLabel.attributedText = roleTitle?.styleTitleLabel(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
             roleDescritpionLabel.text = player?.role.description
             textView.text = player?.role.roleExplanation
             
         } else {
             roleIconImage.image = role?.image
             let roleTitle = role?.name
-            roleTitleLabel.attributedText = roleTitle?.colourFirstCharacter(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
+            roleTitleLabel.attributedText = roleTitle?.styleTitleLabel(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
             roleDescritpionLabel.text = role?.description
             textView.text = role?.roleExplanation
         }
@@ -170,9 +184,12 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         if (GAME.firstNight && player == nil) {
             presentAssignPlayer()
             
-        } else if player?.role.type == .Werewolf {
-            if !GAME.firstNight && GAME.werewolfEliminationsPerNight != 0 {
-                presentWerewolfAssassination()
+        } else if (player?.isAlive)! {
+         
+            if player?.role.type == .Werewolf {
+                if !GAME.firstNight && GAME.werewolfEliminationsPerNight != 0 {
+                    presentWerewolfAssassination()
+                }
             }
         }
     }

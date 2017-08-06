@@ -26,7 +26,7 @@ class ConfirmationPopup: UIViewController {
         headerView.backgroundColor = STYLE.Brown
         
         let headerTitle = "Confirm Elimination"
-        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         alertTextLabel.text = "Are you sure you want to eliminate \(player.name)?"
     }

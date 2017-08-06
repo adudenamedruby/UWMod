@@ -11,12 +11,12 @@ import Foundation
 class Player {
     var name:                               String
     var role:                               Role!
-    var alive:                              Bool
+    var isAlive:                            Bool
     var team:                               [UWTeam]
     var daytimeInfoCards:                   [DaytimeCardType]
-    var mute:                               Bool
+    var isMute:                             Bool
     var canVote:                            Bool
-    var isAssigned:                     Bool
+    var isAssigned:                         Bool
     
     // Role affected states
     var isProtected:                        Bool
@@ -34,8 +34,8 @@ class Player {
         self.team                           = []
         self.daytimeInfoCards               = []
 
-        self.alive                          = true
-        self.mute                           = false
+        self.isAlive                        = true
+        self.isMute                         = false
         self.canVote                        = true
         self.isAssigned                     = false
         self.isNightActivePlayer            = false

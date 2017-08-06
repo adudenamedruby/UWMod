@@ -48,7 +48,7 @@ class PlayerSelectVC: UIViewController {
         headerView.backgroundColor = STYLE.Brown
         
         let headerTitle = "Select Players"
-        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
                 
         NotificationCenter.default.addObserver(self, selector: #selector(loadPlayers),
                                                name: NSNotification.Name(rawValue: "reloadTable"),

@@ -33,8 +33,8 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
         
         //configuration of stacks
         layout.topStackMaximumSize = 2
-        layout.bottomStackMaximumSize = 7
-        layout.bottomStackCardHeight = 20
+        layout.bottomStackMaximumSize = 4
+        layout.bottomStackCardHeight = 30
     }
     
     override func didReceiveMemoryWarning() {

@@ -37,7 +37,7 @@ class HelpVC: UIViewController {
         headerView.backgroundColor = STYLE.Brown
         
         let headerTitle = "Game Help"
-        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         self.title = "Apple Products"
     }

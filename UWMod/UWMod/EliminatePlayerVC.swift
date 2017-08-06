@@ -35,7 +35,7 @@ class EliminatePlayerVC: UIViewController {
         headerView.backgroundColor = STYLE.Brown
         
         let headerTitle = "Player Elimination"
-        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         chosenPlayer = GAME.livingActors[0]
         

@@ -106,6 +106,12 @@ class Role {
     let priority:                   Int
     let image:                      UIImage
     
+    // this should change the priority of special roles depending on game settings
+    // for example, Lone Wolf would have this set to false by default so it's an auto
+    // assigned role. However, if set to manually assigned, its priority variable would be
+    // a custom getter that returns a priority on whether a role is called or not.
+    var isManuallyAssigned:         Bool
+    
     var wakeTime:                   [UWNights]
     var canWake:                    Bool
     var powerChoice:                Bool
@@ -124,6 +130,7 @@ class Role {
         self.priority               = priority
         self.image                  = image
         
+        self.isManuallyAssigned     = true
         self.team                   = team
         self.wakeTime               = wakeTime
         self.powerChoice            = powerChoice

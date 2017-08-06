@@ -13,9 +13,9 @@ class DayVC: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var daytimeBackground: UIImageView!
-    @IBOutlet weak var endDayTitleLabel: UIStackView!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var endDayTitleLabel: OldTan!
     
     @IBOutlet weak var lynchButton: UIButton!
     @IBOutlet weak var endDayButton: UIButton!
@@ -48,8 +48,12 @@ class DayVC: UIViewController {
         mainCardView.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
         
-        let headerTitle = "Select Role"
-        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
+        let headerTitle = "Day Phase"
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!,
+                                                                      withColour: STYLE.Red)
+        let endDayLabel = "End Day Phase?"
+        endDayTitleLabel.attributedText = endDayLabel.styleTitleLabel(withStringFont: STYLE.OldStandardFont!,
+                                                                      withColour: STYLE.Red)
     }
     
     
@@ -71,6 +75,10 @@ class DayVC: UIViewController {
     @IBAction func endDayPressed(_ sender: Any) {
         fadeDayEndControlsIn()
     }
+    
+    @IBAction func endGameButton(_ sender: Any) {
+    }
+    
     
     @IBAction func finishDayButton(_ sender: Any) {
         GAME.finishDay()

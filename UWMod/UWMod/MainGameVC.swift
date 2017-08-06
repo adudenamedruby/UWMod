@@ -51,7 +51,7 @@ class MainGameVC: UIViewController {
         self.headerView.backgroundColor = STYLE.Brown
         
         let headerTitle = "Phase Report"
-        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
     }
     
     override func viewDidAppear(_ animated: Bool) {

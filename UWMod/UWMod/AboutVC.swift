@@ -26,7 +26,7 @@ class AboutVC: UIViewController {
         bottomView.backgroundColor = UIColor.WerewolfTheme.LightTan
         
         let headerTitle = "About UWMod"
-        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
     }
     

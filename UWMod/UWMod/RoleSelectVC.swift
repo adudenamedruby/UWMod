@@ -54,7 +54,7 @@ class RoleSelectVC: UIViewController {
         headerView.backgroundColor = STYLE.Brown
         
         let headerTitle = "Select Role"
-        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         collectionView.delegate = self
         collectionView.dataSource = self

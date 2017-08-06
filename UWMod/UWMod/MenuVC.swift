@@ -29,7 +29,7 @@ class MenuVC: UIViewController {
         brownView.backgroundColor = STYLE.Brown
         
         let bottomString = "Werewolf"
-        bottomTitle.attributedText = bottomString.colourFirstCharacter(withStringFont: STYLE.OldMenuBottomFont!, withColour: STYLE.Red)
+        bottomTitle.attributedText = bottomString.styleTitleLabel(withStringFont: STYLE.OldMenuBottomFont!, withColour: STYLE.Red)
     }
 
     override func didReceiveMemoryWarning() {

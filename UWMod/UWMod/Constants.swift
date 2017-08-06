@@ -30,17 +30,16 @@ struct StyleConstants {
     let BlobGreen           = UIColor.WerewolfTheme.BlobGreen
     let ChupacabraBrown     = UIColor.WerewolfTheme.ChupacabraBrown
     
-    let OldStandardFont     = UIFont(name: "OldWiseSketch", size: 35)
-    let OldFirstLetterFont  = UIFont(name: "OldWiseSketch", size: 38)
-    let OldMenuTopFont      = UIFont(name: "OldWiseSketch", size: 60)
-    let OldMenuBottomFont   = UIFont(name: "OldWiseSketch", size: 70)
-    let OldRoleFont         = UIFont(name: "OldWiseSketch", size: 50)
-    let OldRoleFirstFont    = UIFont(name: "OldWiseSketch", size: 55)
-    let RegStandardFont     = UIFont(name: "AmericanTypewriter", size: 15)
+    let OldMenuTopFont      = UIFont(name: "OldWiseSketch", size: 60) // for menu title
+    let OldMenuBottomFont   = UIFont(name: "OldWiseSketch", size: 70) // for menu title
+    let OldStandardFont     = UIFont(name: "OldWiseSketch", size: 35) // used throughout the app
+    let OldRoleFont         = UIFont(name: "OldWiseSketch", size: 50) // used for nightPhase card titles
+    
     let RegSmallFont        = UIFont(name: "AmericanTypewriter", size: 13)
+    let RegStandardFont     = UIFont(name: "AmericanTypewriter", size: 15)
+    let RegLargeFont        = UIFont(name: "AmericanTypewriter", size: 20)
     let RegBoldFont         = UIFont(name: "AmericanTypewriter-Bold", size: 16)
-    let RegBoldHeaderFont   = UIFont(name: "AmericanTypewriter-Bold", size: 19)
-    let RegLargeFont        = UIFont(name: "AmericanTypewriter", size: 18)
+    let RegBoldHeaderFont   = UIFont(name: "AmericanTypewriter-Bold", size: 20)
 }
 
 

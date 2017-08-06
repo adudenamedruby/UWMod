@@ -37,7 +37,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U9-mB-IlF" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="117.5" y="9.5" width="15" height="36.5"/>
+                                                <rect key="frame" x="117.5" y="10.5" width="15" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -268,7 +268,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ELd-WD-2he" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="9.5" width="220" height="36.5"/>
+                                                <rect key="frame" x="15" y="10.5" width="220" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -384,6 +384,141 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6T-Cj-N6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="885.60000000000002" y="126.38680659670166"/>
+        </scene>
+        <!--End Game PopupVC-->
+        <scene sceneID="7mn-7S-Ib4">
+            <objects>
+                <viewController storyboardIdentifier="endGamePopup" id="AcA-bf-mUy" customClass="EndGamePopupVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OdJ-18-6RM"/>
+                        <viewControllerLayoutGuide type="bottom" id="KN5-BS-Zek"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zKm-IU-lue">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lK-Tc-8vH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pyu-Wf-Ci0">
+                                <rect key="frame" x="62.5" y="253" width="250" height="160"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pas-Zh-zu2">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Game?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpw-Lo-5ah" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="43.5" y="10.5" width="163.5" height="36.5"/>
+                                                <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
+                                                <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="T0w-G4-IEL"/>
+                                            <constraint firstItem="Vpw-Lo-5ah" firstAttribute="centerX" secondItem="Pas-Zh-zu2" secondAttribute="centerX" id="YV3-UK-mMJ"/>
+                                            <constraint firstItem="Vpw-Lo-5ah" firstAttribute="centerY" secondItem="Pas-Zh-zu2" secondAttribute="centerY" id="iI4-2x-0lj"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Os0-E3-XKz" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="130" y="125" width="90" height="25"/>
+                                        <color key="backgroundColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="cD7-A2-Uhm"/>
+                                            <constraint firstAttribute="height" constant="25" id="dY7-Xi-VU1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                        <state key="normal" title="Yes">
+                                            <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.090196078430000007" green="0.49803921569999998" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="yesButtonPressed:" destination="AcA-bf-mUy" eventType="touchUpInside" id="zNX-BK-d0F"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="LD2-Yp-OGm" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="66" width="220" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
+                                        <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFf-cJ-tIl" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="125" width="90" height="25"/>
+                                        <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="6SO-4c-PH6"/>
+                                            <constraint firstAttribute="width" constant="90" id="ZTF-el-2s9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                        <state key="normal" title="No">
+                                            <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.090196078430000007" green="0.49803921569999998" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="noButtonPressed:" destination="AcA-bf-mUy" eventType="touchUpInside" id="Kcl-rq-P6p"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="Pas-Zh-zu2" firstAttribute="leading" secondItem="Pyu-Wf-Ci0" secondAttribute="leading" id="045-xI-VC1"/>
+                                    <constraint firstAttribute="width" constant="250" id="3uu-aQ-wDt"/>
+                                    <constraint firstItem="Pas-Zh-zu2" firstAttribute="top" secondItem="Pyu-Wf-Ci0" secondAttribute="top" id="9Iz-ux-xGp"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pas-Zh-zu2" secondAttribute="trailing" id="Gv0-aA-gwC"/>
+                                    <constraint firstItem="Os0-E3-XKz" firstAttribute="centerX" secondItem="Pyu-Wf-Ci0" secondAttribute="centerX" constant="50" id="SJ6-HX-swI"/>
+                                    <constraint firstItem="Os0-E3-XKz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LD2-Yp-OGm" secondAttribute="bottom" constant="5" id="Xo5-OZ-IRP"/>
+                                    <constraint firstAttribute="bottom" secondItem="Os0-E3-XKz" secondAttribute="bottom" constant="10" id="bjA-Xw-lQx"/>
+                                    <constraint firstAttribute="height" constant="160" id="fP4-4k-I18"/>
+                                    <constraint firstItem="LD2-Yp-OGm" firstAttribute="leading" secondItem="Pyu-Wf-Ci0" secondAttribute="leading" constant="15" id="faT-P7-gnf"/>
+                                    <constraint firstItem="hFf-cJ-tIl" firstAttribute="centerY" secondItem="Os0-E3-XKz" secondAttribute="centerY" id="jmv-EU-y50"/>
+                                    <constraint firstItem="hFf-cJ-tIl" firstAttribute="centerX" secondItem="Pyu-Wf-Ci0" secondAttribute="centerX" constant="-50" id="lbs-ad-GdY"/>
+                                    <constraint firstAttribute="trailing" secondItem="LD2-Yp-OGm" secondAttribute="trailing" constant="15" id="wL6-EP-6eY"/>
+                                    <constraint firstItem="LD2-Yp-OGm" firstAttribute="top" secondItem="Pas-Zh-zu2" secondAttribute="bottom" constant="10" id="xel-0v-buh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KN5-BS-Zek" firstAttribute="top" secondItem="9lK-Tc-8vH" secondAttribute="bottom" id="8z1-hW-5qK"/>
+                            <constraint firstItem="9lK-Tc-8vH" firstAttribute="top" secondItem="zKm-IU-lue" secondAttribute="top" id="APa-LA-6IA"/>
+                            <constraint firstItem="Pyu-Wf-Ci0" firstAttribute="centerY" secondItem="zKm-IU-lue" secondAttribute="centerY" id="Hhn-h6-BT4"/>
+                            <constraint firstItem="9lK-Tc-8vH" firstAttribute="leading" secondItem="zKm-IU-lue" secondAttribute="leading" id="IWL-8e-Vdk"/>
+                            <constraint firstAttribute="trailing" secondItem="9lK-Tc-8vH" secondAttribute="trailing" id="aw6-Xw-ttj"/>
+                            <constraint firstItem="Pyu-Wf-Ci0" firstAttribute="centerX" secondItem="zKm-IU-lue" secondAttribute="centerX" id="qx6-rc-eaQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerTitleLabel" destination="Vpw-Lo-5ah" id="29l-FS-wNb"/>
+                        <outlet property="headerView" destination="Pas-Zh-zu2" id="VA9-DW-RkB"/>
+                        <outlet property="mainAlertView" destination="Pyu-Wf-Ci0" id="nnF-ce-4CN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ku-Va-P8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585" y="126"/>
         </scene>
     </scenes>
     <resources>

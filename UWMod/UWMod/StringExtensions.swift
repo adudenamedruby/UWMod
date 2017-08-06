@@ -26,7 +26,7 @@ extension String {
         return self.substring(from: index)
     }
     
-    func colourFirstCharacter(withStringFont font: UIFont, withColour colour: UIColor) -> NSAttributedString  {
+    func styleTitleLabel(withStringFont font: UIFont, withColour colour: UIColor) -> NSAttributedString  {
         let attributedText = NSMutableAttributedString(string: self,
                                                        attributes: [NSFontAttributeName:font])
         attributedText.addAttribute(NSForegroundColorAttributeName,

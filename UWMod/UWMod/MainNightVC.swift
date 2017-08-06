@@ -19,7 +19,7 @@ class MainNightVC: UIViewController, EndNightPotocol {
         super.viewDidLoad()
         
         let headerTitle = "End Night Phase?"
-        endNightTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
+        endNightTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         forwardButton.alpha = 0
         backButton.alpha = 0
