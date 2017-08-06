@@ -14,8 +14,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var roleIconImage: UIImageView!
-    @IBOutlet weak var titleFirstLetterLabel: UILabel!
-    @IBOutlet weak var titleRemainingLabel: UILabel!
+    @IBOutlet weak var roleTitleLabel: OldBrownRole!
     @IBOutlet weak var playerNameLabel: RegBrown!
     @IBOutlet weak var roleDescritpionLabel: UILabel!
     
@@ -24,15 +23,24 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     @IBOutlet weak var popupInnerView: UIView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var darknessView: UIView!
+    @IBOutlet weak var headerTitleLabel: OldTan!
     
     var player: Player?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateCard),
+                                               name: NSNotification.Name(rawValue: "eliminationByWerewolf"),
+                                               object: nil)
+        
         cardBorder.layer.cornerRadius = STYLE.CornerRadius
         cardBorder.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
+        
+        let headerTitle = "Role Help"
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         popupInnerView.layer.cornerRadius = STYLE.CornerRadius
         popupInnerView.backgroundColor = STYLE.Tan
@@ -43,8 +51,8 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
     func configureCell() {
         roleIconImage.image = player?.role.image
-        titleFirstLetterLabel.text = player?.role.name.firstLetter()
-        titleRemainingLabel.text = player?.role.name.restOfString()
+        let headerTitle = player?.role.name
+        roleTitleLabel.attributedText = headerTitle?.colourFirstCharacter(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
         roleDescritpionLabel.text = player?.role.description
         textView.text = player?.role.roleExplanation
         textView.setContentOffset(CGPoint.zero, animated: false)
@@ -131,7 +139,6 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
     func presentWerewolfAssassination() {
         let localizedActionView = WerewolfAssassination(frame: CGRect(x: 0, y: 0, width: 310, height: 140))
-        localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }
 }

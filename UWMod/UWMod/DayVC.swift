@@ -23,6 +23,7 @@ class DayVC: UIViewController {
     @IBOutlet weak var dayContainerView: UIView!
     @IBOutlet weak var mainCardView: UIView!
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: OldTan!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -46,6 +47,9 @@ class DayVC: UIViewController {
         mainCardView.layer.cornerRadius = STYLE.CornerRadius
         mainCardView.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
+        
+        let headerTitle = "Select Role"
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
     }
     
     

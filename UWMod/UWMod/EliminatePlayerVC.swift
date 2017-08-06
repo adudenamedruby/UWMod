@@ -14,6 +14,7 @@ class EliminatePlayerVC: UIViewController {
     
     @IBOutlet weak var mainCardView: UIView!
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: OldTan!
     @IBOutlet weak var eliminateButton: PMSuperButton!
 
     @IBOutlet weak var pickerView: UIPickerView!
@@ -23,7 +24,6 @@ class EliminatePlayerVC: UIViewController {
     
     var chosenPlayer: Player!
     var eliminatedBy: RoleType?
-    var updateCardDelegate: UpdateCardDelegate?
     
     // MARK: - View Lifecycle
     
@@ -33,6 +33,9 @@ class EliminatePlayerVC: UIViewController {
         mainCardView.layer.cornerRadius = STYLE.CornerRadius
         mainCardView.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
+        
+        let headerTitle = "Player Elimination"
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         chosenPlayer = GAME.livingActors[0]
         
@@ -51,30 +54,19 @@ class EliminatePlayerVC: UIViewController {
     
     @IBAction func eliminatePlayerPressed(_ sender: Any) {
         
-        print(GAME.werewolfEliminationsPerNight)
-        eliminatePlayer(player: chosenPlayer)
+        let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+        let confirmView = storyboard.instantiateViewController(withIdentifier: "confirmationPopup") as! ConfirmationPopup
+        confirmView.modalTransitionStyle = .crossDissolve
         
-        if eliminatedBy == .Werewolf {
-            GAME.werewolfEliminationsPerNight -= 1
-            print(GAME.werewolfEliminationsPerNight)
+        confirmView.player = chosenPlayer
+        if (eliminatedBy != nil) {
+            confirmView.eliminatedBy = eliminatedBy
         }
-        
-        self.dismiss(animated: true, completion: {
-            if self.eliminatedBy == .Werewolf {
-                self.updateCardDelegate?.updateCard()
-            }
-        })
+        self.present(confirmView, animated: true, completion: nil)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    
-    // MARK: - Utility functions
-    
-    private func eliminatePlayer(player: Player) {
-        GAME.prepareToEliminatePlayer(victim: player)
     }
 
 }

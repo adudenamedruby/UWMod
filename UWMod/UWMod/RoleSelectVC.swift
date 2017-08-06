@@ -21,6 +21,7 @@ class RoleSelectVC: UIViewController {
     
     @IBOutlet weak var mainCardView: UIView!
     @IBOutlet var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: OldTan!
     
     @IBOutlet weak var backButton: PMSuperButton!
     @IBOutlet weak var forwardButton: PMSuperButton!
@@ -52,6 +53,9 @@ class RoleSelectVC: UIViewController {
         mainCardView.layer.cornerRadius = STYLE.CornerRadius
         mainCardView.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
+        
+        let headerTitle = "Select Role"
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         collectionView.delegate = self
         collectionView.dataSource = self

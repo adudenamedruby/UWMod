@@ -15,6 +15,7 @@ class AddPlayerVC: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var mainCard: UIView!
     @IBOutlet var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: OldTan!
     
     
     // MARK: - Variables
@@ -31,6 +32,9 @@ class AddPlayerVC: UIViewController {
         mainCard.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
         mainCard.layer.cornerRadius = STYLE.CornerRadius
+        
+        let headerTitle = "Add Player"
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         nameField.delegate = self
         

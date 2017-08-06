@@ -18,6 +18,7 @@ class MainGameVC: UIViewController {
     
     @IBOutlet var phaseReportView: UIView!
     @IBOutlet var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: OldTan!
     @IBOutlet weak var statusLabel: RegBrown!
     @IBOutlet weak var playersReportedLabel: UITextView!
     @IBOutlet weak var eliminatedButton: PMSuperButton!
@@ -48,6 +49,9 @@ class MainGameVC: UIViewController {
         self.phaseReportView.layer.cornerRadius = STYLE.CornerRadius
         self.phaseReportView.backgroundColor = STYLE.Tan
         self.headerView.backgroundColor = STYLE.Brown
+        
+        let headerTitle = "Phase Report"
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -14,6 +14,7 @@ class HelpVC: UIViewController {
     
     @IBOutlet var mainCardView: UIView!
     @IBOutlet var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: OldTan!
     
     @IBOutlet var tableView: UITableView!
     
@@ -34,6 +35,9 @@ class HelpVC: UIViewController {
         mainCardView.layer.cornerRadius = STYLE.CornerRadius
         mainCardView.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
+        
+        let headerTitle = "Game Help"
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         self.title = "Apple Products"
     }

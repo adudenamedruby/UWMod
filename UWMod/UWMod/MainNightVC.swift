@@ -13,10 +13,13 @@ class MainNightVC: UIViewController, EndNightPotocol {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var endNightTitleLabel: UIStackView!
+    @IBOutlet weak var endNightTitleLabel: OldTan!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let headerTitle = "End Night Phase?"
+        endNightTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         forwardButton.alpha = 0
         backButton.alpha = 0

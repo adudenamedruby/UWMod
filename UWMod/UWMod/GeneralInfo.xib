@@ -27,29 +27,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gg-I4-Frn">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9a-OR-PUL">
-                                                <rect key="frame" x="20" y="9.5" width="127.5" height="27"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVe-vq-BXv" customClass="RegRedHeader" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="27"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="22"/>
-                                                        <color key="textColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eneral Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2G-yJ-heH" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="0.0" width="111.5" height="27"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
-                                                        <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eneral Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2G-yJ-heH" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="25" y="10" width="111.5" height="25"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="3l9-Ef-HZg"/>
-                                            <constraint firstItem="M9a-OR-PUL" firstAttribute="centerY" secondItem="3gg-I4-Frn" secondAttribute="centerY" id="fHo-Bd-6iF"/>
-                                            <constraint firstItem="M9a-OR-PUL" firstAttribute="leading" secondItem="3gg-I4-Frn" secondAttribute="leading" constant="20" id="iUA-2u-FOW"/>
+                                            <constraint firstItem="N2G-yJ-heH" firstAttribute="centerY" secondItem="3gg-I4-Frn" secondAttribute="centerY" id="cHB-xq-cNV"/>
+                                            <constraint firstItem="N2G-yJ-heH" firstAttribute="leading" secondItem="3gg-I4-Frn" secondAttribute="leading" constant="25" id="lR5-dR-J69"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="X0y-Wx-4GB">
@@ -159,6 +148,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="headerTitleLabel" destination="N2G-yJ-heH" id="oSr-Ke-DVK"/>
                 <outlet property="headerView" destination="3gg-I4-Frn" id="ifc-Wk-aod"/>
                 <outlet property="mainCardView" destination="Jn7-x6-MpX" id="pjO-cu-BHT"/>
                 <outlet property="outlineView" destination="oTC-EW-g0X" id="V7o-ol-atC"/>

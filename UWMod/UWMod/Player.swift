@@ -69,11 +69,16 @@ class Player {
         
         for teamX in self.team {
             if teamX == .TeamWerewolf {
-                let daytimeCard: DaytimeCardType = .WerewolfTeamCard
-                if !daytimeInfoCards.contains(daytimeCard) {
-                    daytimeInfoCards.append(daytimeCard)
-                }
+                addAppropriateCard(daytimeCard: .WerewolfTeamCard)
+            } else if teamX == .TeamVillage {
+                addAppropriateCard(daytimeCard: .VillageTeamCard)
             }
+        }
+    }
+    
+    func addAppropriateCard(daytimeCard: DaytimeCardType) {
+        if !daytimeInfoCards.contains(daytimeCard) {
+            daytimeInfoCards.append(daytimeCard)
         }
     }
 }

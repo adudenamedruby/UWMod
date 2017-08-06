@@ -16,6 +16,7 @@ class MenuVC: UIViewController {
     @IBOutlet var mainView: UIView!
     @IBOutlet var mainCardView: UIView!
     @IBOutlet weak var brownView: UIView!
+    @IBOutlet weak var bottomTitle: OldMenuBottom!
     
     let transition = CircularTransition()
     
@@ -26,6 +27,9 @@ class MenuVC: UIViewController {
         
         mainCardView.backgroundColor = STYLE.Tan
         brownView.backgroundColor = STYLE.Brown
+        
+        let bottomString = "Werewolf"
+        bottomTitle.attributedText = bottomString.colourFirstCharacter(withStringFont: STYLE.OldMenuBottomFont!, withColour: STYLE.Red)
     }
 
     override func didReceiveMemoryWarning() {

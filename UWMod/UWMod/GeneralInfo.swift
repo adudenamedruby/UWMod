@@ -15,6 +15,7 @@ class GeneralInfo: UITableViewCell {
     @IBOutlet weak var outlineView: UIView!
     @IBOutlet weak var mainCardView: UIView!
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: RegTanHeader!
     
     @IBOutlet var playersAliveLabel: RegGreenBold!
     @IBOutlet var playersDeadLabel: RegRedBold!
@@ -38,6 +39,9 @@ class GeneralInfo: UITableViewCell {
         mainCardView.layer.cornerRadius = STYLE.CornerRadius
         mainCardView.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Beige
+        
+        let headerTitle = "General Info"
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.RegStandardFont!, withColour: STYLE.Red)
         
     }
 

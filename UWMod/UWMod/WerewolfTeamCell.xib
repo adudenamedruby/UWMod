@@ -27,29 +27,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mxc-4o-ZUw">
                                         <rect key="frame" x="0.0" y="0.0" width="488" height="45"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-Qn-oKq">
-                                                <rect key="frame" x="20" y="8.5" width="159.5" height="27"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucH-Ia-Wee" customClass="RegBeigeHeader" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="22.5" height="27"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="22"/>
-                                                        <color key="textColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erewolf Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfY-tn-6O6" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="22.5" y="0.0" width="137" height="27"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
-                                                        <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erewolf Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfY-tn-6O6" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="25" y="10" width="137" height="25"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="EuU-F0-uSS"/>
-                                            <constraint firstItem="VgB-Qn-oKq" firstAttribute="centerY" secondItem="Mxc-4o-ZUw" secondAttribute="centerY" id="Sfd-GI-BhH"/>
-                                            <constraint firstItem="VgB-Qn-oKq" firstAttribute="leading" secondItem="Mxc-4o-ZUw" secondAttribute="leading" constant="20" id="oJT-p2-HXk"/>
+                                            <constraint firstItem="cfY-tn-6O6" firstAttribute="leading" secondItem="Mxc-4o-ZUw" secondAttribute="leading" constant="25" id="PKW-Ky-VGE"/>
+                                            <constraint firstItem="cfY-tn-6O6" firstAttribute="centerY" secondItem="Mxc-4o-ZUw" secondAttribute="centerY" id="Tpr-H8-4MQ"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2W-8N-Zha" customClass="RegRed" customModule="UWMod" customModuleProvider="target">
@@ -90,6 +79,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="headerTitleLabel" destination="cfY-tn-6O6" id="zqI-99-ZHH"/>
                 <outlet property="headerView" destination="Mxc-4o-ZUw" id="Eu2-DF-CdO"/>
                 <outlet property="mainCardView" destination="Pah-H4-Q3j" id="e07-Dx-679"/>
                 <outlet property="outlineView" destination="fvl-PK-sfO" id="6eE-kK-wRx"/>

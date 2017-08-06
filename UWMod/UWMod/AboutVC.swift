@@ -14,6 +14,7 @@ class AboutVC: UIViewController {
     
     @IBOutlet weak var aboutCard: UIView!
     @IBOutlet var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: OldTan!
     @IBOutlet var bottomView: UIView!
     @IBOutlet weak var returnButton: UIButton!
     
@@ -23,6 +24,9 @@ class AboutVC: UIViewController {
         aboutCard.layer.cornerRadius = STYLE.CornerRadius
         headerView.backgroundColor = UIColor.WerewolfTheme.ChocolateBrown
         bottomView.backgroundColor = UIColor.WerewolfTheme.LightTan
+        
+        let headerTitle = "About UWMod"
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
     }
     

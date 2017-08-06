@@ -15,6 +15,7 @@ class WerewolfTeamCell: UITableViewCell {
     @IBOutlet var outlineView: UIView!
     @IBOutlet var mainCardView: UIView!
     @IBOutlet var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: RegTanHeader!
     
     @IBOutlet var playerLabel: RegRed!
     
@@ -34,6 +35,9 @@ class WerewolfTeamCell: UITableViewCell {
         headerView.backgroundColor = STYLE.Red
         mainCardView.layer.cornerRadius = STYLE.CornerRadius
         mainCardView.backgroundColor = STYLE.Tan
+        
+        let headerTitle = "WerewolfTeam"
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.RegStandardFont!, withColour: STYLE.Brown)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -13,6 +13,7 @@ class PlayerSelectVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var mainCard: UIView!
     @IBOutlet var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: OldTan!
     
     @IBOutlet weak var addPlayersButton: UIButton!
     @IBOutlet weak var forwardButton: PMSuperButton!
@@ -45,6 +46,9 @@ class PlayerSelectVC: UIViewController {
         mainCard.layer.cornerRadius = STYLE.CornerRadius
         mainCard.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
+        
+        let headerTitle = "Select Players"
+        headerTitleLabel.attributedText = headerTitle.colourFirstCharacter(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
                 
         NotificationCenter.default.addObserver(self, selector: #selector(loadPlayers),
                                                name: NSNotification.Name(rawValue: "reloadTable"),

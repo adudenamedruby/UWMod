@@ -208,6 +208,7 @@ class Game {
         }
         
         clearPhaseReport()
+        determineNumberOfWerewolfEliminations()  // Figure out where this goes in order
         assignInfoCardsToPlayers()
         eliminatePlayers()
         evaluateNightActorsOrder()
@@ -222,6 +223,7 @@ class Game {
     func finishDay() {
         
         clearPhaseReport()
+        determineNumberOfWerewolfEliminations() // figure out where whis goes in order
         assignInfoCardsToPlayers()
         eliminatePlayers()
         evaluateNightActorsOrder()
