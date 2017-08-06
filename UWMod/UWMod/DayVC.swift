@@ -77,6 +77,10 @@ class DayVC: UIViewController {
     }
     
     @IBAction func endGameButton(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+        let endGameConfirm = storyboard.instantiateViewController(withIdentifier: "endGamePopup") as! EndGamePopupVC
+        endGameConfirm.modalTransitionStyle = .crossDissolve
+        self.present(endGameConfirm, animated: true, completion: nil)
     }
     
     

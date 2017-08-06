@@ -83,7 +83,7 @@ class RoleSelectVC: UIViewController {
         if numberOfPlayers < 4 {
             numberOfWerewolves = 1
         } else {
-            numberOfWerewolves = numberOfPlayers / 4
+            numberOfWerewolves = numberOfPlayers / 5
         }
         
         let numberOfVillagers = numberOfPlayers - numberOfWerewolves - 1
@@ -114,23 +114,31 @@ class RoleSelectVC: UIViewController {
         
         gameBalanceLabel.text = String(gameBalance)
         
-        if gameBalance < -15 {
+        if gameBalance < -30 {
+            teamBalanceLabel.text = "The Village is heavily disadvantaged."
+        } else if gameBalance < -20 {
             teamBalanceLabel.text = "The Village is greatly disadvantaged."
+        } else if gameBalance < -10 {
+            teamBalanceLabel.text = "The Village is moderately disadvantaged."
         } else if gameBalance < 0 {
-            teamBalanceLabel.text = "The Village is at a disadvantage."
+            teamBalanceLabel.text = "The Village is slightly disadvantaged."
         } else if gameBalance == 0 {
             teamBalanceLabel.text = "Neither team has the advantage."
-        } else if gameBalance > 15 {
+        } else if gameBalance > 30 {
             teamBalanceLabel.text = "The Village is heavily favoured."
+        } else if gameBalance > 20 {
+            teamBalanceLabel.text = "The Village is greatly favoured."
+        } else if gameBalance > 10 {
+            teamBalanceLabel.text = "The Village is moderately favoured."
         } else {
-            teamBalanceLabel.text = "The Village has the advantage."
+            teamBalanceLabel.text = "The Village is slightly favoured."
         }
     }
     
     func updateRoleCountLabel() {
         let roleCount = collectionView.indexPathsForSelectedItems?.count
 
-        roleCountLabel.text = "Roles \(roleCount!)/\(passedPlayers!.count) Players"
+        roleCountLabel.text = "\(roleCount!)/\(passedPlayers!.count)"
     }
     
     

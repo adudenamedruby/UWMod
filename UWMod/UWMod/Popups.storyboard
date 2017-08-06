@@ -511,6 +511,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alertTextLabel" destination="LD2-Yp-OGm" id="xMc-yF-axe"/>
                         <outlet property="headerTitleLabel" destination="Vpw-Lo-5ah" id="29l-FS-wNb"/>
                         <outlet property="headerView" destination="Pas-Zh-zu2" id="VA9-DW-RkB"/>
                         <outlet property="mainAlertView" destination="Pyu-Wf-Ci0" id="nnF-ce-4CN"/>

@@ -37,7 +37,8 @@ class WerewolfTeamCell: UITableViewCell {
         mainCardView.backgroundColor = STYLE.Tan
         
         let headerTitle = "WerewolfTeam"
-        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldFont!, withColour: STYLE.Brown)
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
+                                                                      withColour: STYLE.Brown)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

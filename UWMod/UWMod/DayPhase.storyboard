@@ -74,7 +74,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7D-J1-xRF">
-                                                        <rect key="frame" x="315" y="20" width="30" height="30"/>
+                                                        <rect key="frame" x="315" y="25" width="30" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="45J-w4-QoN"/>
                                                             <constraint firstAttribute="height" constant="30" id="pLF-yI-d0o"/>
@@ -87,7 +87,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstItem="H7D-J1-xRF" firstAttribute="centerY" secondItem="Gkz-UD-vyc" secondAttribute="centerY" id="0AS-V7-kxr"/>
+                                                    <constraint firstItem="H7D-J1-xRF" firstAttribute="centerY" secondItem="Gkz-UD-vyc" secondAttribute="centerY" constant="5" id="0AS-V7-kxr"/>
                                                     <constraint firstAttribute="trailing" secondItem="H7D-J1-xRF" secondAttribute="trailing" constant="10" id="LlV-4k-QSW"/>
                                                     <constraint firstItem="RjK-aX-9Rv" firstAttribute="centerY" secondItem="Gkz-UD-vyc" secondAttribute="centerY" id="WRr-Xk-qGD"/>
                                                     <constraint firstItem="RjK-aX-9Rv" firstAttribute="centerX" secondItem="Gkz-UD-vyc" secondAttribute="centerX" id="XwM-wn-4kf"/>
