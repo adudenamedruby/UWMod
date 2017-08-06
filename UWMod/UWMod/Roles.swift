@@ -141,14 +141,64 @@ class Role {
     }
 }
 
-//class Witch: Role {
-//    var playerToPoison: Player?
-//    var playerToSave: Player?
-//    
-//    init(name: String, description: String, impact: Int, priority: Int, powerChoice: Bool, team: UWTeam, numberOfEliminations: Int, playerToPoison: Player?, playerToSave: Player?) {
-//        super.init(name: name, description: description, impact: impact, priority: priority, powerChoice: powerChoice, team: team, numberOfEliminations: numberOfEliminations)
-//
-//        self.playerToPoison = playerToPoison
-//        self.playerToSave = playerToSave
-//    }
-//}
+class Bodyguard: Role {
+
+    var currrentlyProtecting: Player?
+    var lastProtected: Player?
+    
+    override init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], wakeTime: [UWNights], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
+        super.init(name: name, type: type, description: description, roleExplanation: roleExplanation, impact: impact, priority: priority, powerChoice: powerChoice, team: team, wakeTime: wakeTime, image: image, isNightActiveRole: isNightActiveRole, notes: notes)
+    }
+    
+    func protect(player: Player) {
+        stopProtectingCurrentlyProtectedPlayer()
+        if canProtect(player: player) {
+            currrentlyProtecting = player
+            player.isProtectedByBodyguard = true
+        }
+    }
+    
+    func canProtect(player: Player) -> Bool {
+        if lastProtected != nil {
+            if lastProtected! === player {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    func stopProtectingCurrentlyProtectedPlayer() {
+        if currrentlyProtecting != nil {
+            currrentlyProtecting?.isProtectedByBodyguard = false
+            lastProtected = currrentlyProtecting
+            currrentlyProtecting = nil
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

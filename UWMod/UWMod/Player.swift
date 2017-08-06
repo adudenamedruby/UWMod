@@ -19,7 +19,15 @@ class Player {
     var isAssigned:                         Bool
     
     // Role affected states
-    var isProtected:                        Bool
+    // Protection checks
+    var isProtected: Bool {
+        get {
+            if isProtectedByBodyguard {return true}
+            return false
+        }
+    }
+    var isProtectedByBodyguard:             Bool
+    
     var isHynotized:                        Bool
     var canBeSavedByLeprechaun:             Bool
     var canBeSavedByWitch:                  Bool
@@ -40,7 +48,8 @@ class Player {
         self.isAssigned                     = false
         self.isNightActivePlayer            = false
         
-        self.isProtected                    = false
+        self.isProtectedByBodyguard         = false
+        
         self.isHynotized                    = false
         self.canBeSavedByLeprechaun         = true
         self.canBeSavedByWitch              = true
