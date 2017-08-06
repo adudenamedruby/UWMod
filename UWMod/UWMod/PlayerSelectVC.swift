@@ -13,6 +13,7 @@ class PlayerSelectVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var mainCard: UIView!
     @IBOutlet var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: OldTan!
     
     @IBOutlet weak var addPlayersButton: UIButton!
     @IBOutlet weak var forwardButton: PMSuperButton!
@@ -30,7 +31,7 @@ class PlayerSelectVC: UIViewController {
     var savedPlayers: [String] = ["Ted Alspach"]
     var villageSize: Int = 0
     var selectedPlayers: [Int:String] = [:]
-    var passedPlayers: [String] = []
+    var passedPlayers: [Player] = []
     
     
     // MARK: - View lifecycle
@@ -45,6 +46,9 @@ class PlayerSelectVC: UIViewController {
         mainCard.layer.cornerRadius = STYLE.CornerRadius
         mainCard.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
+        
+        let headerTitle = "Select Players"
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
                 
         NotificationCenter.default.addObserver(self, selector: #selector(loadPlayers),
                                                name: NSNotification.Name(rawValue: "reloadTable"),
@@ -109,20 +113,24 @@ class PlayerSelectVC: UIViewController {
     // MARK: - Navigation and data passing
     
     @IBAction func goToSelectRolesButton(_ sender: Any) {
-        self.passedPlayers = collateSelectedPlayers()
+        self.passedPlayers = createPlayersFromSelectedNames()
     }
     
-    func collateSelectedPlayers() -> [String] {
+    func createPlayersFromSelectedNames() -> [Player] {
         
         var tempArray: [String] = []
+        var tempPlayerArray: [Player] = []
         
         for (_, name) in selectedPlayers {
             tempArray.append(name)
         }
         
-        tempArray.sort()
+        for name in tempArray {
+            let newPlayer = Player(name: name)
+            tempPlayerArray.append(newPlayer)
+        }
         
-        return tempArray
+        return tempPlayerArray
     }
     
     func addSelectedPlayer(index: Int, name: String) {
@@ -164,7 +172,7 @@ class PlayerSelectVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectRoleSegue" {
             let secondVC = segue.destination as! RoleSelectVC
-            secondVC.players = passedPlayers
+            secondVC.passedPlayers = passedPlayers
             secondVC.transitioningDelegate = self
             secondVC.modalPresentationStyle = .custom
         } else if segue.identifier == "addPlayerSegue" {

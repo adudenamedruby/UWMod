@@ -11,6 +11,7 @@
 		1209820F1F26BBE700EC5D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1209820D1F26BBE700EC5D21 /* Main.storyboard */; };
 		120982111F26BBE700EC5D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 120982101F26BBE700EC5D21 /* Assets.xcassets */; };
 		120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120982121F26BBE700EC5D21 /* LaunchScreen.storyboard */; };
+		122FC68F1F37660600E0E2C9 /* EndGamePopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */; };
 		123BD0D31F2F6BF600B99019 /* Popups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123BD0D21F2F6BF600B99019 /* Popups.storyboard */; };
 		123BD0D51F2F6C1600B99019 /* AlertsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0D41F2F6C1600B99019 /* AlertsVC.swift */; };
 		123BD0D71F2FE66400B99019 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0D61F2FE66400B99019 /* StringExtensions.swift */; };
@@ -25,6 +26,7 @@
 		124F74F01F3549BB00F03E49 /* VillageTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F74EE1F3549BB00F03E49 /* VillageTeamCell.xib */; };
 		124F74F41F35FF3000F03E49 /* WerewolfAssassination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */; };
 		124F74F81F35FF4D00F03E49 /* WerewolfAssassination.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */; };
+		124F74FA1F368A0A00F03E49 /* ConfirmationPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124F74F91F368A0A00F03E49 /* ConfirmationPopup.swift */; };
 		1260ED331F2C2A78001A8F7B /* AddPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */; };
 		1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */; };
 		1261C2B71F3265DA0099D759 /* BasicAlertObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */; };
@@ -56,6 +58,7 @@
 		12EC78021F2BE2FE0026C667 /* TisprCardStackViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77FF1F2BE2FE0026C667 /* TisprCardStackViewLayout.swift */; };
 		12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC78071F2BE9E50026C667 /* MenuVC.swift */; };
 		12EC780D1F2C02990026C667 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC780C1F2C02990026C667 /* CircularTransition.swift */; };
+		12F584081F361F5F00A98764 /* GeneralEnumerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F584071F361F5F00A98764 /* GeneralEnumerators.swift */; };
 		7736D0901F3378C200555037 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D08F1F3378C200555037 /* Notes.swift */; };
 		7736D0921F3399BC00555037 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0911F3399BC00555037 /* HelpVC.swift */; };
 		7736D0941F33A24200555037 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0931F33A24200555037 /* Help.swift */; };
@@ -76,6 +79,7 @@
 		120982101F26BBE700EC5D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		120982131F26BBE700EC5D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		120982151F26BBE700EC5D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGamePopupVC.swift; sourceTree = "<group>"; };
 		123BD0D21F2F6BF600B99019 /* Popups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popups.storyboard; sourceTree = "<group>"; };
 		123BD0D41F2F6C1600B99019 /* AlertsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsVC.swift; sourceTree = "<group>"; };
 		123BD0D61F2FE66400B99019 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		124F74EE1F3549BB00F03E49 /* VillageTeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VillageTeamCell.xib; sourceTree = "<group>"; };
 		124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WerewolfAssassination.swift; sourceTree = "<group>"; };
 		124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WerewolfAssassination.xib; sourceTree = "<group>"; };
+		124F74F91F368A0A00F03E49 /* ConfirmationPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationPopup.swift; sourceTree = "<group>"; };
 		1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerVC.swift; sourceTree = "<group>"; };
 		1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EliminatePlayerVC.swift; sourceTree = "<group>"; };
 		1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAlertObject.swift; sourceTree = "<group>"; };
@@ -121,6 +126,7 @@
 		12EC77FF1F2BE2FE0026C667 /* TisprCardStackViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TisprCardStackViewLayout.swift; sourceTree = "<group>"; };
 		12EC78071F2BE9E50026C667 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		12EC780C1F2C02990026C667 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
+		12F584071F361F5F00A98764 /* GeneralEnumerators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralEnumerators.swift; sourceTree = "<group>"; };
 		7736D08F1F3378C200555037 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		7736D0911F3399BC00555037 /* HelpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		7736D0931F33A24200555037 /* Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
@@ -201,6 +207,8 @@
 			children = (
 				123BD0D41F2F6C1600B99019 /* AlertsVC.swift */,
 				1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */,
+				124F74F91F368A0A00F03E49 /* ConfirmationPopup.swift */,
+				122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */,
 			);
 			name = PopUpVCs;
 			sourceTree = "<group>";
@@ -299,8 +307,9 @@
 			children = (
 				12EC77DE1F2978920026C667 /* Artifacts.swift */,
 				12EC77E01F297A3E0026C667 /* ArtifactConstants.swift */,
-				12EC77D81F26DD250026C667 /* Constants.swift */,
 				1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */,
+				12EC77D81F26DD250026C667 /* Constants.swift */,
+				12F584071F361F5F00A98764 /* GeneralEnumerators.swift */,
 				12EC77DC1F2831C90026C667 /* Game.swift */,
 				7736D0931F33A24200555037 /* Help.swift */,
 				7736D0951F33A25100555037 /* HelpConstants.swift */,
@@ -449,6 +458,8 @@
 				12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */,
 				123BD0DA1F2FF34D00B99019 /* NightCell.swift in Sources */,
 				12D15E291F2EBCCA0057905E /* ColourDefinitions.swift in Sources */,
+				124F74FA1F368A0A00F03E49 /* ConfirmationPopup.swift in Sources */,
+				12F584081F361F5F00A98764 /* GeneralEnumerators.swift in Sources */,
 				7736D0981F33A2C600555037 /* UIViewExtensions.swift in Sources */,
 				1261C2BE1F32AA960099D759 /* GeneralInfo.swift in Sources */,
 				12EC77DD1F2831C90026C667 /* Game.swift in Sources */,
@@ -469,6 +480,7 @@
 				12EC77E51F2BDAB00026C667 /* RoleSelectVC.swift in Sources */,
 				12EC77D41F26D4DC0026C667 /* Roles.swift in Sources */,
 				1261C2B71F3265DA0099D759 /* BasicAlertObject.swift in Sources */,
+				122FC68F1F37660600E0E2C9 /* EndGamePopupVC.swift in Sources */,
 				7736D0961F33A25100555037 /* HelpConstants.swift in Sources */,
 				7736D09A1F33A32000555037 /* HelpCell.swift in Sources */,
 				124F74F41F35FF3000F03E49 /* WerewolfAssassination.swift in Sources */,

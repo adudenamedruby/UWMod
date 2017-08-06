@@ -13,9 +13,9 @@ class DayVC: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var daytimeBackground: UIImageView!
-    @IBOutlet weak var endDayTitleLabel: UIStackView!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var endDayTitleLabel: OldTan!
     
     @IBOutlet weak var lynchButton: UIButton!
     @IBOutlet weak var endDayButton: UIButton!
@@ -23,6 +23,7 @@ class DayVC: UIViewController {
     @IBOutlet weak var dayContainerView: UIView!
     @IBOutlet weak var mainCardView: UIView!
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: OldTan!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -46,6 +47,13 @@ class DayVC: UIViewController {
         mainCardView.layer.cornerRadius = STYLE.CornerRadius
         mainCardView.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
+        
+        let headerTitle = "Day Phase"
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!,
+                                                                      withColour: STYLE.Red)
+        let endDayLabel = "End Day Phase?"
+        endDayTitleLabel.attributedText = endDayLabel.styleTitleLabel(withStringFont: STYLE.OldStandardFont!,
+                                                                      withColour: STYLE.Red)
     }
     
     
@@ -67,6 +75,14 @@ class DayVC: UIViewController {
     @IBAction func endDayPressed(_ sender: Any) {
         fadeDayEndControlsIn()
     }
+    
+    @IBAction func endGameButton(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+        let endGameConfirm = storyboard.instantiateViewController(withIdentifier: "endGamePopup") as! EndGamePopupVC
+        endGameConfirm.modalTransitionStyle = .crossDissolve
+        self.present(endGameConfirm, animated: true, completion: nil)
+    }
+    
     
     @IBAction func finishDayButton(_ sender: Any) {
         GAME.finishDay()

@@ -15,9 +15,6 @@ class WerewolfAssassination: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var killVillagerButton: PMSuperButton!
     
-    
-    weak var delegate: UpdateCardDelegate?
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -46,16 +43,12 @@ class WerewolfAssassination: UIView {
         let lynchView = storyboard.instantiateViewController(withIdentifier: "eliminatePlayer") as! EliminatePlayerVC
         lynchView.modalTransitionStyle = .crossDissolve
         lynchView.eliminatedBy = .Werewolf
-        lynchView.updateCardDelegate = delegate
-
+        
         var topVC = UIApplication.shared.keyWindow?.rootViewController
         while((topVC!.presentedViewController) != nil){
             topVC = topVC!.presentedViewController
         }
         
         topVC?.present(lynchView, animated: true, completion: nil)
-        
-        delegate?.updateCard()
-        
     }
 }

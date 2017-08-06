@@ -41,6 +41,12 @@
                                     <action selector="finishDayButton:" destination="rK0-Z0-k4W" eventType="touchUpInside" id="nTg-3Q-Jar"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nd Day Phase?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxN-ua-e0J" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
+                                <rect key="frame" x="74" y="490.5" width="226.5" height="36.5"/>
+                                <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxX-TW-xh6">
                                 <rect key="frame" x="112.5" y="567" width="50" height="50"/>
                                 <constraints>
@@ -52,23 +58,6 @@
                                     <action selector="continueDayButton:" destination="rK0-Z0-k4W" eventType="touchUpInside" id="Bkc-T2-4ap"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBF-QD-oM1">
-                                <rect key="frame" x="62" y="480.5" width="251" height="36.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0G-ME-NL9" customClass="OldRedHeader" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="24.5" height="36.5"/>
-                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nd Day Phase?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxN-ua-e0J" customClass="OldBrown" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="24.5" y="0.0" width="226.5" height="36.5"/>
-                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4j-ep-MX8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -78,28 +67,30 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkz-UD-vyc">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="70"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wro-u3-tqJ">
-                                                        <rect key="frame" x="83" y="14" width="189.5" height="42"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3og-L8-RSW" customClass="OldRedHeader" customModule="UWMod" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29.5" height="42"/>
-                                                                <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ay Phase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-aX-9Rv" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                                <rect key="frame" x="29.5" y="0.0" width="160" height="42"/>
-                                                                <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ay Phase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-aX-9Rv" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="97" y="14" width="160" height="42"/>
+                                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7D-J1-xRF">
+                                                        <rect key="frame" x="315" y="25" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="45J-w4-QoN"/>
+                                                            <constraint firstAttribute="height" constant="30" id="pLF-yI-d0o"/>
+                                                        </constraints>
+                                                        <state key="normal" image="endButton"/>
+                                                        <connections>
+                                                            <action selector="endGameButton:" destination="rK0-Z0-k4W" eventType="touchUpInside" id="b7h-gE-CCr"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstItem="wro-u3-tqJ" firstAttribute="centerX" secondItem="Gkz-UD-vyc" secondAttribute="centerX" id="UD0-Lf-hro"/>
-                                                    <constraint firstItem="wro-u3-tqJ" firstAttribute="centerY" secondItem="Gkz-UD-vyc" secondAttribute="centerY" id="b2f-gS-i6C"/>
+                                                    <constraint firstItem="H7D-J1-xRF" firstAttribute="centerY" secondItem="Gkz-UD-vyc" secondAttribute="centerY" constant="5" id="0AS-V7-kxr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="H7D-J1-xRF" secondAttribute="trailing" constant="10" id="LlV-4k-QSW"/>
+                                                    <constraint firstItem="RjK-aX-9Rv" firstAttribute="centerY" secondItem="Gkz-UD-vyc" secondAttribute="centerY" id="WRr-Xk-qGD"/>
+                                                    <constraint firstItem="RjK-aX-9Rv" firstAttribute="centerX" secondItem="Gkz-UD-vyc" secondAttribute="centerX" id="XwM-wn-4kf"/>
                                                     <constraint firstAttribute="height" constant="70" id="dGr-ZS-moa"/>
                                                 </constraints>
                                             </view>
@@ -126,8 +117,8 @@
                                             <constraint firstAttribute="height" constant="40" id="dpk-k0-T7w"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
-                                        <state key="normal" title="Call the Vote">
-                                            <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Eliminate Player">
+                                            <color key="titleColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -190,17 +181,17 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WYK-QV-f6Z" firstAttribute="centerX" secondItem="5tg-qX-rTP" secondAttribute="centerX" constant="50" id="2Ky-pB-ioQ"/>
+                            <constraint firstItem="TxX-TW-xh6" firstAttribute="top" secondItem="ZxN-ua-e0J" secondAttribute="bottom" constant="40" id="41w-ws-pBX"/>
                             <constraint firstItem="TxX-TW-xh6" firstAttribute="centerX" secondItem="5tg-qX-rTP" secondAttribute="centerX" constant="-50" id="7Yq-tX-Erj"/>
                             <constraint firstItem="q4j-ep-MX8" firstAttribute="leading" secondItem="5tg-qX-rTP" secondAttribute="leading" id="9rT-aI-gqe"/>
                             <constraint firstAttribute="trailing" secondItem="zNd-1k-KdH" secondAttribute="trailing" id="C4W-YF-z1c"/>
-                            <constraint firstItem="HBF-QD-oM1" firstAttribute="centerX" secondItem="5tg-qX-rTP" secondAttribute="centerX" id="CEB-j7-rzg"/>
                             <constraint firstItem="TxX-TW-xh6" firstAttribute="centerY" secondItem="WYK-QV-f6Z" secondAttribute="centerY" id="DVD-iS-dpK"/>
                             <constraint firstAttribute="trailing" secondItem="q4j-ep-MX8" secondAttribute="trailing" id="IGe-RU-okg"/>
                             <constraint firstItem="zNd-1k-KdH" firstAttribute="top" secondItem="5tg-qX-rTP" secondAttribute="top" id="Jg9-Pk-ZvI"/>
                             <constraint firstItem="fcN-BZ-pLS" firstAttribute="top" secondItem="zNd-1k-KdH" secondAttribute="bottom" id="TT0-ix-hIS"/>
-                            <constraint firstItem="WYK-QV-f6Z" firstAttribute="top" secondItem="HBF-QD-oM1" secondAttribute="bottom" constant="50" id="WkE-ga-Bax"/>
                             <constraint firstItem="fcN-BZ-pLS" firstAttribute="top" secondItem="q4j-ep-MX8" secondAttribute="bottom" id="atc-7a-Pfq"/>
                             <constraint firstItem="q4j-ep-MX8" firstAttribute="top" secondItem="5tg-qX-rTP" secondAttribute="top" id="bJV-B3-Ybf"/>
+                            <constraint firstItem="ZxN-ua-e0J" firstAttribute="centerX" secondItem="5tg-qX-rTP" secondAttribute="centerX" id="h4J-k8-nE5"/>
                             <constraint firstItem="fcN-BZ-pLS" firstAttribute="top" secondItem="WYK-QV-f6Z" secondAttribute="bottom" constant="50" id="qiW-86-nvi"/>
                             <constraint firstItem="zNd-1k-KdH" firstAttribute="leading" secondItem="5tg-qX-rTP" secondAttribute="leading" id="vRt-Nz-2pR"/>
                         </constraints>
@@ -210,8 +201,9 @@
                         <outlet property="dayContainerView" destination="q4j-ep-MX8" id="Jrz-be-plo"/>
                         <outlet property="daytimeBackground" destination="zNd-1k-KdH" id="scf-HB-OfZ"/>
                         <outlet property="endDayButton" destination="Trs-Co-CpR" id="w3l-xe-Ubg"/>
-                        <outlet property="endDayTitleLabel" destination="HBF-QD-oM1" id="Z9e-N8-0If"/>
+                        <outlet property="endDayTitleLabel" destination="ZxN-ua-e0J" id="yII-a9-OCM"/>
                         <outlet property="forwardButton" destination="WYK-QV-f6Z" id="kRS-Qn-0Qg"/>
+                        <outlet property="headerTitleLabel" destination="RjK-aX-9Rv" id="wMn-yZ-cX3"/>
                         <outlet property="headerView" destination="Gkz-UD-vyc" id="gYi-eI-hOK"/>
                         <outlet property="lynchButton" destination="HRB-Xk-5WN" id="N0p-VY-oa9"/>
                         <outlet property="mainCardView" destination="QwX-db-Fid" id="bwL-xg-svi"/>
@@ -226,6 +218,7 @@
     <resources>
         <image name="backArrow" width="512" height="512"/>
         <image name="daytime" width="1242" height="2208"/>
+        <image name="endButton" width="512" height="512"/>
         <image name="forwardArrow" width="512" height="512"/>
     </resources>
 </document>

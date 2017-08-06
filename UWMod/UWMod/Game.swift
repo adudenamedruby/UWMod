@@ -10,63 +10,73 @@ import Foundation
 
 class Game {
     
-    var firstNight: Bool
-    var currentNight: Int
-    var currentDay: Int
-    var nighttimeEliminations: Int
-    var daytimeEliminations: Int
+    var firstNight:                         Bool
+    var currentNight:                       Int
+    var currentDay:                         Int
+    var nighttimeEliminations:              Int
+    var daytimeEliminations:                Int
     
-    /// Player names before they are assigned
-    var availableRoster: [String]
-    var availablePlayers: [Player]
-    var playersEliminatedThisPhase: String
-    var playersProtectedThisPhase: String
-    var daytimeInfoCards: [DaytimeCardType]
-    var nightActors: [Player]
-    var livingActors: [Player]
-    var playersToBeEliminated: [Player]
-    var deadActors: [Player]
-    var teams: [UWTeam: [Player]]
-    var areThereDeadPlayers: Bool
-    var werewolfEliminationsPerNight: Int
+    /// Player & roles before they are assigned
+    var availableRoster:                    [Role]
+    var availablePlayers:                   [Player]
     
-    init(availableRoster: [String], availablePlayers: [Player]) {
+    var playersEliminatedThisPhase:         String
+    var playersProtectedThisPhase:          String
+    var daytimeInfoCards:                   [DaytimeCardType]
+    var nightActors:                        [Player]
+    var livingActors:                       [Player]
+    var playersToBeEliminated:              [Player]
+    var deadActors:                         [Player]
+    var teams:                              [UWTeam: [Player]]
+    var areThereDeadPlayers:                Bool
+    var werewolfEliminationsPerNight:       Int
+    
+    init(availableRoster: [Role], availablePlayers: [Player]) {
         // Sort the roles by the role priority. This makes it easier to present the 
         // player list in some semblance of a correct order.
-        self.availablePlayers = availablePlayers.sorted(by: { ($0.role.priority) > ($1.role.priority) })
-        self.availableRoster = availableRoster
+        self.availablePlayers               = availablePlayers.sorted(by: { ($0.name) < ($1.name) })
+        self.availableRoster                = availableRoster.sorted(by: { ($0.priority) < ($1.priority) })
 
-        self.firstNight = true
-        self.areThereDeadPlayers = false
-        self.currentNight = 1
-        self.currentDay = 1
-        self.nighttimeEliminations = 1
-        self.daytimeEliminations = 1
-        self.nightActors = []
-        self.livingActors = []
-        self.playersToBeEliminated = []
-        self.deadActors = []
-        self.playersEliminatedThisPhase = ""
-        self.playersProtectedThisPhase = ""
-        self.teams = [:]
-        self.daytimeInfoCards = []
-        self.werewolfEliminationsPerNight = 0
+        self.firstNight                     = true
+        self.areThereDeadPlayers            = false
+        self.currentNight                   = 1
+        self.currentDay                     = 1
+        self.nighttimeEliminations          = 1
+        self.daytimeEliminations            = 1
+        self.nightActors                    = []
+        self.livingActors                   = []
+        self.playersToBeEliminated          = []
+        self.deadActors                     = []
+        self.playersEliminatedThisPhase     = ""
+        self.playersProtectedThisPhase      = ""
+        self.teams                          = [:]
+        self.daytimeInfoCards               = []
+        self.werewolfEliminationsPerNight   = 0
     }
 
     
-    // MARK: - Game setup
+    // MARK: - Game setup & teardown
     
-    // Game settings will be added in a later iteration.
+    // Game settings will be added in a later version.
     func startWithSettings() {
         
+    }
+    
+    func endGameAndReset() {
+        GAME = Game(availableRoster: [], availablePlayers: [])
     }
     
     
     // MARK: - Player-related functions
     
-    func assignRoles(player: Player, name: String) {
-        player.name = name
-        player.playerAssigned = true
+    func addPlayerToLivingActors(player: Player) {
+        livingActors.append(player)
+    }
+    
+    func assignInfoCardsToPlayers() {
+        for actor in livingActors {
+            actor.determineDaytimeInfoCardForPlayer()
+        }
     }
     
     func prepareToEliminatePlayer(victim: Player) {
@@ -82,14 +92,16 @@ class Game {
                 if self.livingActors.contains(where: { $0 === victim }) {
                     addToPhaseReport(player: victim)
                     self.deadActors.append(victim)
+                    victim.isAlive = false
                     
                     if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
                         self.livingActors.remove(at: tempIndex)
                     }
                     
-                    if let tempIndex = self.nightActors.index(where: { $0 === victim }) {
-                        self.nightActors.remove(at: tempIndex)
-                    }
+                    // Do not remove players from the nightActor's list to prevent role reveal
+//                    if let tempIndex = self.nightActors.index(where: { $0 === victim }) {
+//                        self.nightActors.remove(at: tempIndex)
+//                    }
 
                 }
             } else if victim.isProtected {
@@ -110,22 +122,10 @@ class Game {
         }
     }
     
-    func evaluateNightActorsOrder() {
-        self.nightActors.sort(by: { $0.role.priority < $1.role.priority})
-    }
-    
-    func populateNightActors() {
-        for actor in self.livingActors {
-            if actor.isNightActivePlayer {
-                nightActors.append(actor)
-            }
-        }
-    }
-    
     
     // MARK: - Player name retrieval functions for various uses
     
-    // THis fetches all players in a list and returns the appropriate string
+    // This fetches all players in a list and returns the appropriate string
     
     func fetchPlayersWithTeamType(fromList: [Player], ofTeamType: UWTeam, withRole: Bool = false, separatedByComma: Bool = false) -> String {
         var players = ""
@@ -179,7 +179,6 @@ class Game {
     
     }
 
-
     func retrievePlayerNameWithRole(player: Player, separatedByComma: Bool = false) -> String {
         var separator = "\n"
         if separatedByComma {
@@ -210,16 +209,16 @@ class Game {
         
         if firstNight {
             firstNight = false
-            livingActors = availablePlayers
             populateNightActors()
         }
         
         clearPhaseReport()
+        determineNumberOfWerewolfEliminations()  // Figure out where this goes in order
+        assignInfoCardsToPlayers()
         eliminatePlayers()
         evaluateNightActorsOrder()
         setDeadPlayerCheck()
         setupInfoCards()
-        werewolfEliminationsPerNight = 1 // TODO: Turn this into a function!
         
         currentNight += 1
     }
@@ -229,6 +228,8 @@ class Game {
     func finishDay() {
         
         clearPhaseReport()
+        determineNumberOfWerewolfEliminations() // figure out where whis goes in order
+        assignInfoCardsToPlayers()
         eliminatePlayers()
         evaluateNightActorsOrder()
         setDeadPlayerCheck()
@@ -244,12 +245,15 @@ class Game {
         }
     }
     
+    
+    // MARK: - General game functions
+    
     func setupInfoCards() {
         var tempArray: [DaytimeCardType] = [.GeneralInfoCard]
         
         for player in livingActors {
-            let daytimeCardInfo = player.role.daytimeInfoCard
-            for cardType in daytimeCardInfo {
+            let daytimeInfoCards = player.daytimeInfoCards
+            for cardType in daytimeInfoCards {
                 if !tempArray.contains(cardType) {
                     tempArray.append(cardType)
                 }
@@ -264,4 +268,19 @@ class Game {
         self.daytimeInfoCards = tempArray
     }
     
+    func determineNumberOfWerewolfEliminations() {
+        werewolfEliminationsPerNight = 1
+    }
+    
+    func evaluateNightActorsOrder() {
+        self.nightActors.sort(by: { $0.role.priority < $1.role.priority})
+    }
+    
+    func populateNightActors() {
+        for actor in self.livingActors {
+            if actor.isNightActivePlayer {
+                nightActors.append(actor)
+            }
+        }
+    }
 }

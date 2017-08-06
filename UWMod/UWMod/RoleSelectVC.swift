@@ -21,6 +21,7 @@ class RoleSelectVC: UIViewController {
     
     @IBOutlet weak var mainCardView: UIView!
     @IBOutlet var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: OldTan!
     
     @IBOutlet weak var backButton: PMSuperButton!
     @IBOutlet weak var forwardButton: PMSuperButton!
@@ -38,9 +39,8 @@ class RoleSelectVC: UIViewController {
     let reuseIdentifier = "RoleCell"
     
     var gameBalance: Int = 0
-    var players: [String]?
+    var passedPlayers: [Player]?
     var selectedRoles: [Role] = []
-    var gameActors: [Player] = []
     var suggestedWerewolves: Int = 0
     
     
@@ -52,6 +52,9 @@ class RoleSelectVC: UIViewController {
         mainCardView.layer.cornerRadius = STYLE.CornerRadius
         mainCardView.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
+        
+        let headerTitle = "Select Role"
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -74,13 +77,13 @@ class RoleSelectVC: UIViewController {
     
     func suggestRoles() -> String {
 
-        let numberOfPlayers = (players?.count)!
+        let numberOfPlayers = (passedPlayers?.count)!
         var numberOfWerewolves: Int
         
         if numberOfPlayers < 4 {
             numberOfWerewolves = 1
         } else {
-            numberOfWerewolves = numberOfPlayers / 4
+            numberOfWerewolves = numberOfPlayers / 5
         }
         
         let numberOfVillagers = numberOfPlayers - numberOfWerewolves - 1
@@ -111,34 +114,31 @@ class RoleSelectVC: UIViewController {
         
         gameBalanceLabel.text = String(gameBalance)
         
-        if gameBalance < -15 {
+        if gameBalance < -30 {
+            teamBalanceLabel.text = "The Village is heavily disadvantaged."
+        } else if gameBalance < -20 {
             teamBalanceLabel.text = "The Village is greatly disadvantaged."
+        } else if gameBalance < -10 {
+            teamBalanceLabel.text = "The Village is moderately disadvantaged."
         } else if gameBalance < 0 {
-            teamBalanceLabel.text = "The Village is at a disadvantage."
+            teamBalanceLabel.text = "The Village is slightly disadvantaged."
         } else if gameBalance == 0 {
             teamBalanceLabel.text = "Neither team has the advantage."
-        } else if gameBalance > 15 {
+        } else if gameBalance > 30 {
             teamBalanceLabel.text = "The Village is heavily favoured."
+        } else if gameBalance > 20 {
+            teamBalanceLabel.text = "The Village is greatly favoured."
+        } else if gameBalance > 10 {
+            teamBalanceLabel.text = "The Village is moderately favoured."
         } else {
-            teamBalanceLabel.text = "The Village has the advantage."
+            teamBalanceLabel.text = "The Village is slightly favoured."
         }
     }
     
     func updateRoleCountLabel() {
         let roleCount = collectionView.indexPathsForSelectedItems?.count
 
-        roleCountLabel.text = "\(roleCount!)/\(players!.count)"
-    }
-    
-    
-    // MARK: - Player prep for game start
-    
-    func createPlayers() {
-        
-        for role in self.selectedRoles {
-            let newPlayer = Player(name: role.name, role: role)
-            self.gameActors.append(newPlayer)
-        }
+        roleCountLabel.text = "\(roleCount!)/\(passedPlayers!.count)"
     }
     
     
@@ -146,7 +146,7 @@ class RoleSelectVC: UIViewController {
     
     @IBAction func startGameButton(_ sender: Any) {
         
-        if (self.selectedRoles.count < (self.players?.count)!) {
+        if (self.selectedRoles.count < (self.passedPlayers?.count)!) {
             // Make sure there are an equal number of roles and players.
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
@@ -155,7 +155,7 @@ class RoleSelectVC: UIViewController {
             vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true, completion: nil)
             
-        } else if (self.selectedRoles.count > (self.players?.count)!) {
+        } else if (self.selectedRoles.count > (self.passedPlayers?.count)!) {
             // Make sure there are an equal number of roles and players.
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
@@ -166,8 +166,7 @@ class RoleSelectVC: UIViewController {
             
         } else {
             // Begin the game
-            createPlayers()
-            GAME = Game(availableRoster: players!, availablePlayers: gameActors)
+            GAME = Game(availableRoster: selectedRoles, availablePlayers: passedPlayers!)
             
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let masterGameView = storyboard.instantiateViewController(withIdentifier: "MasterGameWindow") as! MainGameVC
@@ -182,7 +181,7 @@ class RoleSelectVC: UIViewController {
     }
     
     @IBAction func dismissButton(_ sender: Any) {
-        self.players?.removeAll()
+        self.passedPlayers?.removeAll()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "returnToPlayerSelect"), object: nil)
         self.dismiss(animated: true, completion: nil)
     }
@@ -226,7 +225,7 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
         
         updateRoleCountLabel()
         
-        if (selectedIndexPaths?.count)! > (players?.count)! {
+        if (selectedIndexPaths?.count)! > (passedPlayers?.count)! {
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.modalTransitionStyle = .crossDissolve

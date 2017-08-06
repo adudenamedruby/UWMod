@@ -66,26 +66,6 @@ class OldRed: UILabel {
     
 }
 
-class OldRedHeader: UILabel {
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        self.commonInit()
-        
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.commonInit()
-    }
-    
-    func commonInit(){
-        self.textColor = STYLE.Red
-        self.font = STYLE.OldFirstLetterFont
-    }
-    
-}
-
 class OldMenuTop: UILabel {
     
     required init(coder aDecoder: NSCoder) {
@@ -145,25 +125,6 @@ class OldMenuRedBottom: UILabel {
     
 }
 
-class OldRedRole: UILabel {
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        self.commonInit()
-        
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.commonInit()
-    }
-    
-    func commonInit(){
-        self.textColor = STYLE.Red
-        self.font = STYLE.OldRoleFirstFont
-    }
-    
-}
 
 class OldBrownRole: UILabel {
     

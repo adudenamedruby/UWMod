@@ -15,6 +15,7 @@ class Graveyard: UITableViewCell {
     @IBOutlet var outlineView: UIView!
     @IBOutlet var mainCardView: UIView!
     @IBOutlet var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: RegTanHeader!
     
     @IBOutlet var playerLabel: RegGrey!
     
@@ -34,6 +35,10 @@ class Graveyard: UITableViewCell {
         mainCardView.layer.cornerRadius = STYLE.CornerRadius
         mainCardView.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Grey
+        
+        let headerTitle = "The Graveyard"
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
+                                                                      withColour: STYLE.Red)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

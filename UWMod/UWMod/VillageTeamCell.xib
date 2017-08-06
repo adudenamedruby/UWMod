@@ -27,28 +27,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLJ-f5-bno">
                                         <rect key="frame" x="0.0" y="0.0" width="496" height="45"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQd-iY-VkJ">
-                                                <rect key="frame" x="20" y="8.5" width="133.5" height="27"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I86-WO-cjt" customClass="RegRedHeader" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="17" height="27"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="22"/>
-                                                        <color key="textColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="illage Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byb-pM-AXx" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="17" y="0.0" width="116.5" height="27"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
-                                                        <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="illage Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byb-pM-AXx" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="25" y="10" width="116.5" height="25"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="NQd-iY-VkJ" firstAttribute="leading" secondItem="oLJ-f5-bno" secondAttribute="leading" constant="20" id="NY7-HF-lgZ"/>
-                                            <constraint firstItem="NQd-iY-VkJ" firstAttribute="centerY" secondItem="oLJ-f5-bno" secondAttribute="centerY" id="WEQ-27-xdz"/>
+                                            <constraint firstItem="byb-pM-AXx" firstAttribute="leading" secondItem="oLJ-f5-bno" secondAttribute="leading" constant="25" id="80n-Tu-QIX"/>
+                                            <constraint firstItem="byb-pM-AXx" firstAttribute="centerY" secondItem="oLJ-f5-bno" secondAttribute="centerY" id="cHH-Fa-K3v"/>
                                             <constraint firstAttribute="height" constant="45" id="oQP-sX-58s"/>
                                         </constraints>
                                     </view>
@@ -90,6 +79,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="headerTitleLabel" destination="byb-pM-AXx" id="8uB-6i-qrb"/>
                 <outlet property="headerView" destination="oLJ-f5-bno" id="v2W-20-ecD"/>
                 <outlet property="mainCardView" destination="MKs-LD-bSD" id="mFj-ce-cln"/>
                 <outlet property="outlineView" destination="8q3-s1-4iI" id="lxa-dF-yHl"/>

@@ -14,7 +14,7 @@ protocol UpdateCardDelegate: class {
 
 class AssignPlayer: UIView {
 
-    // MARK: - Initializers
+    // MARK: - Outlets
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var assignButton: PMSuperButton!
@@ -22,20 +22,32 @@ class AssignPlayer: UIView {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var roleNotes: UILabel!
     
-    weak var delegate: UpdateCardDelegate?
-    var chosenPlayerName: String!
-    var player: Player?
     
-    init(frame: CGRect, withPlayer player: Player) {
+    // MARK: - Variables
+    
+    // passed variables
+    weak var delegate: UpdateCardDelegate?
+    var role: Role?
+    // assigned variables
+    var chosenPlayer: Player!
+    var unassignedPlayers: [Player]!
+    
+    
+    // MARK: - Initializers
+    
+    init(frame: CGRect, withRole role: Role) {
         super.init(frame: frame)
-        self.player = player
+        self.role = role
         setupView()
+        setupUnassignedPlayers()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
+        setupUnassignedPlayers()
     }
+    
     
     // MARK: - Private Helper Methods
     
@@ -48,14 +60,32 @@ class AssignPlayer: UIView {
         
         contentView.backgroundColor = STYLE.Tan
         
-        roleNotes.text = player?.role.notes
+        roleNotes.text = role?.notes
         pickerView.isHidden = true
         okButton.isHidden = true
         
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        chosenPlayerName = GAME.availableRoster[0]
+    }
+    
+    func setupUnassignedPlayers() {
+        unassignedPlayers = unassignedPlayerList()
+        chosenPlayer = unassignedPlayers.first
+    }
+    
+    func unassignedPlayerList() -> [Player] {
+        var unassignedPlayerList: [Player] = []
+        
+        for player in GAME.availablePlayers {
+            if !player.isAssigned {
+                unassignedPlayerList.append(player)
+            }
+        }
+        
+        unassignedPlayerList.sort(by: { $0.name < $1.name })
+        
+        return unassignedPlayerList
     }
     
     @IBAction func assignButtonTapped(_ sender: Any) {
@@ -65,14 +95,12 @@ class AssignPlayer: UIView {
         
         pickerView.isHidden = false
         okButton.isHidden = false
-        
     }
 
     @IBAction func okButtonTapped(_ sender: Any) {
-            
-        let index = GAME.availableRoster.index(of: chosenPlayerName)
-        GAME.availableRoster.remove(at: index!)
-        GAME.assignRoles(player: player!, name: chosenPlayerName!)
+        chosenPlayer.assignRole(role: role!)
+        GAME.addPlayerToLivingActors(player: chosenPlayer)
+        
         delegate?.updateCard()
     }
 }
@@ -84,14 +112,15 @@ extension AssignPlayer: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return GAME.availableRoster.count
+        return unassignedPlayerList().count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return GAME.availableRoster[row]
+        let unassignedPlayers = unassignedPlayerList()
+        return unassignedPlayers[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        chosenPlayerName = GAME.availableRoster[row]
+        chosenPlayer = unassignedPlayerList()[row]
     }
 }

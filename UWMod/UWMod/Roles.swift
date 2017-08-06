@@ -97,50 +97,47 @@ enum NightActiveStatus {
 }
 
 class Role {
-    let name: String
-    let type: RoleType
-    let description: String
-    let roleExplanation: String
-    let notes: String?
-    let impact: Int
-    let priority: Int
-    let image: UIImage
+    let name:                       String
+    let type:                       RoleType
+    let description:                String
+    let roleExplanation:            String
+    let notes:                      String?
+    let impact:                     Int
+    let priority:                   Int
+    let image:                      UIImage
     
-    var wakeTime: [UWNights]
-    var canWake: Bool
-    var powerChoice: Bool
-    var powerUsed: Bool
-    var team: UWTeam
-    var daytimeInfoCard: [DaytimeCardType]
-    var isNightActiveRole: NightActiveStatus
-    var isActivated: Bool
+    // this should change the priority of special roles depending on game settings
+    // for example, Lone Wolf would have this set to false by default so it's an auto
+    // assigned role. However, if set to manually assigned, its priority variable would be
+    // a custom getter that returns a priority on whether a role is called or not.
+    var isManuallyAssigned:         Bool
     
-    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: UWTeam, daytimeInfoCard: [DaytimeCardType], wakeTime: [UWNights], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
-        self.name = name
-        self.type = type
-        self.description = description
-        self.roleExplanation = roleExplanation
-        self.notes = notes
-        self.impact = impact
-        self.priority = priority
-        self.image = image
+    var wakeTime:                   [UWNights]
+    var canWake:                    Bool
+    var powerChoice:                Bool
+    var powerUsed:                  Bool
+    var team:                       [UWTeam]
+    var isNightActiveRole:          NightActiveStatus
+    var isActivated:                Bool
+    
+    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], wakeTime: [UWNights], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
+        self.name                   = name
+        self.type                   = type
+        self.description            = description
+        self.roleExplanation        = roleExplanation
+        self.notes                  = notes
+        self.impact                 = impact
+        self.priority               = priority
+        self.image                  = image
         
-        self.team = team
-        self.daytimeInfoCard = daytimeInfoCard
-        self.wakeTime = wakeTime
-        self.powerChoice = powerChoice
-        self.powerUsed = false
-        self.canWake = true
-        self.isNightActiveRole = isNightActiveRole
-        self.isActivated = true
-    }
-    
-    func reconcileDeath() {
-        
-    }
-    
-    func determineNightActivity() -> Bool {
-        return true
+        self.isManuallyAssigned     = true
+        self.team                   = team
+        self.wakeTime               = wakeTime
+        self.powerChoice            = powerChoice
+        self.powerUsed              = false
+        self.canWake                = true
+        self.isNightActiveRole      = isNightActiveRole
+        self.isActivated            = true
     }
 }
 

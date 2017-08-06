@@ -15,10 +15,14 @@ class GeneralInfo: UITableViewCell {
     @IBOutlet weak var outlineView: UIView!
     @IBOutlet weak var mainCardView: UIView!
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerTitleLabel: RegTanHeader!
     
     @IBOutlet var playersAliveLabel: RegGreenBold!
     @IBOutlet var playersDeadLabel: RegRedBold!
     @IBOutlet var totalPlayersLabel: RegBrownBold!
+    
+    @IBOutlet weak var numberOfNightsPassedLabel: RegBrown!
+    @IBOutlet weak var dayNumberLabel: RegBrown!
     
     @IBOutlet weak var timeLabel: RegBrown!
     
@@ -33,11 +37,15 @@ class GeneralInfo: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        outlineView.layer.cornerRadius = STYLE.CornerRadius
-        outlineView.backgroundColor = STYLE.Beige
-        mainCardView.layer.cornerRadius = STYLE.CornerRadius
-        mainCardView.backgroundColor = STYLE.Tan
-        headerView.backgroundColor = STYLE.Beige
+        outlineView.layer.cornerRadius      = STYLE.CornerRadius
+        outlineView.backgroundColor         = STYLE.Beige
+        mainCardView.layer.cornerRadius     = STYLE.CornerRadius
+        mainCardView.backgroundColor        = STYLE.Tan
+        headerView.backgroundColor          = STYLE.Beige
+        
+        let headerTitle = "General Info"
+        headerTitleLabel.attributedText     = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
+                                                                          withColour: STYLE.Red)
         
     }
 
@@ -49,9 +57,12 @@ class GeneralInfo: UITableViewCell {
     
     
     func configureCell() {
-        playersAliveLabel.text = "\(GAME.livingActors.count)"
-        playersDeadLabel.text = "\(GAME.deadActors.count)"
-        totalPlayersLabel.text = "\(GAME.livingActors.count + GAME.deadActors.count)"
+        playersAliveLabel.text              = "\(GAME.livingActors.count)"
+        playersDeadLabel.text               = "\(GAME.deadActors.count)"
+        totalPlayersLabel.text              = "\(GAME.livingActors.count + GAME.deadActors.count)"
+        numberOfNightsPassedLabel.text      = "\(GAME.currentNight - 1)"
+        dayNumberLabel.text                 = "\(GAME.currentDay)"
+        
         startTimer()
         
     }
@@ -70,20 +81,20 @@ class GeneralInfo: UITableViewCell {
     
     func stopTimer() {
         self.timer.invalidate()
-        self.counter = 0
-        isTrackingTime = false
+        self.counter        = 0
+        isTrackingTime      = false
     }
     
     func updateTimerLabel() {
         counter += 1
-        timeLabel.text = timeString(time: TimeInterval(counter))
+        timeLabel.text      = timeString(time: TimeInterval(counter))
     }
     
     func timeString(time:TimeInterval) -> String {
         
-        let hours = Int(time) / 3600
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
+        let hours           = Int(time) / 3600
+        let minutes         = Int(time) / 60 % 60
+        let seconds         = Int(time) % 60
         
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
