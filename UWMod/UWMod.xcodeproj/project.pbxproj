@@ -15,6 +15,8 @@
 		122FC6961F377BB200E0E2C9 /* BodyguardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122FC6951F377BB200E0E2C9 /* BodyguardView.swift */; };
 		122FC6981F377BCE00E0E2C9 /* BodyguardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 122FC6971F377BCE00E0E2C9 /* BodyguardView.xib */; };
 		122FC69A1F3912A500E0E2C9 /* VoteCounterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122FC6991F3912A500E0E2C9 /* VoteCounterVC.swift */; };
+		122FC69E1F3927C500E0E2C9 /* SeerInspection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */; };
+		122FC6A01F392F9C00E0E2C9 /* SeerInspection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 122FC69F1F392F9C00E0E2C9 /* SeerInspection.xib */; };
 		123BD0D31F2F6BF600B99019 /* Popups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123BD0D21F2F6BF600B99019 /* Popups.storyboard */; };
 		123BD0D51F2F6C1600B99019 /* AlertsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0D41F2F6C1600B99019 /* AlertsVC.swift */; };
 		123BD0D71F2FE66400B99019 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0D61F2FE66400B99019 /* StringExtensions.swift */; };
@@ -86,6 +88,8 @@
 		122FC6951F377BB200E0E2C9 /* BodyguardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyguardView.swift; sourceTree = "<group>"; };
 		122FC6971F377BCE00E0E2C9 /* BodyguardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BodyguardView.xib; sourceTree = "<group>"; };
 		122FC6991F3912A500E0E2C9 /* VoteCounterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteCounterVC.swift; sourceTree = "<group>"; };
+		122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeerInspection.swift; sourceTree = "<group>"; };
+		122FC69F1F392F9C00E0E2C9 /* SeerInspection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeerInspection.xib; sourceTree = "<group>"; };
 		123BD0D21F2F6BF600B99019 /* Popups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popups.storyboard; sourceTree = "<group>"; };
 		123BD0D41F2F6C1600B99019 /* AlertsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsVC.swift; sourceTree = "<group>"; };
 		123BD0D61F2FE66400B99019 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 			children = (
 				123BD0ED1F31555B00B99019 /* AssignPlayer.swift */,
 				122FC6951F377BB200E0E2C9 /* BodyguardView.swift */,
+				122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */,
 				124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */,
 			);
 			name = ContainerViews;
@@ -203,6 +208,7 @@
 				123BD0E51F31474A00B99019 /* AssignPlayer.xib */,
 				122FC6971F377BCE00E0E2C9 /* BodyguardView.xib */,
 				124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */,
+				122FC69F1F392F9C00E0E2C9 /* SeerInspection.xib */,
 			);
 			name = "Night XIBs";
 			sourceTree = "<group>";
@@ -341,7 +347,7 @@
 		12EC77F71F2BDBF20026C667 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				12EC77FC1F2BE2EC0026C667 /* Tispr */,
+				12EC77FC1F2BE2EC0026C667 /* Tinder Inspired Card Stack */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -365,14 +371,14 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
-		12EC77FC1F2BE2EC0026C667 /* Tispr */ = {
+		12EC77FC1F2BE2EC0026C667 /* Tinder Inspired Card Stack */ = {
 			isa = PBXGroup;
 			children = (
 				12EC77FD1F2BE2FE0026C667 /* TisprCardStackViewCell.swift */,
 				12EC77FE1F2BE2FE0026C667 /* TisprCardStackViewController.swift */,
 				12EC77FF1F2BE2FE0026C667 /* TisprCardStackViewLayout.swift */,
 			);
-			name = Tispr;
+			name = "Tinder Inspired Card Stack";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +450,7 @@
 				12EC77F41F2BDBD90026C667 /* NightPhase.storyboard in Resources */,
 				12EC77FB1F2BE1D40026C667 /* Old Wise Sketch.otf in Resources */,
 				1209820F1F26BBE700EC5D21 /* Main.storyboard in Resources */,
+				122FC6A01F392F9C00E0E2C9 /* SeerInspection.xib in Resources */,
 				1261C2BF1F32AA960099D759 /* GeneralInfo.xib in Resources */,
 				124F74F81F35FF4D00F03E49 /* WerewolfAssassination.xib in Resources */,
 				123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */,
@@ -507,6 +514,7 @@
 				122FC6961F377BB200E0E2C9 /* BodyguardView.swift in Sources */,
 				12EC78001F2BE2FE0026C667 /* TisprCardStackViewCell.swift in Sources */,
 				77B2B0061F34D7AC0032A36B /* Graveyard.swift in Sources */,
+				122FC69E1F3927C500E0E2C9 /* SeerInspection.swift in Sources */,
 				7736D0921F3399BC00555037 /* HelpVC.swift in Sources */,
 				1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */,
 				123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */,

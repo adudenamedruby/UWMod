@@ -192,6 +192,8 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
                 }
             } else if player?.roleType() == .Bodyguard && !((player?.hasActedTonight)!) {
                 presentBodyguardView()
+            } else if player?.roleType() == .Seer {
+                presentSeerView()
             }
         }
     }
@@ -216,6 +218,11 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
     private func presentWerewolfAssassination() {
         let localizedActionView = WerewolfAssassination(frame: CGRect(x: 0, y: 0, width: 310, height: 140))
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    private func presentSeerView() {
+        let localizedActionView = SeerInspection(frame: CGRect(x: 0, y: 0, width: 310, height: 140))
         self.containerView.addSubview(localizedActionView)
     }
 }

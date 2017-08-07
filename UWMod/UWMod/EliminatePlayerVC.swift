@@ -12,35 +12,35 @@ class EliminatePlayerVC: UIViewController {
 
     // MARK: - Outlets
     
-    @IBOutlet weak var mainCardView: UIView!
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var headerTitleLabel: OldTan!
-    @IBOutlet weak var eliminateButton: PMSuperButton!
+    @IBOutlet weak var mainCardView:            UIView!
+    @IBOutlet weak var headerView:              UIView!
+    @IBOutlet weak var headerTitleLabel:        OldTan!
+    @IBOutlet weak var eliminateButton:         PMSuperButton!
 
-    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var pickerView:              UIPickerView!
     
     
     // MARK: - Variables
     
-    var playerToBeKilled: Player!
-    var eliminatedBy: RoleType?
+    var playerToBeKilled:                       Player!
+    var eliminatedBy:                           RoleType?
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mainCardView.layer.cornerRadius = STYLE.CornerRadius
-        mainCardView.backgroundColor = STYLE.Tan
-        headerView.backgroundColor = STYLE.Brown
+        mainCardView.layer.cornerRadius         = STYLE.CornerRadius
+        mainCardView.backgroundColor            = STYLE.Tan
+        headerView.backgroundColor              = STYLE.Brown
         
         let headerTitle = "Player Elimination"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
-        playerToBeKilled = GAME.livingActors[0]
+        playerToBeKilled                        = GAME.livingActors[0]
         
-        pickerView.delegate = self
-        pickerView.dataSource = self
+        pickerView.delegate                     = self
+        pickerView.dataSource                   = self
 
     }
 
