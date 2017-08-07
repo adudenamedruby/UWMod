@@ -53,3 +53,10 @@ enum PlayerEffects {
     case Ostracism
     case Lobotoby           // zombie
 }
+
+enum PlayersToTrack {
+    case Single
+    case Many
+    case AffectingList
+    case IneligibilityList
+}

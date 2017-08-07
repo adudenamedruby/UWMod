@@ -22,25 +22,15 @@ class Player {
     var isNightActivePlayer:                Bool
     var killedBy:                           String
     
-    // Role affected states
-    // Protection checks
-//    var isProtected: Bool {
-//        get {
-//            if isProtectedByBodyguard {return true}
-//            return false
-//        }
-//    }
-//    var isProtectedByBodyguard:             Bool
-    
-    var affectingPlayers:                   [PlayerEffects:[Player]]
-    var affectedByPlayers:                  [PlayerEffects:[Player]]
+    // What conditions are currently afflicting the player and by who. Done in two
+    // for easier logic checks... for me, really.
     var currentConditions:                  [PlayerEffects]
-    
-    var canBeSavedByLeprechaun:             Bool
-    var canBeSavedByWitch:                  Bool
-    var canBeChosenByMentalist:             Bool
-    var canBeChosenByOldHag:                Bool
-    var canBeMutedBySpellcaster:            Bool
+    var affectedByPlayers:                  [PlayerEffects:[Player]]
+    // Who this player is currently affecting. Might be only one person at a time.
+    var affectingPlayers:                   [PlayerEffects:[Player]]
+    // Who this player can no longer affect. Might be one or many players due to rules.
+    var playersIneligibleForEffect:         [PlayerEffects:[Player]]
+    var rolesIneligibleToAffectPlayer:      [RoleType]
     
     init (name: String) {
         self.name                           = name
@@ -55,33 +45,28 @@ class Player {
         self.hasActedTonight                = false
         self.killedBy                       = ""
         
-        //self.isProtectedByBodyguard         = false
-        
         self.affectingPlayers               = [:]
         self.affectedByPlayers              = [:]
+        self.playersIneligibleForEffect     = [:]
         self.currentConditions              = []
-        
-        self.canBeSavedByLeprechaun         = true
-        self.canBeSavedByWitch              = true
-        self.canBeChosenByMentalist         = true
-        self.canBeChosenByOldHag            = true
-        self.canBeMutedBySpellcaster        = true
-        
+        self.rolesIneligibleToAffectPlayer  = []
     }
     
+    
     // MARK: - General player specific functions
-    func assignRole(role: Role) {
+    
+    public func assignRole(role: Role) {
         self.role                           = role
         self.team                           = role.team
         self.isNightActivePlayer            = role.isNightActiveRole.currentStatus
         self.isAssigned                     = true
     }
     
-    func addToTeam(team: UWTeam) {
+    public func addToTeam(team: UWTeam) {
         self.team.append(team)
     }
     
-    func switchTeam(from: UWTeam, to:UWTeam) {
+    public func switchTeam(from: UWTeam, to:UWTeam) {
         if self.team.contains(from) {
             if let teamIndex = self.team.index(of: from) {
                 self.team.remove(at: teamIndex)
@@ -101,7 +86,7 @@ class Player {
         }
     }
     
-    func addAppropriateCard(daytimeCard: DaytimeCardType) {
+    public func addAppropriateCard(daytimeCard: DaytimeCardType) {
         if !daytimeInfoCards.contains(daytimeCard) {
             daytimeInfoCards.append(daytimeCard)
         }
@@ -110,7 +95,7 @@ class Player {
     
     // MARK: - Effect-related functions
     
-    func isAffectedBy(condition: PlayerEffects) -> Bool {
+    public func isAffectedBy(condition: PlayerEffects) -> Bool {
         if self.currentConditions.contains(condition) {
             return true
         }
@@ -118,7 +103,7 @@ class Player {
         return false
     }
     
-    func returnPlayersCausing(condition: PlayerEffects) -> [Player] {
+    public func returnPlayersCausing(condition: PlayerEffects) -> [Player] {
         
         var tempPlayers: [Player] = []
         
@@ -129,7 +114,9 @@ class Player {
         return tempPlayers
     }
     
-    func removeEffect(condition: PlayerEffects, causedBy: Player) {
+    // Deal with being affected from affects from other players
+    
+    private func removeEffectFromOtherPlayers(condition: PlayerEffects, causedBy: Player) {
         
         if isAffectedBy(condition: condition) {
             let indexOfAffectingPlayer = affectedByPlayers[condition]?.index(where: { $0 === causedBy})
@@ -142,22 +129,86 @@ class Player {
         }
     }
     
-    func addEffect(condition: PlayerEffects, causedBy: Player) {
+    private func addEffectFromOtherPlayers(condition: PlayerEffects, causedBy: Player) {
         
         if isAffectedBy(condition: condition) {
-            let indexOfAffectingPlayer = affectedByPlayers[condition]?.index(where: { $0 === causedBy})
-            affectedByPlayers[condition]?.remove(at: indexOfAffectingPlayer!)
-            
-            if affectedByPlayers[condition]?.count == 0 {
-                let indexOfCondition = currentConditions.index(of: condition)
-                currentConditions.remove(at: indexOfCondition!)
+            if !(affectedByPlayers[condition]?.contains(where: { $0 === causedBy}))! {
+                affectedByPlayers[condition]?.append(causedBy)
             }
         } else {
+            currentConditions.append(condition)
+
+            if !(affectedByPlayers[condition] != nil) {
+                affectedByPlayers[condition] = []
+            }
             
+            affectedByPlayers[condition]?.append(causedBy)
         }
-        
     }
     
+    
+    // Track how you're affecting other players
+    
+    private func affectSinglePlayer(condition: PlayerEffects, player: Player) {
+        trackOtherPlayers(trackingList: .AffectingList, condition: condition, player: player, playersToTrack: .Single)
+    }
+    
+    private func addPlayerToAffectedPlayers(condition: PlayerEffects, player: Player) {
+        trackOtherPlayers(trackingList: .AffectingList, condition: condition, player: player, playersToTrack: .Many)
+    }
+    
+    private func stopAffectingAllOtherPlayer() {
+        self.affectingPlayers = [:]
+    }
+    
+    private func affectSingleTargetInIneligibleList(condition: PlayerEffects, player: Player) {
+        trackOtherPlayers(trackingList: .IneligibilityList, condition: condition, player: player, playersToTrack: .Single)
+    }
+    
+    private func addTargetToOthersInIneligibleList(condition: PlayerEffects, player: Player) {
+        trackOtherPlayers(trackingList: .IneligibilityList, condition: condition, player: player, playersToTrack: .Many)
+    }
+    
+    private func trackOtherPlayers(trackingList: PlayersToTrack, condition: PlayerEffects, player: Player, playersToTrack: PlayersToTrack) {
+        
+        if trackingList == .AffectingList {
+            
+            if !(affectingPlayers[condition] != nil) {
+                affectingPlayers[condition] = []
+            }
+            
+            if playersToTrack == .Single && (affectingPlayers[condition]?.count)! > 0 {
+                affectingPlayers[condition]?.removeFirst()
+            }
+            
+            affectingPlayers[condition]?.append(player)
+            
+        } else if trackingList == .IneligibilityList {
+            
+            if !(playersIneligibleForEffect[condition] != nil) {
+                playersIneligibleForEffect[condition] = []
+            }
+            
+            if playersToTrack == .Single && (playersIneligibleForEffect[condition]?.count)! > 0 {
+                playersIneligibleForEffect[condition]?.removeFirst()
+            }
+            
+            playersIneligibleForEffect[condition]?.append(player)
+        }
+    }
+    
+    private func canPerformEffect(condition: PlayerEffects, player: Player) -> Bool{
+        if playersIneligibleForEffect.count == 0            { return true }
+        
+        if !(playersIneligibleForEffect[condition] != nil)  { return true }
+        
+        if (playersIneligibleForEffect[condition]?.contains(where: { $0 === player }))! {
+            return false
+        }
+        
+        // This return should NEVER be reached
+        return false
+    }
     
     
     // MARK: - Role variable functions
@@ -227,12 +278,27 @@ class Player {
         role.checkForActivation()
     }
     
-    func protect(player: Player) {
-        if role.type == .Bodyguard {
-            if let tempRoleType = role as? Bodyguard {
-                tempRoleType.protect(player: player)
-            }
+    // Protection
+    public func protect(playerToProtect: Player, protector: Player) {
+        let kindOfRole = role.type
+        let effect: PlayerEffects = .Protection
+        
+        switch kindOfRole {
+        case .Bodyguard:
             
+            if canPerformEffect(condition: effect, player: playerToProtect) {
+                
+                // Keep track of a single protected target
+                affectSinglePlayer(condition: effect, player: playerToProtect)
+                affectSingleTargetInIneligibleList(condition: effect, player: playerToProtect)
+                
+                playerToProtect.addEffectFromOtherPlayers(condition: effect,
+                                                          causedBy: protector)
+            }
+        default: break
+            // Do nothing
         }
+        
     }
+    
 }
