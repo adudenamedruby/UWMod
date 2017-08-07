@@ -272,12 +272,14 @@ class Game {
     private func resetPlayerNightActions() {
         for player in livingActors {
             player.hasActedTonight = false
+            player.cleanupAfterRound(nightRound: true)
         }
     }
     
     private func resetPlayerDayActions() {
         for player in livingActors {
             player.hasActedToday = false
+            player.cleanupAfterRound(nightRound: false)
         }
     }
     

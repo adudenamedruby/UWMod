@@ -113,14 +113,14 @@ class Role {
     // assigned role. However, if set to manually assigned, its priority variable would be
     // a custom getter that returns a priority on whether a role is called or not.
     var isManuallyAssigned:         Bool
-    
+    var availableEffects:           [PlayerEffects]
     var canWake:                    Bool
     var powerChoice:                Bool
     var powerUsed:                  Bool
     var isNightActiveRole:          NightActiveStatus
     var isActivated:                Bool
     
-    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], wakeTime: [UWNights], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
+    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], availableEffects: [PlayerEffects], wakeTime: [UWNights], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
         self.name                   = name
         self.type                   = type
         self.description            = description
@@ -130,6 +130,7 @@ class Role {
         self.priority               = priority
         self.image                  = image
         
+        self.availableEffects       = availableEffects
         self.isManuallyAssigned     = true
         self.team                   = team
         self.wakeTime               = wakeTime

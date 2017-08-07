@@ -111,13 +111,13 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRB-Xk-5WN" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="607" width="192" height="40"/>
+                                        <rect key="frame" x="131" y="607" width="113.5" height="40"/>
                                         <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="dpk-k0-T7w"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
-                                        <state key="normal" title="Eliminate Player">
+                                        <state key="normal" title="Kill Player">
                                             <color key="titleColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -137,7 +137,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-Co-CpR" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="221" y="607" width="142" height="40"/>
+                                        <rect key="frame" x="249.5" y="607" width="113.5" height="40"/>
                                         <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="gXr-JV-KW3"/>
@@ -162,18 +162,47 @@
                                             <action selector="endDayPressed:" destination="rK0-Z0-k4W" eventType="touchUpInside" id="g25-eL-C4m"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qge-pT-M8G" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="12" y="607" width="113.5" height="40"/>
+                                        <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="JWD-x4-AmW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                        <state key="normal" title="Count Votes">
+                                            <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.090196078430000007" green="0.49803921569999998" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="voteTrackerPressed:" destination="rK0-Z0-k4W" eventType="touchUpInside" id="QGe-vf-avQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="HRB-Xk-5WN" firstAttribute="width" secondItem="Trs-Co-CpR" secondAttribute="width" constant="50" id="29n-aa-ZAg"/>
+                                    <constraint firstItem="HRB-Xk-5WN" firstAttribute="width" secondItem="Trs-Co-CpR" secondAttribute="width" id="29n-aa-ZAg"/>
                                     <constraint firstAttribute="trailing" secondItem="QwX-db-Fid" secondAttribute="trailing" constant="10" id="5K0-dN-Cex"/>
                                     <constraint firstAttribute="bottom" secondItem="Trs-Co-CpR" secondAttribute="bottom" constant="20" id="6ck-b2-QiI"/>
+                                    <constraint firstItem="qge-pT-M8G" firstAttribute="centerY" secondItem="Trs-Co-CpR" secondAttribute="centerY" id="BDi-eh-u46"/>
                                     <constraint firstItem="QwX-db-Fid" firstAttribute="top" secondItem="q4j-ep-MX8" secondAttribute="top" constant="20" id="BKW-we-HRQ"/>
-                                    <constraint firstItem="Trs-Co-CpR" firstAttribute="width" secondItem="QwX-db-Fid" secondAttribute="width" multiplier="0.4" id="JyY-qe-nmO"/>
+                                    <constraint firstItem="Trs-Co-CpR" firstAttribute="width" secondItem="QwX-db-Fid" secondAttribute="width" multiplier="0.32" id="JyY-qe-nmO"/>
                                     <constraint firstItem="QwX-db-Fid" firstAttribute="height" secondItem="q4j-ep-MX8" secondAttribute="height" multiplier="0.86" id="KMm-kE-pRv"/>
                                     <constraint firstAttribute="trailing" secondItem="Trs-Co-CpR" secondAttribute="trailing" constant="12" id="Xr1-xP-mqn"/>
-                                    <constraint firstAttribute="bottom" secondItem="HRB-Xk-5WN" secondAttribute="bottom" constant="20" id="qZi-j4-xjx"/>
-                                    <constraint firstItem="HRB-Xk-5WN" firstAttribute="leading" secondItem="q4j-ep-MX8" secondAttribute="leading" constant="12" id="vpD-Ot-FPd"/>
+                                    <constraint firstItem="Trs-Co-CpR" firstAttribute="leading" secondItem="HRB-Xk-5WN" secondAttribute="trailing" constant="5" id="bgT-s5-Jcv"/>
+                                    <constraint firstItem="HRB-Xk-5WN" firstAttribute="centerY" secondItem="Trs-Co-CpR" secondAttribute="centerY" id="jQZ-gW-leR"/>
+                                    <constraint firstItem="qge-pT-M8G" firstAttribute="width" secondItem="Trs-Co-CpR" secondAttribute="width" id="owl-cI-vSZ"/>
+                                    <constraint firstItem="qge-pT-M8G" firstAttribute="leading" secondItem="q4j-ep-MX8" secondAttribute="leading" constant="12" id="zJj-Kd-ag6"/>
                                     <constraint firstItem="QwX-db-Fid" firstAttribute="leading" secondItem="q4j-ep-MX8" secondAttribute="leading" constant="10" id="zUw-0L-o46"/>
                                 </constraints>
                             </view>
@@ -208,6 +237,7 @@
                         <outlet property="lynchButton" destination="HRB-Xk-5WN" id="N0p-VY-oa9"/>
                         <outlet property="mainCardView" destination="QwX-db-Fid" id="bwL-xg-svi"/>
                         <outlet property="tableView" destination="1TP-tu-QAf" id="b2g-Mc-oPn"/>
+                        <outlet property="voteButton" destination="qge-pT-M8G" id="lya-Vl-W14"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FZ-CH-RKa" userLabel="First Responder" sceneMemberID="firstResponder"/>

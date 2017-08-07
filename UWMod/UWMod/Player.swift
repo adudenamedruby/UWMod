@@ -55,7 +55,7 @@ class Player {
     }
     
     
-    // MARK: - General player specific functions
+    // MARK: - General player functions
     
     public func assignRole(role: Role) {
         self.role                           = role
@@ -106,6 +106,40 @@ class Player {
         }
     }
     
+    public func cleanupAfterRound(nightRound: Bool) {
+        if nightRound {
+            cleanupAfterNightRound()
+        } else {
+            cleanupAfterDayRound()
+        }
+    }
+    
+    private func cleanupAfterNightRound() {
+        
+        let avaliableEffects = role.availableEffects
+        
+        if avaliableEffects.count > 0 {
+            for effect in avaliableEffects {
+                
+                if role.type == .Bodyguard && effect == .Protection {
+                    if affectingPlayers[effect] != nil {
+                        for player in affectingPlayers[effect]! {
+                            player.removeEffectFromPlayer(condition: effect, causedBy: self)
+                            stopAffectingAllOtherPlayer()
+                        }
+                    }
+                
+                } else {
+                    // do stuff for other roles here
+                }
+            }
+        }
+    }
+    
+    private func cleanupAfterDayRound() {
+        
+    }
+    
     
     // MARK: - Effect-related functions
     
@@ -114,16 +148,22 @@ class Player {
         return false
     }
     
-    public func isAffectedBy(player: Player) -> Bool {
+    public func canAffect(player: Player, forCondition effect: PlayerEffects) -> Bool {
         
-        return false
+        if playersIneligibleForEffect[effect] != nil && (playersIneligibleForEffect[effect]?.count)! > 0 {
+            if (playersIneligibleForEffect[effect]?.contains(where: { $0 === player }))! {
+                return false
+            }
+        }
+        
+        return true
     }
     
-    public func isAffectedBy(role roleType: RoleType, forCondition effect: PlayerEffects) -> Bool {
+    public func isAffectedBy(currentPlayer affector: Player, forCondition effect: PlayerEffects) -> Bool {
         
         if playersIneligibleForEffect[effect] != nil {
             for player in playersIneligibleForEffect[effect]! {
-                if player.role.type == roleType { return true }
+                if player === affector { return true }
             }
         }
         
@@ -143,7 +183,7 @@ class Player {
     
     // Deal with being affected from affects from other players
     
-    private func removeEffectFromOtherPlayers(condition: PlayerEffects, causedBy: Player) {
+    private func removeEffectFromPlayer(condition: PlayerEffects, causedBy: Player) {
         
         if isAffectedBy(condition: condition) {
             let indexOfAffectingPlayer = affectedByPlayers[condition]?.index(where: { $0 === causedBy})
@@ -296,6 +336,10 @@ extension Player {
     
     func roleImpact() -> Int {
         return role.impact
+    }
+    
+    func roleEffects() -> [PlayerEffects] {
+        return role.availableEffects
     }
     
     func rolePriority() -> Int {

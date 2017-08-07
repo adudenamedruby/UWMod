@@ -72,8 +72,8 @@ class BodyguardView: UIView {
         var unprotectedPlayersList: [Player] = []
         
         for player in GAME.livingActors {
-            if !(player.isAffectedBy(role: .Bodyguard, forCondition: .Protection)) && player !== currentPlayer {
-                unprotectedPlayersList.append(player)
+            if (currentPlayer?.canAffect(player: player, forCondition: .Protection))! && player !== currentPlayer {
+                    unprotectedPlayersList.append(player)
             }
         }
         
