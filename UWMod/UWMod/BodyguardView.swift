@@ -91,11 +91,10 @@ class BodyguardView: UIView {
     }
     
     @IBAction func okButtonTapped(_ sender: Any) {
-        
-        if let player = currentPlayer?.role as? Bodyguard {
-            player.protect(player: chosenPlayer)
-            currentPlayer?.hasActedTonight = true
-        }
+        //currentPlayer?.role.protect(player: chosenPlayer)
+        let player = currentPlayer?.role as! Bodyguard
+        player.protect(player: chosenPlayer)
+        currentPlayer?.hasActedTonight = true
         
         delegate?.updateCard()
     }
