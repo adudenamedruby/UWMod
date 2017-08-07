@@ -82,8 +82,10 @@ class DayVC: UIViewController {
     }
     
     @IBAction func voteTrackerPressed(_ sender: Any) {
-        
-        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+        let counterView = storyboard.instantiateViewController(withIdentifier: "voteCounterPopup") as! VoteCounterVC
+        counterView.modalTransitionStyle = .crossDissolve
+        self.present(counterView, animated: true, completion: nil)
     }
 
     @IBAction func endDayPressed(_ sender: Any) {
