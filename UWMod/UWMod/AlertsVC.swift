@@ -10,24 +10,24 @@ import UIKit
 
 class AlertsVC: UIViewController {
 
-    @IBOutlet weak var mainAlertView: UIView!
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var headerTitleLabel: OldTan!
-    @IBOutlet weak var alertTextLabel: RegBrown!
+    @IBOutlet weak var mainAlertView:           UIView!
+    @IBOutlet weak var headerView:              UIView!
+    @IBOutlet weak var headerTitleLabel:        OldTan!
+    @IBOutlet weak var alertTextLabel:          RegBrown!
     
-    var alertName: String?
-    var alertText: String?
+    var alertName:                              String?
+    var alertText:                              String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mainAlertView.layer.cornerRadius = STYLE.CornerRadius
-        mainAlertView.backgroundColor = STYLE.Tan
-        headerView.backgroundColor = STYLE.Brown
+        mainAlertView.layer.cornerRadius        = STYLE.CornerRadius
+        mainAlertView.backgroundColor           = STYLE.Tan
+        headerView.backgroundColor              = STYLE.Brown
         
         headerTitleLabel.attributedText = alertName?.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
-        alertTextLabel.text = alertText
+        alertTextLabel.text                     = alertText
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,15 +38,5 @@ class AlertsVC: UIViewController {
     @IBAction func okButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

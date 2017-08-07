@@ -112,11 +112,13 @@ open class TisprCardStackViewLayout: UICollectionViewLayout, UIGestureRecognizer
     fileprivate let minimumXPanDistanceToSwipe: CGFloat = 100
     fileprivate let minimumYPanDistanceToSwipe: CGFloat = 60
     
+    
     // MARK: - Getting the Collection View Information
     
     override open var collectionViewContentSize : CGSize {
         return collectionView!.frame.size
     }
+    
     
     // MARK: - Providing Layout Attributes
     
@@ -167,6 +169,8 @@ open class TisprCardStackViewLayout: UICollectionViewLayout, UIGestureRecognizer
         
         return result
     }
+    
+    
     // MARK: - Implementation
     
     fileprivate func indexPathsForElementsInRect(_ rect: CGRect) -> [IndexPath] {
