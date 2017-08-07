@@ -67,7 +67,7 @@ enum RoleType {
     case TheThing
     case ToughGuy
     case Troublemaker
-    case Vamprie
+    case Vampire
     case VillageIdiot
     case Villager
     case VirginiaWoolf

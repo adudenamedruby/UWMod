@@ -72,7 +72,7 @@ class BodyguardView: UIView {
         var unprotectedPlayersList: [Player] = []
         
         for player in GAME.livingActors {
-            if !player.isProtectedByBodyguard && player !== currentPlayer {
+            if !(player.isAffectedBy(role: .Bodyguard, forCondition: .Protection)) && player !== currentPlayer {
                 unprotectedPlayersList.append(player)
             }
         }
@@ -91,7 +91,7 @@ class BodyguardView: UIView {
     }
     
     @IBAction func okButtonTapped(_ sender: Any) {
-        currentPlayer?.protect(player: chosenPlayer)
+        currentPlayer?.protect(playerToProtect: chosenPlayer, protector: currentPlayer!)
         currentPlayer?.hasActedTonight = true
         
         delegate?.updateCard()

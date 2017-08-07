@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+
+/// A class for passing basic alert information more elegantly between views.
 class BasicAlertObject {
     let title:                          String
     let text:                           String

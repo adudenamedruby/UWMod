@@ -15,9 +15,21 @@ enum GamePhase {
 
 class Game {
     
-    var firstNight:                         Bool
-    var currentNight:                       Int
-    var currentDay:                         Int
+    private var _currentNight:              Int
+    private var _currentDay:                Int
+    private var _firstNight:                Bool
+    
+    var currentNight: Int {
+        get { return _currentNight }
+    }
+    var currentDay: Int {
+        get { return _currentDay }
+    }
+    
+    var firstNight: Bool {
+        get { return _firstNight }
+    }
+    
     var nighttimeEliminations:              Int
     var daytimeEliminations:                Int
     
@@ -29,6 +41,7 @@ class Game {
     var playersProtectedThisPhase:          String
     var daytimeInfoCards:                   [DaytimeCardType]
     var nightActors:                        [Player]
+    var consolidatedNightActors:            [Player]
     var livingActors:                       [Player]
     var playersToBeEliminated:              [Player]
     var deadActors:                         [Player]
@@ -42,13 +55,14 @@ class Game {
         self.availablePlayers               = availablePlayers.sorted(by: { ($0.name) < ($1.name) })
         self.availableRoster                = availableRoster.sorted(by: { ($0.priority) < ($1.priority) })
 
-        self.firstNight                     = true
+        self._firstNight                    = true
+        self._currentNight                  = 1
+        self._currentDay                    = 1
         self.areThereDeadPlayers            = false
-        self.currentNight                   = 1
-        self.currentDay                     = 1
         self.nighttimeEliminations          = 1
         self.daytimeEliminations            = 1
         self.nightActors                    = []
+        self.consolidatedNightActors        = []
         self.livingActors                   = []
         self.playersToBeEliminated          = []
         self.deadActors                     = []
@@ -63,37 +77,40 @@ class Game {
     // MARK: - Game setup & teardown
     
     // Game settings will be added in a later version.
-    func startWithSettings() {
+    public func startWithSettings() {
         
     }
     
-    func endGameAndReset() {
+    public func endGameAndReset() {
         GAME = Game(availableRoster: [], availablePlayers: [])
     }
     
     
     // MARK: - Player-related functions
     
-    func addPlayerToLivingActors(player: Player) {
+    public func addPlayerToLivingActors(player: Player) {
         livingActors.append(player)
     }
     
-    func assignInfoCardsToPlayers() {
+    private func assignInfoCardsToPlayers() {
         for actor in livingActors {
             actor.determineDaytimeInfoCardForPlayer()
         }
     }
     
-    func prepareToEliminatePlayer(victim: Player) {
+    
+    // Player elimination should happen at the END of each round after effects have been
+    // applied by the different roles in order to accout for effects taking.... effect.
+    public func prepareToEliminatePlayer(victim: Player) {
         if !self.playersToBeEliminated.contains(where: { $0 === victim }) {
             playersToBeEliminated.append(victim)
         }
     }
     
-    func eliminatePlayers() {
+    private func eliminatePlayers() {
         
         for victim in playersToBeEliminated {
-            if !victim.isProtected {
+            if !victim.isAffectedBy(condition: .Protection) {
                 if self.livingActors.contains(where: { $0 === victim }) {
                     addToPhaseReport(player: victim)
                     self.deadActors.append(victim)
@@ -109,7 +126,7 @@ class Game {
 //                    }
 
                 }
-            } else if victim.isProtected {
+            } else {
                 addToPhaseReport(player: victim)
             }
         }
@@ -117,10 +134,10 @@ class Game {
         playersToBeEliminated.removeAll()
     }
     
-    func addToPhaseReport(player: Player) {
+    private func addToPhaseReport(player: Player) {
         let textToAdd = retrievePlayerNameWithRole(player: player)
         
-        if player.isProtected {
+        if player.isAffectedBy(condition: .Protection) {
             playersProtectedThisPhase = playersProtectedThisPhase + textToAdd
         } else {
             playersEliminatedThisPhase = playersEliminatedThisPhase + textToAdd
@@ -132,7 +149,7 @@ class Game {
     
     // This fetches all players in a list and returns the appropriate string
     
-    func fetchPlayersWithTeamType(fromList: [Player], ofTeamType: UWTeam, withRole: Bool = false, separatedByComma: Bool = false) -> String {
+    public func fetchPlayersWithTeamType(fromList: [Player], ofTeamType: UWTeam, withRole: Bool = false, separatedByComma: Bool = false) -> String {
         var players = ""
         
         for player in fromList {
@@ -147,7 +164,7 @@ class Game {
         return players
     }
     
-    func fetchPlayersWithRoleType(fromList: [Player], ofRoleType: RoleType, withRole: Bool = false, separatedByComma: Bool = false) -> String {
+    public func fetchPlayersWithRoleType(fromList: [Player], ofRoleType: RoleType, withRole: Bool = false, separatedByComma: Bool = false) -> String {
         var players = ""
         
         for player in fromList {
@@ -160,7 +177,7 @@ class Game {
         return players
     }
     
-    func fetchAllPlayers(fromList: [Player], withRole: Bool = false, separatedByComma: Bool = false) -> String {
+    public func fetchAllPlayers(fromList: [Player], withRole: Bool = false, separatedByComma: Bool = false) -> String {
         var players = ""
         
         for player in fromList {
@@ -171,7 +188,7 @@ class Game {
         return players
     }
     
-    func fetchSinglePlayer(player: Player, withRole: Bool, separatedByComma: Bool = false) -> String {
+    public func fetchSinglePlayer(player: Player, withRole: Bool, separatedByComma: Bool = false) -> String {
         var temp: String
         
         if withRole {
@@ -184,7 +201,7 @@ class Game {
     
     }
 
-    func retrievePlayerNameWithRole(player: Player, separatedByComma: Bool = false) -> String {
+    private func retrievePlayerNameWithRole(player: Player, separatedByComma: Bool = false) -> String {
         var separator = "\n"
         if separatedByComma {
             separator = ", "
@@ -193,7 +210,7 @@ class Game {
         return "\(player.name) (\(player.roleName()))\(separator)"
     }
     
-    func retrievePlayerNameWithoutRole(player: Player, separatedByComma: Bool = false) -> String {
+    private func retrievePlayerNameWithoutRole(player: Player, separatedByComma: Bool = false) -> String {
         var separator = "\n"
         if separatedByComma {
             separator = ", "
@@ -202,7 +219,7 @@ class Game {
         return "\(player.name)\(separator)"
     }
     
-    func clearPhaseReport() {
+    private func clearPhaseReport() {
         playersEliminatedThisPhase = ""
         playersProtectedThisPhase = ""
     }
@@ -213,7 +230,7 @@ class Game {
     func finishNight() {
         
         if firstNight {
-            firstNight = false
+            _firstNight = false
             populateNightActors()
         }
         
@@ -225,7 +242,13 @@ class Game {
         setDeadPlayerCheck()
         setupInfoCards()
         
-        currentNight += 1
+        _currentNight += 1
+    }
+    
+    private func resetPlayerNightActions() {
+        for player in livingActors {
+            player.hasActedTonight = false
+        }
     }
     
     // MARK: - Day functions
@@ -239,7 +262,7 @@ class Game {
         evaluateNightActorsOrder()
         setDeadPlayerCheck()
         
-        currentDay += 1
+        _currentDay += 1
     }
     
     func setDeadPlayerCheck() {
@@ -279,6 +302,28 @@ class Game {
     
     func evaluateNightActorsOrder() {
         self.nightActors.sort(by: { $0.rolePriority() < $1.rolePriority()})
+    }
+    
+    func consolidateNightActors() {
+        var werewolves = 0
+        let consolidatedWolves: [RoleType] = [.Werewolf]
+        
+        var masons = 0
+        let consolidatedMasons: [RoleType] = [.Mason]
+        
+        var vampires = 0
+        let consolidatedVamipres: [RoleType] = [.Vampire]
+        
+        for player in livingActors {
+            let playerRole = player.roleType()
+            if consolidatedWolves.contains(playerRole) {
+                werewolves += 1
+            } else if consolidatedMasons.contains(playerRole) {
+                masons += 1
+            } else if consolidatedVamipres.contains(playerRole) {
+                vampires += 1
+            }
+        }
     }
     
     func populateNightActors() {

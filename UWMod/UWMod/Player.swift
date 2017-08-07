@@ -19,6 +19,7 @@ class Player {
     var canVote:                            Bool
     var isAssigned:                         Bool
     var hasActedTonight:                    Bool
+    var hasActedToday:                      Bool
     var isNightActivePlayer:                Bool
     var killedBy:                           String
     
@@ -43,6 +44,7 @@ class Player {
         self.isAssigned                     = false
         self.isNightActivePlayer            = false
         self.hasActedTonight                = false
+        self.hasActedToday                  = false
         self.killedBy                       = ""
         
         self.affectingPlayers               = [:]
@@ -96,8 +98,21 @@ class Player {
     // MARK: - Effect-related functions
     
     public func isAffectedBy(condition: PlayerEffects) -> Bool {
-        if self.currentConditions.contains(condition) {
-            return true
+        if currentConditions.contains(condition) { return true }
+        return false
+    }
+    
+    public func isAffectedBy(player: Player) -> Bool {
+        
+        return false
+    }
+    
+    public func isAffectedBy(role roleType: RoleType, forCondition effect: PlayerEffects) -> Bool {
+        
+        if playersIneligibleForEffect[effect] != nil {
+            for player in playersIneligibleForEffect[effect]! {
+                if player.role.type == roleType { return true }
+            }
         }
         
         return false
@@ -210,9 +225,41 @@ class Player {
         return false
     }
     
+    // MARK: - Role abilities
+    
+    func checkRoleForActivation() {
+        role.checkForActivation()
+    }
+    
+    // Protection
+    public func protect(playerToProtect: Player, protector: Player) {
+        let kindOfRole = role.type
+        let effect: PlayerEffects = .Protection
+        
+        switch kindOfRole {
+        case .Bodyguard:
+            
+            if canPerformEffect(condition: effect, player: playerToProtect) {
+                
+                // Keep track of a single protected target
+                affectSinglePlayer(condition: effect, player: playerToProtect)
+                affectSingleTargetInIneligibleList(condition: effect, player: playerToProtect)
+                
+                playerToProtect.addEffectFromOtherPlayers(condition: effect,
+                                                          causedBy: protector)
+            }
+        default: break
+            // Do nothing
+        }
+        
+    }
+    
+}
+
+extension Player {
     
     // MARK: - Role variable functions
-    // This abstraction layer prevents views from reaching into player and accessing
+    // This abstraction layer prevents views from having to reach into player and accessing
     // the Role object directly.
     
     func roleName() -> String {
@@ -270,35 +317,4 @@ class Player {
     func roleIsActivated() -> Bool {
         return role.isActivated
     }
-    
-    
-    // MARK: - Role abilities
-    
-    func checkRoleForActivation() {
-        role.checkForActivation()
-    }
-    
-    // Protection
-    public func protect(playerToProtect: Player, protector: Player) {
-        let kindOfRole = role.type
-        let effect: PlayerEffects = .Protection
-        
-        switch kindOfRole {
-        case .Bodyguard:
-            
-            if canPerformEffect(condition: effect, player: playerToProtect) {
-                
-                // Keep track of a single protected target
-                affectSinglePlayer(condition: effect, player: playerToProtect)
-                affectSingleTargetInIneligibleList(condition: effect, player: playerToProtect)
-                
-                playerToProtect.addEffectFromOtherPlayers(condition: effect,
-                                                          causedBy: protector)
-            }
-        default: break
-            // Do nothing
-        }
-        
-    }
-    
 }
