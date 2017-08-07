@@ -13,7 +13,7 @@ import Foundation
 // spot for ease of access.
 enum UWTeam: String {
     case TeamWerewolf       = "Werewolf"
-    case TeamVillage        = "Village"
+    case TeamVillage        = "Villager"
     case TeamCult           = "The Cult"
     case TeamBlob           = "The Blob"
     case TeamChupacabra     = "Chupacabra"
@@ -36,6 +36,7 @@ enum UWNights {
 
 
 enum DaytimeCardType {
+    // Team based cards
     case GeneralInfoCard
     case BlobTeamCard
     case BoegymanTeamCard
@@ -49,6 +50,9 @@ enum DaytimeCardType {
     case WerewolfTeamCard
     case ZombieTeamCard
     case GraveyardCard
+    
+    // Indivitual cards - cards like the Witch who has protected AND poisoned someone.
+    case WitchCard
 }
 
 // To be added as time goes by.

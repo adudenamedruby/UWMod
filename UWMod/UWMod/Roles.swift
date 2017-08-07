@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum RoleType {
+enum RoleType: String {
     
     case AnyRole
     
@@ -144,46 +144,6 @@ class Role {
         // All base roles are activated by default and do not change
     }
 }
-//
-//class Bodyguard: Role {
-//
-//    var currrentlyProtected: Player?
-//    var lastProtected: Player?
-//    
-//    override init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], wakeTime: [UWNights], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
-//        super.init(name: name, type: type, description: description, roleExplanation: roleExplanation, impact: impact, priority: priority, powerChoice: powerChoice, team: team, wakeTime: wakeTime, image: image, isNightActiveRole: isNightActiveRole, notes: notes)
-//    }
-//    
-//    public func protect(player: Player) {
-//        stopProtectingCurrentlyProtectedPlayer()
-//        if canProtect(player: player) {
-//            currrentlyProtected                 = player
-//        }
-//    }
-//    
-//    private func canProtect(player: Player) -> Bool {
-//        if lastProtected != nil {
-//            if lastProtected! === player {
-//                return false
-//            }
-//        }
-//        
-//        return true
-//    }
-//    
-//    private func stopProtectingCurrentlyProtectedPlayer() {
-//        if currrentlyProtected != nil {
-//            
-//            let indexOfCondition = currrentlyProtected?.currentConditions.index(of: .Protection)
-//            currrentlyProtected?.currentConditions.remove(at: indexOfCondition!)
-//            
-//            
-//            lastProtected                                   = currrentlyProtected
-//            currrentlyProtected                             = nil
-//        }
-//    }
-//}
-
 
 
 

@@ -77,7 +77,13 @@ class Player {
         }
     }
     
-    func determineDaytimeInfoCardForPlayer() {
+    public func determineDaytimeInfoCardForActor() {
+        
+        determineDaytimeInfoCardForTeam()
+        determineDaytimeInfoCardForPlayer()
+    }
+    
+    private func determineDaytimeInfoCardForTeam() {
         
         for teamX in self.team {
             if teamX == .TeamWerewolf {
@@ -88,7 +94,13 @@ class Player {
         }
     }
     
-    public func addAppropriateCard(daytimeCard: DaytimeCardType) {
+    private func determineDaytimeInfoCardForPlayer() {
+        
+        //let playerRole = role.type
+        
+    }
+    
+    private func addAppropriateCard(daytimeCard: DaytimeCardType) {
         if !daytimeInfoCards.contains(daytimeCard) {
             daytimeInfoCards.append(daytimeCard)
         }
@@ -227,7 +239,7 @@ class Player {
     
     // MARK: - Role abilities
     
-    func checkRoleForActivation() {
+    private func checkRoleForActivation() {
         role.checkForActivation()
     }
     

@@ -18,6 +18,7 @@ class Game {
     private var _currentNight:              Int
     private var _currentDay:                Int
     private var _firstNight:                Bool
+    private var _nightActors:               [Player]
     
     var currentNight: Int {
         get { return _currentNight }
@@ -30,18 +31,27 @@ class Game {
         get { return _firstNight }
     }
     
-    var nighttimeEliminations:              Int
-    var daytimeEliminations:                Int
+    var nightActors: [Player] {
+        get {
+            let consolidatedRoles = consolidateNightActors()
+            
+            if consolidatedRoles.count > 0 {
+                return consolidatedRoles
+            }
+            
+            return _nightActors
+        }
+    }
     
-    /// Player & roles before they are assigned
+    /// Player & roles before they are assigned to each other.
     var availableRoster:                    [Role]
     var availablePlayers:                   [Player]
     
+    var nighttimeEliminations:              Int
+    var daytimeEliminations:                Int
     var playersEliminatedThisPhase:         String
     var playersProtectedThisPhase:          String
     var daytimeInfoCards:                   [DaytimeCardType]
-    var nightActors:                        [Player]
-    var consolidatedNightActors:            [Player]
     var livingActors:                       [Player]
     var playersToBeEliminated:              [Player]
     var deadActors:                         [Player]
@@ -58,11 +68,11 @@ class Game {
         self._firstNight                    = true
         self._currentNight                  = 1
         self._currentDay                    = 1
+        self._nightActors                   = []
+        
         self.areThereDeadPlayers            = false
         self.nighttimeEliminations          = 1
         self.daytimeEliminations            = 1
-        self.nightActors                    = []
-        self.consolidatedNightActors        = []
         self.livingActors                   = []
         self.playersToBeEliminated          = []
         self.deadActors                     = []
@@ -94,7 +104,7 @@ class Game {
     
     private func assignInfoCardsToPlayers() {
         for actor in livingActors {
-            actor.determineDaytimeInfoCardForPlayer()
+            actor.determineDaytimeInfoCardForActor()
         }
     }
     
@@ -227,13 +237,14 @@ class Game {
     
     // MARK: - Night functions
     
-    func finishNight() {
+    public func finishNight() {
         
         if firstNight {
             _firstNight = false
             populateNightActors()
         }
         
+        resetPlayerNightActions()
         clearPhaseReport()
         determineNumberOfWerewolfEliminations()  // Figure out where this goes in order
         assignInfoCardsToPlayers()
@@ -245,16 +256,9 @@ class Game {
         _currentNight += 1
     }
     
-    private func resetPlayerNightActions() {
-        for player in livingActors {
-            player.hasActedTonight = false
-        }
-    }
-    
-    // MARK: - Day functions
-    
-    func finishDay() {
+    public func finishDay() {
         
+        resetPlayerDayActions()
         clearPhaseReport()
         determineNumberOfWerewolfEliminations() // figure out where whis goes in order
         assignInfoCardsToPlayers()
@@ -265,7 +269,19 @@ class Game {
         _currentDay += 1
     }
     
-    func setDeadPlayerCheck() {
+    private func resetPlayerNightActions() {
+        for player in livingActors {
+            player.hasActedTonight = false
+        }
+    }
+    
+    private func resetPlayerDayActions() {
+        for player in livingActors {
+            player.hasActedToday = false
+        }
+    }
+    
+    private func setDeadPlayerCheck() {
         if !areThereDeadPlayers {
             if deadActors.count > 0 {
                 areThereDeadPlayers = true
@@ -276,7 +292,7 @@ class Game {
     
     // MARK: - General game functions
     
-    func setupInfoCards() {
+    private func setupInfoCards() {
         var tempArray: [DaytimeCardType] = [.GeneralInfoCard]
         
         for player in livingActors {
@@ -296,15 +312,18 @@ class Game {
         self.daytimeInfoCards = tempArray
     }
     
-    func determineNumberOfWerewolfEliminations() {
+    private func determineNumberOfWerewolfEliminations() {
         werewolfEliminationsPerNight = 1
     }
     
-    func evaluateNightActorsOrder() {
-        self.nightActors.sort(by: { $0.rolePriority() < $1.rolePriority()})
+    private func evaluateNightActorsOrder() {
+        self._nightActors = _nightActors.sorted(by: { $0.rolePriority() < $1.rolePriority()})
     }
     
-    func consolidateNightActors() {
+    private func consolidateNightActors() -> [Player] {
+        
+        let consolidatedPlayers: [Player] = []
+        
         var werewolves = 0
         let consolidatedWolves: [RoleType] = [.Werewolf]
         
@@ -314,7 +333,7 @@ class Game {
         var vampires = 0
         let consolidatedVamipres: [RoleType] = [.Vampire]
         
-        for player in livingActors {
+        for player in _nightActors {
             let playerRole = player.roleType()
             if consolidatedWolves.contains(playerRole) {
                 werewolves += 1
@@ -324,12 +343,16 @@ class Game {
                 vampires += 1
             }
         }
+        
+        
+        
+        return consolidatedPlayers
     }
     
-    func populateNightActors() {
+    private func populateNightActors() {
         for actor in self.livingActors {
             if actor.isNightActivePlayer {
-                nightActors.append(actor)
+                _nightActors.append(actor)
             }
         }
     }
