@@ -17,6 +17,7 @@ class Player {
     var isMute:                             Bool
     var canVote:                            Bool
     var isAssigned:                         Bool
+    var hasActedTonight:                    Bool
     
     // Role affected states
     // Protection checks
@@ -47,6 +48,7 @@ class Player {
         self.canVote                        = true
         self.isAssigned                     = false
         self.isNightActivePlayer            = false
+        self.hasActedTonight                = false
         
         self.isProtectedByBodyguard         = false
         

@@ -190,7 +190,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
                 if !GAME.firstNight && GAME.werewolfEliminationsPerNight != 0 {
                     presentWerewolfAssassination()
                 }
-            } else if player?.role.type == .Bodyguard {
+            } else if player?.role.type == .Bodyguard && !((player?.hasActedTonight)!) {
                 presentBodyguardView()
             }
         }

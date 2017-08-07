@@ -16,21 +16,21 @@ class AssignPlayer: UIView {
 
     // MARK: - Outlets
     
-    @IBOutlet var contentView: UIView!
-    @IBOutlet weak var assignButton: PMSuperButton!
-    @IBOutlet weak var okButton: PMSuperButton!
-    @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var roleNotes: UILabel!
+    @IBOutlet var contentView:          UIView!
+    @IBOutlet weak var assignButton:    PMSuperButton!
+    @IBOutlet weak var okButton:        PMSuperButton!
+    @IBOutlet weak var pickerView:      UIPickerView!
+    @IBOutlet weak var roleNotes:       UILabel!
     
     
     // MARK: - Variables
     
     // passed variables
-    weak var delegate: UpdateCardDelegate?
-    var role: Role?
+    weak var delegate:                  UpdateCardDelegate?
+    var role:                           Role?
     // assigned variables
-    var chosenPlayer: Player!
-    var unassignedPlayers: [Player]!
+    var chosenPlayer:                   Player!
+    var unassignedPlayers:              [Player]!
     
     
     // MARK: - Initializers
@@ -55,27 +55,27 @@ class AssignPlayer: UIView {
     private func setupView() {
         Bundle.main.loadNibNamed("AssignPlayer", owner: self, options: nil)
         addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        contentView.frame               = self.bounds
+        contentView.autoresizingMask    = [.flexibleHeight, .flexibleWidth]
         
-        contentView.backgroundColor = STYLE.Tan
+        contentView.backgroundColor     = STYLE.Tan
         
-        roleNotes.text = role?.notes
-        pickerView.isHidden = true
-        okButton.isHidden = true
+        roleNotes.text                  = role?.notes
+        pickerView.isHidden             = true
+        okButton.isHidden               = true
         
-        pickerView.delegate = self
-        pickerView.dataSource = self
+        pickerView.delegate             = self
+        pickerView.dataSource           = self
         
     }
     
     func setupUnassignedPlayers() {
-        unassignedPlayers = unassignedPlayerList()
-        chosenPlayer = unassignedPlayers.first
+        unassignedPlayers               = unassignedPlayerList()
+        chosenPlayer                    = unassignedPlayers.first
     }
     
     func unassignedPlayerList() -> [Player] {
-        var unassignedPlayerList: [Player] = []
+        var unassignedPlayerList:       [Player] = []
         
         for player in GAME.availablePlayers {
             if !player.isAssigned {
@@ -89,12 +89,12 @@ class AssignPlayer: UIView {
     }
     
     @IBAction func assignButtonTapped(_ sender: Any) {
-        assignButton.isEnabled = false
-        assignButton.isHidden = true
-        roleNotes.isHidden = true
+        assignButton.isEnabled          = false
+        assignButton.isHidden           = true
+        roleNotes.isHidden              = true
         
-        pickerView.isHidden = false
-        okButton.isHidden = false
+        pickerView.isHidden             = false
+        okButton.isHidden               = false
     }
 
     @IBAction func okButtonTapped(_ sender: Any) {

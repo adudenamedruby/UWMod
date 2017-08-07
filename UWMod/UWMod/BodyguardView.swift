@@ -12,20 +12,20 @@ class BodyguardView: UIView {
     
     // MARK: - Outlets
     
-    @IBOutlet var contentView: UIView!
-    @IBOutlet weak var protectButton: PMSuperButton!
-    @IBOutlet weak var okButton: PMSuperButton!
-    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet var contentView:              UIView!
+    @IBOutlet weak var protectButton:       PMSuperButton!
+    @IBOutlet weak var okButton:            PMSuperButton!
+    @IBOutlet weak var pickerView:          UIPickerView!
     
     
     // MARK: - Variables
     
     // passed variables
-    weak var delegate: UpdateCardDelegate?
-    var currentPlayer: Player?
+    weak var delegate:                      UpdateCardDelegate?
+    var currentPlayer:                      Player?
     // assigned variables
-    var chosenPlayer: Player!
-    var playersAvailableForProtection: [Player]!
+    var chosenPlayer:                       Player!
+    var playersAvailableForProtection:      [Player]!
     
     
     // MARK: - Initializers
@@ -50,29 +50,29 @@ class BodyguardView: UIView {
     private func setupView() {
         Bundle.main.loadNibNamed("BodyguardView", owner: self, options: nil)
         addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        contentView.frame               = self.bounds
+        contentView.autoresizingMask    = [.flexibleHeight, .flexibleWidth]
         
-        contentView.backgroundColor = STYLE.Tan
+        contentView.backgroundColor     = STYLE.Tan
         
-        pickerView.isHidden = true
-        okButton.isHidden = true
+        pickerView.isHidden             = true
+        okButton.isHidden               = true
         
-        pickerView.delegate = self
-        pickerView.dataSource = self
+        pickerView.delegate             = self
+        pickerView.dataSource           = self
         
     }
     
     func setupUnprotectedPlayers() {
-        playersAvailableForProtection = unprotectedPlayersList()
-        chosenPlayer = playersAvailableForProtection.first
+        playersAvailableForProtection   = unprotectedPlayersList()
+        chosenPlayer                    = playersAvailableForProtection.first
     }
     
     func unprotectedPlayersList() -> [Player] {
         var unprotectedPlayersList: [Player] = []
         
         for player in GAME.livingActors {
-            if !player.isProtectedByBodyguard || player !== currentPlayer {
+            if !player.isProtectedByBodyguard && player !== currentPlayer {
                 unprotectedPlayersList.append(player)
             }
         }
@@ -83,28 +83,24 @@ class BodyguardView: UIView {
     }
     
     @IBAction func protectButtonTapped(_ sender: Any) {
-        protectButton.isEnabled = false
-        protectButton.isHidden = true
+        protectButton.isEnabled         = false
+        protectButton.isHidden          = true
         
-        pickerView.isHidden = false
-        okButton.isHidden = false
+        pickerView.isHidden             = false
+        okButton.isHidden               = false
     }
     
     @IBAction func okButtonTapped(_ sender: Any) {
-        //currentPlayer?.role.protect(player: chosenPlayer)
+        
+        if let player = currentPlayer?.role as? Bodyguard {
+            player.protect(player: chosenPlayer)
+            currentPlayer?.hasActedTonight = true
+        }
         
         delegate?.updateCard()
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }
+
 
 extension BodyguardView: UIPickerViewDelegate, UIPickerViewDataSource {
     
