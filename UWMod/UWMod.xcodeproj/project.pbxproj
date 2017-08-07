@@ -12,6 +12,8 @@
 		120982111F26BBE700EC5D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 120982101F26BBE700EC5D21 /* Assets.xcassets */; };
 		120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120982121F26BBE700EC5D21 /* LaunchScreen.storyboard */; };
 		122FC68F1F37660600E0E2C9 /* EndGamePopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */; };
+		122FC6961F377BB200E0E2C9 /* BodyguardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122FC6951F377BB200E0E2C9 /* BodyguardView.swift */; };
+		122FC6981F377BCE00E0E2C9 /* BodyguardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 122FC6971F377BCE00E0E2C9 /* BodyguardView.xib */; };
 		123BD0D31F2F6BF600B99019 /* Popups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123BD0D21F2F6BF600B99019 /* Popups.storyboard */; };
 		123BD0D51F2F6C1600B99019 /* AlertsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0D41F2F6C1600B99019 /* AlertsVC.swift */; };
 		123BD0D71F2FE66400B99019 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0D61F2FE66400B99019 /* StringExtensions.swift */; };
@@ -80,6 +82,8 @@
 		120982131F26BBE700EC5D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		120982151F26BBE700EC5D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGamePopupVC.swift; sourceTree = "<group>"; };
+		122FC6951F377BB200E0E2C9 /* BodyguardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyguardView.swift; sourceTree = "<group>"; };
+		122FC6971F377BCE00E0E2C9 /* BodyguardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BodyguardView.xib; sourceTree = "<group>"; };
 		123BD0D21F2F6BF600B99019 /* Popups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popups.storyboard; sourceTree = "<group>"; };
 		123BD0D41F2F6C1600B99019 /* AlertsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsVC.swift; sourceTree = "<group>"; };
 		123BD0D61F2FE66400B99019 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -181,10 +185,21 @@
 			path = UWMod;
 			sourceTree = "<group>";
 		};
+		122FC6921F377A5400E0E2C9 /* ContainerViews */ = {
+			isa = PBXGroup;
+			children = (
+				123BD0ED1F31555B00B99019 /* AssignPlayer.swift */,
+				122FC6951F377BB200E0E2C9 /* BodyguardView.swift */,
+				124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */,
+			);
+			name = ContainerViews;
+			sourceTree = "<group>";
+		};
 		123BD0E31F3146FA00B99019 /* Night XIBs */ = {
 			isa = PBXGroup;
 			children = (
 				123BD0E51F31474A00B99019 /* AssignPlayer.xib */,
+				122FC6971F377BCE00E0E2C9 /* BodyguardView.xib */,
 				124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */,
 			);
 			name = "Night XIBs";
@@ -196,8 +211,7 @@
 				123BD0DB1F3000A000B99019 /* MainNightVC.swift */,
 				12EC77E81F2BDAE00026C667 /* NightVC.swift */,
 				123BD0D91F2FF34D00B99019 /* NightCell.swift */,
-				123BD0ED1F31555B00B99019 /* AssignPlayer.swift */,
-				124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */,
+				122FC6921F377A5400E0E2C9 /* ContainerViews */,
 			);
 			name = Night;
 			sourceTree = "<group>";
@@ -430,6 +444,7 @@
 				1261C2BF1F32AA960099D759 /* GeneralInfo.xib in Resources */,
 				124F74F81F35FF4D00F03E49 /* WerewolfAssassination.xib in Resources */,
 				123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */,
+				122FC6981F377BCE00E0E2C9 /* BodyguardView.xib in Resources */,
 				124F74F01F3549BB00F03E49 /* VillageTeamCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +500,7 @@
 				7736D09A1F33A32000555037 /* HelpCell.swift in Sources */,
 				124F74F41F35FF3000F03E49 /* WerewolfAssassination.swift in Sources */,
 				12EC77EB1F2BDAEA0026C667 /* DayVC.swift in Sources */,
+				122FC6961F377BB200E0E2C9 /* BodyguardView.swift in Sources */,
 				12EC78001F2BE2FE0026C667 /* TisprCardStackViewCell.swift in Sources */,
 				77B2B0061F34D7AC0032A36B /* Graveyard.swift in Sources */,
 				7736D0921F3399BC00555037 /* HelpVC.swift in Sources */,

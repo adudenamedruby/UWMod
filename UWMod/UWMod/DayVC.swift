@@ -17,6 +17,7 @@ class DayVC: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var endDayTitleLabel: OldTan!
     
+    @IBOutlet weak var voteButton: PMSuperButton!
     @IBOutlet weak var lynchButton: UIButton!
     @IBOutlet weak var endDayButton: UIButton!
     
@@ -44,6 +45,10 @@ class DayVC: UIViewController {
         backButton.alpha = 0
         daytimeBackground.alpha = 0
         
+        voteButton.alpha = 0
+        lynchButton.alpha = 0
+        endDayButton.alpha = 0
+        
         mainCardView.layer.cornerRadius = STYLE.CornerRadius
         mainCardView.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown
@@ -60,6 +65,10 @@ class DayVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         daytimeBackground.alpha = 1
+        
+        voteButton.fadeIn()
+        lynchButton.fadeIn()
+        endDayButton.fadeIn()
     }
     
     
@@ -72,7 +81,15 @@ class DayVC: UIViewController {
         self.present(lynchView, animated: true, completion: nil)
     }
     
+    @IBAction func voteTrackerPressed(_ sender: Any) {
+        
+        
+    }
+
     @IBAction func endDayPressed(_ sender: Any) {
+        voteButton.fadeOut()
+        lynchButton.fadeOut()
+        endDayButton.fadeOut()
         fadeDayEndControlsIn()
     }
     

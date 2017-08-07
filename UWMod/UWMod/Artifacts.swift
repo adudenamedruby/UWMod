@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Leave alone for future updates. Currently is not going to be implemented.
+
 enum UWEffectType: String {
     case Ongoing                = "Ongoing"
     case SingeUse               = "Single use"

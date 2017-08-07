@@ -28,7 +28,7 @@ class PlayerSelectVC: UIViewController {
     let transition = CircularTransition()
     let textCellIndentifier = "PlayerNameCell"
 
-    var savedPlayers: [String] = ["Ted Alspach"]
+    var savedPlayers: [String] = []
     var villageSize: Int = 0
     var selectedPlayers: [Int:String] = [:]
     var passedPlayers: [Player] = []

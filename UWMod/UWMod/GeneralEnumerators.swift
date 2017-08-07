@@ -8,9 +8,12 @@
 
 import Foundation
 
+
+// Different enumerators that will be used throughout the app. Good to have them in one
+// spot for ease of access.
 enum UWTeam: String {
     case TeamWerewolf       = "Werewolf"
-    case TeamVillage        = "Village"
+    case TeamVillage        = "Villager"
     case TeamCult           = "The Cult"
     case TeamBlob           = "The Blob"
     case TeamChupacabra     = "Chupacabra"
@@ -22,6 +25,7 @@ enum UWTeam: String {
     case TeamBoegyman       = "Boegyman"
 }
 
+
 enum UWNights {
     case Never
     case EveryNight
@@ -30,7 +34,9 @@ enum UWNights {
     case Third
 }
 
+
 enum DaytimeCardType {
+    // Team based cards
     case GeneralInfoCard
     case BlobTeamCard
     case BoegymanTeamCard
@@ -44,4 +50,24 @@ enum DaytimeCardType {
     case WerewolfTeamCard
     case ZombieTeamCard
     case GraveyardCard
+    
+    // Indivitual cards - cards like the Witch who has protected AND poisoned someone.
+    case WitchCard
+}
+
+// To be added as time goes by.
+enum PlayerEffects {
+    case Protection
+    case Hypnosis
+    case Silence
+    case Ostracism
+    case Lobotoby           // zombie
+}
+
+
+enum PlayersToTrack {
+    case Single
+    case Many
+    case AffectingList
+    case IneligibilityList
 }

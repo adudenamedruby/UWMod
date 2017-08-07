@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum RoleType {
+enum RoleType: String {
     
     case AnyRole
     
@@ -67,7 +67,7 @@ enum RoleType {
     case TheThing
     case ToughGuy
     case Troublemaker
-    case Vamprie
+    case Vampire
     case VillageIdiot
     case Villager
     case VirginiaWoolf
@@ -101,9 +101,11 @@ class Role {
     let type:                       RoleType
     let description:                String
     let roleExplanation:            String
-    let notes:                      String?
+    let notes:                      String
     let impact:                     Int
     let priority:                   Int
+    let team:                       [UWTeam]
+    let wakeTime:                   [UWNights]
     let image:                      UIImage
     
     // this should change the priority of special roles depending on game settings
@@ -111,16 +113,14 @@ class Role {
     // assigned role. However, if set to manually assigned, its priority variable would be
     // a custom getter that returns a priority on whether a role is called or not.
     var isManuallyAssigned:         Bool
-    
-    var wakeTime:                   [UWNights]
+    var availableEffects:           [PlayerEffects]
     var canWake:                    Bool
     var powerChoice:                Bool
     var powerUsed:                  Bool
-    var team:                       [UWTeam]
     var isNightActiveRole:          NightActiveStatus
     var isActivated:                Bool
     
-    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], wakeTime: [UWNights], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
+    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], availableEffects: [PlayerEffects], wakeTime: [UWNights], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
         self.name                   = name
         self.type                   = type
         self.description            = description
@@ -130,6 +130,7 @@ class Role {
         self.priority               = priority
         self.image                  = image
         
+        self.availableEffects       = availableEffects
         self.isManuallyAssigned     = true
         self.team                   = team
         self.wakeTime               = wakeTime
@@ -139,16 +140,33 @@ class Role {
         self.isNightActiveRole      = isNightActiveRole
         self.isActivated            = true
     }
+    
+    func checkForActivation() {
+        // All base roles are activated by default and do not change
+    }
 }
 
-//class Witch: Role {
-//    var playerToPoison: Player?
-//    var playerToSave: Player?
-//    
-//    init(name: String, description: String, impact: Int, priority: Int, powerChoice: Bool, team: UWTeam, numberOfEliminations: Int, playerToPoison: Player?, playerToSave: Player?) {
-//        super.init(name: name, description: description, impact: impact, priority: priority, powerChoice: powerChoice, team: team, numberOfEliminations: numberOfEliminations)
-//
-//        self.playerToPoison = playerToPoison
-//        self.playerToSave = playerToSave
-//    }
-//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

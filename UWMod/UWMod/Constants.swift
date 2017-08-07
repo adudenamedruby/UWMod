@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+
+// Defire all the different style things required thourghout the app for later QoL
 struct StyleConstants {
     
     let CornerRadius = CGFloat(15)

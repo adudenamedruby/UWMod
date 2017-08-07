@@ -25,8 +25,8 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     @IBOutlet weak var darknessView: UIView!
     @IBOutlet weak var headerTitleLabel: OldTan!
     
-    var player: Player?
-    var role: Role?
+    public var player: Player?
+    public var role: Role?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,7 +50,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         resetHelpView()
     }
     
-    func configureCell() {
+    public func configureCell() {
         
         if GAME.firstNight {
             player = nil
@@ -71,7 +71,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         fadePopupOut()
     }
     
-    func fadePopupIn() {
+    private func fadePopupIn() {
         darknessView.isHidden = false
         darknessView.fadeIn(duration: 0.2, delay: 0)
 
@@ -79,7 +79,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         popupOuterView.fadeIn(duration: 0.2, delay: 0)
     }
     
-    func fadePopupOut() {
+    private func fadePopupOut() {
         popupOuterView.fadeOut(duration: 0.2, delay: 0, completion: {
             (finished: Bool) -> Void in
             self.popupOuterView.isHidden = true
@@ -91,14 +91,14 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         })
     }
     
-    func resetHelpView() {
+    private func resetHelpView() {
         popupOuterView.isHidden = true
         popupOuterView.alpha = 0
         darknessView.isHidden = true
         darknessView.alpha = 0
     }
     
-    func loadPlayerName() {
+    private func loadPlayerName() {
         if player != nil {
             playerNameLabel.text = "(\((player?.name)!))"
         } else {
@@ -106,7 +106,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         }
     }
     
-    func checkPlayerForLife() {
+    private func checkPlayerForLife() {
         if player != nil {
             if !(player?.isAlive)! {
                 roleTitleLabel.textColor = STYLE.Grey
@@ -119,7 +119,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         }
     }
     
-    func setupCardTextBasedOnPlayerOrRole() {
+    private func setupCardTextBasedOnPlayerOrRole() {
         
         if GAME.firstNight {
             for player in GAME.availablePlayers {
@@ -132,11 +132,11 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         }
         
         if player != nil {
-            roleIconImage.image = player?.role.image
-            let roleTitle = player?.role.name
+            roleIconImage.image = player?.roleImage()
+            let roleTitle = player?.roleName()
             roleTitleLabel.attributedText = roleTitle?.styleTitleLabel(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
-            roleDescritpionLabel.text = player?.role.description
-            textView.text = player?.role.roleExplanation
+            roleDescritpionLabel.text = player?.roleDescription()
+            textView.text = player?.roleExplanation()
             
         } else {
             roleIconImage.image = role?.image
@@ -149,7 +149,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         textView.setContentOffset(CGPoint.zero, animated: false)
     }
     
-    func unassignedPlayerList() -> [Player] {
+    private func unassignedPlayerList() -> [Player] {
         var unassignedPlayerList: [Player] = []
         
         for player in GAME.availablePlayers {
@@ -161,7 +161,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         return unassignedPlayerList
     }
     
-    func magicallyAssignLastPlayer() {
+    private func magicallyAssignLastPlayer() {
         let unassignedPlayers = unassignedPlayerList()
         if unassignedPlayers.count == 1 {
             // if there's only one player left unassigned, the assign him to the last role
@@ -171,14 +171,14 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         }
     }
     
-    func updateCard() {
+    public func updateCard() {
         configureCell()
     }
     
     
     // MARK: - Manage & load specific subviews
     
-    func loadSubviews() {
+    private func loadSubviews() {
         clearSubview()
         
         if (GAME.firstNight && player == nil) {
@@ -186,27 +186,35 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             
         } else if (player?.isAlive)! {
          
-            if player?.role.type == .Werewolf {
+            if player?.roleType() == .Werewolf {
                 if !GAME.firstNight && GAME.werewolfEliminationsPerNight != 0 {
                     presentWerewolfAssassination()
                 }
+            } else if player?.roleType() == .Bodyguard && !((player?.hasActedTonight)!) {
+                presentBodyguardView()
             }
         }
     }
     
-    func clearSubview() {
+    private func clearSubview() {
         for subUIView in containerView.subviews as [UIView] {
             subUIView.removeFromSuperview()
         }
     }
     
-    func presentAssignPlayer() {
+    private func presentAssignPlayer() {
         let localizedActionView = AssignPlayer(frame: CGRect(x: 0, y: 0, width: 310, height: 140), withRole: role!)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }
     
-    func presentWerewolfAssassination() {
+    private func presentBodyguardView() {
+        let localizedActionView = BodyguardView(frame: CGRect(x: 0, y: 0, width: 310, height: 140), withPlayer: player!)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    private func presentWerewolfAssassination() {
         let localizedActionView = WerewolfAssassination(frame: CGRect(x: 0, y: 0, width: 310, height: 140))
         self.containerView.addSubview(localizedActionView)
     }
