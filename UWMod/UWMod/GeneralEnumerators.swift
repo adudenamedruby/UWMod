@@ -45,3 +45,11 @@ enum DaytimeCardType {
     case ZombieTeamCard
     case GraveyardCard
 }
+
+enum PlayerEffects {
+    case Protection
+    case Hypnosis
+    case Silence
+    case Ostracism
+    case Lobotoby           // zombie
+}

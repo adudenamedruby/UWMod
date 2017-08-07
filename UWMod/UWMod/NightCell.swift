@@ -132,11 +132,11 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         }
         
         if player != nil {
-            roleIconImage.image = player?.role.image
-            let roleTitle = player?.role.name
+            roleIconImage.image = player?.roleImage()
+            let roleTitle = player?.roleName()
             roleTitleLabel.attributedText = roleTitle?.styleTitleLabel(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
-            roleDescritpionLabel.text = player?.role.description
-            textView.text = player?.role.roleExplanation
+            roleDescritpionLabel.text = player?.roleDescription()
+            textView.text = player?.roleExplanation()
             
         } else {
             roleIconImage.image = role?.image
@@ -186,11 +186,11 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             
         } else if (player?.isAlive)! {
          
-            if player?.role.type == .Werewolf {
+            if player?.roleType() == .Werewolf {
                 if !GAME.firstNight && GAME.werewolfEliminationsPerNight != 0 {
                     presentWerewolfAssassination()
                 }
-            } else if player?.role.type == .Bodyguard && !((player?.hasActedTonight)!) {
+            } else if player?.roleType() == .Bodyguard && !((player?.hasActedTonight)!) {
                 presentBodyguardView()
             }
         }

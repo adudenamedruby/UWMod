@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum GamePhase {
+    case NightPhase
+    case DayPhase
+}
+
 class Game {
     
     var firstNight:                         Bool
@@ -146,7 +151,7 @@ class Game {
         var players = ""
         
         for player in fromList {
-            if player.role.type == ofRoleType {
+            if player.roleType() == ofRoleType {
                 let temp = fetchSinglePlayer(player: player, withRole: withRole, separatedByComma: separatedByComma)
                 players = players + temp
             }
@@ -185,7 +190,7 @@ class Game {
             separator = ", "
         }
         
-        return "\(player.name) (\(player.role.name))\(separator)"
+        return "\(player.name) (\(player.roleName()))\(separator)"
     }
     
     func retrievePlayerNameWithoutRole(player: Player, separatedByComma: Bool = false) -> String {
@@ -273,7 +278,7 @@ class Game {
     }
     
     func evaluateNightActorsOrder() {
-        self.nightActors.sort(by: { $0.role.priority < $1.role.priority})
+        self.nightActors.sort(by: { $0.rolePriority() < $1.rolePriority()})
     }
     
     func populateNightActors() {

@@ -101,7 +101,7 @@ class Role {
     let type:                       RoleType
     let description:                String
     let roleExplanation:            String
-    let notes:                      String?
+    let notes:                      String
     let impact:                     Int
     let priority:                   Int
     let image:                      UIImage
@@ -139,26 +139,29 @@ class Role {
         self.isNightActiveRole      = isNightActiveRole
         self.isActivated            = true
     }
+    
+    func checkForActivation() {
+        // All base roles are activated by default and do not change
+    }
 }
 
 class Bodyguard: Role {
 
-    var currrentlyProtecting: Player?
+    var currrentlyProtected: Player?
     var lastProtected: Player?
     
     override init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], wakeTime: [UWNights], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
         super.init(name: name, type: type, description: description, roleExplanation: roleExplanation, impact: impact, priority: priority, powerChoice: powerChoice, team: team, wakeTime: wakeTime, image: image, isNightActiveRole: isNightActiveRole, notes: notes)
     }
     
-    func protect(player: Player) {
+    public func protect(player: Player) {
         stopProtectingCurrentlyProtectedPlayer()
         if canProtect(player: player) {
-            currrentlyProtecting = player
-            player.isProtectedByBodyguard = true
+            currrentlyProtected                 = player
         }
     }
     
-    func canProtect(player: Player) -> Bool {
+    private func canProtect(player: Player) -> Bool {
         if lastProtected != nil {
             if lastProtected! === player {
                 return false
@@ -168,11 +171,15 @@ class Bodyguard: Role {
         return true
     }
     
-    func stopProtectingCurrentlyProtectedPlayer() {
-        if currrentlyProtecting != nil {
-            currrentlyProtecting?.isProtectedByBodyguard = false
-            lastProtected = currrentlyProtecting
-            currrentlyProtecting = nil
+    private func stopProtectingCurrentlyProtectedPlayer() {
+        if currrentlyProtected != nil {
+            
+            let indexOfCondition = currrentlyProtected?.currentConditions.index(of: .Protection)
+            currrentlyProtected?.currentConditions.remove(at: indexOfCondition!)
+            
+            
+            lastProtected                                   = currrentlyProtected
+            currrentlyProtected                             = nil
         }
     }
 }

@@ -22,7 +22,7 @@ class EliminatePlayerVC: UIViewController {
     
     // MARK: - Variables
     
-    var chosenPlayer: Player!
+    var playerToBeKilled: Player!
     var eliminatedBy: RoleType?
     
     // MARK: - View Lifecycle
@@ -37,7 +37,7 @@ class EliminatePlayerVC: UIViewController {
         let headerTitle = "Player Elimination"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
-        chosenPlayer = GAME.livingActors[0]
+        playerToBeKilled = GAME.livingActors[0]
         
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -58,7 +58,7 @@ class EliminatePlayerVC: UIViewController {
         let confirmView = storyboard.instantiateViewController(withIdentifier: "confirmationPopup") as! ConfirmationPopup
         confirmView.modalTransitionStyle = .crossDissolve
         
-        confirmView.player = chosenPlayer
+        confirmView.player = playerToBeKilled
         if (eliminatedBy != nil) {
             confirmView.eliminatedBy = eliminatedBy
         }
@@ -86,6 +86,6 @@ extension EliminatePlayerVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        chosenPlayer = GAME.livingActors[row]
+        playerToBeKilled = GAME.livingActors[row]
     }
 }
