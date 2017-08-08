@@ -14,6 +14,7 @@ class Team: Player {
         super.init(name: name)
         
         self.role               = WEREWOLF_TEAM
+        self.isAssigned         = true
     }
     
     
