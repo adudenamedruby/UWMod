@@ -87,8 +87,8 @@ class GeneralInfo: UITableViewCell {
     
     private func stopTimer() {
         self.timer.invalidate()
-        self.counter        = setCurrentTime()
-        isTrackingTime      = false
+        self.counter            = setCurrentTime()
+        isTrackingTime          = false
     }
     
     public func updateTimerLabel() {
@@ -103,16 +103,17 @@ class GeneralInfo: UITableViewCell {
     
     private func timeString(time:TimeInterval) -> String {
         
-        let hours           = Int(time) / 3600
-        let minutes         = Int(time) / 60 % 60
-        let seconds         = Int(time) % 60
+        let hours               = Int(time) / 3600
+        let minutes             = Int(time) / 60 % 60
+        let seconds             = Int(time) % 60
         
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
     
     private func setCurrentTime() -> Int {
-        let timerMultiplier = GAME.currentDay - 2
-        let counterTime = GAME.settings.subsequentDayTime - (timerMultiplier * GAME.settings.changeDayBy)
+        let timerMultiplier     = GAME.currentDay - 2
+        let shortenDayBy        = (timerMultiplier * GAME.settings.changeDayBy)
+        let counterTime         = GAME.settings.subsequentDayTime - shortenDayBy
         
         if counterTime < GAME.settings.minimumDayLength {
             return GAME.settings.minimumDayLength
