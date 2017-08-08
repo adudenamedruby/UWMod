@@ -21,7 +21,7 @@ class Player {
     var hasActedTonight:                    Bool
     var hasActedToday:                      Bool
     var isNightActivePlayer:                Bool
-    var killedBy:                           String
+    var killedBy:                           RoleType?
     
     // What conditions are currently afflicting the player and by who. Done in two
     // for easier logic checks... for me, really.
@@ -45,7 +45,6 @@ class Player {
         self.isNightActivePlayer            = false
         self.hasActedTonight                = false
         self.hasActedToday                  = false
-        self.killedBy                       = ""
         
         self.affectingPlayers               = [:]
         self.affectedByPlayers              = [:]

@@ -41,14 +41,21 @@ class ConfirmationPopup: UIViewController {
     }
     
     @IBAction func yesButtonPressed(_ sender: Any) {
+        
+        if eliminatedBy != nil {
+            player.killedBy = eliminatedBy
+        }
+        
         GAME.prepareToEliminatePlayer(victim: player)
         
         let presentingVC = self.presentingViewController
         
         self.dismiss(animated: true, completion: {
-            if self.eliminatedBy == .Werewolf {
-                GAME.werewolfEliminationsPerNight -= 1
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "eliminationByWerewolf"), object: nil)
+            if self.eliminatedBy != nil {
+                if self.eliminatedBy == .Werewolf {
+                    GAME.werewolfEliminationsPerNight -= 1
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "eliminationByWerewolf"), object: nil)
+                }
             }
             presentingVC!.dismiss(animated: false, completion: nil)
             

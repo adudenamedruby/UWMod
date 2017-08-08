@@ -37,12 +37,18 @@ class GeneralInfo: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        outlineView.layer.cornerRadius      = STYLE.CornerRadius
+        outlineView.layer.cornerRadius      = STYLE.InfoCardCornerRadius
         outlineView.backgroundColor         = STYLE.Beige
-        mainCardView.layer.cornerRadius     = STYLE.CornerRadius
+        mainCardView.layer.cornerRadius     = STYLE.InfoCardCornerRadius
         mainCardView.backgroundColor        = STYLE.Tan
         headerView.backgroundColor          = STYLE.Beige
         
+        if GAME.currentDay == 1 {
+            counter                         = GAME.settings.firstDayTime
+        } else {
+            counter                         = setCurrentTime()
+        }
+    
         let headerTitle = "General Info"
         headerTitleLabel.attributedText     = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                           withColour: STYLE.Red)
@@ -56,7 +62,7 @@ class GeneralInfo: UITableViewCell {
     }
     
     
-    func configureCell() {
+    public func configureCell() {
         playersAliveLabel.text              = "\(GAME.livingActors.count)"
         playersDeadLabel.text               = "\(GAME.deadActors.count)"
         totalPlayersLabel.text              = "\(GAME.livingActors.count + GAME.deadActors.count)"
@@ -67,7 +73,7 @@ class GeneralInfo: UITableViewCell {
         
     }
     
-    func startTimer() {
+    private func startTimer() {
         if !isTrackingTime {
             self.timer = Timer.scheduledTimer(timeInterval: 1,
                                               target: self,
@@ -79,23 +85,40 @@ class GeneralInfo: UITableViewCell {
         }
     }
     
-    func stopTimer() {
+    private func stopTimer() {
         self.timer.invalidate()
-        self.counter        = 0
-        isTrackingTime      = false
+        self.counter            = setCurrentTime()
+        isTrackingTime          = false
     }
     
-    func updateTimerLabel() {
-        counter += 1
-        timeLabel.text      = timeString(time: TimeInterval(counter))
+    public func updateTimerLabel() {
+        if counter > 0 {
+            counter -= 1
+            timeLabel.text      = timeString(time: TimeInterval(counter))
+        } else {
+            stopTimer()
+            timeLabel.text      = "--:--:--"
+        }
     }
     
-    func timeString(time:TimeInterval) -> String {
+    private func timeString(time:TimeInterval) -> String {
         
-        let hours           = Int(time) / 3600
-        let minutes         = Int(time) / 60 % 60
-        let seconds         = Int(time) % 60
+        let hours               = Int(time) / 3600
+        let minutes             = Int(time) / 60 % 60
+        let seconds             = Int(time) % 60
         
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+    }
+    
+    private func setCurrentTime() -> Int {
+        let timerMultiplier     = GAME.currentDay - 2
+        let shortenDayBy        = (timerMultiplier * GAME.settings.changeDayBy)
+        let counterTime         = GAME.settings.subsequentDayTime - shortenDayBy
+        
+        if counterTime < GAME.settings.minimumDayLength {
+            return GAME.settings.minimumDayLength
+        }
+        
+        return counterTime
     }
 }
