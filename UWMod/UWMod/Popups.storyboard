@@ -18,7 +18,7 @@
         <!--AlertsVC-->
         <scene sceneID="FM5-dk-Krf">
             <objects>
-                <viewController storyboardIdentifier="mainAlert" id="JPT-HN-339" customClass="AlertsVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainAlert" modalPresentationStyle="overCurrentContext" id="JPT-HN-339" customClass="AlertsVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bCK-fb-slS"/>
                         <viewControllerLayoutGuide type="bottom" id="VF1-XY-0xS"/>
@@ -249,7 +249,7 @@
         <!--Confirmation Popup-->
         <scene sceneID="0jR-FV-kMf">
             <objects>
-                <viewController storyboardIdentifier="confirmationPopup" id="pir-Kg-dwh" customClass="ConfirmationPopup" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="confirmationPopup" modalPresentationStyle="overCurrentContext" id="pir-Kg-dwh" customClass="ConfirmationPopup" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lLx-VX-3AI"/>
                         <viewControllerLayoutGuide type="bottom" id="nxl-bd-kvb"/>
@@ -389,7 +389,7 @@
         <!--End Game PopupVC-->
         <scene sceneID="7mn-7S-Ib4">
             <objects>
-                <viewController storyboardIdentifier="endGamePopup" id="AcA-bf-mUy" customClass="EndGamePopupVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="endGamePopup" modalPresentationStyle="overCurrentContext" id="AcA-bf-mUy" customClass="EndGamePopupVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OdJ-18-6RM"/>
                         <viewControllerLayoutGuide type="bottom" id="KN5-BS-Zek"/>
@@ -525,7 +525,7 @@
         <!--Vote CounterVC-->
         <scene sceneID="xHB-7p-vcw">
             <objects>
-                <viewController storyboardIdentifier="voteCounterPopup" id="UIq-kJ-1r7" customClass="VoteCounterVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="voteCounterPopup" modalPresentationStyle="overCurrentContext" id="UIq-kJ-1r7" customClass="VoteCounterVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mgh-Qs-F5q"/>
                         <viewControllerLayoutGuide type="bottom" id="b5r-Sg-y2y"/>
@@ -567,13 +567,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FT-qZ-Lz0" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="135" y="80" width="90" height="90"/>
+                                        <rect key="frame" x="135" y="70" width="90" height="90"/>
                                         <color key="backgroundColor" red="0.090196078430000007" green="0.49803921569999998" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="Tzg-X6-KTm"/>
                                             <constraint firstAttribute="width" constant="90" id="cR3-bw-N27"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
                                         <state key="normal" title="YES">
                                             <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -594,13 +594,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0g-hZ-v5a" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="80" width="90" height="90"/>
+                                        <rect key="frame" x="25" y="70" width="90" height="90"/>
                                         <color key="backgroundColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="dQQ-J5-aJ1"/>
                                             <constraint firstAttribute="width" constant="90" id="jaH-yY-4r6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
                                         <state key="normal" title="NO">
                                             <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -632,7 +632,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGb-q0-GVf" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="114.5" width="190" height="21"/>
+                                        <rect key="frame" x="30" y="107.5" width="190" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -648,9 +648,9 @@
                                     <constraint firstAttribute="width" constant="250" id="Y9f-dm-9Fx"/>
                                     <constraint firstAttribute="height" constant="300" id="fqc-6F-kEw"/>
                                     <constraint firstItem="Xqn-w9-sDL" firstAttribute="leading" secondItem="d1Z-EA-K1D" secondAttribute="leading" id="hjD-SM-PZD"/>
-                                    <constraint firstItem="j0g-hZ-v5a" firstAttribute="centerY" secondItem="d1Z-EA-K1D" secondAttribute="centerY" constant="-25" id="ig0-8s-r4m"/>
+                                    <constraint firstItem="j0g-hZ-v5a" firstAttribute="centerY" secondItem="d1Z-EA-K1D" secondAttribute="centerY" constant="-35" id="ig0-8s-r4m"/>
                                     <constraint firstItem="C8N-GN-xff" firstAttribute="leading" secondItem="d1Z-EA-K1D" secondAttribute="leading" constant="15" id="j1z-Ax-Tbx"/>
-                                    <constraint firstItem="YGb-q0-GVf" firstAttribute="centerY" secondItem="d1Z-EA-K1D" secondAttribute="centerY" constant="-25" id="kf2-hL-kjq"/>
+                                    <constraint firstItem="YGb-q0-GVf" firstAttribute="centerY" secondItem="d1Z-EA-K1D" secondAttribute="centerY" constant="-32" id="kf2-hL-kjq"/>
                                     <constraint firstItem="j0g-hZ-v5a" firstAttribute="centerX" secondItem="d1Z-EA-K1D" secondAttribute="centerX" constant="-55" id="men-Pv-YXu"/>
                                     <constraint firstAttribute="trailing" secondItem="C8N-GN-xff" secondAttribute="trailing" constant="15" id="rsc-Bu-Uyt"/>
                                     <constraint firstItem="Xqn-w9-sDL" firstAttribute="top" secondItem="d1Z-EA-K1D" secondAttribute="top" id="t69-0G-l2f"/>
@@ -659,8 +659,8 @@
                                     <constraint firstAttribute="trailing" secondItem="YGb-q0-GVf" secondAttribute="trailing" constant="30" id="x9e-j1-9wV"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQ1-m4-V5z" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="369.5" width="200" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="pQ1-m4-V5z" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
+                                <rect key="frame" x="81.5" y="354.5" width="212.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -673,8 +673,9 @@
                             <constraint firstItem="bCJ-cp-1Zh" firstAttribute="top" secondItem="nFa-rg-co7" secondAttribute="top" id="9RH-pq-nDV"/>
                             <constraint firstItem="d1Z-EA-K1D" firstAttribute="centerX" secondItem="nFa-rg-co7" secondAttribute="centerX" id="B3g-ak-alI"/>
                             <constraint firstAttribute="trailing" secondItem="bCJ-cp-1Zh" secondAttribute="trailing" id="CbA-YB-3ZP"/>
-                            <constraint firstItem="pQ1-m4-V5z" firstAttribute="top" secondItem="Xqn-w9-sDL" secondAttribute="bottom" constant="130" id="IVr-d0-hHR"/>
-                            <constraint firstItem="pQ1-m4-V5z" firstAttribute="width" secondItem="d1Z-EA-K1D" secondAttribute="width" multiplier="0.8" id="VcS-TA-xYo"/>
+                            <constraint firstItem="Re8-UF-DKS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pQ1-m4-V5z" secondAttribute="bottom" constant="5" id="EJe-IX-lR9"/>
+                            <constraint firstItem="pQ1-m4-V5z" firstAttribute="top" secondItem="Xqn-w9-sDL" secondAttribute="bottom" constant="115" id="IVr-d0-hHR"/>
+                            <constraint firstItem="pQ1-m4-V5z" firstAttribute="width" secondItem="d1Z-EA-K1D" secondAttribute="width" multiplier="0.85" id="VcS-TA-xYo"/>
                             <constraint firstItem="b5r-Sg-y2y" firstAttribute="top" secondItem="bCJ-cp-1Zh" secondAttribute="bottom" id="YqH-gm-aSs"/>
                             <constraint firstItem="bCJ-cp-1Zh" firstAttribute="leading" secondItem="nFa-rg-co7" secondAttribute="leading" id="nEe-Bn-DbF"/>
                         </constraints>

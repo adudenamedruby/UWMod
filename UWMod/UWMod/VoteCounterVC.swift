@@ -16,7 +16,7 @@ class VoteCounterVC: UIViewController {
     @IBOutlet weak var headerView:              UIView!
     @IBOutlet weak var headerTitleLabel:        OldTan!
     @IBOutlet weak var alertTextLabel:          RegBrown!
-    @IBOutlet weak var ineligibleLabel: RegBrown!
+    @IBOutlet weak var ineligibleLabel:         RegBrown!
     
     @IBOutlet weak var yesButton:               PMSuperButton!
     @IBOutlet weak var noButton:                PMSuperButton!
@@ -27,7 +27,7 @@ class VoteCounterVC: UIViewController {
     var majority                                = 0
     var noVotes                                 = 0
     var yesVotes                                = 0
-    var ineligiblePlayers:                      String
+    var ineligiblePlayers:                      String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +62,10 @@ class VoteCounterVC: UIViewController {
             if player.canVote {
                 tempPlayerCount += 1
             }
+            
+            if player.roleType() == .Mayor {
+                tempPlayerCount += 1
+            }
         }
         
         return tempPlayerCount
@@ -69,6 +73,7 @@ class VoteCounterVC: UIViewController {
     
     private func fetchIneligiblePlayers() -> String {
         var tempStr                             = "Players Ineligible to Vote:\n"
+        var mayorVote                           = ""
         var allPlayersCanVote                   = true
         
         for player in GAME.livingActors {
@@ -76,10 +81,18 @@ class VoteCounterVC: UIViewController {
                 tempStr = tempStr + "\(player.name) "
                 allPlayersCanVote = false
             }
+            
+            if player.roleType() == .Mayor {
+                mayorVote = "\n\nMayor \(player.name)'s vote counts twice."
+            }
         }
         
-        if !allPlayersCanVote {
-            tempStr = "All players can vote, currently."
+        if allPlayersCanVote {
+            tempStr = "All players can vote... for now."
+        }
+        
+        if mayorVote != "" {
+            tempStr = tempStr + mayorVote
         }
         
         return tempStr
