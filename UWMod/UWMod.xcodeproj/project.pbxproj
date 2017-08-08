@@ -75,7 +75,6 @@
 		77B2B0071F34D7AC0032A36B /* Graveyard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B2B0051F34D7AC0032A36B /* Graveyard.xib */; };
 		77B2B00D1F3A0AA30032A36B /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2B00C1F3A0AA30032A36B /* GameSettings.swift */; };
 		77B2B00F1F3A1B580032A36B /* GameSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2B00E1F3A1B580032A36B /* GameSettingsVC.swift */; };
-		77B2B0111F3A5EED0032A36B /* ConsolidatedTeamPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2B0101F3A5EED0032A36B /* ConsolidatedTeamPlayer.swift */; };
 		77F9E1201F31040600E48211 /* OldTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9E11F1F31040600E48211 /* OldTextLabels.swift */; };
 		77F9E1221F310CCE00E48211 /* RegularTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */; };
 /* End PBXBuildFile section */
@@ -151,7 +150,6 @@
 		77B2B0051F34D7AC0032A36B /* Graveyard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Graveyard.xib; sourceTree = "<group>"; };
 		77B2B00C1F3A0AA30032A36B /* GameSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		77B2B00E1F3A1B580032A36B /* GameSettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettingsVC.swift; sourceTree = "<group>"; };
-		77B2B0101F3A5EED0032A36B /* ConsolidatedTeamPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsolidatedTeamPlayer.swift; sourceTree = "<group>"; };
 		77F9E11F1F31040600E48211 /* OldTextLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldTextLabels.swift; sourceTree = "<group>"; };
 		77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularTextLabels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -345,7 +343,6 @@
 				7736D0931F33A24200555037 /* Help.swift */,
 				7736D0951F33A25100555037 /* HelpConstants.swift */,
 				12EC77DA1F27541A0026C667 /* Player.swift */,
-				77B2B0101F3A5EED0032A36B /* ConsolidatedTeamPlayer.swift */,
 				12EC77D31F26D4DC0026C667 /* Roles.swift */,
 				12EC77E21F29881F0026C667 /* RoleConstants.swift */,
 				124787601F34150A00518532 /* SelectedItem.swift */,
@@ -512,7 +509,6 @@
 				123BD0D71F2FE66400B99019 /* StringExtensions.swift in Sources */,
 				12EC780D1F2C02990026C667 /* CircularTransition.swift in Sources */,
 				12EC77E51F2BDAB00026C667 /* RoleSelectVC.swift in Sources */,
-				77B2B0111F3A5EED0032A36B /* ConsolidatedTeamPlayer.swift in Sources */,
 				122FC69A1F3912A500E0E2C9 /* VoteCounterVC.swift in Sources */,
 				77B2B00D1F3A0AA30032A36B /* GameSettings.swift in Sources */,
 				12EC77D41F26D4DC0026C667 /* Roles.swift in Sources */,
