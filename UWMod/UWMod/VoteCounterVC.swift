@@ -16,6 +16,7 @@ class VoteCounterVC: UIViewController {
     @IBOutlet weak var headerView:              UIView!
     @IBOutlet weak var headerTitleLabel:        OldTan!
     @IBOutlet weak var alertTextLabel:          RegBrown!
+    @IBOutlet weak var ineligibleLabel: RegBrown!
     
     @IBOutlet weak var yesButton:               PMSuperButton!
     @IBOutlet weak var noButton:                PMSuperButton!
@@ -26,11 +27,13 @@ class VoteCounterVC: UIViewController {
     var majority                                = 0
     var noVotes                                 = 0
     var yesVotes                                = 0
+    var ineligiblePlayers:                      String
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        totalPlayers                            = GAME.livingActors.count
+        totalPlayers                            = eligiblePlayersToVote()
+        // ceil is used to hit the ceiling of the division. ie. 7/2 = 3.5 -> 4 as majority
         majority                                = Int(ceil(Double(totalPlayers) / 2))
         
         mainAlertView.layer.cornerRadius        = STYLE.CornerRadius
@@ -41,6 +44,8 @@ class VoteCounterVC: UIViewController {
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!,
                                                                       withColour: STYLE.Red)
         
+        ineligibleLabel.text                    = fetchIneligiblePlayers()
+        
         alertTextLabel.text                     = ""
         alertTextLabel.isHidden                 = true
     }
@@ -48,6 +53,36 @@ class VoteCounterVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func eligiblePlayersToVote() -> Int {
+        var tempPlayerCount = 0
+        
+        for player in GAME.livingActors {
+            if player.canVote {
+                tempPlayerCount += 1
+            }
+        }
+        
+        return tempPlayerCount
+    }
+    
+    private func fetchIneligiblePlayers() -> String {
+        var tempStr                             = "Players Ineligible to Vote:\n"
+        var allPlayersCanVote                   = true
+        
+        for player in GAME.livingActors {
+            if !player.canVote {
+                tempStr = tempStr + "\(player.name) "
+                allPlayersCanVote = false
+            }
+        }
+        
+        if !allPlayersCanVote {
+            tempStr = "All players can vote, currently."
+        }
+        
+        return tempStr
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
