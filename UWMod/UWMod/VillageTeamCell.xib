@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8q3-s1-4iI">
-                        <rect key="frame" x="10" y="5" width="498" height="466.5"/>
+                        <rect key="frame" x="5" y="0.0" width="508" height="476.5"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKs-LD-bSD">
-                                <rect key="frame" x="1" y="0.0" width="496" height="465.5"/>
+                                <rect key="frame" x="1" y="0.0" width="506" height="475.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLJ-f5-bno">
-                                        <rect key="frame" x="0.0" y="0.0" width="496" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="506" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="illage Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byb-pM-AXx" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="10" width="116.5" height="25"/>
@@ -42,7 +42,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-HX-6Wl" customClass="RegVillageBlue" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="55" width="471" height="400.5"/>
+                                        <rect key="frame" x="15" y="55" width="481" height="415.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                                     <constraint firstItem="Rcg-HX-6Wl" firstAttribute="leading" secondItem="MKs-LD-bSD" secondAttribute="leading" constant="15" id="FvQ-qo-S15"/>
                                     <constraint firstAttribute="trailing" secondItem="oLJ-f5-bno" secondAttribute="trailing" id="e73-8U-Uq7"/>
                                     <constraint firstItem="Rcg-HX-6Wl" firstAttribute="top" secondItem="oLJ-f5-bno" secondAttribute="bottom" constant="10" id="fCr-lO-t8N"/>
-                                    <constraint firstAttribute="bottom" secondItem="Rcg-HX-6Wl" secondAttribute="bottom" constant="10" id="jqB-TJ-RUK"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rcg-HX-6Wl" secondAttribute="bottom" constant="5" id="jqB-TJ-RUK"/>
                                     <constraint firstItem="oLJ-f5-bno" firstAttribute="leading" secondItem="MKs-LD-bSD" secondAttribute="leading" id="rNu-u7-Gy8"/>
                                     <constraint firstItem="oLJ-f5-bno" firstAttribute="top" secondItem="MKs-LD-bSD" secondAttribute="top" id="zix-0y-etX"/>
                                 </constraints>
@@ -71,10 +71,10 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="8q3-s1-4iI" secondAttribute="trailing" constant="10" id="08b-px-VGG"/>
-                    <constraint firstItem="8q3-s1-4iI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="3N9-aW-lhq"/>
-                    <constraint firstAttribute="bottom" secondItem="8q3-s1-4iI" secondAttribute="bottom" constant="10" id="9ny-MH-N14"/>
-                    <constraint firstItem="8q3-s1-4iI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="q0J-lF-C3T"/>
+                    <constraint firstAttribute="trailing" secondItem="8q3-s1-4iI" secondAttribute="trailing" constant="5" id="08b-px-VGG"/>
+                    <constraint firstItem="8q3-s1-4iI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3N9-aW-lhq"/>
+                    <constraint firstAttribute="bottom" secondItem="8q3-s1-4iI" secondAttribute="bottom" constant="5" id="9ny-MH-N14"/>
+                    <constraint firstItem="8q3-s1-4iI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="q0J-lF-C3T"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

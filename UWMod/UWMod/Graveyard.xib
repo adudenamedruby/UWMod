@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGJ-u4-b7x">
-                        <rect key="frame" x="10" y="5" width="319" height="200.5"/>
+                        <rect key="frame" x="5" y="0.0" width="329" height="210.5"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FkR-pG-7xn">
-                                <rect key="frame" x="1" y="0.0" width="317" height="199.5"/>
+                                <rect key="frame" x="1" y="0.0" width="327" height="209.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJs-kk-5Y1">
-                                        <rect key="frame" x="0.0" y="0.0" width="317" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="he Graveyard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utv-3l-tyT" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="10" width="136" height="25"/>
@@ -42,7 +42,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0o-pa-AfN" customClass="RegGrey" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="55" width="292" height="134.5"/>
+                                        <rect key="frame" x="15" y="55" width="302" height="149.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                                     <constraint firstAttribute="trailing" secondItem="XJs-kk-5Y1" secondAttribute="trailing" id="Eyt-VA-S0j"/>
                                     <constraint firstAttribute="trailing" secondItem="N0o-pa-AfN" secondAttribute="trailing" constant="10" id="ik6-rW-Q35"/>
                                     <constraint firstItem="XJs-kk-5Y1" firstAttribute="leading" secondItem="FkR-pG-7xn" secondAttribute="leading" id="pH5-NC-Hgc"/>
-                                    <constraint firstAttribute="bottom" secondItem="N0o-pa-AfN" secondAttribute="bottom" constant="10" id="rVC-zN-NpE"/>
+                                    <constraint firstAttribute="bottom" secondItem="N0o-pa-AfN" secondAttribute="bottom" constant="5" id="rVC-zN-NpE"/>
                                     <constraint firstItem="N0o-pa-AfN" firstAttribute="top" secondItem="XJs-kk-5Y1" secondAttribute="bottom" constant="10" id="t8B-Ej-ETt"/>
                                 </constraints>
                             </view>
@@ -71,10 +71,10 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="yGJ-u4-b7x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="HND-pW-HSC"/>
-                    <constraint firstAttribute="bottom" secondItem="yGJ-u4-b7x" secondAttribute="bottom" constant="10" id="PHj-JL-Itd"/>
-                    <constraint firstItem="yGJ-u4-b7x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="xVC-ay-8Y1"/>
-                    <constraint firstAttribute="trailing" secondItem="yGJ-u4-b7x" secondAttribute="trailing" constant="10" id="z33-Cg-uFH"/>
+                    <constraint firstItem="yGJ-u4-b7x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="HND-pW-HSC"/>
+                    <constraint firstAttribute="bottom" secondItem="yGJ-u4-b7x" secondAttribute="bottom" constant="5" id="PHj-JL-Itd"/>
+                    <constraint firstItem="yGJ-u4-b7x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xVC-ay-8Y1"/>
+                    <constraint firstAttribute="trailing" secondItem="yGJ-u4-b7x" secondAttribute="trailing" constant="5" id="z33-Cg-uFH"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

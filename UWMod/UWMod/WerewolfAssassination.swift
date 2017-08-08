@@ -10,10 +10,13 @@ import UIKit
 
 class WerewolfAssassination: UIView {
 
-    // MARK: - Initializers
+    // MARK: - Outlets
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var killVillagerButton: PMSuperButton!
+    
+    
+    // MARK: - Initializers
     
     override init(frame: CGRect) {
         super.init(frame: frame)

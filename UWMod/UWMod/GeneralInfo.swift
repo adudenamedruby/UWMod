@@ -43,6 +43,12 @@ class GeneralInfo: UITableViewCell {
         mainCardView.backgroundColor        = STYLE.Tan
         headerView.backgroundColor          = STYLE.Beige
         
+        if GAME.currentDay == 1 {
+            counter                         = GAME.settings.firstDayTime
+        } else {
+            counter                         = setCurrentTime()
+        }
+    
         let headerTitle = "General Info"
         headerTitleLabel.attributedText     = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                           withColour: STYLE.Red)
@@ -56,7 +62,7 @@ class GeneralInfo: UITableViewCell {
     }
     
     
-    func configureCell() {
+    public func configureCell() {
         playersAliveLabel.text              = "\(GAME.livingActors.count)"
         playersDeadLabel.text               = "\(GAME.deadActors.count)"
         totalPlayersLabel.text              = "\(GAME.livingActors.count + GAME.deadActors.count)"
@@ -67,7 +73,7 @@ class GeneralInfo: UITableViewCell {
         
     }
     
-    func startTimer() {
+    private func startTimer() {
         if !isTrackingTime {
             self.timer = Timer.scheduledTimer(timeInterval: 1,
                                               target: self,
@@ -79,23 +85,30 @@ class GeneralInfo: UITableViewCell {
         }
     }
     
-    func stopTimer() {
+    private func stopTimer() {
         self.timer.invalidate()
         self.counter        = 0
         isTrackingTime      = false
     }
     
-    func updateTimerLabel() {
-        counter += 1
+    public func updateTimerLabel() {
+        counter -= 1
         timeLabel.text      = timeString(time: TimeInterval(counter))
     }
     
-    func timeString(time:TimeInterval) -> String {
+    private func timeString(time:TimeInterval) -> String {
         
         let hours           = Int(time) / 3600
         let minutes         = Int(time) / 60 % 60
         let seconds         = Int(time) % 60
         
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+    }
+    
+    private func setCurrentTime() -> Int {
+        let timerMultiplier = GAME.currentDay - 2
+        let counterTime = GAME.settings.subsequentDayTime - (timerMultiplier * GAME.settings.changeDayBy)
+        
+        return counterTime
     }
 }

@@ -47,6 +47,8 @@ class Game {
     var availableRoster:                    [Role]
     var availablePlayers:                   [Player]
     
+    var settings:                           GameSettings
+    
     var nighttimeEliminations:              Int
     var daytimeEliminations:                Int
     var playersEliminatedThisPhase:         String
@@ -59,7 +61,7 @@ class Game {
     var areThereDeadPlayers:                Bool
     var werewolfEliminationsPerNight:       Int
     
-    init(availableRoster: [Role], availablePlayers: [Player]) {
+    init(availableRoster: [Role], availablePlayers: [Player], withSettings: GameSettings = GameSettings()) {
         // Sort the roles by the role priority. This makes it easier to present the 
         // player list in some semblance of a correct order.
         self.availablePlayers               = availablePlayers.sorted(by: { ($0.name) < ($1.name) })
@@ -69,6 +71,8 @@ class Game {
         self._currentNight                  = 1
         self._currentDay                    = 1
         self._nightActors                   = []
+        
+        self.settings                       = withSettings
         
         self.areThereDeadPlayers            = false
         self.nighttimeEliminations          = 1
@@ -85,11 +89,6 @@ class Game {
 
     
     // MARK: - Game setup & teardown
-    
-    // Game settings will be added in a later version.
-    public func startWithSettings() {
-        
-    }
     
     public func endGameAndReset() {
         GAME = Game(availableRoster: [], availablePlayers: [])
