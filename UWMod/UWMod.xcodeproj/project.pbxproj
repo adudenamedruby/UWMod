@@ -74,6 +74,7 @@
 		77B2B0061F34D7AC0032A36B /* Graveyard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2B0041F34D7AC0032A36B /* Graveyard.swift */; };
 		77B2B0071F34D7AC0032A36B /* Graveyard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B2B0051F34D7AC0032A36B /* Graveyard.xib */; };
 		77B2B00D1F3A0AA30032A36B /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2B00C1F3A0AA30032A36B /* GameSettings.swift */; };
+		77B2B00F1F3A1B580032A36B /* GameSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2B00E1F3A1B580032A36B /* GameSettingsVC.swift */; };
 		77F9E1201F31040600E48211 /* OldTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9E11F1F31040600E48211 /* OldTextLabels.swift */; };
 		77F9E1221F310CCE00E48211 /* RegularTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */; };
 /* End PBXBuildFile section */
@@ -148,6 +149,7 @@
 		77B2B0041F34D7AC0032A36B /* Graveyard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graveyard.swift; sourceTree = "<group>"; };
 		77B2B0051F34D7AC0032A36B /* Graveyard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Graveyard.xib; sourceTree = "<group>"; };
 		77B2B00C1F3A0AA30032A36B /* GameSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+		77B2B00E1F3A1B580032A36B /* GameSettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettingsVC.swift; sourceTree = "<group>"; };
 		77F9E11F1F31040600E48211 /* OldTextLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldTextLabels.swift; sourceTree = "<group>"; };
 		77F9E1211F310CCE00E48211 /* RegularTextLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularTextLabels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,8 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				123BD0D41F2F6C1600B99019 /* AlertsVC.swift */,
-				1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */,
 				124F74F91F368A0A00F03E49 /* ConfirmationPopup.swift */,
+				1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */,
 				122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */,
 				122FC6991F3912A500E0E2C9 /* VoteCounterVC.swift */,
 			);
@@ -280,13 +282,14 @@
 		12D15E241F2EA85B0057905E /* PreGameVCs */ = {
 			isa = PBXGroup;
 			children = (
-				12EC78071F2BE9E50026C667 /* MenuVC.swift */,
+				12EC77D01F26D4AA0026C667 /* AboutVC.swift */,
+				1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */,
+				77B2B00E1F3A1B580032A36B /* GameSettingsVC.swift */,
 				7736D0911F3399BC00555037 /* HelpVC.swift */,
 				7736D0991F33A32000555037 /* HelpCell.swift */,
 				7736D09B1F33A36700555037 /* HelpCellHeader.swift */,
-				12EC77D01F26D4AA0026C667 /* AboutVC.swift */,
+				12EC78071F2BE9E50026C667 /* MenuVC.swift */,
 				12EC77E61F2BDAC00026C667 /* PlayerSelectVC.swift */,
-				1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */,
 				12EC77E41F2BDAB00026C667 /* RoleSelectVC.swift */,
 				12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */,
 			);
@@ -511,6 +514,7 @@
 				12EC77D41F26D4DC0026C667 /* Roles.swift in Sources */,
 				1261C2B71F3265DA0099D759 /* BasicAlertObject.swift in Sources */,
 				122FC68F1F37660600E0E2C9 /* EndGamePopupVC.swift in Sources */,
+				77B2B00F1F3A1B580032A36B /* GameSettingsVC.swift in Sources */,
 				7736D0961F33A25100555037 /* HelpConstants.swift in Sources */,
 				7736D09A1F33A32000555037 /* HelpCell.swift in Sources */,
 				124F74F41F35FF3000F03E49 /* WerewolfAssassination.swift in Sources */,

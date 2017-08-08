@@ -47,13 +47,13 @@ class GameSettings {
         get { return _werewolfTime }
     }
     
-    init(firstDay: Int = 1200, subsequentDay: Int = 600, increments: Int = 30, minimumDayLength: Int = 180, werewolfTime: Int = 120) {
+    init(firstDay: Int = 1200, subsequentDay: Int = 600, increments: Int = 30, minimumDayTime: Int = 180, werewolfTimer: Int = 120) {
         
-        self._firstDayTime              = firstDayTime
+        self._firstDayTime              = firstDay
         self._subsequentDayTime         = subsequentDay
         self._changeDayBy               = increments
-        self._minimumDayLength          = minimumDayLength
-        self._werewolfTime              = werewolfTime
+        self._minimumDayLength          = minimumDayTime
+        self._werewolfTime              = werewolfTimer
         self.timeIncrement              = 10
     }
     

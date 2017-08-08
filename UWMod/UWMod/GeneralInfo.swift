@@ -87,13 +87,18 @@ class GeneralInfo: UITableViewCell {
     
     private func stopTimer() {
         self.timer.invalidate()
-        self.counter        = 0
+        self.counter        = setCurrentTime()
         isTrackingTime      = false
     }
     
     public func updateTimerLabel() {
-        counter -= 1
-        timeLabel.text      = timeString(time: TimeInterval(counter))
+        if counter > 0 {
+            counter -= 1
+            timeLabel.text      = timeString(time: TimeInterval(counter))
+        } else {
+            stopTimer()
+            timeLabel.text      = "--:--:--"
+        }
     }
     
     private func timeString(time:TimeInterval) -> String {
