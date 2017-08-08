@@ -48,6 +48,25 @@ class RegVillageBlue: UILabel {
     
 }
 
+class RegBrownSetting: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Brown
+        self.font = STYLE.RegBoldSettingsFont
+    }
+    
+}
+
 class RegBrown: UILabel {
     
     required init(coder aDecoder: NSCoder) {

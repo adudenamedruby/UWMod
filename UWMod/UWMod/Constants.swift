@@ -43,6 +43,8 @@ struct StyleConstants {
     let RegLargeFont        = UIFont(name: "AmericanTypewriter", size: 18)
     let RegBoldFont         = UIFont(name: "AmericanTypewriter-Bold", size: 16)
     let RegBoldHeaderFont   = UIFont(name: "AmericanTypewriter-Bold", size: 20)
+    let RegBoldSettingsFont = UIFont(name: "AmericanTypewriter-Bold", size: 30)
+
 }
 
 
