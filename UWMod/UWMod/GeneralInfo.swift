@@ -114,6 +114,10 @@ class GeneralInfo: UITableViewCell {
         let timerMultiplier = GAME.currentDay - 2
         let counterTime = GAME.settings.subsequentDayTime - (timerMultiplier * GAME.settings.changeDayBy)
         
+        if counterTime < GAME.settings.minimumDayLength {
+            return GAME.settings.minimumDayLength
+        }
+        
         return counterTime
     }
 }

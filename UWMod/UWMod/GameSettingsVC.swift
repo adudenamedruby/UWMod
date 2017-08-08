@@ -12,15 +12,15 @@ class GameSettingsVC: UIViewController {
 
     // MARK: - Outlets
     
-    @IBOutlet var mainCardView: UIView!
-    @IBOutlet var headerView: UIView!
-    @IBOutlet var headerTitleLabel: OldTan!
+    @IBOutlet var mainCardView:             UIView!
+    @IBOutlet var headerView:               UIView!
+    @IBOutlet var headerTitleLabel:         OldTan!
     
-    @IBOutlet var firstDayLabel: RegBrownSetting!
-    @IBOutlet var subsequentDayLabel: RegBrownSetting!
-    @IBOutlet var decreaseDayLabel: RegBrownSetting!
-    @IBOutlet var minimumDayLabel: RegBrownSetting!
-    @IBOutlet var werewolfTimerLabel: RegBrownSetting!
+    @IBOutlet var firstDayLabel:            RegBrownSetting!
+    @IBOutlet var subsequentDayLabel:       RegBrownSetting!
+    @IBOutlet var decreaseDayLabel:         RegBrownSetting!
+    @IBOutlet var minimumDayLabel:          RegBrownSetting!
+    @IBOutlet var werewolfTimerLabel:       RegBrownSetting!
     
 
     // MARK: - View lifecycle
@@ -28,17 +28,17 @@ class GameSettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mainCardView.layer.cornerRadius = STYLE.CornerRadius
-        mainCardView.backgroundColor = STYLE.Tan
-        headerView.backgroundColor = STYLE.Brown
+        mainCardView.layer.cornerRadius     = STYLE.CornerRadius
+        mainCardView.backgroundColor        = STYLE.Tan
+        headerView.backgroundColor          = STYLE.Brown
         
-        let headerTitle = "Game Settings"
+        let headerTitle                     = "Game Settings"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
-        firstDayLabel.text = timeString(time: TimeInterval(SETTINGS.firstDayTime))
+        firstDayLabel.text      = timeString(time: TimeInterval(SETTINGS.firstDayTime))
         subsequentDayLabel.text = timeString(time: TimeInterval(SETTINGS.subsequentDayTime))
-        decreaseDayLabel.text = timeString(time: TimeInterval(SETTINGS.changeDayBy))
-        minimumDayLabel.text = timeString(time: TimeInterval(SETTINGS.minimumDayLength))
+        decreaseDayLabel.text   = timeString(time: TimeInterval(SETTINGS.changeDayBy))
+        minimumDayLabel.text    = timeString(time: TimeInterval(SETTINGS.minimumDayLength))
         werewolfTimerLabel.text = timeString(time: TimeInterval(SETTINGS.werewolfTime))
 
     }
@@ -92,6 +92,20 @@ class GameSettingsVC: UIViewController {
     }
     
     @IBAction func saveSettingsButton(_ sender: Any) {
+        
+        let temp: GameSettings = GameSettings(firstDay:       SETTINGS.firstDayTime,
+                                              subsequentDay:  SETTINGS.subsequentDayTime,
+                                              increments:     SETTINGS.changeDayBy,
+                                              minimumDayTime: SETTINGS.minimumDayLength,
+                                              werewolfTimer:  SETTINGS.werewolfTime)
+        
+        SETTINGS = GameSettings(firstDay:       temp.firstDayTime,
+                                subsequentDay:  temp.subsequentDayTime,
+                                increments:     temp.changeDayBy,
+                                minimumDayTime: temp.minimumDayLength,
+                                werewolfTimer:  temp.werewolfTime)
+
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Change settings functions
