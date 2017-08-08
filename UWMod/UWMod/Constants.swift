@@ -13,7 +13,8 @@ import UIKit
 // Defire all the different style things required thourghout the app for later QoL
 struct StyleConstants {
     
-    let CornerRadius = CGFloat(15)
+    let CornerRadius            = CGFloat(15)
+    let InfoCardCornerRadius    = CGFloat(5)
     
     let Brown               = UIColor.WerewolfTheme.ChocolateBrown
     let Tan                 = UIColor.WerewolfTheme.LightTan
@@ -34,7 +35,7 @@ struct StyleConstants {
     
     let OldMenuTopFont      = UIFont(name: "OldWiseSketch", size: 60) // for menu title
     let OldMenuBottomFont   = UIFont(name: "OldWiseSketch", size: 70) // for menu title
-    let OldStandardFont     = UIFont(name: "OldWiseSketch", size: 35) // used throughout the app
+    let OldStandardFont     = UIFont(name: "OldWiseSketch", size: 40) // used throughout the app
     let OldRoleFont         = UIFont(name: "OldWiseSketch", size: 50) // used for nightPhase card titles
     
     let RegSmallFont        = UIFont(name: "AmericanTypewriter", size: 13)
@@ -51,4 +52,5 @@ let localizedActionFinishedNotification = "localizedActionFinishedNotification"
 let PLAYERS                 = "UserPlayers"
 let STYLE                   = StyleConstants()
 var GAME: Game              = Game(availableRoster: [], availablePlayers: [])
+var SETTINGS: GameSettings  = GameSettings()
 

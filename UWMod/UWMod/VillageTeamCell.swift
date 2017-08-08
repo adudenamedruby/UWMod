@@ -30,10 +30,10 @@ class VillageTeamCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        outlineView.layer.cornerRadius = STYLE.CornerRadius
+        outlineView.layer.cornerRadius = STYLE.InfoCardCornerRadius
         outlineView.backgroundColor = STYLE.VillageBlue
         headerView.backgroundColor = STYLE.VillageBlue
-        mainCardView.layer.cornerRadius = STYLE.CornerRadius
+        mainCardView.layer.cornerRadius = STYLE.InfoCardCornerRadius
         mainCardView.backgroundColor = STYLE.Tan
         
         let headerTitle = "Village Team"

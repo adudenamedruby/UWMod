@@ -37,9 +37,9 @@ class GeneralInfo: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        outlineView.layer.cornerRadius      = STYLE.CornerRadius
+        outlineView.layer.cornerRadius      = STYLE.InfoCardCornerRadius
         outlineView.backgroundColor         = STYLE.Beige
-        mainCardView.layer.cornerRadius     = STYLE.CornerRadius
+        mainCardView.layer.cornerRadius     = STYLE.InfoCardCornerRadius
         mainCardView.backgroundColor        = STYLE.Tan
         headerView.backgroundColor          = STYLE.Beige
         
