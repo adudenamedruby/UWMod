@@ -43,8 +43,6 @@ class GeneralInfo: UITableViewCell {
         mainCardView.backgroundColor        = STYLE.Tan
         headerView.backgroundColor          = STYLE.Beige
         
-        setCounter()
-    
         let headerTitle = "General Info"
         headerTitleLabel.attributedText     = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                           withColour: STYLE.Red)
@@ -65,6 +63,7 @@ class GeneralInfo: UITableViewCell {
         numberOfNightsPassedLabel.text      = "\(GAME.currentNight - 1)"
         dayNumberLabel.text                 = "\(GAME.currentDay)"
         
+        setCounter()
         startTimer()
         
     }
