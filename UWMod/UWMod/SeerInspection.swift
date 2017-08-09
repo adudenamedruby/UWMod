@@ -54,7 +54,7 @@ class SeerInspection: UIView {
         var playerList:                     [String] = []
         let seerWolfList: [RoleType]        = [.Werewolf]
         
-        for player in GAME.availablePlayers {
+        for player in GAME.livingActors {
             if player.isAssigned && player.roleType() != .Seer {
                 
                 let tempTeamAssignment: String

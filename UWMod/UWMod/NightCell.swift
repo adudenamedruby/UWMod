@@ -101,6 +101,8 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     private func loadPlayerName() {
         if player != nil {
             playerNameLabel.text = "(\((player?.name)!))"
+            playerNameLabel.alpha = 1
+            playerNameLabel.textColor = STYLE.Brown
         } else {
             playerNameLabel.text = ""
         }
@@ -135,7 +137,10 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             roleIconImage.image = player?.roleImage()
             let roleTitle = player?.roleName()
             roleTitleLabel.attributedText = roleTitle?.styleTitleLabel(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
+            roleTitleLabel.alpha = 1
             roleDescritpionLabel.text = player?.roleDescription()
+            roleDescritpionLabel.alpha = 1
+            roleDescritpionLabel.textColor = STYLE.Brown
             textView.text = player?.roleExplanation()
             
         } else {
