@@ -18,7 +18,17 @@ class ConfirmationPopup: UIViewController {
     var player:                             Player!
     var eliminatedBy:                       RoleType?
     
-    var werewolfRolesList: [RoleType] = [.Werewolf, .WolfMan]
+    var werewolfRolesList: [RoleType]       = [.Werewolf,
+                                               .WolfMan,
+                                               .WolfCub,
+                                               .DireWolf,
+                                               .TeenageWerewolf,
+                                               .BigBadWolf,
+                                               .Dreamwolf,
+                                               .FangFace,
+                                               .AlphaWolf,
+                                               .FruitBrute,
+                                               .Wolverine]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +72,9 @@ class ConfirmationPopup: UIViewController {
                     GAME.werewolfEliminationsPerNight -= 1
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "eliminationByWerewolf"), object: nil)
                 }
+                
+            } else if self.player.roleType() == .WolfCub {
+                GAME.werewolfEliminationsPerNight += 1
             }
             presentingVC!.dismiss(animated: false, completion: nil)
             

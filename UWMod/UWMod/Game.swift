@@ -348,13 +348,23 @@ class Game {
     
     private func consolidateNightActors() {
         
-        var consolidatedPlayers: [Player] = []
+        var consolidatedPlayers: [Player]       = []
         
         var werewolves = 0
-        let consolidatedWolves: [RoleType] = [.Werewolf, .WolfMan]
+        let consolidatedWolves: [RoleType]      = [.Werewolf,
+                                                   .WolfMan,
+                                                   .WolfCub,
+                                                   .DireWolf,
+                                                   .TeenageWerewolf,
+                                                   .BigBadWolf,
+                                                   .Dreamwolf,
+                                                   .FangFace,
+                                                   .AlphaWolf,
+                                                   .FruitBrute,
+                                                   .Wolverine]
         
         var vampires = 0
-        let consolidatedVampires: [RoleType] = [.Vampire]
+        let consolidatedVampires: [RoleType]    = [.Vampire]
         
         for player in livingActors {
             
@@ -406,12 +416,24 @@ class Game {
 //        }
 //        vampireTeamPlayer.assignRole(role: addARoleHere)
         
+        let wolfStackWithoutSpecialRole: [RoleType]      = [.Werewolf,
+                                                            .WolfMan,
+                                                            .WolfCub,
+                                                            .DireWolf,
+                                                            .TeenageWerewolf,
+                                                            .BigBadWolf,
+                                                            .Dreamwolf,
+                                                            .FangFace,
+                                                            .AlphaWolf,
+                                                            .FruitBrute,
+                                                            .Wolverine]
+        
         // Only create consolidated players if there is a need.
         if werewolves >= 2 || vampires >= 2 {
             for player in availablePlayers {
                 if player.isNightActivePlayer {
                     let playerRole = player.roleType()
-                    if consolidatedWolves.contains(playerRole) {
+                    if wolfStackWithoutSpecialRole.contains(playerRole) {
                         if didNotAddWerewolfTeamCard {
                             consolidatedPlayers.append(werewolfTeamPlayer)
                             didNotAddWerewolfTeamCard = false
