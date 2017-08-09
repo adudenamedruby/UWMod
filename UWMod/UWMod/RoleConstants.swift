@@ -13,6 +13,7 @@ import UIKit
 
 let tempRoles: [Role] = [BODYGUARD,
                          DISEASED,
+                         INSOMNIAC,
                          MAYOR,
                          MINION,
                          SEER,
@@ -39,6 +40,11 @@ let BODYGUARD = Role(name: "Bodyguard", type: .Bodyguard, description: "Each nig
 
 
 let DISEASED = Role(name: "Diseased", type: .Diseased, description: "If you are eliminated by the Werewolves, they don't get to eliminate anyone the following night.", roleExplanation: "If the werewolves target and eliminate the Diseased player, they skip targeting the following night because they get sick. If the game does not have role reveal, the Werewolves still pick a target the following night but that target is not eliminated.", impact: 3, priority: 88, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+
+
+
+let INSOMNIAC = Role(name: "Insomniac", type: .Insomniac, description: "Each night, learn if at least one of your neighbors has taken a night action.", roleExplanation: "Every night, the Insomniac is told if anyone woke up at night who is sitting next to him.\n\nThe Moderator does not tell the Insomniac if 1 or 2 players sitting next to him woke up at night, just that at least one of those players woke up that night. If a player next to the Insomniac is eliminated, the next player over is considered “next” to the Insomniac. If a player next to to the Insomniac is eliminated at night, he “sees” that player, not the player next to the eliminated player.\n\nThe Insomniac player needs to be clever when sharing any information he has about the players next to him, so he doesn’t accidentally out the Seer or another special character that is helping the village. The fewer special characters in the game, the more helpful the Insomniac role is to the village.", impact: 3, priority: 199, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NightActiveRole)
+
 
 
 let MAYOR = Role(name: "Mayor", type: .Mayor, description: "Your vote counts twice.", roleExplanation: "The Mayor’s vote counts twice when voting to eliminate a player; this is done by the moderator secretly counting the Mayor’s vote twice (he’ll need to wake the Mayor up the first night to know who it is).", impact: 2, priority: 124, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
