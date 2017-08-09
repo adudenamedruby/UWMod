@@ -70,7 +70,7 @@ class DayVC: UIViewController {
     }
     
     
-    // MARK: - Navigation
+    // MARK: - Button functionality
 
     @IBAction func lynchPressed(_ sender: Any) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
@@ -98,7 +98,6 @@ class DayVC: UIViewController {
         self.present(endGameConfirm, animated: true, completion: nil)
     }
     
-    
     @IBAction func finishDayButton(_ sender: Any) {
         GAME.finishDay()
         self.modalTransitionStyle = .crossDissolve
@@ -110,7 +109,7 @@ class DayVC: UIViewController {
         fadeButtonsIn()
     }
     
-    func fadeDayEndControlsIn() {
+    private func fadeDayEndControlsIn() {
         self.dayContainerView.fadeOut(duration: 1, delay: 0, completion: {
             (finished: Bool) -> Void in
             self.endDayTitleLabel.fadeIn(duration: 1, delay: 0)
@@ -119,7 +118,7 @@ class DayVC: UIViewController {
         })
     }
     
-    func fadeDayEndControlsOut() {
+    private func fadeDayEndControlsOut() {
         self.endDayTitleLabel.fadeOut(duration: 1, delay: 0)
         self.backButton.fadeOut(duration: 1, delay: 0)
         self.forwardButton.fadeOut(duration: 1, delay: 0, completion: {
@@ -128,7 +127,7 @@ class DayVC: UIViewController {
         })
     }
     
-    func setupTableView() {
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 75.0
@@ -143,7 +142,6 @@ class DayVC: UIViewController {
                            forCellReuseIdentifier: "werewolfTeamCell")
         tableView.register(UINib(nibName: "VillageTeamCell", bundle: nil),
                            forCellReuseIdentifier: "villageTeamCell")
-
     }
     
     private func fadeButtonsIn() {

@@ -10,28 +10,36 @@ import UIKit
 
 class EndGamePopupVC: UIViewController {
 
-    @IBOutlet weak var mainAlertView: UIView!
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var headerTitleLabel: OldTan!
-    @IBOutlet weak var alertTextLabel: RegBrown!
+    // MARK: - Outlets
+    
+    @IBOutlet weak var mainAlertView:           UIView!
+    @IBOutlet weak var headerView:              UIView!
+    @IBOutlet weak var headerTitleLabel:        OldTan!
+    @IBOutlet weak var alertTextLabel:          RegBrown!
+    
+    
+    // MARK: - Initializers
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainAlertView.layer.cornerRadius = STYLE.CornerRadius
-        mainAlertView.backgroundColor = STYLE.Tan
-        headerView.backgroundColor = STYLE.Brown
+        mainAlertView.layer.cornerRadius        = STYLE.CornerRadius
+        mainAlertView.backgroundColor           = STYLE.Tan
+        headerView.backgroundColor              = STYLE.Brown
         
-        let headerTitle = "End Game?"
+        let headerTitle                         = "End Game?"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
-        alertTextLabel.text = "Are you sure you want to end the game?"
+        alertTextLabel.text                     = "Are you sure you want to end the game?"
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: - Button functions
     
     @IBAction func noButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -50,16 +58,4 @@ class EndGamePopupVC: UIViewController {
             })
         })
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

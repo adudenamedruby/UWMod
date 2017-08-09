@@ -349,10 +349,6 @@ extension Player {
         return role.image
     }
     
-    func roleWakeTime() -> [UWNights] {
-        return role.wakeTime
-    }
-    
     func roleCanWake() -> Bool {
         return role.canWake
     }

@@ -26,15 +26,15 @@ class MainGameVC: UIViewController {
     
     // MARK: - Variables
     
-    let nightPhrases = ["Night falls...",
-                        "The moon rises...",
-                        "Another day ends...",
-                        "The sky darkens..."]
+    let nightPhrases                                = ["Night falls...",
+                                                       "The moon rises...",
+                                                       "Another day ends...",
+                                                       "The sky darkens..."]
     
-    let daytimePhrases = ["A new dawn...",
-                          "The sun rises...",
-                          "The rooster crows...",
-                          "Another night ends..."]
+    let daytimePhrases                              = ["A new dawn...",
+                                                       "The sun rises...",
+                                                       "The rooster crows...",
+                                                       "Another night ends..."]
     
     
     // MARK: - View lifecycle
@@ -116,13 +116,16 @@ class MainGameVC: UIViewController {
         }
     }
     
-    func resetElementAlpha() {
+    private func resetElementAlpha() {
         self.titleLabel.alpha = 0
         self.forwardButton.alpha = 0
         self.phaseReportView.alpha = 0
     }
     
-    func reportPhaseEliminationResults() {
+    
+    // MARK: - Elimination results
+    
+    private func reportPhaseEliminationResults() {
         if GAME.playersEliminatedThisPhase != "" || GAME.playersProtectedThisPhase != "" {
             self.showReportCard()
         }
@@ -130,7 +133,7 @@ class MainGameVC: UIViewController {
         forwardButton.fadeIn(duration: 1, delay: 0)
     }
     
-    func reportEliminations() {
+    private func reportEliminations() {
         statusLabel.text = "Players eliminated this phase:"
         if GAME.playersEliminatedThisPhase != "" {
             playersReportedLabel.text = GAME.playersEliminatedThisPhase
@@ -141,7 +144,7 @@ class MainGameVC: UIViewController {
         savedButton.backgroundColor = STYLE.Beige
     }
     
-    func reportProtected() {
+    private func reportProtected() {
         statusLabel.text = "Players protected this phase:"
         if GAME.playersProtectedThisPhase != "" {
             playersReportedLabel.text = GAME.playersProtectedThisPhase
@@ -152,11 +155,20 @@ class MainGameVC: UIViewController {
         savedButton.backgroundColor = STYLE.Green
     }
     
-    func showReportCard() {
+    private func showReportCard() {
         reportEliminations()
         self.phaseReportView.fadeIn(duration: 1, delay: 0)
     }
     
     
+    // MARK: - Reminders for special roles
     
+    private func checkSpecialRolesReminder() {
+            
+        for player in GAME.livingActors {
+            if player.roleType() == .Wolverine {
+                //showAlert(name: "The Wolverine", text: "If the Wolverine is the closest player to the werewolves' target, the villagers hear a metallic scrape!")
+            }
+        }
+    }
 }
