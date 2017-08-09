@@ -16,27 +16,37 @@ class GameSettingsVC: UIViewController {
     @IBOutlet var headerView:               UIView!
     @IBOutlet var headerTitleLabel:         OldTan!
     
+    @IBOutlet weak var firstDayTitleLabel:  RegBrownBold!
+    @IBOutlet weak var ensuingTitleLabel:   RegBrownBold!
+    @IBOutlet weak var decreaseTitleLabel:  RegBrownBold!
+    @IBOutlet weak var minTitleLabel:       RegBrownBold!
+    @IBOutlet weak var werewolfTitleLabel:  RegBrownBold!
+    
+    
     @IBOutlet var firstDayLabel:            RegBrownSetting!
     @IBOutlet var subsequentDayLabel:       RegBrownSetting!
     @IBOutlet var decreaseDayLabel:         RegBrownSetting!
     @IBOutlet var minimumDayLabel:          RegBrownSetting!
     @IBOutlet var werewolfTimerLabel:       RegBrownSetting!
     
-    @IBOutlet var firstIncrease: PMSuperButton!
-    @IBOutlet var firstDecrease: PMSuperButton!
-    @IBOutlet var ensuingIncrease: PMSuperButton!
-    @IBOutlet var ensuingDecrease: PMSuperButton!
-    @IBOutlet var decreaseIncrease: PMSuperButton!
-    @IBOutlet var decreaseDecrease: PMSuperButton!
-    @IBOutlet var minIncrease: PMSuperButton!
-    @IBOutlet var minDecrease: PMSuperButton!
-    @IBOutlet var wolfIncrease: PMSuperButton!
-    @IBOutlet var wolfDecrease: PMSuperButton!
+    @IBOutlet var firstIncrease:            PMSuperButton!
+    @IBOutlet var firstDecrease:            PMSuperButton!
+    @IBOutlet var ensuingIncrease:          PMSuperButton!
+    @IBOutlet var ensuingDecrease:          PMSuperButton!
+    @IBOutlet var decreaseIncrease:         PMSuperButton!
+    @IBOutlet var decreaseDecrease:         PMSuperButton!
+    @IBOutlet var minIncrease:              PMSuperButton!
+    @IBOutlet var minDecrease:              PMSuperButton!
+    @IBOutlet var wolfIncrease:             PMSuperButton!
+    @IBOutlet var wolfDecrease:             PMSuperButton!
     
+    @IBOutlet weak var segmentedControl:    UISegmentedControl!
 
     // MARK: - Variables
     
-    var buttonList: [PMSuperButton] = []
+    private var buttonList: [PMSuperButton]         = []
+    private var labelList: [RegBrownSetting]        = []
+    private var titleLabelList: [RegBrownBold]      = []
     
     // MARK: - View lifecycle
     
@@ -56,16 +66,28 @@ class GameSettingsVC: UIViewController {
         minimumDayLabel.text    = timeString(time: TimeInterval(SETTINGS.minimumDayLength))
         werewolfTimerLabel.text = timeString(time: TimeInterval(SETTINGS.werewolfTime))
         
-        buttonList = [firstIncrease,
-                      firstDecrease,
-                      ensuingIncrease,
-                      ensuingDecrease,
-                      decreaseIncrease,
-                      decreaseDecrease,
-                      minIncrease,
-                      minDecrease,
-                      wolfIncrease,
-                      wolfDecrease]
+        buttonList              = [firstIncrease,
+                                   firstDecrease,
+                                   ensuingIncrease,
+                                   ensuingDecrease,
+                                   decreaseIncrease,
+                                   decreaseDecrease,
+                                   minIncrease,
+                                   minDecrease,
+                                   wolfIncrease,
+                                   wolfDecrease]
+        
+        labelList               = [firstDayLabel,
+                                   subsequentDayLabel,
+                                   decreaseDayLabel,
+                                   minimumDayLabel,
+                                   werewolfTimerLabel]
+        
+        titleLabelList          = [firstDayTitleLabel,
+                                   ensuingTitleLabel,
+                                   decreaseTitleLabel,
+                                   minTitleLabel,
+                                   werewolfTitleLabel]
 
         setupButtons()
     }
@@ -83,17 +105,66 @@ class GameSettingsVC: UIViewController {
             button.addGestureRecognizer(tapGesture)
             button.addGestureRecognizer(longGesture)
         }
+    
+        enableButtons()
     }
     
     
     // MARK: - Button actions
+    
+    
+    @IBAction func indexChanged(_ sender: Any) {
+        
+        switch segmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            enableButtons()
+            SETTINGS.changeTimeKeepingStyle(style: .Countdown)
+        case 1:
+            disableButtons()
+            SETTINGS.changeTimeKeepingStyle(style: .Stopwatch)
+        default:
+            break
+        }
+    }
+    
+    private func disableButtons() {
+        for button in buttonList {
+            button.isEnabled = false
+            button.alpha = 0.5
+        }
+        
+        for label in labelList {
+            label.alpha = 0.5
+        }
+        
+        for label in titleLabelList {
+            label.alpha = 0.5
+        }
+    }
+
+    
+    private func enableButtons() {
+        for button in buttonList {
+            button.isEnabled = true
+            button.alpha = 1
+        }
+        
+        for label in labelList {
+            label.alpha = 1
+        }
+        
+        for label in titleLabelList {
+            label.alpha = 1
+        }
+    }
 
     @IBAction func buttonTapped(_ sender: UIButton) {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(normalTap))
-        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap))
-        tapGesture.numberOfTapsRequired = 1
-        sender.addGestureRecognizer(tapGesture)
-        sender.addGestureRecognizer(longGesture)
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(normalTap))
+//        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap))
+//        tapGesture.numberOfTapsRequired = 1
+//        sender.addGestureRecognizer(tapGesture)
+//        sender.addGestureRecognizer(longGesture)
     }
     
     func normalTap(sender : UIGestureRecognizer) {
@@ -164,17 +235,19 @@ class GameSettingsVC: UIViewController {
     
     @IBAction func saveSettingsButton(_ sender: Any) {
         
-        let temp: GameSettings = GameSettings(firstDay:       SETTINGS.firstDayTime,
-                                              subsequentDay:  SETTINGS.subsequentDayTime,
-                                              increments:     SETTINGS.changeDayBy,
-                                              minimumDayTime: SETTINGS.minimumDayLength,
-                                              werewolfTimer:  SETTINGS.werewolfTime)
+        let temp: GameSettings = GameSettings(firstDay:         SETTINGS.firstDayTime,
+                                              subsequentDay:    SETTINGS.subsequentDayTime,
+                                              increments:       SETTINGS.changeDayBy,
+                                              minimumDayTime:   SETTINGS.minimumDayLength,
+                                              werewolfTimer:    SETTINGS.werewolfTime,
+                                              timekeepingStyle: SETTINGS.timekeepingStyle)
         
-        SETTINGS = GameSettings(firstDay:       temp.firstDayTime,
-                                subsequentDay:  temp.subsequentDayTime,
-                                increments:     temp.changeDayBy,
-                                minimumDayTime: temp.minimumDayLength,
-                                werewolfTimer:  temp.werewolfTime)
+        SETTINGS                = GameSettings(firstDay:           temp.firstDayTime,
+                                               subsequentDay:      temp.subsequentDayTime,
+                                               increments:         temp.changeDayBy,
+                                               minimumDayTime:     temp.minimumDayLength,
+                                               werewolfTimer:      temp.werewolfTime,
+                                               timekeepingStyle:   temp.timekeepingStyle)
 
         self.dismiss(animated: true, completion: nil)
     }

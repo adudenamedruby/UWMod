@@ -18,6 +18,11 @@ enum TimeSetting {
     case WerewolfDecisionTimer
 }
 
+enum TimekeepingType {
+    case Countdown
+    case Stopwatch
+}
+
 class GameSettings {
     
     private var _firstDayTime:               Int
@@ -25,6 +30,7 @@ class GameSettings {
     private var _changeDayBy:                Int
     private var _minimumDayLength:           Int
     private var _werewolfTime:               Int
+    private var _timerType:                  TimekeepingType
     private var secondIncrement:             Int
     private var minuteIncrement:             Int
     
@@ -48,13 +54,18 @@ class GameSettings {
         get { return _werewolfTime }
     }
     
-    init(firstDay: Int = 1200, subsequentDay: Int = 600, increments: Int = 30, minimumDayTime: Int = 180, werewolfTimer: Int = 120) {
+    var timekeepingStyle: TimekeepingType {
+        get { return _timerType }
+    }
+    
+    init(firstDay: Int = 1200, subsequentDay: Int = 600, increments: Int = 30, minimumDayTime: Int = 180, werewolfTimer: Int = 120, timekeepingStyle: TimekeepingType = .Countdown) {
         
         self._firstDayTime              = firstDay
         self._subsequentDayTime         = subsequentDay
         self._changeDayBy               = increments
         self._minimumDayLength          = minimumDayTime
         self._werewolfTime              = werewolfTimer
+        self._timerType                 = timekeepingStyle
         self.secondIncrement            = 10
         self.minuteIncrement            = 60
     }
@@ -121,5 +132,9 @@ class GameSettings {
         case .WerewolfDecisionTimer:
             _werewolfTime -= minuteIncrement
         }
+    }
+    
+    public func changeTimeKeepingStyle(style: TimekeepingType) {
+        _timerType = style
     }
 }

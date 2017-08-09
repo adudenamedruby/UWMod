@@ -43,11 +43,7 @@ class GeneralInfo: UITableViewCell {
         mainCardView.backgroundColor        = STYLE.Tan
         headerView.backgroundColor          = STYLE.Beige
         
-        if GAME.currentDay == 1 {
-            counter                         = GAME.settings.firstDayTime
-        } else {
-            counter                         = setCurrentTime()
-        }
+        setCounter()
     
         let headerTitle = "General Info"
         headerTitleLabel.attributedText     = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
@@ -73,6 +69,18 @@ class GeneralInfo: UITableViewCell {
         
     }
     
+    private func setCounter() {
+        if GAME.settings.timekeepingStyle == .Countdown {
+            if GAME.currentDay == 1 {
+                counter                         = GAME.settings.firstDayTime
+            } else {
+                counter                         = setCurrentTime()
+            }
+        } else {
+            counter                             = 0
+        }
+    }
+    
     private func startTimer() {
         if !isTrackingTime {
             self.timer = Timer.scheduledTimer(timeInterval: 1,
@@ -87,17 +95,22 @@ class GeneralInfo: UITableViewCell {
     
     private func stopTimer() {
         self.timer.invalidate()
-        self.counter            = setCurrentTime()
+        setCounter()
         isTrackingTime          = false
     }
     
     public func updateTimerLabel() {
-        if counter > 0 {
-            counter -= 1
-            timeLabel.text      = timeString(time: TimeInterval(counter))
+        if GAME.settings.timekeepingStyle == .Countdown {
+            if counter > 0 {
+                counter -= 1
+                timeLabel.text      = timeString(time: TimeInterval(counter))
+            } else {
+                stopTimer()
+                timeLabel.text      = "--:--:--"
+            }
         } else {
-            stopTimer()
-            timeLabel.text      = "--:--:--"
+            counter += 1
+            timeLabel.text      = timeString(time: TimeInterval(counter))
         }
     }
     

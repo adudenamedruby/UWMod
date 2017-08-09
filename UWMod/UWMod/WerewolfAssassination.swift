@@ -48,8 +48,7 @@ class WerewolfAssassination: UIView {
         
         contentView.backgroundColor             = STYLE.Tan
         
-        counter                                 = setCurrentTime()
-        
+        setCounter()
         startTimer()
     }
     
@@ -74,6 +73,14 @@ class WerewolfAssassination: UIView {
     
     // MARK: - Timer
     
+    private func setCounter() {
+        if GAME.settings.timekeepingStyle == .Countdown {
+            counter                         = setCurrentTime()
+        } else {
+            counter                          = 0
+        }
+    }
+    
     private func startTimer() {
         if !isTrackingTime {
             self.timer = Timer.scheduledTimer(timeInterval: 1,
@@ -88,18 +95,23 @@ class WerewolfAssassination: UIView {
     
     private func stopTimer() {
         self.timer.invalidate()
-        self.counter            = setCurrentTime()
+        setCounter()
         isTrackingTime          = false
     }
     
     public func updateTimerLabel() {
-        if counter > 0 {
-            counter -= 1
-            timerLabel.text      = timeString(time: TimeInterval(counter))
+        if GAME.settings.timekeepingStyle == .Countdown {
+            if counter > 0 {
+                counter -= 1
+                timerLabel.text      = timeString(time: TimeInterval(counter))
+            } else {
+                stopTimer()
+                timerLabel.text      = "Time Expired"
+                killVillagerButton.isHidden = true
+            }
         } else {
-            stopTimer()
-            timerLabel.text      = "Time Expired"
-            killVillagerButton.isHidden = true
+            counter += 1
+            timerLabel.text      = timeString(time: TimeInterval(counter))
         }
     }
     
