@@ -12,24 +12,24 @@ class GeneralInfo: UITableViewCell {
 
     // MARK: - Outlets
     
-    @IBOutlet weak var outlineView: UIView!
-    @IBOutlet weak var mainCardView: UIView!
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var headerTitleLabel: RegTanHeader!
+    @IBOutlet weak var outlineView:                 UIView!
+    @IBOutlet weak var mainCardView:                UIView!
+    @IBOutlet weak var headerView:                  UIView!
+    @IBOutlet weak var headerTitleLabel:            RegTanHeader!
     
-    @IBOutlet var playersAliveLabel: RegGreenBold!
-    @IBOutlet var playersDeadLabel: RegRedBold!
-    @IBOutlet var totalPlayersLabel: RegBrownBold!
+    @IBOutlet var playersAliveLabel:                RegGreenBold!
+    @IBOutlet var playersDeadLabel:                 RegRedBold!
+    @IBOutlet var totalPlayersLabel:                RegBrownBold!
     
-    @IBOutlet weak var numberOfNightsPassedLabel: RegBrown!
-    @IBOutlet weak var dayNumberLabel: RegBrown!
+    @IBOutlet weak var numberOfNightsPassedLabel:   RegBrown!
+    @IBOutlet weak var dayNumberLabel:              RegBrown!
     
-    @IBOutlet weak var timeLabel: RegBrown!
+    @IBOutlet weak var timeLabel:                   RegBrown!
     
     //MARK: - Variables
-    private var timer: Timer!
-    private var counter = 0
-    private var isTrackingTime = false
+    private var timer:                              Timer!
+    private var counter                             = 0
+    private var isTrackingTime                      = false
     
     //MARK: - View Lifecycle & Configuration
     

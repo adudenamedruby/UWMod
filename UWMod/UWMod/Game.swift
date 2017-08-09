@@ -423,6 +423,8 @@ class Game {
                     }
                 }
             }
+            
+            consolidatedPlayers.sort(by: { ($0.rolePriority()) < ($1.rolePriority()) })
         }
         
         _consolidatedNightActors.removeAll()
@@ -433,8 +435,17 @@ class Game {
         _nightActors.removeAll()
         for actor in self.availablePlayers {
             if actor.isNightActivePlayer {
-                _nightActors.append(actor)
+                if actor.roleType() == .Werewolf {
+                    if actor.isAlive {
+                        _nightActors.append(actor)
+                    }
+                    
+                } else {
+                    _nightActors.append(actor)
+                }
             }
         }
+        
+        _nightActors.sort(by: { ($0.rolePriority()) < ($1.rolePriority()) })
     }
 }
