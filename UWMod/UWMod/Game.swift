@@ -15,13 +15,43 @@ enum GamePhase {
 
 class Game {
     
-    private var _currentNight:              Int
-    private var _currentDay:                Int
-    private var _firstNight:                Bool
-    private var _nightActors:               [Player]
-    private var _consolidatedNightActors:   [Player]
-    private var _rolesInTheGame:            [RoleType]
+    // MARK: - Variable declaration
     
+    // Player & roles before they are assigned to each other.
+    // availablePlayers, after the end of the first night will be a list of all players
+    // currently in the game, regardless of status
+    var availableRoster:                            [Role]
+    var availablePlayers:                           [Player]
+    
+    // Game related variables
+    private var _currentNight:                      Int
+    private var _currentDay:                        Int
+    private var _firstNight:                        Bool
+    private var _werewolfEliminationsThisNight:     Int
+    var areThereDeadPlayers:                        Bool
+    
+    // Game settings
+    var settings:                                   GameSettings
+    
+    // Actor related variables
+    private var _nightActors:                       [Player]
+    private var _consolidatedNightActors:           [Player]
+    var livingActors:                               [Player]
+    var playersToBeEliminated:                      [Player]
+    var deadActors:                                 [Player]
+    var playersEliminatedThisPhase:                 String
+    var playersProtectedThisPhase:                  String
+    
+    // Team related variables
+    private var _rolesInTheGame:                    [RoleType]
+    var daytimeInfoCards:                           [DaytimeCardType]
+
+    
+    // Role related variables
+    var aWerewolfHasBeenSlain:                      Bool
+
+    
+    // Public getters for private variables
     var currentNight: Int {
         get { return _currentNight }
     }
@@ -44,26 +74,12 @@ class Game {
         }
     }
     
-    /// Player & roles before they are assigned to each other.
-    var availableRoster:                    [Role]
-    var availablePlayers:                   [Player]
+    var werewolfEliminationsThisNight: Int {
+        get { return _werewolfEliminationsThisNight }
+    }
     
-    var livingActors:                       [Player]
-    var playersToBeEliminated:              [Player]
-    var deadActors:                         [Player]
     
-    var settings:                           GameSettings
-    
-    var nighttimeEliminations:              Int
-    var daytimeEliminations:                Int
-    var playersEliminatedThisPhase:         String
-    var playersProtectedThisPhase:          String
-    var daytimeInfoCards:                   [DaytimeCardType]
-    var areThereDeadPlayers:                Bool
-    var werewolfEliminationsPerNight:       Int
-    
-    // Role specific variables for game state
-    var aWerewolfHasBeenSlain:              Bool
+    // MARK: - Init
     
     init(availableRoster: [Role], availablePlayers: [Player], withSettings: GameSettings = GameSettings()) {
         // Sort the roles by the role priority. This makes it easier to present the 
@@ -71,27 +87,30 @@ class Game {
         self.availablePlayers               = availablePlayers.sorted(by: { ($0.name) < ($1.name) })
         self.availableRoster                = availableRoster.sorted(by: { ($0.priority) < ($1.priority) })
 
+        // Game related variables
         self._firstNight                    = true
         self._currentNight                  = 1
         self._currentDay                    = 1
-        self._nightActors                   = []
-        self._consolidatedNightActors       = []
-        self._rolesInTheGame                = []
+        self._werewolfEliminationsThisNight = 0
+        self.areThereDeadPlayers            = false
         
+        // Game settings
         self.settings                       = withSettings
         
-        
-        self.areThereDeadPlayers            = false
-        self.nighttimeEliminations          = 1
-        self.daytimeEliminations            = 1
+        // Actor related variables
+        self._nightActors                   = []
+        self._consolidatedNightActors       = []
         self.livingActors                   = []
         self.playersToBeEliminated          = []
         self.deadActors                     = []
         self.playersEliminatedThisPhase     = ""
         self.playersProtectedThisPhase      = ""
-        self.daytimeInfoCards               = []
-        self.werewolfEliminationsPerNight   = 0
         
+        // Team related variables
+        self._rolesInTheGame                = []
+        self.daytimeInfoCards               = []
+        
+        // Role related variables
         self.aWerewolfHasBeenSlain          = false
     }
 
@@ -242,7 +261,7 @@ class Game {
     }
     
     
-    // MARK: - Night functions
+    // MARK: - Phase end related functions
     
     public func finishNight() {
         
@@ -326,7 +345,13 @@ class Game {
     }
     
     private func determineNumberOfWerewolfEliminations() {
-        werewolfEliminationsPerNight = 1
+        increasePossibleWerewolfTargets()
+        
+        for player in livingActors {
+            if player.roleType() == .BigBadWolf {
+                increasePossibleWerewolfTargets()
+            }
+        }
     }
     
     private func evaluateNightActorsOrder() {
@@ -474,5 +499,16 @@ class Game {
         }
         
         _nightActors.sort(by: { ($0.rolePriority()) < ($1.rolePriority()) })
+    }
+    
+    
+    // MARK: - Role related functions
+    
+    public func increasePossibleWerewolfTargets() {
+        _werewolfEliminationsThisNight += 1
+    }
+    
+    public func decreasePossibleWerewolfTargets() {
+        _werewolfEliminationsThisNight -= 1
     }
 }

@@ -19,12 +19,11 @@ class VoteCounterVC: UIViewController {
     @IBOutlet weak var ineligibleLabel:         RegBrown!
     
     @IBOutlet weak var yesButton:               PMSuperButton!
-    @IBOutlet weak var noButton:                PMSuperButton!
+    @IBOutlet weak var tallyButton:             PMSuperButton!
     
     // MARK: - Variables
     
     var totalPlayers                            = 0
-    var majority                                = 0
     var noVotes                                 = 0
     var yesVotes                                = 0
     var ineligiblePlayers:                      String!
@@ -33,8 +32,6 @@ class VoteCounterVC: UIViewController {
         super.viewDidLoad()
         
         totalPlayers                            = eligiblePlayersToVote()
-        // ceil is used to hit the ceiling of the division. ie. 7/2 = 3.5 -> 4 as majority
-        majority                                = Int(ceil(Double(totalPlayers) / 2))
         
         mainAlertView.layer.cornerRadius        = STYLE.CornerRadius
         mainAlertView.backgroundColor           = STYLE.Tan
@@ -62,10 +59,6 @@ class VoteCounterVC: UIViewController {
             if player.canVote {
                 tempPlayerCount += 1
             }
-            
-            if player.roleType() == .Mayor {
-                tempPlayerCount += 1
-            }
         }
         
         return tempPlayerCount
@@ -83,7 +76,7 @@ class VoteCounterVC: UIViewController {
             }
             
             if player.roleType() == .Mayor {
-                mayorVote = "\n\nMayor \(player.name)'s vote counts twice."
+                mayorVote = "\n\nRemember to count Mayor \(player.name)'s vote twice."
             }
         }
         
@@ -105,20 +98,19 @@ class VoteCounterVC: UIViewController {
     @IBAction func yesButtonPressed(_ sender: Any) {
         yesVotes += 1
         yesButton.setTitle("\(yesVotes)", for: .normal)
-        checkVote()
     }
     
-    @IBAction func noButtonPressed(_ sender: Any) {
-        noVotes += 1
-        noButton.setTitle("\(noVotes)", for: .normal)
+    @IBAction func tallyButtonPressed(_ sender: Any) {
         checkVote()
     }
     
     
     // TODO: Add Tally button and check for equivalency (which is failure)
     private func checkVote() {
+        noVotes = totalPlayers - yesVotes
         var message = ""
-        if yesVotes == majority {
+        
+        if yesVotes > noVotes {
             
             message = "The vote PASSES!\n\n"
             
@@ -130,7 +122,7 @@ class VoteCounterVC: UIViewController {
                 message = message + "NO: \(noVotes)"
             }
             
-        } else if noVotes == majority {
+        } else {
             
             message = "The vote FAILS!\n\n"
             
@@ -150,7 +142,7 @@ class VoteCounterVC: UIViewController {
     
     private func updateLabel(message: String) {
         yesButton.isHidden = true
-        noButton.isHidden = true
+        tallyButton.isHidden = true
         alertTextLabel.isHidden = false
         alertTextLabel.text = message
     }

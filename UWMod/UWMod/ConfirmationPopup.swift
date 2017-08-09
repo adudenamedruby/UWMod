@@ -69,27 +69,15 @@ class ConfirmationPopup: UIViewController {
         self.dismiss(animated: true, completion: {
             if self.eliminatedBy != nil {
                 if self.eliminatedBy == .Werewolf {
-                    GAME.werewolfEliminationsPerNight -= 1
+                    GAME.decreasePossibleWerewolfTargets()
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "eliminationByWerewolf"), object: nil)
                 }
                 
             } else if self.player.roleType() == .WolfCub {
-                GAME.werewolfEliminationsPerNight += 1
+                GAME.increasePossibleWerewolfTargets()
             }
             presentingVC!.dismiss(animated: false, completion: nil)
             
         })
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
