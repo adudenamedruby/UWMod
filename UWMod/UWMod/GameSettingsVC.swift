@@ -50,46 +50,80 @@ class GameSettingsVC: UIViewController {
     
     
     // MARK: - Button actions
-    
-    @IBAction func increaseFirstDay(_ sender: Any) {
-        raiseValue(affectingLabel: firstDayLabel, forTimer: .FirstDay)
+
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(normalTap))
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap))
+        tapGesture.numberOfTapsRequired = 1
+        sender.addGestureRecognizer(tapGesture)
+        sender.addGestureRecognizer(longGesture)
     }
     
-    @IBAction func decreaseFirstDay(_ sender: Any) {
-        lowerValue(affectingLabel: firstDayLabel, forTimer: .FirstDay)
+    func normalTap(sender : UIGestureRecognizer) {
+        let recognizer: UIGestureRecognizer = sender
+        let tag: Int = recognizer.view!.tag
+        
+        switch tag {
+        case 1:
+            increaseSeconds(affectingLabel: firstDayLabel, forTimer: .FirstDay)
+        case 2:
+            decreaseSeconds(affectingLabel: firstDayLabel, forTimer: .FirstDay)
+        case 3:
+            increaseSeconds(affectingLabel: subsequentDayLabel, forTimer: .SubsequentDays)
+        case 4:
+            decreaseSeconds(affectingLabel: subsequentDayLabel, forTimer: .SubsequentDays)
+        case 5:
+            increaseSeconds(affectingLabel: decreaseDayLabel, forTimer: .SubstractFromDay)
+        case 6:
+            decreaseSeconds(affectingLabel: decreaseDayLabel, forTimer: .SubstractFromDay)
+        case 7:
+            increaseSeconds(affectingLabel: minimumDayLabel, forTimer: .MinimumDayTimeLength)
+        case 8:
+            decreaseSeconds(affectingLabel: minimumDayLabel, forTimer: .MinimumDayTimeLength)
+        case 9:
+            increaseSeconds(affectingLabel: werewolfTimerLabel, forTimer: .WerewolfDecisionTimer)
+        case 10:
+            decreaseSeconds(affectingLabel: werewolfTimerLabel, forTimer: .WerewolfDecisionTimer)
+        default:
+            print("ooooo")
+        }
     }
     
-    @IBAction func increaseSubsequentDay(_ sender: Any) {
-        raiseValue(affectingLabel: subsequentDayLabel, forTimer: .SubsequentDays)
+    func longTap(sender : UIGestureRecognizer) {
+        let recognizer: UIGestureRecognizer = sender
+        let tag: Int = recognizer.view!.tag
+        
+        if sender.state == .began {
+            print("UIGestureRecognizerStateEnded")
+            switch tag {
+            case 1:
+                increaseMinute(affectingLabel: firstDayLabel, forTimer: .FirstDay)
+            case 2:
+                decreaseMinute(affectingLabel: firstDayLabel, forTimer: .FirstDay)
+            case 3:
+                increaseMinute(affectingLabel: subsequentDayLabel, forTimer: .SubsequentDays)
+            case 4:
+                decreaseMinute(affectingLabel: subsequentDayLabel, forTimer: .SubsequentDays)
+            case 5:
+                increaseMinute(affectingLabel: decreaseDayLabel, forTimer: .SubstractFromDay)
+            case 6:
+                decreaseMinute(affectingLabel: decreaseDayLabel, forTimer: .SubstractFromDay)
+            case 7:
+                increaseMinute(affectingLabel: minimumDayLabel, forTimer: .MinimumDayTimeLength)
+            case 8:
+                decreaseMinute(affectingLabel: minimumDayLabel, forTimer: .MinimumDayTimeLength)
+            case 9:
+                increaseMinute(affectingLabel: werewolfTimerLabel, forTimer: .WerewolfDecisionTimer)
+            case 10:
+                decreaseMinute(affectingLabel: werewolfTimerLabel, forTimer: .WerewolfDecisionTimer)
+            default:
+                print("ooooo")
+            }
+        } else if sender.state == .ended {
+            
+        }
     }
     
-    @IBAction func decreaseSubsequentDay(_ sender: Any) {
-        lowerValue(affectingLabel: subsequentDayLabel, forTimer: .SubsequentDays)
-    }
-    
-    @IBAction func increaseChangeIncrement(_ sender: Any) {
-        raiseValue(affectingLabel: decreaseDayLabel, forTimer: .SubstractFromDay)
-    }
-    
-    @IBAction func decreaseChangeIncrement(_ sender: Any) {
-        lowerValue(affectingLabel: decreaseDayLabel, forTimer: .SubstractFromDay)
-    }
-    
-    @IBAction func increaseMinimumDayLength(_ sender: Any) {
-        raiseValue(affectingLabel: minimumDayLabel, forTimer: .MinimumDayTimeLength)
-    }
-    
-    @IBAction func decreaseMinimumDayLength(_ sender: Any) {
-        lowerValue(affectingLabel: minimumDayLabel, forTimer: .MinimumDayTimeLength)
-    }
-    
-    @IBAction func increaseWerewolfTime(_ sender: Any) {
-        raiseValue(affectingLabel: werewolfTimerLabel, forTimer: .WerewolfDecisionTimer)
-    }
-    
-    @IBAction func decreaseWerewolfTime(_ sender: Any) {
-        lowerValue(affectingLabel: werewolfTimerLabel, forTimer: .WerewolfDecisionTimer)
-    }
     
     @IBAction func saveSettingsButton(_ sender: Any) {
         
@@ -130,13 +164,23 @@ class GameSettingsVC: UIViewController {
         label.text = timeString(time: TimeInterval(timer))
     }
     
-    private func raiseValue(affectingLabel: UILabel, forTimer: TimeSetting) {
-        SETTINGS.increaseTimeFor(timer: forTimer)
+    private func increaseSeconds(affectingLabel: UILabel, forTimer: TimeSetting) {
+        SETTINGS.increaseSecondsFor(timer: forTimer)
         updateLabel(label: affectingLabel, forTimeItem: forTimer)
     }
     
-    private func lowerValue(affectingLabel: UILabel, forTimer: TimeSetting) {
-        SETTINGS.decreaseTimeFor(timer: forTimer)
+    private func decreaseSeconds(affectingLabel: UILabel, forTimer: TimeSetting) {
+        SETTINGS.decreaseSecondsFor(timer: forTimer)
+        updateLabel(label: affectingLabel, forTimeItem: forTimer)
+    }
+    
+    private func increaseMinute(affectingLabel: UILabel, forTimer: TimeSetting) {
+        SETTINGS.increaseMinutesFor(timer: forTimer)
+        updateLabel(label: affectingLabel, forTimeItem: forTimer)
+    }
+    
+    private func decreaseMinute(affectingLabel: UILabel, forTimer: TimeSetting) {
+        SETTINGS.decreaseMinutesFor(timer: forTimer)
         updateLabel(label: affectingLabel, forTimeItem: forTimer)
     }
     
