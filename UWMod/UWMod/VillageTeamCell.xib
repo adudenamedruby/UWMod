@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="506" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="illage Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byb-pM-AXx" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="10" width="116.5" height="25"/>
+                                                <rect key="frame" x="195" y="10" width="116.5" height="25"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="byb-pM-AXx" firstAttribute="leading" secondItem="oLJ-f5-bno" secondAttribute="leading" constant="25" id="80n-Tu-QIX"/>
+                                            <constraint firstItem="byb-pM-AXx" firstAttribute="centerX" secondItem="oLJ-f5-bno" secondAttribute="centerX" id="0EO-Tv-gZ4"/>
                                             <constraint firstItem="byb-pM-AXx" firstAttribute="centerY" secondItem="oLJ-f5-bno" secondAttribute="centerY" id="cHH-Fa-K3v"/>
                                             <constraint firstAttribute="height" constant="45" id="oQP-sX-58s"/>
                                         </constraints>

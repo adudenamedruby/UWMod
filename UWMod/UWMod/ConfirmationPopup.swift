@@ -18,7 +18,7 @@ class ConfirmationPopup: UIViewController {
     var player:                             Player!
     var eliminatedBy:                       RoleType?
     
-    var werewolfRolesList: [RoleType] = [.Werewolf]
+    var werewolfRolesList: [RoleType] = [.Werewolf, .WolfMan]
     
     override func viewDidLoad() {
         super.viewDidLoad()

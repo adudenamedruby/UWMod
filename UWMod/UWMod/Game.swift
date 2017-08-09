@@ -351,7 +351,7 @@ class Game {
         var consolidatedPlayers: [Player] = []
         
         var werewolves = 0
-        let consolidatedWolves: [RoleType] = [.Werewolf]
+        let consolidatedWolves: [RoleType] = [.Werewolf, .WolfMan]
         
         var vampires = 0
         let consolidatedVampires: [RoleType] = [.Vampire]
