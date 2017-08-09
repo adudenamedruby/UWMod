@@ -20,6 +20,13 @@ let tempRoles: [Role] = [BODYGUARD,
 let ALL_GAME_ROLES: [Role] = tempRoles.sorted(by: { $0.name < $1.name})
 
 
+// ROLE RUNBOOK
+// Add role definition here and add to ALL_GAME_ROLES
+// Add roles to elimination for effects
+// Add roles to wolfLists and consolidation functions
+
+
+
 // Roles get instantiated here! Fancy!
 
 let VILLAGER_ONE = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.", impact: 3, priority: 3, powerChoice: false, team: [.TeamVillage], availableEffects: [], wakeTime: [.First], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole, notes: "This role doesn't usually wake at night. Tonight, however, ask Villagers to raise their hands (while keeping eyes closed), so you may assign roles to players.")
