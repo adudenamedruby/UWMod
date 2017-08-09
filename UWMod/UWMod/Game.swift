@@ -119,7 +119,7 @@ class Game {
         self.daytimeInfoCards               = []
         
         // Role related variables
-        self._werewolvesHaveKilledThisNight = false
+        self._werewolvesHaveKilledThisNight = true
         self._werewolvesAreDiseased         = false
         self._wolfRoles                     = [.Werewolf,
                                                .WolfMan,
@@ -175,6 +175,10 @@ class Game {
                     
                     if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
                         self.livingActors.remove(at: tempIndex)
+                    }
+                    
+                    if victim.roleType() == .WolfCub {
+                        increasePossibleWerewolfTargets()
                     }
                     
                     if victim.killedBy != nil {
@@ -295,7 +299,6 @@ class Game {
         clearPhaseReport()
         assignInfoCardsToPlayers()
         eliminatePlayers()
-        determineNumberOfWerewolfEliminations() // figure out where whis goes in order
         determineNightActors()
         setDeadPlayerCheck()
         setupInfoCards()
@@ -309,7 +312,7 @@ class Game {
         clearPhaseReport()
         assignInfoCardsToPlayers()
         eliminatePlayers()
-        determineNumberOfWerewolfEliminations() // figure out where whis goes in order
+        determineNumberOfWerewolfEliminations()
         determineNightActors()
         setDeadPlayerCheck()
         
@@ -380,6 +383,7 @@ class Game {
         if _werewolvesAreDiseased {
             _werewolfEliminationsThisNight  = 0
             _werewolvesAreDiseased          = false
+            _werewolvesHaveKilledThisNight  = true
         }
     }
     
@@ -531,6 +535,7 @@ class Game {
     }
     
     public func werewolvesHaveKilled() {
+        decreasePossibleWerewolfTargets()
         if !_werewolvesHaveKilledThisNight {
             _werewolvesHaveKilledThisNight = true
         }

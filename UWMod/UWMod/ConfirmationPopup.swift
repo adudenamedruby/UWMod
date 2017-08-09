@@ -77,8 +77,6 @@ class ConfirmationPopup: UIViewController {
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "eliminationByWerewolf"), object: nil)
                 }
                 
-            } else if self.player.roleType() == .WolfCub {
-                GAME.increasePossibleWerewolfTargets()
             }
             
             presentingVC!.dismiss(animated: false, completion: nil)
