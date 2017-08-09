@@ -33,7 +33,7 @@ class AboutVC: UIViewController {
         let version : AnyObject! = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as AnyObject
         let build : AnyObject! = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as AnyObject
 
-        textLabel.text = "App Design Development\n\nACME|labs\n\nSpecial thanks to: Ted Alspach & Bezier Games for permission of the Ultimate Werewolf property; Andrei Pitsko for TisprCardStack.\n\nVersion: \(version!) (b\(build!)) August 2017"
+        textLabel.text = "App Design & Development\n\nACME|labs\n\n\nSpecial thanks to: Ted Alspach & Bezier Games for permission of the Ultimate Werewolf property; Andrei Pitsko for TisprCardStack.\n\nVersion: \(version!) (b\(build!)) August 2017"
         
     }
     
