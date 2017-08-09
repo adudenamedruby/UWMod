@@ -49,6 +49,7 @@ class Game {
     
     // Role related variables
     private var _werewolvesHaveKilledThisNight:     Bool
+    private var _werewolvesAreDiseased:             Bool
     private var _wolfRoles:                         [RoleType]
     var aWerewolfHasBeenSlain:                      Bool
 
@@ -119,6 +120,7 @@ class Game {
         
         // Role related variables
         self._werewolvesHaveKilledThisNight = false
+        self._werewolvesAreDiseased         = false
         self._wolfRoles                     = [.Werewolf,
                                                .WolfMan,
                                                .WolfCub,
@@ -173,6 +175,12 @@ class Game {
                     
                     if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
                         self.livingActors.remove(at: tempIndex)
+                    }
+                    
+                    if victim.killedBy != nil {
+                        if _wolfRoles.contains(victim.killedBy!) && victim.roleType() == .Diseased {
+                            _werewolvesAreDiseased = true
+                        }
                     }
                 }
                 
@@ -365,6 +373,13 @@ class Game {
             if player.roleType() == .BigBadWolf {
                 increasePossibleWerewolfTargets()
             }
+        }
+        
+        
+        // This is a last check!
+        if _werewolvesAreDiseased {
+            _werewolfEliminationsThisNight  = 0
+            _werewolvesAreDiseased          = false
         }
     }
     
