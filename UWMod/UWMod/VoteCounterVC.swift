@@ -114,14 +114,37 @@ class VoteCounterVC: UIViewController {
         checkVote()
     }
     
+    
+    // TODO: Add Tally button and check for equivalency (which is failure)
     private func checkVote() {
+        var message = ""
         if yesVotes == majority {
             
-            updateLabel(message: "The vote PASSES!\n\n Total Living: \(totalPlayers)\nYES: \(yesVotes)\nNO: \(noVotes)")
+            message = "The vote PASSES!\n\n"
+            
+            if yesVotes != 0 {
+                message = message + "YES: \(yesVotes)\n"
+            }
+            
+            if noVotes != 0 {
+                message = message + "NO: \(noVotes)"
+            }
             
         } else if noVotes == majority {
-            updateLabel(message: "The vote FAILS!\n\n Total Living: \(totalPlayers)\nYES: \(yesVotes)\nNO: \(noVotes)")
+            
+            message = "The vote FAILS!\n\n"
+            
+            if yesVotes != 0 {
+                message = message + "YES: \(yesVotes)\n"
+            }
+            
+            if noVotes != 0 {
+                message = message + "NO: \(noVotes)"
+            }
+            
         }
+        
+        updateLabel(message: message)
     
     }
     
