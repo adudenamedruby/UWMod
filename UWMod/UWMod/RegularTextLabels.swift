@@ -367,6 +367,23 @@ class RegBrownSmall: UILabel {
     
 }
 
-
+class RegBeigeSmall: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func commonInit(){
+        self.textColor = STYLE.Beige
+        self.font = STYLE.RegSmallFont
+    }
+    
+}
 
 

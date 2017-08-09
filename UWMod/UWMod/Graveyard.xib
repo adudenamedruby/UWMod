@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="he Graveyard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utv-3l-tyT" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="10" width="136" height="25"/>
+                                                <rect key="frame" x="95.5" y="10" width="136" height="25"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Utv-3l-tyT" firstAttribute="leading" secondItem="XJs-kk-5Y1" secondAttribute="leading" constant="25" id="HjE-Jd-y5h"/>
+                                            <constraint firstItem="Utv-3l-tyT" firstAttribute="centerX" secondItem="XJs-kk-5Y1" secondAttribute="centerX" id="pMM-GZ-kgj"/>
                                             <constraint firstAttribute="height" constant="45" id="qOC-3s-0Ta"/>
                                             <constraint firstItem="Utv-3l-tyT" firstAttribute="centerY" secondItem="XJs-kk-5Y1" secondAttribute="centerY" id="qbX-tO-pZ7"/>
                                         </constraints>

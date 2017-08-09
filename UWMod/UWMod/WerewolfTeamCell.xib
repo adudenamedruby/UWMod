@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="498" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erewolf Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfY-tn-6O6" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="10" width="137" height="25"/>
+                                                <rect key="frame" x="180.5" y="10" width="137" height="25"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -37,7 +37,7 @@
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="EuU-F0-uSS"/>
-                                            <constraint firstItem="cfY-tn-6O6" firstAttribute="leading" secondItem="Mxc-4o-ZUw" secondAttribute="leading" constant="25" id="PKW-Ky-VGE"/>
+                                            <constraint firstItem="cfY-tn-6O6" firstAttribute="centerX" secondItem="Mxc-4o-ZUw" secondAttribute="centerX" id="HbB-T0-a3f"/>
                                             <constraint firstItem="cfY-tn-6O6" firstAttribute="centerY" secondItem="Mxc-4o-ZUw" secondAttribute="centerY" id="Tpr-H8-4MQ"/>
                                         </constraints>
                                     </view>

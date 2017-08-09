@@ -18,6 +18,11 @@ enum TimeSetting {
     case WerewolfDecisionTimer
 }
 
+enum TimekeepingType {
+    case Countdown
+    case Stopwatch
+}
+
 class GameSettings {
     
     private var _firstDayTime:               Int
@@ -25,7 +30,9 @@ class GameSettings {
     private var _changeDayBy:                Int
     private var _minimumDayLength:           Int
     private var _werewolfTime:               Int
-    private var timeIncrement:               Int
+    private var _timerType:                  TimekeepingType
+    private var secondIncrement:             Int
+    private var minuteIncrement:             Int
     
     var firstDayTime: Int {
         get { return _firstDayTime }
@@ -47,45 +54,87 @@ class GameSettings {
         get { return _werewolfTime }
     }
     
-    init(firstDay: Int = 1200, subsequentDay: Int = 600, increments: Int = 30, minimumDayTime: Int = 180, werewolfTimer: Int = 120) {
+    var timekeepingStyle: TimekeepingType {
+        get { return _timerType }
+    }
+    
+    init(firstDay: Int = 1200, subsequentDay: Int = 600, increments: Int = 30, minimumDayTime: Int = 180, werewolfTimer: Int = 120, timekeepingStyle: TimekeepingType = .Countdown) {
         
         self._firstDayTime              = firstDay
         self._subsequentDayTime         = subsequentDay
         self._changeDayBy               = increments
         self._minimumDayLength          = minimumDayTime
         self._werewolfTime              = werewolfTimer
-        self.timeIncrement              = 10
+        self._timerType                 = timekeepingStyle
+        self.secondIncrement            = 10
+        self.minuteIncrement            = 60
     }
     
-    public func increaseTimeFor(timer: TimeSetting) {
+    public func increaseSecondsFor(timer: TimeSetting) {
         
         switch timer {
         case .FirstDay:
-            _firstDayTime += timeIncrement
+            _firstDayTime += secondIncrement
         case .SubsequentDays:
-            _subsequentDayTime += timeIncrement
+            _subsequentDayTime += secondIncrement
         case .SubstractFromDay:
-            _changeDayBy += timeIncrement
+            _changeDayBy += secondIncrement
         case .MinimumDayTimeLength:
-            _minimumDayLength += timeIncrement
+            _minimumDayLength += secondIncrement
         case .WerewolfDecisionTimer:
-            _werewolfTime += timeIncrement
+            _werewolfTime += secondIncrement
         }
     }
     
-    public func decreaseTimeFor(timer: TimeSetting) {
+    public func decreaseSecondsFor(timer: TimeSetting) {
         
         switch timer {
         case .FirstDay:
-            _firstDayTime -= timeIncrement
+            _firstDayTime -= secondIncrement
         case .SubsequentDays:
-            _subsequentDayTime -= timeIncrement
+            _subsequentDayTime -= secondIncrement
         case .SubstractFromDay:
-            _changeDayBy -= timeIncrement
+            _changeDayBy -= secondIncrement
         case .MinimumDayTimeLength:
-            _minimumDayLength -= timeIncrement
+            _minimumDayLength -= secondIncrement
         case .WerewolfDecisionTimer:
-            _werewolfTime -= timeIncrement
+            _werewolfTime -= secondIncrement
         }
+    }
+    
+    public func increaseMinutesFor(timer: TimeSetting) {
+        
+        switch timer {
+        case .FirstDay:
+            _firstDayTime += minuteIncrement
+        case .SubsequentDays:
+            _subsequentDayTime += minuteIncrement
+        case .SubstractFromDay:
+            _changeDayBy += minuteIncrement
+        case .MinimumDayTimeLength:
+            _minimumDayLength += minuteIncrement
+        case .WerewolfDecisionTimer:
+            _werewolfTime += minuteIncrement
+        }
+    }
+    
+    public func decreaseMinutesFor(timer: TimeSetting) {
+        
+        switch timer {
+        case .FirstDay:
+            _firstDayTime -= minuteIncrement
+        case .SubsequentDays:
+            _subsequentDayTime -= minuteIncrement
+        case .SubstractFromDay:
+            _changeDayBy -= minuteIncrement
+        case .MinimumDayTimeLength:
+            _minimumDayLength -= minuteIncrement
+        case .WerewolfDecisionTimer:
+            _werewolfTime -= minuteIncrement
+        }
+    }
+    
+    public func changeTimeKeepingStyle(style: TimekeepingType) {
+        _timerType = style
     }
 }

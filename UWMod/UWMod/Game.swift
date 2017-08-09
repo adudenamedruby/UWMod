@@ -15,16 +15,50 @@ enum GamePhase {
 
 class Game {
     
-    private var _currentNight:              Int
-    private var _currentDay:                Int
-    private var _firstNight:                Bool
-    private var _nightActors:               [Player]
-    private var _consolidatedNightActors:   [Player]
-    private var _rolesInTheGame:            [RoleType]
+    // MARK: - Variable declaration
     
+    // Player & roles before they are assigned to each other.
+    // availablePlayers, after the end of the first night will be a list of all players
+    // currently in the game, regardless of status
+    var availableRoster:                            [Role]
+    var availablePlayers:                           [Player]
+    
+    // Game related variables
+    private var _currentNight:                      Int
+    private var _currentDay:                        Int
+    private var _firstNight:                        Bool
+    private var _werewolfEliminationsThisNight:     Int
+    var areThereDeadPlayers:                        Bool
+    
+    // Game settings
+    var settings:                                   GameSettings
+    
+    // Actor related variables
+    private var _nightActors:                       [Player]
+    private var _consolidatedNightActors:           [Player]
+    var livingActors:                               [Player]
+    var playersToBeEliminated:                      [Player]
+    var deadActors:                                 [Player]
+    var playersEliminatedThisPhase:                 String
+    var playersProtectedThisPhase:                  String
+    
+    // Team related variables
+    private var _rolesInTheGame:                    [RoleType]
+    var daytimeInfoCards:                           [DaytimeCardType]
+
+    
+    // Role related variables
+    private var _werewolvesHaveKilledThisNight:     Bool
+    private var _werewolvesAreDiseased:             Bool
+    private var _wolfRoles:                         [RoleType]
+    var aWerewolfHasBeenSlain:                      Bool
+
+    
+    // Public getters for private variables
     var currentNight: Int {
         get { return _currentNight }
     }
+    
     var currentDay: Int {
         get { return _currentDay }
     }
@@ -44,26 +78,16 @@ class Game {
         }
     }
     
-    /// Player & roles before they are assigned to each other.
-    var availableRoster:                    [Role]
-    var availablePlayers:                   [Player]
+    var werewolfEliminationsThisNight: Int {
+        get { return _werewolfEliminationsThisNight }
+    }
     
-    var livingActors:                       [Player]
-    var playersToBeEliminated:              [Player]
-    var deadActors:                         [Player]
+    var wolfRoles: [RoleType] {
+        get { return _wolfRoles }
+    }
     
-    var settings:                           GameSettings
     
-    var nighttimeEliminations:              Int
-    var daytimeEliminations:                Int
-    var playersEliminatedThisPhase:         String
-    var playersProtectedThisPhase:          String
-    var daytimeInfoCards:                   [DaytimeCardType]
-    var areThereDeadPlayers:                Bool
-    var werewolfEliminationsPerNight:       Int
-    
-    // Role specific variables for game state
-    var aWerewolfHasBeenSlain:              Bool
+    // MARK: - Init
     
     init(availableRoster: [Role], availablePlayers: [Player], withSettings: GameSettings = GameSettings()) {
         // Sort the roles by the role priority. This makes it easier to present the 
@@ -71,28 +95,45 @@ class Game {
         self.availablePlayers               = availablePlayers.sorted(by: { ($0.name) < ($1.name) })
         self.availableRoster                = availableRoster.sorted(by: { ($0.priority) < ($1.priority) })
 
+        // Game related variables
         self._firstNight                    = true
         self._currentNight                  = 1
         self._currentDay                    = 1
-        self._nightActors                   = []
-        self._consolidatedNightActors       = []
-        self._rolesInTheGame                = []
+        self._werewolfEliminationsThisNight = 0
+        self.areThereDeadPlayers            = false
         
+        // Game settings
         self.settings                       = withSettings
         
-        
-        self.areThereDeadPlayers            = false
-        self.nighttimeEliminations          = 1
-        self.daytimeEliminations            = 1
+        // Actor related variables
+        self._nightActors                   = []
+        self._consolidatedNightActors       = []
         self.livingActors                   = []
         self.playersToBeEliminated          = []
         self.deadActors                     = []
         self.playersEliminatedThisPhase     = ""
         self.playersProtectedThisPhase      = ""
-        self.daytimeInfoCards               = []
-        self.werewolfEliminationsPerNight   = 0
         
+        // Team related variables
+        self._rolesInTheGame                = []
+        self.daytimeInfoCards               = []
+        
+        // Role related variables
+        self._werewolvesHaveKilledThisNight = true
+        self._werewolvesAreDiseased         = false
+        self._wolfRoles                     = [.Werewolf,
+                                               .WolfMan,
+                                               .WolfCub,
+                                               .DireWolf,
+                                               .TeenageWerewolf,
+                                               .BigBadWolf,
+                                               .Dreamwolf,
+                                               .FangFace,
+                                               .AlphaWolf,
+                                               .FruitBrute,
+                                               .Wolverine]
         self.aWerewolfHasBeenSlain          = false
+        
     }
 
     
@@ -115,7 +156,6 @@ class Game {
         }
     }
     
-    
     // Player elimination should happen at the END of each round after effects have been
     // applied by the different roles in order to accout for effects taking.... effect.
     public func prepareToEliminatePlayer(victim: Player) {
@@ -137,12 +177,17 @@ class Game {
                         self.livingActors.remove(at: tempIndex)
                     }
                     
-                    // Do not remove players from the nightActor's list to prevent role reveal
-//                    if let tempIndex = self.nightActors.index(where: { $0 === victim }) {
-//                        self.nightActors.remove(at: tempIndex)
-//                    }
-
+                    if victim.roleType() == .WolfCub {
+                        increasePossibleWerewolfTargets()
+                    }
+                    
+                    if victim.killedBy != nil {
+                        if _wolfRoles.contains(victim.killedBy!) && victim.roleType() == .Diseased {
+                            _werewolvesAreDiseased = true
+                        }
+                    }
                 }
+                
             } else {
                 addToPhaseReport(player: victim)
             }
@@ -161,10 +206,12 @@ class Game {
         }
     }
     
+    private func clearPhaseReport() {
+        playersEliminatedThisPhase = ""
+        playersProtectedThisPhase = ""
+    }
     
     // MARK: - Player name retrieval functions for various uses
-    
-    // This fetches all players in a list and returns the appropriate string
     
     public func fetchPlayersWithTeamType(fromList: [Player], ofTeamType: UWTeam, withRole: Bool = false, separatedByComma: Bool = false) -> String {
         var players = ""
@@ -235,14 +282,9 @@ class Game {
         
         return "\(player.name)\(separator)"
     }
+
     
-    private func clearPhaseReport() {
-        playersEliminatedThisPhase = ""
-        playersProtectedThisPhase = ""
-    }
-    
-    
-    // MARK: - Night functions
+    // MARK: - Phase end related functions
     
     public func finishNight() {
         
@@ -255,10 +297,8 @@ class Game {
         
         resetPlayerNightActions()
         clearPhaseReport()
-        determineNumberOfWerewolfEliminations()  // Figure out where this goes in order
         assignInfoCardsToPlayers()
         eliminatePlayers()
-        evaluateNightActorsOrder()
         determineNightActors()
         setDeadPlayerCheck()
         setupInfoCards()
@@ -270,13 +310,13 @@ class Game {
         
         resetPlayerDayActions()
         clearPhaseReport()
-        determineNumberOfWerewolfEliminations() // figure out where whis goes in order
         assignInfoCardsToPlayers()
         eliminatePlayers()
-        evaluateNightActorsOrder()
+        determineNumberOfWerewolfEliminations()
         determineNightActors()
         setDeadPlayerCheck()
         
+        aWerewolfHasBeenSlain = false
         _currentDay += 1
     }
     
@@ -326,11 +366,25 @@ class Game {
     }
     
     private func determineNumberOfWerewolfEliminations() {
-        werewolfEliminationsPerNight = 1
-    }
-    
-    private func evaluateNightActorsOrder() {
-        self._nightActors = _nightActors.sorted(by: { $0.rolePriority() < $1.rolePriority()})
+        
+        if _werewolvesHaveKilledThisNight {
+            increasePossibleWerewolfTargets()
+            _werewolvesHaveKilledThisNight = false
+        }
+        
+        for player in livingActors {
+            if player.roleType() == .BigBadWolf {
+                increasePossibleWerewolfTargets()
+            }
+        }
+        
+        
+        // This is a last check!
+        if _werewolvesAreDiseased {
+            _werewolfEliminationsThisNight  = 0
+            _werewolvesAreDiseased          = false
+            _werewolvesHaveKilledThisNight  = true
+        }
     }
     
     private func determineRolesInTheGame() {
@@ -347,81 +401,50 @@ class Game {
     }
     
     private func consolidateNightActors() {
+        let vampireList: [RoleType]             = [.Vampire]
         
-        var consolidatedPlayers: [Player] = []
+        let roleCount = checkIfShouldConsolitade(wolfList: _wolfRoles,
+                                                 vampireList: vampireList)
         
-        var werewolves = 0
-        let consolidatedWolves: [RoleType] = [.Werewolf]
+        _consolidatedNightActors.removeAll()
+        _consolidatedNightActors = buildConsolidatedNightActors(withWerevolvesPresent: roleCount.werewolves,
+                                                                withVampiresPresent: roleCount.vampires,
+                                                                wolfList: _wolfRoles,
+                                                                vampireList: vampireList)
+    }
+    
+    private func buildConsolidatedNightActors(withWerevolvesPresent werewolves: Int, withVampiresPresent vampires: Int, wolfList: [RoleType], vampireList: [RoleType]) -> [Player] {
         
-        var vampires = 0
-        let consolidatedVampires: [RoleType] = [.Vampire]
+        var consolidatedPlayers: [Player]           = []
+        var alreadyAddedWerewolfTeamCard            = false
+//        var alreadyAddedVampireTeamCard             = false
         
-        for player in livingActors {
-            
-            let playerRole = player.roleType()
-            if consolidatedWolves.contains(playerRole) {
-                werewolves += 1
-            } else if consolidatedVampires.contains(playerRole) {
-                vampires += 1
-            }
-        }
+        let werewolfTeamPlayer = createTeamPlayer(roleCount: werewolves,
+                                                  roleList: wolfList,
+                                                  teamType: .TeamWerewolf)
+//        let vampireTeamPlayer = createTeamPlayer(roleCount: vampires,
+//                                                 roleList: vampireList,
+//                                                 teamType: .TeamVamprie)
         
-        // Create a Werewolf Team PLayer to present as a card.
-        var didNotAddWerewolfTeamCard           = true
-        var werewolfName                        = ""
-        let werewolfTeamPlayer: Player          = Player(name: werewolfName)
-        if werewolves >= 2 {
-            for player in livingActors {
-                if consolidatedWolves.contains(player.roleType()) {
-                    let nameToAdd = fetchSinglePlayer(player: player, withRole: false, separatedByComma: true)
-                    werewolfName = werewolfName + nameToAdd
-                }
-            }
-        }
-        if werewolfName != "" {
-            let truncatedWolf = werewolfName.substring(to: werewolfName.index(werewolfName.endIndex, offsetBy: -2))
-            werewolfTeamPlayer.name = truncatedWolf
-        }
-        werewolfTeamPlayer.assignRole(role: WEREWOLF_TEAM)
-        
-        
-        
-        // UNCOMMENT WHEN VAMPIRES ARE ADDED!
-        // Create a Vampire Team players to present as a card
-//        var didNotAddVampireTeamCard            = true
-//        var vampireName                         = ""
-//        let vampireTeamPlayer: Player           = Player(name: vampireName)
-//        
-//        if vampires >= 2 {
-//            for player in livingActors {
-//                if consolidatedVampires.contains(player.roleType()) {
-//                    let nameToAdd = fetchSinglePlayer(player: player, withRole: false, separatedByComma: true)
-//                    vampireName =  vampireName + nameToAdd
-//                }
-//            }
-//        }
-//        if vapireName != "" {
-//            let truncatedVamp = werewolfName.substring(to: werewolfName.index(werewolfName.endIndex, offsetBy: -2))
-//            vampireTeamPlayer.name = truncatedVamp
-//        }
-//        vampireTeamPlayer.assignRole(role: addARoleHere)
+        var wolfRoles = wolfList
+        wolfRoles.remove(at: (wolfRoles.index(of: .AlphaWolf))!)
         
         // Only create consolidated players if there is a need.
         if werewolves >= 2 || vampires >= 2 {
             for player in availablePlayers {
                 if player.isNightActivePlayer {
                     let playerRole = player.roleType()
-                    if consolidatedWolves.contains(playerRole) {
-                        if didNotAddWerewolfTeamCard {
+                    if wolfRoles.contains(playerRole) {
+                        if !alreadyAddedWerewolfTeamCard {
                             consolidatedPlayers.append(werewolfTeamPlayer)
-                            didNotAddWerewolfTeamCard = false
+                            alreadyAddedWerewolfTeamCard = true
                         }
                         
-        //            } else if consolidatedVampires.contains(playerRole) {
-        //                if didNotAddVampireTeamCard {
-        //                    consolidatedPlayers.append(vampireTeamPlayer)
-        //                    didNotAddVampireTeamCard = false
-        //                }
+                        //            } else if vampireList.contains(playerRole) {
+                        //                if !alreadyAddedVampireTeamCard {
+                        //                    consolidatedPlayers.append(vampireTeamPlayer)
+                        //                    alreadyAddedVampireTeamCard = true
+                        //                }
                         
                     } else {
                         consolidatedPlayers.append(player)
@@ -429,11 +452,57 @@ class Game {
                 }
             }
             
-            consolidatedPlayers.sort(by: { ($0.rolePriority()) < ($1.rolePriority()) })
+            if consolidatedPlayers.count > 0 {
+                consolidatedPlayers.sort(by: { ($0.rolePriority()) < ($1.rolePriority()) })
+            }
         }
         
-        _consolidatedNightActors.removeAll()
-        _consolidatedNightActors = consolidatedPlayers
+        return consolidatedPlayers
+    }
+    
+    private func createTeamPlayer(roleCount: Int, roleList: [RoleType], teamType: UWTeam) -> Player{
+        // Create a Team Player to present as a card.
+        var newName                         = ""
+        let teamPlayer: Player              = Player(name: newName)
+        
+        if roleCount >= 2 {
+            for player in livingActors {
+                if roleList.contains(player.roleType()) {
+                    let nameToAdd = fetchSinglePlayer(player: player, withRole: false, separatedByComma: true)
+                    newName = newName + nameToAdd
+                }
+            }
+        }
+        
+        if newName != "" {
+            let truncatedName = newName.substring(to: newName.index(newName.endIndex, offsetBy: -2))
+            teamPlayer.name = truncatedName
+        }
+        
+        if teamType == .TeamWerewolf {
+            teamPlayer.assignRole(role: WEREWOLF_TEAM)
+        } else if teamType == .TeamVamprie {
+            //teamPlayer.assignRole(role: VAMPIRE_TEAM)
+        }
+        
+        return teamPlayer
+    }
+    
+    private func checkIfShouldConsolitade(wolfList: [RoleType], vampireList: [RoleType]) -> (werewolves: Int, vampires: Int) {
+        var werewolves = 0
+        var vampires = 0
+        
+        for player in livingActors {
+            
+            let playerRole = player.roleType()
+            if wolfList.contains(playerRole) {
+                werewolves += 1
+            } else if vampireList.contains(playerRole) {
+                vampires += 1
+            }
+        }
+        
+        return (werewolves, vampires)
     }
     
     private func regularNightActorFill() {
@@ -452,5 +521,23 @@ class Game {
         }
         
         _nightActors.sort(by: { ($0.rolePriority()) < ($1.rolePriority()) })
+    }
+    
+    
+    // MARK: - Role related functions
+    
+    public func increasePossibleWerewolfTargets() {
+        _werewolfEliminationsThisNight += 1
+    }
+    
+    public func decreasePossibleWerewolfTargets() {
+        _werewolfEliminationsThisNight -= 1
+    }
+    
+    public func werewolvesHaveKilled() {
+        decreasePossibleWerewolfTargets()
+        if !_werewolvesHaveKilledThisNight {
+            _werewolvesHaveKilledThisNight = true
+        }
     }
 }

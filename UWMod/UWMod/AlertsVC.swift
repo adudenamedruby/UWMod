@@ -10,13 +10,21 @@ import UIKit
 
 class AlertsVC: UIViewController {
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var mainAlertView:           UIView!
     @IBOutlet weak var headerView:              UIView!
     @IBOutlet weak var headerTitleLabel:        OldTan!
     @IBOutlet weak var alertTextLabel:          RegBrown!
     
+    
+    // MARK: - Variables
+    
     var alertName:                              String?
     var alertText:                              String?
+    
+    
+    // MARK - Initializers
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +42,9 @@ class AlertsVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: - Button functionality
     
     @IBAction func okButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

@@ -105,7 +105,6 @@ class Role {
     let impact:                     Int
     let priority:                   Int
     let team:                       [UWTeam]
-    let wakeTime:                   [UWNights]
     let image:                      UIImage
     
     // this should change the priority of special roles depending on game settings
@@ -120,7 +119,7 @@ class Role {
     var isNightActiveRole:          NightActiveStatus
     var isActivated:                Bool
     
-    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], availableEffects: [PlayerEffects], wakeTime: [UWNights], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
+    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], availableEffects: [PlayerEffects], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
         self.name                   = name
         self.type                   = type
         self.description            = description
@@ -133,7 +132,6 @@ class Role {
         self.availableEffects       = availableEffects
         self.isManuallyAssigned     = true
         self.team                   = team
-        self.wakeTime               = wakeTime
         self.powerChoice            = powerChoice
         self.powerUsed              = false
         self.canWake                = true
