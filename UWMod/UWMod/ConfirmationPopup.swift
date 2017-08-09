@@ -10,25 +10,20 @@ import UIKit
 
 class ConfirmationPopup: UIViewController {
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var mainAlertView:       UIView!
     @IBOutlet weak var headerView:          UIView!
     @IBOutlet weak var headerTitleLabel:    OldTan!
     @IBOutlet weak var alertTextLabel:      RegBrown!
     
+    
+    // MARK: - Variables
+    
     var player:                             Player!
     var eliminatedBy:                       RoleType?
-    
-    var werewolfRolesList: [RoleType]       = [.Werewolf,
-                                               .WolfMan,
-                                               .WolfCub,
-                                               .DireWolf,
-                                               .TeenageWerewolf,
-                                               .BigBadWolf,
-                                               .Dreamwolf,
-                                               .FangFace,
-                                               .AlphaWolf,
-                                               .FruitBrute,
-                                               .Wolverine]
+    var alternateHeaderTitle:               String?
+    var alternateAlertText:                 String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +32,19 @@ class ConfirmationPopup: UIViewController {
         mainAlertView.backgroundColor       = STYLE.Tan
         headerView.backgroundColor          = STYLE.Brown
         
-        let headerTitle = "Confirm Elimination"
+        var headerTitle = "Confirm Elimination"
+
+        if alternateHeaderTitle != nil {
+            headerTitle = alternateHeaderTitle!
+        }
+        
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
-        alertTextLabel.text                 = "Are you sure you want to eliminate \(player.name)?"
+        if alternateAlertText != nil {
+            alertTextLabel.text             = alternateAlertText!
+        } else {
+            alertTextLabel.text             = "Are you sure you want to eliminate \(player.name)?"
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,7 +62,7 @@ class ConfirmationPopup: UIViewController {
             player.killedBy = eliminatedBy
         }
         
-        if werewolfRolesList.contains(player.roleType()) && !GAME.aWerewolfHasBeenSlain {
+        if GAME.wolfRoles.contains(player.roleType()) && !GAME.aWerewolfHasBeenSlain {
             GAME.aWerewolfHasBeenSlain = true
         }
         
@@ -68,14 +72,15 @@ class ConfirmationPopup: UIViewController {
         
         self.dismiss(animated: true, completion: {
             if self.eliminatedBy != nil {
-                if self.eliminatedBy == .Werewolf {
-                    GAME.decreasePossibleWerewolfTargets()
+                if GAME.wolfRoles.contains(self.eliminatedBy!) {
+                    GAME.werewolvesHaveKilled()
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "eliminationByWerewolf"), object: nil)
                 }
                 
             } else if self.player.roleType() == .WolfCub {
                 GAME.increasePossibleWerewolfTargets()
             }
+            
             presentingVC!.dismiss(animated: false, completion: nil)
             
         })

@@ -26,10 +26,10 @@ enum UWTeam: String {
 }
 
 
-enum UWNights {
-    case Never
-    case EveryNight
-    case First
+enum UWNights: Int {
+    case Never              = -1
+    case EveryNight         = 0
+    case First              = 1
     case Second
     case Third
 }
@@ -53,6 +53,7 @@ enum DaytimeCardType {
     
     // Indivitual cards - cards like the Witch who has protected AND poisoned someone.
     case WitchCard
+    case TeenageWerewolfCard
 }
 
 // To be added as time goes by.

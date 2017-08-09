@@ -192,7 +192,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         } else if (player?.isAlive)! {
          
             if player?.roleType() == .Werewolf {
-                if !GAME.firstNight && GAME.werewolfEliminationsPerNight != 0 {
+                if !GAME.firstNight && GAME.werewolfEliminationsThisNight != 0 {
                     presentWerewolfAssassination()
                 }
             } else if player?.roleType() == .Bodyguard && !((player?.hasActedTonight)!) && !GAME.firstNight {

@@ -66,9 +66,7 @@ class DayVC: UIViewController {
         super.viewDidAppear(animated)
         daytimeBackground.alpha = 1
         
-        voteButton.fadeIn()
-        lynchButton.fadeIn()
-        endDayButton.fadeIn()
+        fadeButtonsIn()
     }
     
     
@@ -89,9 +87,7 @@ class DayVC: UIViewController {
     }
 
     @IBAction func endDayPressed(_ sender: Any) {
-        voteButton.fadeOut()
-        lynchButton.fadeOut()
-        endDayButton.fadeOut()
+        fadeButtonsOut()
         fadeDayEndControlsIn()
     }
     
@@ -111,6 +107,7 @@ class DayVC: UIViewController {
     
     @IBAction func continueDayButton(_ sender: Any) {
         fadeDayEndControlsOut()
+        fadeButtonsIn()
     }
     
     func fadeDayEndControlsIn() {
@@ -147,6 +144,18 @@ class DayVC: UIViewController {
         tableView.register(UINib(nibName: "VillageTeamCell", bundle: nil),
                            forCellReuseIdentifier: "villageTeamCell")
 
+    }
+    
+    private func fadeButtonsIn() {
+        voteButton.fadeIn()
+        lynchButton.fadeIn()
+        endDayButton.fadeIn()
+    }
+    
+    private func fadeButtonsOut() {
+        voteButton.fadeOut()
+        lynchButton.fadeOut()
+        endDayButton.fadeOut()
     }
 }
 

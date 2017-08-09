@@ -108,6 +108,9 @@ class VoteCounterVC: UIViewController {
     // TODO: Add Tally button and check for equivalency (which is failure)
     private func checkVote() {
         noVotes = totalPlayers - yesVotes
+        if noVotes < 0 {
+            noVotes = 0
+        }
         var message = ""
         
         if yesVotes > noVotes {
