@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="65.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ame Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-Kc-kag" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="97.5" y="14.5" width="130.5" height="36.5"/>
+                                                <rect key="frame" x="98" y="15" width="130.5" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -131,8 +131,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwe-rl-XGx">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="70"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pf4-pK-Fhz" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="133" y="25" width="77" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pf4-pK-Fhz" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="146.5" y="25.5" width="42" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -167,9 +167,6 @@
                                                         <state key="normal" title="-">
                                                             <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="buttonTapped:" destination="KcH-a2-eE9" eventType="touchUpInside" id="tqM-Bg-ws9"/>
-                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afk-QL-N0x" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="65.5" y="0.0" width="46" height="50"/>
@@ -187,9 +184,6 @@
                                                         <state key="normal" title="+">
                                                             <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="buttonTapped:" destination="KcH-a2-eE9" eventType="touchUpInside" id="a7F-IH-VmM"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -217,9 +211,6 @@
                                                         <state key="normal" title="-">
                                                             <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="buttonTapped:" destination="KcH-a2-eE9" eventType="touchUpInside" id="yUl-em-UnK"/>
-                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyR-Nw-Zgq" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="65.5" y="0.0" width="46" height="50"/>
@@ -237,9 +228,6 @@
                                                         <state key="normal" title="+">
                                                             <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="buttonTapped:" destination="KcH-a2-eE9" eventType="touchUpInside" id="ERm-w9-lsv"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -267,9 +255,6 @@
                                                         <state key="normal" title="-">
                                                             <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="buttonTapped:" destination="KcH-a2-eE9" eventType="touchUpInside" id="dfP-0l-rtT"/>
-                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwQ-94-Q0j" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="65.5" y="0.0" width="46" height="50"/>
@@ -287,9 +272,6 @@
                                                         <state key="normal" title="+">
                                                             <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="buttonTapped:" destination="KcH-a2-eE9" eventType="touchUpInside" id="4JK-xs-taA"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -317,9 +299,6 @@
                                                         <state key="normal" title="-">
                                                             <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="buttonTapped:" destination="KcH-a2-eE9" eventType="touchUpInside" id="Nya-mn-TB6"/>
-                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4N-fJ-0zf" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="65.5" y="0.0" width="46" height="50"/>
@@ -337,9 +316,6 @@
                                                         <state key="normal" title="+">
                                                             <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="buttonTapped:" destination="KcH-a2-eE9" eventType="touchUpInside" id="gIC-hE-jH4"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -367,9 +343,6 @@
                                                         <state key="normal" title="-">
                                                             <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="buttonTapped:" destination="KcH-a2-eE9" eventType="touchUpInside" id="RoE-GV-tFV"/>
-                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZt-ok-r4a" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
                                                         <rect key="frame" x="65.5" y="0.0" width="46" height="50"/>
@@ -387,9 +360,6 @@
                                                         <state key="normal" title="+">
                                                             <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="buttonTapped:" destination="KcH-a2-eE9" eventType="touchUpInside" id="zOm-8D-Yxp"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -473,13 +443,23 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="decreaseDayLabel" destination="zwQ-94-Q0j" id="CRU-AO-6cR"/>
+                        <outlet property="decreaseDecrease" destination="yAL-0x-qaE" id="Z9W-rl-Dlm"/>
+                        <outlet property="decreaseIncrease" destination="hS6-if-6Pz" id="ml2-a2-TUz"/>
+                        <outlet property="ensuingDecrease" destination="QDu-xc-mmP" id="C2p-TK-vKh"/>
+                        <outlet property="ensuingIncrease" destination="6ao-Lq-MnL" id="UAa-fo-6Yh"/>
                         <outlet property="firstDayLabel" destination="Afk-QL-N0x" id="YSy-A1-RPo"/>
+                        <outlet property="firstDecrease" destination="zbZ-O5-2kj" id="CcC-c4-Y2f"/>
+                        <outlet property="firstIncrease" destination="iFy-JN-Out" id="QRb-i2-OAk"/>
                         <outlet property="headerTitleLabel" destination="pf4-pK-Fhz" id="Nft-jk-5hx"/>
                         <outlet property="headerView" destination="Kwe-rl-XGx" id="QJi-eN-B4X"/>
                         <outlet property="mainCardView" destination="3Rk-Av-KWO" id="1r8-NE-2oJ"/>
+                        <outlet property="minDecrease" destination="jdb-Eu-dVl" id="UsG-l6-kHV"/>
+                        <outlet property="minIncrease" destination="euc-XR-Rne" id="uBG-nb-9mz"/>
                         <outlet property="minimumDayLabel" destination="j4N-fJ-0zf" id="WSV-l0-bgk"/>
                         <outlet property="subsequentDayLabel" destination="qyR-Nw-Zgq" id="ecU-66-K38"/>
                         <outlet property="werewolfTimerLabel" destination="BZt-ok-r4a" id="Pva-Z5-wMM"/>
+                        <outlet property="wolfDecrease" destination="1vJ-kz-AZE" id="Xar-B2-NuR"/>
+                        <outlet property="wolfIncrease" destination="bsM-H6-rM9" id="CbN-9y-q4D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VER-O7-7NY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -734,7 +714,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfT-u5-Wiw" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="67.5" y="15.5" width="203.5" height="40"/>
+                                                <rect key="frame" x="68" y="15" width="203.5" height="40"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -906,7 +886,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="337" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Roles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tuq-TL-lce" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="79.5" y="15.5" width="179.5" height="40"/>
+                                                <rect key="frame" x="79" y="15" width="179.5" height="40"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1306,7 +1286,7 @@ Based on the Werewolf boardgame.</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hase Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gy0-tG-ynC" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="63.5" y="12.5" width="188.5" height="36.5"/>
+                                                        <rect key="frame" x="64" y="12" width="188.5" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>

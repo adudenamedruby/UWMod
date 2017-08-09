@@ -22,7 +22,22 @@ class GameSettingsVC: UIViewController {
     @IBOutlet var minimumDayLabel:          RegBrownSetting!
     @IBOutlet var werewolfTimerLabel:       RegBrownSetting!
     
+    @IBOutlet var firstIncrease: PMSuperButton!
+    @IBOutlet var firstDecrease: PMSuperButton!
+    @IBOutlet var ensuingIncrease: PMSuperButton!
+    @IBOutlet var ensuingDecrease: PMSuperButton!
+    @IBOutlet var decreaseIncrease: PMSuperButton!
+    @IBOutlet var decreaseDecrease: PMSuperButton!
+    @IBOutlet var minIncrease: PMSuperButton!
+    @IBOutlet var minDecrease: PMSuperButton!
+    @IBOutlet var wolfIncrease: PMSuperButton!
+    @IBOutlet var wolfDecrease: PMSuperButton!
+    
 
+    // MARK: - Variables
+    
+    var buttonList: [PMSuperButton] = []
+    
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
@@ -40,12 +55,34 @@ class GameSettingsVC: UIViewController {
         decreaseDayLabel.text   = timeString(time: TimeInterval(SETTINGS.changeDayBy))
         minimumDayLabel.text    = timeString(time: TimeInterval(SETTINGS.minimumDayLength))
         werewolfTimerLabel.text = timeString(time: TimeInterval(SETTINGS.werewolfTime))
+        
+        buttonList = [firstIncrease,
+                      firstDecrease,
+                      ensuingIncrease,
+                      ensuingDecrease,
+                      decreaseIncrease,
+                      decreaseDecrease,
+                      minIncrease,
+                      minDecrease,
+                      wolfIncrease,
+                      wolfDecrease]
 
+        setupButtons()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func setupButtons() {
+        for button in buttonList {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(normalTap))
+            let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap))
+            tapGesture.numberOfTapsRequired = 1
+            button.addGestureRecognizer(tapGesture)
+            button.addGestureRecognizer(longGesture)
+        }
     }
     
     
