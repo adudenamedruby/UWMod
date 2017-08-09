@@ -10,25 +10,27 @@ import UIKit
 
 class ConfirmationPopup: UIViewController {
 
-    @IBOutlet weak var mainAlertView: UIView!
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var headerTitleLabel: OldTan!
-    @IBOutlet weak var alertTextLabel: RegBrown!
+    @IBOutlet weak var mainAlertView:       UIView!
+    @IBOutlet weak var headerView:          UIView!
+    @IBOutlet weak var headerTitleLabel:    OldTan!
+    @IBOutlet weak var alertTextLabel:      RegBrown!
     
-    var player: Player!
-    var eliminatedBy: RoleType?
+    var player:                             Player!
+    var eliminatedBy:                       RoleType?
+    
+    var werewolfRolesList: [RoleType] = [.Werewolf]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainAlertView.layer.cornerRadius = STYLE.CornerRadius
-        mainAlertView.backgroundColor = STYLE.Tan
-        headerView.backgroundColor = STYLE.Brown
+        mainAlertView.layer.cornerRadius    = STYLE.CornerRadius
+        mainAlertView.backgroundColor       = STYLE.Tan
+        headerView.backgroundColor          = STYLE.Brown
         
         let headerTitle = "Confirm Elimination"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
-        alertTextLabel.text = "Are you sure you want to eliminate \(player.name)?"
+        alertTextLabel.text                 = "Are you sure you want to eliminate \(player.name)?"
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,6 +46,10 @@ class ConfirmationPopup: UIViewController {
         
         if eliminatedBy != nil {
             player.killedBy = eliminatedBy
+        }
+        
+        if werewolfRolesList.contains(player.roleType()) && !GAME.aWerewolfHasBeenSlain {
+            GAME.aWerewolfHasBeenSlain = true
         }
         
         GAME.prepareToEliminatePlayer(victim: player)

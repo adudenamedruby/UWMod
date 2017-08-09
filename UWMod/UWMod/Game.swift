@@ -48,6 +48,10 @@ class Game {
     var availableRoster:                    [Role]
     var availablePlayers:                   [Player]
     
+    var livingActors:                       [Player]
+    var playersToBeEliminated:              [Player]
+    var deadActors:                         [Player]
+    
     var settings:                           GameSettings
     
     var nighttimeEliminations:              Int
@@ -55,12 +59,11 @@ class Game {
     var playersEliminatedThisPhase:         String
     var playersProtectedThisPhase:          String
     var daytimeInfoCards:                   [DaytimeCardType]
-    var livingActors:                       [Player]
-    var playersToBeEliminated:              [Player]
-    var deadActors:                         [Player]
-    var teams:                              [UWTeam: [Player]]
     var areThereDeadPlayers:                Bool
     var werewolfEliminationsPerNight:       Int
+    
+    // Role specific variables for game state
+    var aWerewolfHasBeenSlain:              Bool
     
     init(availableRoster: [Role], availablePlayers: [Player], withSettings: GameSettings = GameSettings()) {
         // Sort the roles by the role priority. This makes it easier to present the 
@@ -77,6 +80,7 @@ class Game {
         
         self.settings                       = withSettings
         
+        
         self.areThereDeadPlayers            = false
         self.nighttimeEliminations          = 1
         self.daytimeEliminations            = 1
@@ -85,9 +89,10 @@ class Game {
         self.deadActors                     = []
         self.playersEliminatedThisPhase     = ""
         self.playersProtectedThisPhase      = ""
-        self.teams                          = [:]
         self.daytimeInfoCards               = []
         self.werewolfEliminationsPerNight   = 0
+        
+        self.aWerewolfHasBeenSlain          = false
     }
 
     
