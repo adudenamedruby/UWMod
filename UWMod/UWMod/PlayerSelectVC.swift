@@ -11,27 +11,28 @@ import UIKit
 class PlayerSelectVC: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var mainCard: UIView!
-    @IBOutlet var headerView: UIView!
-    @IBOutlet weak var headerTitleLabel: OldTan!
+    @IBOutlet weak var mainCard:                UIView!
+    @IBOutlet var headerView:                   UIView!
+    @IBOutlet weak var headerTitleLabel:        OldTan!
     
-    @IBOutlet weak var addPlayersButton: UIButton!
-    @IBOutlet weak var forwardButton: PMSuperButton!
+    @IBOutlet weak var addPlayersButton:        UIButton!
+    @IBOutlet weak var forwardButton:           PMSuperButton!
     
-    @IBOutlet weak var playerNumberLabel: UILabel!
+    @IBOutlet weak var playerNumberLabel:       UILabel!
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView:               UITableView!
     
     // MARK: - Variables
     
-    let defaults = UserDefaults.standard
-    let transition = CircularTransition()
-    let textCellIndentifier = "PlayerNameCell"
+    let defaults                                = UserDefaults.standard
+    let transition                              = CircularTransition()
+    let textCellIndentifier                     = "PlayerNameCell"
 
-    var savedPlayers: [String] = []
-    var villageSize: Int = 0
-    var selectedPlayers: [Int:String] = [:]
-    var passedPlayers: [Player] = []
+    var savedPlayers: [String:[String]]         = [:]
+    var savedPlayerSections: [String]           = []
+    var villageSize: Int                        = 0
+    var selectedPlayers: [Int:String]           = [:]
+    var passedPlayers: [Player]                 = []
     
     
     // MARK: - View lifecycle
@@ -39,15 +40,19 @@ class PlayerSelectVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.allowsMultipleSelection = true
+        tableView.delegate                      = self
+        tableView.dataSource                    = self
+        tableView.allowsMultipleSelection       = true
+        tableView.sectionHeaderHeight           = 25
+        tableView.sectionIndexBackgroundColor   = STYLE.Tan
+        tableView.sectionIndexColor             = STYLE.Brown
 
-        mainCard.layer.cornerRadius = STYLE.CornerRadius
-        mainCard.backgroundColor = STYLE.Tan
-        headerView.backgroundColor = STYLE.Brown
+
+        mainCard.layer.cornerRadius             = STYLE.CornerRadius
+        mainCard.backgroundColor                = STYLE.Tan
+        headerView.backgroundColor              = STYLE.Brown
         
-        let headerTitle = "Select Players"
+        let headerTitle                         = "Select Players"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
                 
         NotificationCenter.default.addObserver(self, selector: #selector(loadPlayers),
@@ -83,10 +88,35 @@ class PlayerSelectVC: UIViewController {
     func loadPlayers() {
         resetVillageSizeLabel()
         if let temp = defaults.object(forKey: PLAYERS) as? [String] {
-            self.savedPlayers = temp.sorted{$0.localizedCaseInsensitiveCompare($1) == .orderedAscending}
+            orderPlayers(playerNames: temp)
         }
         
         tableView.reloadData()
+    }
+    
+    private func orderPlayers(playerNames: [String]) {
+        savedPlayers.removeAll()
+        savedPlayerSections.removeAll()
+        
+        // sort the array to be alphabetical
+        let tempPlayerNames = playerNames.sorted{$0.localizedCaseInsensitiveCompare($1) == .orderedAscending}
+        
+        //sort the array into alphabetized, sectioned listt
+        for name in tempPlayerNames {
+            let firstLetter = name[0].capitalized
+            if savedPlayers[firstLetter] != nil {
+                savedPlayers[firstLetter]!.append(name)
+            } else {
+                savedPlayers[firstLetter] = [name]
+            }
+            
+            if !savedPlayerSections.contains(firstLetter) {
+                savedPlayerSections.append(firstLetter)
+            }
+        }
+        
+        savedPlayerSections.sort()
+        
     }
     
     func removePlayerName(player: String) {
@@ -187,18 +217,45 @@ class PlayerSelectVC: UIViewController {
 extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return savedPlayerSections.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return savedPlayerSections[section]
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let myHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 30))
+        myHeaderView.backgroundColor = STYLE.Beige
+        
+        let label = UILabel(frame: CGRect(x: 20, y: 3, width: 50, height: 25))
+        label.text = savedPlayerSections[section]
+        label.textColor = STYLE.Brown
+        label.font = STYLE.RegBoldFont
+        
+        myHeaderView.addSubview(label)
+        
+        return myHeaderView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return savedPlayers.count
+        return savedPlayers[savedPlayerSections[section]]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: textCellIndentifier, for: indexPath)
         
-        let row = indexPath.row
-        cell.textLabel?.text = savedPlayers[row]
+        let sectionTitle = savedPlayerSections[indexPath.section]
+        let sectionPlayers = savedPlayers[sectionTitle]
+        let sectionPlayerName = sectionPlayers?[indexPath.row]
+        
+        //let row = indexPath.row
+        cell.textLabel?.text = sectionPlayerName
         cell.textLabel?.textColor = STYLE.Brown
         cell.accessoryType = cell.isSelected ? .checkmark : .none
         cell.selectionStyle = .none
@@ -232,9 +289,22 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            removePlayerName(player: self.savedPlayers[indexPath.row])
+            
+            let sectionTitle = savedPlayerSections[indexPath.section]
+            let sectionPlayers = savedPlayers[sectionTitle]
+            let sectionPlayerName = sectionPlayers?[indexPath.row]
+            
+            removePlayerName(player: sectionPlayerName!)
             loadPlayers()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return index
+    }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return savedPlayerSections
     }
 }
 

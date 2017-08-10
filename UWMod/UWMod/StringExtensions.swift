@@ -35,4 +35,8 @@ extension String {
         
         return attributedText
     }
+    
+    subscript (i: Int) -> String {
+        return String(self[index(startIndex, offsetBy: i)])
+    }
 }
