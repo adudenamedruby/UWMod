@@ -16,7 +16,9 @@ class AddPlayerVC: UIViewController {
     @IBOutlet weak var mainCard:            UIView!
     @IBOutlet var headerView:               UIView!
     @IBOutlet weak var headerTitleLabel:    OldTan!
+    @IBOutlet var statusLabel: RegBrownSmall!
     
+    @IBOutlet var addPlayerButton: UIButton!
     
     // MARK: - Variables
     
@@ -29,15 +31,19 @@ class AddPlayerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainCard.backgroundColor            = STYLE.Tan
-        headerView.backgroundColor          = STYLE.Brown
-        mainCard.layer.cornerRadius         = STYLE.CornerRadius
+        mainCard.backgroundColor                = STYLE.Tan
+        headerView.backgroundColor              = STYLE.Brown
+        mainCard.layer.cornerRadius             = STYLE.CornerRadius
         
-        let headerTitle                     = "Add Player"
+        let headerTitle                         = "Add Player"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
-        nameField.delegate                  = self
-        nameField.autocorrectionType        = UITextAutocorrectionType.yes
+        statusLabel.text                        = ""
+        addPlayerButton.titleLabel?.textColor   = STYLE.Tan
+        addPlayerButton.layer.cornerRadius      = STYLE.CornerRadius
+        
+        nameField.delegate                      = self
+        nameField.autocorrectionType            = UITextAutocorrectionType.yes
         
         savedPlayers = standardDefaults.object(forKey: PLAYERS) as? [String] ?? [String]()
         
@@ -87,6 +93,9 @@ class AddPlayerVC: UIViewController {
         if let text = nameField.text, !text.isEmpty {
             savedPlayers?.append(text)
             standardDefaults.set(savedPlayers, forKey: PLAYERS)
+            statusLabel.text = "Added \(text) to players."
+            statusLabel.alpha = 1
+            statusLabel.fadeOut(duration: 1, delay: 1)
             nameField.text = ""
             
         } else {

@@ -262,7 +262,10 @@ open class TisprCardStackViewLayout: UICollectionViewLayout, UIGestureRecognizer
             updateCenterPositionOfDraggingCell(newCenter)
         } else {
             if let indexPath = draggedCellPath {
-                finishedDragging(collectionView!.cellForItem(at: indexPath)!)
+                // finishedDragging(collectionView!.cellForItem(at: indexPath)!)
+                if let cell = collectionView?.cellForItem(at: indexPath) {
+                    finishedDragging(cell)
+                }
             }
         }
     }

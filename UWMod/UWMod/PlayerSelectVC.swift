@@ -146,6 +146,11 @@ class PlayerSelectVC: UIViewController {
         self.passedPlayers = createPlayersFromSelectedNames()
     }
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     func createPlayersFromSelectedNames() -> [Player] {
         
         var tempArray: [String] = []
