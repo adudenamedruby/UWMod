@@ -11,22 +11,30 @@ import SpriteKit
 
 class MenuVC: UIViewController {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var aboutButton: UIButton!
     
-    @IBOutlet var mainView: UIView!
-    @IBOutlet var mainCardView: UIView!
-    @IBOutlet weak var brownView: UIView!
-    @IBOutlet weak var bottomTitle: OldMenuBottom!
+    @IBOutlet var mainView:                     UIView!
+    @IBOutlet var mainCardView:                 UIView!
+    @IBOutlet weak var brownView:               UIView!
+    @IBOutlet weak var bottomTitle:             OldMenuBottom!
     
-    let transition = CircularTransition()
+    
+    // MARK: - Variables
+    
+    let transition                              = CircularTransition()
+    
+    
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainCardView.layer.cornerRadius = STYLE.CornerRadius
+        mainCardView.layer.cornerRadius         = STYLE.CornerRadius
         
-        mainCardView.backgroundColor = STYLE.Tan
-        brownView.backgroundColor = STYLE.Brown
+        mainCardView.backgroundColor            = STYLE.Tan
+        brownView.backgroundColor               = STYLE.Brown
         
         let bottomString = "Werewolf"
         bottomTitle.attributedText = bottomString.styleTitleLabel(withStringFont: STYLE.OldMenuBottomFont!, withColour: STYLE.Red)
