@@ -235,15 +235,15 @@ open class TisprCardStackViewLayout: UICollectionViewLayout, UIGestureRecognizer
         case UISwipeGestureRecognizerDirection.up:
             // Take the card at the current index
             // and process the swipe up only if it occurs below it
-//            var temIndex = index
-//            if temIndex >= collectionView!.numberOfItemsInSection(0) {
-//                temIndex--
-//            }
-//            let currentCard = collectionView!.cellForItemAtIndexPath(NSIndexPath(forItem: temIndex , inSection: 0))!
-//            let point = sender.locationInView(collectionView)
-//            if (point.y > CGRectGetMaxY(currentCard.frame) && index > 0) {
+            var temIndex = index
+            if temIndex >= collectionView!.numberOfItems(inSection: 0) {
+                temIndex -= 1
+            }
+            let currentCard = collectionView!.cellForItem(at: NSIndexPath(item: temIndex , section: 0) as IndexPath)!
+            let point = sender.location(in: collectionView)
+            if (point.y > currentCard.frame.maxY && index > 0) {
                 index -= 1
-//            }
+            }
         case UISwipeGestureRecognizerDirection.down:
             if index + 1 < collectionView!.numberOfItems(inSection: 0) {
                 index += 1
@@ -262,7 +262,10 @@ open class TisprCardStackViewLayout: UICollectionViewLayout, UIGestureRecognizer
             updateCenterPositionOfDraggingCell(newCenter)
         } else {
             if let indexPath = draggedCellPath {
-                finishedDragging(collectionView!.cellForItem(at: indexPath)!)
+                // finishedDragging(collectionView!.cellForItem(at: indexPath)!)
+                if let cell = collectionView?.cellForItem(at: indexPath) {
+                    finishedDragging(cell)
+                }
             }
         }
     }
@@ -283,8 +286,12 @@ open class TisprCardStackViewLayout: UICollectionViewLayout, UIGestureRecognizer
             }
             
             //workaround for fix issue with zIndex
-            let cell = collectionView!.cellForItem(at: draggedCellPath!)
-            collectionView?.bringSubview(toFront: cell!)
+            if let draggedCellPath = draggedCellPath, let cell = collectionView?.cellForItem(at: draggedCellPath) {
+                collectionView?.bringSubview(toFront: cell)
+            }
+            
+//            let cell = collectionView!.cellForItem(at: draggedCellPath!)
+//            collectionView?.bringSubview(toFront: cell!)
             
         }
     }

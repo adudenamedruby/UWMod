@@ -54,7 +54,9 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         
         if GAME.firstNight {
             player = nil
-            magicallyAssignLastPlayer()
+            if GAME.shouldPerformMagicAssignment() {
+                GAME.magicVillagerAssignment()
+            }
         }
         
         resetHelpView()
@@ -154,27 +156,27 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         textView.setContentOffset(CGPoint.zero, animated: false)
     }
     
-    private func unassignedPlayerList() -> [Player] {
-        var unassignedPlayerList: [Player] = []
-        
-        for player in GAME.availablePlayers {
-            if !player.isAssigned {
-                unassignedPlayerList.append(player)
-            }
-        }
-        
-        return unassignedPlayerList
-    }
-    
-    private func magicallyAssignLastPlayer() {
-        let unassignedPlayers = unassignedPlayerList()
-        if unassignedPlayers.count == 1 {
-            // if there's only one player left unassigned, the assign him to the last role
-            player = unassignedPlayers[0]
-            player?.assignRole(role: GAME.availableRoster.last!)
-            GAME.addPlayerToLivingActors(player: player!)
-        }
-    }
+//    private func unassignedPlayerList() -> [Player] {
+//        var unassignedPlayerList: [Player] = []
+//        
+//        for player in GAME.availablePlayers {
+//            if !player.isAssigned {
+//                unassignedPlayerList.append(player)
+//            }
+//        }
+//        
+//        return unassignedPlayerList
+//    }
+//    
+//    private func magicallyAssignLastPlayer() {
+//        let unassignedPlayers = unassignedPlayerList()
+//        if unassignedPlayers.count == 1 {
+//            // if there's only one player left unassigned, the assign him to the last role
+//            player = unassignedPlayers[0]
+//            player?.assignRole(role: GAME.availableRoster.last!)
+//            GAME.addPlayerToLivingActors(player: player!)
+//        }
+//    }
     
     public func updateCard() {
         configureCell()

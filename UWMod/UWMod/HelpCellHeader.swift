@@ -14,11 +14,11 @@ protocol HelpTableViewHeaderDelegate {
 
 class HelpTableViewHeader: UITableViewHeaderFooterView {
     
-    var delegate: HelpTableViewHeaderDelegate?
-    var section: Int = 0
+    var delegate:                   HelpTableViewHeaderDelegate?
+    var section: Int                = 0
     
-    let titleLabel = UILabel()
-    let arrowLabel = UILabel()
+    let titleLabel                  = UILabel()
+    let arrowLabel                  = UILabel()
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -30,8 +30,8 @@ class HelpTableViewHeader: UITableViewHeaderFooterView {
         
         // Arrow label
         contentView.addSubview(arrowLabel)
-        arrowLabel.textColor = STYLE.Brown
-        arrowLabel.translatesAutoresizingMaskIntoConstraints = false
+        arrowLabel.textColor                                    = STYLE.Brown
+        arrowLabel.translatesAutoresizingMaskIntoConstraints    = false
         arrowLabel.widthAnchor.constraint(equalToConstant: 12).isActive = true
         arrowLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         arrowLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
@@ -39,9 +39,9 @@ class HelpTableViewHeader: UITableViewHeaderFooterView {
         
         // Title label
         contentView.addSubview(titleLabel)
-        titleLabel.textColor = STYLE.Brown
-        titleLabel.font = STYLE.RegBoldHeaderFont
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.textColor                                    = STYLE.Brown
+        titleLabel.font                                         = STYLE.RegBoldHeaderFont
+        titleLabel.translatesAutoresizingMaskIntoConstraints    = false
         titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true

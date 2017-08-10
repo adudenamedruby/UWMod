@@ -33,7 +33,7 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
         
         //configuration of stacks
         layout.topStackMaximumSize = 2
-        layout.bottomStackMaximumSize = 4
+        layout.bottomStackMaximumSize = 3
         layout.bottomStackCardHeight = 30
     }
     

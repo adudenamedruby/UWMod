@@ -12,16 +12,18 @@ class AddPlayerVC: UIViewController {
 
     // MARK: - Outlets
     
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var mainCard: UIView!
-    @IBOutlet var headerView: UIView!
-    @IBOutlet weak var headerTitleLabel: OldTan!
+    @IBOutlet weak var nameField:           UITextField!
+    @IBOutlet weak var mainCard:            UIView!
+    @IBOutlet var headerView:               UIView!
+    @IBOutlet weak var headerTitleLabel:    OldTan!
+    @IBOutlet var statusLabel: RegBrownSmall!
     
+    @IBOutlet var addPlayerButton: UIButton!
     
     // MARK: - Variables
     
-    let standardDefaults = UserDefaults.standard
-    var savedPlayers: [String]?
+    let standardDefaults                    = UserDefaults.standard
+    var savedPlayers:                       [String]?
     
     
     // MARK: - View Lifecycle
@@ -29,14 +31,19 @@ class AddPlayerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainCard.backgroundColor = STYLE.Tan
-        headerView.backgroundColor = STYLE.Brown
-        mainCard.layer.cornerRadius = STYLE.CornerRadius
+        mainCard.backgroundColor                = STYLE.Tan
+        headerView.backgroundColor              = STYLE.Brown
+        mainCard.layer.cornerRadius             = STYLE.CornerRadius
         
-        let headerTitle = "Add Player"
+        let headerTitle                         = "Add Player"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
-        nameField.delegate = self
+        statusLabel.text                        = ""
+        addPlayerButton.titleLabel?.textColor   = STYLE.Tan
+        addPlayerButton.layer.cornerRadius      = STYLE.CornerRadius
+        
+        nameField.delegate                      = self
+        nameField.autocorrectionType            = UITextAutocorrectionType.yes
         
         savedPlayers = standardDefaults.object(forKey: PLAYERS) as? [String] ?? [String]()
         
@@ -86,20 +93,24 @@ class AddPlayerVC: UIViewController {
         if let text = nameField.text, !text.isEmpty {
             savedPlayers?.append(text)
             standardDefaults.set(savedPlayers, forKey: PLAYERS)
-            notifyTable()
-            self.dismiss(animated: true, completion: {})
-
+            statusLabel.text = "Added \(text) to players."
+            statusLabel.alpha = 1
+            statusLabel.fadeOut(duration: 1, delay: 1)
+            nameField.text = ""
+            
         } else {
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.alertName = "Error"
             vc.alertText = "Please enter a name."
             vc.modalTransitionStyle = .crossDissolve
+            
             self.present(vc, animated: true, completion: nil)
         }
     }
     
     @IBAction func dismissButton(_ sender: Any) {
+        notifyTable()
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -112,16 +123,14 @@ extension AddPlayerVC: UITextFieldDelegate {
         if string.isEmpty {
             return true
         }
-        
-        let characterSetAllowed = CharacterSet.alphanumerics
-        if let rangeOfCharactersAllowed = string.rangeOfCharacter(from: characterSetAllowed, options: .caseInsensitive) {
-            // make sure it's all of them
-            let validCharacterCount = string.characters.distance(from: rangeOfCharactersAllowed.lowerBound, to: rangeOfCharactersAllowed.upperBound)
-            return validCharacterCount == string.characters.count
-        } else  {
-            // none of the characters are from the allowed set
+
+        let characterSetNotAllowed = CharacterSet(charactersIn: "1234567890[]!@#$%^&*()){}|\\?+/=_\",<>:;")
+        if let _ = string.rangeOfCharacter(from: characterSetNotAllowed, options: .caseInsensitive) {
+            // They are trying to add caracters not allowed.
             return false
         }
+        
+        return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
