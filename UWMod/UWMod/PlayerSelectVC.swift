@@ -34,6 +34,8 @@ class PlayerSelectVC: UIViewController {
     var selectedPlayers: [IndexPath:String]     = [:]
     var passedPlayers: [Player]                 = []
     
+//    let searchController                        = UISearchController(searchResultsController: nil)
+//    var filteredNames                           = [String]()
     
     // MARK: - View lifecycle
     
@@ -46,7 +48,11 @@ class PlayerSelectVC: UIViewController {
         tableView.sectionHeaderHeight           = 25
         tableView.sectionIndexBackgroundColor   = STYLE.Tan
         tableView.sectionIndexColor             = STYLE.Brown
-
+        
+//        searchController.searchResultsUpdater   = self
+//        searchController.dimsBackgroundDuringPresentation = false
+//        definesPresentationContext              = true
+//        tableView.tableHeaderView               = searchController.searchBar
 
         mainCard.layer.cornerRadius             = STYLE.CornerRadius
         mainCard.backgroundColor                = STYLE.Tan
@@ -81,6 +87,15 @@ class PlayerSelectVC: UIViewController {
         villageSize = 0
         playerNumberLabel.text = "0"
     }
+    
+//    func filterContentForSearchText(searchText: String, scope: String = "All") {
+//        
+//        filteredNames = savedPlayers.filter { name in
+//            return savedPlayers. .lowercaseString.containsString(searchText.lowercaseString)
+//        }
+//        
+//        tableView.reloadData()
+//    }
     
     
     // MARK: - Player list names
@@ -312,6 +327,16 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         return savedPlayerSections
     }
 }
+
+//extension PlayerSelectVC: UISearchResultsUpdating {
+//    
+//    @available(iOS 8.0, *)
+//    func updateSearchResults(for searchController: UISearchController) {
+//        filterContentForSearchText(searchText: searchController.searchBar.text!)
+//
+//    }
+//
+//}
 
 extension PlayerSelectVC: UIViewControllerTransitioningDelegate {
     

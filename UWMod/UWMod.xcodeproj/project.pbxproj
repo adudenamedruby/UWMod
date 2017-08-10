@@ -64,6 +64,7 @@
 		12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC78071F2BE9E50026C667 /* MenuVC.swift */; };
 		12EC780D1F2C02990026C667 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC780C1F2C02990026C667 /* CircularTransition.swift */; };
 		12F584081F361F5F00A98764 /* GeneralEnumerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F584071F361F5F00A98764 /* GeneralEnumerators.swift */; };
+		7734718B1F3CF42500AED5AD /* SelectPlayerPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7734718A1F3CF42500AED5AD /* SelectPlayerPopupVC.swift */; };
 		7736D0901F3378C200555037 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D08F1F3378C200555037 /* Notes.swift */; };
 		7736D0921F3399BC00555037 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0911F3399BC00555037 /* HelpVC.swift */; };
 		7736D0941F33A24200555037 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736D0931F33A24200555037 /* Help.swift */; };
@@ -139,6 +140,7 @@
 		12EC78071F2BE9E50026C667 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		12EC780C1F2C02990026C667 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		12F584071F361F5F00A98764 /* GeneralEnumerators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralEnumerators.swift; sourceTree = "<group>"; };
+		7734718A1F3CF42500AED5AD /* SelectPlayerPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlayerPopupVC.swift; sourceTree = "<group>"; };
 		7736D08F1F3378C200555037 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		7736D0911F3399BC00555037 /* HelpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		7736D0931F33A24200555037 /* Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */,
 				122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */,
 				122FC6991F3912A500E0E2C9 /* VoteCounterVC.swift */,
+				7734718A1F3CF42500AED5AD /* SelectPlayerPopupVC.swift */,
 			);
 			name = PopUpVCs;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				124F74EF1F3549BB00F03E49 /* VillageTeamCell.swift in Sources */,
 				12EC77D91F26DD250026C667 /* Constants.swift in Sources */,
 				12EC77E91F2BDAE00026C667 /* NightVC.swift in Sources */,
+				7734718B1F3CF42500AED5AD /* SelectPlayerPopupVC.swift in Sources */,
 				12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */,
 				77F9E1201F31040600E48211 /* OldTextLabels.swift in Sources */,
 				12D15E231F2EA8470057905E /* MainGameVC.swift in Sources */,

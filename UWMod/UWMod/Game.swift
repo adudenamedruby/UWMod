@@ -36,12 +36,13 @@ class Game {
     // Actor related variables
     private var _nightActors:                       [Player]
     private var _consolidatedNightActors:           [Player]
+    private var _chosenPlayer:                      Player?
     var livingActors:                               [Player]
     var playersToBeEliminated:                      [Player]
     var deadActors:                                 [Player]
     var playersEliminatedThisPhase:                 String
     var playersProtectedThisPhase:                  String
-    
+
     // Team related variables
     private var _rolesInTheGame:                    [RoleType]
     var daytimeInfoCards:                           [DaytimeCardType]
@@ -53,6 +54,34 @@ class Game {
     private var _wolfRoles:                         [RoleType]
     var aWerewolfHasBeenSlain:                      Bool
 
+    
+    // Custom, private getters
+    private var availableVillagerRoles: Int {
+        get {
+            var roleCount = 0
+            for role in self.availableRoster {
+                if role.type == .Villager {
+                    roleCount += 1
+                }
+            }
+            
+            return roleCount
+        }
+    }
+    
+    private var numberOfUnassignedPlayers: Int {
+        get {
+            var playerCount = 0
+            for player in self.availablePlayers {
+                if !player.isAssigned {
+                    playerCount += 1
+                }
+            }
+            
+            return playerCount
+        }
+    }
+    
     
     // Public getters for private variables
     var currentNight: Int {
@@ -113,6 +142,7 @@ class Game {
         self.deadActors                     = []
         self.playersEliminatedThisPhase     = ""
         self.playersProtectedThisPhase      = ""
+        
         
         // Team related variables
         self._rolesInTheGame                = []
@@ -210,6 +240,18 @@ class Game {
         playersEliminatedThisPhase = ""
         playersProtectedThisPhase = ""
     }
+    
+    public func useChosenPlayer() -> Player {
+        let tempPlayer: Player = _chosenPlayer!
+        _chosenPlayer = nil
+        
+        return tempPlayer
+    }
+    
+    public func setChosenPlayer(player: Player) {
+        _chosenPlayer = player
+    }
+    
     
     // MARK: - Player name retrieval functions for various uses
     
@@ -391,6 +433,28 @@ class Game {
         for player in availablePlayers {
             if !_rolesInTheGame.contains(player.roleType()) {
                 _rolesInTheGame.append(player.roleType())
+            }
+        }
+    }
+    
+    public func shouldPerformMagicAssignment() -> Bool {
+        if availableVillagerRoles == numberOfUnassignedPlayers {
+            return true
+        }
+        return false
+    }
+    
+    public func magicVillagerAssignment() {
+        if shouldPerformMagicAssignment() {
+            
+            var backwardsIndex = availableRoster.count - 1
+            
+            for player in availablePlayers {
+                if !player.isAssigned {
+                    player.assignRole(role: availableRoster[backwardsIndex])
+                    addPlayerToLivingActors(player: player)
+                    backwardsIndex -= 1
+                }
             }
         }
     }
