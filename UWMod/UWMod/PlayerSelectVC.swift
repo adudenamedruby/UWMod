@@ -31,7 +31,7 @@ class PlayerSelectVC: UIViewController {
     var savedPlayers: [String:[String]]         = [:]
     var savedPlayerSections: [String]           = []
     var villageSize: Int                        = 0
-    var selectedPlayers: [Int:String]           = [:]
+    var selectedPlayers: [IndexPath:String]     = [:]
     var passedPlayers: [Player]                 = []
     
     
@@ -168,11 +168,11 @@ class PlayerSelectVC: UIViewController {
         return tempPlayerArray
     }
     
-    func addSelectedPlayer(index: Int, name: String) {
+    func addSelectedPlayer(index: IndexPath, name: String) {
         selectedPlayers[index] = name
     }
     
-    func removeSelectedPlayer(index: Int, name: String) {
+    func removeSelectedPlayer(index: IndexPath, name: String) {
         selectedPlayers.removeValue(forKey: index)
     }
     
@@ -275,7 +275,7 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         
         //let cell = tableView.cellForRow(at: indexPath)
         let text = tableView.cellForRow(at: indexPath)?.textLabel?.text
-        addSelectedPlayer(index: indexPath.row, name: text!)
+        addSelectedPlayer(index: indexPath, name: text!)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -285,7 +285,7 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         
         //let cell = tableView.cellForRow(at: indexPath)
         let text = tableView.cellForRow(at: indexPath)?.textLabel?.text
-        removeSelectedPlayer(index: indexPath.row, name: text!)
+        removeSelectedPlayer(index: indexPath, name: text!)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
