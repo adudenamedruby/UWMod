@@ -37,6 +37,7 @@ class AddPlayerVC: UIViewController {
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
         nameField.delegate = self
+        nameField.autocorrectionType = UITextAutocorrectionType.yes
         
         savedPlayers = standardDefaults.object(forKey: PLAYERS) as? [String] ?? [String]()
         
@@ -86,9 +87,7 @@ class AddPlayerVC: UIViewController {
         if let text = nameField.text, !text.isEmpty {
             savedPlayers?.append(text)
             standardDefaults.set(savedPlayers, forKey: PLAYERS)
-            notifyTable()
-            self.dismiss(animated: true, completion: {})
-
+            
         } else {
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
@@ -100,6 +99,7 @@ class AddPlayerVC: UIViewController {
     }
     
     @IBAction func dismissButton(_ sender: Any) {
+        notifyTable()
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -112,16 +112,14 @@ extension AddPlayerVC: UITextFieldDelegate {
         if string.isEmpty {
             return true
         }
-        
-        let characterSetAllowed = CharacterSet.alphanumerics
-        if let rangeOfCharactersAllowed = string.rangeOfCharacter(from: characterSetAllowed, options: .caseInsensitive) {
-            // make sure it's all of them
-            let validCharacterCount = string.characters.distance(from: rangeOfCharactersAllowed.lowerBound, to: rangeOfCharactersAllowed.upperBound)
-            return validCharacterCount == string.characters.count
-        } else  {
-            // none of the characters are from the allowed set
+
+        let characterSetNotAllowed = CharacterSet(charactersIn: "1234567890[]!@#$%^&*()){}|\\?+/=_\",<>:;")
+        if let _ = string.rangeOfCharacter(from: characterSetNotAllowed, options: .caseInsensitive) {
+            // They are trying to add caracters not allowed.
             return false
         }
+        
+        return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
