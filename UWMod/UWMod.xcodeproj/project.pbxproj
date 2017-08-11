@@ -37,6 +37,7 @@
 		1261C2B71F3265DA0099D759 /* BasicAlertObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */; };
 		1261C2BE1F32AA960099D759 /* GeneralInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2BC1F32AA960099D759 /* GeneralInfo.swift */; };
 		1261C2BF1F32AA960099D759 /* GeneralInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1261C2BD1F32AA960099D759 /* GeneralInfo.xib */; };
+		1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1298C8A21F3DD15D00261779 /* Notes.rtf */; };
 		12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */; };
 		12D15E201F2E82870057905E /* RoleSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */; };
 		12D15E231F2EA8470057905E /* MainGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E221F2EA8470057905E /* MainGameVC.swift */; };
@@ -113,6 +114,7 @@
 		1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAlertObject.swift; sourceTree = "<group>"; };
 		1261C2BC1F32AA960099D759 /* GeneralInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralInfo.swift; sourceTree = "<group>"; };
 		1261C2BD1F32AA960099D759 /* GeneralInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralInfo.xib; sourceTree = "<group>"; };
+		1298C8A21F3DD15D00261779 /* Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
 		12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSuperButton.swift; sourceTree = "<group>"; };
 		12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleSelectionCell.swift; sourceTree = "<group>"; };
 		12D15E221F2EA8470057905E /* MainGameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGameVC.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		120982081F26BBE700EC5D21 /* UWMod */ = {
 			isa = PBXGroup;
 			children = (
+				1298C8A21F3DD15D00261779 /* Notes.rtf */,
 				12D15E1A1F2D2D0B0057905E /* Categories */,
 				12EC77F81F2BDBFA0026C667 /* Main App Files */,
 				12EC77D51F26D4F70026C667 /* Model */,
@@ -470,6 +473,7 @@
 				122FC6A01F392F9C00E0E2C9 /* SeerInspection.xib in Resources */,
 				1261C2BF1F32AA960099D759 /* GeneralInfo.xib in Resources */,
 				124F74F81F35FF4D00F03E49 /* WerewolfAssassination.xib in Resources */,
+				1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */,
 				123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */,
 				122FC6981F377BCE00E0E2C9 /* BodyguardView.xib in Resources */,
 				124F74F01F3549BB00F03E49 /* VillageTeamCell.xib in Resources */,

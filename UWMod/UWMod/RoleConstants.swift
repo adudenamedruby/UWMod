@@ -11,7 +11,7 @@ import UIKit
 
 // Roles in the game
 
-let tempRoles: [Role] = [BODYGUARD,
+let pregame_tempRoles: [Role] = [BODYGUARD,
                          DISEASED,
                          INSOMNIAC,
                          MAYOR,
@@ -22,8 +22,29 @@ let tempRoles: [Role] = [BODYGUARD,
                         WEREWOLF_ONE, WEREWOLF_TWO, WEREWOLF_THREE, WEREWOLF_FOUR, WEREWOLF_FIVE, WEREWOLF_SIX, WEREWOLF_SEVEN, WEREWOLF_EIGHT, WEREWOLF_NINE, WEREWOLF_TEN, WEREWOLF_ELEVEN, WEREWOLF_TWELVE,
                          WOLFMAN]
 
-let ALL_GAME_ROLES: [Role] = tempRoles.sorted(by: { $0.name < $1.name})
+let pregame_VillageRoleType: [RoleType]     = [.CultLeader, .Tanner, .Ghost, .Bodyguard, .Hunter, .Revealer, .Cupid, .Pacifist, .Huntress, .Cursed, .Diseased, .Drunk, .VirginiaWoolf, .BloodyMary, .Leprechaun, .TheCount, .MadBomber, .Martyr, .Witch, .Mayor, .Mentalist, .Nostradamus, .OldHag, .ParanormalInvestigator, .Prince, .Sasquatch, .Spellcaster, .TheMummy, .TheThing, .Doppelganger, .FrankensteinsMonster, .ToughGuy, .Priest, .Troublemaker, .ApprenticeSeer, .Seer, .AuraSeer, .MysticSeer, .Beholder, .Insomniac, .Lycan, .VillageIdiot, .Villager, .Hoodlum, .Mason]
+let pregame_WerewolfRoleType: [RoleType]    = [.WolfCub, .TeenageWerewolf, .WolfMan, .Dreamwolf, .FangFace, .FruitBrute, .Werewolf, .DireWolf, .AlphaWolf, .BigBadWolf, .Wolverine, .Minion, .Sorceress, .LoneWolf]
+let pregame_OtherRoleType: [RoleType]       = [.TheBlob, .Bogeyman, .Chupacabra, .CountDracula, .Vampire, .Zombie]
 
+let VILLAGE_ROLES:  [Role]                  = filterBy(roleTypeList: pregame_VillageRoleType)
+let WEREWOLF_ROLES: [Role]                  = filterBy(roleTypeList: pregame_WerewolfRoleType)
+let OTHER_ROLES:    [Role]                  = filterBy(roleTypeList: pregame_OtherRoleType)
+let ALL_GAME_ROLES: [Role]                  = pregame_tempRoles.sorted(by: { $0.name < $1.name})
+
+func filterBy(roleTypeList: [RoleType]) -> [Role] {
+    var tempList: [Role]    = []
+    
+    for role in pregame_tempRoles {
+        if roleTypeList.contains(role.type) {
+            tempList.append(role)
+        }
+    }
+    
+    tempList.sort(by: { $0.name < $1.name})
+    
+    return tempList
+    
+}
 
 // ROLE RUNBOOK
 // Add role definition here and add to ALL_GAME_ROLES

@@ -74,8 +74,10 @@ class DayVC: UIViewController {
 
     @IBAction func lynchPressed(_ sender: Any) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
-        let lynchView = storyboard.instantiateViewController(withIdentifier: "eliminatePlayer") as! EliminatePlayerVC
-        lynchView.modalTransitionStyle = .crossDissolve
+        let lynchView = storyboard.instantiateViewController(withIdentifier: "selectPlayerPopup") as! SelectPlayerPopupVC
+        lynchView.popupTitle = "Who to Lynch?"
+        lynchView.reason = .VillageElimination
+        
         self.present(lynchView, animated: true, completion: nil)
     }
     

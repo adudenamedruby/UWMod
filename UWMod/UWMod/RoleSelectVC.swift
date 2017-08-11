@@ -19,29 +19,35 @@ class RoleSelectVC: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var mainCardView: UIView!
-    @IBOutlet var headerView: UIView!
-    @IBOutlet weak var headerTitleLabel: OldTan!
+    @IBOutlet weak var mainCardView:            UIView!
+    @IBOutlet var headerView:                   UIView!
+    @IBOutlet weak var headerTitleLabel:        OldTan!
     
-    @IBOutlet weak var backButton: PMSuperButton!
-    @IBOutlet weak var forwardButton: PMSuperButton!
+    @IBOutlet weak var teamChoiceControl:       UISegmentedControl!
+    @IBOutlet weak var backButton:              PMSuperButton!
+    @IBOutlet weak var forwardButton:           PMSuperButton!
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView:          UICollectionView!
     
-    @IBOutlet weak var gameBalanceLabel: UILabel!
-    @IBOutlet weak var teamBalanceLabel: UILabel!
-    @IBOutlet weak var roleCountLabel: UILabel!
+    @IBOutlet weak var gameBalanceLabel:        UILabel!
+    @IBOutlet weak var teamBalanceLabel:        UILabel!
+    @IBOutlet weak var roleCountLabel:          UILabel!
     
     
     // MARK: - Variables
     
-    let transition = CircularTransition()
-    let reuseIdentifier = "RoleCell"
+    let transition                              = CircularTransition()
+    let reuseIdentifier                         = "RoleCell"
     
-    var gameBalance: Int = 0
+    var gameBalance: Int                        = 0
+    var suggestedWerewolves: Int                = 0
+    var selectedRoles: [Role]                   = []
+    var selectedVillageRoles: [Role]            = []
+    var selectedWerewolfRoles: [Role]           = []
+    var selectedOtherRoles: [Role]              = []
+
+    
     var passedPlayers: [Player]?
-    var selectedRoles: [Role] = []
-    var suggestedWerewolves: Int = 0
     
     
     // MARK: - View lifetime
@@ -49,16 +55,16 @@ class RoleSelectVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainCardView.layer.cornerRadius = STYLE.CornerRadius
-        mainCardView.backgroundColor = STYLE.Tan
-        headerView.backgroundColor = STYLE.Brown
+        mainCardView.layer.cornerRadius         = STYLE.CornerRadius
+        mainCardView.backgroundColor            = STYLE.Tan
+        headerView.backgroundColor              = STYLE.Brown
         
-        let headerTitle = "Select Role"
+        let headerTitle                         = "Select Role"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.allowsMultipleSelection = true
+        collectionView.delegate                 = self
+        collectionView.dataSource               = self
+        collectionView.allowsMultipleSelection  = true
         
         teamBalanceLabel.text = suggestRoles()
         
@@ -74,6 +80,12 @@ class RoleSelectVC: UIViewController {
     
     
     // MARK: - Role selection
+    
+    
+    @IBAction func selectRoleAffiliation(_ sender: Any) {
+        collectionView.reloadData()
+    }
+    
     
     func suggestRoles() -> String {
 

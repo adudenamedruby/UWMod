@@ -13,6 +13,7 @@ enum SelectPlayerReason {
     case AssignPlayer
     case BodyguardSelectProtectee
     case WerewolfElimination
+    case VillageElimination
 }
 
 class SelectPlayerPopupVC: UIViewController {
@@ -96,6 +97,9 @@ class SelectPlayerPopupVC: UIViewController {
             } else if reason == .BodyguardSelectProtectee {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
+            } else if reason == .VillageElimination {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: nil, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
             }
             
         } else {
@@ -153,6 +157,10 @@ class SelectPlayerPopupVC: UIViewController {
             
         case .WerewolfElimination:
             populateWerewolfTargets()
+            
+        case .VillageElimination:
+            populateLivingPlayers()
+            
         }
         
     }
@@ -182,7 +190,10 @@ class SelectPlayerPopupVC: UIViewController {
             nc.post(name: NSNotification.Name(rawValue: BodyguardProtectingFailureNotification), object: nil)
             
         case .WerewolfElimination:
-            nc.post(name: NSNotification.Name(rawValue: EliminationByWerewolfNotification), object: nil)
+            nc.post(name: NSNotification.Name(rawValue: EliminationByWerewolfFailureNotification), object: nil)
+            
+        case .VillageElimination:
+            break
         }
     }
 }

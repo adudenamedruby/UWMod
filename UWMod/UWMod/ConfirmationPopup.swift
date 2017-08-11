@@ -57,7 +57,12 @@ class ConfirmationPopup: UIViewController {
             
             } else if reason            == .WerewolfElimination {
                 headerTitle             = "Werewolf Target"
-                alternateAlertText      = "Are you sure you want to maul \(chosenPlayer.name)"
+                alternateAlertText      = "Are you sure you want to maul \(chosenPlayer.name)?"
+                
+            } else if reason            == .VillageElimination {
+                headerTitle             = "Village Target"
+                alternateAlertText      = "Are you sure you want to lynch \(chosenPlayer.name)?"
+    
             }
         }
         
@@ -86,7 +91,7 @@ class ConfirmationPopup: UIViewController {
     
     @IBAction func yesButtonPressed(_ sender: Any) {
         
-        let eliminationReasons: [SelectPlayerReason] = [.WerewolfElimination]
+        let eliminationReasons: [SelectPlayerReason] = [.WerewolfElimination, .VillageElimination]
         
         if reason != nil {
             if eliminationReasons.contains(reason!) {
@@ -97,6 +102,10 @@ class ConfirmationPopup: UIViewController {
                 
                 if GAME.wolfRoles.contains(chosenPlayer.roleType()) && !GAME.aWerewolfHasBeenSlain {
                     GAME.aWerewolfHasBeenSlain = true
+                }
+                
+                if reason == .WerewolfElimination {
+                    self.notify(name: EliminationByWerewolfSuccessNotification)
                 }
                 
                 GAME.prepareToEliminatePlayer(victim: chosenPlayer)
@@ -118,7 +127,7 @@ class ConfirmationPopup: UIViewController {
             if self.eliminatedByType != nil {
                 if GAME.wolfRoles.contains(self.eliminatedByType!) {
                     GAME.werewolvesHaveKilled()
-                    self.notify(name: EliminationByWerewolfNotification)
+                    self.notify(name: EliminationByWerewolfSuccessNotification)
                 }
                 
             }

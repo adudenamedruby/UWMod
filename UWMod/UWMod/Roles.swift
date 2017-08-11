@@ -43,6 +43,7 @@ enum RoleType: String {
     case LoneWolf
     case Lycan
     case MadBomber
+    case Martyr
     case Mason
     case Mayor
     case Mentalist

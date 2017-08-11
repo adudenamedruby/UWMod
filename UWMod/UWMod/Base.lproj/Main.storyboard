@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="65.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ame Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-Kc-kag" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="98" y="15" width="130.5" height="36.5"/>
+                                                <rect key="frame" x="97.5" y="14.5" width="130.5" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -745,7 +745,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfT-u5-Wiw" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="68" y="15" width="203.5" height="40"/>
+                                                <rect key="frame" x="67.5" y="15.5" width="203.5" height="40"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -939,7 +939,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="337" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Roles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tuq-TL-lce" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="79" y="15" width="179.5" height="40"/>
+                                                <rect key="frame" x="79.5" y="15.5" width="179.5" height="40"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1019,11 +1019,26 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mgk-kp-KHZ">
+                                        <rect key="frame" x="8" y="103" width="321" height="29"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <segments>
+                                            <segment title="Village"/>
+                                            <segment title="Werewolves"/>
+                                            <segment title="Vampires"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="selectRoleAffiliation:" destination="7Pw-Ep-Lh3" eventType="valueChanged" id="l1n-XL-9q2"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.9882352941176471" green="0.93725490196078431" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="mgk-kp-KHZ" secondAttribute="trailing" constant="8" id="39L-8v-ni7"/>
                                     <constraint firstItem="P9r-Ya-85Q" firstAttribute="centerY" secondItem="sgF-ZD-TgM" secondAttribute="centerY" constant="-5" id="A2B-vR-6aA"/>
                                     <constraint firstAttribute="trailing" secondItem="gJa-nz-lZZ" secondAttribute="trailing" id="D0b-UD-3VG"/>
+                                    <constraint firstItem="mgk-kp-KHZ" firstAttribute="leading" secondItem="hhz-Fz-6Cw" secondAttribute="leading" constant="8" id="H1p-il-9m7"/>
                                     <constraint firstItem="8ge-b5-6M8" firstAttribute="leading" secondItem="hhz-Fz-6Cw" secondAttribute="leading" constant="26" id="Umk-Qg-oIo"/>
                                     <constraint firstItem="gJa-nz-lZZ" firstAttribute="leading" secondItem="hhz-Fz-6Cw" secondAttribute="leading" id="bQV-Yk-gYW"/>
                                     <constraint firstItem="P9r-Ya-85Q" firstAttribute="centerX" secondItem="hhz-Fz-6Cw" secondAttribute="centerX" id="biM-4B-672"/>
@@ -1034,7 +1049,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GQM-mG-qFm">
-                                <rect key="frame" x="26" y="135" width="323" height="422"/>
+                                <rect key="frame" x="26" y="170" width="323" height="387"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mpu-br-OhF">
                                     <size key="itemSize" width="95" height="130"/>
@@ -1144,7 +1159,8 @@
                             <constraint firstItem="dcr-n9-iBu" firstAttribute="top" secondItem="CdM-kF-7la" secondAttribute="top" id="Ph3-wK-WfM"/>
                             <constraint firstItem="fFb-jc-Pgw" firstAttribute="top" secondItem="gJa-nz-lZZ" secondAttribute="bottom" constant="8" id="WgB-0T-BFN"/>
                             <constraint firstItem="hhz-Fz-6Cw" firstAttribute="centerY" secondItem="CdM-kF-7la" secondAttribute="centerY" id="XfR-Xe-wLN"/>
-                            <constraint firstItem="GQM-mG-qFm" firstAttribute="top" secondItem="gJa-nz-lZZ" secondAttribute="bottom" constant="35" id="dbS-R3-loP"/>
+                            <constraint firstItem="GQM-mG-qFm" firstAttribute="top" secondItem="mgk-kp-KHZ" secondAttribute="bottom" constant="9" id="cuZ-S1-FUd"/>
+                            <constraint firstItem="GQM-mG-qFm" firstAttribute="top" secondItem="gJa-nz-lZZ" secondAttribute="bottom" constant="70" id="dbS-R3-loP"/>
                             <constraint firstItem="hhz-Fz-6Cw" firstAttribute="width" secondItem="CdM-kF-7la" secondAttribute="width" multiplier="0.9" id="hEv-xk-wlz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GQM-mG-qFm" secondAttribute="trailing" constant="10" id="hsX-iA-vsf"/>
                             <constraint firstItem="dcr-n9-iBu" firstAttribute="leading" secondItem="CdM-kF-7la" secondAttribute="leading" id="jRI-ct-Hyb"/>
@@ -1162,6 +1178,7 @@
                         <outlet property="mainCardView" destination="hhz-Fz-6Cw" id="5Vm-Lq-FuO"/>
                         <outlet property="roleCountLabel" destination="c9T-sY-scg" id="4xV-so-bDs"/>
                         <outlet property="teamBalanceLabel" destination="fFb-jc-Pgw" id="ted-nG-iTT"/>
+                        <outlet property="teamChoiceControl" destination="mgk-kp-KHZ" id="oCN-iq-hRP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTP-dL-4kz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1209,7 +1226,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bout UWMod" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQv-Nl-JmZ" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="55" y="17" width="191" height="36.5"/>
+                                                <rect key="frame" x="54.5" y="17.5" width="191" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1341,7 +1358,7 @@ Based on the Werewolf boardgame.</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hase Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gy0-tG-ynC" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="64" y="12" width="188.5" height="36.5"/>
+                                                        <rect key="frame" x="63.5" y="12.5" width="188.5" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
