@@ -42,9 +42,13 @@ class RoleSelectVC: UIViewController {
     var gameBalance: Int                        = 0
     var suggestedWerewolves: Int                = 0
     var selectedRoles: [Role]                   = []
+    
     var selectedVillageRoles: [Role]            = []
+    var selectedVillageIndexPaths: [IndexPath]  = []
     var selectedWerewolfRoles: [Role]           = []
+    var selectedWerewolfIndexPaths: [IndexPath] = []
     var selectedOtherRoles: [Role]              = []
+    var selectedOtherIndexPaths: [IndexPath]    = []
 
     
     var passedPlayers: [Player]?
@@ -106,14 +110,24 @@ class RoleSelectVC: UIViewController {
     }
     
     func updateRoles() {
-        var chosenRoles: [Role] = []
-        let selectedIndexPaths = collectionView.indexPathsForSelectedItems
-        for indexPath in selectedIndexPaths! {
-            chosenRoles.append(ALL_GAME_ROLES[indexPath.row])
+        selectedVillageRoles                        = []
+        selectedWerewolfRoles                       = []
+        selectedOtherRoles                          = []
+        
+        for indexPath in selectedVillageIndexPaths {
+            selectedVillageRoles.append(VILLAGE_ROLES[indexPath.row])
+        }
+        
+        for indexPath in selectedWerewolfIndexPaths {
+            selectedWerewolfRoles.append(WEREWOLF_ROLES[indexPath.row])
+        }
+        
+        for indexPath in selectedOtherIndexPaths {
+            selectedOtherRoles.append(OTHER_ROLES[indexPath.row])
         }
         
         self.selectedRoles.removeAll()
-        self.selectedRoles = chosenRoles
+        self.selectedRoles = selectedVillageRoles + selectedWerewolfRoles + selectedOtherRoles
     }
     
     func updateGameBalance() {
@@ -148,9 +162,15 @@ class RoleSelectVC: UIViewController {
     }
     
     func updateRoleCountLabel() {
-        let roleCount = collectionView.indexPathsForSelectedItems?.count
+        let roleCount = totalNumberOfSelectedRoles()
 
-        roleCountLabel.text = "\(roleCount!)/\(passedPlayers!.count)"
+        roleCountLabel.text = "\(roleCount)/\(passedPlayers!.count)"
+    }
+    
+    func totalNumberOfSelectedRoles() -> Int {
+        let tempArray: [IndexPath] = selectedVillageIndexPaths + selectedWerewolfIndexPaths + selectedOtherIndexPaths
+        
+        return tempArray.count
     }
     
     
@@ -207,6 +227,17 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if teamChoiceControl.selectedSegmentIndex == 0 {
+            return VILLAGE_ROLES.count
+            
+        } else if teamChoiceControl.selectedSegmentIndex == 1 {
+            return WEREWOLF_ROLES.count
+            
+        } else if teamChoiceControl.selectedSegmentIndex == 2 {
+            return OTHER_ROLES.count
+        }
+        
         return ALL_GAME_ROLES.count
     }
     
@@ -214,16 +245,43 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! RoleSelectionCell
         
-        let index = indexPath.row
+        let row = indexPath.row
         
-        cell.roleName = ALL_GAME_ROLES[index].name
-        cell.roleIcon = ALL_GAME_ROLES[index].image
-        
-        if cell.isSelected {
-            cell.alpha = 1
+        if teamChoiceControl.selectedSegmentIndex == 0 {
+            cell.roleName = VILLAGE_ROLES[row].name
+            cell.roleIcon = VILLAGE_ROLES[row].image
+            
+            if selectedVillageIndexPaths.contains(indexPath) {
+                cell.alpha = 1
+            } else {
+                cell.alpha = 0.5
+            }
+            
+        } else if teamChoiceControl.selectedSegmentIndex == 1 {
+            cell.roleName = WEREWOLF_ROLES[row].name
+            cell.roleIcon = WEREWOLF_ROLES[row].image
+            
+            if selectedWerewolfIndexPaths.contains(indexPath) {
+                cell.alpha = 1
+            } else {
+                cell.alpha = 0.5
+            }
+            
+        } else if teamChoiceControl.selectedSegmentIndex == 2 {
+            cell.roleName = OTHER_ROLES[row].name
+            cell.roleIcon = OTHER_ROLES[row].image
+            
+            if selectedOtherIndexPaths.contains(indexPath) {
+                cell.alpha = 1
+            } else {
+                cell.alpha = 0.5
+            }
+            
         } else {
-            cell.alpha = 0.5
+            cell.roleName = ALL_GAME_ROLES[row].name
+            cell.roleIcon = ALL_GAME_ROLES[row].image
         }
+        
         cell.configureCell()
         
         return cell
@@ -233,11 +291,19 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
         collectionView.cellForItem(at: indexPath)?.alpha = 1
         updateGameBalance()
         
-        let selectedIndexPaths = collectionView.indexPathsForSelectedItems
+        if teamChoiceControl.selectedSegmentIndex == 0 {
+            selectedVillageIndexPaths.append(indexPath)
+            
+        } else if teamChoiceControl.selectedSegmentIndex == 1 {
+            selectedWerewolfIndexPaths.append(indexPath)
+            
+        } else if teamChoiceControl.selectedSegmentIndex == 2 {
+            selectedOtherIndexPaths.append(indexPath)
+        }
         
         updateRoleCountLabel()
         
-        if (selectedIndexPaths?.count)! > (passedPlayers?.count)! {
+        if (totalNumberOfSelectedRoles()) > (passedPlayers?.count)! {
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.modalTransitionStyle = .crossDissolve
@@ -250,8 +316,41 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         collectionView.cellForItem(at: indexPath)?.alpha = 0.5
         
+        if teamChoiceControl.selectedSegmentIndex == 0 {
+            removeFromArray(indexPath:  indexPath, teamIndex: 0)
+            
+        } else if teamChoiceControl.selectedSegmentIndex == 1 {
+            removeFromArray(indexPath:  indexPath, teamIndex: 1)
+            
+        } else if teamChoiceControl.selectedSegmentIndex == 2 {
+            removeFromArray(indexPath:  indexPath, teamIndex: 2)
+        }
+        
+        
         updateRoleCountLabel()
         updateGameBalance()
+    }
+    
+    func removeFromArray(indexPath: IndexPath, teamIndex: Int) {
+        
+        if teamIndex == 0 {
+            if selectedVillageIndexPaths.contains(indexPath) {
+                let arrIndx = selectedVillageIndexPaths.index(of: indexPath)
+                selectedVillageIndexPaths.remove(at: arrIndx!)
+            }
+            
+        } else if teamIndex == 1 {
+            if selectedWerewolfIndexPaths.contains(indexPath) {
+                let arrIndx = selectedWerewolfIndexPaths.index(of: indexPath)
+                selectedWerewolfIndexPaths.remove(at: arrIndx!)
+            }
+            
+        } else if teamIndex == 2 {
+            if selectedOtherIndexPaths.contains(indexPath) {
+                let arrIndx = selectedOtherIndexPaths.index(of: indexPath)
+                selectedOtherIndexPaths.remove(at: arrIndx!)
+            }
+        }
     }
 }
 

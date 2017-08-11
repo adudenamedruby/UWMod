@@ -1020,12 +1020,12 @@
                                         </subviews>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mgk-kp-KHZ">
-                                        <rect key="frame" x="8" y="103" width="321" height="29"/>
+                                        <rect key="frame" x="8" y="109" width="321" height="29"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <segments>
                                             <segment title="Village"/>
                                             <segment title="Werewolves"/>
-                                            <segment title="Vampires"/>
+                                            <segment title="Other"/>
                                         </segments>
                                         <color key="tintColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
@@ -1049,7 +1049,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GQM-mG-qFm">
-                                <rect key="frame" x="26" y="170" width="323" height="387"/>
+                                <rect key="frame" x="26" y="180" width="323" height="377"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mpu-br-OhF">
                                     <size key="itemSize" width="95" height="130"/>
@@ -1159,8 +1159,8 @@
                             <constraint firstItem="dcr-n9-iBu" firstAttribute="top" secondItem="CdM-kF-7la" secondAttribute="top" id="Ph3-wK-WfM"/>
                             <constraint firstItem="fFb-jc-Pgw" firstAttribute="top" secondItem="gJa-nz-lZZ" secondAttribute="bottom" constant="8" id="WgB-0T-BFN"/>
                             <constraint firstItem="hhz-Fz-6Cw" firstAttribute="centerY" secondItem="CdM-kF-7la" secondAttribute="centerY" id="XfR-Xe-wLN"/>
-                            <constraint firstItem="GQM-mG-qFm" firstAttribute="top" secondItem="mgk-kp-KHZ" secondAttribute="bottom" constant="9" id="cuZ-S1-FUd"/>
-                            <constraint firstItem="GQM-mG-qFm" firstAttribute="top" secondItem="gJa-nz-lZZ" secondAttribute="bottom" constant="70" id="dbS-R3-loP"/>
+                            <constraint firstItem="GQM-mG-qFm" firstAttribute="top" secondItem="mgk-kp-KHZ" secondAttribute="bottom" constant="13" id="cuZ-S1-FUd"/>
+                            <constraint firstItem="GQM-mG-qFm" firstAttribute="top" secondItem="gJa-nz-lZZ" secondAttribute="bottom" constant="80" id="dbS-R3-loP"/>
                             <constraint firstItem="hhz-Fz-6Cw" firstAttribute="width" secondItem="CdM-kF-7la" secondAttribute="width" multiplier="0.9" id="hEv-xk-wlz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GQM-mG-qFm" secondAttribute="trailing" constant="10" id="hsX-iA-vsf"/>
                             <constraint firstItem="dcr-n9-iBu" firstAttribute="leading" secondItem="CdM-kF-7la" secondAttribute="leading" id="jRI-ct-Hyb"/>
