@@ -83,14 +83,16 @@ class AddPlayerVC: UIViewController {
     // MARK: - Notifications
     
     func notifyTable() {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTable"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ReloadTableForNewPlayersNotification), object: nil)
     }
     
     
     // MARK: - Button functionality
     
     @IBAction func savePlayerButton(_ sender: Any) {
-        if let text = nameField.text, !text.isEmpty {
+        if let textEntry = nameField.text, !textEntry.isEmpty {
+            let text = textEntry.trimmingCharacters(in: .whitespacesAndNewlines)
+            
             savedPlayers?.append(text)
             standardDefaults.set(savedPlayers, forKey: PLAYERS)
             statusLabel.text = "Added \(text) to players."

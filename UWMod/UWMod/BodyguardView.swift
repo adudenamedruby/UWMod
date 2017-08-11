@@ -15,7 +15,7 @@ class BodyguardView: UIView {
     @IBOutlet var contentView:              UIView!
     @IBOutlet weak var protectButton:       PMSuperButton!
     @IBOutlet weak var okButton:            PMSuperButton!
-    @IBOutlet weak var pickerView:          UIPickerView!
+    @IBOutlet weak var roleNotes: UILabel!
     
     
     // MARK: - Variables
@@ -53,14 +53,14 @@ class BodyguardView: UIView {
         contentView.frame               = self.bounds
         contentView.autoresizingMask    = [.flexibleHeight, .flexibleWidth]
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(checkAssignment),
+                                               name: NSNotification.Name(rawValue: BodyguardProtectingNotification),
+                                               object: nil)
+        
         contentView.backgroundColor     = STYLE.Tan
         
-        pickerView.isHidden             = true
         okButton.isHidden               = true
-        
-        pickerView.delegate             = self
-        pickerView.dataSource           = self
-        
     }
     
     func setupUnprotectedPlayers() {
@@ -82,12 +82,28 @@ class BodyguardView: UIView {
         return unprotectedPlayersList
     }
     
+    func checkAssignment() {
+        let name = GAME.identifyChosenPlayer().name
+        roleNotes.text = "Protect \(name)?"
+        roleNotes.isHidden = false
+    }
+    
     @IBAction func protectButtonTapped(_ sender: Any) {
         protectButton.isEnabled         = false
         protectButton.isHidden          = true
-        
-        pickerView.isHidden             = false
         okButton.isHidden               = false
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+        let selectPlayer = storyboard.instantiateViewController(withIdentifier: "selectPlayerPopupVC") as! SelectPlayerPopupVC
+        selectPlayer.popupTitle = "Protect a Player"
+        selectPlayer.reason = .BodyguardSelectProtectee
+        selectPlayer.currentPlayer = currentPlayer
+        
+        var topVC = UIApplication.shared.keyWindow?.rootViewController
+        while((topVC!.presentedViewController) != nil){
+            topVC = topVC!.presentedViewController
+        }
+        
     }
     
     @IBAction func okButtonTapped(_ sender: Any) {

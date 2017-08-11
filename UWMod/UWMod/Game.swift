@@ -241,6 +241,10 @@ class Game {
         playersProtectedThisPhase = ""
     }
     
+    public func identifyChosenPlayer() -> Player {
+        return _chosenPlayer!
+    }
+    
     public func useChosenPlayer() -> Player {
         let tempPlayer: Player = _chosenPlayer!
         _chosenPlayer = nil

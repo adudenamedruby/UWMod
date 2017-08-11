@@ -46,6 +46,11 @@ class WerewolfAssassination: UIView {
         contentView.frame                       = self.bounds
         contentView.autoresizingMask            = [.flexibleHeight, .flexibleWidth]
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(confirmKill),
+                                               name: NSNotification.Name(rawValue: EliminationByWerewolfNotification),
+                                               object: nil)
+        
         contentView.backgroundColor             = STYLE.Tan
         
         setCounter()
@@ -58,16 +63,22 @@ class WerewolfAssassination: UIView {
     @IBAction func killVillagerPressed(_ sender: Any) {
         
         let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
-        let lynchView = storyboard.instantiateViewController(withIdentifier: "eliminatePlayer") as! EliminatePlayerVC
-        lynchView.modalTransitionStyle = .crossDissolve
-        lynchView.eliminatedBy = .Werewolf
-        
+        let selectPlayer = storyboard.instantiateViewController(withIdentifier: "selectPlayerPopupVC") as! SelectPlayerPopupVC
+        selectPlayer.popupTitle = "Who to kill?"
+        selectPlayer.reason = .WerewolfElimination
+
         var topVC = UIApplication.shared.keyWindow?.rootViewController
         while((topVC!.presentedViewController) != nil){
             topVC = topVC!.presentedViewController
         }
         
-        topVC?.present(lynchView, animated: true, completion: nil)
+        topVC?.present(selectPlayer, animated: true, completion: nil)
+    }
+    
+    func confirmKill() {
+        stopTimer()
+        timerLabel.isHidden                 = true
+        killVillagerButton.isHidden         = true
     }
     
     

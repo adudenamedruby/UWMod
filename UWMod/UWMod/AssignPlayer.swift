@@ -18,8 +18,6 @@ class AssignPlayer: UIView {
     
     @IBOutlet var contentView:          UIView!
     @IBOutlet weak var assignButton:    PMSuperButton!
-    @IBOutlet weak var okButton:        PMSuperButton!
-    @IBOutlet weak var pickerView:      UIPickerView!
     @IBOutlet weak var roleNotes:       UILabel!
     
     
@@ -30,7 +28,6 @@ class AssignPlayer: UIView {
     var role:                           Role?
     // assigned variables
     var chosenPlayer:                   Player!
-    var unassignedPlayers:              [Player]!
     
     
     // MARK: - Initializers
@@ -39,13 +36,11 @@ class AssignPlayer: UIView {
         super.init(frame: frame)
         self.role = role
         setupView()
-        setupUnassignedPlayers()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
-        setupUnassignedPlayers()
     }
     
     
@@ -58,69 +53,45 @@ class AssignPlayer: UIView {
         contentView.frame               = self.bounds
         contentView.autoresizingMask    = [.flexibleHeight, .flexibleWidth]
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(checkPlayerAssignment),
+                                               name: NSNotification.Name(rawValue: AssignPlayerFailureNotification),
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(playerAssigned),
+                                               name: NSNotification.Name(rawValue: AssignPlayerSuccessNotification),
+                                               object: nil)
+        
         contentView.backgroundColor     = STYLE.Tan
         
         roleNotes.text                  = role?.notes
-        pickerView.isHidden             = true
-        okButton.isHidden               = true
-        
-        pickerView.delegate             = self
-        pickerView.dataSource           = self
-        
     }
     
-    func setupUnassignedPlayers() {
-        unassignedPlayers               = unassignedPlayerList()
-        chosenPlayer                    = unassignedPlayers.first
-    }
-    
-    func unassignedPlayerList() -> [Player] {
-        var unassignedPlayerList:       [Player] = []
-        
-        for player in GAME.availablePlayers {
-            if !player.isAssigned {
-                unassignedPlayerList.append(player)
-            }
-        }
-        
-        unassignedPlayerList.sort(by: { $0.name < $1.name })
-        
-        return unassignedPlayerList
+    func checkPlayerAssignment() {
+        assignButton.isHidden           = false
+        roleNotes.text                  = role?.notes
     }
     
     @IBAction func assignButtonTapped(_ sender: Any) {
-        assignButton.isEnabled          = false
         assignButton.isHidden           = true
         roleNotes.isHidden              = true
         
-        pickerView.isHidden             = false
-        okButton.isHidden               = false
-    }
-
-    @IBAction func okButtonTapped(_ sender: Any) {
-        chosenPlayer.assignRole(role: role!)
-        GAME.addPlayerToLivingActors(player: chosenPlayer)
+        let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+        let selectPlayer = storyboard.instantiateViewController(withIdentifier: "selectPlayerPopupVC") as! SelectPlayerPopupVC
+        selectPlayer.popupTitle = "Assign Role"
+        selectPlayer.role = role!
+        selectPlayer.reason = .AssignPlayer
         
-        delegate?.updateCard()
+        var topVC = UIApplication.shared.keyWindow?.rootViewController
+        while((topVC!.presentedViewController) != nil){
+            topVC = topVC!.presentedViewController
+        }
+        
+        topVC?.present(selectPlayer, animated: true, completion: nil)
     }
-}
 
-extension AssignPlayer: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return unassignedPlayerList().count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let unassignedPlayers = unassignedPlayerList()
-        return unassignedPlayers[row].name
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        chosenPlayer = unassignedPlayerList()[row]
+    func playerAssigned() {        
+        delegate?.updateCard()
     }
 }

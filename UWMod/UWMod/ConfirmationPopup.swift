@@ -21,9 +21,13 @@ class ConfirmationPopup: UIViewController {
     // MARK: - Variables
     
     var player:                             Player!
+    
+    // Passed variables
     var eliminatedBy:                       RoleType?
     var alternateHeaderTitle:               String?
     var alternateAlertText:                 String?
+    var reason:                             SelectPlayerReason?
+    var role:                               Role?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,19 +36,28 @@ class ConfirmationPopup: UIViewController {
         mainAlertView.backgroundColor       = STYLE.Tan
         headerView.backgroundColor          = STYLE.Brown
         
-        var headerTitle = "Confirm Elimination"
+        player                              = GAME.useChosenPlayer()
+        
+        var headerTitle                     = "Confirm Elimination"
 
         if alternateHeaderTitle != nil {
-            headerTitle = alternateHeaderTitle!
+            headerTitle                     = alternateHeaderTitle!
+        }
+        
+        if reason != nil {
+            if reason == .AssignPlayer {
+                headerTitle = "Confirm Assignment"
+                alternateAlertText = "Are you sure you want to assign \(player.name)?"
+            }
+        }
+        
+        if alternateAlertText != nil {
+            alertTextLabel.text             = alternateAlertText
+        } else {
+            alertTextLabel.text             = ""
         }
         
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
-        
-        if alternateAlertText != nil {
-            alertTextLabel.text             = alternateAlertText!
-        } else {
-            alertTextLabel.text             = "Are you sure you want to eliminate \(player.name)?"
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,15 +71,25 @@ class ConfirmationPopup: UIViewController {
     
     @IBAction func yesButtonPressed(_ sender: Any) {
         
-        if eliminatedBy != nil {
-            player.killedBy = eliminatedBy
-        }
+        let eliminationReasons: [SelectPlayerReason] = [.WerewolfElimination]
         
-        if GAME.wolfRoles.contains(player.roleType()) && !GAME.aWerewolfHasBeenSlain {
-            GAME.aWerewolfHasBeenSlain = true
+        if reason != nil {
+            if eliminationReasons.contains(reason!) {
+            
+                if eliminatedBy != nil {
+                    player.killedBy = eliminatedBy
+                }
+                
+                if GAME.wolfRoles.contains(player.roleType()) && !GAME.aWerewolfHasBeenSlain {
+                    GAME.aWerewolfHasBeenSlain = true
+                }
+                
+                GAME.prepareToEliminatePlayer(victim: player)
+            } else if reason == .AssignPlayer {
+                player.assignRole(role: role!)
+                GAME.addPlayerToLivingActors(player: player)
+            }
         }
-        
-        GAME.prepareToEliminatePlayer(victim: player)
         
         let presentingVC = self.presentingViewController
         
@@ -74,9 +97,14 @@ class ConfirmationPopup: UIViewController {
             if self.eliminatedBy != nil {
                 if GAME.wolfRoles.contains(self.eliminatedBy!) {
                     GAME.werewolvesHaveKilled()
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "eliminationByWerewolf"), object: nil)
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: EliminationByWerewolfNotification), object: nil)
                 }
                 
+            }
+            
+            if self.reason == .AssignPlayer {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: AssignPlayerSuccessNotification),
+                                                object: nil)
             }
             
             presentingVC!.dismiss(animated: false, completion: nil)
