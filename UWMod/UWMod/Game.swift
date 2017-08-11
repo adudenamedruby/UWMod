@@ -341,10 +341,10 @@ class Game {
             determineRolesInTheGame()
         }
         
-        resetPlayerNightActions()
         clearPhaseReport()
         assignInfoCardsToPlayers()
         eliminatePlayers()
+        resetPlayerNightActions()
         determineNightActors()
         setDeadPlayerCheck()
         setupInfoCards()
@@ -354,10 +354,10 @@ class Game {
     
     public func finishDay() {
         
-        resetPlayerDayActions()
         clearPhaseReport()
         assignInfoCardsToPlayers()
         eliminatePlayers()
+        resetPlayerDayActions()
         determineNumberOfWerewolfEliminations()
         determineNightActors()
         setDeadPlayerCheck()

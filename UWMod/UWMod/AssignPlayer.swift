@@ -91,7 +91,7 @@ class AssignPlayer: UIView {
         topVC?.present(selectPlayer, animated: true, completion: nil)
     }
 
-    func playerAssigned() {        
+    func playerAssigned() {
         delegate?.updateCard()
     }
 }

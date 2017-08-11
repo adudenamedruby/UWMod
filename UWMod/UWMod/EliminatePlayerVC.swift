@@ -58,9 +58,9 @@ class EliminatePlayerVC: UIViewController {
         let confirmView = storyboard.instantiateViewController(withIdentifier: "confirmationPopup") as! ConfirmationPopup
         confirmView.modalTransitionStyle = .crossDissolve
         
-        confirmView.player = playerToBeKilled
+        confirmView.chosenPlayer = playerToBeKilled
         if (eliminatedBy != nil) {
-            confirmView.eliminatedBy = eliminatedBy
+            confirmView.eliminatedByType = eliminatedBy
         }
         self.present(confirmView, animated: true, completion: nil)
     }

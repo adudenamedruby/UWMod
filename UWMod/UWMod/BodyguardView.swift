@@ -14,8 +14,6 @@ class BodyguardView: UIView {
     
     @IBOutlet var contentView:              UIView!
     @IBOutlet weak var protectButton:       PMSuperButton!
-    @IBOutlet weak var okButton:            PMSuperButton!
-    @IBOutlet weak var roleNotes: UILabel!
     
     
     // MARK: - Variables
@@ -34,13 +32,11 @@ class BodyguardView: UIView {
         super.init(frame: frame)
         self.currentPlayer = player
         setupView()
-        setupUnprotectedPlayers()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
-        setupUnprotectedPlayers()
     }
     
     
@@ -54,83 +50,42 @@ class BodyguardView: UIView {
         contentView.autoresizingMask    = [.flexibleHeight, .flexibleWidth]
         
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(checkAssignment),
-                                               name: NSNotification.Name(rawValue: BodyguardProtectingNotification),
+                                               selector: #selector(protectionSuccessful),
+                                               name: NSNotification.Name(rawValue: BodyguardProtectingSuccessNotification),
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(protectionFailure),
+                                               name: NSNotification.Name(rawValue: BodyguardProtectingFailureNotification),
                                                object: nil)
         
         contentView.backgroundColor     = STYLE.Tan
         
-        okButton.isHidden               = true
-    }
-    
-    func setupUnprotectedPlayers() {
-        playersAvailableForProtection   = unprotectedPlayersList()
-        chosenPlayer                    = playersAvailableForProtection.first
-    }
-    
-    func unprotectedPlayersList() -> [Player] {
-        var unprotectedPlayersList: [Player] = []
-        
-        for player in GAME.livingActors {
-            if (currentPlayer?.canAffect(player: player, forCondition: .Protection))! && player !== currentPlayer {
-                    unprotectedPlayersList.append(player)
-            }
-        }
-        
-        unprotectedPlayersList.sort(by: { $0.name < $1.name })
-        
-        return unprotectedPlayersList
-    }
-    
-    func checkAssignment() {
-        let name = GAME.identifyChosenPlayer().name
-        roleNotes.text = "Protect \(name)?"
-        roleNotes.isHidden = false
     }
     
     @IBAction func protectButtonTapped(_ sender: Any) {
-        protectButton.isEnabled         = false
         protectButton.isHidden          = true
-        okButton.isHidden               = false
         
         let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
         let selectPlayer = storyboard.instantiateViewController(withIdentifier: "selectPlayerPopupVC") as! SelectPlayerPopupVC
-        selectPlayer.popupTitle = "Protect a Player"
+        selectPlayer.popupTitle = "Player to Protect"
         selectPlayer.reason = .BodyguardSelectProtectee
-        selectPlayer.currentPlayer = currentPlayer
+        selectPlayer.activePlayer = currentPlayer
         
         var topVC = UIApplication.shared.keyWindow?.rootViewController
         while((topVC!.presentedViewController) != nil){
             topVC = topVC!.presentedViewController
         }
         
+        topVC?.present(selectPlayer, animated: true, completion: nil)
+        
     }
     
-    @IBAction func okButtonTapped(_ sender: Any) {
-        currentPlayer?.protect(playerToProtect: chosenPlayer, protector: currentPlayer!)
-        currentPlayer?.hasActedTonight = true
-        
+    func protectionFailure() {
+        protectButton.isHidden = false
+    }
+    
+    func protectionSuccessful() {
         delegate?.updateCard()
     }
 }
-
-
-extension BodyguardView: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return playersAvailableForProtection.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return playersAvailableForProtection[row].name
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        chosenPlayer = playersAvailableForProtection[row]
-    }
-}
-

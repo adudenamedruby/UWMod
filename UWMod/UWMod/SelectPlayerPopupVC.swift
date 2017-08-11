@@ -39,7 +39,7 @@ class SelectPlayerPopupVC: UIViewController {
     var popupTitle:                         String?
     var role:                               Role?
     var reason: SelectPlayerReason          = .Default
-    var currentPlayer:                      Player?
+    var activePlayer:                      Player?
     
     
     // MARK: - View lifecycle
@@ -88,30 +88,13 @@ class SelectPlayerPopupVC: UIViewController {
             GAME.setChosenPlayer(player: chosenPlayer!)
             
             if reason == .WerewolfElimination {
-                let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
-                let confirm = storyboard.instantiateViewController(withIdentifier: "confirmationPopup") as! ConfirmationPopup
-                confirm.eliminatedBy = .Werewolf
-                confirm.reason = reason
-                
-                var topVC = UIApplication.shared.keyWindow?.rootViewController
-                while((topVC!.presentedViewController) != nil){
-                    topVC = topVC!.presentedViewController
-                }
-                
-                topVC?.present(confirm, animated: true, completion: nil)
+                showConfirmation(withEliminatingRoleType: .Werewolf, withActingPlayer: nil, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
             } else if reason == .AssignPlayer {
-                let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
-                let confirm = storyboard.instantiateViewController(withIdentifier: "confirmationPopup") as! ConfirmationPopup
-                confirm.reason = reason
-                confirm.role = role!
-
-                var topVC = UIApplication.shared.keyWindow?.rootViewController
-                while((topVC!.presentedViewController) != nil){
-                    topVC = topVC!.presentedViewController
-                }
-                
-                topVC?.present(confirm, animated: true, completion: nil)
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: nil, withReason: reason, withRole: role!, withAlternateTitle: nil, withAlternateText: nil)
+            
+            } else if reason == .BodyguardSelectProtectee {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
             }
             
@@ -135,15 +118,39 @@ class SelectPlayerPopupVC: UIViewController {
     
     // MARK: - Functions
     
+    func showConfirmation(withEliminatingRoleType roletype: RoleType?, withActingPlayer ac: Player?, withReason reason: SelectPlayerReason?, withRole role: Role?, withAlternateTitle title: String?, withAlternateText text: String?) {
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+        let confirm = storyboard.instantiateViewController(withIdentifier: "confirmationPopup") as! ConfirmationPopup
+        
+        if roletype != nil      { confirm.eliminatedByType = roletype }
+        if reason != nil        { confirm.reason = reason }
+        if ac != nil            { confirm.actingPlayer = ac }
+        if role != nil          { confirm.role = role }
+        if title != nil         { confirm.alternateHeaderTitle = title }
+        if text != nil          { confirm.alternateAlertText = text }
+        
+        var topVC = UIApplication.shared.keyWindow?.rootViewController
+        while((topVC!.presentedViewController) != nil){
+            topVC = topVC!.presentedViewController
+        }
+        
+        topVC?.present(confirm, animated: true, completion: nil)
+        
+    }
+    
     private func populateAvailablePlayerList() {
         
         switch reason {
         case .Default:
             populateLivingPlayers()
+            
         case .AssignPlayer:
             populateFirstNightPlayers()
+            
         case .BodyguardSelectProtectee:
             populateForProtection()
+            
         case .WerewolfElimination:
             populateWerewolfTargets()
         }
@@ -172,7 +179,7 @@ class SelectPlayerPopupVC: UIViewController {
             nc.post(name: NSNotification.Name(rawValue: AssignPlayerFailureNotification), object: nil)
             
         case .BodyguardSelectProtectee:
-            nc.post(name: NSNotification.Name(rawValue: BodyguardProtectingNotification), object: nil)
+            nc.post(name: NSNotification.Name(rawValue: BodyguardProtectingFailureNotification), object: nil)
             
         case .WerewolfElimination:
             nc.post(name: NSNotification.Name(rawValue: EliminationByWerewolfNotification), object: nil)
@@ -242,7 +249,7 @@ extension SelectPlayerPopupVC {
         var unprotectedPlayersList: [Player] = []
 
         for player in GAME.livingActors {
-            if (currentPlayer?.canAffect(player: player, forCondition: .Protection))! && player !== currentPlayer {
+            if (activePlayer?.canAffect(player: player, forCondition: .Protection))! && player !== activePlayer {
                 unprotectedPlayersList.append(player)
             }
         }
