@@ -56,3 +56,15 @@ let STYLE                   = StyleConstants()
 var GAME: Game              = Game(availableRoster: [], availablePlayers: [])
 var SETTINGS: GameSettings  = GameSettings()
 
+
+
+
+// Notification Variables
+
+let ReloadTableForNewPlayersNotification = "reloadTableForNewPlayersNotification"
+let ReturnToPlayerSelectNotification = "returnToPlayerSelectNotification"
+let EliminationByWerewolfNotification = "eliminationByWerewolfNotification"
+let AssignPlayerSuccessNotification = "assignPlayerSuccessNotification"
+let AssignPlayerFailureNotification = "assignPlayerFailureNotification"
+let BodyguardProtectingSuccessNotification = "bodyguardProtectingSuccessNotification"
+let BodyguardProtectingFailureNotification = "bodyguardProtectingFailureNotification"

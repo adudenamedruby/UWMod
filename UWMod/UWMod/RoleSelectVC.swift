@@ -182,7 +182,7 @@ class RoleSelectVC: UIViewController {
     
     @IBAction func dismissButton(_ sender: Any) {
         self.passedPlayers?.removeAll()
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "returnToPlayerSelect"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ReturnToPlayerSelectNotification), object: nil)
         self.dismiss(animated: true, completion: nil)
     }
 }

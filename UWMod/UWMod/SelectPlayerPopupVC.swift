@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum SelectPlayerReason {
+    case Default
+    case AssignPlayer
+    case BodyguardSelectProtectee
+    case WerewolfElimination
+}
+
 class SelectPlayerPopupVC: UIViewController {
     
     // MARK: - Outlets
@@ -15,17 +22,24 @@ class SelectPlayerPopupVC: UIViewController {
     @IBOutlet weak var mainCardView:            UIView!
     @IBOutlet weak var headerView:              UIView!
     @IBOutlet weak var headerTitleLabel:        OldTan!
-    @IBOutlet weak var backButton:              UIButton!
     @IBOutlet weak var selectButton:            PMSuperButton!
     
     @IBOutlet weak var tableView:               UITableView!
     
     
     // MARK: - Variables
-
-    let textCellIdentifier                  = "PlayerNameCell"
+    
+    let textCellIdentifier                  = "selectPlayerCell"
+    var headerTitle                         = "Select Player"
+    var availablePlayers: [Player]          = []
     var chosenPlayer:                       Player?
-    //var players: [Player]                   = []
+
+    
+    // Passed values
+    var popupTitle:                         String?
+    var role:                               Role?
+    var reason: SelectPlayerReason          = .Default
+    var activePlayer:                      Player?
     
     
     // MARK: - View lifecycle
@@ -36,13 +50,28 @@ class SelectPlayerPopupVC: UIViewController {
         tableView.delegate                  = self
         tableView.dataSource                = self
         tableView.allowsMultipleSelection   = false
-        //populatePlayers()
+        
+        mainCardView.layer.cornerRadius         = STYLE.CornerRadius
+        mainCardView.backgroundColor            = STYLE.Tan
+        headerView.backgroundColor              = STYLE.Brown
+        
+        if popupTitle != nil {
+            headerTitle = popupTitle!
+        }
+        
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
+        
+        populateAvailablePlayerList()
+        
+        tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //populatePlayers()
+        populateAvailablePlayerList()
+        tableView.reloadData()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,9 +84,20 @@ class SelectPlayerPopupVC: UIViewController {
     
     @IBAction func selectPlayer(_ sender: Any) {
         if chosenPlayer != nil {
-            // TODO: Add a notification here based on case to call back to the specific view?
+            
             GAME.setChosenPlayer(player: chosenPlayer!)
-            self.dismiss(animated: true, completion: nil)
+            
+            if reason == .WerewolfElimination {
+                showConfirmation(withEliminatingRoleType: .Werewolf, withActingPlayer: nil, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
+            } else if reason == .AssignPlayer {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: nil, withReason: reason, withRole: role!, withAlternateTitle: nil, withAlternateText: nil)
+            
+            } else if reason == .BodyguardSelectProtectee {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
+            }
+            
         } else {
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let errorView = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
@@ -70,23 +110,81 @@ class SelectPlayerPopupVC: UIViewController {
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: {
+            self.notify()
+        })
     }
     
     
     // MARK: - Functions
     
-//    private func populatePlayers() {
-//        players.removeAll()
-//        
-//        for player in GAME.livingActors {
-//            players.append(player)
-//        }
-//        
-//        players.sort(by: { $0.name < $1.name } )
-//    }
+    func showConfirmation(withEliminatingRoleType roletype: RoleType?, withActingPlayer ac: Player?, withReason reason: SelectPlayerReason?, withRole role: Role?, withAlternateTitle title: String?, withAlternateText text: String?) {
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+        let confirm = storyboard.instantiateViewController(withIdentifier: "confirmationPopup") as! ConfirmationPopup
+        
+        if roletype != nil      { confirm.eliminatedByType = roletype }
+        if reason != nil        { confirm.reason = reason }
+        if ac != nil            { confirm.actingPlayer = ac }
+        if role != nil          { confirm.role = role }
+        if title != nil         { confirm.alternateHeaderTitle = title }
+        if text != nil          { confirm.alternateAlertText = text }
+        
+        var topVC = UIApplication.shared.keyWindow?.rootViewController
+        while((topVC!.presentedViewController) != nil){
+            topVC = topVC!.presentedViewController
+        }
+        
+        topVC?.present(confirm, animated: true, completion: nil)
+        
+    }
     
+    private func populateAvailablePlayerList() {
+        
+        switch reason {
+        case .Default:
+            populateLivingPlayers()
+            
+        case .AssignPlayer:
+            populateFirstNightPlayers()
+            
+        case .BodyguardSelectProtectee:
+            populateForProtection()
+            
+        case .WerewolfElimination:
+            populateWerewolfTargets()
+        }
+        
+    }
+    
+    private func populateLivingPlayers() {
+        availablePlayers.removeAll()
+        
+        for player in GAME.livingActors {
+                availablePlayers.append(player)
+        }
+        
+        availablePlayers.sort(by: { $0.name < $1.name } )
+    }
 
+    private func notify() {
+        
+        let nc = NotificationCenter.default
+        
+        switch reason {
+        case .Default:
+            break
+            
+        case .AssignPlayer:
+            nc.post(name: NSNotification.Name(rawValue: AssignPlayerFailureNotification), object: nil)
+            
+        case .BodyguardSelectProtectee:
+            nc.post(name: NSNotification.Name(rawValue: BodyguardProtectingFailureNotification), object: nil)
+            
+        case .WerewolfElimination:
+            nc.post(name: NSNotification.Name(rawValue: EliminationByWerewolfNotification), object: nil)
+        }
+    }
 }
 
 extension SelectPlayerPopupVC: UITableViewDelegate, UITableViewDataSource {
@@ -96,16 +194,16 @@ extension SelectPlayerPopupVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return GAME.livingActors.count
+        
+        return availablePlayers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
         
         let row = indexPath.row
-        cell.textLabel?.text = GAME.livingActors[row].name
+        cell.textLabel?.text = availablePlayers[row].name
         cell.textLabel?.textColor = STYLE.Brown
-        cell.accessoryType = .checkmark
         cell.selectionStyle = .none
         
         return cell
@@ -113,7 +211,7 @@ extension SelectPlayerPopupVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        chosenPlayer = GAME.livingActors[indexPath.row]
+        chosenPlayer = availablePlayers[indexPath.row]
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -122,3 +220,77 @@ extension SelectPlayerPopupVC: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
+extension SelectPlayerPopupVC {
+    
+    // FIRST NIGHT!
+    func populateFirstNightPlayers() {
+        availablePlayers.removeAll()
+        
+        for player in GAME.availablePlayers {
+            if !player.isAssigned {
+                availablePlayers.append(player)
+            }
+        }
+        
+        availablePlayers.sort(by: { $0.name < $1.name } )
+    }
+}
+
+extension SelectPlayerPopupVC {
+    
+    // PROTECTION!
+    func populateForProtection() {
+        availablePlayers.removeAll()
+        availablePlayers   = unprotectedPlayersList()
+    }
+
+    func unprotectedPlayersList() -> [Player] {
+        var unprotectedPlayersList: [Player] = []
+
+        for player in GAME.livingActors {
+            if (activePlayer?.canAffect(player: player, forCondition: .Protection))! && player !== activePlayer {
+                unprotectedPlayersList.append(player)
+            }
+        }
+
+        unprotectedPlayersList.sort(by: { $0.name < $1.name })
+        
+        return unprotectedPlayersList
+    }
+}
+
+extension SelectPlayerPopupVC {
+    
+    // WEREWOLF ELIMINATION
+    func populateWerewolfTargets() {
+        availablePlayers.removeAll()
+        
+        for player in GAME.livingActors {
+            if !GAME.wolfRoles.contains(player.roleType()) {
+                availablePlayers.append(player)
+            }
+        }
+        
+        availablePlayers.sort(by: { $0.name < $1.name } )
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -241,6 +241,10 @@ class Game {
         playersProtectedThisPhase = ""
     }
     
+    public func identifyChosenPlayer() -> Player {
+        return _chosenPlayer!
+    }
+    
     public func useChosenPlayer() -> Player {
         let tempPlayer: Player = _chosenPlayer!
         _chosenPlayer = nil
@@ -337,10 +341,10 @@ class Game {
             determineRolesInTheGame()
         }
         
-        resetPlayerNightActions()
         clearPhaseReport()
         assignInfoCardsToPlayers()
         eliminatePlayers()
+        resetPlayerNightActions()
         determineNightActors()
         setDeadPlayerCheck()
         setupInfoCards()
@@ -350,10 +354,10 @@ class Game {
     
     public func finishDay() {
         
-        resetPlayerDayActions()
         clearPhaseReport()
         assignInfoCardsToPlayers()
         eliminatePlayers()
+        resetPlayerDayActions()
         determineNumberOfWerewolfEliminations()
         determineNightActors()
         setDeadPlayerCheck()

@@ -31,11 +31,6 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateCard),
-                                               name: NSNotification.Name(rawValue: "eliminationByWerewolf"),
-                                               object: nil)
-        
         cardBorder.layer.cornerRadius = STYLE.CornerRadius
         cardBorder.backgroundColor = STYLE.Tan
         headerView.backgroundColor = STYLE.Brown

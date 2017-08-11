@@ -20,10 +20,20 @@ class ConfirmationPopup: UIViewController {
     
     // MARK: - Variables
     
-    var player:                             Player!
-    var eliminatedBy:                       RoleType?
+    /// The player that was selected
+    var chosenPlayer:                       Player!
+    
+    // Passed variables
+    var eliminatedByType:                   RoleType?
+    var actingPlayer:                       Player?
+    var reason:                             SelectPlayerReason?
+    var role:                               Role?
+    
     var alternateHeaderTitle:               String?
     var alternateAlertText:                 String?
+    
+    
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,19 +42,32 @@ class ConfirmationPopup: UIViewController {
         mainAlertView.backgroundColor       = STYLE.Tan
         headerView.backgroundColor          = STYLE.Brown
         
-        var headerTitle = "Confirm Elimination"
-
-        if alternateHeaderTitle != nil {
-            headerTitle = alternateHeaderTitle!
+        chosenPlayer                        = GAME.useChosenPlayer()
+        
+        var headerTitle                     = "Confirm Elimination"
+        
+        if reason != nil {
+            if reason                   == .AssignPlayer {
+                headerTitle             = "Confirm Assignment"
+                alternateAlertText      = "Are you sure you want to assign \(chosenPlayer.name)?"
+                
+            } else if reason            == .BodyguardSelectProtectee {
+                headerTitle             = "Confirm Protection"
+                alternateAlertText      = "Are you sure you want to protect \(chosenPlayer.name)?"
+            
+            } else if reason            == .WerewolfElimination {
+                headerTitle             = "Werewolf Target"
+                alternateAlertText      = "Are you sure you want to maul \(chosenPlayer.name)"
+            }
+        }
+        
+        if alternateAlertText != nil {
+            alertTextLabel.text             = alternateAlertText
+        } else {
+            alertTextLabel.text             = ""
         }
         
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
-        
-        if alternateAlertText != nil {
-            alertTextLabel.text             = alternateAlertText!
-        } else {
-            alertTextLabel.text             = "Are you sure you want to eliminate \(player.name)?"
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,26 +79,55 @@ class ConfirmationPopup: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func notify(name: String) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: name),
+                                        object: nil)
+    }
+    
     @IBAction func yesButtonPressed(_ sender: Any) {
         
-        if eliminatedBy != nil {
-            player.killedBy = eliminatedBy
-        }
+        let eliminationReasons: [SelectPlayerReason] = [.WerewolfElimination]
         
-        if GAME.wolfRoles.contains(player.roleType()) && !GAME.aWerewolfHasBeenSlain {
-            GAME.aWerewolfHasBeenSlain = true
+        if reason != nil {
+            if eliminationReasons.contains(reason!) {
+            
+                if eliminatedByType != nil {
+                    chosenPlayer.killedBy = eliminatedByType
+                }
+                
+                if GAME.wolfRoles.contains(chosenPlayer.roleType()) && !GAME.aWerewolfHasBeenSlain {
+                    GAME.aWerewolfHasBeenSlain = true
+                }
+                
+                GAME.prepareToEliminatePlayer(victim: chosenPlayer)
+                
+            } else if reason == .AssignPlayer {
+                chosenPlayer.assignRole(role: role!)
+                GAME.addPlayerToLivingActors(player: chosenPlayer)
+                
+            } else if reason == .BodyguardSelectProtectee {
+                actingPlayer?.protect(playerToProtect: chosenPlayer, protector: actingPlayer!)
+                actingPlayer?.hasActedTonight = true
+                
+            }
         }
-        
-        GAME.prepareToEliminatePlayer(victim: player)
         
         let presentingVC = self.presentingViewController
         
         self.dismiss(animated: true, completion: {
-            if self.eliminatedBy != nil {
-                if GAME.wolfRoles.contains(self.eliminatedBy!) {
+            if self.eliminatedByType != nil {
+                if GAME.wolfRoles.contains(self.eliminatedByType!) {
                     GAME.werewolvesHaveKilled()
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "eliminationByWerewolf"), object: nil)
+                    self.notify(name: EliminationByWerewolfNotification)
                 }
+                
+            }
+            
+            if self.reason == .AssignPlayer {
+                self.notify(name: AssignPlayerSuccessNotification)
+            
+            } else if self.reason == .BodyguardSelectProtectee {
+                self.notify(name: BodyguardProtectingSuccessNotification)
                 
             }
             
