@@ -57,7 +57,15 @@ class ConfirmationPopup: UIViewController {
             
             } else if reason            == .WerewolfElimination {
                 headerTitle             = "Werewolf Target"
-                alternateAlertText      = "Are you sure you want to maul \(chosenPlayer.name)"
+                alternateAlertText      = "Are you sure you want to maul \(chosenPlayer.name)?"
+                
+            } else if reason            == .VillageElimination {
+                headerTitle             = "Village Target"
+                alternateAlertText      = "Are you sure you want to lynch \(chosenPlayer.name)?"
+    
+            } else if reason            == .ZombieLobotomization {
+                headerTitle             = "Confirm Dinner"
+                alternateAlertText      = "Are you sure you want to eat \(chosenPlayer.name)'s brains?"
             }
         }
         
@@ -86,7 +94,7 @@ class ConfirmationPopup: UIViewController {
     
     @IBAction func yesButtonPressed(_ sender: Any) {
         
-        let eliminationReasons: [SelectPlayerReason] = [.WerewolfElimination]
+        let eliminationReasons: [SelectPlayerReason] = [.WerewolfElimination, .VillageElimination]
         
         if reason != nil {
             if eliminationReasons.contains(reason!) {
@@ -99,6 +107,10 @@ class ConfirmationPopup: UIViewController {
                     GAME.aWerewolfHasBeenSlain = true
                 }
                 
+                if reason == .WerewolfElimination {
+                    self.notify(name: EliminationByWerewolfSuccessNotification)
+                }
+                
                 GAME.prepareToEliminatePlayer(victim: chosenPlayer)
                 
             } else if reason == .AssignPlayer {
@@ -107,6 +119,10 @@ class ConfirmationPopup: UIViewController {
                 
             } else if reason == .BodyguardSelectProtectee {
                 actingPlayer?.protect(playerToProtect: chosenPlayer, protector: actingPlayer!)
+                actingPlayer?.hasActedTonight = true
+                
+            } else if reason == .ZombieLobotomization {
+                actingPlayer?.eatBrains(ofVictim: chosenPlayer, zombie: actingPlayer!)
                 actingPlayer?.hasActedTonight = true
                 
             }
@@ -118,7 +134,7 @@ class ConfirmationPopup: UIViewController {
             if self.eliminatedByType != nil {
                 if GAME.wolfRoles.contains(self.eliminatedByType!) {
                     GAME.werewolvesHaveKilled()
-                    self.notify(name: EliminationByWerewolfNotification)
+                    self.notify(name: EliminationByWerewolfSuccessNotification)
                 }
                 
             }

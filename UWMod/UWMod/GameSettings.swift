@@ -90,15 +90,28 @@ class GameSettings {
         
         switch timer {
         case .FirstDay:
-            _firstDayTime -= secondIncrement
+            if _firstDayTime != 0 {
+                _firstDayTime -= secondIncrement
+            }
+            
         case .SubsequentDays:
-            _subsequentDayTime -= secondIncrement
+            if _subsequentDayTime != 0 {
+                _subsequentDayTime -= secondIncrement
+            }
         case .SubstractFromDay:
-            _changeDayBy -= secondIncrement
+            if _changeDayBy != 0 {
+                _changeDayBy -= secondIncrement
+            }
+            
         case .MinimumDayTimeLength:
-            _minimumDayLength -= secondIncrement
+            if _minimumDayLength != 0 {
+                _minimumDayLength -= secondIncrement
+            }
+            
         case .WerewolfDecisionTimer:
-            _werewolfTime -= secondIncrement
+            if _werewolfTime != 0 {
+                _werewolfTime -= secondIncrement
+            }
         }
     }
     
@@ -122,15 +135,29 @@ class GameSettings {
         
         switch timer {
         case .FirstDay:
-            _firstDayTime -= minuteIncrement
+            if _firstDayTime != 0 {
+                _firstDayTime -= minuteIncrement
+            }
+            
         case .SubsequentDays:
+            if _subsequentDayTime != 0 {
             _subsequentDayTime -= minuteIncrement
+            }
+            
         case .SubstractFromDay:
-            _changeDayBy -= minuteIncrement
+            if _changeDayBy != 0 {
+                _changeDayBy -= minuteIncrement
+            }
+            
         case .MinimumDayTimeLength:
-            _minimumDayLength -= minuteIncrement
+            if _minimumDayLength != 0 {
+                _minimumDayLength -= minuteIncrement
+            }
+            
         case .WerewolfDecisionTimer:
-            _werewolfTime -= minuteIncrement
+            if _werewolfTime != 0 {
+                _werewolfTime -= minuteIncrement
+            }
         }
     }
     

@@ -61,10 +61,13 @@ var SETTINGS: GameSettings  = GameSettings()
 
 // Notification Variables
 
-let ReloadTableForNewPlayersNotification = "reloadTableForNewPlayersNotification"
-let ReturnToPlayerSelectNotification = "returnToPlayerSelectNotification"
-let EliminationByWerewolfNotification = "eliminationByWerewolfNotification"
-let AssignPlayerSuccessNotification = "assignPlayerSuccessNotification"
-let AssignPlayerFailureNotification = "assignPlayerFailureNotification"
-let BodyguardProtectingSuccessNotification = "bodyguardProtectingSuccessNotification"
-let BodyguardProtectingFailureNotification = "bodyguardProtectingFailureNotification"
+let ReloadTableForNewPlayersNotification            = "reloadTableForNewPlayersNotification"
+let ReturnToPlayerSelectNotification                = "returnToPlayerSelectNotification"
+let EliminationByWerewolfFailureNotification        = "eliminationByWerewolfFailureNotification"
+let EliminationByWerewolfSuccessNotification        = "eliminationByWerewolfSuccessNotification"
+let AssignPlayerSuccessNotification                 = "assignPlayerSuccessNotification"
+let AssignPlayerFailureNotification                 = "assignPlayerFailureNotification"
+let BodyguardProtectingSuccessNotification          = "bodyguardProtectingSuccessNotification"
+let BodyguardProtectingFailureNotification          = "bodyguardProtectingFailureNotification"
+let ZombieLobotomySuccessNotification               = "zombieLobotomySuccessNotification"
+let ZombieLobotomyFailureNotification               = "zombieLobotomyFailureNotification"

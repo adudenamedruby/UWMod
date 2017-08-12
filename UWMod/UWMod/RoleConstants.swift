@@ -11,7 +11,7 @@ import UIKit
 
 // Roles in the game
 
-let tempRoles: [Role] = [BODYGUARD,
+let pregame_tempRoles: [Role] = [BODYGUARD,
                          DISEASED,
                          INSOMNIAC,
                          MAYOR,
@@ -20,10 +20,32 @@ let tempRoles: [Role] = [BODYGUARD,
                          THING,
                          VILLAGER_ONE, VILLAGER_TWO, VILLAGER_THREE, VILLAGER_FOUR, VILLAGER_FIVE, VILLAGER_SIX, VILLAGER_SEVEN, VILLAGER_EIGHT, VILLAGER_NINE, VILLAGER_TEN, VILLAGER_ELEVEN, VILLAGER_TWELVE, VILLAGER_THIRTEEN, VILLAGER_FOURTEEN, VILLAGER_FIFTEEN,
                         WEREWOLF_ONE, WEREWOLF_TWO, WEREWOLF_THREE, WEREWOLF_FOUR, WEREWOLF_FIVE, WEREWOLF_SIX, WEREWOLF_SEVEN, WEREWOLF_EIGHT, WEREWOLF_NINE, WEREWOLF_TEN, WEREWOLF_ELEVEN, WEREWOLF_TWELVE,
-                         WOLFMAN]
+                         WOLFMAN,
+                         ZOMBIE]
 
-let ALL_GAME_ROLES: [Role] = tempRoles.sorted(by: { $0.name < $1.name})
+let pregame_VillageRoleType: [RoleType]     = [.CultLeader, .Tanner, .Ghost, .Bodyguard, .Hunter, .Revealer, .Cupid, .Pacifist, .Huntress, .Cursed, .Diseased, .Drunk, .VirginiaWoolf, .BloodyMary, .Leprechaun, .TheCount, .MadBomber, .Martyr, .Witch, .Mayor, .Mentalist, .Nostradamus, .OldHag, .ParanormalInvestigator, .Prince, .Sasquatch, .Spellcaster, .TheMummy, .TheThing, .Doppelganger, .FrankensteinsMonster, .ToughGuy, .Priest, .Troublemaker, .ApprenticeSeer, .Seer, .AuraSeer, .MysticSeer, .Beholder, .Insomniac, .Lycan, .VillageIdiot, .Villager, .Hoodlum, .Mason]
+let pregame_WerewolfRoleType: [RoleType]    = [.WolfCub, .TeenageWerewolf, .WolfMan, .Dreamwolf, .FangFace, .FruitBrute, .Werewolf, .DireWolf, .AlphaWolf, .BigBadWolf, .Wolverine, .Minion, .Sorceress, .LoneWolf]
+let pregame_OtherRoleType: [RoleType]       = [.TheBlob, .Bogeyman, .Chupacabra, .CountDracula, .Vampire, .Zombie]
 
+let VILLAGE_ROLES:  [Role]                  = filterBy(roleTypeList: pregame_VillageRoleType)
+let WEREWOLF_ROLES: [Role]                  = filterBy(roleTypeList: pregame_WerewolfRoleType)
+let OTHER_ROLES:    [Role]                  = filterBy(roleTypeList: pregame_OtherRoleType)
+let ALL_GAME_ROLES: [Role]                  = pregame_tempRoles.sorted(by: { $0.name < $1.name})
+
+func filterBy(roleTypeList: [RoleType]) -> [Role] {
+    var tempList: [Role]    = []
+    
+    for role in pregame_tempRoles {
+        if roleTypeList.contains(role.type) {
+            tempList.append(role)
+        }
+    }
+    
+    tempList.sort(by: { $0.name < $1.name})
+    
+    return tempList
+    
+}
 
 // ROLE RUNBOOK
 // Add role definition here and add to ALL_GAME_ROLES
@@ -121,6 +143,10 @@ let WEREWOLF_TWELVE = Role(name: "Werewolf", type: .Werewolf, description: "Each
 
 
 let WOLFMAN = Role(name: "Wolf Man", type: .WolfMan, description: "Each night, wake with the other Werewolves. The Seer sees you as a Villager.", roleExplanation: "The Wolf Man is a Werewolf but the Seer sees him as a Villager. The Wolf Man is a very powerful Werewolf team role.", impact: -9, priority: 13, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "werewolf"), isNightActiveRole: .NightActiveRole)
+
+
+let ZOMBIE = Role(name: "Zombie", type: .Zombie, description: "Each night, pick a player and eat their brains. That player may no longer vote.", roleExplanation: "The zombie eats the brains of a different player each night. The Moderator says whose brain was eaten when the village awakes. From that point on in the game, players with no brains may not take part in the vote to eliminate during the day. If at any time all remaining players have no brains, the Zombie wins.", impact: -3, priority: 112, powerChoice: false, team: [.TeamZombie], availableEffects: [.Lobotomy], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NightActiveRole)
+
 
 // MARK: - Team roles
 

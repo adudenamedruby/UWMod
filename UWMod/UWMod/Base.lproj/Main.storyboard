@@ -205,7 +205,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Zwh-HF-RDE">
-                                        <rect key="frame" x="78.5" y="213.5" width="176.5" height="65.5"/>
+                                        <rect key="frame" x="78.5" y="209.5" width="176.5" height="65.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ensuing Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymM-im-765" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
                                                 <rect key="frame" x="37" y="0.0" width="103" height="20.5"/>
@@ -249,7 +249,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="tNW-Cd-Epw">
-                                        <rect key="frame" x="78.5" y="287" width="176.5" height="65.5"/>
+                                        <rect key="frame" x="78.5" y="279" width="176.5" height="65.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decrease Each Day By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOC-Is-x9Q" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
                                                 <rect key="frame" x="2" y="0.0" width="172.5" height="20.5"/>
@@ -293,7 +293,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="N8n-Ug-aLh">
-                                        <rect key="frame" x="78.5" y="360.5" width="176.5" height="65.5"/>
+                                        <rect key="frame" x="78.5" y="348.5" width="176.5" height="65.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum Day Length" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTR-ET-SLg" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
                                                 <rect key="frame" x="7.5" y="0.0" width="161.5" height="20.5"/>
@@ -337,7 +337,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Vfo-zp-LDM">
-                                        <rect key="frame" x="76" y="434" width="184" height="65.5"/>
+                                        <rect key="frame" x="76" y="418" width="184" height="65.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Werewolf Decision Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN8-Rp-hzl" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="184" height="20.5"/>
@@ -430,17 +430,17 @@
                                     <constraint firstItem="h8n-Bv-2C0" firstAttribute="centerX" secondItem="7i0-ut-jBi" secondAttribute="centerX" id="GeE-rD-2ih"/>
                                     <constraint firstItem="elk-EW-1db" firstAttribute="top" secondItem="7i0-ut-jBi" secondAttribute="bottom" constant="8" id="QbE-um-FIf"/>
                                     <constraint firstItem="tNW-Cd-Epw" firstAttribute="centerX" secondItem="3Rk-Av-KWO" secondAttribute="centerX" id="UaA-5B-KXJ"/>
-                                    <constraint firstItem="tNW-Cd-Epw" firstAttribute="top" secondItem="Zwh-HF-RDE" secondAttribute="bottom" constant="8" id="X8I-aG-02D"/>
+                                    <constraint firstItem="tNW-Cd-Epw" firstAttribute="top" secondItem="Zwh-HF-RDE" secondAttribute="bottom" constant="4" id="X8I-aG-02D"/>
                                     <constraint firstItem="elk-EW-1db" firstAttribute="top" secondItem="Kwe-rl-XGx" secondAttribute="bottom" constant="70" id="Yws-2E-xp9"/>
-                                    <constraint firstItem="Vfo-zp-LDM" firstAttribute="top" secondItem="N8n-Ug-aLh" secondAttribute="bottom" constant="8" id="b7h-wk-MbF"/>
+                                    <constraint firstItem="Vfo-zp-LDM" firstAttribute="top" secondItem="N8n-Ug-aLh" secondAttribute="bottom" constant="4" id="b7h-wk-MbF"/>
                                     <constraint firstAttribute="trailing" secondItem="Kwe-rl-XGx" secondAttribute="trailing" id="fJI-If-XIw"/>
                                     <constraint firstItem="7i0-ut-jBi" firstAttribute="centerX" secondItem="3Rk-Av-KWO" secondAttribute="centerX" id="fjp-Nj-HGl"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="335" id="hVa-pr-Jbe"/>
                                     <constraint firstItem="7i0-ut-jBi" firstAttribute="top" secondItem="h8n-Bv-2C0" secondAttribute="bottom" constant="5" id="ihc-wh-sTj"/>
                                     <constraint firstItem="N8n-Ug-aLh" firstAttribute="centerX" secondItem="3Rk-Av-KWO" secondAttribute="centerX" id="ikU-sC-fCR"/>
                                     <constraint firstItem="Kwe-rl-XGx" firstAttribute="top" secondItem="3Rk-Av-KWO" secondAttribute="top" id="j8S-14-Ws5"/>
-                                    <constraint firstItem="N8n-Ug-aLh" firstAttribute="top" secondItem="tNW-Cd-Epw" secondAttribute="bottom" constant="8" id="k3B-1A-caB"/>
-                                    <constraint firstItem="Zwh-HF-RDE" firstAttribute="top" secondItem="elk-EW-1db" secondAttribute="bottom" constant="8" id="kun-P6-Fgj"/>
+                                    <constraint firstItem="N8n-Ug-aLh" firstAttribute="top" secondItem="tNW-Cd-Epw" secondAttribute="bottom" constant="4" id="k3B-1A-caB"/>
+                                    <constraint firstItem="Zwh-HF-RDE" firstAttribute="top" secondItem="elk-EW-1db" secondAttribute="bottom" constant="4" id="kun-P6-Fgj"/>
                                     <constraint firstAttribute="height" constant="600" id="v6a-ni-l3L"/>
                                     <constraint firstItem="Zwh-HF-RDE" firstAttribute="centerX" secondItem="3Rk-Av-KWO" secondAttribute="centerX" id="vrn-hV-pOt"/>
                                 </constraints>
@@ -537,8 +537,8 @@
                                         <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moderator Tool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKv-XV-DKN" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="115" y="359.5" width="126" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Werewolf Moderation Tool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKv-XV-DKN" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="63" y="359.5" width="230" height="20"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                         <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -1019,11 +1019,26 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mgk-kp-KHZ">
+                                        <rect key="frame" x="8" y="109" width="321" height="29"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <segments>
+                                            <segment title="Village"/>
+                                            <segment title="Werewolves"/>
+                                            <segment title="Other"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="selectRoleAffiliation:" destination="7Pw-Ep-Lh3" eventType="valueChanged" id="l1n-XL-9q2"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.9882352941176471" green="0.93725490196078431" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="mgk-kp-KHZ" secondAttribute="trailing" constant="8" id="39L-8v-ni7"/>
                                     <constraint firstItem="P9r-Ya-85Q" firstAttribute="centerY" secondItem="sgF-ZD-TgM" secondAttribute="centerY" constant="-5" id="A2B-vR-6aA"/>
                                     <constraint firstAttribute="trailing" secondItem="gJa-nz-lZZ" secondAttribute="trailing" id="D0b-UD-3VG"/>
+                                    <constraint firstItem="mgk-kp-KHZ" firstAttribute="leading" secondItem="hhz-Fz-6Cw" secondAttribute="leading" constant="8" id="H1p-il-9m7"/>
                                     <constraint firstItem="8ge-b5-6M8" firstAttribute="leading" secondItem="hhz-Fz-6Cw" secondAttribute="leading" constant="26" id="Umk-Qg-oIo"/>
                                     <constraint firstItem="gJa-nz-lZZ" firstAttribute="leading" secondItem="hhz-Fz-6Cw" secondAttribute="leading" id="bQV-Yk-gYW"/>
                                     <constraint firstItem="P9r-Ya-85Q" firstAttribute="centerX" secondItem="hhz-Fz-6Cw" secondAttribute="centerX" id="biM-4B-672"/>
@@ -1034,7 +1049,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GQM-mG-qFm">
-                                <rect key="frame" x="26" y="135" width="323" height="422"/>
+                                <rect key="frame" x="26" y="180" width="323" height="377"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mpu-br-OhF">
                                     <size key="itemSize" width="95" height="130"/>
@@ -1144,7 +1159,8 @@
                             <constraint firstItem="dcr-n9-iBu" firstAttribute="top" secondItem="CdM-kF-7la" secondAttribute="top" id="Ph3-wK-WfM"/>
                             <constraint firstItem="fFb-jc-Pgw" firstAttribute="top" secondItem="gJa-nz-lZZ" secondAttribute="bottom" constant="8" id="WgB-0T-BFN"/>
                             <constraint firstItem="hhz-Fz-6Cw" firstAttribute="centerY" secondItem="CdM-kF-7la" secondAttribute="centerY" id="XfR-Xe-wLN"/>
-                            <constraint firstItem="GQM-mG-qFm" firstAttribute="top" secondItem="gJa-nz-lZZ" secondAttribute="bottom" constant="35" id="dbS-R3-loP"/>
+                            <constraint firstItem="GQM-mG-qFm" firstAttribute="top" secondItem="mgk-kp-KHZ" secondAttribute="bottom" constant="13" id="cuZ-S1-FUd"/>
+                            <constraint firstItem="GQM-mG-qFm" firstAttribute="top" secondItem="gJa-nz-lZZ" secondAttribute="bottom" constant="80" id="dbS-R3-loP"/>
                             <constraint firstItem="hhz-Fz-6Cw" firstAttribute="width" secondItem="CdM-kF-7la" secondAttribute="width" multiplier="0.9" id="hEv-xk-wlz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GQM-mG-qFm" secondAttribute="trailing" constant="10" id="hsX-iA-vsf"/>
                             <constraint firstItem="dcr-n9-iBu" firstAttribute="leading" secondItem="CdM-kF-7la" secondAttribute="leading" id="jRI-ct-Hyb"/>
@@ -1162,6 +1178,7 @@
                         <outlet property="mainCardView" destination="hhz-Fz-6Cw" id="5Vm-Lq-FuO"/>
                         <outlet property="roleCountLabel" destination="c9T-sY-scg" id="4xV-so-bDs"/>
                         <outlet property="teamBalanceLabel" destination="fFb-jc-Pgw" id="ted-nG-iTT"/>
+                        <outlet property="teamChoiceControl" destination="mgk-kp-KHZ" id="oCN-iq-hRP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTP-dL-4kz" userLabel="First Responder" sceneMemberID="firstResponder"/>

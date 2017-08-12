@@ -48,7 +48,7 @@ class WerewolfAssassination: UIView {
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(confirmKill),
-                                               name: NSNotification.Name(rawValue: EliminationByWerewolfNotification),
+                                               name: NSNotification.Name(rawValue: EliminationByWerewolfSuccessNotification),
                                                object: nil)
         
         contentView.backgroundColor             = STYLE.Tan

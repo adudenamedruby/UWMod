@@ -28,6 +28,7 @@ class Game {
     private var _currentDay:                        Int
     private var _firstNight:                        Bool
     private var _werewolfEliminationsThisNight:     Int
+    private var _timeGameStarted:                   Date
     var areThereDeadPlayers:                        Bool
     
     // Game settings
@@ -116,7 +117,7 @@ class Game {
     }
     
     
-    // MARK: - Init
+    // MARK: - Initializer
     
     init(availableRoster: [Role], availablePlayers: [Player], withSettings: GameSettings = GameSettings()) {
         // Sort the roles by the role priority. This makes it easier to present the 
@@ -129,6 +130,7 @@ class Game {
         self._currentNight                  = 1
         self._currentDay                    = 1
         self._werewolfEliminationsThisNight = 0
+        self._timeGameStarted               = Date()
         self.areThereDeadPlayers            = false
         
         // Game settings
@@ -169,12 +171,33 @@ class Game {
     
     // MARK: - Game setup & teardown
     
-    public func endGameAndReset() {
+    /// Call this to end the game. Check if the user wants to actually do it. If YES, then
+    /// presentEndGameInfo(). After hitting OK, call resetGame().
+    public func endGame() {
+        
+    }
+    
+    public func resetGame() {
         GAME = Game(availableRoster: [], availablePlayers: [])
     }
     
+    public func presentEndGameInfo () {
+
+    }
     
-    // MARK: - Player-related functions
+    
+    // MARK: - Victory related functions
+    
+    private func checkForVictory() {
+        
+    }
+    
+    private func reportTeamEndGameStatus() {
+        
+    }
+    
+    
+    // MARK: - Player related functions
     
     public func addPlayerToLivingActors(player: Player) {
         livingActors.append(player)
@@ -226,6 +249,7 @@ class Game {
         playersToBeEliminated.removeAll()
     }
     
+    // Add to the string report for the end of the game.
     private func addToPhaseReport(player: Player) {
         let textToAdd = retrievePlayerNameWithRole(player: player)
         
@@ -241,6 +265,8 @@ class Game {
         playersProtectedThisPhase = ""
     }
     
+    
+    // The following function enable a chosen player in the select player screen.
     public func identifyChosenPlayer() -> Player {
         return _chosenPlayer!
     }
@@ -258,6 +284,19 @@ class Game {
     
     
     // MARK: - Player name retrieval functions for various uses
+    
+    public func fetchPlayersAffectedByEffect(fromList: [Player], affectedBy effect: PlayerEffects, withRole: Bool = false, separatedByComma: Bool = false) -> String {
+        var players = ""
+        
+        for player in fromList {
+            if player.isAffectedBy(condition: effect) {
+                let temp = fetchSinglePlayer(player: player, withRole: withRole, separatedByComma: separatedByComma)
+                players = players + temp
+            }
+        }
+        
+        return players
+    }
     
     public func fetchPlayersWithTeamType(fromList: [Player], ofTeamType: UWTeam, withRole: Bool = false, separatedByComma: Bool = false) -> String {
         var players = ""
@@ -391,6 +430,30 @@ class Game {
     
     // MARK: - General game functions
     
+    /// Check whethere there are an equal number of Villager roles and unassigned players
+    public func shouldPerformMagicAssignment() -> Bool {
+        if availableVillagerRoles == numberOfUnassignedPlayers {
+            return true
+        }
+        return false
+    }
+    
+    /// Assign unassigned players to Villager roles
+    public func magicVillagerAssignment() {
+        if shouldPerformMagicAssignment() {
+            
+            var backwardsIndex = availableRoster.count - 1
+            
+            for player in availablePlayers {
+                if !player.isAssigned {
+                    player.assignRole(role: availableRoster[backwardsIndex])
+                    addPlayerToLivingActors(player: player)
+                    backwardsIndex -= 1
+                }
+            }
+        }
+    }
+    
     private func setupInfoCards() {
         var tempArray: [DaytimeCardType] = [.GeneralInfoCard]
         
@@ -437,28 +500,6 @@ class Game {
         for player in availablePlayers {
             if !_rolesInTheGame.contains(player.roleType()) {
                 _rolesInTheGame.append(player.roleType())
-            }
-        }
-    }
-    
-    public func shouldPerformMagicAssignment() -> Bool {
-        if availableVillagerRoles == numberOfUnassignedPlayers {
-            return true
-        }
-        return false
-    }
-    
-    public func magicVillagerAssignment() {
-        if shouldPerformMagicAssignment() {
-            
-            var backwardsIndex = availableRoster.count - 1
-            
-            for player in availablePlayers {
-                if !player.isAssigned {
-                    player.assignRole(role: availableRoster[backwardsIndex])
-                    addPlayerToLivingActors(player: player)
-                    backwardsIndex -= 1
-                }
             }
         }
     }

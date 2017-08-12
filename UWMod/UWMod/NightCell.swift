@@ -10,23 +10,25 @@ import UIKit
 
 class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
-    @IBOutlet weak var cardBorder: UIView!
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var roleIconImage: UIImageView!
-    @IBOutlet weak var roleTitleLabel: OldBrownRole!
-    @IBOutlet weak var playerNameLabel: RegBrown!
-    @IBOutlet weak var roleDescritpionLabel: UILabel!
+    @IBOutlet weak var cardBorder:              UIView!
+    @IBOutlet weak var headerView:              UIView!
+    @IBOutlet weak var containerView:           UIView!
+    @IBOutlet weak var roleIconImage:           UIImageView!
+    @IBOutlet weak var roleTitleLabel:          OldBrownRole!
+    @IBOutlet weak var playerNameLabel:         RegBrown!
+    @IBOutlet weak var roleDescritpionLabel:    UILabel!
     
-    @IBOutlet weak var helpButton: UIButton!
-    @IBOutlet weak var popupOuterView: UIView!
-    @IBOutlet weak var popupInnerView: UIView!
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var darknessView: UIView!
-    @IBOutlet weak var headerTitleLabel: OldTan!
+    @IBOutlet weak var helpButton:              UIButton!
+    @IBOutlet weak var popupOuterView:          UIView!
+    @IBOutlet weak var popupInnerView:          UIView!
+    @IBOutlet weak var textView:                UITextView!
+    @IBOutlet weak var darknessView:            UIView!
+    @IBOutlet weak var headerTitleLabel:        OldTan!
     
-    public var player: Player?
-    public var role: Role?
+    public var player:                          Player?
+    public var role:                            Role?
+    
+    var actionViewFrame                         = CGRect(x: 0, y: 0, width: 310, height: 140)
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -200,6 +202,8 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             } else if player?.roleType() == .Seer && !GAME.firstNight {
                 presentSeerView()
                 
+            } else if player?.roleType() == .Zombie && !GAME.firstNight {
+                presentZombieView()
             }
         }
     }
@@ -211,24 +215,30 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     }
     
     private func presentAssignPlayer() {
-        let localizedActionView = AssignPlayer(frame: CGRect(x: 0, y: 0, width: 310, height: 140), withRole: role!)
+        let localizedActionView = AssignPlayer(frame: actionViewFrame, withRole: role!)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }
     
     private func presentBodyguardView() {
-        let localizedActionView = BodyguardView(frame: CGRect(x: 0, y: 0, width: 310, height: 140), withPlayer: player!)
+        let localizedActionView = BodyguardView(frame: actionViewFrame, withPlayer: player!)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }
     
     private func presentWerewolfAssassination() {
-        let localizedActionView = WerewolfAssassination(frame: CGRect(x: 0, y: 0, width: 310, height: 140))
+        let localizedActionView = WerewolfAssassination(frame: actionViewFrame)
         self.containerView.addSubview(localizedActionView)
     }
     
     private func presentSeerView() {
-        let localizedActionView = SeerInspection(frame: CGRect(x: 0, y: 0, width: 310, height: 140))
+        let localizedActionView = SeerInspection(frame: actionViewFrame)
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    private func presentZombieView() {
+        let localizedActionView = ZombieLobotomy(frame: actionViewFrame, withPlayer: player!)
+        localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }
 }

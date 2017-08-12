@@ -76,6 +76,9 @@ class Player {
         }
     }
     
+    
+    // MARK: - Info card related fuctions
+    
     public func determineDaytimeInfoCardForActor() {
         
         determineDaytimeInfoCardForTeam()
@@ -89,6 +92,8 @@ class Player {
                 addAppropriateCard(daytimeCard: .WerewolfTeamCard)
             } else if teamX == .TeamVillage {
                 addAppropriateCard(daytimeCard: .VillageTeamCard)
+            } else if teamX == .TeamZombie {
+                addAppropriateCard(daytimeCard: .ZombieTeamCard)
             }
         }
     }
@@ -105,7 +110,15 @@ class Player {
         }
     }
     
+    
+    // MARK: - Player cleanup
+    
     public func cleanupAfterRound(nightRound: Bool) {
+        
+        if self.currentConditions.contains(.Lobotomy) {
+            self.canVote = false
+        }
+        
         if nightRound {
             cleanupAfterNightRound()
         } else {
@@ -128,7 +141,11 @@ class Player {
                         }
                     }
                 
+                } else if role.type == .Zombie {
+                    // Zombie continues affecting players for the rest of the game.
                 } else {
+                
+                    
                     // do stuff for other roles here
                 }
             }
@@ -142,22 +159,13 @@ class Player {
     
     // MARK: - Effect-related functions
     
+    /// Check whether a player is affected by a certain effect.
     public func isAffectedBy(condition: PlayerEffects) -> Bool {
         if currentConditions.contains(condition) { return true }
         return false
     }
     
-    public func canAffect(player: Player, forCondition effect: PlayerEffects) -> Bool {
-        
-        if playersIneligibleForEffect[effect] != nil && (playersIneligibleForEffect[effect]?.count)! > 0 {
-            if (playersIneligibleForEffect[effect]?.contains(where: { $0 === player }))! {
-                return false
-            }
-        }
-        
-        return true
-    }
-    
+    /// Check whether the player is being affected by someone with a specific condition.
     public func isAffectedBy(currentPlayer affector: Player, forCondition effect: PlayerEffects) -> Bool {
         
         if playersIneligibleForEffect[effect] != nil {
@@ -167,6 +175,18 @@ class Player {
         }
         
         return false
+    }
+    
+    /// Check whether the checking player can affect the player with a condition.
+    public func canAffect(player: Player, forCondition effect: PlayerEffects) -> Bool {
+        
+        if playersIneligibleForEffect[effect] != nil && (playersIneligibleForEffect[effect]?.count)! > 0 {
+            if (playersIneligibleForEffect[effect]?.contains(where: { $0 === player }))! {
+                return false
+            }
+        }
+        
+        return true
     }
     
     public func returnPlayersCausing(condition: PlayerEffects) -> [Player] {
@@ -180,8 +200,10 @@ class Player {
         return tempPlayers
     }
     
+    
     // Deal with being affected from affects from other players
     
+    /// This is for the victim to remove an effect from themselves.
     private func removeEffectFromPlayer(condition: PlayerEffects, causedBy: Player) {
         
         if isAffectedBy(condition: condition) {
@@ -195,6 +217,7 @@ class Player {
         }
     }
     
+    /// This is so the victim adds an effect to themselves.
     private func addEffectFromOtherPlayers(condition: PlayerEffects, causedBy: Player) {
         
         if isAffectedBy(condition: condition) {
@@ -215,24 +238,28 @@ class Player {
     
     // Track how you're affecting other players
     
-    private func affectSinglePlayer(condition: PlayerEffects, player: Player) {
-        trackOtherPlayers(trackingList: .AffectingList, condition: condition, player: player, playersToTrack: .Single)
+    /// Add a single player to the affectingList and only allow it to be populated by one player at a time
+    private func addTargetToSingularAffectingPlayerList(condition: PlayerEffects, affectedPlayer: Player) {
+        trackOtherPlayers(trackingList: .AffectingList, condition: condition, player: affectedPlayer, playersToTrack: .Single)
     }
     
-    private func addPlayerToAffectedPlayers(condition: PlayerEffects, player: Player) {
-        trackOtherPlayers(trackingList: .AffectingList, condition: condition, player: player, playersToTrack: .Many)
+    /// Add the player to the affectingList and allow multiple players for each effect.
+    private func addTargetToPluralAffectingPlayerList(condition: PlayerEffects, affectedPlayer: Player) {
+        trackOtherPlayers(trackingList: .AffectingList, condition: condition, player: affectedPlayer, playersToTrack: .Many)
     }
     
     private func stopAffectingAllOtherPlayer() {
         self.affectingPlayers = [:]
     }
     
-    private func affectSingleTargetInIneligibleList(condition: PlayerEffects, player: Player) {
-        trackOtherPlayers(trackingList: .IneligibilityList, condition: condition, player: player, playersToTrack: .Single)
+    /// Add single player to ineligibleList and only allow one player to be ineligible at a time.
+    private func addTargetToSingularIneligibilityList(condition: PlayerEffects, playerToAdd: Player) {
+        trackOtherPlayers(trackingList: .IneligibilityList, condition: condition, player: playerToAdd, playersToTrack: .Single)
     }
     
-    private func addTargetToOthersInIneligibleList(condition: PlayerEffects, player: Player) {
-        trackOtherPlayers(trackingList: .IneligibilityList, condition: condition, player: player, playersToTrack: .Many)
+    /// Add a player to the ineligibleList and allow multiple players to populate that list.
+    private func addTargetToPluralIneligibilityList(condition: PlayerEffects, playerToAdd: Player) {
+        trackOtherPlayers(trackingList: .IneligibilityList, condition: condition, player: playerToAdd, playersToTrack: .Many)
     }
     
     private func trackOtherPlayers(trackingList: PlayersToTrack, condition: PlayerEffects, player: Player, playersToTrack: PlayersToTrack) {
@@ -272,17 +299,13 @@ class Player {
             return false
         }
         
-        // This return should NEVER be reached
-        return false
+        return true
     }
     
-    // MARK: - Role abilities
     
-    private func checkRoleForActivation() {
-        role.checkForActivation()
-    }
+    // MARK: - Role-related effect functions
     
-    // Protection
+    /// Apply the protect effect to other players.
     public func protect(playerToProtect: Player, protector: Player) {
         let kindOfRole = role.type
         let effect: PlayerEffects = .Protection
@@ -293,8 +316,8 @@ class Player {
             if canPerformEffect(condition: effect, player: playerToProtect) {
                 
                 // Keep track of a single protected target
-                affectSinglePlayer(condition: effect, player: playerToProtect)
-                affectSingleTargetInIneligibleList(condition: effect, player: playerToProtect)
+                addTargetToSingularAffectingPlayerList(condition: effect, affectedPlayer: playerToProtect)
+                addTargetToSingularIneligibilityList(condition: effect, playerToAdd: playerToProtect)
                 
                 playerToProtect.addEffectFromOtherPlayers(condition: effect,
                                                           causedBy: protector)
@@ -305,11 +328,34 @@ class Player {
         
     }
     
+    /// Apply the Lobotomy effect to other players
+    public func eatBrains(ofVictim victim: Player, zombie: Player) {
+        
+        let effect: PlayerEffects = .Lobotomy
+        
+        if self.role.type == .Zombie {
+            
+            if canPerformEffect(condition: effect, player: victim) {
+                
+                addTargetToPluralAffectingPlayerList(condition: effect, affectedPlayer: victim)
+                addTargetToPluralIneligibilityList(condition: effect, playerToAdd: victim)
+                
+                victim.addEffectFromOtherPlayers(condition: effect, causedBy: zombie)
+            }
+        }
+    }
+    
+    
+    // MARK: - Role abilities
+    
+    private func checkRoleForActivation() {
+        role.checkForActivation()
+    }
 }
 
 extension Player {
     
-    // MARK: - Role variable functions
+    // MARK: - Role variable retrieval functions
     // This abstraction layer prevents views from having to reach into player and accessing
     // the Role object directly.
     

@@ -74,8 +74,10 @@ class DayVC: UIViewController {
 
     @IBAction func lynchPressed(_ sender: Any) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
-        let lynchView = storyboard.instantiateViewController(withIdentifier: "eliminatePlayer") as! EliminatePlayerVC
-        lynchView.modalTransitionStyle = .crossDissolve
+        let lynchView = storyboard.instantiateViewController(withIdentifier: "selectPlayerPopupVC") as! SelectPlayerPopupVC
+        lynchView.popupTitle = "Who to Lynch?"
+        lynchView.reason = .VillageElimination
+        
         self.present(lynchView, animated: true, completion: nil)
     }
     
@@ -142,6 +144,8 @@ class DayVC: UIViewController {
                            forCellReuseIdentifier: "werewolfTeamCell")
         tableView.register(UINib(nibName: "VillageTeamCell", bundle: nil),
                            forCellReuseIdentifier: "villageTeamCell")
+        tableView.register(UINib(nibName: "ZombieCell", bundle: nil),
+                           forCellReuseIdentifier: "zombieCell")
     }
     
     private func fadeButtonsIn() {
@@ -204,6 +208,13 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
             cell.deadPlayers = GAME.fetchAllPlayers(fromList: GAME.deadActors, withRole: true)
             cell.configureCell()
             return cell
+            
+        } else if currentType == .ZombieTeamCard {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "zombieCell", for: indexPath) as! ZombieCell
+            cell.playersAffectedByZombie = GAME.fetchPlayersAffectedByEffect(fromList: GAME.livingActors, affectedBy: .Lobotomy, withRole: false, separatedByComma: true)
+            cell.configureCell()
+            return cell
+            
         }
         
         return UITableViewCell()
