@@ -14,6 +14,7 @@ enum SelectPlayerReason {
     case BodyguardSelectProtectee
     case WerewolfElimination
     case VillageElimination
+    case ZombieLobotomization
 }
 
 class SelectPlayerPopupVC: UIViewController {
@@ -100,6 +101,8 @@ class SelectPlayerPopupVC: UIViewController {
             } else if reason == .VillageElimination {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: nil, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
+            } else if reason == .ZombieLobotomization {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
             }
             
         } else {
@@ -161,6 +164,9 @@ class SelectPlayerPopupVC: UIViewController {
         case .VillageElimination:
             populateLivingPlayers()
             
+        case .ZombieLobotomization:
+            populateZombieTargets()
+            
         }
         
     }
@@ -194,6 +200,9 @@ class SelectPlayerPopupVC: UIViewController {
             
         case .VillageElimination:
             break
+            
+        case .ZombieLobotomization:
+            nc.post(name: NSNotification.Name(rawValue: ZombieLobotomyFailureNotification), object: nil)
         }
     }
 }
@@ -279,6 +288,22 @@ extension SelectPlayerPopupVC {
         
         for player in GAME.livingActors {
             if !GAME.wolfRoles.contains(player.roleType()) {
+                availablePlayers.append(player)
+            }
+        }
+        
+        availablePlayers.sort(by: { $0.name < $1.name } )
+    }
+}
+
+extension SelectPlayerPopupVC {
+    
+    // ZOMBIE LOBOTOMIZATION
+    func populateZombieTargets() {
+        availablePlayers.removeAll()
+        
+        for player in GAME.livingActors {
+            if (activePlayer?.canAffect(player: player, forCondition: .Lobotomy))! && (player !== activePlayer) {
                 availablePlayers.append(player)
             }
         }

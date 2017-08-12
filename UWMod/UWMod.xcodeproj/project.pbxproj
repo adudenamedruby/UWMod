@@ -44,6 +44,10 @@
 		12D15E271F2EB0AB0057905E /* FadeAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E261F2EB0AB0057905E /* FadeAnimations.swift */; };
 		12D15E291F2EBCCA0057905E /* ColourDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E281F2EBCCA0057905E /* ColourDefinitions.swift */; };
 		12D15E2B1F2EC5420057905E /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E2A1F2EC5420057905E /* ArrayExtension.swift */; };
+		12DFBB3D1F3E55E400D71944 /* ZombieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DFBB3B1F3E55E400D71944 /* ZombieCell.swift */; };
+		12DFBB3E1F3E55E400D71944 /* ZombieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12DFBB3C1F3E55E400D71944 /* ZombieCell.xib */; };
+		12DFBB441F3E6B9700D71944 /* ZombieLobotomy.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12DFBB431F3E6B9700D71944 /* ZombieLobotomy.xib */; };
+		12DFBB461F3E6BAD00D71944 /* ZombieLobotomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DFBB451F3E6BAD00D71944 /* ZombieLobotomy.swift */; };
 		12EC77D11F26D4AA0026C667 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77D01F26D4AA0026C667 /* AboutVC.swift */; };
 		12EC77D41F26D4DC0026C667 /* Roles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77D31F26D4DC0026C667 /* Roles.swift */; };
 		12EC77D91F26DD250026C667 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC77D81F26DD250026C667 /* Constants.swift */; };
@@ -121,6 +125,10 @@
 		12D15E261F2EB0AB0057905E /* FadeAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimations.swift; sourceTree = "<group>"; };
 		12D15E281F2EBCCA0057905E /* ColourDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourDefinitions.swift; sourceTree = "<group>"; };
 		12D15E2A1F2EC5420057905E /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		12DFBB3B1F3E55E400D71944 /* ZombieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZombieCell.swift; sourceTree = "<group>"; };
+		12DFBB3C1F3E55E400D71944 /* ZombieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZombieCell.xib; sourceTree = "<group>"; };
+		12DFBB431F3E6B9700D71944 /* ZombieLobotomy.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZombieLobotomy.xib; sourceTree = "<group>"; };
+		12DFBB451F3E6BAD00D71944 /* ZombieLobotomy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZombieLobotomy.swift; sourceTree = "<group>"; };
 		12EC77D01F26D4AA0026C667 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		12EC77D31F26D4DC0026C667 /* Roles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roles.swift; sourceTree = "<group>"; };
 		12EC77D81F26DD250026C667 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -207,6 +215,7 @@
 				122FC6951F377BB200E0E2C9 /* BodyguardView.swift */,
 				122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */,
 				124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */,
+				12DFBB451F3E6BAD00D71944 /* ZombieLobotomy.swift */,
 			);
 			name = ContainerViews;
 			sourceTree = "<group>";
@@ -216,8 +225,9 @@
 			children = (
 				123BD0E51F31474A00B99019 /* AssignPlayer.xib */,
 				122FC6971F377BCE00E0E2C9 /* BodyguardView.xib */,
-				124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */,
 				122FC69F1F392F9C00E0E2C9 /* SeerInspection.xib */,
+				124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */,
+				12DFBB431F3E6B9700D71944 /* ZombieLobotomy.xib */,
 			);
 			name = "Night XIBs";
 			sourceTree = "<group>";
@@ -253,6 +263,7 @@
 				77B2B0051F34D7AC0032A36B /* Graveyard.xib */,
 				124F74EE1F3549BB00F03E49 /* VillageTeamCell.xib */,
 				124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */,
+				12DFBB3C1F3E55E400D71944 /* ZombieCell.xib */,
 			);
 			name = "Day XIBs";
 			sourceTree = "<group>";
@@ -397,6 +408,7 @@
 				77B2B0041F34D7AC0032A36B /* Graveyard.swift */,
 				124F74ED1F3549BB00F03E49 /* VillageTeamCell.swift */,
 				124F74E91F3530A200F03E49 /* WerewolfTeamCell.swift */,
+				12DFBB3B1F3E55E400D71944 /* ZombieCell.swift */,
 			);
 			name = DayCells;
 			sourceTree = "<group>";
@@ -470,8 +482,10 @@
 				12EC77F41F2BDBD90026C667 /* NightPhase.storyboard in Resources */,
 				12EC77FB1F2BE1D40026C667 /* Old Wise Sketch.otf in Resources */,
 				1209820F1F26BBE700EC5D21 /* Main.storyboard in Resources */,
+				12DFBB3E1F3E55E400D71944 /* ZombieCell.xib in Resources */,
 				122FC6A01F392F9C00E0E2C9 /* SeerInspection.xib in Resources */,
 				1261C2BF1F32AA960099D759 /* GeneralInfo.xib in Resources */,
+				12DFBB441F3E6B9700D71944 /* ZombieLobotomy.xib in Resources */,
 				124F74F81F35FF4D00F03E49 /* WerewolfAssassination.xib in Resources */,
 				1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */,
 				123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */,
@@ -527,6 +541,7 @@
 				12EC77E51F2BDAB00026C667 /* RoleSelectVC.swift in Sources */,
 				122FC69A1F3912A500E0E2C9 /* VoteCounterVC.swift in Sources */,
 				77B2B00D1F3A0AA30032A36B /* GameSettings.swift in Sources */,
+				12DFBB3D1F3E55E400D71944 /* ZombieCell.swift in Sources */,
 				12EC77D41F26D4DC0026C667 /* Roles.swift in Sources */,
 				1261C2B71F3265DA0099D759 /* BasicAlertObject.swift in Sources */,
 				122FC68F1F37660600E0E2C9 /* EndGamePopupVC.swift in Sources */,
@@ -542,6 +557,7 @@
 				7736D0921F3399BC00555037 /* HelpVC.swift in Sources */,
 				1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */,
 				123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */,
+				12DFBB461F3E6BAD00D71944 /* ZombieLobotomy.swift in Sources */,
 				7736D09C1F33A36700555037 /* HelpCellHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

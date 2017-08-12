@@ -62,7 +62,7 @@ enum PlayerEffects {
     case Hypnosis
     case Silence
     case Ostracism
-    case Lobotoby           // zombie
+    case Lobotomy           // zombie
 }
 
 

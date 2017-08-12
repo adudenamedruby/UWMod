@@ -289,7 +289,6 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.cellForItem(at: indexPath)?.alpha = 1
-        updateGameBalance()
         
         if teamChoiceControl.selectedSegmentIndex == 0 {
             selectedVillageIndexPaths.append(indexPath)
@@ -300,8 +299,9 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
         } else if teamChoiceControl.selectedSegmentIndex == 2 {
             selectedOtherIndexPaths.append(indexPath)
         }
-        
+
         updateRoleCountLabel()
+        updateGameBalance()
         
         if (totalNumberOfSelectedRoles()) > (passedPlayers?.count)! {
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)

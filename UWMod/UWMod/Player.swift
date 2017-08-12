@@ -89,6 +89,8 @@ class Player {
                 addAppropriateCard(daytimeCard: .WerewolfTeamCard)
             } else if teamX == .TeamVillage {
                 addAppropriateCard(daytimeCard: .VillageTeamCard)
+            } else if teamX == .TeamZombie {
+                addAppropriateCard(daytimeCard: .ZombieTeamCard)
             }
         }
     }
@@ -106,6 +108,11 @@ class Player {
     }
     
     public func cleanupAfterRound(nightRound: Bool) {
+        
+        if self.currentConditions.contains(.Lobotomy) {
+            self.canVote = false
+        }
+        
         if nightRound {
             cleanupAfterNightRound()
         } else {
@@ -128,7 +135,11 @@ class Player {
                         }
                     }
                 
+                } else if role.type == .Zombie {
+                    // Zombie continues affecting players for the rest of the game.
                 } else {
+                
+                    
                     // do stuff for other roles here
                 }
             }
@@ -215,24 +226,28 @@ class Player {
     
     // Track how you're affecting other players
     
-    private func affectSinglePlayer(condition: PlayerEffects, player: Player) {
-        trackOtherPlayers(trackingList: .AffectingList, condition: condition, player: player, playersToTrack: .Single)
+    /// Add a single player to the affectingList and only allow it to be populated by one player at a time
+    private func addTargetToSingularAffectingPlayerList(condition: PlayerEffects, affectedPlayer: Player) {
+        trackOtherPlayers(trackingList: .AffectingList, condition: condition, player: affectedPlayer, playersToTrack: .Single)
     }
     
-    private func addPlayerToAffectedPlayers(condition: PlayerEffects, player: Player) {
-        trackOtherPlayers(trackingList: .AffectingList, condition: condition, player: player, playersToTrack: .Many)
+    /// Add the player to the affectingList and allow multiple players for each effect.
+    private func addTargetToPluralAffectingPlayerList(condition: PlayerEffects, affectedPlayer: Player) {
+        trackOtherPlayers(trackingList: .AffectingList, condition: condition, player: affectedPlayer, playersToTrack: .Many)
     }
     
     private func stopAffectingAllOtherPlayer() {
         self.affectingPlayers = [:]
     }
     
-    private func affectSingleTargetInIneligibleList(condition: PlayerEffects, player: Player) {
-        trackOtherPlayers(trackingList: .IneligibilityList, condition: condition, player: player, playersToTrack: .Single)
+    /// Add single player to ineligibleList and only allow one player to be ineligible at a time.
+    private func addTargetToSingularIneligibilityList(condition: PlayerEffects, playerToAdd: Player) {
+        trackOtherPlayers(trackingList: .IneligibilityList, condition: condition, player: playerToAdd, playersToTrack: .Single)
     }
     
-    private func addTargetToOthersInIneligibleList(condition: PlayerEffects, player: Player) {
-        trackOtherPlayers(trackingList: .IneligibilityList, condition: condition, player: player, playersToTrack: .Many)
+    /// Add a player to the ineligibleList and allow multiple players to populate that list.
+    private func addTargetToPluralIneligibilityList(condition: PlayerEffects, playerToAdd: Player) {
+        trackOtherPlayers(trackingList: .IneligibilityList, condition: condition, player: playerToAdd, playersToTrack: .Many)
     }
     
     private func trackOtherPlayers(trackingList: PlayersToTrack, condition: PlayerEffects, player: Player, playersToTrack: PlayersToTrack) {
@@ -272,8 +287,7 @@ class Player {
             return false
         }
         
-        // This return should NEVER be reached
-        return false
+        return true
     }
     
     // MARK: - Role abilities
@@ -293,8 +307,8 @@ class Player {
             if canPerformEffect(condition: effect, player: playerToProtect) {
                 
                 // Keep track of a single protected target
-                affectSinglePlayer(condition: effect, player: playerToProtect)
-                affectSingleTargetInIneligibleList(condition: effect, player: playerToProtect)
+                addTargetToSingularAffectingPlayerList(condition: effect, affectedPlayer: playerToProtect)
+                addTargetToSingularIneligibilityList(condition: effect, playerToAdd: playerToProtect)
                 
                 playerToProtect.addEffectFromOtherPlayers(condition: effect,
                                                           causedBy: protector)
@@ -303,6 +317,24 @@ class Player {
             // Do nothing
         }
         
+    }
+    
+    // Lobotomy
+    
+    public func eatBrains(ofVictim victim: Player, zombie: Player) {
+        
+        let effect: PlayerEffects = .Lobotomy
+        
+        if self.role.type == .Zombie {
+            
+            if canPerformEffect(condition: effect, player: victim) {
+                
+                addTargetToPluralAffectingPlayerList(condition: effect, affectedPlayer: victim)
+                addTargetToPluralIneligibilityList(condition: effect, playerToAdd: victim)
+            
+                victim.addEffectFromOtherPlayers(condition: effect, causedBy: zombie)
+            }
+        }
     }
     
 }

@@ -259,6 +259,19 @@ class Game {
     
     // MARK: - Player name retrieval functions for various uses
     
+    public func fetchPlayersAffectedByEffect(fromList: [Player], affectedBy effect: PlayerEffects, withRole: Bool = false, separatedByComma: Bool = false) -> String {
+        var players = ""
+        
+        for player in fromList {
+            if player.isAffectedBy(condition: effect) {
+                let temp = fetchSinglePlayer(player: player, withRole: withRole, separatedByComma: separatedByComma)
+                players = players + temp
+            }
+        }
+        
+        return players
+    }
+    
     public func fetchPlayersWithTeamType(fromList: [Player], ofTeamType: UWTeam, withRole: Bool = false, separatedByComma: Bool = false) -> String {
         var players = ""
         

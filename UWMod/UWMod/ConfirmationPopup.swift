@@ -63,6 +63,9 @@ class ConfirmationPopup: UIViewController {
                 headerTitle             = "Village Target"
                 alternateAlertText      = "Are you sure you want to lynch \(chosenPlayer.name)?"
     
+            } else if reason            == .ZombieLobotomization {
+                headerTitle             = "Confirm Dinner"
+                alternateAlertText      = "Are you sure you want to eat \(chosenPlayer.name)'s brains?"
             }
         }
         
@@ -116,6 +119,10 @@ class ConfirmationPopup: UIViewController {
                 
             } else if reason == .BodyguardSelectProtectee {
                 actingPlayer?.protect(playerToProtect: chosenPlayer, protector: actingPlayer!)
+                actingPlayer?.hasActedTonight = true
+                
+            } else if reason == .ZombieLobotomization {
+                actingPlayer?.eatBrains(ofVictim: chosenPlayer, zombie: actingPlayer!)
                 actingPlayer?.hasActedTonight = true
                 
             }

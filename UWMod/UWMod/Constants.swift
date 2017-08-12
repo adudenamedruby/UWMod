@@ -69,3 +69,5 @@ let AssignPlayerSuccessNotification                 = "assignPlayerSuccessNotifi
 let AssignPlayerFailureNotification                 = "assignPlayerFailureNotification"
 let BodyguardProtectingSuccessNotification          = "bodyguardProtectingSuccessNotification"
 let BodyguardProtectingFailureNotification          = "bodyguardProtectingFailureNotification"
+let ZombieLobotomySuccessNotification               = "zombieLobotomySuccessNotification"
+let ZombieLobotomyFailureNotification               = "zombieLobotomyFailureNotification"

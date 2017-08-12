@@ -34,8 +34,6 @@ class PlayerSelectVC: UIViewController {
     var selectedPlayers: [IndexPath:String]     = [:]
     var passedPlayers: [Player]                 = []
     
-//    let searchController                        = UISearchController(searchResultsController: nil)
-//    var filteredNames                           = [String]()
     
     // MARK: - View lifecycle
     
@@ -48,11 +46,6 @@ class PlayerSelectVC: UIViewController {
         tableView.sectionHeaderHeight           = 25
         tableView.sectionIndexBackgroundColor   = STYLE.Tan
         tableView.sectionIndexColor             = STYLE.Brown
-        
-//        searchController.searchResultsUpdater   = self
-//        searchController.dimsBackgroundDuringPresentation = false
-//        definesPresentationContext              = true
-//        tableView.tableHeaderView               = searchController.searchBar
 
         mainCard.layer.cornerRadius             = STYLE.CornerRadius
         mainCard.backgroundColor                = STYLE.Tan
@@ -87,15 +80,6 @@ class PlayerSelectVC: UIViewController {
         villageSize = 0
         playerNumberLabel.text = "0"
     }
-    
-//    func filterContentForSearchText(searchText: String, scope: String = "All") {
-//        
-//        filteredNames = savedPlayers.filter { name in
-//            return savedPlayers. .lowercaseString.containsString(searchText.lowercaseString)
-//        }
-//        
-//        tableView.reloadData()
-//    }
     
     
     // MARK: - Player list names
@@ -245,15 +229,22 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 27
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let myHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 30))
+        let myHeaderView = UIView(frame: CGRect(x: 0,
+                                                y: 0,
+                                                width: tableView.frame.size.width,
+                                                height: 27))
         myHeaderView.backgroundColor = STYLE.Beige
+        myHeaderView.layer.cornerRadius = STYLE.CornerRadius
         
-        let label = UILabel(frame: CGRect(x: 20, y: 3, width: 50, height: 25))
+        let label = UILabel(frame: CGRect(x: tableView.frame.size.width/2 ,
+                                          y: 3,
+                                          width: 50,
+                                          height: 25))
         label.text = savedPlayerSections[section]
         label.textColor = STYLE.Brown
         label.font = STYLE.RegBoldFont
@@ -327,16 +318,6 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         return savedPlayerSections
     }
 }
-
-//extension PlayerSelectVC: UISearchResultsUpdating {
-//    
-//    @available(iOS 8.0, *)
-//    func updateSearchResults(for searchController: UISearchController) {
-//        filterContentForSearchText(searchText: searchController.searchBar.text!)
-//
-//    }
-//
-//}
 
 extension PlayerSelectVC: UIViewControllerTransitioningDelegate {
     
