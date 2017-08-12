@@ -274,7 +274,7 @@ extension SelectPlayerPopupVC {
             }
         }
 
-        unprotectedPlayersList.sort(by: { $0.name < $1.name })
+        //unprotectedPlayersList.sort(by: { $0.name < $1.name })
         
         return unprotectedPlayersList
     }
@@ -292,7 +292,7 @@ extension SelectPlayerPopupVC {
             }
         }
         
-        availablePlayers.sort(by: { $0.name < $1.name } )
+        //availablePlayers.sort(by: { $0.name < $1.name } )
     }
 }
 
@@ -308,7 +308,7 @@ extension SelectPlayerPopupVC {
             }
         }
         
-        availablePlayers.sort(by: { $0.name < $1.name } )
+        //availablePlayers.sort(by: { $0.name < $1.name } )
     }
 }
 

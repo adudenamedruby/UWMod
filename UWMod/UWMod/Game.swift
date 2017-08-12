@@ -182,7 +182,8 @@ class Game {
     }
     
     public func presentEndGameInfo () {
-
+//        let timeGameEnded = Date()
+//        let timePassed = timeGameEnded.timeIntervalSince(_timeGameStarted)
     }
     
     
@@ -377,6 +378,7 @@ class Game {
             _firstNight = false
             availablePlayers.removeAll()
             availablePlayers = livingActors
+            livingActors.sort(by: { $0.name < $1.name } )
             determineRolesInTheGame()
         }
         
