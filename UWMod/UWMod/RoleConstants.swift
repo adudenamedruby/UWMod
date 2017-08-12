@@ -47,12 +47,6 @@ func filterBy(roleTypeList: [RoleType]) -> [Role] {
     
 }
 
-// ROLE RUNBOOK
-// Add role definition here and add to ALL_GAME_ROLES
-// Add roles to elimination for effects
-
-
-
 // Roles get instantiated here! Fancy!
 // Alphabetical order
 
