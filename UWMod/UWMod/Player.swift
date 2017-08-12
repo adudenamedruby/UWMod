@@ -76,6 +76,9 @@ class Player {
         }
     }
     
+    
+    // MARK: - Info card related fuctions
+    
     public func determineDaytimeInfoCardForActor() {
         
         determineDaytimeInfoCardForTeam()
@@ -106,6 +109,9 @@ class Player {
             daytimeInfoCards.append(daytimeCard)
         }
     }
+    
+    
+    // MARK: - Player cleanup
     
     public func cleanupAfterRound(nightRound: Bool) {
         
@@ -153,22 +159,13 @@ class Player {
     
     // MARK: - Effect-related functions
     
+    /// Check whether a player is affected by a certain effect.
     public func isAffectedBy(condition: PlayerEffects) -> Bool {
         if currentConditions.contains(condition) { return true }
         return false
     }
     
-    public func canAffect(player: Player, forCondition effect: PlayerEffects) -> Bool {
-        
-        if playersIneligibleForEffect[effect] != nil && (playersIneligibleForEffect[effect]?.count)! > 0 {
-            if (playersIneligibleForEffect[effect]?.contains(where: { $0 === player }))! {
-                return false
-            }
-        }
-        
-        return true
-    }
-    
+    /// Check whether the player is being affected by someone with a specific condition.
     public func isAffectedBy(currentPlayer affector: Player, forCondition effect: PlayerEffects) -> Bool {
         
         if playersIneligibleForEffect[effect] != nil {
@@ -178,6 +175,18 @@ class Player {
         }
         
         return false
+    }
+    
+    /// Check whether the checking player can affect the player with a condition.
+    public func canAffect(player: Player, forCondition effect: PlayerEffects) -> Bool {
+        
+        if playersIneligibleForEffect[effect] != nil && (playersIneligibleForEffect[effect]?.count)! > 0 {
+            if (playersIneligibleForEffect[effect]?.contains(where: { $0 === player }))! {
+                return false
+            }
+        }
+        
+        return true
     }
     
     public func returnPlayersCausing(condition: PlayerEffects) -> [Player] {
@@ -191,8 +200,10 @@ class Player {
         return tempPlayers
     }
     
+    
     // Deal with being affected from affects from other players
     
+    /// This is for the victim to remove an effect from themselves.
     private func removeEffectFromPlayer(condition: PlayerEffects, causedBy: Player) {
         
         if isAffectedBy(condition: condition) {
@@ -206,6 +217,7 @@ class Player {
         }
     }
     
+    /// This is so the victim adds an effect to themselves.
     private func addEffectFromOtherPlayers(condition: PlayerEffects, causedBy: Player) {
         
         if isAffectedBy(condition: condition) {
@@ -290,13 +302,10 @@ class Player {
         return true
     }
     
-    // MARK: - Role abilities
     
-    private func checkRoleForActivation() {
-        role.checkForActivation()
-    }
+    // MARK: - Role-related effect functions
     
-    // Protection
+    /// Apply the protect effect to other players.
     public func protect(playerToProtect: Player, protector: Player) {
         let kindOfRole = role.type
         let effect: PlayerEffects = .Protection
@@ -319,8 +328,7 @@ class Player {
         
     }
     
-    // Lobotomy
-    
+    /// Apply the Lobotomy effect to other players
     public func eatBrains(ofVictim victim: Player, zombie: Player) {
         
         let effect: PlayerEffects = .Lobotomy
@@ -331,17 +339,23 @@ class Player {
                 
                 addTargetToPluralAffectingPlayerList(condition: effect, affectedPlayer: victim)
                 addTargetToPluralIneligibilityList(condition: effect, playerToAdd: victim)
-            
+                
                 victim.addEffectFromOtherPlayers(condition: effect, causedBy: zombie)
             }
         }
     }
     
+    
+    // MARK: - Role abilities
+    
+    private func checkRoleForActivation() {
+        role.checkForActivation()
+    }
 }
 
 extension Player {
     
-    // MARK: - Role variable functions
+    // MARK: - Role variable retrieval functions
     // This abstraction layer prevents views from having to reach into player and accessing
     // the Role object directly.
     
