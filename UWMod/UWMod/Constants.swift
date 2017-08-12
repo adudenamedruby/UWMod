@@ -49,8 +49,6 @@ struct StyleConstants {
 
 
 // Global Variables
-let localizedActionFinishedNotification = "localizedActionFinishedNotification"
-
 let PLAYERS                 = "UserPlayers"
 let STYLE                   = StyleConstants()
 var GAME: Game              = Game(availableRoster: [], availablePlayers: [])
@@ -60,6 +58,8 @@ var SETTINGS: GameSettings  = GameSettings()
 
 
 // Notification Variables
+let localizedActionFinishedNotification = "localizedActionFinishedNotification"
+let NoNightActorsRemainNotification = "noNightActorsRemainNotification"
 
 let ReloadTableForNewPlayersNotification            = "reloadTableForNewPlayersNotification"
 let ReturnToPlayerSelectNotification                = "returnToPlayerSelectNotification"

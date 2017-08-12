@@ -18,7 +18,7 @@
         <!--AlertsVC-->
         <scene sceneID="FM5-dk-Krf">
             <objects>
-                <viewController storyboardIdentifier="mainAlert" modalPresentationStyle="overCurrentContext" id="JPT-HN-339" customClass="AlertsVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainAlert" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="JPT-HN-339" customClass="AlertsVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bCK-fb-slS"/>
                         <viewControllerLayoutGuide type="bottom" id="VF1-XY-0xS"/>
@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="8U9-mB-IlF" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="10" width="220" height="36.5"/>
+                                                <rect key="frame" x="15" y="10.5" width="220" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -146,7 +146,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ELd-WD-2he" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="10" width="220" height="36.5"/>
+                                                <rect key="frame" x="15" y="10.5" width="220" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -286,7 +286,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Game?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpw-Lo-5ah" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="44" y="10" width="163.5" height="36.5"/>
+                                                <rect key="frame" x="43.5" y="10.5" width="163.5" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -422,7 +422,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="lAz-N9-vBf" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="10" width="245" height="36.5"/>
+                                                <rect key="frame" x="15" y="10.5" width="245" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -627,7 +627,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="layer Elimination" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ch3-aj-o6o" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="12.5" width="280" height="36.5"/>
+                                                <rect key="frame" x="10" y="12" width="280" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

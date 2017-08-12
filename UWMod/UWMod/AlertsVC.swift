@@ -22,6 +22,7 @@ class AlertsVC: UIViewController {
     
     var alertName:                              String?
     var alertText:                              String?
+    var withNotification:                       String?
     
     
     // MARK - Initializers
@@ -47,6 +48,10 @@ class AlertsVC: UIViewController {
     // MARK: - Button functionality
     
     @IBAction func okButtonPressed(_ sender: Any) {
+        if withNotification != nil {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: withNotification!), object: nil)
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
 

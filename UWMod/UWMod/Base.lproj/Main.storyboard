@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="65.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ame Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-Kc-kag" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="14.5" width="295" height="36.5"/>
+                                                <rect key="frame" x="15" y="15" width="295" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -760,7 +760,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="JfT-u5-Wiw" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="15.5" width="308" height="40"/>
+                                                <rect key="frame" x="15" y="16" width="308" height="40"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -956,7 +956,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="337" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Roles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="Tuq-TL-lce" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="15.5" width="307" height="40"/>
+                                                <rect key="frame" x="15" y="16" width="307" height="40"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1377,7 +1377,7 @@ Based on the Werewolf boardgame.</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hase Report" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="gy0-tG-ynC" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="15" y="12.5" width="285" height="36.5"/>
+                                                        <rect key="frame" x="15" y="12" width="285" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
