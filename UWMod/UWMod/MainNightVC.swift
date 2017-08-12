@@ -47,15 +47,27 @@ class MainNightVC: UIViewController, EndNightPotocol {
     }
     
     func endNight() {
-        self.containerView?.fadeOut(duration: 1, delay: 0, completion: {
-            (finished: Bool) -> Void in
-            self.containerView.isHidden = true
-        })
         
-        fadeNightControlsIn()
+        var unassignedPlayersRemain = false
+        
+        for player in GAME.availablePlayers {
+            if !player.isAssigned {
+                unassignedPlayersRemain = true
+            }
+        }
+        
+        if !unassignedPlayersRemain {
+            self.containerView?.fadeOut(duration: 1, delay: 0, completion: {
+                (finished: Bool) -> Void in
+                self.containerView.isHidden = true
+            })
+            
+            fadeNightControlsIn()
+        }
     }
     
     @IBAction func acceptNightEnd(_ sender: Any) {
+
         GAME.finishNight()
         self.dismiss(animated: true, completion: {
             self.containerView.isHidden = false
