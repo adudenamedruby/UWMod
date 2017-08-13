@@ -52,6 +52,20 @@ class NightVC: TisprCardStackViewController, TisprCardStackViewControllerDelegat
             return GAME.availableRoster.count
         }
         
+        if GAME.nightActors.count == 0 {
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(endNight),
+                                                   name: NSNotification.Name(rawValue: NoNightActorsRemainNotification),
+                                                   object: nil)
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+            let info = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
+            info.alertName = "No Specials"
+            info.alertText = "No night active roles remain."
+            info.withNotification = NoNightActorsRemainNotification
+            self.present(info, animated: true, completion: nil)
+        }
+        
         return GAME.nightActors.count
     }
     

@@ -100,6 +100,19 @@ class VoteCounterVC: UIViewController {
         yesButton.setTitle("\(yesVotes)", for: .normal)
     }
     
+    @IBAction func correctionButton(_ sender: Any) {
+        if yesVotes > 0 {
+            yesVotes -= 1
+        }
+        
+        if yesVotes == 0 {
+            yesButton.setTitle("YES", for: .normal)
+        } else {
+            yesButton.setTitle("\(yesVotes)", for: .normal)
+        }
+    }
+    
+    
     @IBAction func tallyButtonPressed(_ sender: Any) {
         checkVote()
     }

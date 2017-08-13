@@ -28,7 +28,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     public var player:                          Player?
     public var role:                            Role?
     
-    var actionViewFrame                         = CGRect(x: 0, y: 0, width: 310, height: 140)
+    var actionViewFrame:                        CGRect!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,6 +44,12 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         popupInnerView.backgroundColor = STYLE.Tan
         popupOuterView.layer.cornerRadius = STYLE.CornerRadius
         popupOuterView.backgroundColor = STYLE.Beige
+        
+        actionViewFrame = CGRect(x: 0,
+                                 y: 0,
+                                 width: self.containerView.frame.size.width,
+                                 height: self.containerView.frame.size.height)
+        
         resetHelpView()
     }
     

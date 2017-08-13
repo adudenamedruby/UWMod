@@ -32,13 +32,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nd Night Phase?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQQ-0I-u5l" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                <rect key="frame" x="61.5" y="465.5" width="251" height="36.5"/>
+                                <rect key="frame" x="61.5" y="466" width="251" height="36.5"/>
                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4y-IZ-EmM">
-                                <rect key="frame" x="212.5" y="554.5" width="50" height="50"/>
+                                <rect key="frame" x="212.5" y="555" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="42f-5z-xj9"/>
                                     <constraint firstAttribute="width" constant="50" id="Imd-Be-A26"/>
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JC-2X-veb">
-                                <rect key="frame" x="112.5" y="554.5" width="50" height="50"/>
+                                <rect key="frame" x="112.5" y="555" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="B3A-iB-wKo"/>
                                     <constraint firstAttribute="height" constant="50" id="a8k-GZ-kOU"/>
@@ -100,7 +100,7 @@
         <scene sceneID="bbH-zT-s6u">
             <objects>
                 <collectionViewController storyboardIdentifier="cardView" modalTransitionStyle="crossDissolve" id="Qeg-zw-pMz" customClass="NightVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="HbN-T4-Ls4">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="HbN-T4-Ls4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -150,19 +150,19 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Werewolves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="DPi-9e-CxI" customClass="OldBrownRole" customModule="UWMod" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="226.5" width="310" height="58.5"/>
+                                                    <rect key="frame" x="10" y="226.5" width="310" height="52.5"/>
                                                     <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="50"/>
                                                     <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(John)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="nMC-fN-ITG" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="285" width="310" height="20"/>
+                                                    <rect key="frame" x="10" y="279" width="310" height="20"/>
                                                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                     <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-3n-Ybh" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="322" width="290" height="78"/>
+                                                    <rect key="frame" x="20" y="316" width="290" height="84"/>
                                                     <string key="text">Once per game following the elimination of a Werewolf during the day, you may turn the Werewolves target into a Werewolf instead of eliminating him.</string>
                                                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                                                     <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -171,9 +171,6 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0p5-D9-xB8">
                                                     <rect key="frame" x="10" y="403" width="310" height="140"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="140" id="5XA-oK-cVl"/>
-                                                    </constraints>
                                                 </view>
                                                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flY-A7-vZ6">
                                                     <rect key="frame" x="-0.5" y="0.0" width="330" height="565"/>
@@ -208,7 +205,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="278" height="63"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ole Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8e8-N3-50z" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                                            <rect key="frame" x="74" y="12" width="129" height="41"/>
+                                                                            <rect key="frame" x="81.5" y="14" width="114" height="36.5"/>
                                                                             <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                                             <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <nil key="highlightedColor"/>
@@ -247,9 +244,8 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
-                                                <constraint firstItem="0p5-D9-xB8" firstAttribute="centerX" secondItem="GMg-MV-EH6" secondAttribute="centerX" id="5GM-md-SLm"/>
+                                                <constraint firstItem="0p5-D9-xB8" firstAttribute="top" secondItem="ZIa-3n-Ybh" secondAttribute="bottom" constant="3" id="AD6-WB-KcR"/>
                                                 <constraint firstItem="DPi-9e-CxI" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" constant="10" id="Bv2-tQ-Elt"/>
-                                                <constraint firstItem="0p5-D9-xB8" firstAttribute="width" secondItem="GMg-MV-EH6" secondAttribute="width" multiplier="0.94" id="Dmk-23-fTB"/>
                                                 <constraint firstAttribute="trailing" secondItem="ojv-dJ-9tA" secondAttribute="trailing" constant="25" id="Etl-uO-x8D"/>
                                                 <constraint firstAttribute="bottom" secondItem="0p5-D9-xB8" secondAttribute="bottom" constant="22" id="G9y-G5-aW1"/>
                                                 <constraint firstAttribute="bottom" secondItem="flY-A7-vZ6" secondAttribute="bottom" id="IDp-oG-EYR"/>
@@ -257,10 +253,12 @@
                                                 <constraint firstItem="ZIa-3n-Ybh" firstAttribute="top" secondItem="DPi-9e-CxI" secondAttribute="bottom" constant="37" id="K3f-9S-UkZ"/>
                                                 <constraint firstItem="ojv-dJ-9tA" firstAttribute="top" secondItem="GMg-MV-EH6" secondAttribute="top" constant="90" id="KuI-Nf-xxr"/>
                                                 <constraint firstItem="flY-A7-vZ6" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" id="OPu-5J-OvX"/>
+                                                <constraint firstAttribute="trailing" secondItem="0p5-D9-xB8" secondAttribute="trailing" constant="10" id="QFL-3N-zyi"/>
                                                 <constraint firstItem="ojv-dJ-9tA" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" constant="25" id="QTx-dv-OM3"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZIa-3n-Ybh" secondAttribute="trailing" constant="20" id="REy-lb-TCw"/>
                                                 <constraint firstAttribute="trailing" secondItem="nMC-fN-ITG" secondAttribute="trailing" constant="10" id="Toy-Sl-62a"/>
                                                 <constraint firstItem="flY-A7-vZ6" firstAttribute="top" secondItem="GMg-MV-EH6" secondAttribute="top" id="UdT-9l-UBm"/>
+                                                <constraint firstItem="0p5-D9-xB8" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" constant="10" id="Xt2-MN-8lh"/>
                                                 <constraint firstItem="ZIa-3n-Ybh" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" constant="20" id="dDE-Hz-Mca"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZIa-3n-Ybh" secondAttribute="bottom" constant="165" id="dgN-i2-kOq"/>
                                                 <constraint firstAttribute="bottom" secondItem="ojv-dJ-9tA" secondAttribute="bottom" constant="80" id="f5S-5K-rJ7"/>

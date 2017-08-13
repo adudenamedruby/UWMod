@@ -38,8 +38,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzA-qe-eRM">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="65.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ame Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-Kc-kag" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="98" y="15" width="130.5" height="36.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ame Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-Kc-kag" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="15" y="15" width="295" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -47,9 +47,10 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="kNY-Kc-kag" firstAttribute="centerX" secondItem="JzA-qe-eRM" secondAttribute="centerX" id="4mX-DA-m0v"/>
                                             <constraint firstItem="kNY-Kc-kag" firstAttribute="centerY" secondItem="JzA-qe-eRM" secondAttribute="centerY" id="HdE-Vi-XS7"/>
+                                            <constraint firstAttribute="trailing" secondItem="kNY-Kc-kag" secondAttribute="trailing" constant="15" id="WXd-iU-6c9"/>
                                             <constraint firstAttribute="height" constant="65.5" id="XiU-F1-2ar"/>
+                                            <constraint firstItem="kNY-Kc-kag" firstAttribute="leading" secondItem="JzA-qe-eRM" secondAttribute="leading" constant="15" id="jRu-Ld-hhZ"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYE-cq-WaI" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
@@ -131,18 +132,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwe-rl-XGx">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="70"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pf4-pK-Fhz" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="146.5" y="25.5" width="42" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="pf4-pK-Fhz" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="15" y="19.5" width="305" height="32.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="pf4-pK-Fhz" secondAttribute="trailing" constant="15" id="EGW-bb-4gZ"/>
                                             <constraint firstItem="pf4-pK-Fhz" firstAttribute="centerY" secondItem="Kwe-rl-XGx" secondAttribute="centerY" id="GeX-jD-pAB"/>
+                                            <constraint firstItem="pf4-pK-Fhz" firstAttribute="leading" secondItem="Kwe-rl-XGx" secondAttribute="leading" constant="15" id="RZn-IL-w5M"/>
                                             <constraint firstAttribute="height" constant="70" id="Uza-bV-wsv"/>
-                                            <constraint firstItem="pf4-pK-Fhz" firstAttribute="centerX" secondItem="Kwe-rl-XGx" secondAttribute="centerX" id="jzT-fO-INW"/>
                                         </constraints>
                                     </view>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7i0-ut-jBi">
@@ -160,226 +162,6 @@
                                             <action selector="indexChanged:" destination="KcH-a2-eE9" eventType="valueChanged" id="sDh-KE-BOk"/>
                                         </connections>
                                     </segmentedControl>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="elk-EW-1db">
-                                        <rect key="frame" x="79.5" y="140" width="176.5" height="65.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The First Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNs-qC-b94" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="38" y="0.0" width="101" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Eug-iI-jSC">
-                                                <rect key="frame" x="0.0" y="15.5" width="176.5" height="50"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbZ-O5-2kj" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="QvX-yn-xPs"/>
-                                                            <constraint firstAttribute="width" constant="50" id="RZd-Jv-3Z2"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="72"/>
-                                                        <state key="normal" title="-">
-                                                            <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afk-QL-N0x" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="65.5" y="0.0" width="46" height="50"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFy-JN-Out" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="126.5" y="0.0" width="50" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="QPu-nq-TG9"/>
-                                                            <constraint firstAttribute="height" constant="50" id="kCp-wk-U2X"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="58"/>
-                                                        <state key="normal" title="+">
-                                                            <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Zwh-HF-RDE">
-                                        <rect key="frame" x="78.5" y="209.5" width="176.5" height="65.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ensuing Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymM-im-765" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="37" y="0.0" width="103" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Hcs-w5-I77">
-                                                <rect key="frame" x="0.0" y="15.5" width="176.5" height="50"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDu-xc-mmP" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="kqW-rQ-n5X"/>
-                                                            <constraint firstAttribute="width" constant="50" id="uyK-8d-92V"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="72"/>
-                                                        <state key="normal" title="-">
-                                                            <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyR-Nw-Zgq" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="65.5" y="0.0" width="46" height="50"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ao-Lq-MnL" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="126.5" y="0.0" width="50" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="kYq-aE-xrl"/>
-                                                            <constraint firstAttribute="height" constant="50" id="pf0-5n-a6t"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="58"/>
-                                                        <state key="normal" title="+">
-                                                            <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="tNW-Cd-Epw">
-                                        <rect key="frame" x="78.5" y="279" width="176.5" height="65.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decrease Each Day By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOC-Is-x9Q" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="2" y="0.0" width="172.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jOZ-Ca-uo8">
-                                                <rect key="frame" x="0.0" y="15.5" width="176.5" height="50"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAL-0x-qaE" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="Gmm-em-Whb"/>
-                                                            <constraint firstAttribute="height" constant="50" id="csM-gB-H9B"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="72"/>
-                                                        <state key="normal" title="-">
-                                                            <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwQ-94-Q0j" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="65.5" y="0.0" width="46" height="50"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hS6-if-6Pz" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="126.5" y="0.0" width="50" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="IYk-md-7ux"/>
-                                                            <constraint firstAttribute="height" constant="50" id="vev-1u-dRB"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="58"/>
-                                                        <state key="normal" title="+">
-                                                            <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="N8n-Ug-aLh">
-                                        <rect key="frame" x="78.5" y="348.5" width="176.5" height="65.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum Day Length" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTR-ET-SLg" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="7.5" y="0.0" width="161.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="27r-eW-ZFj">
-                                                <rect key="frame" x="0.0" y="15.5" width="176.5" height="50"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdb-Eu-dVl" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="18q-UO-ak3"/>
-                                                            <constraint firstAttribute="height" constant="50" id="MM5-Vr-d9z"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="72"/>
-                                                        <state key="normal" title="-">
-                                                            <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4N-fJ-0zf" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="65.5" y="0.0" width="46" height="50"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euc-XR-Rne" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="126.5" y="0.0" width="50" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="Ayb-X1-UWD"/>
-                                                            <constraint firstAttribute="height" constant="50" id="ihL-fU-ibD"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="58"/>
-                                                        <state key="normal" title="+">
-                                                            <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Vfo-zp-LDM">
-                                        <rect key="frame" x="76" y="418" width="184" height="65.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Werewolf Decision Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN8-Rp-hzl" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="184" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="w3z-nT-m4a">
-                                                <rect key="frame" x="4" y="15.5" width="176.5" height="50"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-kz-AZE" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="HM0-yA-U42"/>
-                                                            <constraint firstAttribute="height" constant="50" id="pom-2Z-J0x"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="72"/>
-                                                        <state key="normal" title="-">
-                                                            <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZt-ok-r4a" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="65.5" y="0.0" width="46" height="50"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsM-H6-rM9" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="126.5" y="0.0" width="50" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="Dx6-6m-WMi"/>
-                                                            <constraint firstAttribute="width" constant="50" id="gsy-9f-7Mn"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="58"/>
-                                                        <state key="normal" title="+">
-                                                            <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MW-uN-hWx" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
                                         <rect key="frame" x="57.5" y="545" width="220" height="40"/>
                                         <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -419,30 +201,260 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYb-uU-A2W">
+                                        <rect key="frame" x="8" y="140" width="319" height="361"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="elk-EW-1db">
+                                                <rect key="frame" x="71.5" y="0.0" width="176" height="65.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The First Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="NNs-qC-b94" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="37.5" y="0.0" width="101" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Eug-iI-jSC">
+                                                        <rect key="frame" x="0.0" y="15.5" width="176" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbZ-O5-2kj" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="QvX-yn-xPs"/>
+                                                                    <constraint firstAttribute="width" constant="50" id="RZd-Jv-3Z2"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="72"/>
+                                                                <state key="normal" title="-">
+                                                                    <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afk-QL-N0x" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="65" y="0.0" width="46" height="50"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFy-JN-Out" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="126" y="0.0" width="50" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="QPu-nq-TG9"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="kCp-wk-U2X"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="58"/>
+                                                                <state key="normal" title="+">
+                                                                    <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Zwh-HF-RDE">
+                                                <rect key="frame" x="71.5" y="68.5" width="176" height="65.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ensuing Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ymM-im-765" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="36.5" y="0.0" width="103" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Hcs-w5-I77">
+                                                        <rect key="frame" x="0.0" y="15.5" width="176" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDu-xc-mmP" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="kqW-rQ-n5X"/>
+                                                                    <constraint firstAttribute="width" constant="50" id="uyK-8d-92V"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="72"/>
+                                                                <state key="normal" title="-">
+                                                                    <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyR-Nw-Zgq" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="65" y="0.0" width="46" height="50"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ao-Lq-MnL" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="126" y="0.0" width="50" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="kYq-aE-xrl"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="pf0-5n-a6t"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="58"/>
+                                                                <state key="normal" title="+">
+                                                                    <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="tNW-Cd-Epw">
+                                                <rect key="frame" x="70.5" y="137" width="176.5" height="65.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decrease Each Day By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="tOC-Is-x9Q" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="2" y="0.0" width="172.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jOZ-Ca-uo8">
+                                                        <rect key="frame" x="0.0" y="15.5" width="176.5" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAL-0x-qaE" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="Gmm-em-Whb"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="csM-gB-H9B"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="72"/>
+                                                                <state key="normal" title="-">
+                                                                    <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwQ-94-Q0j" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="65.5" y="0.0" width="46" height="50"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hS6-if-6Pz" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="126.5" y="0.0" width="50" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="IYk-md-7ux"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="vev-1u-dRB"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="58"/>
+                                                                <state key="normal" title="+">
+                                                                    <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="N8n-Ug-aLh">
+                                                <rect key="frame" x="70.5" y="205.5" width="176.5" height="65.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum Day Length" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="fTR-ET-SLg" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="7.5" y="0.0" width="161.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="27r-eW-ZFj">
+                                                        <rect key="frame" x="0.0" y="15.5" width="176.5" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdb-Eu-dVl" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="18q-UO-ak3"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="MM5-Vr-d9z"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="72"/>
+                                                                <state key="normal" title="-">
+                                                                    <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4N-fJ-0zf" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="65.5" y="0.0" width="46" height="50"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euc-XR-Rne" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="126.5" y="0.0" width="50" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="Ayb-X1-UWD"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="ihL-fU-ibD"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="58"/>
+                                                                <state key="normal" title="+">
+                                                                    <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Vfo-zp-LDM">
+                                                <rect key="frame" x="67" y="274" width="184" height="65.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Werewolf Decision Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="LN8-Rp-hzl" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="184" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="w3z-nT-m4a">
+                                                        <rect key="frame" x="4" y="15.5" width="176.5" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-kz-AZE" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="HM0-yA-U42"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="pom-2Z-J0x"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="72"/>
+                                                                <state key="normal" title="-">
+                                                                    <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZt-ok-r4a" customClass="RegBrownSetting" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="65.5" y="0.0" width="46" height="50"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsM-H6-rM9" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                                                <rect key="frame" x="126.5" y="0.0" width="50" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="Dx6-6m-WMi"/>
+                                                                    <constraint firstAttribute="width" constant="50" id="gsy-9f-7Mn"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="58"/>
+                                                                <state key="normal" title="+">
+                                                                    <color key="titleColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="elk-EW-1db" firstAttribute="top" secondItem="iYb-uU-A2W" secondAttribute="top" id="7DA-JI-AeE"/>
+                                            <constraint firstItem="Vfo-zp-LDM" firstAttribute="centerX" secondItem="iYb-uU-A2W" secondAttribute="centerX" id="GVN-qI-pbF"/>
+                                            <constraint firstItem="Zwh-HF-RDE" firstAttribute="centerX" secondItem="iYb-uU-A2W" secondAttribute="centerX" id="Se1-6v-yeM"/>
+                                            <constraint firstItem="tNW-Cd-Epw" firstAttribute="top" secondItem="Zwh-HF-RDE" secondAttribute="bottom" constant="3" id="bcE-Vv-8VO"/>
+                                            <constraint firstItem="Vfo-zp-LDM" firstAttribute="top" secondItem="N8n-Ug-aLh" secondAttribute="bottom" constant="3" id="fOH-Aj-b6i"/>
+                                            <constraint firstItem="N8n-Ug-aLh" firstAttribute="centerX" secondItem="iYb-uU-A2W" secondAttribute="centerX" id="gX4-d3-Fkf"/>
+                                            <constraint firstItem="elk-EW-1db" firstAttribute="centerX" secondItem="iYb-uU-A2W" secondAttribute="centerX" id="oYX-ny-Dz2"/>
+                                            <constraint firstAttribute="bottom" secondItem="Vfo-zp-LDM" secondAttribute="bottom" constant="21.5" id="uL3-dA-pJf"/>
+                                            <constraint firstItem="N8n-Ug-aLh" firstAttribute="top" secondItem="tNW-Cd-Epw" secondAttribute="bottom" constant="3" id="vB1-Bq-Eow"/>
+                                            <constraint firstItem="tNW-Cd-Epw" firstAttribute="centerX" secondItem="iYb-uU-A2W" secondAttribute="centerX" id="yAj-Mh-vaH"/>
+                                            <constraint firstItem="Zwh-HF-RDE" firstAttribute="top" secondItem="elk-EW-1db" secondAttribute="bottom" constant="3" id="yB0-Ng-46D"/>
+                                        </constraints>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="1MW-uN-hWx" secondAttribute="bottom" constant="15" id="0JB-qu-bX0"/>
-                                    <constraint firstItem="elk-EW-1db" firstAttribute="centerX" secondItem="3Rk-Av-KWO" secondAttribute="centerX" id="4tt-0m-P2b"/>
                                     <constraint firstItem="Kwe-rl-XGx" firstAttribute="leading" secondItem="3Rk-Av-KWO" secondAttribute="leading" id="8Q0-l0-fRb"/>
                                     <constraint firstItem="1MW-uN-hWx" firstAttribute="centerX" secondItem="3Rk-Av-KWO" secondAttribute="centerX" id="9Av-OT-ybe"/>
-                                    <constraint firstItem="Vfo-zp-LDM" firstAttribute="centerX" secondItem="3Rk-Av-KWO" secondAttribute="centerX" id="Bb4-S7-rpB"/>
                                     <constraint firstItem="h8n-Bv-2C0" firstAttribute="centerX" secondItem="7i0-ut-jBi" secondAttribute="centerX" id="GeE-rD-2ih"/>
-                                    <constraint firstItem="elk-EW-1db" firstAttribute="top" secondItem="7i0-ut-jBi" secondAttribute="bottom" constant="8" id="QbE-um-FIf"/>
-                                    <constraint firstItem="tNW-Cd-Epw" firstAttribute="centerX" secondItem="3Rk-Av-KWO" secondAttribute="centerX" id="UaA-5B-KXJ"/>
-                                    <constraint firstItem="tNW-Cd-Epw" firstAttribute="top" secondItem="Zwh-HF-RDE" secondAttribute="bottom" constant="4" id="X8I-aG-02D"/>
-                                    <constraint firstItem="elk-EW-1db" firstAttribute="top" secondItem="Kwe-rl-XGx" secondAttribute="bottom" constant="70" id="Yws-2E-xp9"/>
-                                    <constraint firstItem="Vfo-zp-LDM" firstAttribute="top" secondItem="N8n-Ug-aLh" secondAttribute="bottom" constant="4" id="b7h-wk-MbF"/>
                                     <constraint firstAttribute="trailing" secondItem="Kwe-rl-XGx" secondAttribute="trailing" id="fJI-If-XIw"/>
                                     <constraint firstItem="7i0-ut-jBi" firstAttribute="centerX" secondItem="3Rk-Av-KWO" secondAttribute="centerX" id="fjp-Nj-HGl"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="335" id="hVa-pr-Jbe"/>
                                     <constraint firstItem="7i0-ut-jBi" firstAttribute="top" secondItem="h8n-Bv-2C0" secondAttribute="bottom" constant="5" id="ihc-wh-sTj"/>
-                                    <constraint firstItem="N8n-Ug-aLh" firstAttribute="centerX" secondItem="3Rk-Av-KWO" secondAttribute="centerX" id="ikU-sC-fCR"/>
                                     <constraint firstItem="Kwe-rl-XGx" firstAttribute="top" secondItem="3Rk-Av-KWO" secondAttribute="top" id="j8S-14-Ws5"/>
-                                    <constraint firstItem="N8n-Ug-aLh" firstAttribute="top" secondItem="tNW-Cd-Epw" secondAttribute="bottom" constant="4" id="k3B-1A-caB"/>
-                                    <constraint firstItem="Zwh-HF-RDE" firstAttribute="top" secondItem="elk-EW-1db" secondAttribute="bottom" constant="4" id="kun-P6-Fgj"/>
-                                    <constraint firstAttribute="height" constant="600" id="v6a-ni-l3L"/>
-                                    <constraint firstItem="Zwh-HF-RDE" firstAttribute="centerX" secondItem="3Rk-Av-KWO" secondAttribute="centerX" id="vrn-hV-pOt"/>
+                                    <constraint firstItem="h8n-Bv-2C0" firstAttribute="top" secondItem="Kwe-rl-XGx" secondAttribute="bottom" constant="8.5" id="jQy-UD-uFU"/>
+                                    <constraint firstItem="iYb-uU-A2W" firstAttribute="top" secondItem="7i0-ut-jBi" secondAttribute="bottom" constant="8" id="lnH-9G-prb"/>
+                                    <constraint firstAttribute="trailing" secondItem="iYb-uU-A2W" secondAttribute="trailing" constant="8" id="tCq-TQ-tcp"/>
+                                    <constraint firstItem="iYb-uU-A2W" firstAttribute="leading" secondItem="3Rk-Av-KWO" secondAttribute="leading" constant="8" id="umz-K8-cVW"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*long press to change minute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avd-0j-gfJ" customClass="RegBeigeSmall" customModule="UWMod" customModuleProvider="target">
@@ -455,6 +467,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3Rk-Av-KWO" firstAttribute="width" secondItem="UkX-Pv-0A1" secondAttribute="width" multiplier="0.9" priority="750" id="3oG-by-1yf"/>
+                            <constraint firstItem="3Rk-Av-KWO" firstAttribute="height" secondItem="Yce-Vt-9Zz" secondAttribute="height" multiplier="0.9" id="CI8-gL-lzP"/>
                             <constraint firstItem="Avd-0j-gfJ" firstAttribute="centerX" secondItem="3Rk-Av-KWO" secondAttribute="centerX" id="Dkb-nf-ng1"/>
                             <constraint firstItem="3Rk-Av-KWO" firstAttribute="centerY" secondItem="UkX-Pv-0A1" secondAttribute="centerY" id="O8g-8K-nEI"/>
                             <constraint firstItem="Yce-Vt-9Zz" firstAttribute="top" secondItem="UkX-Pv-0A1" secondAttribute="top" id="Pn9-ZJ-xuj"/>
@@ -463,6 +476,7 @@
                             <constraint firstItem="3Rk-Av-KWO" firstAttribute="centerX" secondItem="UkX-Pv-0A1" secondAttribute="centerX" id="bOQ-XB-DyU"/>
                             <constraint firstItem="1MW-uN-hWx" firstAttribute="top" secondItem="Avd-0j-gfJ" secondAttribute="bottom" constant="10" id="elK-pg-h1R"/>
                             <constraint firstItem="Yce-Vt-9Zz" firstAttribute="leading" secondItem="UkX-Pv-0A1" secondAttribute="leading" id="ovj-Uh-3sa"/>
+                            <constraint firstItem="Avd-0j-gfJ" firstAttribute="top" secondItem="iYb-uU-A2W" secondAttribute="bottom" constant="13.5" id="xkZ-Tf-jDu"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -495,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VER-O7-7NY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="341.60000000000002" y="-566.26686656671666"/>
+            <point key="canvasLocation" x="342" y="-647"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="tne-QT-ifu">
@@ -544,7 +558,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EY0-Jo-xpJ" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="67" y="441" width="220" height="50"/>
+                                        <rect key="frame" x="67" y="432" width="220" height="50"/>
                                         <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="EKO-Wc-hog"/>
@@ -577,7 +591,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30k-d3-TV5" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="67" y="501" width="220" height="40"/>
+                                        <rect key="frame" x="67" y="492" width="220" height="40"/>
                                         <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="FGP-bn-cI9"/>
@@ -610,7 +624,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWC-gm-xWO" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="67" y="551" width="105.5" height="40"/>
+                                        <rect key="frame" x="67" y="542" width="105.5" height="40"/>
                                         <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="gJX-ze-H8H"/>
@@ -642,7 +656,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oN8-Ty-Hyq" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="181.5" y="551" width="105.5" height="40"/>
+                                        <rect key="frame" x="181.5" y="542" width="105.5" height="40"/>
                                         <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="PXp-7d-R1A"/>
@@ -681,7 +695,6 @@
                                     <constraint firstItem="oN8-Ty-Hyq" firstAttribute="width" secondItem="30k-d3-TV5" secondAttribute="width" multiplier="0.48" id="7ac-L4-ubd"/>
                                     <constraint firstItem="IfE-IR-ME9" firstAttribute="centerX" secondItem="FbT-5i-nj9" secondAttribute="centerX" id="9DC-qt-IKg"/>
                                     <constraint firstItem="30k-d3-TV5" firstAttribute="centerX" secondItem="FbT-5i-nj9" secondAttribute="centerX" id="Bd3-EC-t6K"/>
-                                    <constraint firstItem="EY0-Jo-xpJ" firstAttribute="centerY" secondItem="FbT-5i-nj9" secondAttribute="centerY" constant="150" id="Ft6-Jh-2IH"/>
                                     <constraint firstItem="IfE-IR-ME9" firstAttribute="top" secondItem="FbT-5i-nj9" secondAttribute="top" id="Ged-HQ-cDx"/>
                                     <constraint firstItem="TKv-XV-DKN" firstAttribute="top" secondItem="3c9-GO-c9q" secondAttribute="bottom" constant="8.5" id="LF3-45-tGN"/>
                                     <constraint firstItem="3c9-GO-c9q" firstAttribute="centerX" secondItem="FbT-5i-nj9" secondAttribute="centerX" id="PS2-AX-RB3"/>
@@ -690,7 +703,9 @@
                                     <constraint firstItem="IfE-IR-ME9" firstAttribute="width" secondItem="FbT-5i-nj9" secondAttribute="width" id="Znc-6o-WRL"/>
                                     <constraint firstItem="oN8-Ty-Hyq" firstAttribute="top" secondItem="30k-d3-TV5" secondAttribute="bottom" constant="10" id="cEA-K2-Vpl"/>
                                     <constraint firstItem="UWC-gm-xWO" firstAttribute="leading" secondItem="30k-d3-TV5" secondAttribute="leading" id="eV0-VO-Yec"/>
+                                    <constraint firstItem="EY0-Jo-xpJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TKv-XV-DKN" secondAttribute="bottom" constant="20" id="f9Q-Ma-EC6"/>
                                     <constraint firstItem="3c9-GO-c9q" firstAttribute="top" secondItem="IfE-IR-ME9" secondAttribute="bottom" constant="-3.5" id="ogv-gJ-ERH"/>
+                                    <constraint firstAttribute="bottom" secondItem="UWC-gm-xWO" secondAttribute="bottom" constant="50" id="oqv-3R-j4z"/>
                                     <constraint firstItem="TKv-XV-DKN" firstAttribute="centerX" secondItem="FbT-5i-nj9" secondAttribute="centerX" id="rDW-Rp-z2D"/>
                                     <constraint firstItem="EY0-Jo-xpJ" firstAttribute="centerX" secondItem="FbT-5i-nj9" secondAttribute="centerX" id="xqH-aC-ZUU"/>
                                     <constraint firstItem="UWC-gm-xWO" firstAttribute="width" secondItem="30k-d3-TV5" secondAttribute="width" multiplier="0.48" id="zeY-Vg-hCf"/>
@@ -744,8 +759,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czc-ce-jJH">
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="70"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfT-u5-Wiw" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="68" y="15" width="203.5" height="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="JfT-u5-Wiw" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="15" y="16" width="308" height="40"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -753,9 +768,11 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="JfT-u5-Wiw" secondAttribute="trailing" constant="15" id="5X1-ZH-efC"/>
                                             <constraint firstItem="JfT-u5-Wiw" firstAttribute="centerY" secondItem="czc-ce-jJH" secondAttribute="centerY" id="U73-FJ-XiO"/>
                                             <constraint firstAttribute="height" constant="70" id="e3h-jG-RCr"/>
                                             <constraint firstItem="JfT-u5-Wiw" firstAttribute="centerX" secondItem="czc-ce-jJH" secondAttribute="centerX" id="mQJ-nb-ePn"/>
+                                            <constraint firstItem="JfT-u5-Wiw" firstAttribute="leading" secondItem="czc-ce-jJH" secondAttribute="leading" constant="15" id="yWt-ua-LcJ"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCc-1T-bIt" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
@@ -938,8 +955,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJa-nz-lZZ">
                                         <rect key="frame" x="0.0" y="0.0" width="337" height="70"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Roles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tuq-TL-lce" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="79" y="15" width="179.5" height="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Roles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="Tuq-TL-lce" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="15" y="16" width="307" height="40"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -949,7 +966,8 @@
                                         <constraints>
                                             <constraint firstItem="Tuq-TL-lce" firstAttribute="centerY" secondItem="gJa-nz-lZZ" secondAttribute="centerY" id="NJa-qe-Xri"/>
                                             <constraint firstAttribute="height" constant="70" id="ONN-KL-yj7"/>
-                                            <constraint firstItem="Tuq-TL-lce" firstAttribute="centerX" secondItem="gJa-nz-lZZ" secondAttribute="centerX" id="b6X-ZU-86Y"/>
+                                            <constraint firstItem="Tuq-TL-lce" firstAttribute="leading" secondItem="gJa-nz-lZZ" secondAttribute="leading" constant="15" id="a0O-et-h5O"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tuq-TL-lce" secondAttribute="trailing" constant="15" id="nLY-nO-17x"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ge-b5-6M8" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
@@ -1225,8 +1243,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZL-c8-WhM">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bout UWMod" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQv-Nl-JmZ" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="55" y="17" width="191" height="36.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bout UWMod" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="OQv-Nl-JmZ" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="15" y="17.5" width="270" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1234,9 +1252,10 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstItem="OQv-Nl-JmZ" firstAttribute="leading" secondItem="DZL-c8-WhM" secondAttribute="leading" constant="15" id="4es-oo-SWK"/>
                                             <constraint firstAttribute="height" constant="70" id="Qtr-Jb-3nL"/>
                                             <constraint firstItem="OQv-Nl-JmZ" firstAttribute="centerY" secondItem="DZL-c8-WhM" secondAttribute="centerY" id="VFf-nH-IFf"/>
-                                            <constraint firstItem="OQv-Nl-JmZ" firstAttribute="centerX" secondItem="DZL-c8-WhM" secondAttribute="centerX" id="q1x-9x-5eu"/>
+                                            <constraint firstAttribute="trailing" secondItem="OQv-Nl-JmZ" secondAttribute="trailing" constant="15" id="kxp-AB-4wy"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjZ-m0-V0c">
@@ -1357,8 +1376,8 @@ Based on the Werewolf boardgame.</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEH-ck-2Gr">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="60"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hase Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gy0-tG-ynC" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="64" y="12" width="188.5" height="36.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hase Report" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="gy0-tG-ynC" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="15" y="12" width="285" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1367,8 +1386,9 @@ Based on the Werewolf boardgame.</string>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="0WS-l3-dJJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gy0-tG-ynC" secondAttribute="trailing" constant="15" id="5P6-De-x4E"/>
                                                     <constraint firstItem="gy0-tG-ynC" firstAttribute="centerY" secondItem="nEH-ck-2Gr" secondAttribute="centerY" id="FYQ-vg-Lzo"/>
-                                                    <constraint firstItem="gy0-tG-ynC" firstAttribute="centerX" secondItem="nEH-ck-2Gr" secondAttribute="centerX" id="i7l-PO-Fmg"/>
+                                                    <constraint firstItem="gy0-tG-ynC" firstAttribute="leading" secondItem="nEH-ck-2Gr" secondAttribute="leading" constant="15" id="wCn-lK-9ac"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3w6-qc-x3Y">
@@ -1545,6 +1565,9 @@ Based on the Werewolf boardgame.</string>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Johnny Appleseed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Fj-a1-TCa">
                                         <rect key="frame" x="25" y="105" width="250" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="SQZ-3P-bXs"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert"/>
@@ -1589,8 +1612,12 @@ Based on the Werewolf boardgame.</string>
                                     <constraint firstItem="yVx-Wp-cWv" firstAttribute="centerX" secondItem="HPE-8y-prU" secondAttribute="centerX" constant="40" id="5GT-jq-4tn"/>
                                     <constraint firstItem="yVx-Wp-cWv" firstAttribute="centerY" secondItem="z4D-Wv-75p" secondAttribute="centerY" id="8uX-4h-ORd"/>
                                     <constraint firstItem="7un-Yq-MCI" firstAttribute="top" secondItem="HPE-8y-prU" secondAttribute="top" id="Evm-yX-jux"/>
+                                    <constraint firstItem="yVx-Wp-cWv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z4D-Wv-75p" secondAttribute="trailing" constant="10" id="I6C-Kq-0IV"/>
                                     <constraint firstAttribute="trailing" secondItem="8Fj-a1-TCa" secondAttribute="trailing" constant="25" id="PrZ-MW-2Rk"/>
+                                    <constraint firstItem="z4D-Wv-75p" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HPE-8y-prU" secondAttribute="leading" constant="10" id="Qi5-8E-wpw"/>
                                     <constraint firstItem="z4D-Wv-75p" firstAttribute="top" secondItem="8Fj-a1-TCa" secondAttribute="bottom" constant="50" id="ZfF-uV-wjw"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yVx-Wp-cWv" secondAttribute="bottom" constant="8" id="arU-Vu-te4"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yVx-Wp-cWv" secondAttribute="trailing" constant="10" id="dyr-ui-a28"/>
                                     <constraint firstItem="z4D-Wv-75p" firstAttribute="centerX" secondItem="HPE-8y-prU" secondAttribute="centerX" constant="-90" id="jkT-li-YGS"/>
                                     <constraint firstItem="8Fj-a1-TCa" firstAttribute="leading" secondItem="HPE-8y-prU" secondAttribute="leading" constant="25" id="us7-tB-8Vg"/>
                                     <constraint firstItem="8Fj-a1-TCa" firstAttribute="top" secondItem="7un-Yq-MCI" secondAttribute="bottom" constant="38.5" id="uvT-v8-YGC"/>
