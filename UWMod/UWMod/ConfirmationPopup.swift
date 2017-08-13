@@ -132,8 +132,8 @@ class ConfirmationPopup: UIViewController {
                 
             } else if reason == .BlobAbsorbtion {
                 if !GAME.theBlobHasAbsorbed {
-                    let absorbedPlayer = GAME.useChosenPlayer()
-                    absorbedPlayer.addToTeam(team: .TeamBlob)
+                    chosenPlayer.addToTeam(team: .TeamBlob)
+                    GAME.theBlobHasAbsorbed = true
                 }
             }
     

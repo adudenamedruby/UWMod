@@ -344,7 +344,15 @@ extension SelectPlayerPopupVC {
     func populateNonBlobPlayers() {
         availablePlayers.removeAll()
         
-        for player in GAME.livingActors {
+        var playerRoster:           [Player]!
+        
+        if GAME.firstNight {
+            playerRoster            = GAME.availablePlayers
+        } else {
+            playerRoster            = GAME.livingActors
+        }
+        
+        for player in playerRoster {
             if !player.team.contains(.TeamBlob) {
                 availablePlayers.append(player)
             }

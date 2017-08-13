@@ -388,7 +388,6 @@ class Game {
         assignInfoCardsToPlayers()
         eliminatePlayers()
         resetPlayerNightActions()
-        determineNightActors()
         setDeadPlayerCheck()
         setupInfoCards()
         
@@ -554,17 +553,17 @@ class Game {
             for player in availablePlayers {
                 if player.isNightActivePlayer {
                     let playerRole = player.roleType()
-                    if wolfRoles.contains(playerRole) {
+                    if wolfRoles.contains(playerRole) && werewolves >= 2{
                         if !alreadyAddedWerewolfTeamCard {
                             consolidatedPlayers.append(werewolfTeamPlayer)
                             alreadyAddedWerewolfTeamCard = true
                         }
                         
-                        //            } else if vampireList.contains(playerRole) {
-                        //                if !alreadyAddedVampireTeamCard {
-                        //                    consolidatedPlayers.append(vampireTeamPlayer)
-                        //                    alreadyAddedVampireTeamCard = true
-                        //                }
+//                    } else if vampireList.contains(playerRole) && vampires >= 2 {
+//                        if !alreadyAddedVampireTeamCard {
+//                            consolidatedPlayers.append(vampireTeamPlayer)
+//                            alreadyAddedVampireTeamCard = true
+//                    }
                         
                     } else if playerRole == .TheBlob {
                         if !alreadyAddedBlobTeamCard {
@@ -577,10 +576,12 @@ class Game {
                     }
                 }
             }
+        }
+        
             
-            if consolidatedPlayers.count > 0 {
-                consolidatedPlayers.sort(by: { ($0.rolePriority()) < ($1.rolePriority()) })
-            }
+            
+        if consolidatedPlayers.count > 0 {
+            consolidatedPlayers.sort(by: { ($0.rolePriority()) < ($1.rolePriority()) })
         }
         
         return consolidatedPlayers
@@ -647,6 +648,8 @@ class Game {
         _nightActors.removeAll()
         for actor in self.availablePlayers {
             if actor.isNightActivePlayer {
+                
+                // FIX THIS LOGIC!
                 if actor.roleType() == .Werewolf {
                     if actor.isAlive {
                         _nightActors.append(actor)

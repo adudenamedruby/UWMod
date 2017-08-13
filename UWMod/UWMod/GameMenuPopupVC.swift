@@ -53,7 +53,7 @@ class GameMenuPopupVC: UIViewController {
         
     }
     
-    @IBAction func okButtonPressed(_ sender: Any) {
+    @IBAction func endGameButtonPressed(_ sender: Any) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
         let endGameConfirm = storyboard.instantiateViewController(withIdentifier: "endGamePopup") as! EndGamePopupVC
         endGameConfirm.modalTransitionStyle = .crossDissolve
