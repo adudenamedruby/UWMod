@@ -32,13 +32,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nd Night Phase?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQQ-0I-u5l" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                <rect key="frame" x="61.5" y="466" width="251" height="36.5"/>
+                                <rect key="frame" x="61.5" y="465.5" width="251" height="36.5"/>
                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4y-IZ-EmM">
-                                <rect key="frame" x="212.5" y="555" width="50" height="50"/>
+                                <rect key="frame" x="212.5" y="554.5" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="42f-5z-xj9"/>
                                     <constraint firstAttribute="width" constant="50" id="Imd-Be-A26"/>
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JC-2X-veb">
-                                <rect key="frame" x="112.5" y="555" width="50" height="50"/>
+                                <rect key="frame" x="112.5" y="554.5" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="B3A-iB-wKo"/>
                                     <constraint firstAttribute="height" constant="50" id="a8k-GZ-kOU"/>
@@ -119,7 +119,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPT-mT-Ica">
                                                     <rect key="frame" x="0.0" y="0.0" width="330" height="226.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ADL-2L-x3K">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seer" translatesAutoresizingMaskIntoConstraints="NO" id="ADL-2L-x3K">
                                                             <rect key="frame" x="86.5" y="34" width="157.5" height="158"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="ADL-2L-x3K" secondAttribute="height" multiplier="1:1" id="6HI-eV-fOg"/>
@@ -332,5 +332,6 @@
         <image name="backArrow" width="512" height="512"/>
         <image name="forwardArrow" width="512" height="512"/>
         <image name="nighttime" width="1242" height="2208"/>
+        <image name="seer" width="277" height="512"/>
     </resources>
 </document>

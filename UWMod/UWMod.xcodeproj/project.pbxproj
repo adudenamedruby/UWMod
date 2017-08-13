@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1209820A1F26BBE700EC5D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120982091F26BBE700EC5D21 /* AppDelegate.swift */; };
 		1209820F1F26BBE700EC5D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1209820D1F26BBE700EC5D21 /* Main.storyboard */; };
-		120982111F26BBE700EC5D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 120982101F26BBE700EC5D21 /* Assets.xcassets */; };
 		120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120982121F26BBE700EC5D21 /* LaunchScreen.storyboard */; };
 		122FC68F1F37660600E0E2C9 /* EndGamePopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */; };
 		122FC6961F377BB200E0E2C9 /* BodyguardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122FC6951F377BB200E0E2C9 /* BodyguardView.swift */; };
@@ -18,6 +17,8 @@
 		122FC69E1F3927C500E0E2C9 /* SeerInspection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */; };
 		122FC6A01F392F9C00E0E2C9 /* SeerInspection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 122FC69F1F392F9C00E0E2C9 /* SeerInspection.xib */; };
 		123317D01F407F7A000C3260 /* GameMenuPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123317CF1F407F7A000C3260 /* GameMenuPopupVC.swift */; };
+		123317D21F408E22000C3260 /* RoleClarificationPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123317D11F408E22000C3260 /* RoleClarificationPopupVC.swift */; };
+		123317D41F40B832000C3260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 123317D31F40B832000C3260 /* Assets.xcassets */; };
 		123BD0D31F2F6BF600B99019 /* Popups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123BD0D21F2F6BF600B99019 /* Popups.storyboard */; };
 		123BD0D51F2F6C1600B99019 /* AlertsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0D41F2F6C1600B99019 /* AlertsVC.swift */; };
 		123BD0D71F2FE66400B99019 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0D61F2FE66400B99019 /* StringExtensions.swift */; };
@@ -90,7 +91,6 @@
 		120982061F26BBE700EC5D21 /* UWMod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UWMod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		120982091F26BBE700EC5D21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1209820E1F26BBE700EC5D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		120982101F26BBE700EC5D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		120982131F26BBE700EC5D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		120982151F26BBE700EC5D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGamePopupVC.swift; sourceTree = "<group>"; };
@@ -100,6 +100,8 @@
 		122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeerInspection.swift; sourceTree = "<group>"; };
 		122FC69F1F392F9C00E0E2C9 /* SeerInspection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeerInspection.xib; sourceTree = "<group>"; };
 		123317CF1F407F7A000C3260 /* GameMenuPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenuPopupVC.swift; sourceTree = "<group>"; };
+		123317D11F408E22000C3260 /* RoleClarificationPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleClarificationPopupVC.swift; sourceTree = "<group>"; };
+		123317D31F40B832000C3260 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		123BD0D21F2F6BF600B99019 /* Popups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popups.storyboard; sourceTree = "<group>"; };
 		123BD0D41F2F6C1600B99019 /* AlertsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsVC.swift; sourceTree = "<group>"; };
 		123BD0D61F2FE66400B99019 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		120982081F26BBE700EC5D21 /* UWMod */ = {
 			isa = PBXGroup;
 			children = (
+				123317D31F40B832000C3260 /* Assets.xcassets */,
 				1298C8A21F3DD15D00261779 /* Notes.rtf */,
 				12D15E1A1F2D2D0B0057905E /* Categories */,
 				12EC77F81F2BDBFA0026C667 /* Main App Files */,
@@ -205,7 +208,6 @@
 				12EC77CF1F26D4430026C667 /* Storyboards */,
 				12EC77F71F2BDBF20026C667 /* Utilities */,
 				12EC77D21F26D4BA0026C667 /* ViewControllers */,
-				120982101F26BBE700EC5D21 /* Assets.xcassets */,
 			);
 			path = UWMod;
 			sourceTree = "<group>";
@@ -252,9 +254,10 @@
 				124F74F91F368A0A00F03E49 /* ConfirmationPopup.swift */,
 				1261C2B21F325AF20099D759 /* EliminatePlayerVC.swift */,
 				122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */,
-				122FC6991F3912A500E0E2C9 /* VoteCounterVC.swift */,
-				7734718A1F3CF42500AED5AD /* SelectPlayerPopupVC.swift */,
 				123317CF1F407F7A000C3260 /* GameMenuPopupVC.swift */,
+				123317D11F408E22000C3260 /* RoleClarificationPopupVC.swift */,
+				7734718A1F3CF42500AED5AD /* SelectPlayerPopupVC.swift */,
+				122FC6991F3912A500E0E2C9 /* VoteCounterVC.swift */,
 			);
 			name = PopUpVCs;
 			sourceTree = "<group>";
@@ -479,7 +482,6 @@
 				120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */,
 				12EC77F61F2BDBE40026C667 /* DayPhase.storyboard in Resources */,
 				124F74EC1F3530A200F03E49 /* WerewolfTeamCell.xib in Resources */,
-				120982111F26BBE700EC5D21 /* Assets.xcassets in Resources */,
 				77B2B0071F34D7AC0032A36B /* Graveyard.xib in Resources */,
 				123BD0D31F2F6BF600B99019 /* Popups.storyboard in Resources */,
 				12EC77F41F2BDBD90026C667 /* NightPhase.storyboard in Resources */,
@@ -493,6 +495,7 @@
 				1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */,
 				123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */,
 				122FC6981F377BCE00E0E2C9 /* BodyguardView.xib in Resources */,
+				123317D41F40B832000C3260 /* Assets.xcassets in Resources */,
 				124F74F01F3549BB00F03E49 /* VillageTeamCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +511,7 @@
 				123BD0D51F2F6C1600B99019 /* AlertsVC.swift in Sources */,
 				77F9E1221F310CCE00E48211 /* RegularTextLabels.swift in Sources */,
 				124F74EF1F3549BB00F03E49 /* VillageTeamCell.swift in Sources */,
+				123317D21F408E22000C3260 /* RoleClarificationPopupVC.swift in Sources */,
 				12EC77D91F26DD250026C667 /* Constants.swift in Sources */,
 				12EC77E91F2BDAE00026C667 /* NightVC.swift in Sources */,
 				7734718B1F3CF42500AED5AD /* SelectPlayerPopupVC.swift in Sources */,

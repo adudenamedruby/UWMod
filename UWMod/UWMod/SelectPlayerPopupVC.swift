@@ -15,6 +15,7 @@ enum SelectPlayerReason {
     case WerewolfElimination
     case VillageElimination
     case ZombieLobotomization
+    case RoleClarification
 }
 
 class SelectPlayerPopupVC: UIViewController {
@@ -103,6 +104,12 @@ class SelectPlayerPopupVC: UIViewController {
                 
             } else if reason == .ZombieLobotomization {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
+            } else if reason == .RoleClarification {
+                let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+                let roleClarification = storyboard.instantiateViewController(withIdentifier: "roleClarificationPopupVC") as! RoleClarificationPopupVC
+                self.present(roleClarification, animated: true, completion: nil)
+        
             }
             
         } else {
@@ -167,6 +174,9 @@ class SelectPlayerPopupVC: UIViewController {
         case .ZombieLobotomization:
             populateZombieTargets()
             
+        case .RoleClarification:
+            populateRolesInGame()
+            
         }
         
     }
@@ -203,6 +213,9 @@ class SelectPlayerPopupVC: UIViewController {
             
         case .ZombieLobotomization:
             nc.post(name: NSNotification.Name(rawValue: ZombieLobotomyFailureNotification), object: nil)
+            
+        case .RoleClarification:
+            break
         }
     }
 }
@@ -222,7 +235,11 @@ extension SelectPlayerPopupVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
         
         let row = indexPath.row
-        cell.textLabel?.text = availablePlayers[row].name
+        if reason == .RoleClarification {
+            cell.textLabel?.text = availablePlayers[row].roleName()
+        } else {
+            cell.textLabel?.text = availablePlayers[row].name
+        }
         cell.textLabel?.textColor = STYLE.Brown
         cell.selectionStyle = .none
         
@@ -312,8 +329,51 @@ extension SelectPlayerPopupVC {
     }
 }
 
-
-
+extension SelectPlayerPopupVC {
+    
+    // ROLE CLARIFICATION
+    func populateRolesInGame() {
+        availablePlayers.removeAll()
+        
+        var villagerCount = 0
+        var vampireCount = 0
+        var werewolfCount = 0
+        var masonCount = 0
+        
+        for player in GAME.availablePlayers {
+            if player.roleType() == .Werewolf {
+                if werewolfCount == 0 {
+                    availablePlayers.append(player)
+                    werewolfCount += 1
+                }
+                
+            } else if player.roleType() == .Villager {
+                if villagerCount == 0 {
+                    availablePlayers.append(player)
+                    villagerCount += 1
+                }
+                
+            } else if player.roleType() == .Vampire {
+                if vampireCount == 0 {
+                    availablePlayers.append(player)
+                    vampireCount += 1
+                }
+            
+            } else if player.roleType() == .Mason {
+                if masonCount == 0 {
+                    availablePlayers.append(player)
+                    masonCount += 1
+                }
+                
+            } else {
+                availablePlayers.append(player)
+            }
+            
+        }
+        
+        availablePlayers.sort(by: { $0.roleName() < $1.roleName() } )
+    }
+}
 
 
 
