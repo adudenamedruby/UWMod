@@ -60,6 +60,9 @@ class SeerInspection: UIView {
                 if player.roleType() == .WolfMan {
                     tempTeamAssignment = "Villager"
                     
+                } else if player.roleType() == .Lycan {
+                    tempTeamAssignment = "Werewolf"
+                    
                 } else if GAME.wolfRoles.contains(player.roleType()){
                     tempTeamAssignment = "Werewolf"
                     
