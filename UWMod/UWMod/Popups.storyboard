@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="8U9-mB-IlF" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="10" width="220" height="36.5"/>
+                                                <rect key="frame" x="15" y="10.5" width="220" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -146,7 +147,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ELd-WD-2he" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="10" width="220" height="36.5"/>
+                                                <rect key="frame" x="15" y="10.5" width="220" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -286,7 +287,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Game?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpw-Lo-5ah" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="44" y="10" width="163.5" height="36.5"/>
+                                                <rect key="frame" x="43.5" y="10.5" width="163.5" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -397,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ku-Va-P8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="797"/>
+            <point key="canvasLocation" x="996" y="1451"/>
         </scene>
         <!--Game Menu PopupVC-->
         <scene sceneID="Vs1-kY-8Th">
@@ -416,13 +417,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3V-Y2-8nh">
-                                <rect key="frame" x="62" y="233" width="250" height="200"/>
+                                <rect key="frame" x="62" y="218" width="250" height="230"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKg-yv-nLj">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="XUc-ek-2Md" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="10" width="220" height="36.5"/>
+                                                <rect key="frame" x="15" y="10.5" width="220" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -437,7 +438,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kG-D9-C3W">
-                                        <rect key="frame" x="105" y="145" width="40" height="40"/>
+                                        <rect key="frame" x="105" y="175" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="9zN-1k-Op1"/>
                                             <constraint firstAttribute="width" constant="40" id="oFM-5G-Ynb"/>
@@ -448,11 +449,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QY-oD-hfk" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="90" width="150" height="25"/>
+                                        <rect key="frame" x="35" y="115" width="180" height="35"/>
                                         <color key="backgroundColor" red="0.61960784310000006" green="0.078431372550000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="JrI-wf-3Ls"/>
-                                            <constraint firstAttribute="width" constant="150" id="XfI-wi-FKI"/>
+                                            <constraint firstAttribute="height" constant="35" id="JrI-wf-3Ls"/>
+                                            <constraint firstAttribute="width" constant="180" id="XfI-wi-FKI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                         <state key="normal" title="End Game">
@@ -471,18 +472,47 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkM-fb-kwY" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="35" y="72" width="180" height="35"/>
+                                        <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="caS-cp-sd2"/>
+                                            <constraint firstAttribute="height" constant="35" id="y7U-8H-Qah"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                        <state key="normal" title="Game Roles">
+                                            <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.090196078430000007" green="0.49803921569999998" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="inspectGameRoles:" destination="LUX-6k-zVh" eventType="touchUpInside" id="fsO-2e-Zr5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="xkM-fb-kwY" firstAttribute="centerX" secondItem="F3V-Y2-8nh" secondAttribute="centerX" id="1Np-sW-Ukj"/>
                                     <constraint firstItem="1QY-oD-hfk" firstAttribute="centerX" secondItem="F3V-Y2-8nh" secondAttribute="centerX" id="44K-OH-xjE"/>
                                     <constraint firstAttribute="width" constant="250" id="53G-0G-dKQ"/>
                                     <constraint firstAttribute="trailing" secondItem="LKg-yv-nLj" secondAttribute="trailing" id="BMJ-oN-azC"/>
-                                    <constraint firstItem="9kG-D9-C3W" firstAttribute="top" secondItem="1QY-oD-hfk" secondAttribute="bottom" constant="30" id="Re5-dK-BHg"/>
+                                    <constraint firstItem="9kG-D9-C3W" firstAttribute="top" secondItem="1QY-oD-hfk" secondAttribute="bottom" constant="25" id="Re5-dK-BHg"/>
                                     <constraint firstItem="LKg-yv-nLj" firstAttribute="top" secondItem="F3V-Y2-8nh" secondAttribute="top" id="VMN-pt-DTP"/>
                                     <constraint firstItem="9kG-D9-C3W" firstAttribute="centerX" secondItem="F3V-Y2-8nh" secondAttribute="centerX" id="Xeb-bk-Y9O"/>
                                     <constraint firstAttribute="bottom" secondItem="9kG-D9-C3W" secondAttribute="bottom" constant="15" id="ZTf-Qj-wK8"/>
                                     <constraint firstItem="LKg-yv-nLj" firstAttribute="leading" secondItem="F3V-Y2-8nh" secondAttribute="leading" id="f9Y-Xu-Te8"/>
-                                    <constraint firstAttribute="height" constant="200" id="l9o-Ue-GiJ"/>
+                                    <constraint firstAttribute="height" constant="230" id="l9o-Ue-GiJ"/>
+                                    <constraint firstItem="1QY-oD-hfk" firstAttribute="top" secondItem="xkM-fb-kwY" secondAttribute="bottom" constant="8" id="orC-TL-1Zq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -505,6 +535,106 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pIn-fi-YQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="996" y="124.58770614692655"/>
+        </scene>
+        <!--Role Clarification PopupVC-->
+        <scene sceneID="aS4-bY-PmV">
+            <objects>
+                <viewController storyboardIdentifier="roleClarificationPopupVC" modalTransitionStyle="flipHorizontal" modalPresentationStyle="overCurrentContext" id="N7s-0f-7NI" customClass="RoleClarificationPopupVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y3K-CP-YTN"/>
+                        <viewControllerLayoutGuide type="bottom" id="wdI-i0-loR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Iwo-PG-D4Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMi-lv-Cyb">
+                                <rect key="frame" x="37" y="66" width="300" height="534"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmZ-dM-xTE">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="208.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eHJ-A0-Unr">
+                                                <rect key="frame" x="63.5" y="18" width="173" height="172.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="eHJ-A0-Unr" secondAttribute="height" multiplier="200:199" id="6IH-4A-z2p"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="eHJ-A0-Unr" firstAttribute="height" secondItem="gmZ-dM-xTE" secondAttribute="height" multiplier="0.83" id="0sj-YN-RNU"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eHJ-A0-Unr" secondAttribute="bottom" constant="15" id="453-oi-dVP"/>
+                                            <constraint firstItem="eHJ-A0-Unr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gmZ-dM-xTE" secondAttribute="leading" constant="20" id="Bpc-fo-iG9"/>
+                                            <constraint firstItem="eHJ-A0-Unr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gmZ-dM-xTE" secondAttribute="top" constant="15" id="UP4-GD-9b0"/>
+                                            <constraint firstItem="eHJ-A0-Unr" firstAttribute="centerX" secondItem="gmZ-dM-xTE" secondAttribute="centerX" id="goi-Ug-6bk"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eHJ-A0-Unr" secondAttribute="trailing" constant="20" id="yby-0L-S9n"/>
+                                            <constraint firstItem="eHJ-A0-Unr" firstAttribute="centerY" secondItem="gmZ-dM-xTE" secondAttribute="centerY" id="z7E-Zn-79e"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ni-ks-VWo">
+                                        <rect key="frame" x="130" y="479" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Mk7-Ag-qKH"/>
+                                            <constraint firstAttribute="width" constant="40" id="i7w-AU-zgd"/>
+                                        </constraints>
+                                        <state key="normal" image="backArrow"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="N7s-0f-7NI" eventType="touchUpInside" id="33U-wV-yFs"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="4BW-PY-rCd" customClass="OldBrownRole" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="216" width="280" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
+                                        <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4BW-PY-rCd" secondAttribute="trailing" constant="10" id="DZo-iX-t8Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Ni-ks-VWo" secondAttribute="bottom" constant="15" id="Mx3-J1-Rs6"/>
+                                    <constraint firstItem="6Ni-ks-VWo" firstAttribute="centerX" secondItem="eMi-lv-Cyb" secondAttribute="centerX" id="cMJ-iW-o7B"/>
+                                    <constraint firstItem="4BW-PY-rCd" firstAttribute="top" secondItem="gmZ-dM-xTE" secondAttribute="bottom" constant="7.5" id="eEX-ax-49E"/>
+                                    <constraint firstAttribute="trailing" secondItem="gmZ-dM-xTE" secondAttribute="trailing" id="evp-Ou-foQ"/>
+                                    <constraint firstItem="gmZ-dM-xTE" firstAttribute="top" secondItem="eMi-lv-Cyb" secondAttribute="top" id="uTD-W2-cEV"/>
+                                    <constraint firstItem="4BW-PY-rCd" firstAttribute="leading" secondItem="eMi-lv-Cyb" secondAttribute="leading" constant="10" id="yby-ez-aIn"/>
+                                    <constraint firstItem="gmZ-dM-xTE" firstAttribute="height" secondItem="eMi-lv-Cyb" secondAttribute="height" multiplier="0.39" id="zPW-gT-wDl"/>
+                                    <constraint firstItem="gmZ-dM-xTE" firstAttribute="leading" secondItem="eMi-lv-Cyb" secondAttribute="leading" id="zsy-dK-Eul"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eM-TL-6Z2">
+                                <rect key="frame" x="47" y="328.5" width="280" height="196.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Ni-ks-VWo" firstAttribute="top" secondItem="5eM-TL-6Z2" secondAttribute="bottom" constant="20" id="1Jy-rd-4Lm"/>
+                            <constraint firstItem="eMi-lv-Cyb" firstAttribute="centerX" secondItem="Iwo-PG-D4Z" secondAttribute="centerX" id="6Rq-dW-wm8"/>
+                            <constraint firstItem="eMi-lv-Cyb" firstAttribute="centerY" secondItem="Iwo-PG-D4Z" secondAttribute="centerY" id="AC3-Yt-hrV"/>
+                            <constraint firstItem="eMi-lv-Cyb" firstAttribute="height" secondItem="Iwo-PG-D4Z" secondAttribute="height" multiplier="0.8" id="LWN-ym-xEh"/>
+                            <constraint firstItem="5eM-TL-6Z2" firstAttribute="leading" secondItem="4BW-PY-rCd" secondAttribute="leading" id="fiQ-21-H89"/>
+                            <constraint firstItem="eMi-lv-Cyb" firstAttribute="width" secondItem="Iwo-PG-D4Z" secondAttribute="width" multiplier="0.8" id="la4-kd-4y6"/>
+                            <constraint firstItem="5eM-TL-6Z2" firstAttribute="trailing" secondItem="4BW-PY-rCd" secondAttribute="trailing" id="qK7-vq-NY1"/>
+                            <constraint firstItem="5eM-TL-6Z2" firstAttribute="top" secondItem="4BW-PY-rCd" secondAttribute="bottom" constant="10" id="tWb-SE-Qr6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerTitleLabel" destination="4BW-PY-rCd" id="TkW-Ur-yrj"/>
+                        <outlet property="headerView" destination="gmZ-dM-xTE" id="3rJ-Pa-cxt"/>
+                        <outlet property="mainCardView" destination="eMi-lv-Cyb" id="MLF-cP-pFc"/>
+                        <outlet property="roleDescriptionLabel" destination="5eM-TL-6Z2" id="Ce4-mk-mb3"/>
+                        <outlet property="roleImage" destination="eHJ-A0-Unr" id="762-TP-Qge"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZEz-aV-SMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="783.95802098950526"/>
         </scene>
         <!--Vote CounterVC-->
         <scene sceneID="xHB-7p-vcw">
@@ -529,7 +659,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="lAz-N9-vBf" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="10" width="245" height="36.5"/>
+                                                <rect key="frame" x="15" y="10.5" width="245" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -734,7 +864,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="layer Elimination" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ch3-aj-o6o" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="12.5" width="280" height="36.5"/>
+                                                <rect key="frame" x="10" y="12" width="280" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

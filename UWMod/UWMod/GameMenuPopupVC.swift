@@ -43,6 +43,16 @@ class GameMenuPopupVC: UIViewController {
     
     // MARK: - Button functionality
     
+    @IBAction func inspectGameRoles(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
+        let selectRole = storyboard.instantiateViewController(withIdentifier: "selectPlayerPopupVC") as! SelectPlayerPopupVC
+        selectRole.reason = .RoleClarification
+        
+        selectRole.modalTransitionStyle = .crossDissolve
+        self.present(selectRole, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func okButtonPressed(_ sender: Any) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
         let endGameConfirm = storyboard.instantiateViewController(withIdentifier: "endGamePopup") as! EndGamePopupVC
