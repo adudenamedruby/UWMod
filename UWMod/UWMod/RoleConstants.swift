@@ -21,6 +21,7 @@ let pregame_tempRoles: [Role] = [BEHOLDER,
                                  MINION,
                                  PACIFIST,
                                  SEER,
+                                 THE_BLOB,
                                  THE_COUNT,
                                  THING,
                                  VILLAGE_IDIOT,
@@ -93,6 +94,10 @@ let PACIFIST = Role(name: "Pacifist", type: .Pacifist, description: "You must al
 
 
 let SEER = Role(name: "Seer", type: .Seer, description: "Each night choose a player to learn if he is a Villager or a Werewolf.", roleExplanation: "Each night, the Seer points at a player, and the Moderator shows her a 'V' for Villager or 'W' for Werewolf. To be extra clear that the Seer knows that a targeted player is a Werewolf, the Moderator may use another indicator (such as a thumbs up and thumbs down).", impact: 4, priority: 181, powerChoice: false, team: [.TeamVillage], availableEffects: [.Protection], image: #imageLiteral(resourceName: "seer"), isNightActiveRole: .NightActiveRole)
+
+
+
+let THE_BLOB = Role(name: "The Blob", type: .TheBlob, description: "Each night, the player to the right of The Blob is absorbed. If all players are part of The Blob, you win.", roleExplanation: "Each night, the Blob absorbs one player to the right of the Blob. If all players are part of The Blob, The Blob player wins, even if he has been eliminated.", impact: -1, priority: 151, powerChoice: false, team: [.TeamBlob], availableEffects: [], image: #imageLiteral(resourceName: "theBlob"), isNightActiveRole: .NightActiveRole)
 
 
 
@@ -172,5 +177,9 @@ let ZOMBIE = Role(name: "Zombie", type: .Zombie, description: "Each night, pick 
 
 
 // MARK: - Team roles
+
+let BLOB_TEAM = Role(name: "The Blob", type: .TheBlob, description: "Each night, the player to the right of The Blob is absorbed. If all players are part of The Blob, the original Blob players wins.", roleExplanation: "Each night, the Blob absorbs one player to the right of the Blob. If all players are part of The Blob, The Blob player wins, even if he has been eliminated.", impact: -1, priority: 151, powerChoice: false, team: [.TeamBlob], availableEffects: [], image: #imageLiteral(resourceName: "theBlob"), isNightActiveRole: .NightActiveRole)
+
+
 
 let WEREWOLF_TEAM = Role(name: "The Werewolves", type: .Werewolf, description: "All werewolves wake up and choose a player to eliminate.", roleExplanation: "The Werewolf team members learn the identity of the other Werewolves the first night. Every night after the first night, the Werewolves must agree on a target to eliminate. If the Werewolves spend more than a minute determining a target for the night, they do not get to choose a target that night. The Werewolves may not target another Werewolf at night. Werewolves try to keep their identity a secret during the day.", impact: 0, priority: 25, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "werewolf"), isNightActiveRole: .NightActiveRole)

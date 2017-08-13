@@ -54,6 +54,7 @@ class Game {
     private var _werewolvesAreDiseased:             Bool
     private var _wolfRoles:                         [RoleType]
     var aWerewolfHasBeenSlain:                      Bool
+    var theBlobHasAbsorbed:                         Bool
 
     
     // Custom, private getters
@@ -165,6 +166,7 @@ class Game {
                                                .FruitBrute,
                                                .Wolverine]
         self.aWerewolfHasBeenSlain          = false
+        self.theBlobHasAbsorbed             = false
         
     }
 
@@ -390,6 +392,7 @@ class Game {
         setDeadPlayerCheck()
         setupInfoCards()
         
+        theBlobHasAbsorbed = false
         _currentNight += 1
     }
     
@@ -520,19 +523,25 @@ class Game {
         _consolidatedNightActors.removeAll()
         _consolidatedNightActors = buildConsolidatedNightActors(withWerevolvesPresent: roleCount.werewolves,
                                                                 withVampiresPresent: roleCount.vampires,
+                                                                withPluralBlob: roleCount.theBlob,
                                                                 wolfList: _wolfRoles,
                                                                 vampireList: vampireList)
     }
     
-    private func buildConsolidatedNightActors(withWerevolvesPresent werewolves: Int, withVampiresPresent vampires: Int, wolfList: [RoleType], vampireList: [RoleType]) -> [Player] {
+    private func buildConsolidatedNightActors(withWerevolvesPresent werewolves: Int, withVampiresPresent vampires: Int, withPluralBlob theBlob: Int, wolfList: [RoleType], vampireList: [RoleType]) -> [Player] {
         
         var consolidatedPlayers: [Player]           = []
         var alreadyAddedWerewolfTeamCard            = false
+        var alreadyAddedBlobTeamCard                = false
 //        var alreadyAddedVampireTeamCard             = false
         
         let werewolfTeamPlayer = createTeamPlayer(roleCount: werewolves,
                                                   roleList: wolfList,
                                                   teamType: .TeamWerewolf)
+        
+        let blobTeamPlayer = createTeamPlayer(roleCount: theBlob,
+                                              teamType: .TeamBlob)
+        
 //        let vampireTeamPlayer = createTeamPlayer(roleCount: vampires,
 //                                                 roleList: vampireList,
 //                                                 teamType: .TeamVamprie)
@@ -541,7 +550,7 @@ class Game {
         wolfRoles.remove(at: (wolfRoles.index(of: .AlphaWolf))!)
         
         // Only create consolidated players if there is a need.
-        if werewolves >= 2 || vampires >= 2 {
+        if werewolves >= 2 || vampires >= 2 || theBlob > 1 {
             for player in availablePlayers {
                 if player.isNightActivePlayer {
                     let playerRole = player.roleType()
@@ -557,6 +566,12 @@ class Game {
                         //                    alreadyAddedVampireTeamCard = true
                         //                }
                         
+                    } else if playerRole == .TheBlob {
+                        if !alreadyAddedBlobTeamCard {
+                            consolidatedPlayers.append(blobTeamPlayer)
+                            alreadyAddedBlobTeamCard = true
+                        }
+                        
                     } else {
                         consolidatedPlayers.append(player)
                     }
@@ -571,14 +586,19 @@ class Game {
         return consolidatedPlayers
     }
     
-    private func createTeamPlayer(roleCount: Int, roleList: [RoleType], teamType: UWTeam) -> Player{
+    private func createTeamPlayer(roleCount: Int, roleList: [RoleType] = [], teamType: UWTeam) -> Player{
         // Create a Team Player to present as a card.
         var newName                         = ""
         let teamPlayer: Player              = Player(name: newName)
         
         if roleCount >= 2 {
             for player in livingActors {
-                if roleList.contains(player.roleType()) {
+                
+                if player.team.contains(.TeamBlob) && roleList.count == 0 {
+                    let nameToAdd = fetchSinglePlayer(player: player, withRole: false, separatedByComma: true)
+                    newName = newName + nameToAdd
+                    
+                } else if roleList.contains(player.roleType()) {
                     let nameToAdd = fetchSinglePlayer(player: player, withRole: false, separatedByComma: true)
                     newName = newName + nameToAdd
                 }
@@ -594,14 +614,17 @@ class Game {
             teamPlayer.assignRole(role: WEREWOLF_TEAM)
         } else if teamType == .TeamVamprie {
             //teamPlayer.assignRole(role: VAMPIRE_TEAM)
+        } else if teamType == .TeamBlob {
+            teamPlayer.assignRole(role: BLOB_TEAM)
         }
         
         return teamPlayer
     }
     
-    private func checkIfShouldConsolitade(wolfList: [RoleType], vampireList: [RoleType]) -> (werewolves: Int, vampires: Int) {
+    private func checkIfShouldConsolitade(wolfList: [RoleType], vampireList: [RoleType]) -> (werewolves: Int, vampires: Int, theBlob: Int) {
         var werewolves = 0
         var vampires = 0
+        var theBlob = 0
         
         for player in livingActors {
             
@@ -611,9 +634,13 @@ class Game {
             } else if vampireList.contains(playerRole) {
                 vampires += 1
             }
+            
+            if player.team.contains(.TeamBlob) {
+                theBlob += 1
+            }
         }
         
-        return (werewolves, vampires)
+        return (werewolves, vampires, theBlob)
     }
     
     private func regularNightActorFill() {
