@@ -100,7 +100,7 @@
         <scene sceneID="bbH-zT-s6u">
             <objects>
                 <collectionViewController storyboardIdentifier="cardView" modalTransitionStyle="crossDissolve" id="Qeg-zw-pMz" customClass="NightVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="HbN-T4-Ls4">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="HbN-T4-Ls4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -119,7 +119,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPT-mT-Ica">
                                                     <rect key="frame" x="0.0" y="0.0" width="330" height="226.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ADL-2L-x3K">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seer" translatesAutoresizingMaskIntoConstraints="NO" id="ADL-2L-x3K">
                                                             <rect key="frame" x="86.5" y="34" width="157.5" height="158"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="ADL-2L-x3K" secondAttribute="height" multiplier="1:1" id="6HI-eV-fOg"/>
@@ -205,7 +205,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="278" height="63"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ole Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8e8-N3-50z" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                                            <rect key="frame" x="81.5" y="13.5" width="114" height="36.5"/>
+                                                                            <rect key="frame" x="81.5" y="14" width="114" height="36.5"/>
                                                                             <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                                             <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <nil key="highlightedColor"/>
@@ -332,5 +332,6 @@
         <image name="backArrow" width="512" height="512"/>
         <image name="forwardArrow" width="512" height="512"/>
         <image name="nighttime" width="1242" height="2208"/>
+        <image name="seer" width="277" height="512"/>
     </resources>
 </document>
