@@ -58,9 +58,12 @@ class Player {
     
     public func assignRole(role: Role) {
         self.role                           = role
-        self.team                           = role.team
         self.isNightActivePlayer            = role.isNightActiveRole.currentStatus
         self.isAssigned                     = true
+        
+        for currentTeam in role.team {
+            self.team.append(currentTeam)
+        }
     }
     
     public func addToTeam(team: UWTeam) {
