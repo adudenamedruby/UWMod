@@ -17,6 +17,7 @@ enum SelectPlayerReason {
     case ZombieLobotomization
     case RoleClarification
     case BlobAbsorbtion
+    case JoinTheCult
 }
 
 class SelectPlayerPopupVC: UIViewController {
@@ -114,6 +115,9 @@ class SelectPlayerPopupVC: UIViewController {
             } else if reason == .BlobAbsorbtion {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: nil, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
+            } else if reason == .JoinTheCult {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: nil, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
             }
             
         } else {
@@ -183,6 +187,9 @@ class SelectPlayerPopupVC: UIViewController {
          
         case .BlobAbsorbtion:
             populateNonBlobPlayers()
+            
+        case .JoinTheCult:
+            populateNonCultPlayers()
         }
         
     }
@@ -222,6 +229,9 @@ class SelectPlayerPopupVC: UIViewController {
             
         case .BlobAbsorbtion:
             nc.post(name: NSNotification.Name(rawValue: BlobAbsorbtionFailureNotification), object: nil)
+            
+        case .JoinTheCult:
+            nc.post(name: NSNotification.Name(rawValue: JoinCultFailureNotification), object: nil)
             
         case .RoleClarification:
             break
@@ -354,6 +364,22 @@ extension SelectPlayerPopupVC {
         
         for player in playerRoster {
             if !player.team.contains(.TeamBlob) {
+                availablePlayers.append(player)
+            }
+        }
+        
+        //availablePlayers.sort(by: { $0.name < $1.name } )
+    }
+}
+
+extension SelectPlayerPopupVC {
+    
+    // CULT LEADER BRAINWASHING!
+    func populateNonCultPlayers() {
+        availablePlayers.removeAll()
+        
+        for player in GAME.livingActors {
+            if !(player.team.contains(.TeamCult)) {
                 availablePlayers.append(player)
             }
         }

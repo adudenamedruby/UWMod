@@ -13,6 +13,7 @@ import UIKit
 
 let pregame_tempRoles: [Role] = [BEHOLDER,
                                  BODYGUARD,
+                                 CULTLEADER,
                                  DISEASED,
                                  INSOMNIAC,
                                  LYCAN,
@@ -62,6 +63,10 @@ let BEHOLDER = Role(name: "Beholder", type: .Beholder, description: "The first n
 
 
 let BODYGUARD = Role(name: "Bodyguard", type: .Bodyguard, description: "Each night, choose a player who cannot be eliminated that night. (Must be different.)", roleExplanation: "The Bodyguard chooses a different player each night to protect (but not the same player twice in a row). That player cannot be eliminated that night. He may not choose himself.", impact: 3, priority: 52, powerChoice: false, team: [.TeamVillage], availableEffects: [.Protection], image: #imageLiteral(resourceName: "bodyguard"), isNightActiveRole: .NightActiveRole)
+
+
+
+let CULTLEADER = Role(name: "Cult Leader", type: .CultLeader, description: "Every night, choose a player to join your cult. If all players in the game are in the cult, you win.", roleExplanation: "The Cult Leader picks a player each night to add to the cult (players picked do not know they are in the cult). The Cult Leader only wins if all players left in the game (not necessarily including himself) are part of the cult. Normal victory conditions for the other teams are still present.", impact: 1, priority: 70, powerChoice: false, team: [.TeamCult], availableEffects: [], image: #imageLiteral(resourceName: "cultLeader"), isNightActiveRole: .NightActiveRole)
 
 
 

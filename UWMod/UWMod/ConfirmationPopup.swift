@@ -71,6 +71,10 @@ class ConfirmationPopup: UIViewController {
                 headerTitle             = "Confirm Absorbiton"
                 alternateAlertText      = "Are you sure you want to absorb \(chosenPlayer.name)?"
                 
+            } else if reason            == .JoinTheCult {
+                headerTitle             = "Confirm Brainwashing"
+                alternateAlertText      = "Are you sure \(chosenPlayer.name)'s joining the Cult?"
+                
             }
         }
         
@@ -135,6 +139,11 @@ class ConfirmationPopup: UIViewController {
                     chosenPlayer.addToTeam(team: .TeamBlob)
                     GAME.theBlobHasAbsorbed = true
                 }
+                
+            } else if reason == .JoinTheCult {
+                chosenPlayer.addToTeam(team: .TeamCult)
+                actingPlayer?.hasActedTonight = true
+                
             }
     
         }

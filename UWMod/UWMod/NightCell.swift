@@ -213,6 +213,9 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
                 
             } else if (player?.team.contains(.TeamBlob))! && !GAME.theBlobHasAbsorbed {
                 presentBlobView()
+                
+            } else if player?.roleType() == .CultLeader && !(player?.hasActedTonight)! {
+                presentJoinCultView()
             }
         }
     }
@@ -255,5 +258,12 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         let localizedActionView = BlobAbsorbtion(frame: actionViewFrame)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
+    }
+    
+    private func presentJoinCultView() {
+        let localizedActionView = JoinCultView(frame: actionViewFrame)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
+
     }
 }

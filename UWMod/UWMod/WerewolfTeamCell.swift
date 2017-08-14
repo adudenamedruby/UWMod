@@ -50,7 +50,7 @@ class WerewolfTeamCell: UITableViewCell {
     
     func configureCell() {
         
-        let playerInfo                          = GAME.retrieveTeamVSTotalNumbers(team: .TeamVillage)
+        let playerInfo                          = GAME.retrieveTeamVSTotalNumbers(team: .TeamWerewolf)
         let totalPlayers                        = playerInfo.total
         let teamTotal                           = playerInfo.team
         
