@@ -532,7 +532,7 @@ class Game {
         var consolidatedPlayers: [Player]           = []
         var alreadyAddedWerewolfTeamCard            = false
         var alreadyAddedBlobTeamCard                = false
-//        var alreadyAddedVampireTeamCard             = false
+        var alreadyAddedVampireTeamCard             = false
         
         let werewolfTeamPlayer = createTeamPlayer(roleCount: werewolves,
                                                   roleList: wolfList,
@@ -541,37 +541,74 @@ class Game {
         let blobTeamPlayer = createTeamPlayer(roleCount: theBlob,
                                               teamType: .TeamBlob)
         
-//        let vampireTeamPlayer = createTeamPlayer(roleCount: vampires,
-//                                                 roleList: vampireList,
-//                                                 teamType: .TeamVamprie)
+        let vampireTeamPlayer = createTeamPlayer(roleCount: vampires,
+                                                 roleList: vampireList,
+                                                 teamType: .TeamVamprie)
         
         var wolfRoles = wolfList
         wolfRoles.remove(at: (wolfRoles.index(of: .AlphaWolf))!)
         
         // Only create consolidated players if there is a need.
-        if werewolves >= 2 || vampires >= 2 || theBlob > 1 {
-            for player in availablePlayers {
+        if werewolves >= 2 || vampires >= 2 {
+            for player in livingActors {
                 if player.isNightActivePlayer {
+                    
                     let playerRole = player.roleType()
-                    if wolfRoles.contains(playerRole) && werewolves >= 2{
+                    if wolfRoles.contains(playerRole) && werewolves >= 2 {
                         if !alreadyAddedWerewolfTeamCard {
                             consolidatedPlayers.append(werewolfTeamPlayer)
                             alreadyAddedWerewolfTeamCard = true
                         }
                         
-//                    } else if vampireList.contains(playerRole) && vampires >= 2 {
-//                        if !alreadyAddedVampireTeamCard {
-//                            consolidatedPlayers.append(vampireTeamPlayer)
-//                            alreadyAddedVampireTeamCard = true
-//                    }
+                    } else if vampireList.contains(playerRole) && vampires >= 2 {
+                        if !alreadyAddedVampireTeamCard {
+                            consolidatedPlayers.append(vampireTeamPlayer)
+                            alreadyAddedVampireTeamCard = true
+                        }
                         
-                    } else if playerRole == .TheBlob {
+                    } else {
+                        if player.roleType() != .TheBlob {
+                            consolidatedPlayers.append(player)
+                        }
+                    }
+                }
+            }
+        }
+
+        // Deal with the Blob only if it's in the game as a role.
+        if theBlob > 0 {
+            for player in livingActors {
+                if player.team.contains(.TeamBlob) {
+                    
+                    if theBlob == 1 && !alreadyAddedBlobTeamCard {
+                        if player.roleType() == .TheBlob {
+                            if playerHasNotBeenAddedToConsolitedList(player: player, list: consolidatedPlayers, werewolves: werewolves, vampires: vampires, wolfRoles: wolfRoles, vampireRoles: vampireList) {
+                                consolidatedPlayers.append(player)
+                            }
+                            
+                        } else if player.team.contains(.TeamBlob) {
+                            consolidatedPlayers.append(blobTeamPlayer)
+                            if playerHasNotBeenAddedToConsolitedList(player: player, list: consolidatedPlayers, werewolves: werewolves, vampires: vampires, wolfRoles: wolfRoles, vampireRoles: vampireList) {
+                                consolidatedPlayers.append(player)
+                            }                            }
+                        
+                        alreadyAddedBlobTeamCard = true
+                        
+                    } else if theBlob >= 2 {
                         if !alreadyAddedBlobTeamCard {
                             consolidatedPlayers.append(blobTeamPlayer)
                             alreadyAddedBlobTeamCard = true
                         }
                         
-                    } else {
+                        if player.roleType() != .TheBlob {
+                            if playerHasNotBeenAddedToConsolitedList(player: player, list: consolidatedPlayers, werewolves: werewolves, vampires: vampires, wolfRoles: wolfRoles, vampireRoles: vampireList) {
+                                consolidatedPlayers.append(player)
+                            }
+                        }
+                    }
+                    
+                } else {
+                    if playerHasNotBeenAddedToConsolitedList(player: player, list: consolidatedPlayers, werewolves: werewolves, vampires: vampires, wolfRoles: wolfRoles, vampireRoles: vampireList) {
                         consolidatedPlayers.append(player)
                     }
                 }
@@ -587,12 +624,33 @@ class Game {
         return consolidatedPlayers
     }
     
+    private func playerHasNotBeenAddedToConsolitedList(player: Player, list: [Player], werewolves: Int, vampires: Int, wolfRoles: [RoleType], vampireRoles: [RoleType]) -> Bool {
+        
+        if list.contains(where: { $0 === player })  { return false }
+        if !player.isNightActivePlayer              { return false }
+        
+        if wolfRoles.contains(player.roleType()) {
+            if werewolves >= 2                      { return false }
+        }
+        
+        if vampireRoles.contains(player.roleType()) {
+            if vampires >= 2                        { return false }
+        }
+        
+        return true
+    }
+    
     private func createTeamPlayer(roleCount: Int, roleList: [RoleType] = [], teamType: UWTeam) -> Player{
         // Create a Team Player to present as a card.
         var newName                         = ""
         let teamPlayer: Player              = Player(name: newName)
+        var roleCountPass                   = 2
         
-        if roleCount >= 2 {
+        if teamType == .TeamBlob {
+            roleCountPass = 1
+        }
+        
+        if roleCount >= roleCountPass {
             for player in livingActors {
                 
                 if player.team.contains(.TeamBlob) && roleList.count == 0 {
