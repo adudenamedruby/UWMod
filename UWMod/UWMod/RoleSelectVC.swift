@@ -88,6 +88,23 @@ class RoleSelectVC: UIViewController {
     
     @IBAction func selectRoleAffiliation(_ sender: Any) {
         collectionView.reloadData()
+        
+        // select the cells.
+        if teamChoiceControl.selectedSegmentIndex == 0 {
+            for index in selectedVillageIndexPaths {
+                collectionView.selectItem(at: index, animated: false, scrollPosition: .top)
+            }
+            
+        } else if teamChoiceControl.selectedSegmentIndex == 1 {
+            for index in selectedWerewolfIndexPaths {
+                collectionView.selectItem(at: index, animated: false, scrollPosition: .top)
+            }
+            
+        } else if teamChoiceControl.selectedSegmentIndex == 2 {
+            for index in selectedOtherIndexPaths {
+                collectionView.selectItem(at: index, animated: false, scrollPosition: .top)
+            }
+        }
     }
     
     
@@ -283,6 +300,7 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
         }
         
         cell.configureCell()
+        // Select the cell.
         
         return cell
     }
