@@ -22,6 +22,7 @@ let pregame_tempRoles: [Role] = [BEHOLDER,
                                  MINION,
                                  PACIFIST,
                                  SEER,
+                                 SORCERESS,
                                  THE_BLOB,
                                  THE_COUNT,
                                  THING,
@@ -99,6 +100,10 @@ let PACIFIST = Role(name: "Pacifist", type: .Pacifist, description: "You must al
 
 
 let SEER = Role(name: "Seer", type: .Seer, description: "Each night choose a player to learn if he is a Villager or a Werewolf.", roleExplanation: "Each night, the Seer points at a player, and the Moderator shows her a 'V' for Villager or 'W' for Werewolf. To be extra clear that the Seer knows that a targeted player is a Werewolf, the Moderator may use another indicator (such as a thumbs up and thumbs down).", impact: 4, priority: 181, powerChoice: false, team: [.TeamVillage], availableEffects: [.Protection], image: #imageLiteral(resourceName: "seer"), isNightActiveRole: .NightActiveRole)
+
+
+
+let SORCERESS = Role(name: "Sorceress", type: .Sorceress, description: "Each night, you wake up and try to find the Seer.", roleExplanation: "The Sorceress looks for the Seer each night (the Moderator shows a thumbs up if the Sorceress points to the Seer). The Werewolves do not know who the Sorceress is, and the Sorceress does not know who the Werewolves are. The Seer sees the Sorceress as a villager.", impact: -3, priority: 190, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "sorceress"), isNightActiveRole: .NightActiveRole)
 
 
 

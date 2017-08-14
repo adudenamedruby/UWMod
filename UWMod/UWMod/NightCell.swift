@@ -216,6 +216,9 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
                 
             } else if player?.roleType() == .CultLeader && !(player?.hasActedTonight)! {
                 presentJoinCultView()
+                
+            } else if player?.roleType() == .Sorceress {
+                presentSorceressView()
             }
         }
     }
@@ -265,5 +268,11 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
 
+    }
+    
+    private func presentSorceressView() {
+        let localizedActionView = SorceressView(frame: actionViewFrame)
+        self.containerView.addSubview(localizedActionView)
+        
     }
 }
