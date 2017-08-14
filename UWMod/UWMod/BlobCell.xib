@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="517" height="648"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="517" height="647"/>
+                <rect key="frame" x="0.0" y="0.0" width="517" height="647.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HfV-H6-8SU">
@@ -33,10 +33,18 @@
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="he Graveyard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSj-os-7Q5" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="354" y="10" width="136" height="25"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="cSj-os-7Q5" secondAttribute="trailing" constant="15" id="TPt-Z4-W5t"/>
                                             <constraint firstItem="L0p-Xw-Xf7" firstAttribute="centerY" secondItem="A9t-AF-JjB" secondAttribute="centerY" id="Vej-UK-HDp"/>
+                                            <constraint firstItem="cSj-os-7Q5" firstAttribute="centerY" secondItem="A9t-AF-JjB" secondAttribute="centerY" id="aYx-Lz-cUs"/>
                                             <constraint firstAttribute="height" constant="45" id="gYc-PL-aIc"/>
                                             <constraint firstItem="L0p-Xw-Xf7" firstAttribute="centerX" secondItem="A9t-AF-JjB" secondAttribute="centerX" id="n0t-oY-Qiz"/>
                                         </constraints>
@@ -94,6 +102,7 @@
                 <outlet property="originalBlobLabel" destination="wFU-WK-1PP" id="KKA-7R-yvb"/>
                 <outlet property="outlineView" destination="HfV-H6-8SU" id="zAF-DW-0PC"/>
                 <outlet property="playerLabel" destination="RQh-Mq-Aqw" id="6cu-oq-S1P"/>
+                <outlet property="playerTotalsLabel" destination="cSj-os-7Q5" id="D6L-u1-dai"/>
             </connections>
             <point key="canvasLocation" x="37.5" y="181"/>
         </tableViewCell>

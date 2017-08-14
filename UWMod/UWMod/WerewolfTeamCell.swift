@@ -12,12 +12,13 @@ class WerewolfTeamCell: UITableViewCell {
 
     // MARK: - Outlets
     
-    @IBOutlet var outlineView: UIView!
-    @IBOutlet var mainCardView: UIView!
-    @IBOutlet var headerView: UIView!
-    @IBOutlet weak var headerTitleLabel: RegTanHeader!
+    @IBOutlet var outlineView:                  UIView!
+    @IBOutlet var mainCardView:                 UIView!
+    @IBOutlet var headerView:                   UIView!
+    @IBOutlet weak var headerTitleLabel:        RegTanHeader!
     
-    @IBOutlet var playerLabel: RegRed!
+    @IBOutlet var playerLabel:                  RegRed!
+    @IBOutlet weak var playerTotalsLabel:       RegTanHeader!
     
     
     // MARK: - Variables
@@ -30,11 +31,11 @@ class WerewolfTeamCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        outlineView.layer.cornerRadius = STYLE.InfoCardCornerRadius
-        outlineView.backgroundColor = STYLE.Red
-        headerView.backgroundColor = STYLE.Red
-        mainCardView.layer.cornerRadius = STYLE.InfoCardCornerRadius
-        mainCardView.backgroundColor = STYLE.Tan
+        outlineView.layer.cornerRadius          = STYLE.InfoCardCornerRadius
+        outlineView.backgroundColor             = STYLE.Red
+        headerView.backgroundColor              = STYLE.Red
+        mainCardView.layer.cornerRadius         = STYLE.InfoCardCornerRadius
+        mainCardView.backgroundColor            = STYLE.Tan
         
         let headerTitle = "Werewolf Team"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
@@ -48,6 +49,13 @@ class WerewolfTeamCell: UITableViewCell {
     }
     
     func configureCell() {
+        
+        let playerInfo                          = GAME.retrieveTeamVSTotalNumbers(team: .TeamVillage)
+        let totalPlayers                        = playerInfo.total
+        let teamTotal                           = playerInfo.team
+        
+        
+        self.playerTotalsLabel.text = "\(teamTotal)/\(totalPlayers)"
         self.playerLabel.text = werewolfTeamPlayers
     }
     

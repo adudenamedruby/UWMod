@@ -458,6 +458,20 @@ class Game {
         }
     }
     
+    public func retrieveTeamVSTotalNumbers(team: UWTeam) -> (team: Int, total: Int) {
+        
+        let totalPlayers                        = livingActors.count
+        var teamPlayerCount                     = 0
+        
+        for player in livingActors {
+            if player.team.contains(team) {
+                teamPlayerCount += 1
+            }
+        }
+        
+        return (teamPlayerCount, totalPlayers)
+    }
+    
     private func setupInfoCards() {
         var tempArray: [DaytimeCardType] = [.GeneralInfoCard]
         
@@ -640,7 +654,7 @@ class Game {
         return true
     }
     
-    private func createTeamPlayer(roleCount: Int, roleList: [RoleType] = [], teamType: UWTeam) -> Player{
+    private func createTeamPlayer(roleCount: Int, roleList: [RoleType] = [], teamType: UWTeam) -> Player {
         // Create a Team Player to present as a card.
         var newName                         = ""
         let teamPlayer: Player              = Player(name: newName)
