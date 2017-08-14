@@ -1,14 +1,14 @@
 //
-//  BlobCell.swift
+//  JoinCultCell.swift
 //  UWMod
 //
-//  Created by roux g. buciu on 2017-08-13.
+//  Created by roux g. buciu on 2017-08-14.
 //  Copyright © 2017 roux g. buciu. All rights reserved.
 //
 
 import UIKit
 
-class BlobCell: UITableViewCell {
+class JoinCultCell: UITableViewCell {
 
     // MARK: - Outlets
     
@@ -18,15 +18,15 @@ class BlobCell: UITableViewCell {
     @IBOutlet weak var headerTitleLabel:    RegTanHeader!
     
     
-    @IBOutlet weak var originalBlobLabel:   RegBrown!
+    @IBOutlet weak var cultLeaderLabel:     RegBrown!
     @IBOutlet var playerLabel:              RegBrown!
     @IBOutlet weak var playerTotalsLabel:   RegTanHeader!
     
     
     // MARK: - Variables
     
-    var originalBlob:                       Player!
-    var blobTeamMembers:                    String!
+    var cultLeader:                         Player!
+    var cultMembers:                        String!
     
     
     // MARK: - View Lifecycle
@@ -36,12 +36,12 @@ class BlobCell: UITableViewCell {
         // Initialization code
         
         outlineView.layer.cornerRadius      = STYLE.InfoCardCornerRadius
-        outlineView.backgroundColor         = STYLE.BlobGreen
-        headerView.backgroundColor          = STYLE.BlobGreen
+        outlineView.backgroundColor         = STYLE.Green
+        headerView.backgroundColor          = STYLE.Green
         mainCardView.layer.cornerRadius     = STYLE.InfoCardCornerRadius
         mainCardView.backgroundColor        = STYLE.Tan
         
-        let headerTitle                     = "The Blob"
+        let headerTitle                     = "The Cult"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                       withColour: STYLE.Red)
     }
@@ -53,14 +53,15 @@ class BlobCell: UITableViewCell {
     }
     
     func configureCell() {
-        self.originalBlobLabel.text         = "Original Blob: \(originalBlob.name)"
+        self.cultLeaderLabel.text               = "The Cult Leader: \(cultLeader.name)"
         
-        let playerInfo                          = GAME.retrieveTeamVSTotalNumbers(team: .TeamBlob)
+        let playerInfo                          = GAME.retrieveTeamVSTotalNumbers(team: .TeamCult)
         let totalPlayers                        = playerInfo.total
         let teamTotal                           = playerInfo.team
         
         
         self.playerTotalsLabel.text = "\(teamTotal)/\(totalPlayers)"
-        self.playerLabel.text               = blobTeamMembers
+        self.playerLabel.text               = cultMembers
     }
+    
 }

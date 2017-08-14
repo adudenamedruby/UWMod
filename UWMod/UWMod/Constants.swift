@@ -73,3 +73,5 @@ let ZombieLobotomySuccessNotification               = "zombieLobotomySuccessNoti
 let ZombieLobotomyFailureNotification               = "zombieLobotomyFailureNotification"
 let BlobAbsorbtionSuccessNotification               = "blobAbsorbtionSuccessNotification"
 let BlobAbsorbtionFailureNotification               = "blobAbsorbtionFailureNotification"
+let JoinCultFailureNotification                     = "joinCultFailureNotification"
+let JoinCultSuccessNotification                     = "joinCultSuccessNotification"

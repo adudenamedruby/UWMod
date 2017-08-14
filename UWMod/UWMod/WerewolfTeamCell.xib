@@ -33,12 +33,20 @@
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erewolf Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fj-Fp-2T6" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="346" y="10" width="137" height="25"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="EuU-F0-uSS"/>
                                             <constraint firstItem="cfY-tn-6O6" firstAttribute="centerX" secondItem="Mxc-4o-ZUw" secondAttribute="centerX" id="HbB-T0-a3f"/>
                                             <constraint firstItem="cfY-tn-6O6" firstAttribute="centerY" secondItem="Mxc-4o-ZUw" secondAttribute="centerY" id="Tpr-H8-4MQ"/>
+                                            <constraint firstItem="8fj-Fp-2T6" firstAttribute="centerY" secondItem="Mxc-4o-ZUw" secondAttribute="centerY" id="i9s-3f-gV7"/>
+                                            <constraint firstAttribute="trailing" secondItem="8fj-Fp-2T6" secondAttribute="trailing" constant="15" id="rcz-zf-ovA"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2W-8N-Zha" customClass="RegRed" customModule="UWMod" customModuleProvider="target">
@@ -84,6 +92,7 @@
                 <outlet property="mainCardView" destination="Pah-H4-Q3j" id="e07-Dx-679"/>
                 <outlet property="outlineView" destination="fvl-PK-sfO" id="6eE-kK-wRx"/>
                 <outlet property="playerLabel" destination="d2W-8N-Zha" id="Lca-Z5-Eqm"/>
+                <outlet property="playerTotalsLabel" destination="8fj-Fp-2T6" id="foJ-2o-6Fr"/>
             </connections>
             <point key="canvasLocation" x="-117" y="-12"/>
         </tableViewCell>

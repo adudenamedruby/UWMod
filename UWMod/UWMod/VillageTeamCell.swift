@@ -12,12 +12,13 @@ class VillageTeamCell: UITableViewCell {
 
     // MARK: - Outlets
     
-    @IBOutlet var outlineView: UIView!
-    @IBOutlet var mainCardView: UIView!
-    @IBOutlet var headerView: UIView!
-    @IBOutlet weak var headerTitleLabel: RegTanHeader!
+    @IBOutlet var outlineView:                  UIView!
+    @IBOutlet var mainCardView:                 UIView!
+    @IBOutlet var headerView:                   UIView!
+    @IBOutlet weak var headerTitleLabel:        RegTanHeader!
+    @IBOutlet weak var playerTotalsLabel:       RegTanHeader!
     
-    @IBOutlet var playerLabel: RegRed!
+    @IBOutlet var playerLabel:                  RegRed!
     
     
     // MARK: - Variables
@@ -30,13 +31,13 @@ class VillageTeamCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        outlineView.layer.cornerRadius = STYLE.InfoCardCornerRadius
-        outlineView.backgroundColor = STYLE.VillageBlue
-        headerView.backgroundColor = STYLE.VillageBlue
-        mainCardView.layer.cornerRadius = STYLE.InfoCardCornerRadius
-        mainCardView.backgroundColor = STYLE.Tan
+        outlineView.layer.cornerRadius          = STYLE.InfoCardCornerRadius
+        outlineView.backgroundColor             = STYLE.VillageBlue
+        headerView.backgroundColor              = STYLE.VillageBlue
+        mainCardView.layer.cornerRadius         = STYLE.InfoCardCornerRadius
+        mainCardView.backgroundColor            = STYLE.Tan
         
-        let headerTitle = "Village Team"
+        let headerTitle                         = "Village Team"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                       withColour: STYLE.Red)
     }
@@ -48,6 +49,13 @@ class VillageTeamCell: UITableViewCell {
     }
     
     func configureCell() {
+        
+        let playerInfo                          = GAME.retrieveTeamVSTotalNumbers(team: .TeamVillage)
+        let totalPlayers                        = playerInfo.total
+        let teamTotal                           = playerInfo.team
+    
+        
+        self.playerTotalsLabel.text = "\(teamTotal)/\(totalPlayers)"
         self.playerLabel.text = villageTeamPlayers
     }
     

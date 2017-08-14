@@ -41,6 +41,10 @@
 		1261C2B71F3265DA0099D759 /* BasicAlertObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */; };
 		1261C2BE1F32AA960099D759 /* GeneralInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1261C2BC1F32AA960099D759 /* GeneralInfo.swift */; };
 		1261C2BF1F32AA960099D759 /* GeneralInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1261C2BD1F32AA960099D759 /* GeneralInfo.xib */; };
+		127ACFE01F425696004E9779 /* JoinCultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACFDF1F425696004E9779 /* JoinCultView.swift */; };
+		127ACFE31F4256AB004E9779 /* JoinCultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127ACFE21F4256AB004E9779 /* JoinCultView.xib */; };
+		127ACFE61F425986004E9779 /* JoinCultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACFE41F425986004E9779 /* JoinCultCell.swift */; };
+		127ACFE71F425986004E9779 /* JoinCultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127ACFE51F425986004E9779 /* JoinCultCell.xib */; };
 		1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1298C8A21F3DD15D00261779 /* Notes.rtf */; };
 		12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */; };
 		12D15E201F2E82870057905E /* RoleSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */; };
@@ -128,6 +132,10 @@
 		1261C2B61F3265DA0099D759 /* BasicAlertObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAlertObject.swift; sourceTree = "<group>"; };
 		1261C2BC1F32AA960099D759 /* GeneralInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralInfo.swift; sourceTree = "<group>"; };
 		1261C2BD1F32AA960099D759 /* GeneralInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralInfo.xib; sourceTree = "<group>"; };
+		127ACFDF1F425696004E9779 /* JoinCultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinCultView.swift; sourceTree = "<group>"; };
+		127ACFE21F4256AB004E9779 /* JoinCultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JoinCultView.xib; sourceTree = "<group>"; };
+		127ACFE41F425986004E9779 /* JoinCultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinCultCell.swift; sourceTree = "<group>"; };
+		127ACFE51F425986004E9779 /* JoinCultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JoinCultCell.xib; sourceTree = "<group>"; };
 		1298C8A21F3DD15D00261779 /* Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
 		12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSuperButton.swift; sourceTree = "<group>"; };
 		12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleSelectionCell.swift; sourceTree = "<group>"; };
@@ -229,6 +237,7 @@
 				122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */,
 				124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */,
 				12DFBB451F3E6BAD00D71944 /* ZombieLobotomy.swift */,
+				127ACFDF1F425696004E9779 /* JoinCultView.swift */,
 			);
 			name = ContainerViews;
 			sourceTree = "<group>";
@@ -239,6 +248,7 @@
 				123BD0E51F31474A00B99019 /* AssignPlayer.xib */,
 				12DA2CDD1F40DDE600D0193A /* BlobAbsorbtion.xib */,
 				122FC6971F377BCE00E0E2C9 /* BodyguardView.xib */,
+				127ACFE21F4256AB004E9779 /* JoinCultView.xib */,
 				122FC69F1F392F9C00E0E2C9 /* SeerInspection.xib */,
 				124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */,
 				12DFBB431F3E6B9700D71944 /* ZombieLobotomy.xib */,
@@ -278,6 +288,7 @@
 				12154A5F1F410229003A5D86 /* BlobCell.xib */,
 				1261C2BD1F32AA960099D759 /* GeneralInfo.xib */,
 				77B2B0051F34D7AC0032A36B /* Graveyard.xib */,
+				127ACFE51F425986004E9779 /* JoinCultCell.xib */,
 				124F74EE1F3549BB00F03E49 /* VillageTeamCell.xib */,
 				124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */,
 				12DFBB3C1F3E55E400D71944 /* ZombieCell.xib */,
@@ -424,6 +435,7 @@
 				12154A5E1F410229003A5D86 /* BlobCell.swift */,
 				1261C2BC1F32AA960099D759 /* GeneralInfo.swift */,
 				77B2B0041F34D7AC0032A36B /* Graveyard.swift */,
+				127ACFE41F425986004E9779 /* JoinCultCell.swift */,
 				124F74ED1F3549BB00F03E49 /* VillageTeamCell.swift */,
 				124F74E91F3530A200F03E49 /* WerewolfTeamCell.swift */,
 				12DFBB3B1F3E55E400D71944 /* ZombieCell.swift */,
@@ -506,9 +518,11 @@
 				124F74F81F35FF4D00F03E49 /* WerewolfAssassination.xib in Resources */,
 				1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */,
 				123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */,
+				127ACFE71F425986004E9779 /* JoinCultCell.xib in Resources */,
 				122FC6981F377BCE00E0E2C9 /* BodyguardView.xib in Resources */,
 				12154A611F410229003A5D86 /* BlobCell.xib in Resources */,
 				12DA2CDE1F40DDE600D0193A /* BlobAbsorbtion.xib in Resources */,
+				127ACFE31F4256AB004E9779 /* JoinCultView.xib in Resources */,
 				123317D41F40B832000C3260 /* Assets.xcassets in Resources */,
 				124F74F01F3549BB00F03E49 /* VillageTeamCell.xib in Resources */,
 			);
@@ -524,6 +538,7 @@
 				12D15E2B1F2EC5420057905E /* ArrayExtension.swift in Sources */,
 				123BD0D51F2F6C1600B99019 /* AlertsVC.swift in Sources */,
 				12154A601F410229003A5D86 /* BlobCell.swift in Sources */,
+				127ACFE01F425696004E9779 /* JoinCultView.swift in Sources */,
 				77F9E1221F310CCE00E48211 /* RegularTextLabels.swift in Sources */,
 				124F74EF1F3549BB00F03E49 /* VillageTeamCell.swift in Sources */,
 				123317D21F408E22000C3260 /* RoleClarificationPopupVC.swift in Sources */,
@@ -541,6 +556,7 @@
 				12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */,
 				123BD0DA1F2FF34D00B99019 /* NightCell.swift in Sources */,
 				12D15E291F2EBCCA0057905E /* ColourDefinitions.swift in Sources */,
+				127ACFE61F425986004E9779 /* JoinCultCell.swift in Sources */,
 				12DA2CDC1F40DDD100D0193A /* BlobAbsorbtion.swift in Sources */,
 				124F74FA1F368A0A00F03E49 /* ConfirmationPopup.swift in Sources */,
 				12F584081F361F5F00A98764 /* GeneralEnumerators.swift in Sources */,

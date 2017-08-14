@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UWMod/Game.swift"
-            timestampString = "524362744.119835"
+            timestampString = "524442828.327659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "579"
-            endingLineNumber = "579"
+            startingLineNumber = "581"
+            endingLineNumber = "581"
             landmarkName = "buildConsolidatedNightActors(withWerevolvesPresent:withVampiresPresent:withPluralBlob:wolfList:vampireList:)"
             landmarkType = "7">
          </BreakpointContent>

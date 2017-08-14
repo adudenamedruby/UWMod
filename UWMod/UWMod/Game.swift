@@ -301,14 +301,16 @@ class Game {
         return players
     }
     
-    public func fetchPlayersWithTeamType(fromList: [Player], ofTeamType: UWTeam, withRole: Bool = false, separatedByComma: Bool = false) -> String {
+    public func fetchPlayersWithTeamType(fromList: [Player], ofTeamType: UWTeam, excludingRole: RoleType? = nil, withRole: Bool = false, separatedByComma: Bool = false) -> String {
         var players = ""
         
         for player in fromList {
             for teamType in player.team {
                 if teamType == ofTeamType {
                     let temp = fetchSinglePlayer(player: player, withRole: withRole, separatedByComma: separatedByComma)
-                    players = players + temp
+                    if !(excludingRole != nil && player.roleType() == excludingRole) {
+                        players = players + temp
+                    }
                 }
             }
         }
@@ -456,6 +458,20 @@ class Game {
                 }
             }
         }
+    }
+    
+    public func retrieveTeamVSTotalNumbers(team: UWTeam) -> (team: Int, total: Int) {
+        
+        let totalPlayers                        = livingActors.count
+        var teamPlayerCount                     = 0
+        
+        for player in livingActors {
+            if player.team.contains(team) {
+                teamPlayerCount += 1
+            }
+        }
+        
+        return (teamPlayerCount, totalPlayers)
     }
     
     private func setupInfoCards() {
@@ -640,7 +656,7 @@ class Game {
         return true
     }
     
-    private func createTeamPlayer(roleCount: Int, roleList: [RoleType] = [], teamType: UWTeam) -> Player{
+    private func createTeamPlayer(roleCount: Int, roleList: [RoleType] = [], teamType: UWTeam) -> Player {
         // Create a Team Player to present as a card.
         var newName                         = ""
         let teamPlayer: Player              = Player(name: newName)

@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="518" height="482"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="518" height="481"/>
+                <rect key="frame" x="0.0" y="0.0" width="518" height="481.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8q3-s1-4iI">
@@ -33,10 +33,18 @@
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="illage Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJO-VQ-5lO" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="374" y="10" width="117" height="25"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="byb-pM-AXx" firstAttribute="centerX" secondItem="oLJ-f5-bno" secondAttribute="centerX" id="0EO-Tv-gZ4"/>
+                                            <constraint firstAttribute="trailing" secondItem="GJO-VQ-5lO" secondAttribute="trailing" constant="15" id="5Rk-kp-Ty5"/>
+                                            <constraint firstItem="GJO-VQ-5lO" firstAttribute="centerY" secondItem="oLJ-f5-bno" secondAttribute="centerY" id="Dk6-pX-zuB"/>
                                             <constraint firstItem="byb-pM-AXx" firstAttribute="centerY" secondItem="oLJ-f5-bno" secondAttribute="centerY" id="cHH-Fa-K3v"/>
                                             <constraint firstAttribute="height" constant="45" id="oQP-sX-58s"/>
                                         </constraints>
@@ -84,6 +92,7 @@
                 <outlet property="mainCardView" destination="MKs-LD-bSD" id="mFj-ce-cln"/>
                 <outlet property="outlineView" destination="8q3-s1-4iI" id="lxa-dF-yHl"/>
                 <outlet property="playerLabel" destination="Rcg-HX-6Wl" id="mEf-NU-T7Q"/>
+                <outlet property="playerTotalsLabel" destination="GJO-VQ-5lO" id="ywl-lS-7Id"/>
             </connections>
             <point key="canvasLocation" x="-489" y="292"/>
         </tableViewCell>
