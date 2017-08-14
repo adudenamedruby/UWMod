@@ -66,6 +66,11 @@ class ConfirmationPopup: UIViewController {
             } else if reason            == .ZombieLobotomization {
                 headerTitle             = "Confirm Dinner"
                 alternateAlertText      = "Are you sure you want to eat \(chosenPlayer.name)'s brains?"
+                
+            } else if reason            == .BlobAbsorbtion {
+                headerTitle             = "Confirm Absorbiton"
+                alternateAlertText      = "Are you sure you want to absorb \(chosenPlayer.name)?"
+                
             }
         }
         
@@ -125,7 +130,13 @@ class ConfirmationPopup: UIViewController {
                 actingPlayer?.eatBrains(ofVictim: chosenPlayer, zombie: actingPlayer!)
                 actingPlayer?.hasActedTonight = true
                 
+            } else if reason == .BlobAbsorbtion {
+                if !GAME.theBlobHasAbsorbed {
+                    chosenPlayer.addToTeam(team: .TeamBlob)
+                    GAME.theBlobHasAbsorbed = true
+                }
             }
+    
         }
         
         let presentingVC = self.presentingViewController

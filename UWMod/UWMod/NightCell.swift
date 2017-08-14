@@ -210,6 +210,9 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
                 
             } else if player?.roleType() == .Zombie && !GAME.firstNight {
                 presentZombieView()
+                
+            } else if (player?.team.contains(.TeamBlob))! && !GAME.theBlobHasAbsorbed {
+                presentBlobView()
             }
         }
     }
@@ -244,6 +247,12 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
     private func presentZombieView() {
         let localizedActionView = ZombieLobotomy(frame: actionViewFrame, withPlayer: player!)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    private func presentBlobView() {
+        let localizedActionView = BlobAbsorbtion(frame: actionViewFrame)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }

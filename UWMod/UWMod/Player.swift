@@ -94,6 +94,8 @@ class Player {
                 addAppropriateCard(daytimeCard: .VillageTeamCard)
             } else if teamX == .TeamZombie {
                 addAppropriateCard(daytimeCard: .ZombieTeamCard)
+            } else if teamX == .TeamBlob {
+                addAppropriateCard(daytimeCard: .BlobTeamCard)
             }
         }
     }

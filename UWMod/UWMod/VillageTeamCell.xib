@@ -15,20 +15,20 @@
             <rect key="frame" x="0.0" y="0.0" width="518" height="482"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="518" height="481.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="518" height="481"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8q3-s1-4iI">
-                        <rect key="frame" x="5" y="0.0" width="508" height="476.5"/>
+                        <rect key="frame" x="5" y="0.0" width="508" height="476"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKs-LD-bSD">
-                                <rect key="frame" x="1" y="0.0" width="506" height="475.5"/>
+                                <rect key="frame" x="1" y="0.0" width="506" height="475"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLJ-f5-bno">
                                         <rect key="frame" x="0.0" y="0.0" width="506" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="illage Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byb-pM-AXx" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="195" y="10" width="116.5" height="25"/>
+                                                <rect key="frame" x="195" y="10" width="117" height="25"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-HX-6Wl" customClass="RegVillageBlue" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="55" width="481" height="415.5"/>
+                                        <rect key="frame" x="15" y="55" width="481" height="415"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

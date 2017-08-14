@@ -10,6 +10,8 @@
 		1209820A1F26BBE700EC5D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120982091F26BBE700EC5D21 /* AppDelegate.swift */; };
 		1209820F1F26BBE700EC5D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1209820D1F26BBE700EC5D21 /* Main.storyboard */; };
 		120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120982121F26BBE700EC5D21 /* LaunchScreen.storyboard */; };
+		12154A601F410229003A5D86 /* BlobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12154A5E1F410229003A5D86 /* BlobCell.swift */; };
+		12154A611F410229003A5D86 /* BlobCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12154A5F1F410229003A5D86 /* BlobCell.xib */; };
 		122FC68F1F37660600E0E2C9 /* EndGamePopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */; };
 		122FC6961F377BB200E0E2C9 /* BodyguardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122FC6951F377BB200E0E2C9 /* BodyguardView.swift */; };
 		122FC6981F377BCE00E0E2C9 /* BodyguardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 122FC6971F377BCE00E0E2C9 /* BodyguardView.xib */; };
@@ -46,6 +48,8 @@
 		12D15E271F2EB0AB0057905E /* FadeAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E261F2EB0AB0057905E /* FadeAnimations.swift */; };
 		12D15E291F2EBCCA0057905E /* ColourDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E281F2EBCCA0057905E /* ColourDefinitions.swift */; };
 		12D15E2B1F2EC5420057905E /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E2A1F2EC5420057905E /* ArrayExtension.swift */; };
+		12DA2CDC1F40DDD100D0193A /* BlobAbsorbtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA2CDB1F40DDD100D0193A /* BlobAbsorbtion.swift */; };
+		12DA2CDE1F40DDE600D0193A /* BlobAbsorbtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12DA2CDD1F40DDE600D0193A /* BlobAbsorbtion.xib */; };
 		12DFBB3D1F3E55E400D71944 /* ZombieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DFBB3B1F3E55E400D71944 /* ZombieCell.swift */; };
 		12DFBB3E1F3E55E400D71944 /* ZombieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12DFBB3C1F3E55E400D71944 /* ZombieCell.xib */; };
 		12DFBB441F3E6B9700D71944 /* ZombieLobotomy.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12DFBB431F3E6B9700D71944 /* ZombieLobotomy.xib */; };
@@ -93,6 +97,8 @@
 		1209820E1F26BBE700EC5D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		120982131F26BBE700EC5D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		120982151F26BBE700EC5D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12154A5E1F410229003A5D86 /* BlobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlobCell.swift; sourceTree = "<group>"; };
+		12154A5F1F410229003A5D86 /* BlobCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlobCell.xib; sourceTree = "<group>"; };
 		122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGamePopupVC.swift; sourceTree = "<group>"; };
 		122FC6951F377BB200E0E2C9 /* BodyguardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyguardView.swift; sourceTree = "<group>"; };
 		122FC6971F377BCE00E0E2C9 /* BodyguardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BodyguardView.xib; sourceTree = "<group>"; };
@@ -129,6 +135,8 @@
 		12D15E261F2EB0AB0057905E /* FadeAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimations.swift; sourceTree = "<group>"; };
 		12D15E281F2EBCCA0057905E /* ColourDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourDefinitions.swift; sourceTree = "<group>"; };
 		12D15E2A1F2EC5420057905E /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		12DA2CDB1F40DDD100D0193A /* BlobAbsorbtion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlobAbsorbtion.swift; sourceTree = "<group>"; };
+		12DA2CDD1F40DDE600D0193A /* BlobAbsorbtion.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlobAbsorbtion.xib; sourceTree = "<group>"; };
 		12DFBB3B1F3E55E400D71944 /* ZombieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZombieCell.swift; sourceTree = "<group>"; };
 		12DFBB3C1F3E55E400D71944 /* ZombieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZombieCell.xib; sourceTree = "<group>"; };
 		12DFBB431F3E6B9700D71944 /* ZombieLobotomy.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZombieLobotomy.xib; sourceTree = "<group>"; };
@@ -216,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				123BD0ED1F31555B00B99019 /* AssignPlayer.swift */,
+				12DA2CDB1F40DDD100D0193A /* BlobAbsorbtion.swift */,
 				122FC6951F377BB200E0E2C9 /* BodyguardView.swift */,
 				122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */,
 				124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */,
@@ -228,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				123BD0E51F31474A00B99019 /* AssignPlayer.xib */,
+				12DA2CDD1F40DDE600D0193A /* BlobAbsorbtion.xib */,
 				122FC6971F377BCE00E0E2C9 /* BodyguardView.xib */,
 				122FC69F1F392F9C00E0E2C9 /* SeerInspection.xib */,
 				124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */,
@@ -265,6 +275,7 @@
 		1261C2BA1F32AA3F0099D759 /* Day XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				12154A5F1F410229003A5D86 /* BlobCell.xib */,
 				1261C2BD1F32AA960099D759 /* GeneralInfo.xib */,
 				77B2B0051F34D7AC0032A36B /* Graveyard.xib */,
 				124F74EE1F3549BB00F03E49 /* VillageTeamCell.xib */,
@@ -410,6 +421,7 @@
 		77B2B0121F3B73380032A36B /* DayCells */ = {
 			isa = PBXGroup;
 			children = (
+				12154A5E1F410229003A5D86 /* BlobCell.swift */,
 				1261C2BC1F32AA960099D759 /* GeneralInfo.swift */,
 				77B2B0041F34D7AC0032A36B /* Graveyard.swift */,
 				124F74ED1F3549BB00F03E49 /* VillageTeamCell.swift */,
@@ -495,6 +507,8 @@
 				1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */,
 				123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */,
 				122FC6981F377BCE00E0E2C9 /* BodyguardView.xib in Resources */,
+				12154A611F410229003A5D86 /* BlobCell.xib in Resources */,
+				12DA2CDE1F40DDE600D0193A /* BlobAbsorbtion.xib in Resources */,
 				123317D41F40B832000C3260 /* Assets.xcassets in Resources */,
 				124F74F01F3549BB00F03E49 /* VillageTeamCell.xib in Resources */,
 			);
@@ -509,6 +523,7 @@
 			files = (
 				12D15E2B1F2EC5420057905E /* ArrayExtension.swift in Sources */,
 				123BD0D51F2F6C1600B99019 /* AlertsVC.swift in Sources */,
+				12154A601F410229003A5D86 /* BlobCell.swift in Sources */,
 				77F9E1221F310CCE00E48211 /* RegularTextLabels.swift in Sources */,
 				124F74EF1F3549BB00F03E49 /* VillageTeamCell.swift in Sources */,
 				123317D21F408E22000C3260 /* RoleClarificationPopupVC.swift in Sources */,
@@ -526,6 +541,7 @@
 				12EC78081F2BE9E50026C667 /* MenuVC.swift in Sources */,
 				123BD0DA1F2FF34D00B99019 /* NightCell.swift in Sources */,
 				12D15E291F2EBCCA0057905E /* ColourDefinitions.swift in Sources */,
+				12DA2CDC1F40DDD100D0193A /* BlobAbsorbtion.swift in Sources */,
 				124F74FA1F368A0A00F03E49 /* ConfirmationPopup.swift in Sources */,
 				12F584081F361F5F00A98764 /* GeneralEnumerators.swift in Sources */,
 				7736D0981F33A2C600555037 /* UIViewExtensions.swift in Sources */,

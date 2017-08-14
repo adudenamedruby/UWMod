@@ -146,6 +146,8 @@ class DayVC: UIViewController {
                            forCellReuseIdentifier: "villageTeamCell")
         tableView.register(UINib(nibName: "ZombieCell", bundle: nil),
                            forCellReuseIdentifier: "zombieCell")
+        tableView.register(UINib(nibName: "BlobCell", bundle: nil),
+                           forCellReuseIdentifier: "blobCell")
     }
     
     private func fadeButtonsIn() {
@@ -215,6 +217,21 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
             cell.configureCell()
             return cell
             
+        } else if currentType == .BlobTeamCard {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "blobCell", for: indexPath) as! BlobCell
+            
+            var originalPlayer: Player!
+            
+            for player in GAME.availablePlayers {
+                if player.roleType() == .TheBlob {
+                    originalPlayer = player
+                }
+            }
+            
+            cell.originalBlob = originalPlayer
+            cell.blobTeamMembers = GAME.fetchPlayersWithTeamType(fromList: GAME.livingActors, ofTeamType: .TeamBlob)
+            cell.configureCell()
+            return cell
         }
         
         return UITableViewCell()

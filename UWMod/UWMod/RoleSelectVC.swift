@@ -291,13 +291,19 @@ extension RoleSelectVC: UICollectionViewDataSource, UICollectionViewDelegate {
         collectionView.cellForItem(at: indexPath)?.alpha = 1
         
         if teamChoiceControl.selectedSegmentIndex == 0 {
-            selectedVillageIndexPaths.append(indexPath)
+            if !selectedVillageIndexPaths.contains(indexPath) {
+                selectedVillageIndexPaths.append(indexPath)
+            }
             
         } else if teamChoiceControl.selectedSegmentIndex == 1 {
-            selectedWerewolfIndexPaths.append(indexPath)
+            if !selectedWerewolfIndexPaths.contains(indexPath) {
+                selectedWerewolfIndexPaths.append(indexPath)
+            }
             
         } else if teamChoiceControl.selectedSegmentIndex == 2 {
-            selectedOtherIndexPaths.append(indexPath)
+            if !selectedOtherIndexPaths.contains(indexPath) {
+                selectedOtherIndexPaths.append(indexPath)
+            }
         }
 
         updateRoleCountLabel()

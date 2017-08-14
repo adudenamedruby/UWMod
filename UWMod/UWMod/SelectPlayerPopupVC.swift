@@ -16,6 +16,7 @@ enum SelectPlayerReason {
     case VillageElimination
     case ZombieLobotomization
     case RoleClarification
+    case BlobAbsorbtion
 }
 
 class SelectPlayerPopupVC: UIViewController {
@@ -110,6 +111,9 @@ class SelectPlayerPopupVC: UIViewController {
                 let roleClarification = storyboard.instantiateViewController(withIdentifier: "roleClarificationPopupVC") as! RoleClarificationPopupVC
                 self.present(roleClarification, animated: true, completion: nil)
         
+            } else if reason == .BlobAbsorbtion {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: nil, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
             }
             
         } else {
@@ -176,7 +180,9 @@ class SelectPlayerPopupVC: UIViewController {
             
         case .RoleClarification:
             populateRolesInGame()
-            
+         
+        case .BlobAbsorbtion:
+            populateNonBlobPlayers()
         }
         
     }
@@ -213,6 +219,9 @@ class SelectPlayerPopupVC: UIViewController {
             
         case .ZombieLobotomization:
             nc.post(name: NSNotification.Name(rawValue: ZombieLobotomyFailureNotification), object: nil)
+            
+        case .BlobAbsorbtion:
+            nc.post(name: NSNotification.Name(rawValue: BlobAbsorbtionFailureNotification), object: nil)
             
         case .RoleClarification:
             break
@@ -331,6 +340,30 @@ extension SelectPlayerPopupVC {
 
 extension SelectPlayerPopupVC {
     
+    // BLOB ABSORBTION
+    func populateNonBlobPlayers() {
+        availablePlayers.removeAll()
+        
+        var playerRoster:           [Player]!
+        
+        if GAME.firstNight {
+            playerRoster            = GAME.availablePlayers
+        } else {
+            playerRoster            = GAME.livingActors
+        }
+        
+        for player in playerRoster {
+            if !player.team.contains(.TeamBlob) {
+                availablePlayers.append(player)
+            }
+        }
+        
+        //availablePlayers.sort(by: { $0.name < $1.name } )
+    }
+}
+
+extension SelectPlayerPopupVC {
+    
     // ROLE CLARIFICATION
     func populateRolesInGame() {
         availablePlayers.removeAll()
@@ -374,9 +407,6 @@ extension SelectPlayerPopupVC {
         availablePlayers.sort(by: { $0.roleName() < $1.roleName() } )
     }
 }
-
-
-
 
 
 

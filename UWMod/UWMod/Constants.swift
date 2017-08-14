@@ -71,3 +71,5 @@ let BodyguardProtectingSuccessNotification          = "bodyguardProtectingSucces
 let BodyguardProtectingFailureNotification          = "bodyguardProtectingFailureNotification"
 let ZombieLobotomySuccessNotification               = "zombieLobotomySuccessNotification"
 let ZombieLobotomyFailureNotification               = "zombieLobotomyFailureNotification"
+let BlobAbsorbtionSuccessNotification               = "blobAbsorbtionSuccessNotification"
+let BlobAbsorbtionFailureNotification               = "blobAbsorbtionFailureNotification"
