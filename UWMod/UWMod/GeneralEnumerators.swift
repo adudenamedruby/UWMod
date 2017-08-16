@@ -39,6 +39,7 @@ enum DaytimeCardType {
     // Team based cards
     case GeneralInfoCard
     case BlobTeamCard
+    case GhostTeamCard
     case BoegymanTeamCard
     case ChupacabraTeamCard
     case CountDraculaTeamCard

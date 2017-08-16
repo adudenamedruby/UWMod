@@ -66,6 +66,26 @@ class Player {
         }
     }
     
+    public func updateRole(withRole newRole: Role) {
+        let oldRole                         = self.role
+        
+        self.role                           = newRole
+        self.isNightActivePlayer            = role.isNightActiveRole.currentStatus
+        self.isAssigned                     = true
+        
+        for currentRole in newRole.team {
+            self.team.append(currentRole)
+        }
+        
+        for teamX in self.team {
+            if (oldRole?.team.contains(teamX))! {
+                let indx = self.team.index(where: { $0 == teamX} )
+                self.team.remove(at: indx!)
+                break
+            }
+        }
+    }
+    
     public func addToTeam(team: UWTeam) {
         self.team.append(team)
     }

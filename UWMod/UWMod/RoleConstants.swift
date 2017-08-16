@@ -29,6 +29,7 @@ let pregame_tempRoles: [Role] = [BEHOLDER,
                                  VILLAGE_IDIOT,
                                  VILLAGER_ONE, VILLAGER_TWO, VILLAGER_THREE, VILLAGER_FOUR, VILLAGER_FIVE, VILLAGER_SIX, VILLAGER_SEVEN, VILLAGER_EIGHT, VILLAGER_NINE, VILLAGER_TEN, VILLAGER_ELEVEN, VILLAGER_TWELVE, VILLAGER_THIRTEEN, VILLAGER_FOURTEEN, VILLAGER_FIFTEEN,
                                  WEREWOLF_ONE, WEREWOLF_TWO, WEREWOLF_THREE, WEREWOLF_FOUR, WEREWOLF_FIVE, WEREWOLF_SIX, WEREWOLF_SEVEN, WEREWOLF_EIGHT, WEREWOLF_NINE, WEREWOLF_TEN, WEREWOLF_ELEVEN, WEREWOLF_TWELVE,
+                                 WOLFCUB,
                                  WOLFMAN,
                                  ZOMBIE]
 
@@ -59,11 +60,10 @@ func filterBy(roleTypeList: [RoleType]) -> [Role] {
 // Roles get instantiated here! Fancy!
 // Alphabetical order
 
+let BEHOLDER = Role(name: "Beholder", type: .Beholder, description: "Wake up the first night and learn the identity of the Seer.", roleExplanation: "The Beholder learns who the Seer is on the first night. It's important to be careful how you use this information because you don't want to give the Seer away. You might try to secretly let the Seer know that you're on their team, but if you're not subtle about it and a Werewolf finds out, it could be disastrous for the village team. So caution is advised.", impact: 2, priority: 193, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "beholder"), isNightActiveRole: .NotNightActiveRole)
 
-let BEHOLDER = Role(name: "Beholder", type: .Beholder, description: "The first night, learn who the Seer is.", roleExplanation: "The first night, the Beholder is shown who the Seer is. Using this information wisely is key to being a successful Beholder. The most important thing to remember is that the Seer doesn’t want to be found out, but if they know there is a Beholder in the game, they will try to communicate what they know to that player. The Seer may say, 'I don’t trust Bobby,' and that could be a clear indicator that Bobby is a werewolf. However, keep in mind that the Seer only gets to view one player per day, so it might be the case that they really don’t trust Bobby, but don’t have any additional information about him.\n\nThe Beholder might want to try to secretly convey to the Seer that they are the Beholder, but this can get perilous… if a Werewolf catches you, then the Seer might be the next to go!", impact: 2, priority: 193, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "beholder"), isNightActiveRole: .NotNightActiveRole)
 
-
-let BODYGUARD = Role(name: "Bodyguard", type: .Bodyguard, description: "Each night, choose a player who cannot be eliminated that night. (Must be different.)", roleExplanation: "The Bodyguard chooses a different player each night to protect (but not the same player twice in a row). That player cannot be eliminated that night. He may not choose himself.", impact: 3, priority: 52, powerChoice: false, team: [.TeamVillage], availableEffects: [.Protection], image: #imageLiteral(resourceName: "bodyguard"), isNightActiveRole: .NightActiveRole)
+let BODYGUARD = Role(name: "Bodyguard", type: .Bodyguard, description: "Each night, choose a player, different from the previous night, who cannot be eliminated that night.", roleExplanation: "The Bodyguard chooses a player to protect each night. It cannot be the same player twice in a row. That player is then protected from any type of elimination that night. He may not choose himself.", impact: 3, priority: 52, powerChoice: false, team: [.TeamVillage], availableEffects: [.Protection], image: #imageLiteral(resourceName: "bodyguard"), isNightActiveRole: .NightActiveRole)
 
 
 
@@ -178,9 +178,16 @@ let WEREWOLF_ELEVEN = Role(name: "Werewolf", type: .Werewolf, description: "Each
 
 let WEREWOLF_TWELVE = Role(name: "Werewolf", type: .Werewolf, description: "Each night, wake with the other Werewolves and choose a player to eliminate.", roleExplanation: "The Werewolves learn the identity of the other Werewolves the first night. Every night after the first night, the Werewolves must agree on a target to eliminate. If the Werewolves spend more than a minute determining a target for the night, they do not get to choose a target that night. The Werewolves may not target another Werewolf at night. Werewolves try to keep their identity a secret during the day.", impact: -6, priority: 25, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "werewolf"), isNightActiveRole: .NightActiveRole)
 
+let CURSED_WEREWOLF = Role(name: "Werewolf", type: .Werewolf, description: "Each night, wake with the other Werewolves and choose a player to eliminate.", roleExplanation: "The Werewolves learn the identity of the other Werewolves the first night. Every night after the first night, the Werewolves must agree on a target to eliminate. If the Werewolves spend more than a minute determining a target for the night, they do not get to choose a target that night. The Werewolves may not target another Werewolf at night. Werewolves try to keep their identity a secret during the day.", impact: -6, priority: 25, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "werewolf"), isNightActiveRole: .NightActiveRole)
+
+
+
+let WOLFCUB = Role(name: "Wolf Cub", type: .WolfCub, description: "Each night, wake with the Werewolves. If you are eliminated, the Werewolves eliminate two players the following night.", roleExplanation: "The Wolf Cub is a Werewolf, and wakes with them each night. If the Wolf Cub is eliminated, the Werewolves get to eliminate two players the next night.", impact: -8, priority: 7, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "wolfCub"), isNightActiveRole: .NotNightActiveRole)
+
 
 
 let WOLFMAN = Role(name: "Wolf Man", type: .WolfMan, description: "Each night, wake with the other Werewolves. The Seer sees you as a Villager.", roleExplanation: "The Wolf Man is a Werewolf but the Seer sees him as a Villager. The Wolf Man is a very powerful Werewolf team role.", impact: -9, priority: 13, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "wolfMan"), isNightActiveRole: .NightActiveRole)
+
 
 
 let ZOMBIE = Role(name: "Zombie", type: .Zombie, description: "Each night, pick a player and eat their brains. That player may no longer vote.", roleExplanation: "The zombie eats the brains of a different player each night. The Moderator says whose brain was eaten when the village awakes. From that point on in the game, players with no brains may not take part in the vote to eliminate during the day. If at any time all remaining players have no brains, the Zombie wins.", impact: -3, priority: 112, powerChoice: false, team: [.TeamZombie], availableEffects: [.Lobotomy], image: #imageLiteral(resourceName: "zombie"), isNightActiveRole: .NightActiveRole)
