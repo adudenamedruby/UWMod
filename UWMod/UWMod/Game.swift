@@ -53,6 +53,7 @@ class Game {
     private var _werewolvesHaveKilledThisNight:     Bool
     private var _werewolvesAreDiseased:             Bool
     private var _wolfRoles:                         [RoleType]
+    private var _theWolfCubHasBeenSlain:            Bool
     var aWerewolfHasBeenSlain:                      Bool
     var theBlobHasAbsorbed:                         Bool
 
@@ -166,6 +167,7 @@ class Game {
                                                .FruitBrute,
                                                .Wolverine]
         self.aWerewolfHasBeenSlain          = false
+        self._theWolfCubHasBeenSlain         = false
         self.theBlobHasAbsorbed             = false
         
     }
@@ -223,6 +225,7 @@ class Game {
     private func eliminatePlayers() {
         
         for victim in playersToBeEliminated {
+            
             if !victim.isAffectedBy(condition: .Protection) {
                 if self.livingActors.contains(where: { $0 === victim }) {
                     addToPhaseReport(player: victim)
@@ -234,7 +237,7 @@ class Game {
                     }
                     
                     if victim.roleType() == .WolfCub {
-                        increasePossibleWerewolfTargets()
+                        _theWolfCubHasBeenSlain = true
                     }
                     
                     if victim.killedBy != nil {
@@ -393,7 +396,7 @@ class Game {
         setDeadPlayerCheck()
         setupInfoCards()
         
-        theBlobHasAbsorbed = false
+        theBlobHasAbsorbed              = false
         _currentNight += 1
     }
     
@@ -407,7 +410,7 @@ class Game {
         determineNightActors()
         setDeadPlayerCheck()
         
-        aWerewolfHasBeenSlain = false
+        aWerewolfHasBeenSlain           = false
         _currentDay += 1
     }
     
@@ -475,7 +478,7 @@ class Game {
     }
     
     private func setupInfoCards() {
-        var tempArray: [DaytimeCardType] = [.GeneralInfoCard]
+        var tempArray: [DaytimeCardType]    = [.GeneralInfoCard]
         
         for player in livingActors {
             let daytimeInfoCards = player.daytimeInfoCards
@@ -488,6 +491,18 @@ class Game {
         
         if areThereDeadPlayers {
             tempArray.append(.GraveyardCard)
+        }
+        
+        if tempArray.contains(.VillageTeamCard) {
+            let indx = tempArray.index(where: { $0 == .VillageTeamCard } )
+            tempArray.remove(at: indx!)
+            tempArray.insert(.VillageTeamCard, at: 1)
+        }
+        
+        if tempArray.contains(.WerewolfTeamCard) {
+            let indx = tempArray.index(where: { $0 == .WerewolfTeamCard } )
+            tempArray.remove(at: indx!)
+            tempArray.insert(.WerewolfTeamCard, at: 2)
         }
         
         self.daytimeInfoCards.removeAll()
@@ -507,6 +522,10 @@ class Game {
             }
         }
         
+        if _theWolfCubHasBeenSlain {
+            increasePossibleWerewolfTargets()
+            _theWolfCubHasBeenSlain = false
+        }
         
         // This is a last check!
         if _werewolvesAreDiseased {

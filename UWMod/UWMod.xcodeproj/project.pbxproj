@@ -238,11 +238,11 @@
 				123BD0ED1F31555B00B99019 /* AssignPlayer.swift */,
 				12DA2CDB1F40DDD100D0193A /* BlobAbsorbtion.swift */,
 				122FC6951F377BB200E0E2C9 /* BodyguardView.swift */,
+				127ACFDF1F425696004E9779 /* JoinCultView.swift */,
 				122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */,
 				127ACFE81F426660004E9779 /* SorceressView.swift */,
 				124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */,
 				12DFBB451F3E6BAD00D71944 /* ZombieLobotomy.swift */,
-				127ACFDF1F425696004E9779 /* JoinCultView.swift */,
 			);
 			name = ContainerViews;
 			sourceTree = "<group>";

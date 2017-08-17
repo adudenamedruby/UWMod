@@ -120,7 +120,11 @@ class ConfirmationPopup: UIViewController {
                     self.notify(name: EliminationByWerewolfSuccessNotification)
                 }
                 
-                GAME.prepareToEliminatePlayer(victim: chosenPlayer)
+                if chosenPlayer.roleType() == .Cursed && reason == .WerewolfElimination {
+                        chosenPlayer.updateRole(withRole: CURSED_WEREWOLF)
+                } else {
+                    GAME.prepareToEliminatePlayer(victim: chosenPlayer)
+                }
                 
             } else if reason == .AssignPlayer {
                 chosenPlayer.assignRole(role: role!)
