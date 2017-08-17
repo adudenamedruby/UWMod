@@ -18,7 +18,7 @@ class WerewolfAssassination: UIView {
     
     
     // MARK: - Variables
-    
+    weak var delegate:                          UpdateCardDelegate?
     private var timer:                          Timer!
     private var counter                         = 0
     private var isTrackingTime                  = false
@@ -79,6 +79,7 @@ class WerewolfAssassination: UIView {
         stopTimer()
         timerLabel.isHidden                 = true
         killVillagerButton.isHidden         = true
+        delegate?.updateCard()
     }
     
     

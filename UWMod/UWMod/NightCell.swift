@@ -202,6 +202,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
                         presentWerewolfAssassination()
                     }
                 }
+                
             } else if player?.roleType() == .Bodyguard && !((player?.hasActedTonight)!) && !GAME.firstNight {
                 presentBodyguardView()
                 
@@ -243,6 +244,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
     private func presentWerewolfAssassination() {
         let localizedActionView = WerewolfAssassination(frame: actionViewFrame)
+        localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }
     

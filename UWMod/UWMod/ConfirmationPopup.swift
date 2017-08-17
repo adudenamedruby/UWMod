@@ -116,27 +116,14 @@ class ConfirmationPopup: UIViewController {
                     GAME.aWerewolfHasBeenSlain = true
                 }
                 
-                if chosenPlayer.roleType() == .WolfCub && !GAME.theWolfCubHasBeenSlain {
-                    GAME.theWolfCubHasBeenSlain = true
-                }
-                
                 if reason == .WerewolfElimination {
                     self.notify(name: EliminationByWerewolfSuccessNotification)
                 }
                 
-                GAME.prepareToEliminatePlayer(victim: chosenPlayer)
-                
-                
-                if chosenPlayer.killedBy != nil && chosenPlayer.roleType() == .Cursed {
-                    if reason == .WerewolfElimination {
-                        for player in GAME.playersToBeEliminated {
-                            if player === chosenPlayer {
-                                let indx = GAME.playersToBeEliminated.index(where: { $0 === chosenPlayer } )
-                                GAME.playersToBeEliminated.remove(at: indx!)
-                                chosenPlayer.updateRole(withRole: CURSED_WEREWOLF)
-                            }
-                        }
-                    }
+                if chosenPlayer.roleType() == .Cursed && reason == .WerewolfElimination {
+                        chosenPlayer.updateRole(withRole: CURSED_WEREWOLF)
+                } else {
+                    GAME.prepareToEliminatePlayer(victim: chosenPlayer)
                 }
                 
             } else if reason == .AssignPlayer {

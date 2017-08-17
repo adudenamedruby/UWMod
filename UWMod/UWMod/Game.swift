@@ -53,8 +53,8 @@ class Game {
     private var _werewolvesHaveKilledThisNight:     Bool
     private var _werewolvesAreDiseased:             Bool
     private var _wolfRoles:                         [RoleType]
+    private var _theWolfCubHasBeenSlain:            Bool
     var aWerewolfHasBeenSlain:                      Bool
-    var theWolfCubHasBeenSlain:                     Bool
     var theBlobHasAbsorbed:                         Bool
 
     
@@ -167,7 +167,7 @@ class Game {
                                                .FruitBrute,
                                                .Wolverine]
         self.aWerewolfHasBeenSlain          = false
-        self.theWolfCubHasBeenSlain         = false
+        self._theWolfCubHasBeenSlain         = false
         self.theBlobHasAbsorbed             = false
         
     }
@@ -237,7 +237,7 @@ class Game {
                     }
                     
                     if victim.roleType() == .WolfCub {
-                        increasePossibleWerewolfTargets()
+                        _theWolfCubHasBeenSlain = true
                     }
                     
                     if victim.killedBy != nil {
@@ -522,11 +522,10 @@ class Game {
             }
         }
         
-        if theWolfCubHasBeenSlain {
+        if _theWolfCubHasBeenSlain {
             increasePossibleWerewolfTargets()
-            theWolfCubHasBeenSlain = false
+            _theWolfCubHasBeenSlain = false
         }
-        
         
         // This is a last check!
         if _werewolvesAreDiseased {
