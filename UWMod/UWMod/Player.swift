@@ -386,6 +386,10 @@ extension Player {
     // This abstraction layer prevents views from having to reach into player and accessing
     // the Role object directly.
     
+    func hasUsedOneTimePower() {
+        self.role.powerUsed = true
+    }
+    
     func roleName() -> String {
         return role.name
     }
