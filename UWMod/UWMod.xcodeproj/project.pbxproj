@@ -29,6 +29,8 @@
 		123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123BD0E51F31474A00B99019 /* AssignPlayer.xib */; };
 		123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0ED1F31555B00B99019 /* AssignPlayer.swift */; };
 		124787611F34150A00518532 /* SelectedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124787601F34150A00518532 /* SelectedItem.swift */; };
+		124A13331F4735C20037DA94 /* CupidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A13321F4735C20037DA94 /* CupidView.swift */; };
+		124A13351F4735CC0037DA94 /* CupidView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124A13341F4735CC0037DA94 /* CupidView.xib */; };
 		124F74EB1F3530A200F03E49 /* WerewolfTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124F74E91F3530A200F03E49 /* WerewolfTeamCell.swift */; };
 		124F74EC1F3530A200F03E49 /* WerewolfTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */; };
 		124F74EF1F3549BB00F03E49 /* VillageTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124F74ED1F3549BB00F03E49 /* VillageTeamCell.swift */; };
@@ -124,6 +126,8 @@
 		123BD0E51F31474A00B99019 /* AssignPlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignPlayer.xib; sourceTree = "<group>"; };
 		123BD0ED1F31555B00B99019 /* AssignPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignPlayer.swift; sourceTree = "<group>"; };
 		124787601F34150A00518532 /* SelectedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedItem.swift; sourceTree = "<group>"; };
+		124A13321F4735C20037DA94 /* CupidView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CupidView.swift; sourceTree = "<group>"; };
+		124A13341F4735CC0037DA94 /* CupidView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CupidView.xib; sourceTree = "<group>"; };
 		124F74E91F3530A200F03E49 /* WerewolfTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WerewolfTeamCell.swift; sourceTree = "<group>"; };
 		124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WerewolfTeamCell.xib; sourceTree = "<group>"; };
 		124F74ED1F3549BB00F03E49 /* VillageTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VillageTeamCell.swift; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 				123BD0ED1F31555B00B99019 /* AssignPlayer.swift */,
 				12DA2CDB1F40DDD100D0193A /* BlobAbsorbtion.swift */,
 				122FC6951F377BB200E0E2C9 /* BodyguardView.swift */,
+				124A13321F4735C20037DA94 /* CupidView.swift */,
 				127ACFDF1F425696004E9779 /* JoinCultView.swift */,
 				127ACFEE1F46621B004E9779 /* PriestView.swift */,
 				122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */,
@@ -258,6 +263,7 @@
 				123BD0E51F31474A00B99019 /* AssignPlayer.xib */,
 				12DA2CDD1F40DDE600D0193A /* BlobAbsorbtion.xib */,
 				122FC6971F377BCE00E0E2C9 /* BodyguardView.xib */,
+				124A13341F4735CC0037DA94 /* CupidView.xib */,
 				127ACFE21F4256AB004E9779 /* JoinCultView.xib */,
 				127ACFEC1F466201004E9779 /* PriestView.xib */,
 				122FC69F1F392F9C00E0E2C9 /* SeerInspection.xib */,
@@ -536,6 +542,7 @@
 				12154A611F410229003A5D86 /* BlobCell.xib in Resources */,
 				12DA2CDE1F40DDE600D0193A /* BlobAbsorbtion.xib in Resources */,
 				127ACFEB1F42666F004E9779 /* SorceressView.xib in Resources */,
+				124A13351F4735CC0037DA94 /* CupidView.xib in Resources */,
 				127ACFE31F4256AB004E9779 /* JoinCultView.xib in Resources */,
 				123317D41F40B832000C3260 /* Assets.xcassets in Resources */,
 				124F74F01F3549BB00F03E49 /* VillageTeamCell.xib in Resources */,
@@ -614,6 +621,7 @@
 				1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */,
 				123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */,
 				12DFBB461F3E6BAD00D71944 /* ZombieLobotomy.swift in Sources */,
+				124A13331F4735C20037DA94 /* CupidView.swift in Sources */,
 				7736D09C1F33A36700555037 /* HelpCellHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -121,6 +121,8 @@ class Player {
                 addAppropriateCard(daytimeCard: .BlobTeamCard)
             } else if teamX == .TeamCult {
                 addAppropriateCard(daytimeCard: .CultTeamCard)
+            } else if teamX == .TeamLovebirds {
+                addAppropriateCard(daytimeCard: .LovebirdTeamCard)
             }
         }
     }

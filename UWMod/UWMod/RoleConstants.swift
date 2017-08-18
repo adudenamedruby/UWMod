@@ -14,6 +14,7 @@ import UIKit
 let pregame_tempRoles: [Role] = [BEHOLDER,
                                  BODYGUARD,
                                  CULTLEADER,
+                                 CUPID,
                                  CURSED,
                                  DISEASED,
                                  INSOMNIAC,
@@ -71,6 +72,10 @@ let BODYGUARD = Role(name: "Bodyguard", type: .Bodyguard, description: "Each nig
 
 
 let CULTLEADER = Role(name: "Cult Leader", type: .CultLeader, description: "Every night, choose a player to join your cult. If all players in the game are in the cult, you win.", roleExplanation: "The Cult Leader picks a player each night to add to the cult (players picked do not know they are in the cult). The Cult Leader only wins if all players left in the game (not necessarily including himself) are part of the cult. Normal victory conditions for the other teams are still present.", impact: 1, priority: 70, powerChoice: false, team: [.TeamCult], availableEffects: [], image: #imageLiteral(resourceName: "cultLeader"), isNightActiveRole: .NightActiveRole)
+
+
+
+let CUPID = Role(name: "Cupid", type: .Cupid, description: "The first night, choose two players to be linked together. If one of them is eliminated, the other is eliminated as well.", roleExplanation: "Cupid wakes the first night and points at two players (one of which can be themselves). The Moderator wakes them up the first night by tapping them on the shoulder so they can see who the other Sweetheart is. If one of them is eliminated, the other is eliminated (because of a broken heart) instantly.\n\nIf both Sweethearts are on the village team, they win with the village team. If they are both on the werewolf team, they win with the werewolf team. If they are on different teams, they become their own team and only win if they are the last two players in the game. Being a Sweetheart overrides other winning conditions, such as those of the Lone Wolf, the Tanner, and Hoodlum.", impact: -3, priority: 76, powerChoice: false, team: [.TeamVillage], availableEffects: [.Lovestruck], image: #imageLiteral(resourceName: "cupid"), isNightActiveRole: .NotNightActiveRole)
 
 
 
