@@ -33,6 +33,8 @@
 		124A13351F4735CC0037DA94 /* CupidView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124A13341F4735CC0037DA94 /* CupidView.xib */; };
 		124A13381F47410E0037DA94 /* SweetheartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A13361F47410E0037DA94 /* SweetheartCell.swift */; };
 		124A13391F47410E0037DA94 /* SweetheartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124A13371F47410E0037DA94 /* SweetheartCell.xib */; };
+		124A133B1F4769CB0037DA94 /* SpellcasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A133A1F4769CB0037DA94 /* SpellcasterView.swift */; };
+		124A133D1F4769DB0037DA94 /* SpellcasterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124A133C1F4769DB0037DA94 /* SpellcasterView.xib */; };
 		124F74EB1F3530A200F03E49 /* WerewolfTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124F74E91F3530A200F03E49 /* WerewolfTeamCell.swift */; };
 		124F74EC1F3530A200F03E49 /* WerewolfTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */; };
 		124F74EF1F3549BB00F03E49 /* VillageTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124F74ED1F3549BB00F03E49 /* VillageTeamCell.swift */; };
@@ -132,6 +134,8 @@
 		124A13341F4735CC0037DA94 /* CupidView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CupidView.xib; sourceTree = "<group>"; };
 		124A13361F47410E0037DA94 /* SweetheartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetheartCell.swift; sourceTree = "<group>"; };
 		124A13371F47410E0037DA94 /* SweetheartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SweetheartCell.xib; sourceTree = "<group>"; };
+		124A133A1F4769CB0037DA94 /* SpellcasterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpellcasterView.swift; sourceTree = "<group>"; };
+		124A133C1F4769DB0037DA94 /* SpellcasterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpellcasterView.xib; sourceTree = "<group>"; };
 		124F74E91F3530A200F03E49 /* WerewolfTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WerewolfTeamCell.swift; sourceTree = "<group>"; };
 		124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WerewolfTeamCell.xib; sourceTree = "<group>"; };
 		124F74ED1F3549BB00F03E49 /* VillageTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VillageTeamCell.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 				127ACFEE1F46621B004E9779 /* PriestView.swift */,
 				122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */,
 				127ACFE81F426660004E9779 /* SorceressView.swift */,
+				124A133A1F4769CB0037DA94 /* SpellcasterView.swift */,
 				124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */,
 				12DFBB451F3E6BAD00D71944 /* ZombieLobotomy.swift */,
 			);
@@ -272,6 +277,7 @@
 				127ACFEC1F466201004E9779 /* PriestView.xib */,
 				122FC69F1F392F9C00E0E2C9 /* SeerInspection.xib */,
 				127ACFEA1F42666F004E9779 /* SorceressView.xib */,
+				124A133C1F4769DB0037DA94 /* SpellcasterView.xib */,
 				124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */,
 				12DFBB431F3E6B9700D71944 /* ZombieLobotomy.xib */,
 			);
@@ -550,6 +556,7 @@
 				12DA2CDE1F40DDE600D0193A /* BlobAbsorbtion.xib in Resources */,
 				127ACFEB1F42666F004E9779 /* SorceressView.xib in Resources */,
 				124A13351F4735CC0037DA94 /* CupidView.xib in Resources */,
+				124A133D1F4769DB0037DA94 /* SpellcasterView.xib in Resources */,
 				127ACFE31F4256AB004E9779 /* JoinCultView.xib in Resources */,
 				123317D41F40B832000C3260 /* Assets.xcassets in Resources */,
 				124F74F01F3549BB00F03E49 /* VillageTeamCell.xib in Resources */,
@@ -579,6 +586,7 @@
 				12D15E201F2E82870057905E /* RoleSelectionCell.swift in Sources */,
 				12EC77E71F2BDAC00026C667 /* PlayerSelectVC.swift in Sources */,
 				127ACFEF1F46621B004E9779 /* PriestView.swift in Sources */,
+				124A133B1F4769CB0037DA94 /* SpellcasterView.swift in Sources */,
 				1260ED331F2C2A78001A8F7B /* AddPlayerVC.swift in Sources */,
 				12EC77E31F29881F0026C667 /* RoleConstants.swift in Sources */,
 				12D15E271F2EB0AB0057905E /* FadeAnimations.swift in Sources */,

@@ -14,6 +14,7 @@ enum SelectPlayerReason {
     case BodyguardSelectProtectee
     case PriestSelectProtectee
     case CupidLovestrike
+    case SilencePlayer
     case WerewolfElimination
     case VillageElimination
     case ZombieLobotomization
@@ -126,6 +127,9 @@ class SelectPlayerPopupVC: UIViewController {
             } else if reason == .CupidLovestrike {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
+            } else if reason == .SilencePlayer {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
             }
             
         } else {
@@ -205,6 +209,9 @@ class SelectPlayerPopupVC: UIViewController {
         case .CupidLovestrike:
             populatePotentialLovebirds()
             
+        case .SilencePlayer:
+            populatePlayersToSilence()
+            
             
             
         }
@@ -255,6 +262,9 @@ class SelectPlayerPopupVC: UIViewController {
             
         case .CupidLovestrike:
             nc.post(name: NSNotification.Name(rawValue: JoinCultFailureNotification), object: nil)
+            
+        case .SilencePlayer:
+            nc.post(name: NSNotification.Name(rawValue: SpellcasterSilenceFailureNotification), object: nil)
             
         case .RoleClarification:
             break
@@ -413,7 +423,7 @@ extension SelectPlayerPopupVC {
 
 extension SelectPlayerPopupVC {
     
-    // CULT LEADER BRAINWASHING!
+    // CUPID!
     func populatePotentialLovebirds() {
         availablePlayers.removeAll()
         
@@ -424,6 +434,30 @@ extension SelectPlayerPopupVC {
         }
         
         //availablePlayers.sort(by: { $0.name < $1.name } )
+    }
+}
+
+
+extension SelectPlayerPopupVC {
+    
+    // PROTECTION!
+    func populatePlayersToSilence() {
+        availablePlayers.removeAll()
+        availablePlayers = playersToSilence()
+    }
+    
+    func playersToSilence() -> [Player] {
+        var possiblePlayers: [Player] = []
+        
+        for player in GAME.livingActors {
+            if (activePlayer?.canAffect(player: player, forCondition: .Silence))! {
+                possiblePlayers.append(player)
+            }
+        }
+        
+        //unprotectedPlayersList.sort(by: { $0.name < $1.name })
+        
+        return possiblePlayers
     }
 }
 

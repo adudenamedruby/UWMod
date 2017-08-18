@@ -82,6 +82,11 @@ class ConfirmationPopup: UIViewController {
             } else if reason            == .CupidLovestrike {
                 headerTitle             = "Confirm Love"
                 alternateAlertText      = "Are you sure you want to affect \(chosenPlayer.name) with love?"
+            
+            } else if reason            == .SilencePlayer {
+                headerTitle             = "Confirm Silence"
+                alternateAlertText      = "Are you sure you want to silence \(chosenPlayer.name)?"
+  
             }
         }
         
@@ -138,7 +143,7 @@ class ConfirmationPopup: UIViewController {
                 GAME.addPlayerToLivingActors(player: chosenPlayer)
                 
             } else if reason == .BodyguardSelectProtectee || reason == .PriestSelectProtectee {
-                actingPlayer?.protect(playerToProtect: chosenPlayer, protector: actingPlayer!)
+                actingPlayer?.protect(playerToProtect: chosenPlayer)
                 actingPlayer?.hasActedTonight = true
                 
                 if reason == .PriestSelectProtectee {
@@ -146,7 +151,7 @@ class ConfirmationPopup: UIViewController {
                 }
             
             } else if reason == .ZombieLobotomization {
-                actingPlayer?.eatBrains(ofVictim: chosenPlayer, zombie: actingPlayer!)
+                actingPlayer?.eatBrains(ofVictim: chosenPlayer)
                 actingPlayer?.hasActedTonight = true
                 
             } else if reason == .BlobAbsorbtion {
@@ -160,9 +165,12 @@ class ConfirmationPopup: UIViewController {
                 actingPlayer?.hasActedTonight = true
                 
             } else if reason == .CupidLovestrike {
-                actingPlayer?.linkPlayers(playerToLink: chosenPlayer, playerCausingLink: actingPlayer!)
+                actingPlayer?.linkPlayers(playerToLink: chosenPlayer)
+            
+            } else if reason == .SilencePlayer {
+                actingPlayer?.linkPlayers(playerToLink: chosenPlayer)
+                
             }
-    
         }
         
         let presentingVC = self.presentingViewController

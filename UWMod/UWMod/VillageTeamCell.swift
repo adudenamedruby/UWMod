@@ -17,6 +17,8 @@ class VillageTeamCell: UITableViewCell {
     @IBOutlet var headerView:                   UIView!
     @IBOutlet weak var headerTitleLabel:        RegTanHeader!
     @IBOutlet weak var playerTotalsLabel:       RegTanHeader!
+    @IBOutlet weak var teamPlayerLabel:         RegTanHeader!
+    
     
     @IBOutlet var playerLabel:                  RegRed!
     
@@ -54,8 +56,8 @@ class VillageTeamCell: UITableViewCell {
         let totalPlayers                        = playerInfo.total
         let teamTotal                           = playerInfo.team
     
-        
-        self.playerTotalsLabel.text = "\(teamTotal)/\(totalPlayers)"
+        self.teamPlayerLabel.text = "\(teamTotal)"
+        self.playerTotalsLabel.text = "/\(totalPlayers)"
         self.playerLabel.text = villageTeamPlayers
     }
     

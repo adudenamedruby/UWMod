@@ -33,8 +33,14 @@
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="he Graveyard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSj-os-7Q5" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="354" y="10" width="136" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSj-os-7Q5" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="464.5" y="19" width="25.5" height="16"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="13"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnd-Rs-E4z" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="425.5" y="10" width="39" height="25"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -42,11 +48,13 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="cSj-os-7Q5" firstAttribute="leading" secondItem="Bnd-Rs-E4z" secondAttribute="trailing" id="0NI-MS-Ght"/>
                                             <constraint firstAttribute="trailing" secondItem="cSj-os-7Q5" secondAttribute="trailing" constant="15" id="TPt-Z4-W5t"/>
                                             <constraint firstItem="L0p-Xw-Xf7" firstAttribute="centerY" secondItem="A9t-AF-JjB" secondAttribute="centerY" id="Vej-UK-HDp"/>
-                                            <constraint firstItem="cSj-os-7Q5" firstAttribute="centerY" secondItem="A9t-AF-JjB" secondAttribute="centerY" id="aYx-Lz-cUs"/>
                                             <constraint firstAttribute="height" constant="45" id="gYc-PL-aIc"/>
+                                            <constraint firstItem="Bnd-Rs-E4z" firstAttribute="centerY" secondItem="A9t-AF-JjB" secondAttribute="centerY" id="iLi-OG-OXe"/>
                                             <constraint firstItem="L0p-Xw-Xf7" firstAttribute="centerX" secondItem="A9t-AF-JjB" secondAttribute="centerX" id="n0t-oY-Qiz"/>
+                                            <constraint firstItem="cSj-os-7Q5" firstAttribute="bottom" secondItem="Bnd-Rs-E4z" secondAttribute="bottom" id="yzX-aV-nk4"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQh-Mq-Aqw" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
@@ -103,6 +111,7 @@
                 <outlet property="outlineView" destination="HfV-H6-8SU" id="zAF-DW-0PC"/>
                 <outlet property="playerLabel" destination="RQh-Mq-Aqw" id="6cu-oq-S1P"/>
                 <outlet property="playerTotalsLabel" destination="cSj-os-7Q5" id="D6L-u1-dai"/>
+                <outlet property="teamTotalLabel" destination="Bnd-Rs-E4z" id="znx-kx-XUq"/>
             </connections>
             <point key="canvasLocation" x="37.5" y="181"/>
         </tableViewCell>

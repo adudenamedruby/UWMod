@@ -21,6 +21,7 @@ class JoinCultCell: UITableViewCell {
     @IBOutlet weak var cultLeaderLabel:     RegBrown!
     @IBOutlet var playerLabel:              RegBrown!
     @IBOutlet weak var playerTotalsLabel:   RegTanHeader!
+    @IBOutlet weak var teamTotalLabel: RegTanHeader!
     
     
     // MARK: - Variables
@@ -59,9 +60,9 @@ class JoinCultCell: UITableViewCell {
         let totalPlayers                        = playerInfo.total
         let teamTotal                           = playerInfo.team
         
-        
-        self.playerTotalsLabel.text = "\(teamTotal)/\(totalPlayers)"
-        self.playerLabel.text               = cultMembers
+        self.teamTotalLabel.text                = "\(teamTotal)"
+        self.playerTotalsLabel.text             = "/\(totalPlayers)"
+        self.playerLabel.text                   = cultMembers
     }
     
 }

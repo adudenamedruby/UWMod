@@ -17,6 +17,8 @@ let pregame_tempRoles: [Role] = [BEHOLDER,
                                  CUPID,
                                  CURSED,
                                  DISEASED,
+                                 GHOST,
+                                 HUNTER,
                                  INSOMNIAC,
                                  LYCAN,
                                  MASON,
@@ -26,6 +28,7 @@ let pregame_tempRoles: [Role] = [BEHOLDER,
                                  PRIEST,
                                  SEER,
                                  SORCERESS,
+                                 SPELLCASTER,
                                  THE_BLOB,
                                  THE_COUNT,
                                  THING,
@@ -89,6 +92,14 @@ let DISEASED = Role(name: "Diseased", type: .Diseased, description: "If you are 
 
 
 
+let GHOST = Role(name: "Ghost", type: .Ghost, description: "The first night, you are eliminated. Communicate to the players with single letter clues each day.", roleExplanation: "The Ghost is eliminated the first night. He writes down 10 letters at the end of the first night as a message from beyond with the only limitation being that he may not attempt to identify any player by name or initials. Each morning, the Moderator reveals one letter (in order) from the Ghost. The clues given by the Ghost can be interpreted in many ways, and makes conversation during the first day much more animated than otherwise.", impact: 2, priority: 1, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "ghost"), isNightActiveRole: .NotNightActiveRole)
+
+
+
+let HUNTER = Role(name: "Hunter", type: .Hunter, description: "If you are eliminated, you may immediately eliminate another player.", roleExplanation: "If the Hunter is eliminated (during the day or night), he immediately fires his weapon by pointing at any player, who is then eliminated. He may also choose to fire his weapon straight up, resulting in no additional elimination. No one may speak while the Hunter chooses a target. If the Hunter is eliminated at night, he picks his target immediately the next morning.", impact: 3, priority: 61, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "hunter"), isNightActiveRole: .NotNightActiveRole)
+
+
+
 let INSOMNIAC = Role(name: "Insomniac", type: .Insomniac, description: "Each night, learn if at least one of your neighbors has taken a night action.", roleExplanation: "Every night, the Insomniac is told if anyone woke up at night who is sitting next to him.\n\nThe Moderator does not tell the Insomniac if 1 or 2 players sitting next to him woke up at night, just that at least one of those players woke up that night. If a player next to the Insomniac is eliminated, the next player over is considered 'next' to the Insomniac. If a player next to to the Insomniac is eliminated at night, he 'sees' that player, not the player next to the eliminated player.\n\nThe Insomniac player needs to be clever when sharing any information he has about the players next to him, so he doesn’t accidentally out the Seer or another special character that is helping the village. The fewer special characters in the game, the more helpful the Insomniac role is to the village.", impact: 3, priority: 199, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "insomniac"), isNightActiveRole: .NightActiveRole)
 
 
@@ -122,6 +133,10 @@ let SEER = Role(name: "Seer", type: .Seer, description: "Each night choose a pla
 
 
 let SORCERESS = Role(name: "Sorceress", type: .Sorceress, description: "Each night, you wake up and try to find the Seer.", roleExplanation: "The Sorceress looks for the Seer each night (the Moderator shows a thumbs up if the Sorceress points to the Seer). The Werewolves do not know who the Sorceress is, and the Sorceress does not know who the Werewolves are. The Seer sees the Sorceress as a villager.", impact: -3, priority: 190, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "sorceress"), isNightActiveRole: .NightActiveRole)
+
+
+
+let SPELLCASTER = Role(name: "Spellcaster", type: .Spellcaster, description: "Each night, choose a player who may not speak the following day.", roleExplanation: "Each night, the Spellcaster may choose one player to be muted for the following day (that player may not speak but may communicate any other way). The Spellcaster may choose to mute themselves, but may not mute the same player twice during a single game.", impact: 1, priority: 148, powerChoice: false, team: [.TeamVillage], availableEffects: [.Silence], image: #imageLiteral(resourceName: "spellcaster"), isNightActiveRole: .NightActiveRole)
 
 
 

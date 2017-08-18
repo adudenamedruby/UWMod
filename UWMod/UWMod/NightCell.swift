@@ -181,6 +181,9 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
                     }
                 }
                 
+            } else if player?.roleType() == .Ghost {
+                GAME.prepareToEliminatePlayer(victim: player!)
+            
             } else if player?.roleType() == .Bodyguard && !((player?.hasActedTonight)!) && !GAME.firstNight {
                 presentBodyguardView()
                 
@@ -204,6 +207,10 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
                 
             } else if player?.roleType() == .Cupid && !((player?.rolePowerUsed())!) {
                 presentCupidView()
+                
+            } else if player?.roleType() == .Spellcaster && !((player?.hasActedTonight)!) {
+                presentSpellcasterView()
+                
             }
         }
     }
@@ -269,6 +276,12 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
     private func presentCupidView() {
         let localizedActionView = CupidView(frame: actionViewFrame, withPlayer: player!)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    private func presentSpellcasterView() {
+        let localizedActionView = SpellcasterView(frame: actionViewFrame, withPlayer: player!)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }
