@@ -12,6 +12,7 @@ enum SelectPlayerReason {
     case Default
     case AssignPlayer
     case BodyguardSelectProtectee
+    case PriestSelectProtectee
     case WerewolfElimination
     case VillageElimination
     case ZombieLobotomization
@@ -101,6 +102,9 @@ class SelectPlayerPopupVC: UIViewController {
             } else if reason == .BodyguardSelectProtectee {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
+            } else if reason == .PriestSelectProtectee {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+            
             } else if reason == .VillageElimination {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: nil, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
@@ -190,6 +194,13 @@ class SelectPlayerPopupVC: UIViewController {
             
         case .JoinTheCult:
             populateNonCultPlayers()
+        
+        case .PriestSelectProtectee:
+            populateForProtection()
+            
+            
+            
+            
         }
         
     }
@@ -217,6 +228,9 @@ class SelectPlayerPopupVC: UIViewController {
             
         case .BodyguardSelectProtectee:
             nc.post(name: NSNotification.Name(rawValue: BodyguardProtectingFailureNotification), object: nil)
+            
+        case .PriestSelectProtectee:
+            nc.post(name: NSNotification.Name(rawValue: PriestProtectFailureNotification), object: nil)
             
         case .WerewolfElimination:
             nc.post(name: NSNotification.Name(rawValue: EliminationByWerewolfFailureNotification), object: nil)

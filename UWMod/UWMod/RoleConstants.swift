@@ -22,6 +22,7 @@ let pregame_tempRoles: [Role] = [BEHOLDER,
                                  MAYOR,
                                  MINION,
                                  PACIFIST,
+                                 PRIEST,
                                  SEER,
                                  SORCERESS,
                                  THE_BLOB,
@@ -104,6 +105,10 @@ let MINION = Role(name: "Minion", type: .Minion, description: "You know who the 
 
 
 let PACIFIST = Role(name: "Pacifist", type: .Pacifist, description: "You must always vote for players to not be eliminated.", roleExplanation: "The Pacifist always votes for players to stay in the game. The Pacifist is a nice boost for the Werewolf team, as it’s one extra vote to prevent players from being eliminated during the day.", impact: -1, priority: 79, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "pacifist"), isNightActiveRole: .NotNightActiveRole)
+
+
+
+let PRIEST = Role(name: "Priest", type: .Priest, description: "One night per game, choose a player to be protected. That player may not be eliminated at night.", roleExplanation: "One night during the game, the Priest may choose any player to be protected by holy power. The next attempt to eliminate that player by any means fails. The Priest may not choose himself. If the Priest is eliminated after “blessing someone in this way, that player is still protected.", impact: 3, priority: 172, powerChoice: true, team: [.TeamVillage], availableEffects: [.Protection], image: #imageLiteral(resourceName: "priest"), isNightActiveRole: .NightActiveRole)
 
 
 

@@ -167,6 +167,14 @@ class Player {
                             stopAffectingAllOtherPlayer()
                         }
                     }
+                    
+                } else if role.type == .Priest && effect == .Protection {
+                    if affectingPlayers[effect] != nil {
+                        for player in affectingPlayers[effect]! {
+                            player.removeEffectFromPlayer(condition: effect, causedBy: self)
+                            stopAffectingAllOtherPlayer()
+                        }
+                    }
                 
                 } else if role.type == .Zombie {
                     // Zombie continues affecting players for the rest of the game.
@@ -339,7 +347,6 @@ class Player {
         
         switch kindOfRole {
         case .Bodyguard:
-            
             if canPerformEffect(condition: effect, player: playerToProtect) {
                 
                 // Keep track of a single protected target
@@ -348,7 +355,21 @@ class Player {
                 
                 playerToProtect.addEffectFromOtherPlayers(condition: effect,
                                                           causedBy: protector)
+                
             }
+            
+        case .Priest:
+            if canPerformEffect(condition: effect, player: playerToProtect) {
+                
+                // Keep track of a single protected target
+                addTargetToSingularAffectingPlayerList(condition: effect, affectedPlayer: playerToProtect)
+                addTargetToSingularIneligibilityList(condition: effect, playerToAdd: playerToProtect)
+                
+                playerToProtect.addEffectFromOtherPlayers(condition: effect,
+                                                          causedBy: protector)
+                
+            }
+            
         default: break
             // Do nothing
         }

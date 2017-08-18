@@ -47,6 +47,8 @@
 		127ACFE71F425986004E9779 /* JoinCultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127ACFE51F425986004E9779 /* JoinCultCell.xib */; };
 		127ACFE91F426660004E9779 /* SorceressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACFE81F426660004E9779 /* SorceressView.swift */; };
 		127ACFEB1F42666F004E9779 /* SorceressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127ACFEA1F42666F004E9779 /* SorceressView.xib */; };
+		127ACFED1F466201004E9779 /* PriestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127ACFEC1F466201004E9779 /* PriestView.xib */; };
+		127ACFEF1F46621B004E9779 /* PriestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACFEE1F46621B004E9779 /* PriestView.swift */; };
 		1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1298C8A21F3DD15D00261779 /* Notes.rtf */; };
 		12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */; };
 		12D15E201F2E82870057905E /* RoleSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */; };
@@ -140,6 +142,8 @@
 		127ACFE51F425986004E9779 /* JoinCultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JoinCultCell.xib; sourceTree = "<group>"; };
 		127ACFE81F426660004E9779 /* SorceressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SorceressView.swift; sourceTree = "<group>"; };
 		127ACFEA1F42666F004E9779 /* SorceressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SorceressView.xib; sourceTree = "<group>"; };
+		127ACFEC1F466201004E9779 /* PriestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriestView.xib; sourceTree = "<group>"; };
+		127ACFEE1F46621B004E9779 /* PriestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriestView.swift; sourceTree = "<group>"; };
 		1298C8A21F3DD15D00261779 /* Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
 		12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSuperButton.swift; sourceTree = "<group>"; };
 		12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleSelectionCell.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 				12DA2CDB1F40DDD100D0193A /* BlobAbsorbtion.swift */,
 				122FC6951F377BB200E0E2C9 /* BodyguardView.swift */,
 				127ACFDF1F425696004E9779 /* JoinCultView.swift */,
+				127ACFEE1F46621B004E9779 /* PriestView.swift */,
 				122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */,
 				127ACFE81F426660004E9779 /* SorceressView.swift */,
 				124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */,
@@ -254,6 +259,7 @@
 				12DA2CDD1F40DDE600D0193A /* BlobAbsorbtion.xib */,
 				122FC6971F377BCE00E0E2C9 /* BodyguardView.xib */,
 				127ACFE21F4256AB004E9779 /* JoinCultView.xib */,
+				127ACFEC1F466201004E9779 /* PriestView.xib */,
 				122FC69F1F392F9C00E0E2C9 /* SeerInspection.xib */,
 				127ACFEA1F42666F004E9779 /* SorceressView.xib */,
 				124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */,
@@ -518,6 +524,7 @@
 				12EC77FB1F2BE1D40026C667 /* Old Wise Sketch.otf in Resources */,
 				1209820F1F26BBE700EC5D21 /* Main.storyboard in Resources */,
 				12DFBB3E1F3E55E400D71944 /* ZombieCell.xib in Resources */,
+				127ACFED1F466201004E9779 /* PriestView.xib in Resources */,
 				122FC6A01F392F9C00E0E2C9 /* SeerInspection.xib in Resources */,
 				1261C2BF1F32AA960099D759 /* GeneralInfo.xib in Resources */,
 				12DFBB441F3E6B9700D71944 /* ZombieLobotomy.xib in Resources */,
@@ -557,6 +564,7 @@
 				12D15E231F2EA8470057905E /* MainGameVC.swift in Sources */,
 				12D15E201F2E82870057905E /* RoleSelectionCell.swift in Sources */,
 				12EC77E71F2BDAC00026C667 /* PlayerSelectVC.swift in Sources */,
+				127ACFEF1F46621B004E9779 /* PriestView.swift in Sources */,
 				1260ED331F2C2A78001A8F7B /* AddPlayerVC.swift in Sources */,
 				12EC77E31F29881F0026C667 /* RoleConstants.swift in Sources */,
 				12D15E271F2EB0AB0057905E /* FadeAnimations.swift in Sources */,

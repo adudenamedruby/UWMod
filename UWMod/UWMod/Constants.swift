@@ -75,3 +75,5 @@ let BlobAbsorbtionSuccessNotification               = "blobAbsorbtionSuccessNoti
 let BlobAbsorbtionFailureNotification               = "blobAbsorbtionFailureNotification"
 let JoinCultFailureNotification                     = "joinCultFailureNotification"
 let JoinCultSuccessNotification                     = "joinCultSuccessNotification"
+let PriestProtectSuccessNotification                = "priestProtectSuccessNotification"
+let PriestProtectFailureNotification                = "priestProtectFailureNotification"

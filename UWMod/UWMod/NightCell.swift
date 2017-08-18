@@ -220,6 +220,9 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
                 
             } else if player?.roleType() == .Sorceress {
                 presentSorceressView()
+                
+            } else if player?.roleType() == .Priest && !((player?.rolePowerUsed())!) {
+                presentPriestView()
             }
         }
     }
@@ -276,5 +279,11 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         let localizedActionView = SorceressView(frame: actionViewFrame)
         self.containerView.addSubview(localizedActionView)
         
+    }
+    
+    private func presentPriestView() {
+        let localizedActionView = PriestView(frame: actionViewFrame, withPlayer: player!)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
     }
 }

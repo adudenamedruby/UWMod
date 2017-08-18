@@ -75,6 +75,9 @@ class ConfirmationPopup: UIViewController {
                 headerTitle             = "Confirm Brainwashing"
                 alternateAlertText      = "Are you sure \(chosenPlayer.name)'s joining the Cult?"
                 
+            } else if reason            == .PriestSelectProtectee {
+                headerTitle             = "Confirm Blessing"
+                alternateAlertText      = "Are you sure you want to bless \(chosenPlayer.name)?"
             }
         }
         
@@ -130,10 +133,14 @@ class ConfirmationPopup: UIViewController {
                 chosenPlayer.assignRole(role: role!)
                 GAME.addPlayerToLivingActors(player: chosenPlayer)
                 
-            } else if reason == .BodyguardSelectProtectee {
+            } else if reason == .BodyguardSelectProtectee || reason == .PriestSelectProtectee {
                 actingPlayer?.protect(playerToProtect: chosenPlayer, protector: actingPlayer!)
                 actingPlayer?.hasActedTonight = true
                 
+                if reason == .PriestSelectProtectee {
+                    actingPlayer?.hasUsedOneTimePower()
+                }
+            
             } else if reason == .ZombieLobotomization {
                 actingPlayer?.eatBrains(ofVictim: chosenPlayer, zombie: actingPlayer!)
                 actingPlayer?.hasActedTonight = true
@@ -169,6 +176,8 @@ class ConfirmationPopup: UIViewController {
             } else if self.reason == .BodyguardSelectProtectee {
                 self.notify(name: BodyguardProtectingSuccessNotification)
                 
+            } else if self.reason == .PriestSelectProtectee {
+                self.notify(name: PriestProtectSuccessNotification)
             }
             
             presentingVC!.dismiss(animated: false, completion: nil)
