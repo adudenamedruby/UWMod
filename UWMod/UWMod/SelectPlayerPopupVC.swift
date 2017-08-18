@@ -13,6 +13,7 @@ enum SelectPlayerReason {
     case AssignPlayer
     case BodyguardSelectProtectee
     case PriestSelectProtectee
+    case CupidLovestrike
     case WerewolfElimination
     case VillageElimination
     case ZombieLobotomization
@@ -122,6 +123,9 @@ class SelectPlayerPopupVC: UIViewController {
             } else if reason == .JoinTheCult {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: nil, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
+            } else if reason == .CupidLovestrike {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
             }
             
         } else {
@@ -198,6 +202,8 @@ class SelectPlayerPopupVC: UIViewController {
         case .PriestSelectProtectee:
             populateForProtection()
             
+        case .CupidLovestrike:
+            populatePotentialLovebirds()
             
             
             
@@ -245,6 +251,9 @@ class SelectPlayerPopupVC: UIViewController {
             nc.post(name: NSNotification.Name(rawValue: BlobAbsorbtionFailureNotification), object: nil)
             
         case .JoinTheCult:
+            nc.post(name: NSNotification.Name(rawValue: JoinCultFailureNotification), object: nil)
+            
+        case .CupidLovestrike:
             nc.post(name: NSNotification.Name(rawValue: JoinCultFailureNotification), object: nil)
             
         case .RoleClarification:
@@ -394,6 +403,22 @@ extension SelectPlayerPopupVC {
         
         for player in GAME.livingActors {
             if !(player.team.contains(.TeamCult)) {
+                availablePlayers.append(player)
+            }
+        }
+        
+        //availablePlayers.sort(by: { $0.name < $1.name } )
+    }
+}
+
+extension SelectPlayerPopupVC {
+    
+    // CULT LEADER BRAINWASHING!
+    func populatePotentialLovebirds() {
+        availablePlayers.removeAll()
+        
+        for player in GAME.availablePlayers {
+            if !(player.isAffectedBy(condition: .Lovestruck)) {
                 availablePlayers.append(player)
             }
         }

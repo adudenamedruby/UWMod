@@ -104,8 +104,15 @@ class Player {
     
     public func determineDaytimeInfoCardForActor() {
         
+        determineTeamForPlayer()
         determineDaytimeInfoCardForTeam()
-        determineDaytimeInfoCardForPlayer()
+    }
+    
+    private func determineTeamForPlayer() {
+        
+        if currentConditions.contains(.Lovestruck) {
+            addToTeam(team: .TeamLovebirds)
+        }
     }
     
     private func determineDaytimeInfoCardForTeam() {
@@ -125,12 +132,6 @@ class Player {
                 addAppropriateCard(daytimeCard: .LovebirdTeamCard)
             }
         }
-    }
-    
-    private func determineDaytimeInfoCardForPlayer() {
-        
-        //let playerRole = role.type
-        
     }
     
     private func addAppropriateCard(daytimeCard: DaytimeCardType) {
@@ -374,6 +375,27 @@ class Player {
             
         default: break
             // Do nothing
+        }
+        
+    }
+    
+    /// Apply the link effect to players
+    public func linkPlayers(playerToLink: Player, playerCausingLink: Player) {
+        
+        let kindOfRole = role.type
+        
+        switch kindOfRole {
+        case .Cupid:
+            
+            addTargetToPluralAffectingPlayerList(condition: .Lovestruck, affectedPlayer: playerToLink)
+            addTargetToPluralIneligibilityList(condition: .Lovestruck, playerToAdd: playerToLink)
+            
+            playerToLink.addEffectFromOtherPlayers(condition: .Lovestruck, causedBy: playerCausingLink)
+            
+        case .VirginiaWoolf:
+            break
+            
+        default: break
         }
         
     }

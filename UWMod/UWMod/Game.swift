@@ -231,32 +231,43 @@ class Game {
         for victim in playersToBeEliminated {
             
             if !victim.isAffectedBy(condition: .Protection) {
-                if self.livingActors.contains(where: { $0 === victim }) {
-                    addToPhaseReport(player: victim)
-                    self.deadActors.append(victim)
-                    victim.isAlive = false
-                    
-                    if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
-                        self.livingActors.remove(at: tempIndex)
-                    }
-                    
-                    if victim.roleType() == .WolfCub {
-                        _theWolfCubHasBeenSlain = true
-                    }
-                    
-                    if victim.killedBy != nil {
-                        if _wolfRoles.contains(victim.killedBy!) && victim.roleType() == .Diseased {
-                            _werewolvesAreDiseased = true
-                        }
-                    }
-                }
-                
+                eliminatePlayer(victim: victim)
             } else {
                 addToPhaseReport(player: victim)
             }
         }
         
         playersToBeEliminated.removeAll()
+    }
+    
+    private func eliminatePlayer(victim: Player) {
+        if self.livingActors.contains(where: { $0 === victim }) {
+            addToPhaseReport(player: victim)
+            self.deadActors.append(victim)
+            victim.isAlive = false
+            
+            if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
+                self.livingActors.remove(at: tempIndex)
+            }
+            
+            if victim.roleType() == .WolfCub {
+                _theWolfCubHasBeenSlain = true
+            }
+            
+            if victim.killedBy != nil {
+                if _wolfRoles.contains(victim.killedBy!) && victim.roleType() == .Diseased {
+                    _werewolvesAreDiseased = true
+                }
+            }
+            
+            if victim.isAffectedBy(condition: .Lovestruck) {
+                for player in self.livingActors {
+                    if player.isAffectedBy(condition: .Lovestruck) {
+                        eliminatePlayer(victim: player)
+                    }
+                }
+            }
+        }
     }
     
     // Add to the string report for the end of the game.

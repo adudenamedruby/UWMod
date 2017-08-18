@@ -77,3 +77,6 @@ let JoinCultFailureNotification                     = "joinCultFailureNotificati
 let JoinCultSuccessNotification                     = "joinCultSuccessNotification"
 let PriestProtectSuccessNotification                = "priestProtectSuccessNotification"
 let PriestProtectFailureNotification                = "priestProtectFailureNotification"
+let CupidLovestrikeFirstSuccessNotification              = "cupidLovestrikeFirstSuccessNotification"
+let CupidLovestrikeSecondSuccessNotification        = "cupidLovestrikeSecondSuccessNotification"
+let CupidLovestrikeFailureNotification              = "cupidLovestrikeFailureNotification"

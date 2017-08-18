@@ -268,7 +268,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     }
     
     private func presentCupidView() {
-        let localizedActionView = CupidView(frame: actionViewFrame)
+        let localizedActionView = CupidView(frame: actionViewFrame, withPlayer: player!)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }

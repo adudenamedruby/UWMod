@@ -78,6 +78,10 @@ class ConfirmationPopup: UIViewController {
             } else if reason            == .PriestSelectProtectee {
                 headerTitle             = "Confirm Blessing"
                 alternateAlertText      = "Are you sure you want to bless \(chosenPlayer.name)?"
+                
+            } else if reason            == .CupidLovestrike {
+                headerTitle             = "Confirm Love"
+                alternateAlertText      = "Are you sure you want to affect \(chosenPlayer.name) with love?"
             }
         }
         
@@ -155,6 +159,8 @@ class ConfirmationPopup: UIViewController {
                 chosenPlayer.addToTeam(team: .TeamCult)
                 actingPlayer?.hasActedTonight = true
                 
+            } else if reason == .CupidLovestrike {
+                actingPlayer?.linkPlayers(playerToLink: chosenPlayer, playerCausingLink: actingPlayer!)
             }
     
         }
@@ -178,6 +184,21 @@ class ConfirmationPopup: UIViewController {
                 
             } else if self.reason == .PriestSelectProtectee {
                 self.notify(name: PriestProtectSuccessNotification)
+            
+            } else if self.reason == .CupidLovestrike {
+                var count = 0
+                for playerX in GAME.availablePlayers {
+                    if playerX.isAffectedBy(condition: .Lovestruck) {
+                        count += 1
+                    }
+                    
+                    if count == 2 {
+                        self.actingPlayer?.hasUsedOneTimePower()
+                        self.notify(name: CupidLovestrikeSecondSuccessNotification)
+                    } else if count == 1 {
+                        self.notify(name: CupidLovestrikeFirstSuccessNotification)
+                    }
+                }
             }
             
             presentingVC!.dismiss(animated: false, completion: nil)
