@@ -46,7 +46,7 @@ class Game {
 
     // Team related variables
     private var _rolesInTheGame:                    [RoleType]
-    var daytimeInfoCards:                           [DaytimeCardType]
+    private var _daytimeInfoCards:                  [DaytimeCardType]
 
     
     // Role related variables
@@ -119,6 +119,10 @@ class Game {
     }
     
     
+    var daytimeInfoCards: [DaytimeCardType] {
+        get { return _daytimeInfoCards }
+    }
+    
     // MARK: - Initializer
     
     init(availableRoster: [Role], availablePlayers: [Player], withSettings: GameSettings = GameSettings()) {
@@ -150,7 +154,7 @@ class Game {
         
         // Team related variables
         self._rolesInTheGame                = []
-        self.daytimeInfoCards               = []
+        self._daytimeInfoCards               = []
         
         // Role related variables
         self._werewolvesHaveKilledThisNight = true
@@ -505,8 +509,8 @@ class Game {
             tempArray.insert(.WerewolfTeamCard, at: 2)
         }
         
-        self.daytimeInfoCards.removeAll()
-        self.daytimeInfoCards = tempArray
+        self._daytimeInfoCards.removeAll()
+        self._daytimeInfoCards = tempArray
     }
     
     private func determineNumberOfWerewolfEliminations() {
