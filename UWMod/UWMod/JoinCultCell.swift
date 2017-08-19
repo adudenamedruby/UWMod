@@ -20,8 +20,8 @@ class JoinCultCell: UITableViewCell {
     
     @IBOutlet weak var cultLeaderLabel:     RegBrown!
     @IBOutlet var playerLabel:              RegBrown!
-    @IBOutlet weak var playerTotalsLabel:   RegTanHeader!
-    @IBOutlet weak var teamTotalLabel: RegTanHeader!
+    @IBOutlet weak var playerTotalsLabel:   RegTanHeaderSmall!
+    @IBOutlet weak var teamTotalLabel:      RegTanHeader!
     
     
     // MARK: - Variables

@@ -18,8 +18,8 @@ class WerewolfTeamCell: UITableViewCell {
     @IBOutlet weak var headerTitleLabel:        RegTanHeader!
     
     @IBOutlet var playerLabel:                  RegRed!
-    @IBOutlet weak var playerTotalsLabel:       RegTanHeader!
-    @IBOutlet weak var teamTotalLabel: RegTanHeader!
+    @IBOutlet weak var playerTotalsLabel:       RegTanHeaderSmall!
+    @IBOutlet weak var teamTotalLabel:          RegTanHeader!
     
     
     // MARK: - Variables

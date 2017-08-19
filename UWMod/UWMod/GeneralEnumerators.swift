@@ -50,6 +50,7 @@ enum DaytimeCardType {
     case VampireTeamCard
     case VillageTeamCard
     case WerewolfTeamCard
+    case SpellcasterSilenceCard
     case ZombieTeamCard
     case LovebirdTeamCard
     case GraveyardCard
