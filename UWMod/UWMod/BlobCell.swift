@@ -20,7 +20,7 @@ class BlobCell: UITableViewCell {
     
     @IBOutlet weak var originalBlobLabel:   RegBrown!
     @IBOutlet var playerLabel:              RegBrown!
-    @IBOutlet weak var playerTotalsLabel:   RegTanHeader!
+    @IBOutlet weak var playerTotalsLabel:   RegTanHeaderSmall!
     @IBOutlet weak var teamTotalLabel:      RegTanHeader!
     
     

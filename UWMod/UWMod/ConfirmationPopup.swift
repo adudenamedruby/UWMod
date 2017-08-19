@@ -168,7 +168,8 @@ class ConfirmationPopup: UIViewController {
                 actingPlayer?.linkPlayers(playerToLink: chosenPlayer)
             
             } else if reason == .SilencePlayer {
-                actingPlayer?.linkPlayers(playerToLink: chosenPlayer)
+                actingPlayer?.silence(playerToSilence: chosenPlayer)
+                actingPlayer?.hasActedTonight = true
                 
             }
         }
@@ -207,7 +208,12 @@ class ConfirmationPopup: UIViewController {
                         self.notify(name: CupidLovestrikeFirstSuccessNotification)
                     }
                 }
+                
+            } else if self.reason == .SilencePlayer {
+                self.notify(name: SpellcasterSilenceSuccessNotification)
+            
             }
+            
             
             presentingVC!.dismiss(animated: false, completion: nil)
             
