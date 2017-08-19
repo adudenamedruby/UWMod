@@ -75,3 +75,11 @@ let BlobAbsorbtionSuccessNotification               = "blobAbsorbtionSuccessNoti
 let BlobAbsorbtionFailureNotification               = "blobAbsorbtionFailureNotification"
 let JoinCultFailureNotification                     = "joinCultFailureNotification"
 let JoinCultSuccessNotification                     = "joinCultSuccessNotification"
+let PriestProtectSuccessNotification                = "priestProtectSuccessNotification"
+let PriestProtectFailureNotification                = "priestProtectFailureNotification"
+let CupidLovestrikeFirstSuccessNotification         = "cupidLovestrikeFirstSuccessNotification"
+let CupidLovestrikeSecondSuccessNotification        = "cupidLovestrikeSecondSuccessNotification"
+let CupidLovestrikeFailureNotification              = "cupidLovestrikeFailureNotification"
+let SpellcasterSilenceSuccessNotification           = "spellcasterSilenceSuccessNotification"
+let SpellcasterSilenceFailureNotification           = "spellcasterSilenceFailureNotification"
+

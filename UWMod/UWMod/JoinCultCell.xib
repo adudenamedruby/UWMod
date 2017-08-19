@@ -33,8 +33,14 @@
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="illage Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWp-iN-TeD" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="341" y="10" width="117" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWp-iN-TeD" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="432.5" y="19" width="25.5" height="16"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="13"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VU6-ja-39t" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="393.5" y="10" width="39" height="25"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -43,7 +49,9 @@
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="pZi-Na-nUt" firstAttribute="centerY" secondItem="Spy-Gn-74P" secondAttribute="centerY" id="0Uw-1d-XAP"/>
-                                            <constraint firstItem="FWp-iN-TeD" firstAttribute="centerY" secondItem="Spy-Gn-74P" secondAttribute="centerY" id="N0h-DQ-SYI"/>
+                                            <constraint firstItem="VU6-ja-39t" firstAttribute="centerY" secondItem="Spy-Gn-74P" secondAttribute="centerY" id="JcO-Su-Z2v"/>
+                                            <constraint firstItem="FWp-iN-TeD" firstAttribute="bottom" secondItem="VU6-ja-39t" secondAttribute="bottom" id="fJ4-y2-rzG"/>
+                                            <constraint firstItem="FWp-iN-TeD" firstAttribute="leading" secondItem="VU6-ja-39t" secondAttribute="trailing" id="gfs-76-C3J"/>
                                             <constraint firstAttribute="trailing" secondItem="FWp-iN-TeD" secondAttribute="trailing" constant="15" id="nC3-ki-4Dj"/>
                                             <constraint firstAttribute="height" constant="45" id="nOo-H5-XSe"/>
                                             <constraint firstItem="pZi-Na-nUt" firstAttribute="centerX" secondItem="Spy-Gn-74P" secondAttribute="centerX" id="r7z-hY-3yW"/>
@@ -104,6 +112,7 @@
                 <outlet property="outlineView" destination="k45-7Z-1ul" id="4AX-xa-rGg"/>
                 <outlet property="playerLabel" destination="ZaQ-9A-lCl" id="PZh-85-GSN"/>
                 <outlet property="playerTotalsLabel" destination="FWp-iN-TeD" id="643-YX-Olw"/>
+                <outlet property="teamTotalLabel" destination="VU6-ja-39t" id="grf-K9-rjq"/>
             </connections>
             <point key="canvasLocation" x="59.5" y="114.5"/>
         </tableViewCell>

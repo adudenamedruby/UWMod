@@ -59,7 +59,7 @@ class GeneralInfo: UITableViewCell {
     public func configureCell() {
         playersAliveLabel.text              = "\(GAME.livingActors.count)"
         playersDeadLabel.text               = "\(GAME.deadActors.count)"
-        totalPlayersLabel.text              = "\(GAME.livingActors.count + GAME.deadActors.count)"
+        totalPlayersLabel.text              = "\(GAME.availablePlayers.count)"
         numberOfNightsPassedLabel.text      = "\(GAME.currentNight - 1)"
         dayNumberLabel.text                 = "\(GAME.currentDay)"
         

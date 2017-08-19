@@ -19,6 +19,7 @@ class WerewolfTeamCell: UITableViewCell {
     
     @IBOutlet var playerLabel:                  RegRed!
     @IBOutlet weak var playerTotalsLabel:       RegTanHeader!
+    @IBOutlet weak var teamTotalLabel: RegTanHeader!
     
     
     // MARK: - Variables
@@ -54,8 +55,8 @@ class WerewolfTeamCell: UITableViewCell {
         let totalPlayers                        = playerInfo.total
         let teamTotal                           = playerInfo.team
         
-        
-        self.playerTotalsLabel.text = "\(teamTotal)/\(totalPlayers)"
+        self.teamTotalLabel.text    = "\(teamTotal)"
+        self.playerTotalsLabel.text = "/\(totalPlayers)"
         self.playerLabel.text = werewolfTeamPlayers
     }
     

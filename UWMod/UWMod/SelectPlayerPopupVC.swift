@@ -12,6 +12,9 @@ enum SelectPlayerReason {
     case Default
     case AssignPlayer
     case BodyguardSelectProtectee
+    case PriestSelectProtectee
+    case CupidLovestrike
+    case SilencePlayer
     case WerewolfElimination
     case VillageElimination
     case ZombieLobotomization
@@ -101,6 +104,9 @@ class SelectPlayerPopupVC: UIViewController {
             } else if reason == .BodyguardSelectProtectee {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
+            } else if reason == .PriestSelectProtectee {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+            
             } else if reason == .VillageElimination {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: nil, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
@@ -117,6 +123,12 @@ class SelectPlayerPopupVC: UIViewController {
                 
             } else if reason == .JoinTheCult {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: nil, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
+            } else if reason == .CupidLovestrike {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
+            } else if reason == .SilencePlayer {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
             }
             
@@ -190,6 +202,18 @@ class SelectPlayerPopupVC: UIViewController {
             
         case .JoinTheCult:
             populateNonCultPlayers()
+        
+        case .PriestSelectProtectee:
+            populateForProtection()
+            
+        case .CupidLovestrike:
+            populatePotentialLovebirds()
+            
+        case .SilencePlayer:
+            populatePlayersToSilence()
+            
+            
+            
         }
         
     }
@@ -218,6 +242,9 @@ class SelectPlayerPopupVC: UIViewController {
         case .BodyguardSelectProtectee:
             nc.post(name: NSNotification.Name(rawValue: BodyguardProtectingFailureNotification), object: nil)
             
+        case .PriestSelectProtectee:
+            nc.post(name: NSNotification.Name(rawValue: PriestProtectFailureNotification), object: nil)
+            
         case .WerewolfElimination:
             nc.post(name: NSNotification.Name(rawValue: EliminationByWerewolfFailureNotification), object: nil)
             
@@ -232,6 +259,12 @@ class SelectPlayerPopupVC: UIViewController {
             
         case .JoinTheCult:
             nc.post(name: NSNotification.Name(rawValue: JoinCultFailureNotification), object: nil)
+            
+        case .CupidLovestrike:
+            nc.post(name: NSNotification.Name(rawValue: JoinCultFailureNotification), object: nil)
+            
+        case .SilencePlayer:
+            nc.post(name: NSNotification.Name(rawValue: SpellcasterSilenceFailureNotification), object: nil)
             
         case .RoleClarification:
             break
@@ -385,6 +418,46 @@ extension SelectPlayerPopupVC {
         }
         
         //availablePlayers.sort(by: { $0.name < $1.name } )
+    }
+}
+
+extension SelectPlayerPopupVC {
+    
+    // CUPID!
+    func populatePotentialLovebirds() {
+        availablePlayers.removeAll()
+        
+        for player in GAME.availablePlayers {
+            if !(player.isAffectedBy(condition: .Lovestruck)) {
+                availablePlayers.append(player)
+            }
+        }
+        
+        //availablePlayers.sort(by: { $0.name < $1.name } )
+    }
+}
+
+
+extension SelectPlayerPopupVC {
+    
+    // PROTECTION!
+    func populatePlayersToSilence() {
+        availablePlayers.removeAll()
+        availablePlayers = playersToSilence()
+    }
+    
+    func playersToSilence() -> [Player] {
+        var possiblePlayers: [Player] = []
+        
+        for player in GAME.livingActors {
+            if (activePlayer?.canAffect(player: player, forCondition: .Silence))! {
+                possiblePlayers.append(player)
+            }
+        }
+        
+        //unprotectedPlayersList.sort(by: { $0.name < $1.name })
+        
+        return possiblePlayers
     }
 }
 

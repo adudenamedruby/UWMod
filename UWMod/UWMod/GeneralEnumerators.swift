@@ -23,6 +23,7 @@ enum UWTeam: String {
     case TeamVamprie        = "Vampire"
     case TeamZombie         = "Zombie"
     case TeamBoegyman       = "Boegyman"
+    case TeamLovebirds      = "Lovebirds"
 }
 
 
@@ -50,6 +51,7 @@ enum DaytimeCardType {
     case VillageTeamCard
     case WerewolfTeamCard
     case ZombieTeamCard
+    case LovebirdTeamCard
     case GraveyardCard
     
     // Indivitual cards - cards like the Witch who has protected AND poisoned someone.
@@ -64,6 +66,7 @@ enum PlayerEffects {
     case Silence
     case Ostracism
     case Lobotomy           // zombie
+    case Lovestruck         // cupid
 }
 
 

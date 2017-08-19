@@ -159,28 +159,6 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         textView.setContentOffset(CGPoint.zero, animated: false)
     }
     
-//    private func unassignedPlayerList() -> [Player] {
-//        var unassignedPlayerList: [Player] = []
-//        
-//        for player in GAME.availablePlayers {
-//            if !player.isAssigned {
-//                unassignedPlayerList.append(player)
-//            }
-//        }
-//        
-//        return unassignedPlayerList
-//    }
-//    
-//    private func magicallyAssignLastPlayer() {
-//        let unassignedPlayers = unassignedPlayerList()
-//        if unassignedPlayers.count == 1 {
-//            // if there's only one player left unassigned, the assign him to the last role
-//            player = unassignedPlayers[0]
-//            player?.assignRole(role: GAME.availableRoster.last!)
-//            GAME.addPlayerToLivingActors(player: player!)
-//        }
-//    }
-    
     public func updateCard() {
         configureCell()
     }
@@ -203,6 +181,9 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
                     }
                 }
                 
+            } else if player?.roleType() == .Ghost {
+                GAME.prepareToEliminatePlayer(victim: player!)
+            
             } else if player?.roleType() == .Bodyguard && !((player?.hasActedTonight)!) && !GAME.firstNight {
                 presentBodyguardView()
                 
@@ -220,6 +201,16 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
                 
             } else if player?.roleType() == .Sorceress {
                 presentSorceressView()
+                
+            } else if player?.roleType() == .Priest && !((player?.rolePowerUsed())!) {
+                presentPriestView()
+                
+            } else if player?.roleType() == .Cupid && !((player?.rolePowerUsed())!) {
+                presentCupidView()
+                
+            } else if player?.roleType() == .Spellcaster && !((player?.hasActedTonight)!) {
+                presentSpellcasterView()
+                
             }
         }
     }
@@ -275,6 +266,23 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     private func presentSorceressView() {
         let localizedActionView = SorceressView(frame: actionViewFrame)
         self.containerView.addSubview(localizedActionView)
-        
+    }
+    
+    private func presentPriestView() {
+        let localizedActionView = PriestView(frame: actionViewFrame, withPlayer: player!)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    private func presentCupidView() {
+        let localizedActionView = CupidView(frame: actionViewFrame, withPlayer: player!)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    private func presentSpellcasterView() {
+        let localizedActionView = SpellcasterView(frame: actionViewFrame, withPlayer: player!)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
     }
 }

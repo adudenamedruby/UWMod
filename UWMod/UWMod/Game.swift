@@ -46,7 +46,7 @@ class Game {
 
     // Team related variables
     private var _rolesInTheGame:                    [RoleType]
-    var daytimeInfoCards:                           [DaytimeCardType]
+    private var _daytimeInfoCards:                  [DaytimeCardType]
 
     
     // Role related variables
@@ -119,6 +119,10 @@ class Game {
     }
     
     
+    var daytimeInfoCards: [DaytimeCardType] {
+        get { return _daytimeInfoCards }
+    }
+    
     // MARK: - Initializer
     
     init(availableRoster: [Role], availablePlayers: [Player], withSettings: GameSettings = GameSettings()) {
@@ -150,7 +154,7 @@ class Game {
         
         // Team related variables
         self._rolesInTheGame                = []
-        self.daytimeInfoCards               = []
+        self._daytimeInfoCards               = []
         
         // Role related variables
         self._werewolvesHaveKilledThisNight = true
@@ -227,32 +231,43 @@ class Game {
         for victim in playersToBeEliminated {
             
             if !victim.isAffectedBy(condition: .Protection) {
-                if self.livingActors.contains(where: { $0 === victim }) {
-                    addToPhaseReport(player: victim)
-                    self.deadActors.append(victim)
-                    victim.isAlive = false
-                    
-                    if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
-                        self.livingActors.remove(at: tempIndex)
-                    }
-                    
-                    if victim.roleType() == .WolfCub {
-                        _theWolfCubHasBeenSlain = true
-                    }
-                    
-                    if victim.killedBy != nil {
-                        if _wolfRoles.contains(victim.killedBy!) && victim.roleType() == .Diseased {
-                            _werewolvesAreDiseased = true
-                        }
-                    }
-                }
-                
+                eliminatePlayer(victim: victim)
             } else {
                 addToPhaseReport(player: victim)
             }
         }
         
         playersToBeEliminated.removeAll()
+    }
+    
+    private func eliminatePlayer(victim: Player) {
+        if self.livingActors.contains(where: { $0 === victim }) {
+            addToPhaseReport(player: victim)
+            self.deadActors.append(victim)
+            victim.isAlive = false
+            
+            if let tempIndex = self.livingActors.index(where: { $0 === victim }) {
+                self.livingActors.remove(at: tempIndex)
+            }
+            
+            if victim.roleType() == .WolfCub {
+                _theWolfCubHasBeenSlain = true
+            }
+            
+            if victim.killedBy != nil {
+                if _wolfRoles.contains(victim.killedBy!) && victim.roleType() == .Diseased {
+                    _werewolvesAreDiseased = true
+                }
+            }
+            
+            if victim.isAffectedBy(condition: .Lovestruck) {
+                for player in self.livingActors {
+                    if player.isAffectedBy(condition: .Lovestruck) {
+                        eliminatePlayer(victim: player)
+                    }
+                }
+            }
+        }
     }
     
     // Add to the string report for the end of the game.
@@ -505,8 +520,8 @@ class Game {
             tempArray.insert(.WerewolfTeamCard, at: 2)
         }
         
-        self.daytimeInfoCards.removeAll()
-        self.daytimeInfoCards = tempArray
+        self._daytimeInfoCards.removeAll()
+        self._daytimeInfoCards = tempArray
     }
     
     private func determineNumberOfWerewolfEliminations() {

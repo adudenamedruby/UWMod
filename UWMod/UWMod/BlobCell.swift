@@ -21,6 +21,7 @@ class BlobCell: UITableViewCell {
     @IBOutlet weak var originalBlobLabel:   RegBrown!
     @IBOutlet var playerLabel:              RegBrown!
     @IBOutlet weak var playerTotalsLabel:   RegTanHeader!
+    @IBOutlet weak var teamTotalLabel:      RegTanHeader!
     
     
     // MARK: - Variables
@@ -53,14 +54,14 @@ class BlobCell: UITableViewCell {
     }
     
     func configureCell() {
-        self.originalBlobLabel.text         = "Original Blob: \(originalBlob.name)"
+        self.originalBlobLabel.text             = "Original Blob: \(originalBlob.name)"
         
         let playerInfo                          = GAME.retrieveTeamVSTotalNumbers(team: .TeamBlob)
         let totalPlayers                        = playerInfo.total
         let teamTotal                           = playerInfo.team
         
-        
-        self.playerTotalsLabel.text = "\(teamTotal)/\(totalPlayers)"
-        self.playerLabel.text               = blobTeamMembers
+        self.teamTotalLabel.text                = "\(teamTotal)"
+        self.playerTotalsLabel.text             = "/\(totalPlayers)"
+        self.playerLabel.text                   = blobTeamMembers
     }
 }

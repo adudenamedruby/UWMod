@@ -1,14 +1,14 @@
 //
-//  VillageTeamCell.swift
+//  SweetheartCell.swift
 //  UWMod
 //
-//  Created by roux g. buciu on 2017-08-04.
+//  Created by roux g. buciu on 2017-08-18.
 //  Copyright © 2017 roux g. buciu. All rights reserved.
 //
 
 import UIKit
 
-class VillageTeamCell: UITableViewCell {
+class SweetheartCell: UITableViewCell {
 
     // MARK: - Outlets
     
@@ -16,16 +16,10 @@ class VillageTeamCell: UITableViewCell {
     @IBOutlet var mainCardView:                 UIView!
     @IBOutlet var headerView:                   UIView!
     @IBOutlet weak var headerTitleLabel:        RegTanHeader!
-    @IBOutlet weak var playerTotalsLabel:       RegTanHeader!
-    @IBOutlet weak var teamPlayerLabel:         RegTanHeader!
     
-    
-    @IBOutlet var playerLabel:                  RegRed!
-    
-    
-    // MARK: - Variables
-    
-    var villageTeamPlayers: String!
+    @IBOutlet weak var cupidLabel:              RegBrown!
+    @IBOutlet var lobebirdsLabel:               RegBrown!
+
     
     // MARK: - View Lifecycle
     
@@ -39,7 +33,7 @@ class VillageTeamCell: UITableViewCell {
         mainCardView.layer.cornerRadius         = STYLE.InfoCardCornerRadius
         mainCardView.backgroundColor            = STYLE.Tan
         
-        let headerTitle                         = "Village Team"
+        let headerTitle                         = "The Lovebirds"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                       withColour: STYLE.Red)
     }
@@ -52,13 +46,30 @@ class VillageTeamCell: UITableViewCell {
     
     func configureCell() {
         
-        let playerInfo                          = GAME.retrieveTeamVSTotalNumbers(team: .TeamVillage)
-        let totalPlayers                        = playerInfo.total
-        let teamTotal                           = playerInfo.team
-    
-        self.teamPlayerLabel.text = "\(teamTotal)"
-        self.playerTotalsLabel.text = "/\(totalPlayers)"
-        self.playerLabel.text = villageTeamPlayers
+        var cupidPlayer:        Player!
+        var firstLover:         Player?
+        var secondLover:        Player?
+        
+        for player in GAME.availablePlayers {
+            if player.roleType() == .Cupid {
+                cupidPlayer = player
+            }
+        }
+        
+        for player in GAME.livingActors {
+            if player.isAffectedBy(condition: .Lovestruck) {
+                if firstLover != nil {
+                    secondLover = player
+                } else {
+                    firstLover = player
+                }
+            }
+        }
+        
+        
+        
+        self.cupidLabel.text = "\(cupidPlayer.name)'s lovebirds:"
+        self.lobebirdsLabel.text = "\(firstLover!.name) ❤️ \(secondLover!.name)"
     }
     
 }

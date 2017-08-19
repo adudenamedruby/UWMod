@@ -14,16 +14,21 @@ import UIKit
 let pregame_tempRoles: [Role] = [BEHOLDER,
                                  BODYGUARD,
                                  CULTLEADER,
+                                 CUPID,
                                  CURSED,
                                  DISEASED,
+                                 GHOST,
+                                 HUNTER,
                                  INSOMNIAC,
                                  LYCAN,
                                  MASON,
                                  MAYOR,
                                  MINION,
                                  PACIFIST,
+                                 PRIEST,
                                  SEER,
                                  SORCERESS,
+                                 SPELLCASTER,
                                  THE_BLOB,
                                  THE_COUNT,
                                  THING,
@@ -73,6 +78,10 @@ let CULTLEADER = Role(name: "Cult Leader", type: .CultLeader, description: "Ever
 
 
 
+let CUPID = Role(name: "Cupid", type: .Cupid, description: "The first night, choose two players to be linked together. If one of them is eliminated, the other is eliminated as well.", roleExplanation: "Cupid wakes the first night and points at two players (one of which can be themselves). The Moderator wakes them up the first night by tapping them on the shoulder so they can see who the other Sweetheart is. If one of them is eliminated, the other is eliminated (because of a broken heart) instantly.\n\nIf both Sweethearts are on the village team, they win with the village team. If they are both on the werewolf team, they win with the werewolf team. If they are on different teams, they become their own team and only win if they are the last two players in the game. Being a Sweetheart overrides other winning conditions, such as those of the Lone Wolf, the Tanner, and Hoodlum.", impact: -3, priority: 76, powerChoice: false, team: [.TeamVillage], availableEffects: [.Lovestruck], image: #imageLiteral(resourceName: "cupid"), isNightActiveRole: .NotNightActiveRole)
+
+
+
 let CURSED = Role(name: "Cursed", type: .Cursed, description: "You are on the Village team unless you are targeted for elimination by the Werewolves, at which time you become a Werewolf.", roleExplanation: "The Cursed is on the village team, unless he is targeted by the werewolves, and then they join the werewolf team instead of being eliminated. Each night, the Moderator should wake the Cursed to let them know if they have switched teams (and once they have switched teams, he should continue to wake them so the players do not know he has been changed.).", impact: -3, priority: 85, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "cursed"), isNightActiveRole: .NightActiveRole)
 
 let CURSED_WEREWOLF = Role(name: "Werewolf", type: .Werewolf, description: "Each night, wake with the other Werewolves and choose a player to eliminate.", roleExplanation: "The Werewolves learn the identity of the other Werewolves the first night. Every night after the first night, the Werewolves must agree on a target to eliminate. If the Werewolves spend more than a minute determining a target for the night, they do not get to choose a target that night. The Werewolves may not target another Werewolf at night. Werewolves try to keep their identity a secret during the day.", impact: -6, priority: 25, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "werewolf"), isNightActiveRole: .NightActiveRole)
@@ -80,6 +89,14 @@ let CURSED_WEREWOLF = Role(name: "Werewolf", type: .Werewolf, description: "Each
 
 
 let DISEASED = Role(name: "Diseased", type: .Diseased, description: "If you are eliminated by the Werewolves, they don't get to eliminate anyone the following night.", roleExplanation: "If the werewolves target and eliminate the Diseased player, they skip targeting the following night because they get sick. If the game does not have role reveal, the Werewolves still pick a target the following night but that target is not eliminated.", impact: 3, priority: 88, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "diseased"), isNightActiveRole: .NotNightActiveRole)
+
+
+
+let GHOST = Role(name: "Ghost", type: .Ghost, description: "The first night, you are eliminated. Communicate to the players with single letter clues each day.", roleExplanation: "The Ghost is eliminated the first night. He writes down 10 letters at the end of the first night as a message from beyond with the only limitation being that he may not attempt to identify any player by name or initials. Each morning, the Moderator reveals one letter (in order) from the Ghost. The clues given by the Ghost can be interpreted in many ways, and makes conversation during the first day much more animated than otherwise.", impact: 2, priority: 1, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "ghost"), isNightActiveRole: .NotNightActiveRole)
+
+
+
+let HUNTER = Role(name: "Hunter", type: .Hunter, description: "If you are eliminated, you may immediately eliminate another player.", roleExplanation: "If the Hunter is eliminated (during the day or night), he immediately fires his weapon by pointing at any player, who is then eliminated. He may also choose to fire his weapon straight up, resulting in no additional elimination. No one may speak while the Hunter chooses a target. If the Hunter is eliminated at night, he picks his target immediately the next morning.", impact: 3, priority: 61, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "hunter"), isNightActiveRole: .NotNightActiveRole)
 
 
 
@@ -107,11 +124,19 @@ let PACIFIST = Role(name: "Pacifist", type: .Pacifist, description: "You must al
 
 
 
+let PRIEST = Role(name: "Priest", type: .Priest, description: "One night per game, choose a player to be protected. That player may not be eliminated at night.", roleExplanation: "One night during the game, the Priest may choose any player to be protected by holy power. The next attempt to eliminate that player by any means fails. The Priest may not choose himself. If the Priest is eliminated after “blessing someone in this way, that player is still protected.", impact: 3, priority: 172, powerChoice: true, team: [.TeamVillage], availableEffects: [.Protection], image: #imageLiteral(resourceName: "priest"), isNightActiveRole: .NightActiveRole)
+
+
+
 let SEER = Role(name: "Seer", type: .Seer, description: "Each night choose a player to learn if he is a Villager or a Werewolf.", roleExplanation: "Each night, the Seer points at a player, and the Moderator shows her a 'V' for Villager or 'W' for Werewolf. To be extra clear that the Seer knows that a targeted player is a Werewolf, the Moderator may use another indicator (such as a thumbs up and thumbs down).", impact: 4, priority: 181, powerChoice: false, team: [.TeamVillage], availableEffects: [.Protection], image: #imageLiteral(resourceName: "seer"), isNightActiveRole: .NightActiveRole)
 
 
 
 let SORCERESS = Role(name: "Sorceress", type: .Sorceress, description: "Each night, you wake up and try to find the Seer.", roleExplanation: "The Sorceress looks for the Seer each night (the Moderator shows a thumbs up if the Sorceress points to the Seer). The Werewolves do not know who the Sorceress is, and the Sorceress does not know who the Werewolves are. The Seer sees the Sorceress as a villager.", impact: -3, priority: 190, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "sorceress"), isNightActiveRole: .NightActiveRole)
+
+
+
+let SPELLCASTER = Role(name: "Spellcaster", type: .Spellcaster, description: "Each night, choose a player who may not speak the following day.", roleExplanation: "Each night, the Spellcaster may choose one player to be muted for the following day (that player may not speak but may communicate any other way). The Spellcaster may choose to mute themselves, but may not mute the same player twice during a single game.", impact: 1, priority: 148, powerChoice: false, team: [.TeamVillage], availableEffects: [.Silence], image: #imageLiteral(resourceName: "spellcaster"), isNightActiveRole: .NightActiveRole)
 
 
 

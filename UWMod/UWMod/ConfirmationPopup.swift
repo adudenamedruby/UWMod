@@ -75,6 +75,18 @@ class ConfirmationPopup: UIViewController {
                 headerTitle             = "Confirm Brainwashing"
                 alternateAlertText      = "Are you sure \(chosenPlayer.name)'s joining the Cult?"
                 
+            } else if reason            == .PriestSelectProtectee {
+                headerTitle             = "Confirm Blessing"
+                alternateAlertText      = "Are you sure you want to bless \(chosenPlayer.name)?"
+                
+            } else if reason            == .CupidLovestrike {
+                headerTitle             = "Confirm Love"
+                alternateAlertText      = "Are you sure you want to affect \(chosenPlayer.name) with love?"
+            
+            } else if reason            == .SilencePlayer {
+                headerTitle             = "Confirm Silence"
+                alternateAlertText      = "Are you sure you want to silence \(chosenPlayer.name)?"
+  
             }
         }
         
@@ -130,12 +142,16 @@ class ConfirmationPopup: UIViewController {
                 chosenPlayer.assignRole(role: role!)
                 GAME.addPlayerToLivingActors(player: chosenPlayer)
                 
-            } else if reason == .BodyguardSelectProtectee {
-                actingPlayer?.protect(playerToProtect: chosenPlayer, protector: actingPlayer!)
+            } else if reason == .BodyguardSelectProtectee || reason == .PriestSelectProtectee {
+                actingPlayer?.protect(playerToProtect: chosenPlayer)
                 actingPlayer?.hasActedTonight = true
                 
+                if reason == .PriestSelectProtectee {
+                    actingPlayer?.hasUsedOneTimePower()
+                }
+            
             } else if reason == .ZombieLobotomization {
-                actingPlayer?.eatBrains(ofVictim: chosenPlayer, zombie: actingPlayer!)
+                actingPlayer?.eatBrains(ofVictim: chosenPlayer)
                 actingPlayer?.hasActedTonight = true
                 
             } else if reason == .BlobAbsorbtion {
@@ -148,8 +164,13 @@ class ConfirmationPopup: UIViewController {
                 chosenPlayer.addToTeam(team: .TeamCult)
                 actingPlayer?.hasActedTonight = true
                 
+            } else if reason == .CupidLovestrike {
+                actingPlayer?.linkPlayers(playerToLink: chosenPlayer)
+            
+            } else if reason == .SilencePlayer {
+                actingPlayer?.linkPlayers(playerToLink: chosenPlayer)
+                
             }
-    
         }
         
         let presentingVC = self.presentingViewController
@@ -169,6 +190,23 @@ class ConfirmationPopup: UIViewController {
             } else if self.reason == .BodyguardSelectProtectee {
                 self.notify(name: BodyguardProtectingSuccessNotification)
                 
+            } else if self.reason == .PriestSelectProtectee {
+                self.notify(name: PriestProtectSuccessNotification)
+            
+            } else if self.reason == .CupidLovestrike {
+                var count = 0
+                for playerX in GAME.availablePlayers {
+                    if playerX.isAffectedBy(condition: .Lovestruck) {
+                        count += 1
+                    }
+                    
+                    if count == 2 {
+                        self.actingPlayer?.hasUsedOneTimePower()
+                        self.notify(name: CupidLovestrikeSecondSuccessNotification)
+                    } else if count == 1 {
+                        self.notify(name: CupidLovestrikeFirstSuccessNotification)
+                    }
+                }
             }
             
             presentingVC!.dismiss(animated: false, completion: nil)

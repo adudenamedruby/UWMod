@@ -104,8 +104,15 @@ class Player {
     
     public func determineDaytimeInfoCardForActor() {
         
+        determineTeamForPlayer()
         determineDaytimeInfoCardForTeam()
-        determineDaytimeInfoCardForPlayer()
+    }
+    
+    private func determineTeamForPlayer() {
+        
+        if currentConditions.contains(.Lovestruck) {
+            addToTeam(team: .TeamLovebirds)
+        }
     }
     
     private func determineDaytimeInfoCardForTeam() {
@@ -121,14 +128,10 @@ class Player {
                 addAppropriateCard(daytimeCard: .BlobTeamCard)
             } else if teamX == .TeamCult {
                 addAppropriateCard(daytimeCard: .CultTeamCard)
+            } else if teamX == .TeamLovebirds {
+                addAppropriateCard(daytimeCard: .LovebirdTeamCard)
             }
         }
-    }
-    
-    private func determineDaytimeInfoCardForPlayer() {
-        
-        //let playerRole = role.type
-        
     }
     
     private func addAppropriateCard(daytimeCard: DaytimeCardType) {
@@ -155,32 +158,28 @@ class Player {
     
     private func cleanupAfterNightRound() {
         
-        let avaliableEffects = role.availableEffects
-        
-        if avaliableEffects.count > 0 {
-            for effect in avaliableEffects {
-                
-                if role.type == .Bodyguard && effect == .Protection {
-                    if affectingPlayers[effect] != nil {
-                        for player in affectingPlayers[effect]! {
-                            player.removeEffectFromPlayer(condition: effect, causedBy: self)
-                            stopAffectingAllOtherPlayer()
-                        }
-                    }
-                
-                } else if role.type == .Zombie {
-                    // Zombie continues affecting players for the rest of the game.
-                } else {
-                
-                    
-                    // do stuff for other roles here
+        for effect in currentConditions {
+            if effect == .Protection && affectedByPlayers[effect] != nil {
+                for player in affectedByPlayers[effect]! {
+                    player.stopAffectingAllOtherPlayer()
+                    removeEffectFromPlayer(condition: effect, causedBy: player)
                 }
+                
             }
         }
     }
     
     private func cleanupAfterDayRound() {
         
+        for effect in currentConditions {
+            
+            if effect == .Silence && affectedByPlayers[effect] != nil {
+                for caster in affectedByPlayers[effect]! {
+                    caster.stopAffectingAllOtherPlayer()
+                    removeEffectFromPlayer(condition: .Silence, causedBy: caster)
+                }
+            }
+        }
     }
     
     
@@ -333,30 +332,71 @@ class Player {
     // MARK: - Role-related effect functions
     
     /// Apply the protect effect to other players.
-    public func protect(playerToProtect: Player, protector: Player) {
+    public func protect(playerToProtect: Player) {
         let kindOfRole = role.type
         let effect: PlayerEffects = .Protection
         
         switch kindOfRole {
         case .Bodyguard:
-            
             if canPerformEffect(condition: effect, player: playerToProtect) {
                 
                 // Keep track of a single protected target
-                addTargetToSingularAffectingPlayerList(condition: effect, affectedPlayer: playerToProtect)
-                addTargetToSingularIneligibilityList(condition: effect, playerToAdd: playerToProtect)
+                addTargetToSingularAffectingPlayerList(condition: effect,
+                                                       affectedPlayer: playerToProtect)
+                addTargetToSingularIneligibilityList(condition: effect,
+                                                     playerToAdd: playerToProtect)
                 
                 playerToProtect.addEffectFromOtherPlayers(condition: effect,
-                                                          causedBy: protector)
+                                                          causedBy: self)
+                
             }
+            
+        case .Priest:
+            if canPerformEffect(condition: effect, player: playerToProtect) {
+                
+                // Keep track of a single protected target
+                addTargetToSingularAffectingPlayerList(condition: effect,
+                                                       affectedPlayer: playerToProtect)
+                addTargetToSingularIneligibilityList(condition: effect,
+                                                     playerToAdd: playerToProtect)
+                
+                playerToProtect.addEffectFromOtherPlayers(condition: effect,
+                                                          causedBy: self)
+                
+            }
+            
         default: break
             // Do nothing
         }
         
     }
     
+    /// Apply the link effect to players
+    public func linkPlayers(playerToLink: Player) {
+        
+        let kindOfRole = role.type
+        
+        switch kindOfRole {
+        case .Cupid:
+            
+            addTargetToPluralAffectingPlayerList(condition: .Lovestruck,
+                                                 affectedPlayer: playerToLink)
+            addTargetToPluralIneligibilityList(condition: .Lovestruck,
+                                               playerToAdd: playerToLink)
+            
+            playerToLink.addEffectFromOtherPlayers(condition: .Lovestruck,
+                                                   causedBy: self)
+            
+        case .VirginiaWoolf:
+            break
+            
+        default: break
+        }
+        
+    }
+    
     /// Apply the Lobotomy effect to other players
-    public func eatBrains(ofVictim victim: Player, zombie: Player) {
+    public func eatBrains(ofVictim victim: Player) {
         
         let effect: PlayerEffects = .Lobotomy
         
@@ -364,12 +404,28 @@ class Player {
             
             if canPerformEffect(condition: effect, player: victim) {
                 
-                addTargetToPluralAffectingPlayerList(condition: effect, affectedPlayer: victim)
-                addTargetToPluralIneligibilityList(condition: effect, playerToAdd: victim)
+                addTargetToPluralAffectingPlayerList(condition: effect,
+                                                     affectedPlayer: victim)
+                addTargetToPluralIneligibilityList(condition: effect,
+                                                   playerToAdd: victim)
                 
-                victim.addEffectFromOtherPlayers(condition: effect, causedBy: zombie)
+                victim.addEffectFromOtherPlayers(condition: effect,
+                                                 causedBy: self)
             }
         }
+    }
+    
+    /// Apply the silence effect to players
+    public func silence(playerToSilence: Player) {
+        
+        addTargetToSingularAffectingPlayerList(condition: .Silence,
+                                               affectedPlayer: playerToSilence)
+        addTargetToPluralIneligibilityList(condition: .Silence,
+                                           playerToAdd: playerToSilence)
+        
+        playerToSilence.addEffectFromOtherPlayers(condition: .Silence,
+                                                  causedBy: self)
+        
     }
     
     
