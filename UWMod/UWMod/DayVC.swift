@@ -152,6 +152,8 @@ class DayVC: UIViewController {
                            forCellReuseIdentifier: "joinCultCell")
         tableView.register(UINib(nibName: "SweetheartCell", bundle: nil),
                            forCellReuseIdentifier: "sweetheartCell")
+        tableView.register(UINib(nibName: "SpellcasterCell", bundle: nil),
+                           forCellReuseIdentifier: "spellcasterCell")
     }
     
     private func fadeButtonsIn() {
@@ -258,6 +260,12 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "sweetheartCell", for: indexPath) as! SweetheartCell
             cell.configureCell()
             return cell
+            
+        } else if currentType == .SpellcasterSilenceCard {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "spellcasterCell", for: indexPath) as! SpellcasterCell
+            cell.configureCell()
+            return cell
+        
         }
         
         return UITableViewCell()
