@@ -113,6 +113,10 @@ class Player {
         if currentConditions.contains(.Lovestruck) {
             addToTeam(team: .TeamLovebirds)
         }
+        
+        if currentConditions.contains(.Silence) {
+            addAppropriateCard(daytimeCard: .SpellcasterSilenceCard)
+        }
     }
     
     private func determineDaytimeInfoCardForTeam() {
@@ -177,6 +181,11 @@ class Player {
                 for caster in affectedByPlayers[effect]! {
                     caster.stopAffectingAllOtherPlayer()
                     removeEffectFromPlayer(condition: .Silence, causedBy: caster)
+                }
+                
+                if daytimeInfoCards.contains(.SpellcasterSilenceCard) {
+                    let indx = daytimeInfoCards.index(where: { $0 == .SpellcasterSilenceCard } )
+                    daytimeInfoCards.remove(at: indx!)
                 }
             }
         }

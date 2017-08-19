@@ -1,14 +1,14 @@
 //
-//  VillageTeamCell.swift
+//  SpellcasterCell.swift
 //  UWMod
 //
-//  Created by roux g. buciu on 2017-08-04.
+//  Created by roux g. buciu on 2017-08-18.
 //  Copyright © 2017 roux g. buciu. All rights reserved.
 //
 
 import UIKit
 
-class VillageTeamCell: UITableViewCell {
+class SpellcasterCell: UITableViewCell {
 
     // MARK: - Outlets
     
@@ -16,16 +16,10 @@ class VillageTeamCell: UITableViewCell {
     @IBOutlet var mainCardView:                 UIView!
     @IBOutlet var headerView:                   UIView!
     @IBOutlet weak var headerTitleLabel:        RegTanHeader!
-    @IBOutlet weak var playerTotalsLabel:       RegTanHeaderSmall!
-    @IBOutlet weak var teamPlayerLabel:         RegTanHeader!
     
+    @IBOutlet weak var spellcasterLabel:              RegBrown!
+    @IBOutlet var silencedPlayerLabel:               RegBrown!
     
-    @IBOutlet var playerLabel:                  RegRed!
-    
-    
-    // MARK: - Variables
-    
-    var villageTeamPlayers: String!
     
     // MARK: - View Lifecycle
     
@@ -39,7 +33,7 @@ class VillageTeamCell: UITableViewCell {
         mainCardView.layer.cornerRadius         = STYLE.InfoCardCornerRadius
         mainCardView.backgroundColor            = STYLE.Tan
         
-        let headerTitle                         = "Village Team"
+        let headerTitle                         = "Silenced Player"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                       withColour: STYLE.Red)
     }
@@ -52,13 +46,20 @@ class VillageTeamCell: UITableViewCell {
     
     func configureCell() {
         
-        let playerInfo                          = GAME.retrieveTeamVSTotalNumbers(team: .TeamVillage)
-        let totalPlayers                        = playerInfo.total
-        let teamTotal                           = playerInfo.team
-    
-        self.teamPlayerLabel.text = "\(teamTotal)"
-        self.playerTotalsLabel.text = "/\(totalPlayers)"
-        self.playerLabel.text = villageTeamPlayers
+        var spellcasterPlayer:          Player!
+        let silencedPlayer              = GAME.fetchPlayersAffectedByEffect(fromList: GAME.livingActors,
+                                                                            affectedBy: .Silence, withRole: true)
+        
+        for player in GAME.availablePlayers {
+            if player.roleType() == .Spellcaster {
+                spellcasterPlayer = player
+            }
+        }
+        
+        
+        
+        self.spellcasterLabel.text      = "\(spellcasterPlayer.name) has cast a spell on:"
+        self.silencedPlayerLabel.text   = "\(silencedPlayer)"
     }
     
 }

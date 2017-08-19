@@ -26,6 +26,8 @@ class VoteCounterVC: UIViewController {
     var totalPlayers                            = 0
     var noVotes                                 = 0
     var yesVotes                                = 0
+    var maxVotes                                = 0
+    var mayorPresent                            = false
     var ineligiblePlayers:                      String!
     
     override func viewDidLoad() {
@@ -45,6 +47,12 @@ class VoteCounterVC: UIViewController {
         
         alertTextLabel.text                     = ""
         alertTextLabel.isHidden                 = true
+        
+        
+        maxVotes = GAME.livingActors.count
+        if mayorPresent {
+            maxVotes += 1
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,6 +84,7 @@ class VoteCounterVC: UIViewController {
             }
             
             if player.roleType() == .Mayor {
+                mayorPresent = true
                 mayorVote = "\n\nRemember to count Mayor \(player.name)'s vote twice."
             }
         }
@@ -96,8 +105,10 @@ class VoteCounterVC: UIViewController {
     }
     
     @IBAction func yesButtonPressed(_ sender: Any) {
-        yesVotes += 1
-        yesButton.setTitle("\(yesVotes)", for: .normal)
+        if yesVotes < maxVotes {
+            yesVotes += 1
+            yesButton.setTitle("\(yesVotes)", for: .normal)
+        }
     }
     
     @IBAction func correctionButton(_ sender: Any) {
