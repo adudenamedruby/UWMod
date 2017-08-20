@@ -155,20 +155,15 @@ class PlayerSelectVC: UIViewController {
     
     func createPlayersFromSelectedNames() -> [Player] {
         
-        var tempArray: [String] = []
+        var tempArray: [Person] = []
         var tempPlayerArray: [Player] = []
         
         for (_, person) in selectedPlayers {
-            var name = person.firstName
-            if tempArray.contains(name) {
-                name = "\(person.firstName) \(person.lastName[0])."
-            } else {
-                tempArray.append(name)
-            }
+            tempArray.append(person)
         }
         
-        for name in tempArray {
-            let newPlayer = Player(name: name)
+        for person in tempArray {
+            let newPlayer = Player(withIdentity: person)
             tempPlayerArray.append(newPlayer)
         }
         
@@ -315,7 +310,7 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
             
             let sectionTitle = savedPlayerSections[indexPath.section]
             let sectionPlayers = savedPlayers[sectionTitle]
-            let sectionPlaye = sectionPlayers?[indexPath.row]
+            let sectionPlayer = sectionPlayers?[indexPath.row]
             
             removePlayerName(player: sectionPlayer!)
             loadPlayers()

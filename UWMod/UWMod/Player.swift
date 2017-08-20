@@ -11,7 +11,9 @@ import UIKit
 
 class Player {
     private var _role:                      Role!
-    var name:                               String
+    private var _person:                    Person!
+    private var _name:                      String!
+    var gameID:                             Int
     var isAlive:                            Bool
     var team:                               [UWTeam]
     var daytimeInfoCards:                   [DaytimeCardType]
@@ -21,6 +23,10 @@ class Player {
     var hasActedToday:                      Bool
     var isNightActivePlayer:                Bool
     var killedBy:                           RoleType?
+    
+    var name: String {
+        get { return name }
+    }
     
     // What conditions are currently afflicting the player and by who. Done in two
     // for easier logic checks... for me, really.
@@ -32,8 +38,10 @@ class Player {
     var playersIneligibleForEffect:         [PlayerEffects:[Player]]
     var rolesIneligibleToAffectPlayer:      [RoleType]
     
-    init (name: String) {
-        self.name                           = name
+    init (withIdentity person: Person) {
+        self._person                        = person
+        self.gameID                         = 0
+        self._name                          = setPlayerName()
         self.team                           = []
         self.daytimeInfoCards               = []
 
@@ -97,6 +105,13 @@ class Player {
         }
     }
     
+    private func setPlayerName() {
+        if gameID == 0 {
+            _name           = "\(_person.firstName) \(_person.lastName[0])."
+        } else {
+            _name           = "\(_person.firstName) (\(gameID))"
+        }
+    }
     
     // MARK: - Info card related fuctions
     
