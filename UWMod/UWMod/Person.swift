@@ -9,7 +9,7 @@
 import Foundation
 
 class Person: NSObject, NSCoding {
-    
+
     private var _firstName:                 String
     private var _lastName:                  String
     private var _number:                    Int
@@ -26,27 +26,30 @@ class Person: NSObject, NSCoding {
         get { return _number }
     }
     
-    init(firstName: String, lastName: String, number: Int = 0) { // Dictionary object
+    init(firstName: String, lastName: String, number: Int = 0) {
         self._firstName             = firstName
         self._lastName              = lastName
         self._number                = number
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public func setNumber(to number: Int) {
+        self._number                = number
+    }
+    
+    
+    // MARK: - Encoding/Decoding
+    
+    required init(coder aDecoder: NSCoder) {
         
         self._firstName             = aDecoder.decodeObject(forKey: "first") as! String
         self._lastName              = aDecoder.decodeObject(forKey: "last") as! String
-        self._number                = aDecoder.decodeObject(forKey: "num") as! Int
+        self._number                = aDecoder.decodeInteger(forKey: "num")
     }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self._firstName, forKey: "first")
         aCoder.encode(self._lastName, forKey: "last")
         aCoder.encode(self._number, forKey: "num")
-    }
-    
-    public func setNumber(to number: Int) {
-        _number         = number
     }
     
     

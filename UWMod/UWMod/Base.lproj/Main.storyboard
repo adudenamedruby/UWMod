@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ame Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-Kc-kag" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="13.5" width="295" height="41"/>
+                                                <rect key="frame" x="15" y="15" width="295" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -533,7 +533,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="285"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secret" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juw-fP-CU1" customClass="OldMenuTop" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="91" y="210" width="173.5" height="70"/>
+                                                <rect key="frame" x="99.5" y="217" width="157" height="63"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="60"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -546,13 +546,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Werewolf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3c9-GO-c9q" customClass="OldMenuBottom" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="285" width="275.5" height="78.5"/>
+                                        <rect key="frame" x="48.5" y="285" width="258.5" height="70"/>
                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="67"/>
                                         <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Werewolf Moderation Tool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKv-XV-DKN" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="63" y="372.5" width="230" height="20"/>
+                                        <rect key="frame" x="63" y="364" width="230" height="20"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                         <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -760,7 +760,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="JfT-u5-Wiw" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="13" width="308" height="44.5"/>
+                                                <rect key="frame" x="15" y="15.5" width="308" height="40"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -956,7 +956,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="337" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Roles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="Tuq-TL-lce" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="13" width="307" height="44.5"/>
+                                                <rect key="frame" x="15" y="15.5" width="307" height="40"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1244,7 +1244,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bout UWMod" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="OQv-Nl-JmZ" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="17.5" width="270" height="36.5"/>
+                                                <rect key="frame" x="15" y="17" width="270" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1361,7 +1361,7 @@ Based on the Werewolf boardgame.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night falls..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="PAI-qt-uPY">
-                                        <rect key="frame" x="20" y="110.5" width="335" height="47"/>
+                                        <rect key="frame" x="20" y="113" width="335" height="42"/>
                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
                                         <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -1379,13 +1379,13 @@ Based on the Werewolf boardgame.</string>
                                         </connections>
                                     </button>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="La2-OU-NkV">
-                                        <rect key="frame" x="30" y="227.5" width="315" height="250"/>
+                                        <rect key="frame" x="30" y="225" width="315" height="250"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEH-ck-2Gr">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hase Report" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="gy0-tG-ynC" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="15" y="10" width="285" height="41"/>
+                                                        <rect key="frame" x="15" y="12.5" width="285" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1571,8 +1571,8 @@ Based on the Werewolf boardgame.</string>
                                             <constraint firstAttribute="trailing" secondItem="hia-gp-G1Q" secondAttribute="trailing" constant="10" id="xEx-V4-L7Z"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Johnny Appleseed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Fj-a1-TCa">
-                                        <rect key="frame" x="25" y="105" width="250" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Appleseed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Fj-a1-TCa">
+                                        <rect key="frame" x="73.5" y="105" width="206.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="SQZ-3P-bXs"/>
                                         </constraints>
@@ -1612,22 +1612,50 @@ Based on the Werewolf boardgame.</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAb-mv-iMS">
+                                        <rect key="frame" x="20" y="111.5" width="33.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Johnny" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wc-Ag-g7R">
+                                        <rect key="frame" x="74.5" y="74" width="205.5" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Yyt-0f-hAy"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhC-se-dgx">
+                                        <rect key="frame" x="20" y="80.5" width="34.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="6wc-Ag-g7R" firstAttribute="leading" secondItem="fhC-se-dgx" secondAttribute="trailing" constant="20" id="1Yk-90-mT6"/>
                                     <constraint firstItem="7un-Yq-MCI" firstAttribute="leading" secondItem="HPE-8y-prU" secondAttribute="leading" id="4Xy-Gf-wy6"/>
                                     <constraint firstItem="rfZ-Qn-LuS" firstAttribute="top" secondItem="8Fj-a1-TCa" secondAttribute="bottom" constant="8" id="5Cd-m6-FZo"/>
                                     <constraint firstItem="yVx-Wp-cWv" firstAttribute="centerX" secondItem="HPE-8y-prU" secondAttribute="centerX" constant="40" id="5GT-jq-4tn"/>
                                     <constraint firstItem="yVx-Wp-cWv" firstAttribute="centerY" secondItem="z4D-Wv-75p" secondAttribute="centerY" id="8uX-4h-ORd"/>
                                     <constraint firstItem="7un-Yq-MCI" firstAttribute="top" secondItem="HPE-8y-prU" secondAttribute="top" id="Evm-yX-jux"/>
                                     <constraint firstItem="yVx-Wp-cWv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z4D-Wv-75p" secondAttribute="trailing" constant="10" id="I6C-Kq-0IV"/>
-                                    <constraint firstAttribute="trailing" secondItem="8Fj-a1-TCa" secondAttribute="trailing" constant="25" id="PrZ-MW-2Rk"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Fj-a1-TCa" secondAttribute="trailing" constant="20" id="PrZ-MW-2Rk"/>
                                     <constraint firstItem="z4D-Wv-75p" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HPE-8y-prU" secondAttribute="leading" constant="10" id="Qi5-8E-wpw"/>
+                                    <constraint firstItem="fhC-se-dgx" firstAttribute="centerY" secondItem="6wc-Ag-g7R" secondAttribute="centerY" id="TBB-tI-BeB"/>
+                                    <constraint firstItem="mAb-mv-iMS" firstAttribute="centerY" secondItem="8Fj-a1-TCa" secondAttribute="centerY" id="XOU-iG-XTk"/>
                                     <constraint firstItem="z4D-Wv-75p" firstAttribute="top" secondItem="8Fj-a1-TCa" secondAttribute="bottom" constant="50" id="ZfF-uV-wjw"/>
+                                    <constraint firstItem="mAb-mv-iMS" firstAttribute="leading" secondItem="HPE-8y-prU" secondAttribute="leading" constant="20" id="aP1-FB-Gyn"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yVx-Wp-cWv" secondAttribute="bottom" constant="8" id="arU-Vu-te4"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yVx-Wp-cWv" secondAttribute="trailing" constant="10" id="dyr-ui-a28"/>
+                                    <constraint firstAttribute="trailing" secondItem="6wc-Ag-g7R" secondAttribute="trailing" constant="20" id="gOf-5F-H3d"/>
+                                    <constraint firstItem="fhC-se-dgx" firstAttribute="leading" secondItem="HPE-8y-prU" secondAttribute="leading" constant="20" id="gid-qy-APP"/>
+                                    <constraint firstItem="8Fj-a1-TCa" firstAttribute="top" secondItem="6wc-Ag-g7R" secondAttribute="bottom" constant="1" id="hVC-Jt-0bC"/>
                                     <constraint firstItem="z4D-Wv-75p" firstAttribute="centerX" secondItem="HPE-8y-prU" secondAttribute="centerX" constant="-90" id="jkT-li-YGS"/>
-                                    <constraint firstItem="8Fj-a1-TCa" firstAttribute="leading" secondItem="HPE-8y-prU" secondAttribute="leading" constant="25" id="us7-tB-8Vg"/>
+                                    <constraint firstItem="8Fj-a1-TCa" firstAttribute="leading" secondItem="mAb-mv-iMS" secondAttribute="trailing" constant="20" id="uFq-dg-3HP"/>
                                     <constraint firstItem="8Fj-a1-TCa" firstAttribute="top" secondItem="7un-Yq-MCI" secondAttribute="bottom" constant="38.5" id="uvT-v8-YGC"/>
                                     <constraint firstItem="rfZ-Qn-LuS" firstAttribute="centerX" secondItem="HPE-8y-prU" secondAttribute="centerX" id="wV8-5W-X7M"/>
                                     <constraint firstAttribute="trailing" secondItem="7un-Yq-MCI" secondAttribute="trailing" id="zcO-QZ-PMt"/>
@@ -1648,6 +1676,7 @@ Based on the Werewolf boardgame.</string>
                     </view>
                     <connections>
                         <outlet property="addPlayerButton" destination="yVx-Wp-cWv" id="GEJ-ae-sVq"/>
+                        <outlet property="firstNameField" destination="6wc-Ag-g7R" id="Mdt-Vx-e66"/>
                         <outlet property="headerTitleLabel" destination="hia-gp-G1Q" id="FzV-Dx-KqZ"/>
                         <outlet property="headerView" destination="7un-Yq-MCI" id="WXQ-Yd-X7Z"/>
                         <outlet property="mainCard" destination="HPE-8y-prU" id="8lz-5D-UoR"/>

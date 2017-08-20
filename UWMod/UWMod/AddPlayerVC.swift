@@ -13,12 +13,13 @@ class AddPlayerVC: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var nameField:           UITextField!
+    @IBOutlet weak var firstNameField:      UITextField!
     @IBOutlet weak var mainCard:            UIView!
     @IBOutlet var headerView:               UIView!
     @IBOutlet weak var headerTitleLabel:    OldTan!
-    @IBOutlet var statusLabel: RegBrownSmall!
+    @IBOutlet var statusLabel:              RegBrownSmall!
     
-    @IBOutlet var addPlayerButton: UIButton!
+    @IBOutlet var addPlayerButton:          UIButton!
     
     // MARK: - Variables
     
