@@ -15,6 +15,9 @@ class PlayerSelectVC: UIViewController {
     @IBOutlet var headerView:                   UIView!
     @IBOutlet weak var headerTitleLabel:        OldTan!
     
+    @IBOutlet weak var assignNumbersLabel:      RegBrown!
+    @IBOutlet weak var assignNumbersButton:     UIButton!
+    
     @IBOutlet weak var addPlayersButton:        UIButton!
     @IBOutlet weak var forwardButton:           PMSuperButton!
     
@@ -27,6 +30,8 @@ class PlayerSelectVC: UIViewController {
     let defaults                                = UserDefaults.standard
     let transition                              = CircularTransition()
     let textCellIndentifier                     = "PlayerNameCell"
+    
+    var shouldAssignNumbersToPlayers            = false
 
     var savedPlayers: [String:[Person]]         = [:]
     var savedPlayerSections: [String]           = []
@@ -69,6 +74,8 @@ class PlayerSelectVC: UIViewController {
         super.viewDidAppear(animated)
         loadPlayers()
         resetVillageSizeLabel()
+        shouldAssignNumbersToPlayers            = false
+        updateNumberAssignmentSegment()
     }
     
     override func didReceiveMemoryWarning() {
@@ -124,12 +131,15 @@ class PlayerSelectVC: UIViewController {
         
         if let data = UserDefaults.standard.data(forKey: PLAYERS), var tempPlayers = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Person] {
             
-            if tempPlayers.contains(player) {
-                let playerIndex = tempPlayers.index(of: player)
-                tempPlayers.remove(at: playerIndex!)
+            for tPlayer in tempPlayers {
+                if tPlayer.personID == player.personID {
+                    let playerIndex = tempPlayers.index(where: { $0 === tPlayer } )
+                    tempPlayers.remove(at: playerIndex!)
+                    break
+                }
             }
             
-            let data = NSKeyedArchiver.archivedData(withRootObject: savedPlayers)
+            let data = NSKeyedArchiver.archivedData(withRootObject: tempPlayers)
             UserDefaults.standard.set(data, forKey: PLAYERS)
         }
     }
@@ -139,8 +149,37 @@ class PlayerSelectVC: UIViewController {
         self.passedPlayers.removeAll()
         villageSize = 0
         playerNumberLabel.text = "0"
+        shouldAssignNumbersToPlayers = false
+        updateNumberAssignmentSegment()
         tableView.reloadData()
     }
+    
+    
+    // MARK: - Assign Numbers
+    
+    @IBAction func assignButtonPressed(_ sender: Any) {
+        
+        if shouldAssignNumbersToPlayers {
+            shouldAssignNumbersToPlayers        = false
+        } else {
+            shouldAssignNumbersToPlayers        = true
+        }
+        
+        updateNumberAssignmentSegment()
+    }
+    
+    private func updateNumberAssignmentSegment() {
+        if shouldAssignNumbersToPlayers {
+            assignNumbersButton.setImage(#imageLiteral(resourceName: "checkYes"), for: .normal)
+            assignNumbersLabel.alpha            = 1
+            assignNumbersButton.alpha           = 1
+        } else {
+            assignNumbersButton.setImage(#imageLiteral(resourceName: "checkNo"), for: .normal)
+            assignNumbersLabel.alpha            = 0.5
+            assignNumbersButton.alpha           = 0.5
+        }
+    }
+    
     
     // MARK: - Navigation and data passing
     
@@ -158,12 +197,26 @@ class PlayerSelectVC: UIViewController {
         var tempArray: [Person] = []
         var tempPlayerArray: [Player] = []
         
+        // Create a dictionary to find out if I need last initials for anyone.
+        var firstNameDict: [String:Int] = [:]
         for (_, person) in selectedPlayers {
+            if firstNameDict[person.firstName] != nil {
+                firstNameDict[person.firstName]! += 1
+            } else {
+                firstNameDict[person.firstName] = 1
+            }
+            
             tempArray.append(person)
         }
+
         
         for person in tempArray {
-            let newPlayer = Player(withIdentity: person)
+            let newPlayer = Player(withIdentity: person, withTeamName: nil)
+            
+            if firstNameDict[person.firstName]! > 1 {
+                newPlayer.setPlayerNameWithLastInitial()
+            }
+            
             tempPlayerArray.append(newPlayer)
         }
         

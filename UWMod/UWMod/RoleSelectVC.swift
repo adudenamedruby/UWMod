@@ -29,7 +29,6 @@ class RoleSelectVC: UIViewController {
     
     @IBOutlet weak var collectionView:          UICollectionView!
     
-    @IBOutlet weak var gameBalanceLabel:        UILabel!
     @IBOutlet weak var teamBalanceLabel:        UILabel!
     @IBOutlet weak var roleCountLabel:          UILabel!
     
@@ -73,8 +72,6 @@ class RoleSelectVC: UIViewController {
         teamBalanceLabel.text = suggestRoles()
         
         updateRoleCountLabel()
-        
-        gameBalanceLabel.text = String(gameBalance)
     }
     
     override func didReceiveMemoryWarning() {
@@ -155,24 +152,30 @@ class RoleSelectVC: UIViewController {
             gameBalance = gameBalance + role.impact
         }
         
-        gameBalanceLabel.text = String(gameBalance)
-        
         if gameBalance < -30 {
-            teamBalanceLabel.text = "The Village is heavily disadvantaged."
-        } else if gameBalance < -20 {
+            teamBalanceLabel.text = "The Village will not win."
+            
+        } else if gameBalance <= -20 {
             teamBalanceLabel.text = "The Village is greatly disadvantaged."
-        } else if gameBalance < -10 {
+            
+        } else if gameBalance <= -11 {
             teamBalanceLabel.text = "The Village is moderately disadvantaged."
-        } else if gameBalance < 0 {
+            
+        } else if gameBalance <= -5 {
             teamBalanceLabel.text = "The Village is slightly disadvantaged."
-        } else if gameBalance == 0 {
+            
+        } else if gameBalance <= 4 && gameBalance >= -4 {
             teamBalanceLabel.text = "Neither team has the advantage."
+            
         } else if gameBalance > 30 {
             teamBalanceLabel.text = "The Village is heavily favoured."
+            
         } else if gameBalance > 20 {
             teamBalanceLabel.text = "The Village is greatly favoured."
-        } else if gameBalance > 10 {
+            
+        } else if gameBalance > 11 {
             teamBalanceLabel.text = "The Village is moderately favoured."
+            
         } else {
             teamBalanceLabel.text = "The Village is slightly favoured."
         }

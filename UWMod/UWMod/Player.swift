@@ -11,8 +11,9 @@ import UIKit
 
 class Player {
     private var _role:                      Role!
-    private var _person:                    Person!
+    private var _person:                    Person?
     private var _name:                      String!
+    var teamName:                           String?
     var gameID:                             Int
     var isAlive:                            Bool
     var team:                               [UWTeam]
@@ -25,7 +26,7 @@ class Player {
     var killedBy:                           RoleType?
     
     var name: String {
-        get { return name }
+        get { return _name }
     }
     
     // What conditions are currently afflicting the player and by who. Done in two
@@ -38,10 +39,10 @@ class Player {
     var playersIneligibleForEffect:         [PlayerEffects:[Player]]
     var rolesIneligibleToAffectPlayer:      [RoleType]
     
-    init (withIdentity person: Person) {
+    init (withIdentity person: Person?, withTeamName name: String?) {
         self._person                        = person
+        self.teamName                       = name
         self.gameID                         = 0
-        self._name                          = setPlayerName()
         self.team                           = []
         self.daytimeInfoCards               = []
 
@@ -57,6 +58,8 @@ class Player {
         self.playersIneligibleForEffect     = [:]
         self.currentConditions              = []
         self.rolesIneligibleToAffectPlayer  = []
+        
+        setPlayerName()
     }
     
     
@@ -105,13 +108,28 @@ class Player {
         }
     }
     
-    private func setPlayerName() {
+    public func setCollapsedTeamCardName(name: String) {
+        _name = name
+    }
+    
+    public func setPlayerNameWithLastInitial() {
         if gameID == 0 {
-            _name           = "\(_person.firstName) \(_person.lastName[0])."
-        } else {
-            _name           = "\(_person.firstName) (\(gameID))"
+            _name           = "\(_person!.firstName) \(_person!.lastName[0])."
         }
     }
+    
+    private func setPlayerName() {
+        if _person != nil {
+            if gameID == 0 {
+                _name           = "\(_person!.firstName)"
+            } else {
+                _name           = "\(_person!.firstName) (\(gameID))"
+            }
+        } else if teamName != nil {
+            _name = teamName!
+        }
+    }
+
     
     // MARK: - Info card related fuctions
     

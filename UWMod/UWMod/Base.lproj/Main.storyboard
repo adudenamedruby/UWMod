@@ -824,16 +824,16 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="u4F-gm-ZV7">
-                                        <rect key="frame" x="114.5" y="502" width="110.5" height="20"/>
+                                        <rect key="frame" x="13" y="502" width="99.5" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Size:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjl-cE-UsS" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="20"/>
-                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="20"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoW-qG-sLM" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="99.5" y="0.0" width="11" height="20"/>
+                                                <rect key="frame" x="88.5" y="0.0" width="11" height="20"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -860,6 +860,28 @@
                                             <action selector="backButtonPressed:" destination="4rb-Z3-Wdw" eventType="touchUpInside" id="QsW-ZX-3NJ"/>
                                         </connections>
                                     </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TT5-wR-srQ">
+                                        <rect key="frame" x="169" y="497" width="157" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assign Numbers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cu-nQ-MIj" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="122" height="30"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dv-SR-lZO">
+                                                <rect key="frame" x="127" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="T2u-9y-bWN"/>
+                                                    <constraint firstAttribute="width" constant="30" id="dZ5-Os-8KB"/>
+                                                </constraints>
+                                                <state key="normal" image="checkNo"/>
+                                                <connections>
+                                                    <action selector="assignButtonPressed:" destination="4rb-Z3-Wdw" eventType="touchUpInside" id="5U2-W8-mW6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -867,10 +889,10 @@
                                     <constraint firstItem="aKN-zO-uiX" firstAttribute="centerY" secondItem="iCc-1T-bIt" secondAttribute="centerY" id="BIx-UJ-rv7"/>
                                     <constraint firstAttribute="bottom" secondItem="S0G-rq-jAp" secondAttribute="bottom" constant="20" id="DQt-Ix-h2I"/>
                                     <constraint firstAttribute="bottom" secondItem="u4F-gm-ZV7" secondAttribute="bottom" constant="85" id="EY0-aw-gA4"/>
+                                    <constraint firstItem="TT5-wR-srQ" firstAttribute="centerY" secondItem="u4F-gm-ZV7" secondAttribute="centerY" id="Erz-1l-dyM"/>
                                     <constraint firstItem="aKN-zO-uiX" firstAttribute="leading" secondItem="hRA-l7-cLQ" secondAttribute="leading" constant="25" id="G1N-6m-qIV"/>
                                     <constraint firstAttribute="trailing" secondItem="S0G-rq-jAp" secondAttribute="trailing" constant="25" id="II4-fx-Cqk"/>
                                     <constraint firstItem="iCc-1T-bIt" firstAttribute="centerY" secondItem="S0G-rq-jAp" secondAttribute="centerY" id="P9P-4F-e1o"/>
-                                    <constraint firstItem="u4F-gm-ZV7" firstAttribute="centerX" secondItem="hRA-l7-cLQ" secondAttribute="centerX" id="jrD-uh-Klj"/>
                                     <constraint firstItem="iCc-1T-bIt" firstAttribute="centerX" secondItem="hRA-l7-cLQ" secondAttribute="centerX" id="mzy-hp-DdI"/>
                                     <constraint firstAttribute="trailing" secondItem="czc-ce-jJH" secondAttribute="trailing" id="r75-6o-yQ4"/>
                                     <constraint firstItem="czc-ce-jJH" firstAttribute="leading" secondItem="hRA-l7-cLQ" secondAttribute="leading" id="ykL-Nw-mer"/>
@@ -913,6 +935,8 @@
                             <constraint firstItem="hRA-l7-cLQ" firstAttribute="centerY" secondItem="WLo-Dk-Wji" secondAttribute="centerY" id="hlq-9H-1dR"/>
                             <constraint firstItem="u4F-gm-ZV7" firstAttribute="top" secondItem="8qc-UI-p46" secondAttribute="bottom" constant="15" id="hm8-4I-XQ0"/>
                             <constraint firstItem="hRA-l7-cLQ" firstAttribute="centerX" secondItem="WLo-Dk-Wji" secondAttribute="centerX" id="jh2-EY-cid"/>
+                            <constraint firstItem="TT5-wR-srQ" firstAttribute="trailing" secondItem="8qc-UI-p46" secondAttribute="trailing" id="pPx-cD-E3U"/>
+                            <constraint firstItem="u4F-gm-ZV7" firstAttribute="leading" secondItem="8qc-UI-p46" secondAttribute="leading" id="qu5-JA-l1m"/>
                             <constraint firstItem="8qc-UI-p46" firstAttribute="top" secondItem="czc-ce-jJH" secondAttribute="bottom" constant="15" id="v99-xY-SHZ"/>
                             <constraint firstItem="egH-CV-BTf" firstAttribute="top" secondItem="veT-ov-L0g" secondAttribute="bottom" id="xdL-Sy-6gf"/>
                             <constraint firstItem="hRA-l7-cLQ" firstAttribute="width" secondItem="WLo-Dk-Wji" secondAttribute="width" multiplier="0.9" id="zEe-zr-Io3"/>
@@ -921,6 +945,8 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="addPlayersButton" destination="iCc-1T-bIt" id="BnE-VZ-ix7"/>
+                        <outlet property="assignNumbersButton" destination="4Dv-SR-lZO" id="6PR-zd-vVr"/>
+                        <outlet property="assignNumbersLabel" destination="6cu-nQ-MIj" id="Gqg-j2-Nuy"/>
                         <outlet property="forwardButton" destination="S0G-rq-jAp" id="V81-52-8y7"/>
                         <outlet property="headerTitleLabel" destination="JfT-u5-Wiw" id="dJ8-1Q-evM"/>
                         <outlet property="headerView" destination="czc-ce-jJH" id="dCN-nl-rSN"/>
@@ -993,7 +1019,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="P9r-Ya-85Q">
-                                        <rect key="frame" x="86.5" y="537" width="164.5" height="45"/>
+                                        <rect key="frame" x="86.5" y="549.5" width="164.5" height="20"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NtC-Gp-Iz8">
                                                 <rect key="frame" x="0.0" y="0.0" width="164.5" height="20"/>
@@ -1014,23 +1040,6 @@
                                                         <rect key="frame" x="103" y="0.0" width="61.5" height="20"/>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                         <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="lh3-94-7XA">
-                                                <rect key="frame" x="10.5" y="25" width="144" height="20"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Balance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xF8-tU-8bf" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1.5" width="113" height="18.5"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
-                                                        <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1j-Ax-2KL" customClass="RegBrownLarge" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="117" y="0.0" width="27" height="20"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                                        <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -1190,7 +1199,6 @@
                         <outlet property="backButton" destination="8ge-b5-6M8" id="1S4-sJ-mMF"/>
                         <outlet property="collectionView" destination="GQM-mG-qFm" id="Xlf-gk-h5g"/>
                         <outlet property="forwardButton" destination="sgF-ZD-TgM" id="pPK-5u-7hB"/>
-                        <outlet property="gameBalanceLabel" destination="D1j-Ax-2KL" id="CYD-s7-DH2"/>
                         <outlet property="headerTitleLabel" destination="Tuq-TL-lce" id="aFk-3x-sSI"/>
                         <outlet property="headerView" destination="gJa-nz-lZZ" id="7YU-NT-GOO"/>
                         <outlet property="mainCardView" destination="hhz-Fz-6Cw" id="5Vm-Lq-FuO"/>
@@ -1201,7 +1209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTP-dL-4kz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2000.8" y="91.304347826086968"/>
+            <point key="canvasLocation" x="2183" y="92"/>
         </scene>
         <!--AboutVC-->
         <scene sceneID="92H-Py-R30">
@@ -1244,7 +1252,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bout UWMod" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="OQv-Nl-JmZ" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="17" width="270" height="36.5"/>
+                                                <rect key="frame" x="15" y="17.5" width="270" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1691,6 +1699,7 @@ Based on the Werewolf boardgame.</string>
     </scenes>
     <resources>
         <image name="backArrow" width="512" height="512"/>
+        <image name="checkNo" width="512" height="512"/>
         <image name="forwardArrow" width="512" height="512"/>
         <image name="nighttime" width="1242" height="2208"/>
     </resources>

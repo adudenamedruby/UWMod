@@ -12,7 +12,7 @@ class Person: NSObject, NSCoding {
 
     private var _firstName:                 String
     private var _lastName:                  String
-    private var _number:                    Int
+    private var _personID:                  String
     
     var firstName: String {
         get { return _firstName }
@@ -22,18 +22,17 @@ class Person: NSObject, NSCoding {
         get { return _lastName }
     }
     
-    var number: Int {
-        get { return _number }
+    var personID: String {
+        get { return _personID }
     }
     
-    init(firstName: String, lastName: String, number: Int = 0) {
+    init(firstName: String, lastName: String) {
         self._firstName             = firstName
         self._lastName              = lastName
-        self._number                = number
-    }
-    
-    public func setNumber(to number: Int) {
-        self._number                = number
+        self._personID              = ""
+        
+        super.init()
+        self.generateRandomID(length: 64)
     }
     
     
@@ -43,26 +42,28 @@ class Person: NSObject, NSCoding {
         
         self._firstName             = aDecoder.decodeObject(forKey: "first") as! String
         self._lastName              = aDecoder.decodeObject(forKey: "last") as! String
-        self._number                = aDecoder.decodeInteger(forKey: "num")
+        self._personID              = aDecoder.decodeObject(forKey: "id") as! String
     }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self._firstName, forKey: "first")
         aCoder.encode(self._lastName, forKey: "last")
-        aCoder.encode(self._number, forKey: "num")
+        aCoder.encode(self._personID, forKey: "id")
     }
     
+    private func generateRandomID(length: Int) {
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*(){}:;-=+/?"
+        let len = UInt32(letters.length)
+        
+        var randomString = ""
+        
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            randomString += NSString(characters: &nextChar, length: 1) as String
+        }
     
-//    func save(arr: [Person]) {
-//        let data = NSKeyedArchiver.archivedData(withRootObject: arr)
-//        UserDefaults.standard.set(data, forKey: "TestKey")
-//    }
-//    
-//    func load() {
-//        
-//        var peoples: [Person] = []
-//        if let data = UserDefaults.standard.data(forKey: "TestKey") {
-//            peoples = NSKeyedUnarchiver.unarchiveObject(with: data) as! [Person]
-//        }
-//    }
+        _personID = randomString
+    }
 }

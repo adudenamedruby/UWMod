@@ -696,7 +696,7 @@ class Game {
     private func createTeamPlayer(roleCount: Int, roleList: [RoleType] = [], teamType: UWTeam) -> Player {
         // Create a Team Player to present as a card.
         var newName                         = ""
-        let teamPlayer: Player              = Player(name: newName)
+        let teamPlayer: Player              = Player(withIdentity: nil, withTeamName: newName)
         var roleCountPass                   = 2
         
         if teamType == .TeamBlob {
@@ -719,7 +719,7 @@ class Game {
         
         if newName != "" {
             let truncatedName = newName.substring(to: newName.index(newName.endIndex, offsetBy: -2))
-            teamPlayer.name = truncatedName
+            teamPlayer.setCollapsedTeamCardName(name: truncatedName)
         }
         
         if teamType == .TeamWerewolf {

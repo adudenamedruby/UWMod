@@ -55,6 +55,7 @@
 		127ACFEB1F42666F004E9779 /* SorceressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127ACFEA1F42666F004E9779 /* SorceressView.xib */; };
 		127ACFED1F466201004E9779 /* PriestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127ACFEC1F466201004E9779 /* PriestView.xib */; };
 		127ACFEF1F46621B004E9779 /* PriestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACFEE1F46621B004E9779 /* PriestView.swift */; };
+		12960F9B1F49DB9100EA8A97 /* AssignNumbersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12960F9A1F49DB9100EA8A97 /* AssignNumbersVC.swift */; };
 		1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1298C8A21F3DD15D00261779 /* Notes.rtf */; };
 		12CA22C71F49125700954370 /* Weretimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CA22C61F49125700954370 /* Weretimer.swift */; };
 		12CA22C91F4924E600954370 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CA22C81F4924E600954370 /* Person.swift */; };
@@ -160,6 +161,7 @@
 		127ACFEA1F42666F004E9779 /* SorceressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SorceressView.xib; sourceTree = "<group>"; };
 		127ACFEC1F466201004E9779 /* PriestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriestView.xib; sourceTree = "<group>"; };
 		127ACFEE1F46621B004E9779 /* PriestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriestView.swift; sourceTree = "<group>"; };
+		12960F9A1F49DB9100EA8A97 /* AssignNumbersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignNumbersVC.swift; sourceTree = "<group>"; };
 		1298C8A21F3DD15D00261779 /* Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
 		12CA22C61F49125700954370 /* Weretimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weretimer.swift; sourceTree = "<group>"; };
 		12CA22C81F4924E600954370 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 			children = (
 				12EC77D01F26D4AA0026C667 /* AboutVC.swift */,
 				1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */,
+				12960F9A1F49DB9100EA8A97 /* AssignNumbersVC.swift */,
 				77B2B00E1F3A1B580032A36B /* GameSettingsVC.swift */,
 				7736D0911F3399BC00555037 /* HelpVC.swift */,
 				7736D0991F33A32000555037 /* HelpCell.swift */,
@@ -649,6 +652,7 @@
 				12EC78001F2BE2FE0026C667 /* TisprCardStackViewCell.swift in Sources */,
 				77B2B0061F34D7AC0032A36B /* Graveyard.swift in Sources */,
 				122FC69E1F3927C500E0E2C9 /* SeerInspection.swift in Sources */,
+				12960F9B1F49DB9100EA8A97 /* AssignNumbersVC.swift in Sources */,
 				7736D0921F3399BC00555037 /* HelpVC.swift in Sources */,
 				1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */,
 				123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */,
