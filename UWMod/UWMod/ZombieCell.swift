@@ -51,7 +51,7 @@ class ZombieCell: UITableViewCell {
         var zombiePlayer: Player!
         
         for player in GAME.livingActors {
-            if player.roleType() == .Zombie {
+            if player.roleType == .Zombie {
                 zombiePlayer = player
             }
         }

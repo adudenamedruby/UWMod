@@ -229,7 +229,7 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
             var originalPlayer: Player!
             
             for player in GAME.availablePlayers {
-                if player.roleType() == .TheBlob {
+                if player.roleType == .TheBlob {
                     originalPlayer = player
                 }
             }
@@ -245,7 +245,7 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
             var originalPlayer: Player!
             
             for player in GAME.availablePlayers {
-                if player.roleType() == .CultLeader {
+                if player.roleType == .CultLeader {
                     originalPlayer = player
                     break
                 }

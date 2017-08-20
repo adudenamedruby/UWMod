@@ -124,7 +124,7 @@ class ConfirmationPopup: UIViewController {
                     chosenPlayer.killedBy = eliminatedByType
                 }
                 
-                if GAME.wolfRoles.contains(chosenPlayer.roleType()) && !GAME.aWerewolfHasBeenSlain {
+                if GAME.wolfRoles.contains(chosenPlayer.roleType) && !GAME.aWerewolfHasBeenSlain {
                     GAME.aWerewolfHasBeenSlain = true
                 }
                 
@@ -132,7 +132,7 @@ class ConfirmationPopup: UIViewController {
                     self.notify(name: EliminationByWerewolfSuccessNotification)
                 }
                 
-                if chosenPlayer.roleType() == .Cursed && reason == .WerewolfElimination {
+                if chosenPlayer.roleType == .Cursed && reason == .WerewolfElimination {
                         chosenPlayer.updateRole(withRole: CURSED_WEREWOLF)
                 } else {
                     GAME.prepareToEliminatePlayer(victim: chosenPlayer)

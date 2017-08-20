@@ -139,14 +139,14 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         }
         
         if player != nil {
-            roleIconImage.image = player?.roleImage()
-            let roleTitle = player?.roleName()
+            roleIconImage.image = player?.roleImage
+            let roleTitle = player?.roleName
             roleTitleLabel.attributedText = roleTitle?.styleTitleLabel(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
             roleTitleLabel.alpha = 1
-            roleDescritpionLabel.text = player?.roleDescription()
+            roleDescritpionLabel.text = player?.roleDescription
             roleDescritpionLabel.alpha = 1
             roleDescritpionLabel.textColor = STYLE.Brown
-            textView.text = player?.roleExplanation()
+            textView.text = player?.roleExplanation
             
         } else {
             roleIconImage.image = role?.image
@@ -174,41 +174,41 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             
         } else if (player?.isAlive)! {
          
-            if player?.roleType() == .Werewolf {
+            if player?.roleType == .Werewolf {
                 if !GAME.firstNight {
                     if GAME.werewolfEliminationsThisNight != 0 {
                         presentWerewolfAssassination()
                     }
                 }
                 
-            } else if player?.roleType() == .Ghost {
+            } else if player?.roleType == .Ghost {
                 GAME.prepareToEliminatePlayer(victim: player!)
             
-            } else if player?.roleType() == .Bodyguard && !((player?.hasActedTonight)!) && !GAME.firstNight {
+            } else if player?.roleType == .Bodyguard && !((player?.hasActedTonight)!) && !GAME.firstNight {
                 presentBodyguardView()
                 
-            } else if player?.roleType() == .Seer && !GAME.firstNight {
+            } else if player?.roleType == .Seer && !GAME.firstNight {
                 presentSeerView()
                 
-            } else if player?.roleType() == .Zombie && !GAME.firstNight {
+            } else if player?.roleType == .Zombie && !GAME.firstNight {
                 presentZombieView()
                 
             } else if (player?.team.contains(.TeamBlob))! && !GAME.theBlobHasAbsorbed {
                 presentBlobView()
                 
-            } else if player?.roleType() == .CultLeader && !(player?.hasActedTonight)! {
+            } else if player?.roleType == .CultLeader && !(player?.hasActedTonight)! {
                 presentJoinCultView()
                 
-            } else if player?.roleType() == .Sorceress {
+            } else if player?.roleType == .Sorceress {
                 presentSorceressView()
                 
-            } else if player?.roleType() == .Priest && !((player?.rolePowerUsed())!) {
+            } else if player?.roleType == .Priest && !((player?.rolePowerUsed)!) {
                 presentPriestView()
                 
-            } else if player?.roleType() == .Cupid && !((player?.rolePowerUsed())!) {
+            } else if player?.roleType == .Cupid && !((player?.rolePowerUsed)!) {
                 presentCupidView()
                 
-            } else if player?.roleType() == .Spellcaster && !((player?.hasActedTonight)!) {
+            } else if player?.roleType == .Spellcaster && !((player?.hasActedTonight)!) {
                 presentSpellcasterView()
                 
             }

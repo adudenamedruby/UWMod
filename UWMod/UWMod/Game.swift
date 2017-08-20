@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum GamePhase {
     case NightPhase
@@ -29,10 +30,9 @@ class Game {
     private var _firstNight:                        Bool
     private var _werewolfEliminationsThisNight:     Int
     private var _timeGameStarted:                   Date
-    var areThereDeadPlayers:                        Bool
     
     // Game settings
-    var settings:                                   GameSettings
+    private var _settings:                          GameSettings
     
     // Actor related variables
     private var _nightActors:                       [Player]
@@ -56,6 +56,9 @@ class Game {
     private var _theWolfCubHasBeenSlain:            Bool
     var aWerewolfHasBeenSlain:                      Bool
     var theBlobHasAbsorbed:                         Bool
+    
+    // Timer related variables
+    private var _wereTimer:                         Weretimer
 
     
     // Custom, private getters
@@ -123,6 +126,14 @@ class Game {
         get { return _daytimeInfoCards }
     }
     
+    var settings: GameSettings {
+        get { return _settings }
+    }
+    
+    var timer: Weretimer {
+        get { return _wereTimer }
+    }
+    
     // MARK: - Initializer
     
     init(availableRoster: [Role], availablePlayers: [Player], withSettings: GameSettings = GameSettings()) {
@@ -137,10 +148,9 @@ class Game {
         self._currentDay                    = 1
         self._werewolfEliminationsThisNight = 0
         self._timeGameStarted               = Date()
-        self.areThereDeadPlayers            = false
         
         // Game settings
-        self.settings                       = withSettings
+        self._settings                       = withSettings
         
         // Actor related variables
         self._nightActors                   = []
@@ -171,8 +181,11 @@ class Game {
                                                .FruitBrute,
                                                .Wolverine]
         self.aWerewolfHasBeenSlain          = false
-        self._theWolfCubHasBeenSlain         = false
+        self._theWolfCubHasBeenSlain        = false
         self.theBlobHasAbsorbed             = false
+        
+        // Timer related variables
+        self._wereTimer                     = Weretimer(withSettings: _settings)
         
     }
 
@@ -250,12 +263,12 @@ class Game {
                 self.livingActors.remove(at: tempIndex)
             }
             
-            if victim.roleType() == .WolfCub {
+            if victim.roleType == .WolfCub {
                 _theWolfCubHasBeenSlain = true
             }
             
             if victim.killedBy != nil {
-                if _wolfRoles.contains(victim.killedBy!) && victim.roleType() == .Diseased {
+                if _wolfRoles.contains(victim.killedBy!) && victim.roleType == .Diseased {
                     _werewolvesAreDiseased = true
                 }
             }
@@ -326,7 +339,7 @@ class Game {
             for teamType in player.team {
                 if teamType == ofTeamType {
                     let temp = fetchSinglePlayer(player: player, withRole: withRole, separatedByComma: separatedByComma)
-                    if !(excludingRole != nil && player.roleType() == excludingRole) {
+                    if !(excludingRole != nil && player.roleType == excludingRole) {
                         players = players + temp
                     }
                 }
@@ -340,7 +353,7 @@ class Game {
         var players = ""
         
         for player in fromList {
-            if player.roleType() == ofRoleType {
+            if player.roleType == ofRoleType {
                 let temp = fetchSinglePlayer(player: player, withRole: withRole, separatedByComma: separatedByComma)
                 players = players + temp
             }
@@ -379,7 +392,7 @@ class Game {
             separator = ", "
         }
         
-        return "\(player.name) (\(player.roleName()))\(separator)"
+        return "\(player.name) (\(player.roleName))\(separator)"
     }
     
     private func retrievePlayerNameWithoutRole(player: Player, separatedByComma: Bool = false) -> String {
@@ -408,7 +421,6 @@ class Game {
         assignInfoCardsToPlayers()
         eliminatePlayers()
         resetPlayerNightActions()
-        setDeadPlayerCheck()
         setupInfoCards()
         
         theBlobHasAbsorbed              = false
@@ -423,7 +435,6 @@ class Game {
         resetPlayerDayActions()
         determineNumberOfWerewolfEliminations()
         determineNightActors()
-        setDeadPlayerCheck()
         
         aWerewolfHasBeenSlain           = false
         _currentDay += 1
@@ -440,14 +451,6 @@ class Game {
         for player in livingActors {
             player.hasActedToday = false
             player.cleanupAfterRound(nightRound: false)
-        }
-    }
-    
-    private func setDeadPlayerCheck() {
-        if !areThereDeadPlayers {
-            if deadActors.count > 0 {
-                areThereDeadPlayers = true
-            }
         }
     }
     
@@ -504,7 +507,7 @@ class Game {
             }
         }
         
-        if areThereDeadPlayers {
+        if deadActors.count > 0 {
             tempArray.append(.GraveyardCard)
         }
         
@@ -532,7 +535,7 @@ class Game {
         }
         
         for player in livingActors {
-            if player.roleType() == .BigBadWolf {
+            if player.roleType == .BigBadWolf {
                 increasePossibleWerewolfTargets()
             }
         }
@@ -552,8 +555,8 @@ class Game {
     
     private func determineRolesInTheGame() {
         for player in availablePlayers {
-            if !_rolesInTheGame.contains(player.roleType()) {
-                _rolesInTheGame.append(player.roleType())
+            if !_rolesInTheGame.contains(player.roleType) {
+                _rolesInTheGame.append(player.roleType)
             }
         }
     }
@@ -603,7 +606,7 @@ class Game {
             for player in livingActors {
                 if player.isNightActivePlayer {
                     
-                    let playerRole = player.roleType()
+                    let playerRole = player.roleType
                     if wolfRoles.contains(playerRole) && werewolves >= 2 {
                         if !alreadyAddedWerewolfTeamCard {
                             consolidatedPlayers.append(werewolfTeamPlayer)
@@ -617,7 +620,7 @@ class Game {
                         }
                         
                     } else {
-                        if player.roleType() != .TheBlob {
+                        if player.roleType != .TheBlob {
                             consolidatedPlayers.append(player)
                         }
                     }
@@ -631,7 +634,7 @@ class Game {
                 if player.team.contains(.TeamBlob) {
                     
                     if theBlob == 1 && !alreadyAddedBlobTeamCard {
-                        if player.roleType() == .TheBlob {
+                        if player.roleType == .TheBlob {
                             if playerHasNotBeenAddedToConsolitedList(player: player, list: consolidatedPlayers, werewolves: werewolves, vampires: vampires, wolfRoles: wolfRoles, vampireRoles: vampireList) {
                                 consolidatedPlayers.append(player)
                             }
@@ -650,7 +653,7 @@ class Game {
                             alreadyAddedBlobTeamCard = true
                         }
                         
-                        if player.roleType() != .TheBlob {
+                        if player.roleType != .TheBlob {
                             if playerHasNotBeenAddedToConsolitedList(player: player, list: consolidatedPlayers, werewolves: werewolves, vampires: vampires, wolfRoles: wolfRoles, vampireRoles: vampireList) {
                                 consolidatedPlayers.append(player)
                             }
@@ -668,7 +671,7 @@ class Game {
             
             
         if consolidatedPlayers.count > 0 {
-            consolidatedPlayers.sort(by: { ($0.rolePriority()) < ($1.rolePriority()) })
+            consolidatedPlayers.sort(by: { ($0.rolePriority) < ($1.rolePriority) })
         }
         
         return consolidatedPlayers
@@ -679,11 +682,11 @@ class Game {
         if list.contains(where: { $0 === player })  { return false }
         if !player.isNightActivePlayer              { return false }
         
-        if wolfRoles.contains(player.roleType()) {
+        if wolfRoles.contains(player.roleType) {
             if werewolves >= 2                      { return false }
         }
         
-        if vampireRoles.contains(player.roleType()) {
+        if vampireRoles.contains(player.roleType) {
             if vampires >= 2                        { return false }
         }
         
@@ -707,7 +710,7 @@ class Game {
                     let nameToAdd = fetchSinglePlayer(player: player, withRole: false, separatedByComma: true)
                     newName = newName + nameToAdd
                     
-                } else if roleList.contains(player.roleType()) {
+                } else if roleList.contains(player.roleType) {
                     let nameToAdd = fetchSinglePlayer(player: player, withRole: false, separatedByComma: true)
                     newName = newName + nameToAdd
                 }
@@ -737,7 +740,7 @@ class Game {
         
         for player in livingActors {
             
-            let playerRole = player.roleType()
+            let playerRole = player.roleType
             if wolfList.contains(playerRole) {
                 werewolves += 1
             } else if vampireList.contains(playerRole) {
@@ -758,7 +761,7 @@ class Game {
             if actor.isNightActivePlayer {
                 
                 // FIX THIS LOGIC!
-                if actor.roleType() == .Werewolf {
+                if actor.roleType == .Werewolf {
                     if actor.isAlive {
                         _nightActors.append(actor)
                     }
@@ -769,7 +772,36 @@ class Game {
             }
         }
         
-        _nightActors.sort(by: { ($0.rolePriority()) < ($1.rolePriority()) })
+        _nightActors.sort(by: { ($0.rolePriority) < ($1.rolePriority) })
+    }
+    
+    
+    
+    // MARK: - Timer related functions
+    
+    public func startTimer(forLabel label: UILabel) {
+        _wereTimer.setTimer(to: setCurrentTime(), forLabel: label)
+        _wereTimer.startTimer()
+    }
+    
+    public func stopTimer() {
+        _wereTimer.stopTimer()
+    }
+    
+    public func pauseTimer() {
+        
+    }
+    
+    private func setCurrentTime() -> Int {
+        let timerMultiplier     = _currentDay - 2
+        let shortenDayBy        = (timerMultiplier * _settings.changeDayBy)
+        let counterTime         = _settings.subsequentDayTime - shortenDayBy
+        
+        if counterTime < _settings.minimumDayLength {
+            return _settings.minimumDayLength
+        }
+        
+        return counterTime
     }
     
     

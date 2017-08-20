@@ -46,7 +46,7 @@ class SorceressView: UIView {
         
         for player in GAME.availablePlayers {
             if player.role != nil {
-                if player.roleType() == .Seer {
+                if player.roleType == .Seer {
                     theSeer = player
                     break
                 }

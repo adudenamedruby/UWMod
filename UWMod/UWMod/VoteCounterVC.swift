@@ -64,7 +64,7 @@ class VoteCounterVC: UIViewController {
         var tempPlayerCount = 0
         
         for player in GAME.livingActors {
-            if player.canVote {
+            if !(player.isAffectedBy(condition: .Lobotomy)) {
                 tempPlayerCount += 1
             }
         }
@@ -78,12 +78,12 @@ class VoteCounterVC: UIViewController {
         var allPlayersCanVote                   = true
         
         for player in GAME.livingActors {
-            if !player.canVote {
+            if player.isAffectedBy(condition: .Lobotomy) {
                 tempStr = tempStr + "\(player.name) "
                 allPlayersCanVote = false
             }
             
-            if player.roleType() == .Mayor {
+            if player.roleType == .Mayor {
                 mayorPresent = true
                 mayorVote = "\n\nRemember to count Mayor \(player.name)'s vote twice."
             }

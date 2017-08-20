@@ -56,6 +56,7 @@
 		127ACFED1F466201004E9779 /* PriestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127ACFEC1F466201004E9779 /* PriestView.xib */; };
 		127ACFEF1F46621B004E9779 /* PriestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACFEE1F46621B004E9779 /* PriestView.swift */; };
 		1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1298C8A21F3DD15D00261779 /* Notes.rtf */; };
+		12CA22C71F49125700954370 /* Weretimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CA22C61F49125700954370 /* Weretimer.swift */; };
 		12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */; };
 		12D15E201F2E82870057905E /* RoleSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */; };
 		12D15E231F2EA8470057905E /* MainGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E221F2EA8470057905E /* MainGameVC.swift */; };
@@ -159,6 +160,7 @@
 		127ACFEC1F466201004E9779 /* PriestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriestView.xib; sourceTree = "<group>"; };
 		127ACFEE1F46621B004E9779 /* PriestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriestView.swift; sourceTree = "<group>"; };
 		1298C8A21F3DD15D00261779 /* Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
+		12CA22C61F49125700954370 /* Weretimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weretimer.swift; sourceTree = "<group>"; };
 		12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSuperButton.swift; sourceTree = "<group>"; };
 		12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleSelectionCell.swift; sourceTree = "<group>"; };
 		12D15E221F2EA8470057905E /* MainGameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGameVC.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				12EC77D31F26D4DC0026C667 /* Roles.swift */,
 				12EC77E21F29881F0026C667 /* RoleConstants.swift */,
 				124787601F34150A00518532 /* SelectedItem.swift */,
+				12CA22C61F49125700954370 /* Weretimer.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12CA22C71F49125700954370 /* Weretimer.swift in Sources */,
 				12D15E2B1F2EC5420057905E /* ArrayExtension.swift in Sources */,
 				123BD0D51F2F6C1600B99019 /* AlertsVC.swift in Sources */,
 				12154A601F410229003A5D86 /* BlobCell.swift in Sources */,
