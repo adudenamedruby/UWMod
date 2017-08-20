@@ -45,6 +45,10 @@ class Person: NSObject, NSCoding {
         aCoder.encode(self._number, forKey: "num")
     }
     
+    public func setNumber(to number: Int) {
+        _number         = number
+    }
+    
     
 //    let userDefaults = NSUserDefaults.standardUserDefaults()
 //    userDefaults.setValue(NSKeyedArchiver.archivedDataWithRootObject(array), forKey: "People")
