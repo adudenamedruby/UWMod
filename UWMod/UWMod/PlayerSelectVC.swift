@@ -28,10 +28,10 @@ class PlayerSelectVC: UIViewController {
     let transition                              = CircularTransition()
     let textCellIndentifier                     = "PlayerNameCell"
 
-    var savedPlayers: [String:[String]]         = [:]
+    var savedPlayers: [String:[Person]]         = [:]
     var savedPlayerSections: [String]           = []
     var villageSize: Int                        = 0
-    var selectedPlayers: [IndexPath:String]     = [:]
+    var selectedPlayers: [IndexPath:Person]     = [:]
     var passedPlayers: [Player]                 = []
     
     
@@ -86,27 +86,29 @@ class PlayerSelectVC: UIViewController {
     
     func loadPlayers() {
         resetVillageSizeLabel()
-        if let temp = defaults.object(forKey: PLAYERS) as? [String] {
-            orderPlayers(playerNames: temp)
-        }
         
+        var playersSavedToMemory: [Person]
+        if let data = UserDefaults.standard.data(forKey: PLAYERS) {
+            playersSavedToMemory = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Person] ?? [Person]()
+            orderPlayers(playerNames: playersSavedToMemory)
+        }
         tableView.reloadData()
     }
     
-    private func orderPlayers(playerNames: [String]) {
+    private func orderPlayers(playerNames: [Person]) {
         savedPlayers.removeAll()
         savedPlayerSections.removeAll()
         
         // sort the array to be alphabetical
-        let tempPlayerNames = playerNames.sorted{$0.localizedCaseInsensitiveCompare($1) == .orderedAscending}
+        let tempPlayers: [Person] = playerNames.sorted{ $0.firstName.localizedCaseInsensitiveCompare($1.firstName) == .orderedAscending }
         
         //sort the array into alphabetized, sectioned listt
-        for name in tempPlayerNames {
-            let firstLetter = name[0].capitalized
+        for person in tempPlayers {
+            let firstLetter = person.firstName[0].capitalized
             if savedPlayers[firstLetter] != nil {
-                savedPlayers[firstLetter]!.append(name)
+                savedPlayers[firstLetter]!.append(person)
             } else {
-                savedPlayers[firstLetter] = [name]
+                savedPlayers[firstLetter] = [person]
             }
             
             if !savedPlayerSections.contains(firstLetter) {
@@ -118,16 +120,17 @@ class PlayerSelectVC: UIViewController {
         
     }
     
-    func removePlayerName(player: String) {
+    func removePlayerName(player: Person) {
         
-        if var tempPlayers = defaults.object(forKey: PLAYERS) as? [String] {
+        if let data = UserDefaults.standard.data(forKey: PLAYERS), var tempPlayers = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Person] {
             
             if tempPlayers.contains(player) {
                 let playerIndex = tempPlayers.index(of: player)
                 tempPlayers.remove(at: playerIndex!)
             }
             
-            defaults.set(tempPlayers, forKey: PLAYERS)
+            let data = NSKeyedArchiver.archivedData(withRootObject: savedPlayers)
+            UserDefaults.standard.set(data, forKey: PLAYERS)
         }
     }
     
@@ -155,8 +158,13 @@ class PlayerSelectVC: UIViewController {
         var tempArray: [String] = []
         var tempPlayerArray: [Player] = []
         
-        for (_, name) in selectedPlayers {
-            tempArray.append(name)
+        for (_, person) in selectedPlayers {
+            var name = person.firstName
+            if tempArray.contains(name) {
+                name = "\(person.firstName) \(person.lastName[0])."
+            } else {
+                tempArray.append(name)
+            }
         }
         
         for name in tempArray {
@@ -167,11 +175,11 @@ class PlayerSelectVC: UIViewController {
         return tempPlayerArray
     }
     
-    func addSelectedPlayer(index: IndexPath, name: String) {
-        selectedPlayers[index] = name
+    func addSelectedPlayer(index: IndexPath, person: Person) {
+        selectedPlayers[index] = person
     }
     
-    func removeSelectedPlayer(index: IndexPath, name: String) {
+    func removeSelectedPlayer(index: IndexPath, person: Person) {
         selectedPlayers.removeValue(forKey: index)
     }
     
@@ -263,10 +271,10 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         
         let sectionTitle = savedPlayerSections[indexPath.section]
         let sectionPlayers = savedPlayers[sectionTitle]
-        let sectionPlayerName = sectionPlayers?[indexPath.row]
+        let sectionPlayer = sectionPlayers?[indexPath.row]
         
         //let row = indexPath.row
-        cell.textLabel?.text = sectionPlayerName
+        cell.textLabel?.text = "\(sectionPlayer?.firstName ?? "") \(sectionPlayer?.lastName ?? "")"
         cell.textLabel?.textColor = STYLE.Brown
         cell.accessoryType = cell.isSelected ? .checkmark : .none
         cell.selectionStyle = .none
@@ -276,12 +284,14 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        villageSize += 1
-        playerNumberLabel.text = String(villageSize)
+        villageSize             += 1
+        playerNumberLabel.text  = String(villageSize)
         
-        //let cell = tableView.cellForRow(at: indexPath)
-        let text = tableView.cellForRow(at: indexPath)?.textLabel?.text
-        addSelectedPlayer(index: indexPath, name: text!)
+        let sectionTitle        = savedPlayerSections[indexPath.section]
+        let sectionPlayers      = savedPlayers[sectionTitle]
+        let player              = sectionPlayers?[indexPath.row]
+        
+        addSelectedPlayer(index: indexPath, person: player!)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -289,9 +299,11 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         villageSize -= 1
         playerNumberLabel.text = String(villageSize)
         
-        //let cell = tableView.cellForRow(at: indexPath)
-        let text = tableView.cellForRow(at: indexPath)?.textLabel?.text
-        removeSelectedPlayer(index: indexPath, name: text!)
+        let sectionTitle        = savedPlayerSections[indexPath.section]
+        let sectionPlayers      = savedPlayers[sectionTitle]
+        let player              = sectionPlayers?[indexPath.row]
+        
+        removeSelectedPlayer(index: indexPath, person: player!)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -303,9 +315,9 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
             
             let sectionTitle = savedPlayerSections[indexPath.section]
             let sectionPlayers = savedPlayers[sectionTitle]
-            let sectionPlayerName = sectionPlayers?[indexPath.row]
+            let sectionPlaye = sectionPlayers?[indexPath.row]
             
-            removePlayerName(player: sectionPlayerName!)
+            removePlayerName(player: sectionPlayer!)
             loadPlayers()
         }
     }

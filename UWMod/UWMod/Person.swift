@@ -53,10 +53,16 @@ class Person: NSObject, NSCoding {
     }
     
     
-//    let userDefaults = NSUserDefaults.standardUserDefaults()
-//    userDefaults.setValue(NSKeyedArchiver.archivedDataWithRootObject(array), forKey: "People")
-//    userDefaults.synchronize()
+//    func save(arr: [Person]) {
+//        let data = NSKeyedArchiver.archivedData(withRootObject: arr)
+//        UserDefaults.standard.set(data, forKey: "TestKey")
+//    }
 //    
-//    let array : [Person]
-//    array = NSKeyedUnarchiver.unarchiveObjectWithData(userDefaults.objectForKey("people") as! NSData) as! [Person]
+//    func load() {
+//        
+//        var peoples: [Person] = []
+//        if let data = UserDefaults.standard.data(forKey: "TestKey") {
+//            peoples = NSKeyedUnarchiver.unarchiveObject(with: data) as! [Person]
+//        }
+//    }
 }

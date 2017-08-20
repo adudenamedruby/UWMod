@@ -40,14 +40,6 @@ class MenuVC: UIViewController {
         
         let bottomString = "Werewolf"
         bottomTitle.attributedText = bottomString.styleTitleLabel(withStringFont: STYLE.OldMenuBottomFont!, withColour: STYLE.Red)
-        
-        
-        
-        p1 = Person(firstName: "Terry", lastName: "Tumbleweed")
-        p2 = Person(firstName: "Happy", lastName: "Holliday")
-        
-        brap()
-        load()
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,47 +66,6 @@ class MenuVC: UIViewController {
         transition.startingPoint = aboutButton.center
         transition.circleColour = brownView.backgroundColor!
         return transition
-    }
-    
-    
-    
-    
-    
-    func runTest() {
-        brap()
-    }
-    
-    func brap() {
-        
-        let testArr: [Person] = [self.p1, self.p2]
-
-        
-        for x in testArr {
-            print("\(x.lastName), \(x.firstName)    \(x.number)")
-        }
-        
-        print("End of prep. Now saving...")
-        
-        save(arr: testArr)
-    }
-    
-    func save(arr: [Person]) {
-        let data = NSKeyedArchiver.archivedData(withRootObject: arr)
-        UserDefaults.standard.set(data, forKey: "TestKey")
-    }
-    
-    func load() {
-        print("Loading....")
-        var peoples: [Person] = []
-        if let data = UserDefaults.standard.data(forKey: "TestKey") {
-            peoples = NSKeyedUnarchiver.unarchiveObject(with: data) as! [Person]
-        } else {
-            print("there is an issue")
-        }
-        
-        for x in peoples {
-            print("\(x.lastName), \(x.firstName)")
-        }
     }
 }
 
