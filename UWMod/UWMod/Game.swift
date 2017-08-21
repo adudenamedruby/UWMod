@@ -28,6 +28,7 @@ class Game {
     private var _currentNight:                      Int
     private var _currentDay:                        Int
     private var _firstNight:                        Bool
+    private var _isNightPhase:                      Bool
     private var _werewolfEliminationsThisNight:     Int
     private var _timeGameStarted:                   Date
     
@@ -130,8 +131,12 @@ class Game {
         get { return _settings }
     }
     
-    var timer: Weretimer {
-        get { return _wereTimer }
+    var currentTime: String {
+        get { return _wereTimer.currentTime }
+    }
+    
+    var timerIsRunning: Bool {
+        get { return _wereTimer.isRunning }
     }
     
     // MARK: - Initializer
@@ -146,6 +151,7 @@ class Game {
         self._firstNight                    = true
         self._currentNight                  = 1
         self._currentDay                    = 1
+        self._isNightPhase                  = true
         self._werewolfEliminationsThisNight = 0
         self._timeGameStarted               = Date()
         
@@ -424,6 +430,7 @@ class Game {
         setupInfoCards()
         
         theBlobHasAbsorbed              = false
+        _isNightPhase                   = false
         _currentNight += 1
     }
     
@@ -437,6 +444,7 @@ class Game {
         determineNightActors()
         
         aWerewolfHasBeenSlain           = false
+        _isNightPhase                   = true
         _currentDay += 1
     }
     
@@ -779,10 +787,8 @@ class Game {
     
     // MARK: - Timer related functions
     
-    public func startTimer(forLabel label: UILabel) {
-        _wereTimer.startTimer(withTime: setCurrentTime(), handler: { (timerAsString: String) -> Void in
-            label.text = timerAsString
-        })
+    public func startTimer() {
+        _wereTimer.startTimer(withTime: setCurrentTime())
     }
     
     public func stopTimer() {
@@ -800,18 +806,14 @@ class Game {
     private func setCurrentTime() -> Int {
         
         if _settings.timekeepingStyle == .Stopwatch { return 0 }
+        if _isNightPhase { return _settings.werewolfTime }
         
         let timerMultiplier     = _currentDay - 2
         let shortenDayBy        = (timerMultiplier * _settings.changeDayBy)
         let counterTime         = _settings.subsequentDayTime - shortenDayBy
         
-        if _currentDay < _currentNight {
-            return _settings.werewolfTime
-            
-        } else {
-            if counterTime < _settings.minimumDayLength {
-                return _settings.minimumDayLength
-            }
+        if counterTime < _settings.minimumDayLength {
+            return _settings.minimumDayLength
         }
         
         return counterTime

@@ -52,9 +52,14 @@ class WerewolfAssassination: UIView {
                                                object: nil)
         
         contentView.backgroundColor             = STYLE.Tan
+
+        GAME.startTimer()
         
-        setCounter()
-        startTimer()
+        self.timer = Timer.scheduledTimer(timeInterval: 1,
+                                          target: self,
+                                          selector: #selector(updateTimer),
+                                          userInfo: nil,
+                                          repeats: true)
     }
     
     
@@ -76,66 +81,13 @@ class WerewolfAssassination: UIView {
     }
     
     func confirmKill() {
-        stopTimer()
+        GAME.stopTimer()
         timerLabel.isHidden                 = true
         killVillagerButton.isHidden         = true
         delegate?.updateCard()
     }
     
-    
-    // MARK: - Timer
-    
-    private func setCounter() {
-        if GAME.settings.timekeepingStyle == .Countdown {
-            counter                         = setCurrentTime()
-        } else {
-            counter                          = 0
-        }
-    }
-    
-    private func startTimer() {
-        if !isTrackingTime {
-            self.timer = Timer.scheduledTimer(timeInterval: 1,
-                                              target: self,
-                                              selector: #selector(GeneralInfo.updateTimerLabel),
-                                              userInfo: nil,
-                                              repeats: true)
-            
-            isTrackingTime = true
-        }
-    }
-    
-    private func stopTimer() {
-        self.timer.invalidate()
-        setCounter()
-        isTrackingTime          = false
-    }
-    
-    public func updateTimerLabel() {
-        if GAME.settings.timekeepingStyle == .Countdown {
-            if counter > 0 {
-                counter -= 1
-                timerLabel.text      = timeString(time: TimeInterval(counter))
-            } else {
-                stopTimer()
-                timerLabel.text      = "Time Expired"
-                killVillagerButton.isHidden = true
-            }
-        } else {
-            counter += 1
-            timerLabel.text      = timeString(time: TimeInterval(counter))
-        }
-    }
-    
-    private func timeString(time:TimeInterval) -> String {
-        
-        let minutes             = Int(time) / 60 % 60
-        let seconds             = Int(time) % 60
-        
-        return String(format:"%02i:%02i", minutes, seconds)
-    }
-    
-    private func setCurrentTime() -> Int {
-        return GAME.settings.werewolfTime
+    func updateTimer() {
+        timerLabel.text = GAME.timer.currentTime
     }
 }

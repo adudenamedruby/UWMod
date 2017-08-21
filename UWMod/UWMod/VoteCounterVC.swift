@@ -101,6 +101,7 @@ class VoteCounterVC: UIViewController {
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
+        GAME.pauseTimer()
         self.dismiss(animated: true, completion: nil)
     }
     

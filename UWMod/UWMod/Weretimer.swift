@@ -9,12 +9,6 @@
 import Foundation
 import UIKit
 
-enum TimerType {
-    case WerewolfTimer
-    case DayTimer
-}
-
-
 class Weretimer {
     
     private var _timer:                             Timer!
@@ -24,15 +18,18 @@ class Weretimer {
     private var _currentTime:                       String
     private var _timeLabel:                         UILabel!
     private var _settings:                          GameSettings
-    
-    var handler: (_ timeAsString: String) -> ()
-    
-    var counter: Int {
-        get { return _counter }
-    }
+    private var _label:                             UILabel!
     
     var isPaused: Bool {
         get { return _isTimerPaused }
+    }
+    
+    var currentTime: String {
+        get { return _currentTime }
+    }
+    
+    var isRunning: Bool {
+        get { return _isTrackingTime }
     }
     
     init(withSettings settings: GameSettings) {
@@ -44,10 +41,9 @@ class Weretimer {
         _settings                                   = settings
     }
     
-    public func startTimer(withTime time: Int, handler: @escaping (String) -> ()) {
+    public func startTimer(withTime time: Int) {
         if !_isTrackingTime {
             _counter    = time
-            self.handler = handler
             self._timer = Timer.scheduledTimer(timeInterval: 1,
                                                target: self,
                                                selector: #selector(updateTimer),
@@ -83,17 +79,17 @@ class Weretimer {
     
     @objc func updateTimer() {
         if _settings.timekeepingStyle == .Countdown {
-            if counter > 0 {
+            if _counter > 0 {
                 _counter -= 1
                 
-                self.handler(timeString(time: TimeInterval(counter)))
+                _currentTime = timeString(time: TimeInterval(_counter))
             } else {
                 stopTimer()
-                self.handler("--:--:--")
+                _currentTime = "--:--:--"
             }
         } else {
             _counter += 1
-            self.handler(timeString(time: TimeInterval(counter)))
+            _currentTime = timeString(time: TimeInterval(_counter))
         }
     }
     
@@ -105,9 +101,4 @@ class Weretimer {
         
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
-    
-    
-    // var t = Timer(duration: 30, handler:{ (x:Int) -> Void in
-    //Do soemthing with x;
-    //});
 }
