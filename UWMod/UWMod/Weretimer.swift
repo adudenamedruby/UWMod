@@ -9,12 +9,6 @@
 import Foundation
 import UIKit
 
-enum TimerType {
-    case WerewolfTimer
-    case DayTimer
-}
-
-
 class Weretimer {
     
     private var _timer:                             Timer!
@@ -24,9 +18,18 @@ class Weretimer {
     private var _currentTime:                       String
     private var _timeLabel:                         UILabel!
     private var _settings:                          GameSettings
+    private var _label:                             UILabel!
     
-    var counter: Int {
-        get { return _counter }
+    var isPaused: Bool {
+        get { return _isTimerPaused }
+    }
+    
+    var currentTime: String {
+        get { return _currentTime }
+    }
+    
+    var isRunning: Bool {
+        get { return _isTrackingTime }
     }
     
     init(withSettings settings: GameSettings) {
@@ -38,21 +41,17 @@ class Weretimer {
         _settings                                   = settings
     }
     
-    public func setTimer(to time: Int, forLabel label: UILabel) {
-        _counter = time
-        
-    }
-    
-    public func startTimer() {
-//        if !_isTrackingTime {
-//            self._timer = Timer.scheduledTimer(timeInterval: 1,
-//                                               target: self,
-//                                               selector: #selector(updateTimer),
-//                                               userInfo: nil,
-//                                               repeats: true)
-//            
-//            _isTrackingTime = true
-//        }
+    public func startTimer(withTime time: Int) {
+        if !_isTrackingTime {
+            _counter    = time
+            self._timer = Timer.scheduledTimer(timeInterval: 1,
+                                               target: self,
+                                               selector: #selector(updateTimer),
+                                               userInfo: nil,
+                                               repeats: true)
+            
+            _isTrackingTime = true
+        }
     }
     
     public func stopTimer() {
@@ -61,21 +60,36 @@ class Weretimer {
     }
     
     public func pauseTimer() {
-        
+        if !_isTimerPaused {
+            _timer.invalidate()
+            _isTimerPaused = true
+        }
     }
     
-    public func updateTimer() {
+    public func resumeTimer() {
+        if _isTimerPaused {
+            self._timer = Timer.scheduledTimer(timeInterval: 1,
+                                               target: self,
+                                               selector: #selector(updateTimer),
+                                               userInfo: nil,
+                                               repeats: true)
+            _isTimerPaused = false
+        }
+    }
+    
+    @objc func updateTimer() {
         if _settings.timekeepingStyle == .Countdown {
-            if counter > 0 {
+            if _counter > 0 {
                 _counter -= 1
-                _timeLabel.text      = timeString(time: TimeInterval(counter))
+                
+                _currentTime = timeString(time: TimeInterval(_counter))
             } else {
                 stopTimer()
-                _timeLabel.text      = "--:--:--"
+                _currentTime = "--:--:--"
             }
         } else {
             _counter += 1
-            _timeLabel.text      = timeString(time: TimeInterval(counter))
+            _currentTime = timeString(time: TimeInterval(_counter))
         }
     }
     
