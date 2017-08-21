@@ -50,7 +50,7 @@ class RoleSelectVC: UIViewController {
     var selectedOtherIndexPaths: [IndexPath]    = []
 
     
-    var passedPlayers: [Player]?
+    var passedPlayers:                          [Player]?
     
     
     // MARK: - View lifetime
@@ -152,32 +152,39 @@ class RoleSelectVC: UIViewController {
             gameBalance = gameBalance + role.impact
         }
         
-        if gameBalance < -30 {
+        if gameBalance < -20 {
             teamBalanceLabel.text = "The Village will not win."
             
-        } else if gameBalance <= -20 {
-            teamBalanceLabel.text = "The Village is greatly disadvantaged."
+        } else if gameBalance >= -20 && gameBalance < -16 {
+            teamBalanceLabel.text = "Werewolves have a formidable advantage."
             
-        } else if gameBalance <= -11 {
-            teamBalanceLabel.text = "The Village is moderately disadvantaged."
+        } else if gameBalance >= -16 && gameBalance < -12 {
+            teamBalanceLabel.text = "Werewolves have a strong advantage."
             
-        } else if gameBalance <= -5 {
-            teamBalanceLabel.text = "The Village is slightly disadvantaged."
+        } else if gameBalance >= -12 && gameBalance < -8 {
+            teamBalanceLabel.text = "Werewolves are moderately advantaged."
             
-        } else if gameBalance <= 4 && gameBalance >= -4 {
+        } else if gameBalance >= -8 && gameBalance < -4 {
+            teamBalanceLabel.text = "Werewolves are somewhat advantaged."
+
+        } else if gameBalance >= -4 && gameBalance <= 4 {
             teamBalanceLabel.text = "Neither team has the advantage."
             
-        } else if gameBalance > 30 {
-            teamBalanceLabel.text = "The Village is heavily favoured."
+        } else if gameBalance > 4 && gameBalance <= 8 {
+            teamBalanceLabel.text = "The Village is somewhat favoured."
             
-        } else if gameBalance > 20 {
-            teamBalanceLabel.text = "The Village is greatly favoured."
-            
-        } else if gameBalance > 11 {
+        } else if gameBalance > 8 && gameBalance <= 12 {
             teamBalanceLabel.text = "The Village is moderately favoured."
             
-        } else {
-            teamBalanceLabel.text = "The Village is slightly favoured."
+        } else if gameBalance > 12 && gameBalance <= 16 {
+            teamBalanceLabel.text = "The Village is strongly favoured."
+            
+        } else if gameBalance > 16 && gameBalance <= 20 {
+            teamBalanceLabel.text = "The Village has a formidable advantage."
+            
+        } else if gameBalance > 20 {
+            teamBalanceLabel.text = "The Wolves will not win."
+            
         }
     }
     

@@ -20,6 +20,7 @@ class PlayerSelectVC: UIViewController {
     
     @IBOutlet weak var addPlayersButton:        UIButton!
     @IBOutlet weak var forwardButton:           PMSuperButton!
+    @IBOutlet weak var assignForwardButton:     PMSuperButton!
     
     @IBOutlet weak var playerNumberLabel:       UILabel!
     
@@ -173,10 +174,15 @@ class PlayerSelectVC: UIViewController {
             assignNumbersButton.setImage(#imageLiteral(resourceName: "checkYes"), for: .normal)
             assignNumbersLabel.alpha            = 1
             assignNumbersButton.alpha           = 1
+            forwardButton.isHidden              = true
+            assignForwardButton.isHidden        = false
+            
         } else {
             assignNumbersButton.setImage(#imageLiteral(resourceName: "checkNo"), for: .normal)
             assignNumbersLabel.alpha            = 0.5
             assignNumbersButton.alpha           = 0.5
+            forwardButton.isHidden              = false
+            assignForwardButton.isHidden        = true
         }
     }
     
@@ -186,6 +192,8 @@ class PlayerSelectVC: UIViewController {
     @IBAction func goToSelectRolesButton(_ sender: Any) {
         self.passedPlayers = createPlayersFromSelectedNames()
     }
+    
+    
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -233,7 +241,7 @@ class PlayerSelectVC: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        if ((identifier == "selectRoleSegue") && (self.passedPlayers.count < 3)) {
+        if (((identifier == "selectRoleSegue") || (identifier == "assignNumbersSegue")) && (self.passedPlayers.count < 3)) {
             
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
@@ -244,7 +252,7 @@ class PlayerSelectVC: UIViewController {
             
             return false
             
-        } else if ((identifier == "selectRoleSegue") && (self.passedPlayers.count > 75)) {
+        } else if (((identifier == "selectRoleSegue") || (identifier == "assignNumbersSegue"))  && (self.passedPlayers.count > 75)) {
             
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
@@ -262,13 +270,20 @@ class PlayerSelectVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectRoleSegue" {
             let secondVC = segue.destination as! RoleSelectVC
-            secondVC.passedPlayers = passedPlayers
-            secondVC.transitioningDelegate = self
-            secondVC.modalPresentationStyle = .custom
+            secondVC.passedPlayers              = passedPlayers
+            secondVC.transitioningDelegate      = self
+            secondVC.modalPresentationStyle     = .custom
+            
+        } else if segue.identifier == "assignNumbersSegue" {
+            let secondVC = segue.destination as! AssignNumbersVC
+            secondVC.passedPlayers              = passedPlayers
+            secondVC.transitioningDelegate      = self
+            secondVC.modalPresentationStyle     = .custom
+            
         } else if segue.identifier == "addPlayerSegue" {
             let secondVC = segue.destination as! AddPlayerVC
-            secondVC.transitioningDelegate = self
-            secondVC.modalPresentationStyle = .custom
+            secondVC.transitioningDelegate      = self
+            secondVC.modalPresentationStyle     = .custom
         }
     }
 }
