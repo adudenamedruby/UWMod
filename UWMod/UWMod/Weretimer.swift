@@ -25,8 +25,14 @@ class Weretimer {
     private var _timeLabel:                         UILabel!
     private var _settings:                          GameSettings
     
+    var handler: (_ timeAsString: String) -> ()
+    
     var counter: Int {
         get { return _counter }
+    }
+    
+    var isPaused: Bool {
+        get { return _isTimerPaused }
     }
     
     init(withSettings settings: GameSettings) {
@@ -38,21 +44,18 @@ class Weretimer {
         _settings                                   = settings
     }
     
-    public func setTimer(to time: Int, forLabel label: UILabel) {
-        _counter = time
-        
-    }
-    
-    public func startTimer() {
-//        if !_isTrackingTime {
-//            self._timer = Timer.scheduledTimer(timeInterval: 1,
-//                                               target: self,
-//                                               selector: #selector(updateTimer),
-//                                               userInfo: nil,
-//                                               repeats: true)
-//            
-//            _isTrackingTime = true
-//        }
+    public func startTimer(withTime time: Int, handler: @escaping (String) -> ()) {
+        if !_isTrackingTime {
+            _counter    = time
+            self.handler = handler
+            self._timer = Timer.scheduledTimer(timeInterval: 1,
+                                               target: self,
+                                               selector: #selector(updateTimer),
+                                               userInfo: nil,
+                                               repeats: true)
+            
+            _isTrackingTime = true
+        }
     }
     
     public func stopTimer() {
@@ -61,21 +64,36 @@ class Weretimer {
     }
     
     public func pauseTimer() {
-        
+        if !_isTimerPaused {
+            _timer.invalidate()
+            _isTimerPaused = true
+        }
     }
     
-    public func updateTimer() {
+    public func resumeTimer() {
+        if _isTimerPaused {
+            self._timer = Timer.scheduledTimer(timeInterval: 1,
+                                               target: self,
+                                               selector: #selector(updateTimer),
+                                               userInfo: nil,
+                                               repeats: true)
+            _isTimerPaused = false
+        }
+    }
+    
+    @objc func updateTimer() {
         if _settings.timekeepingStyle == .Countdown {
             if counter > 0 {
                 _counter -= 1
-                _timeLabel.text      = timeString(time: TimeInterval(counter))
+                
+                self.handler(timeString(time: TimeInterval(counter)))
             } else {
                 stopTimer()
-                _timeLabel.text      = "--:--:--"
+                self.handler("--:--:--")
             }
         } else {
             _counter += 1
-            _timeLabel.text      = timeString(time: TimeInterval(counter))
+            self.handler(timeString(time: TimeInterval(counter)))
         }
     }
     
@@ -87,4 +105,9 @@ class Weretimer {
         
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
+    
+    
+    // var t = Timer(duration: 30, handler:{ (x:Int) -> Void in
+    //Do soemthing with x;
+    //});
 }

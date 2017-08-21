@@ -780,8 +780,9 @@ class Game {
     // MARK: - Timer related functions
     
     public func startTimer(forLabel label: UILabel) {
-        _wereTimer.setTimer(to: setCurrentTime(), forLabel: label)
-        _wereTimer.startTimer()
+        _wereTimer.startTimer(withTime: setCurrentTime(), handler: { (timerAsString: String) -> Void in
+            label.text = timerAsString
+        })
     }
     
     public func stopTimer() {
@@ -789,16 +790,28 @@ class Game {
     }
     
     public func pauseTimer() {
-        
+        if _wereTimer.isPaused {
+            _wereTimer.resumeTimer()
+        } else {
+            _wereTimer.pauseTimer()
+        }
     }
     
     private func setCurrentTime() -> Int {
+        
+        if _settings.timekeepingStyle == .Stopwatch { return 0 }
+        
         let timerMultiplier     = _currentDay - 2
         let shortenDayBy        = (timerMultiplier * _settings.changeDayBy)
         let counterTime         = _settings.subsequentDayTime - shortenDayBy
         
-        if counterTime < _settings.minimumDayLength {
-            return _settings.minimumDayLength
+        if _currentDay < _currentNight {
+            return _settings.werewolfTime
+            
+        } else {
+            if counterTime < _settings.minimumDayLength {
+                return _settings.minimumDayLength
+            }
         }
         
         return counterTime
