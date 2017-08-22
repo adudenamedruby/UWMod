@@ -68,6 +68,10 @@ class MainNightVC: UIViewController, EndNightPotocol {
     
     @IBAction func acceptNightEnd(_ sender: Any) {
 
+        if GAME.timerIsRunning {
+            GAME.stopTimer()
+        }
+        
         GAME.finishNight()
         self.dismiss(animated: true, completion: {
             self.containerView.isHidden = false

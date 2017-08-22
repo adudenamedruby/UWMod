@@ -114,7 +114,6 @@ class Role {
     // a custom getter that returns a priority on whether a role is called or not.
     var isManuallyAssigned:         Bool
     var availableEffects:           [PlayerEffects]
-    var canWake:                    Bool
     var powerChoice:                Bool
     var powerUsed:                  Bool
     var isNightActiveRole:          NightActiveStatus
@@ -135,7 +134,6 @@ class Role {
         self.team                   = team
         self.powerChoice            = powerChoice
         self.powerUsed              = false
-        self.canWake                = true
         self.isNightActiveRole      = isNightActiveRole
         self.isActivated            = true
     }

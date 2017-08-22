@@ -33,7 +33,7 @@ public var helpSectionsData: [Section] = [
         Item(name: "The bodyguard protected X, but I can still choose to eliminate them?!", detail: "That's intended! The game carries out phase effects at the end of each phase, in order to account for all possible permutations. Just enter all the information asked for in the app and everything will take care of itself."),
         
         Item(name: "A role I usually play with is not here!", detail: "In order to get the app out there for people to use, I've only included a some basic roles to get you started. Just know that while you're having fun playing the game, I'm at home, hunched over my computer coding more roles in like there's a.... werewolf at my heels. Future updates will contain new roles."),
-        
+        Item(name: "How can I pause the daytime timer?", detail: "Simply hitting the count votes button pauses the timer. Dismissing the Count Vote popup resumes the timer."),
         Item(name: "Can I create my own roles?", detail: "No.\n\nThis is not a supported feature and, while it would be really nice to implement, it will very likely never make it into the app. The app has been designed around having everything bulit in so that it can track info cleanly and dynamically generate the appropriate cards."),
         Item(name: "What's in the future for Secret Werewolf?", detail: "I've got lots of ideas and improvements planned: more roles, incorporating automatic victory conditions, tracking stats globally (What are the most used roles? How long do 7 player games last on average?), an option to pre-assign roles, and many more ideas. If you have ideas to improve the app, I'd love to hear them so get in touch!")
         ]),

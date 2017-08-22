@@ -169,10 +169,11 @@ class VoteCounterVC: UIViewController {
     }
     
     private func updateLabel(message: String) {
-        yesButton.isHidden = true
-        tallyButton.isHidden = true
-        alertTextLabel.isHidden = false
-        alertTextLabel.text = message
+        yesButton.isHidden          = true
+        tallyButton.isEnabled       = false
+        tallyButton.alpha           = 0.5
+        alertTextLabel.isHidden     = false
+        alertTextLabel.text         = message
     }
 
 }

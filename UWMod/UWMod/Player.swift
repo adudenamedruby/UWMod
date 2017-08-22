@@ -123,7 +123,7 @@ class Player {
             if gameID == 0 {
                 _name           = "\(_person!.firstName)"
             } else {
-                _name           = "\(_person!.firstName) (\(gameID))"
+                _name           = "\(gameID). \(_person!.firstName)"
             }
         } else if teamName != nil {
             _name = teamName!

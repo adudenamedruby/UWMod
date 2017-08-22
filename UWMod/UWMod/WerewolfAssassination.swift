@@ -84,10 +84,10 @@ class WerewolfAssassination: UIView {
         GAME.stopTimer()
         timerLabel.isHidden                 = true
         killVillagerButton.isHidden         = true
-        delegate?.updateCard()
+        //delegate?.updateCard()
     }
     
     func updateTimer() {
-        timerLabel.text = GAME.timer.currentTime
+        timerLabel.text = GAME.currentTime
     }
 }

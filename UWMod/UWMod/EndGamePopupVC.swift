@@ -53,6 +53,7 @@ class EndGamePopupVC: UIViewController {
         self.dismiss(animated: false, completion: { () -> Void   in
             presentingVC!.dismiss(animated: false, completion: { () -> Void in
                 masterParentVC!.present(masterGameView, animated: false, completion: {
+                    GAME.stopTimer()
                     GAME.resetGame()
                 })
             })

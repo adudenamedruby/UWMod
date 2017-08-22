@@ -131,6 +131,8 @@ class Game {
         get { return _settings }
     }
     
+    
+    // Timer variables
     var currentTime: String {
         get { return _wereTimer.currentTime }
     }
@@ -807,6 +809,7 @@ class Game {
         
         if _settings.timekeepingStyle == .Stopwatch { return 0 }
         if _isNightPhase { return _settings.werewolfTime }
+        if _currentDay == 1 { return _settings.firstDayTime }
         
         let timerMultiplier     = _currentDay - 2
         let shortenDayBy        = (timerMultiplier * _settings.changeDayBy)
