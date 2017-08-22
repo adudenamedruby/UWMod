@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ame Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-Kc-kag" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="13" width="295" height="41"/>
+                                                <rect key="frame" x="15" y="15.5" width="295" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -533,7 +533,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="285"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secret" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juw-fP-CU1" customClass="OldMenuTop" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="91.5" y="210" width="173.5" height="70"/>
+                                                <rect key="frame" x="99" y="217" width="157" height="63"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="60"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -546,13 +546,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Werewolf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3c9-GO-c9q" customClass="OldMenuBottom" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="285" width="275.5" height="78.5"/>
+                                        <rect key="frame" x="48.5" y="285" width="258.5" height="70"/>
                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="67"/>
                                         <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Werewolf Moderation Tool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKv-XV-DKN" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="63" y="372.5" width="230" height="20"/>
+                                        <rect key="frame" x="63" y="364" width="230" height="20"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                         <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -760,7 +760,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="JfT-u5-Wiw" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="13.5" width="308" height="44.5"/>
+                                                <rect key="frame" x="15" y="15" width="308" height="40"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1006,7 +1006,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dd Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="KCG-C3-V3V" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="9.5" width="303" height="47"/>
+                                                <rect key="frame" x="10" y="12" width="303" height="42"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1060,15 +1060,60 @@
                                             <action selector="dismissButton:" destination="rbR-x9-q7o" eventType="touchUpInside" id="1o2-1q-tKy"/>
                                         </connections>
                                     </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ABZ-Za-dPm">
+                                        <rect key="frame" x="10" y="76" width="303" height="396"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="numberAssignmentCell" textLabel="LL7-4D-6dp" detailTextLabel="pL1-j1-FAH" style="IBUITableViewCellStyleSubtitle" id="EuI-nN-iFg">
+                                                <rect key="frame" x="0.0" y="28" width="303" height="53"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EuI-nN-iFg" id="ajt-CC-Us3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="303" height="52.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LL7-4D-6dp">
+                                                            <rect key="frame" x="15" y="9" width="33.5" height="20.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pL1-j1-FAH">
+                                                            <rect key="frame" x="15" y="29.5" width="44" height="14.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
+                                    </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a player to assign a number." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ww-rq-DVZ">
+                                        <rect key="frame" x="10" y="480" width="303" height="15.5"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="13"/>
+                                        <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="ABZ-Za-dPm" firstAttribute="leading" secondItem="Ypu-rt-duV" secondAttribute="leading" constant="10" id="98T-jp-9Gi"/>
                                     <constraint firstItem="Jaq-yA-sIb" firstAttribute="top" secondItem="Ypu-rt-duV" secondAttribute="top" id="BCe-xf-IEm"/>
                                     <constraint firstItem="gr7-Ax-pmq" firstAttribute="leading" secondItem="Ypu-rt-duV" secondAttribute="leading" constant="20" id="I4d-oY-1e3"/>
+                                    <constraint firstItem="4ww-rq-DVZ" firstAttribute="leading" secondItem="ABZ-Za-dPm" secondAttribute="leading" id="Kw6-v0-onf"/>
+                                    <constraint firstItem="4ww-rq-DVZ" firstAttribute="trailing" secondItem="ABZ-Za-dPm" secondAttribute="trailing" id="M8e-YE-be0"/>
+                                    <constraint firstItem="ABZ-Za-dPm" firstAttribute="top" secondItem="Jaq-yA-sIb" secondAttribute="bottom" constant="10" id="NMZ-rl-Qp0"/>
                                     <constraint firstAttribute="trailing" secondItem="ibr-hu-vKN" secondAttribute="trailing" constant="20" id="Oid-0g-auq"/>
                                     <constraint firstAttribute="trailing" secondItem="Jaq-yA-sIb" secondAttribute="trailing" id="YiP-NP-u5Y"/>
                                     <constraint firstAttribute="bottom" secondItem="ibr-hu-vKN" secondAttribute="bottom" constant="20" id="ciO-Cd-Ovp"/>
                                     <constraint firstItem="gr7-Ax-pmq" firstAttribute="centerY" secondItem="ibr-hu-vKN" secondAttribute="centerY" id="ecH-4L-rBg"/>
+                                    <constraint firstItem="4ww-rq-DVZ" firstAttribute="top" secondItem="ABZ-Za-dPm" secondAttribute="bottom" constant="8" id="fFh-qQ-Utb"/>
+                                    <constraint firstAttribute="trailing" secondItem="ABZ-Za-dPm" secondAttribute="trailing" constant="10" id="l5w-kL-sB7"/>
+                                    <constraint firstItem="gr7-Ax-pmq" firstAttribute="top" secondItem="ABZ-Za-dPm" secondAttribute="bottom" constant="30" id="m7U-t7-Ika"/>
                                     <constraint firstItem="Jaq-yA-sIb" firstAttribute="leading" secondItem="Ypu-rt-duV" secondAttribute="leading" id="rLR-0O-0WL"/>
                                 </constraints>
                             </view>
@@ -1091,11 +1136,12 @@
                         <outlet property="headerTitleLabel" destination="KCG-C3-V3V" id="Ot8-an-rE0"/>
                         <outlet property="headerView" destination="Jaq-yA-sIb" id="HFz-vl-9TQ"/>
                         <outlet property="mainCard" destination="Ypu-rt-duV" id="kK4-QY-OO4"/>
+                        <outlet property="tableView" destination="ABZ-Za-dPm" id="xeM-fY-zyV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeH-uV-1O2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1994" y="887"/>
+            <point key="canvasLocation" x="1992.8" y="886.50674662668678"/>
         </scene>
         <!--Role SelectVC-->
         <scene sceneID="8oB-AN-PA8">
@@ -1120,7 +1166,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="337" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Roles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="Tuq-TL-lce" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="13.5" width="307" height="44.5"/>
+                                                <rect key="frame" x="15" y="15" width="307" height="40"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1390,7 +1436,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bout UWMod" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="OQv-Nl-JmZ" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="17" width="270" height="36.5"/>
+                                                <rect key="frame" x="15" y="15" width="270" height="41"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1507,7 +1553,7 @@ Based on the Werewolf boardgame.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night falls..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="PAI-qt-uPY">
-                                        <rect key="frame" x="20" y="110.5" width="335" height="47"/>
+                                        <rect key="frame" x="20" y="113" width="335" height="42"/>
                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
                                         <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -1525,13 +1571,13 @@ Based on the Werewolf boardgame.</string>
                                         </connections>
                                     </button>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="La2-OU-NkV">
-                                        <rect key="frame" x="30" y="227.5" width="315" height="250"/>
+                                        <rect key="frame" x="30" y="225" width="315" height="250"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEH-ck-2Gr">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hase Report" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="gy0-tG-ynC" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="15" y="10.5" width="285" height="41"/>
+                                                        <rect key="frame" x="15" y="12" width="285" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>

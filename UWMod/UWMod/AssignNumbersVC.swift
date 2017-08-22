@@ -16,6 +16,9 @@ class AssignNumbersVC: UIViewController {
     @IBOutlet var headerView:               UIView!
     @IBOutlet weak var headerTitleLabel:    OldTan!
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     @IBOutlet weak var forwardButton:       PMSuperButton!
     @IBOutlet weak var backButton:          PMSuperButton!
     
@@ -27,7 +30,7 @@ class AssignNumbersVC: UIViewController {
     let standardDefaults                    = UserDefaults.standard
     var savedPlayers                        = [Person]()
     
-    var passedPlayers:                      [Player]?
+    var passedPlayers:                      [Player]!
 
     
     
@@ -35,6 +38,9 @@ class AssignNumbersVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate                      = self
+        tableView.dataSource                    = self
         
         mainCard.backgroundColor                = STYLE.Tan
         headerView.backgroundColor              = STYLE.Brown
@@ -97,9 +103,33 @@ class AssignNumbersVC: UIViewController {
 
 }
 
-//extension AssignNumbersVC: UITableViewDelegate, UItableViewDataSource {
-//    
-//}
+extension AssignNumbersVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return passedPlayers.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "numberAssignmentCell", for: indexPath)
+        
+        cell.textLabel?.text                = passedPlayers[indexPath.row].name
+        cell.textLabel?.textColor           = STYLE.Brown
+        
+        cell.detailTextLabel?.text          = "\(passedPlayers[indexPath.row].gameID)"
+        cell.detailTextLabel?.textColor     = STYLE.Brown
+        cell.detailTextLabel?.alpha         = 0.7
+  
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+}
 
 extension AssignNumbersVC: UITextFieldDelegate {
 
