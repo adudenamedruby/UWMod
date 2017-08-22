@@ -288,7 +288,7 @@ extension SelectPlayerPopupVC: UITableViewDelegate, UITableViewDataSource {
         
         let row = indexPath.row
         if reason == .RoleClarification {
-            cell.textLabel?.text = availablePlayers[row].roleName()
+            cell.textLabel?.text = availablePlayers[row].roleName
         } else {
             cell.textLabel?.text = availablePlayers[row].name
         }
@@ -356,7 +356,7 @@ extension SelectPlayerPopupVC {
         availablePlayers.removeAll()
         
         for player in GAME.livingActors {
-            if !GAME.wolfRoles.contains(player.roleType()) {
+            if !GAME.wolfRoles.contains(player.roleType) {
                 availablePlayers.append(player)
             }
         }
@@ -473,25 +473,25 @@ extension SelectPlayerPopupVC {
         var masonCount = 0
         
         for player in GAME.availablePlayers {
-            if player.roleType() == .Werewolf {
+            if player.roleType == .Werewolf {
                 if werewolfCount == 0 {
                     availablePlayers.append(player)
                     werewolfCount += 1
                 }
                 
-            } else if player.roleType() == .Villager {
+            } else if player.roleType == .Villager {
                 if villagerCount == 0 {
                     availablePlayers.append(player)
                     villagerCount += 1
                 }
                 
-            } else if player.roleType() == .Vampire {
+            } else if player.roleType == .Vampire {
                 if vampireCount == 0 {
                     availablePlayers.append(player)
                     vampireCount += 1
                 }
             
-            } else if player.roleType() == .Mason {
+            } else if player.roleType == .Mason {
                 if masonCount == 0 {
                     availablePlayers.append(player)
                     masonCount += 1
@@ -503,7 +503,7 @@ extension SelectPlayerPopupVC {
             
         }
         
-        availablePlayers.sort(by: { $0.roleName() < $1.roleName() } )
+        availablePlayers.sort(by: { $0.roleName < $1.roleName } )
     }
 }
 

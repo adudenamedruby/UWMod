@@ -24,6 +24,8 @@ class MenuVC: UIViewController {
     // MARK: - Variables
     
     let transition                              = CircularTransition()
+    var p1: Person! = nil
+    var p2: Person! = nil
     
     
     // MARK: - View lifecycle

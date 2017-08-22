@@ -82,6 +82,9 @@ class DayVC: UIViewController {
     }
     
     @IBAction func voteTrackerPressed(_ sender: Any) {
+        
+        GAME.pauseTimer()
+        
         let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
         let counterView = storyboard.instantiateViewController(withIdentifier: "voteCounterPopup") as! VoteCounterVC
         counterView.modalTransitionStyle = .crossDissolve
@@ -101,6 +104,7 @@ class DayVC: UIViewController {
     }
     
     @IBAction func finishDayButton(_ sender: Any) {
+        GAME.stopTimer()
         GAME.finishDay()
         self.modalTransitionStyle = .crossDissolve
         self.dismiss(animated: true, completion: nil)
@@ -229,7 +233,7 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
             var originalPlayer: Player!
             
             for player in GAME.availablePlayers {
-                if player.roleType() == .TheBlob {
+                if player.roleType == .TheBlob {
                     originalPlayer = player
                 }
             }
@@ -245,7 +249,7 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
             var originalPlayer: Player!
             
             for player in GAME.availablePlayers {
-                if player.roleType() == .CultLeader {
+                if player.roleType == .CultLeader {
                     originalPlayer = player
                     break
                 }

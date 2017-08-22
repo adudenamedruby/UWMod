@@ -51,7 +51,7 @@ class SweetheartCell: UITableViewCell {
         var secondLover:        Player?
         
         for player in GAME.availablePlayers {
-            if player.roleType() == .Cupid {
+            if player.roleType == .Cupid {
                 cupidPlayer = player
             }
         }

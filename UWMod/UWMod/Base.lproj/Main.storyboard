@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ame Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-Kc-kag" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="13.5" width="295" height="41"/>
+                                                <rect key="frame" x="15" y="13" width="295" height="41"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -108,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uT-yj-GaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="408.80000000000001" y="833.43328335832086"/>
+            <point key="canvasLocation" x="-30" y="887"/>
         </scene>
         <!--Game SettingsVC-->
         <scene sceneID="VyI-hG-PqW">
@@ -509,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VER-O7-7NY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342" y="-647"/>
+            <point key="canvasLocation" x="607" y="887"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="tne-QT-ifu">
@@ -533,7 +533,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="285"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secret" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juw-fP-CU1" customClass="OldMenuTop" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="91" y="210" width="173.5" height="70"/>
+                                                <rect key="frame" x="91.5" y="210" width="173.5" height="70"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="60"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -749,7 +749,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veT-ov-L0g">
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veT-ov-L0g">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -760,7 +760,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="JfT-u5-Wiw" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="13" width="308" height="44.5"/>
+                                                <rect key="frame" x="15" y="13.5" width="308" height="44.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -824,16 +824,16 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="u4F-gm-ZV7">
-                                        <rect key="frame" x="114.5" y="502" width="110.5" height="20"/>
+                                        <rect key="frame" x="13" y="502" width="99.5" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Size:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjl-cE-UsS" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="20"/>
-                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="20"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoW-qG-sLM" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="99.5" y="0.0" width="11" height="20"/>
+                                                <rect key="frame" x="88.5" y="0.0" width="11" height="20"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -860,6 +860,49 @@
                                             <action selector="backButtonPressed:" destination="4rb-Z3-Wdw" eventType="touchUpInside" id="QsW-ZX-3NJ"/>
                                         </connections>
                                     </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TT5-wR-srQ">
+                                        <rect key="frame" x="169" y="497" width="157" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assign Numbers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cu-nQ-MIj" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="122" height="30"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dv-SR-lZO">
+                                                <rect key="frame" x="127" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="T2u-9y-bWN"/>
+                                                    <constraint firstAttribute="width" constant="30" id="dZ5-Os-8KB"/>
+                                                </constraints>
+                                                <state key="normal" image="checkNo"/>
+                                                <connections>
+                                                    <action selector="assignButtonPressed:" destination="4rb-Z3-Wdw" eventType="touchUpInside" id="5U2-W8-mW6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIu-Bk-rvu" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="268" y="542" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Wmx-Lr-knv"/>
+                                            <constraint firstAttribute="width" constant="45" id="jLC-1O-80e"/>
+                                        </constraints>
+                                        <state key="normal" image="forwardArrow"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.93813169689999998" green="0.93857074870000001" blue="0.84532519800000006" alpha="0.2393514555" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="goToSelectRolesButton:" destination="4rb-Z3-Wdw" eventType="touchUpInside" id="9Fz-E3-m02"/>
+                                            <segue destination="rbR-x9-q7o" kind="show" identifier="assignNumbersSegue" id="uEH-We-BGr"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -867,10 +910,12 @@
                                     <constraint firstItem="aKN-zO-uiX" firstAttribute="centerY" secondItem="iCc-1T-bIt" secondAttribute="centerY" id="BIx-UJ-rv7"/>
                                     <constraint firstAttribute="bottom" secondItem="S0G-rq-jAp" secondAttribute="bottom" constant="20" id="DQt-Ix-h2I"/>
                                     <constraint firstAttribute="bottom" secondItem="u4F-gm-ZV7" secondAttribute="bottom" constant="85" id="EY0-aw-gA4"/>
+                                    <constraint firstItem="TT5-wR-srQ" firstAttribute="centerY" secondItem="u4F-gm-ZV7" secondAttribute="centerY" id="Erz-1l-dyM"/>
                                     <constraint firstItem="aKN-zO-uiX" firstAttribute="leading" secondItem="hRA-l7-cLQ" secondAttribute="leading" constant="25" id="G1N-6m-qIV"/>
                                     <constraint firstAttribute="trailing" secondItem="S0G-rq-jAp" secondAttribute="trailing" constant="25" id="II4-fx-Cqk"/>
+                                    <constraint firstItem="JIu-Bk-rvu" firstAttribute="centerY" secondItem="S0G-rq-jAp" secondAttribute="centerY" id="IaZ-5c-bN8"/>
+                                    <constraint firstItem="JIu-Bk-rvu" firstAttribute="centerX" secondItem="S0G-rq-jAp" secondAttribute="centerX" id="MMU-Vx-H6B"/>
                                     <constraint firstItem="iCc-1T-bIt" firstAttribute="centerY" secondItem="S0G-rq-jAp" secondAttribute="centerY" id="P9P-4F-e1o"/>
-                                    <constraint firstItem="u4F-gm-ZV7" firstAttribute="centerX" secondItem="hRA-l7-cLQ" secondAttribute="centerX" id="jrD-uh-Klj"/>
                                     <constraint firstItem="iCc-1T-bIt" firstAttribute="centerX" secondItem="hRA-l7-cLQ" secondAttribute="centerX" id="mzy-hp-DdI"/>
                                     <constraint firstAttribute="trailing" secondItem="czc-ce-jJH" secondAttribute="trailing" id="r75-6o-yQ4"/>
                                     <constraint firstItem="czc-ce-jJH" firstAttribute="leading" secondItem="hRA-l7-cLQ" secondAttribute="leading" id="ykL-Nw-mer"/>
@@ -913,6 +958,8 @@
                             <constraint firstItem="hRA-l7-cLQ" firstAttribute="centerY" secondItem="WLo-Dk-Wji" secondAttribute="centerY" id="hlq-9H-1dR"/>
                             <constraint firstItem="u4F-gm-ZV7" firstAttribute="top" secondItem="8qc-UI-p46" secondAttribute="bottom" constant="15" id="hm8-4I-XQ0"/>
                             <constraint firstItem="hRA-l7-cLQ" firstAttribute="centerX" secondItem="WLo-Dk-Wji" secondAttribute="centerX" id="jh2-EY-cid"/>
+                            <constraint firstItem="TT5-wR-srQ" firstAttribute="trailing" secondItem="8qc-UI-p46" secondAttribute="trailing" id="pPx-cD-E3U"/>
+                            <constraint firstItem="u4F-gm-ZV7" firstAttribute="leading" secondItem="8qc-UI-p46" secondAttribute="leading" id="qu5-JA-l1m"/>
                             <constraint firstItem="8qc-UI-p46" firstAttribute="top" secondItem="czc-ce-jJH" secondAttribute="bottom" constant="15" id="v99-xY-SHZ"/>
                             <constraint firstItem="egH-CV-BTf" firstAttribute="top" secondItem="veT-ov-L0g" secondAttribute="bottom" id="xdL-Sy-6gf"/>
                             <constraint firstItem="hRA-l7-cLQ" firstAttribute="width" secondItem="WLo-Dk-Wji" secondAttribute="width" multiplier="0.9" id="zEe-zr-Io3"/>
@@ -921,6 +968,9 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="addPlayersButton" destination="iCc-1T-bIt" id="BnE-VZ-ix7"/>
+                        <outlet property="assignForwardButton" destination="JIu-Bk-rvu" id="6UA-7K-d2e"/>
+                        <outlet property="assignNumbersButton" destination="4Dv-SR-lZO" id="6PR-zd-vVr"/>
+                        <outlet property="assignNumbersLabel" destination="6cu-nQ-MIj" id="Gqg-j2-Nuy"/>
                         <outlet property="forwardButton" destination="S0G-rq-jAp" id="V81-52-8y7"/>
                         <outlet property="headerTitleLabel" destination="JfT-u5-Wiw" id="dJ8-1Q-evM"/>
                         <outlet property="headerView" destination="czc-ce-jJH" id="dCN-nl-rSN"/>
@@ -931,7 +981,121 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9S-5a-Mu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152.8" y="92.203898050974516"/>
+            <point key="canvasLocation" x="1636" y="124"/>
+        </scene>
+        <!--Assign NumbersVC-->
+        <scene sceneID="AOf-LN-GHO">
+            <objects>
+                <viewController storyboardIdentifier="assignNumbersVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="rbR-x9-q7o" customClass="AssignNumbersVC" customModule="UWMod" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Czl-JX-OKZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="xp3-8M-hbi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="etf-fq-w3D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5uu-zO-fiJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypu-rt-duV">
+                                <rect key="frame" x="26" y="50" width="323" height="567"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jaq-yA-sIb">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="66"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dd Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="KCG-C3-V3V" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="9.5" width="303" height="47"/>
+                                                <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
+                                                <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="141-AX-Tid"/>
+                                            <constraint firstItem="KCG-C3-V3V" firstAttribute="leading" secondItem="Jaq-yA-sIb" secondAttribute="leading" constant="10" id="3B1-mf-0rB"/>
+                                            <constraint firstAttribute="trailing" secondItem="KCG-C3-V3V" secondAttribute="trailing" constant="10" id="dRA-AP-LWb"/>
+                                            <constraint firstItem="KCG-C3-V3V" firstAttribute="centerY" secondItem="Jaq-yA-sIb" secondAttribute="centerY" id="tyF-W2-F1C"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibr-hu-vKN" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="258" y="502" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Tb0-xD-V8H"/>
+                                            <constraint firstAttribute="width" constant="45" id="o86-cQ-dYr"/>
+                                        </constraints>
+                                        <state key="normal" image="forwardArrow"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.93813169689999998" green="0.93857074870000001" blue="0.84532519800000006" alpha="0.2393514555" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="7Pw-Ep-Lh3" kind="show" identifier="assignNumbersToRoleSelectSegue" id="Ux0-Jo-okh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gr7-Ax-pmq" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="502" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="QmV-yx-tTm"/>
+                                            <constraint firstAttribute="width" constant="45" id="Wcl-lM-IuN"/>
+                                        </constraints>
+                                        <state key="normal" image="backArrow"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.93813169689999998" green="0.93857074870000001" blue="0.84532519800000006" alpha="0.2393514555" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="dismissButton:" destination="rbR-x9-q7o" eventType="touchUpInside" id="1o2-1q-tKy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="Jaq-yA-sIb" firstAttribute="top" secondItem="Ypu-rt-duV" secondAttribute="top" id="BCe-xf-IEm"/>
+                                    <constraint firstItem="gr7-Ax-pmq" firstAttribute="leading" secondItem="Ypu-rt-duV" secondAttribute="leading" constant="20" id="I4d-oY-1e3"/>
+                                    <constraint firstAttribute="trailing" secondItem="ibr-hu-vKN" secondAttribute="trailing" constant="20" id="Oid-0g-auq"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jaq-yA-sIb" secondAttribute="trailing" id="YiP-NP-u5Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="ibr-hu-vKN" secondAttribute="bottom" constant="20" id="ciO-Cd-Ovp"/>
+                                    <constraint firstItem="gr7-Ax-pmq" firstAttribute="centerY" secondItem="ibr-hu-vKN" secondAttribute="centerY" id="ecH-4L-rBg"/>
+                                    <constraint firstItem="Jaq-yA-sIb" firstAttribute="leading" secondItem="Ypu-rt-duV" secondAttribute="leading" id="rLR-0O-0WL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5uu-zO-fiJ" firstAttribute="leading" secondItem="etf-fq-w3D" secondAttribute="leading" id="AjF-Ew-lKH"/>
+                            <constraint firstAttribute="trailing" secondItem="5uu-zO-fiJ" secondAttribute="trailing" id="F27-6x-sZW"/>
+                            <constraint firstItem="Ypu-rt-duV" firstAttribute="leading" secondItem="etf-fq-w3D" secondAttribute="leadingMargin" constant="10" id="YeX-wn-D4m"/>
+                            <constraint firstItem="xp3-8M-hbi" firstAttribute="top" secondItem="Ypu-rt-duV" secondAttribute="bottom" constant="50" id="g7f-9J-bcu"/>
+                            <constraint firstItem="5uu-zO-fiJ" firstAttribute="top" secondItem="etf-fq-w3D" secondAttribute="top" id="i4i-VR-F7H"/>
+                            <constraint firstItem="Ypu-rt-duV" firstAttribute="top" secondItem="etf-fq-w3D" secondAttribute="topMargin" constant="50" id="nNS-XJ-sC1"/>
+                            <constraint firstItem="xp3-8M-hbi" firstAttribute="top" secondItem="5uu-zO-fiJ" secondAttribute="bottom" id="sYo-m2-STb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ypu-rt-duV" secondAttribute="trailing" constant="10" id="uwg-1V-GH4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="gr7-Ax-pmq" id="opI-MM-dXP"/>
+                        <outlet property="forwardButton" destination="ibr-hu-vKN" id="fHe-lu-lv5"/>
+                        <outlet property="headerTitleLabel" destination="KCG-C3-V3V" id="Ot8-an-rE0"/>
+                        <outlet property="headerView" destination="Jaq-yA-sIb" id="HFz-vl-9TQ"/>
+                        <outlet property="mainCard" destination="Ypu-rt-duV" id="kK4-QY-OO4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HeH-uV-1O2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1994" y="887"/>
         </scene>
         <!--Role SelectVC-->
         <scene sceneID="8oB-AN-PA8">
@@ -945,7 +1109,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcr-n9-iBu">
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcr-n9-iBu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -956,7 +1120,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="337" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elect Roles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="Tuq-TL-lce" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="13" width="307" height="44.5"/>
+                                                <rect key="frame" x="15" y="13.5" width="307" height="44.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="38"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -993,7 +1157,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="P9r-Ya-85Q">
-                                        <rect key="frame" x="86.5" y="537" width="164.5" height="45"/>
+                                        <rect key="frame" x="86.5" y="549.5" width="164.5" height="20"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NtC-Gp-Iz8">
                                                 <rect key="frame" x="0.0" y="0.0" width="164.5" height="20"/>
@@ -1014,23 +1178,6 @@
                                                         <rect key="frame" x="103" y="0.0" width="61.5" height="20"/>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                         <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="lh3-94-7XA">
-                                                <rect key="frame" x="10.5" y="25" width="144" height="20"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Balance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xF8-tU-8bf" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1.5" width="113" height="18.5"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
-                                                        <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1j-Ax-2KL" customClass="RegBrownLarge" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="117" y="0.0" width="27" height="20"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                                        <color key="textColor" red="0.24842420309999999" green="0.16904838320000001" blue="0.13596698560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -1190,7 +1337,6 @@
                         <outlet property="backButton" destination="8ge-b5-6M8" id="1S4-sJ-mMF"/>
                         <outlet property="collectionView" destination="GQM-mG-qFm" id="Xlf-gk-h5g"/>
                         <outlet property="forwardButton" destination="sgF-ZD-TgM" id="pPK-5u-7hB"/>
-                        <outlet property="gameBalanceLabel" destination="D1j-Ax-2KL" id="CYD-s7-DH2"/>
                         <outlet property="headerTitleLabel" destination="Tuq-TL-lce" id="aFk-3x-sSI"/>
                         <outlet property="headerView" destination="gJa-nz-lZZ" id="7YU-NT-GOO"/>
                         <outlet property="mainCardView" destination="hhz-Fz-6Cw" id="5Vm-Lq-FuO"/>
@@ -1201,7 +1347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTP-dL-4kz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2000.8" y="91.304347826086968"/>
+            <point key="canvasLocation" x="2762" y="124"/>
         </scene>
         <!--AboutVC-->
         <scene sceneID="92H-Py-R30">
@@ -1244,7 +1390,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bout UWMod" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="OQv-Nl-JmZ" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="17.5" width="270" height="36.5"/>
+                                                <rect key="frame" x="15" y="17" width="270" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1340,7 +1486,7 @@ Based on the Werewolf boardgame.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tok-gj-aqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-364" y="833.43328335832086"/>
+            <point key="canvasLocation" x="-670" y="887"/>
         </scene>
         <!--Main GameVC-->
         <scene sceneID="idh-jl-avO">
@@ -1385,7 +1531,7 @@ Based on the Werewolf boardgame.</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hase Report" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="gy0-tG-ynC" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                        <rect key="frame" x="15" y="10" width="285" height="41"/>
+                                                        <rect key="frame" x="15" y="10.5" width="285" height="41"/>
                                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1532,7 +1678,7 @@ Based on the Werewolf boardgame.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIj-M8-Jbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3253.5999999999999" y="91.304347826086968"/>
+            <point key="canvasLocation" x="3863" y="124"/>
         </scene>
         <!--Add PlayerVC-->
         <scene sceneID="BsM-Ap-mhP">
@@ -1546,7 +1692,7 @@ Based on the Werewolf boardgame.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qv0-1L-0uU">
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qv0-1L-0uU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -1571,8 +1717,8 @@ Based on the Werewolf boardgame.</string>
                                             <constraint firstAttribute="trailing" secondItem="hia-gp-G1Q" secondAttribute="trailing" constant="10" id="xEx-V4-L7Z"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Johnny Appleseed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Fj-a1-TCa">
-                                        <rect key="frame" x="25" y="105" width="250" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Appleseed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Fj-a1-TCa">
+                                        <rect key="frame" x="73.5" y="105" width="206.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="SQZ-3P-bXs"/>
                                         </constraints>
@@ -1612,22 +1758,50 @@ Based on the Werewolf boardgame.</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAb-mv-iMS">
+                                        <rect key="frame" x="20" y="111.5" width="33.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Johnny" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wc-Ag-g7R">
+                                        <rect key="frame" x="74.5" y="74" width="205.5" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Yyt-0f-hAy"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhC-se-dgx">
+                                        <rect key="frame" x="20" y="80.5" width="34.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="6wc-Ag-g7R" firstAttribute="leading" secondItem="fhC-se-dgx" secondAttribute="trailing" constant="20" id="1Yk-90-mT6"/>
                                     <constraint firstItem="7un-Yq-MCI" firstAttribute="leading" secondItem="HPE-8y-prU" secondAttribute="leading" id="4Xy-Gf-wy6"/>
                                     <constraint firstItem="rfZ-Qn-LuS" firstAttribute="top" secondItem="8Fj-a1-TCa" secondAttribute="bottom" constant="8" id="5Cd-m6-FZo"/>
                                     <constraint firstItem="yVx-Wp-cWv" firstAttribute="centerX" secondItem="HPE-8y-prU" secondAttribute="centerX" constant="40" id="5GT-jq-4tn"/>
                                     <constraint firstItem="yVx-Wp-cWv" firstAttribute="centerY" secondItem="z4D-Wv-75p" secondAttribute="centerY" id="8uX-4h-ORd"/>
                                     <constraint firstItem="7un-Yq-MCI" firstAttribute="top" secondItem="HPE-8y-prU" secondAttribute="top" id="Evm-yX-jux"/>
                                     <constraint firstItem="yVx-Wp-cWv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z4D-Wv-75p" secondAttribute="trailing" constant="10" id="I6C-Kq-0IV"/>
-                                    <constraint firstAttribute="trailing" secondItem="8Fj-a1-TCa" secondAttribute="trailing" constant="25" id="PrZ-MW-2Rk"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Fj-a1-TCa" secondAttribute="trailing" constant="20" id="PrZ-MW-2Rk"/>
                                     <constraint firstItem="z4D-Wv-75p" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HPE-8y-prU" secondAttribute="leading" constant="10" id="Qi5-8E-wpw"/>
+                                    <constraint firstItem="fhC-se-dgx" firstAttribute="centerY" secondItem="6wc-Ag-g7R" secondAttribute="centerY" id="TBB-tI-BeB"/>
+                                    <constraint firstItem="mAb-mv-iMS" firstAttribute="centerY" secondItem="8Fj-a1-TCa" secondAttribute="centerY" id="XOU-iG-XTk"/>
                                     <constraint firstItem="z4D-Wv-75p" firstAttribute="top" secondItem="8Fj-a1-TCa" secondAttribute="bottom" constant="50" id="ZfF-uV-wjw"/>
+                                    <constraint firstItem="mAb-mv-iMS" firstAttribute="leading" secondItem="HPE-8y-prU" secondAttribute="leading" constant="20" id="aP1-FB-Gyn"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yVx-Wp-cWv" secondAttribute="bottom" constant="8" id="arU-Vu-te4"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yVx-Wp-cWv" secondAttribute="trailing" constant="10" id="dyr-ui-a28"/>
+                                    <constraint firstAttribute="trailing" secondItem="6wc-Ag-g7R" secondAttribute="trailing" constant="20" id="gOf-5F-H3d"/>
+                                    <constraint firstItem="fhC-se-dgx" firstAttribute="leading" secondItem="HPE-8y-prU" secondAttribute="leading" constant="20" id="gid-qy-APP"/>
+                                    <constraint firstItem="8Fj-a1-TCa" firstAttribute="top" secondItem="6wc-Ag-g7R" secondAttribute="bottom" constant="1" id="hVC-Jt-0bC"/>
                                     <constraint firstItem="z4D-Wv-75p" firstAttribute="centerX" secondItem="HPE-8y-prU" secondAttribute="centerX" constant="-90" id="jkT-li-YGS"/>
-                                    <constraint firstItem="8Fj-a1-TCa" firstAttribute="leading" secondItem="HPE-8y-prU" secondAttribute="leading" constant="25" id="us7-tB-8Vg"/>
+                                    <constraint firstItem="8Fj-a1-TCa" firstAttribute="leading" secondItem="mAb-mv-iMS" secondAttribute="trailing" constant="20" id="uFq-dg-3HP"/>
                                     <constraint firstItem="8Fj-a1-TCa" firstAttribute="top" secondItem="7un-Yq-MCI" secondAttribute="bottom" constant="38.5" id="uvT-v8-YGC"/>
                                     <constraint firstItem="rfZ-Qn-LuS" firstAttribute="centerX" secondItem="HPE-8y-prU" secondAttribute="centerX" id="wV8-5W-X7M"/>
                                     <constraint firstAttribute="trailing" secondItem="7un-Yq-MCI" secondAttribute="trailing" id="zcO-QZ-PMt"/>
@@ -1648,6 +1822,7 @@ Based on the Werewolf boardgame.</string>
                     </view>
                     <connections>
                         <outlet property="addPlayerButton" destination="yVx-Wp-cWv" id="GEJ-ae-sVq"/>
+                        <outlet property="firstNameField" destination="6wc-Ag-g7R" id="Mdt-Vx-e66"/>
                         <outlet property="headerTitleLabel" destination="hia-gp-G1Q" id="FzV-Dx-KqZ"/>
                         <outlet property="headerView" destination="7un-Yq-MCI" id="WXQ-Yd-X7Z"/>
                         <outlet property="mainCard" destination="HPE-8y-prU" id="8lz-5D-UoR"/>
@@ -1657,12 +1832,16 @@ Based on the Werewolf boardgame.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55p-hP-d8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152.8" y="834.33283358320841"/>
+            <point key="canvasLocation" x="1302" y="887"/>
         </scene>
     </scenes>
     <resources>
         <image name="backArrow" width="512" height="512"/>
+        <image name="checkNo" width="512" height="512"/>
         <image name="forwardArrow" width="512" height="512"/>
         <image name="nighttime" width="1242" height="2208"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ux0-Jo-okh"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -10,18 +10,24 @@ import Foundation
 import UIKit
 
 class Player {
-    var name:                               String
-    var role:                               Role!
+    private var _role:                      Role!
+    private var _person:                    Person?
+    private var _name:                      String!
+    var teamName:                           String?
+    var gameID:                             Int
     var isAlive:                            Bool
     var team:                               [UWTeam]
     var daytimeInfoCards:                   [DaytimeCardType]
     var isMute:                             Bool
-    var canVote:                            Bool
     var isAssigned:                         Bool
     var hasActedTonight:                    Bool
     var hasActedToday:                      Bool
     var isNightActivePlayer:                Bool
     var killedBy:                           RoleType?
+    
+    var name: String {
+        get { return _name }
+    }
     
     // What conditions are currently afflicting the player and by who. Done in two
     // for easier logic checks... for me, really.
@@ -33,14 +39,15 @@ class Player {
     var playersIneligibleForEffect:         [PlayerEffects:[Player]]
     var rolesIneligibleToAffectPlayer:      [RoleType]
     
-    init (name: String) {
-        self.name                           = name
+    init (withIdentity person: Person?, withTeamName name: String?) {
+        self._person                        = person
+        self.teamName                       = name
+        self.gameID                         = 0
         self.team                           = []
         self.daytimeInfoCards               = []
 
         self.isAlive                        = true
         self.isMute                         = false
-        self.canVote                        = true
         self.isAssigned                     = false
         self.isNightActivePlayer            = false
         self.hasActedTonight                = false
@@ -51,13 +58,15 @@ class Player {
         self.playersIneligibleForEffect     = [:]
         self.currentConditions              = []
         self.rolesIneligibleToAffectPlayer  = []
+        
+        setPlayerName()
     }
     
     
     // MARK: - General player functions
     
     public func assignRole(role: Role) {
-        self.role                           = role
+        self._role                           = role
         self.isNightActivePlayer            = role.isNightActiveRole.currentStatus
         self.isAssigned                     = true
         
@@ -67,10 +76,10 @@ class Player {
     }
     
     public func updateRole(withRole newRole: Role) {
-        let oldRole                         = self.role
+        let oldRole                         = self._role
         
-        self.role                           = newRole
-        self.isNightActivePlayer            = role.isNightActiveRole.currentStatus
+        self._role                          = newRole
+        self.isNightActivePlayer            = newRole.isNightActiveRole.currentStatus
         self.isAssigned                     = true
         
         for currentRole in newRole.team {
@@ -99,6 +108,28 @@ class Player {
         }
     }
     
+    public func setCollapsedTeamCardName(name: String) {
+        _name = name
+    }
+    
+    public func setPlayerNameWithLastInitial() {
+        if gameID == 0 {
+            _name           = "\(_person!.firstName) \(_person!.lastName[0])."
+        }
+    }
+    
+    private func setPlayerName() {
+        if _person != nil {
+            if gameID == 0 {
+                _name           = "\(_person!.firstName)"
+            } else {
+                _name           = "\(gameID). \(_person!.firstName)"
+            }
+        } else if teamName != nil {
+            _name = teamName!
+        }
+    }
+
     
     // MARK: - Info card related fuctions
     
@@ -148,10 +179,6 @@ class Player {
     // MARK: - Player cleanup
     
     public func cleanupAfterRound(nightRound: Bool) {
-        
-        if self.currentConditions.contains(.Lobotomy) {
-            self.canVote = false
-        }
         
         if nightRound {
             cleanupAfterNightRound()
@@ -342,7 +369,7 @@ class Player {
     
     /// Apply the protect effect to other players.
     public func protect(playerToProtect: Player) {
-        let kindOfRole = role.type
+        let kindOfRole = _role.type
         let effect: PlayerEffects = .Protection
         
         switch kindOfRole {
@@ -383,7 +410,7 @@ class Player {
     /// Apply the link effect to players
     public func linkPlayers(playerToLink: Player) {
         
-        let kindOfRole = role.type
+        let kindOfRole = _role.type
         
         switch kindOfRole {
         case .Cupid:
@@ -409,7 +436,7 @@ class Player {
         
         let effect: PlayerEffects = .Lobotomy
         
-        if self.role.type == .Zombie {
+        if self._role.type == .Zombie {
             
             if canPerformEffect(condition: effect, player: victim) {
                 
@@ -441,73 +468,59 @@ class Player {
     // MARK: - Role abilities
     
     private func checkRoleForActivation() {
-        role.checkForActivation()
+        _role.checkForActivation()
     }
-}
-
-extension Player {
+    
     
     // MARK: - Role variable retrieval functions
     // This abstraction layer prevents views from having to reach into player and accessing
     // the Role object directly.
     
     func hasUsedOneTimePower() {
-        self.role.powerUsed = true
+        self._role.powerUsed = true
     }
     
-    func roleName() -> String {
-        return role.name
+    var role: Role! {
+        get { return _role }
     }
     
-    func roleType() -> RoleType {
-        return role.type
+    var roleName: String {
+        get { return _role.name }
+    }
+
+    var roleType: RoleType {
+        get { return _role.type }
     }
     
-    func roleDescription() -> String {
-        return role.description
+    var roleDescription: String {
+        get { return _role.description }
     }
     
-    func roleExplanation() -> String {
-        return role.roleExplanation
+    var roleExplanation: String {
+        get { return _role.roleExplanation }
     }
     
-    func roleNotes() -> String {
-        return role.notes
+    var roleNotes: String {
+        get { return _role.notes }
     }
     
-    func roleImpact() -> Int {
-        return role.impact
+    var roleImpact: Int {
+        get { return _role.impact }
     }
     
-    func roleEffects() -> [PlayerEffects] {
-        return role.availableEffects
+    var roleEffects: [PlayerEffects] {
+        get { return _role.availableEffects }
     }
     
-    func rolePriority() -> Int {
-        return role.priority
+    var rolePriority: Int {
+        get { return _role.priority }
     }
     
-    func roleImage() -> UIImage {
-        return role.image
+    var roleImage: UIImage {
+        get { return _role.image }
     }
     
-    func roleCanWake() -> Bool {
-        return role.canWake
-    }
-    
-    func rolePowerChoice() -> Bool {
-        return role.powerChoice
-    }
-    
-    func rolePowerUsed() -> Bool {
-        return role.powerUsed
-    }
-    
-    func roleIsNightActiveRole() -> NightActiveStatus {
-        return role.isNightActiveRole
-    }
-    
-    func roleIsActivated() -> Bool {
-        return role.isActivated
+    var rolePowerUsed: Bool {
+        get { return _role.powerUsed }
     }
 }

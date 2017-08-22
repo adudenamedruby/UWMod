@@ -13,17 +13,18 @@ class AddPlayerVC: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var nameField:           UITextField!
+    @IBOutlet weak var firstNameField:      UITextField!
     @IBOutlet weak var mainCard:            UIView!
     @IBOutlet var headerView:               UIView!
     @IBOutlet weak var headerTitleLabel:    OldTan!
-    @IBOutlet var statusLabel: RegBrownSmall!
+    @IBOutlet var statusLabel:              RegBrownSmall!
     
-    @IBOutlet var addPlayerButton: UIButton!
+    @IBOutlet var addPlayerButton:          UIButton!
     
     // MARK: - Variables
     
     let standardDefaults                    = UserDefaults.standard
-    var savedPlayers:                       [String]?
+    var savedPlayers                        = [Person]()
     
     
     // MARK: - View Lifecycle
@@ -44,8 +45,10 @@ class AddPlayerVC: UIViewController {
         
         nameField.delegate                      = self
         nameField.autocorrectionType            = UITextAutocorrectionType.yes
+        firstNameField.delegate                 = self
+        firstNameField.autocorrectionType       = UITextAutocorrectionType.yes
         
-        savedPlayers = standardDefaults.object(forKey: PLAYERS) as? [String] ?? [String]()
+        loadPlayers()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
                                                name: NSNotification.Name.UIKeyboardWillShow,
@@ -90,15 +93,20 @@ class AddPlayerVC: UIViewController {
     // MARK: - Button functionality
     
     @IBAction func savePlayerButton(_ sender: Any) {
-        if let textEntry = nameField.text, !textEntry.isEmpty {
-            let text = textEntry.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let lastName = nameField.text, let firstName = firstNameField.text, !lastName.isEmpty, !firstName.isEmpty {
+            let first = firstName.trimmingCharacters(in: .whitespacesAndNewlines)
+            let last = lastName.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            savedPlayers?.append(text)
-            standardDefaults.set(savedPlayers, forKey: PLAYERS)
-            statusLabel.text = "Added \(text) to players."
+            let tempPerson = Person(firstName: first, lastName: last)
+            
+            savedPlayers.append(tempPerson)
+            savePlayers()
+            
+            statusLabel.text = "Added \(tempPerson.firstName) \(tempPerson.lastName) to players."
             statusLabel.alpha = 1
             statusLabel.fadeOut(duration: 1, delay: 1)
             nameField.text = ""
+            firstNameField.text = ""
             
         } else {
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
@@ -114,6 +122,18 @@ class AddPlayerVC: UIViewController {
     @IBAction func dismissButton(_ sender: Any) {
         notifyTable()
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func savePlayers() {
+        let data = NSKeyedArchiver.archivedData(withRootObject: savedPlayers)
+        UserDefaults.standard.set(data, forKey: PLAYERS)
+    }
+    
+    func loadPlayers() {
+        if let data = UserDefaults.standard.data(forKey: PLAYERS) {
+            savedPlayers = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Person] ?? [Person]()
+        }
     }
 
 }

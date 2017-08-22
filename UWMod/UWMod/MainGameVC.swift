@@ -166,7 +166,7 @@ class MainGameVC: UIViewController {
     private func checkSpecialRolesReminder() {
             
         for player in GAME.livingActors {
-            if player.roleType() == .Wolverine {
+            if player.roleType == .Wolverine {
                 //showAlert(name: "The Wolverine", text: "If the Wolverine is the closest player to the werewolves' target, the villagers hear a metallic scrape!")
             }
         }

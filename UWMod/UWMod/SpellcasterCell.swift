@@ -51,7 +51,7 @@ class SpellcasterCell: UITableViewCell {
                                                                             affectedBy: .Silence, withRole: true)
         
         for player in GAME.availablePlayers {
-            if player.roleType() == .Spellcaster {
+            if player.roleType == .Spellcaster {
                 spellcasterPlayer = player
             }
         }

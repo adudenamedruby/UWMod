@@ -55,7 +55,10 @@
 		127ACFEB1F42666F004E9779 /* SorceressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127ACFEA1F42666F004E9779 /* SorceressView.xib */; };
 		127ACFED1F466201004E9779 /* PriestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127ACFEC1F466201004E9779 /* PriestView.xib */; };
 		127ACFEF1F46621B004E9779 /* PriestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACFEE1F46621B004E9779 /* PriestView.swift */; };
+		12960F9B1F49DB9100EA8A97 /* AssignNumbersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12960F9A1F49DB9100EA8A97 /* AssignNumbersVC.swift */; };
 		1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1298C8A21F3DD15D00261779 /* Notes.rtf */; };
+		12CA22C71F49125700954370 /* Weretimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CA22C61F49125700954370 /* Weretimer.swift */; };
+		12CA22C91F4924E600954370 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CA22C81F4924E600954370 /* Person.swift */; };
 		12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */; };
 		12D15E201F2E82870057905E /* RoleSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */; };
 		12D15E231F2EA8470057905E /* MainGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E221F2EA8470057905E /* MainGameVC.swift */; };
@@ -158,7 +161,10 @@
 		127ACFEA1F42666F004E9779 /* SorceressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SorceressView.xib; sourceTree = "<group>"; };
 		127ACFEC1F466201004E9779 /* PriestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriestView.xib; sourceTree = "<group>"; };
 		127ACFEE1F46621B004E9779 /* PriestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriestView.swift; sourceTree = "<group>"; };
+		12960F9A1F49DB9100EA8A97 /* AssignNumbersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignNumbersVC.swift; sourceTree = "<group>"; };
 		1298C8A21F3DD15D00261779 /* Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
+		12CA22C61F49125700954370 /* Weretimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weretimer.swift; sourceTree = "<group>"; };
+		12CA22C81F4924E600954370 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSuperButton.swift; sourceTree = "<group>"; };
 		12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleSelectionCell.swift; sourceTree = "<group>"; };
 		12D15E221F2EA8470057905E /* MainGameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGameVC.swift; sourceTree = "<group>"; };
@@ -360,6 +366,7 @@
 			children = (
 				12EC77D01F26D4AA0026C667 /* AboutVC.swift */,
 				1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */,
+				12960F9A1F49DB9100EA8A97 /* AssignNumbersVC.swift */,
 				77B2B00E1F3A1B580032A36B /* GameSettingsVC.swift */,
 				7736D0911F3399BC00555037 /* HelpVC.swift */,
 				7736D0991F33A32000555037 /* HelpCell.swift */,
@@ -418,10 +425,12 @@
 				77B2B00C1F3A0AA30032A36B /* GameSettings.swift */,
 				7736D0931F33A24200555037 /* Help.swift */,
 				7736D0951F33A25100555037 /* HelpConstants.swift */,
+				12CA22C81F4924E600954370 /* Person.swift */,
 				12EC77DA1F27541A0026C667 /* Player.swift */,
 				12EC77D31F26D4DC0026C667 /* Roles.swift */,
 				12EC77E21F29881F0026C667 /* RoleConstants.swift */,
 				124787601F34150A00518532 /* SelectedItem.swift */,
+				12CA22C61F49125700954370 /* Weretimer.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -577,11 +586,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12CA22C71F49125700954370 /* Weretimer.swift in Sources */,
 				12D15E2B1F2EC5420057905E /* ArrayExtension.swift in Sources */,
 				123BD0D51F2F6C1600B99019 /* AlertsVC.swift in Sources */,
 				12154A601F410229003A5D86 /* BlobCell.swift in Sources */,
 				127ACFE01F425696004E9779 /* JoinCultView.swift in Sources */,
 				12DA2CE11F47978000D0193A /* SpellcasterCell.swift in Sources */,
+				12CA22C91F4924E600954370 /* Person.swift in Sources */,
 				77F9E1221F310CCE00E48211 /* RegularTextLabels.swift in Sources */,
 				124F74EF1F3549BB00F03E49 /* VillageTeamCell.swift in Sources */,
 				123317D21F408E22000C3260 /* RoleClarificationPopupVC.swift in Sources */,
@@ -641,6 +652,7 @@
 				12EC78001F2BE2FE0026C667 /* TisprCardStackViewCell.swift in Sources */,
 				77B2B0061F34D7AC0032A36B /* Graveyard.swift in Sources */,
 				122FC69E1F3927C500E0E2C9 /* SeerInspection.swift in Sources */,
+				12960F9B1F49DB9100EA8A97 /* AssignNumbersVC.swift in Sources */,
 				7736D0921F3399BC00555037 /* HelpVC.swift in Sources */,
 				1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */,
 				123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */,

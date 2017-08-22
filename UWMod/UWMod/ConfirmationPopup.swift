@@ -124,15 +124,11 @@ class ConfirmationPopup: UIViewController {
                     chosenPlayer.killedBy = eliminatedByType
                 }
                 
-                if GAME.wolfRoles.contains(chosenPlayer.roleType()) && !GAME.aWerewolfHasBeenSlain {
+                if GAME.wolfRoles.contains(chosenPlayer.roleType) && !GAME.aWerewolfHasBeenSlain {
                     GAME.aWerewolfHasBeenSlain = true
                 }
                 
-                if reason == .WerewolfElimination {
-                    self.notify(name: EliminationByWerewolfSuccessNotification)
-                }
-                
-                if chosenPlayer.roleType() == .Cursed && reason == .WerewolfElimination {
+                if chosenPlayer.roleType == .Cursed && reason == .WerewolfElimination {
                         chosenPlayer.updateRole(withRole: CURSED_WEREWOLF)
                 } else {
                     GAME.prepareToEliminatePlayer(victim: chosenPlayer)
@@ -177,15 +173,14 @@ class ConfirmationPopup: UIViewController {
         let presentingVC = self.presentingViewController
         
         self.dismiss(animated: true, completion: {
-            if self.eliminatedByType != nil {
-                if GAME.wolfRoles.contains(self.eliminatedByType!) {
+            
+            if self.reason == .WerewolfElimination {
+                if self.eliminatedByType != nil && GAME.wolfRoles.contains(self.eliminatedByType!) {
                     GAME.werewolvesHaveKilled()
                     self.notify(name: EliminationByWerewolfSuccessNotification)
                 }
-                
-            }
             
-            if self.reason == .AssignPlayer {
+            } else if self.reason == .AssignPlayer {
                 self.notify(name: AssignPlayerSuccessNotification)
             
             } else if self.reason == .BodyguardSelectProtectee {

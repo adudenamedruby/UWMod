@@ -15,8 +15,12 @@ class PlayerSelectVC: UIViewController {
     @IBOutlet var headerView:                   UIView!
     @IBOutlet weak var headerTitleLabel:        OldTan!
     
+    @IBOutlet weak var assignNumbersLabel:      RegBrown!
+    @IBOutlet weak var assignNumbersButton:     UIButton!
+    
     @IBOutlet weak var addPlayersButton:        UIButton!
     @IBOutlet weak var forwardButton:           PMSuperButton!
+    @IBOutlet weak var assignForwardButton:     PMSuperButton!
     
     @IBOutlet weak var playerNumberLabel:       UILabel!
     
@@ -27,11 +31,13 @@ class PlayerSelectVC: UIViewController {
     let defaults                                = UserDefaults.standard
     let transition                              = CircularTransition()
     let textCellIndentifier                     = "PlayerNameCell"
+    
+    var shouldAssignNumbersToPlayers            = false
 
-    var savedPlayers: [String:[String]]         = [:]
+    var savedPlayers: [String:[Person]]         = [:]
     var savedPlayerSections: [String]           = []
     var villageSize: Int                        = 0
-    var selectedPlayers: [IndexPath:String]     = [:]
+    var selectedPlayers: [IndexPath:Person]     = [:]
     var passedPlayers: [Player]                 = []
     
     
@@ -69,6 +75,8 @@ class PlayerSelectVC: UIViewController {
         super.viewDidAppear(animated)
         loadPlayers()
         resetVillageSizeLabel()
+        shouldAssignNumbersToPlayers            = false
+        updateNumberAssignmentSegment()
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,27 +94,29 @@ class PlayerSelectVC: UIViewController {
     
     func loadPlayers() {
         resetVillageSizeLabel()
-        if let temp = defaults.object(forKey: PLAYERS) as? [String] {
-            orderPlayers(playerNames: temp)
-        }
         
+        var playersSavedToMemory: [Person]
+        if let data = UserDefaults.standard.data(forKey: PLAYERS) {
+            playersSavedToMemory = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Person] ?? [Person]()
+            orderPlayers(playerNames: playersSavedToMemory)
+        }
         tableView.reloadData()
     }
     
-    private func orderPlayers(playerNames: [String]) {
+    private func orderPlayers(playerNames: [Person]) {
         savedPlayers.removeAll()
         savedPlayerSections.removeAll()
         
         // sort the array to be alphabetical
-        let tempPlayerNames = playerNames.sorted{$0.localizedCaseInsensitiveCompare($1) == .orderedAscending}
+        let tempPlayers: [Person] = playerNames.sorted{ $0.firstName.localizedCaseInsensitiveCompare($1.firstName) == .orderedAscending }
         
         //sort the array into alphabetized, sectioned listt
-        for name in tempPlayerNames {
-            let firstLetter = name[0].capitalized
+        for person in tempPlayers {
+            let firstLetter = person.firstName[0].capitalized
             if savedPlayers[firstLetter] != nil {
-                savedPlayers[firstLetter]!.append(name)
+                savedPlayers[firstLetter]!.append(person)
             } else {
-                savedPlayers[firstLetter] = [name]
+                savedPlayers[firstLetter] = [person]
             }
             
             if !savedPlayerSections.contains(firstLetter) {
@@ -118,16 +128,20 @@ class PlayerSelectVC: UIViewController {
         
     }
     
-    func removePlayerName(player: String) {
+    func removePlayerName(player: Person) {
         
-        if var tempPlayers = defaults.object(forKey: PLAYERS) as? [String] {
+        if let data = UserDefaults.standard.data(forKey: PLAYERS), var tempPlayers = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Person] {
             
-            if tempPlayers.contains(player) {
-                let playerIndex = tempPlayers.index(of: player)
-                tempPlayers.remove(at: playerIndex!)
+            for tPlayer in tempPlayers {
+                if tPlayer.personID == player.personID {
+                    let playerIndex = tempPlayers.index(where: { $0 === tPlayer } )
+                    tempPlayers.remove(at: playerIndex!)
+                    break
+                }
             }
             
-            defaults.set(tempPlayers, forKey: PLAYERS)
+            let data = NSKeyedArchiver.archivedData(withRootObject: tempPlayers)
+            UserDefaults.standard.set(data, forKey: PLAYERS)
         }
     }
     
@@ -136,14 +150,50 @@ class PlayerSelectVC: UIViewController {
         self.passedPlayers.removeAll()
         villageSize = 0
         playerNumberLabel.text = "0"
+        shouldAssignNumbersToPlayers = false
+        updateNumberAssignmentSegment()
         tableView.reloadData()
     }
+    
+    
+    // MARK: - Assign Numbers
+    
+    @IBAction func assignButtonPressed(_ sender: Any) {
+        
+        if shouldAssignNumbersToPlayers {
+            shouldAssignNumbersToPlayers        = false
+        } else {
+            shouldAssignNumbersToPlayers        = true
+        }
+        
+        updateNumberAssignmentSegment()
+    }
+    
+    private func updateNumberAssignmentSegment() {
+        if shouldAssignNumbersToPlayers {
+            assignNumbersButton.setImage(#imageLiteral(resourceName: "checkYes"), for: .normal)
+            assignNumbersLabel.alpha            = 1
+            assignNumbersButton.alpha           = 1
+            forwardButton.isHidden              = true
+            assignForwardButton.isHidden        = false
+            
+        } else {
+            assignNumbersButton.setImage(#imageLiteral(resourceName: "checkNo"), for: .normal)
+            assignNumbersLabel.alpha            = 0.5
+            assignNumbersButton.alpha           = 0.5
+            forwardButton.isHidden              = false
+            assignForwardButton.isHidden        = true
+        }
+    }
+    
     
     // MARK: - Navigation and data passing
     
     @IBAction func goToSelectRolesButton(_ sender: Any) {
         self.passedPlayers = createPlayersFromSelectedNames()
     }
+    
+    
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -152,32 +202,46 @@ class PlayerSelectVC: UIViewController {
     
     func createPlayersFromSelectedNames() -> [Player] {
         
-        var tempArray: [String] = []
+        var tempArray: [Person] = []
         var tempPlayerArray: [Player] = []
         
-        for (_, name) in selectedPlayers {
-            tempArray.append(name)
+        // Create a dictionary to find out if I need last initials for anyone.
+        var firstNameDict: [String:Int] = [:]
+        for (_, person) in selectedPlayers {
+            if firstNameDict[person.firstName] != nil {
+                firstNameDict[person.firstName]! += 1
+            } else {
+                firstNameDict[person.firstName] = 1
+            }
+            
+            tempArray.append(person)
         }
+
         
-        for name in tempArray {
-            let newPlayer = Player(name: name)
+        for person in tempArray {
+            let newPlayer = Player(withIdentity: person, withTeamName: nil)
+            
+            if firstNameDict[person.firstName]! > 1 {
+                newPlayer.setPlayerNameWithLastInitial()
+            }
+            
             tempPlayerArray.append(newPlayer)
         }
         
         return tempPlayerArray
     }
     
-    func addSelectedPlayer(index: IndexPath, name: String) {
-        selectedPlayers[index] = name
+    func addSelectedPlayer(index: IndexPath, person: Person) {
+        selectedPlayers[index] = person
     }
     
-    func removeSelectedPlayer(index: IndexPath, name: String) {
+    func removeSelectedPlayer(index: IndexPath, person: Person) {
         selectedPlayers.removeValue(forKey: index)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        if ((identifier == "selectRoleSegue") && (self.passedPlayers.count < 3)) {
+        if (((identifier == "selectRoleSegue") || (identifier == "assignNumbersSegue")) && (self.passedPlayers.count < 3)) {
             
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
@@ -188,7 +252,7 @@ class PlayerSelectVC: UIViewController {
             
             return false
             
-        } else if ((identifier == "selectRoleSegue") && (self.passedPlayers.count > 75)) {
+        } else if (((identifier == "selectRoleSegue") || (identifier == "assignNumbersSegue"))  && (self.passedPlayers.count > 75)) {
             
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
@@ -206,13 +270,20 @@ class PlayerSelectVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectRoleSegue" {
             let secondVC = segue.destination as! RoleSelectVC
-            secondVC.passedPlayers = passedPlayers
-            secondVC.transitioningDelegate = self
-            secondVC.modalPresentationStyle = .custom
+            secondVC.passedPlayers              = passedPlayers
+            secondVC.transitioningDelegate      = self
+            secondVC.modalPresentationStyle     = .custom
+            
+        } else if segue.identifier == "assignNumbersSegue" {
+            let secondVC = segue.destination as! AssignNumbersVC
+            secondVC.passedPlayers              = passedPlayers
+            secondVC.transitioningDelegate      = self
+            secondVC.modalPresentationStyle     = .custom
+            
         } else if segue.identifier == "addPlayerSegue" {
             let secondVC = segue.destination as! AddPlayerVC
-            secondVC.transitioningDelegate = self
-            secondVC.modalPresentationStyle = .custom
+            secondVC.transitioningDelegate      = self
+            secondVC.modalPresentationStyle     = .custom
         }
     }
 }
@@ -263,10 +334,10 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         
         let sectionTitle = savedPlayerSections[indexPath.section]
         let sectionPlayers = savedPlayers[sectionTitle]
-        let sectionPlayerName = sectionPlayers?[indexPath.row]
+        let sectionPlayer = sectionPlayers?[indexPath.row]
         
         //let row = indexPath.row
-        cell.textLabel?.text = sectionPlayerName
+        cell.textLabel?.text = "\(sectionPlayer?.firstName ?? "") \(sectionPlayer?.lastName ?? "")"
         cell.textLabel?.textColor = STYLE.Brown
         cell.accessoryType = cell.isSelected ? .checkmark : .none
         cell.selectionStyle = .none
@@ -276,12 +347,14 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        villageSize += 1
-        playerNumberLabel.text = String(villageSize)
+        villageSize             += 1
+        playerNumberLabel.text  = String(villageSize)
         
-        //let cell = tableView.cellForRow(at: indexPath)
-        let text = tableView.cellForRow(at: indexPath)?.textLabel?.text
-        addSelectedPlayer(index: indexPath, name: text!)
+        let sectionTitle        = savedPlayerSections[indexPath.section]
+        let sectionPlayers      = savedPlayers[sectionTitle]
+        let player              = sectionPlayers?[indexPath.row]
+        
+        addSelectedPlayer(index: indexPath, person: player!)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -289,9 +362,11 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         villageSize -= 1
         playerNumberLabel.text = String(villageSize)
         
-        //let cell = tableView.cellForRow(at: indexPath)
-        let text = tableView.cellForRow(at: indexPath)?.textLabel?.text
-        removeSelectedPlayer(index: indexPath, name: text!)
+        let sectionTitle        = savedPlayerSections[indexPath.section]
+        let sectionPlayers      = savedPlayers[sectionTitle]
+        let player              = sectionPlayers?[indexPath.row]
+        
+        removeSelectedPlayer(index: indexPath, person: player!)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -303,9 +378,9 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
             
             let sectionTitle = savedPlayerSections[indexPath.section]
             let sectionPlayers = savedPlayers[sectionTitle]
-            let sectionPlayerName = sectionPlayers?[indexPath.row]
+            let sectionPlayer = sectionPlayers?[indexPath.row]
             
-            removePlayerName(player: sectionPlayerName!)
+            removePlayerName(player: sectionPlayer!)
             loadPlayers()
         }
     }
