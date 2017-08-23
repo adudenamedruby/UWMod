@@ -51,6 +51,7 @@ class RoleSelectVC: UIViewController {
 
     
     var passedPlayers:                          [Player]?
+    var playersAssignedNumbers:                 Bool?
     
     
     // MARK: - View lifetime
@@ -63,7 +64,8 @@ class RoleSelectVC: UIViewController {
         headerView.backgroundColor              = STYLE.Brown
         
         let headerTitle                         = "Select Role"
-        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
+        headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!,
+                                                                      withColour: STYLE.Red)
         
         collectionView.delegate                 = self
         collectionView.dataSource               = self
@@ -230,12 +232,26 @@ class RoleSelectVC: UIViewController {
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let masterGameView = storyboard.instantiateViewController(withIdentifier: "MasterGameWindow") as! MainGameVC
             let presentingVC = self.presentingViewController
-            let masterParentVC = presentingVC?.presentingViewController
-            self.dismiss(animated: false, completion: { () -> Void   in
-                presentingVC!.dismiss(animated: false, completion: { () -> Void in
-                masterParentVC!.present(masterGameView, animated: false, completion: nil)
+
+            if playersAssignedNumbers! {
+                let presentingParentVC = presentingVC?.presentingViewController
+                let masterParentVC = presentingParentVC?.presentingViewController
+                self.dismiss(animated: false, completion: { () -> Void   in
+                    presentingVC!.dismiss(animated: false, completion: { () -> Void in
+                        presentingParentVC?.dismiss(animated: false, completion: { () -> Void in
+                            masterParentVC!.present(masterGameView, animated: false, completion: nil)
+                        })
+                    })
                 })
-            })
+                
+            } else {
+                let masterParentVC = presentingVC?.presentingViewController
+                self.dismiss(animated: false, completion: { () -> Void   in
+                    presentingVC!.dismiss(animated: false, completion: { () -> Void in
+                        masterParentVC!.present(masterGameView, animated: false, completion: nil)
+                    })
+                })
+            }
         }
     }
     

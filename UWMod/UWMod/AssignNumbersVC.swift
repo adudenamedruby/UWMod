@@ -121,6 +121,7 @@ class AssignNumbersVC: UIViewController {
         if segue.identifier == "assignNumbersToRoleSelectSegue" {
             let secondVC = segue.destination as! RoleSelectVC
             secondVC.passedPlayers              = passedPlayers
+            secondVC.playersAssignedNumbers     = true
             secondVC.transitioningDelegate      = self
             secondVC.modalPresentationStyle     = .custom
         }

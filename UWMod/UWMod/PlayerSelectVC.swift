@@ -272,6 +272,7 @@ class PlayerSelectVC: UIViewController {
         if segue.identifier == "selectRoleSegue" {
             let secondVC = segue.destination as! RoleSelectVC
             secondVC.passedPlayers              = passedPlayers
+            secondVC.playersAssignedNumbers     = false
             secondVC.transitioningDelegate      = self
             secondVC.modalPresentationStyle     = .custom
             
