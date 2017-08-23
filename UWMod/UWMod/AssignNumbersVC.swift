@@ -18,6 +18,9 @@ class AssignNumbersVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet var darknessView: UIView!
+    @IBOutlet var numberTextField: UITextField!
+    @IBOutlet var setNumberButton: UIButton!
     
     @IBOutlet weak var forwardButton:       PMSuperButton!
     @IBOutlet weak var backButton:          PMSuperButton!
@@ -79,12 +82,10 @@ class AssignNumbersVC: UIViewController {
     }
     
     
-    // MARK: - Notifications
-    
-    
     // MARK: - Button functionality
-    
-    
+
+    @IBAction func setNumberButtonPressed(_ sender: Any) {
+    }
     
     @IBAction func dismissButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

@@ -118,7 +118,7 @@ class Player {
         }
     }
     
-    private func setPlayerName() {
+    public func setPlayerName() {
         if _person != nil {
             if gameID == 0 {
                 _name           = "\(_person!.firstName)"

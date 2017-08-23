@@ -217,12 +217,13 @@ class PlayerSelectVC: UIViewController {
             tempArray.append(person)
         }
 
-        
         for person in tempArray {
             let newPlayer = Player(withIdentity: person, withTeamName: nil)
             
-            if firstNameDict[person.firstName]! > 1 {
-                newPlayer.setPlayerNameWithLastInitial()
+            if !shouldAssignNumbersToPlayers {
+                if firstNameDict[person.firstName]! > 1 {
+                    newPlayer.setPlayerNameWithLastInitial()
+                }
             }
             
             tempPlayerArray.append(newPlayer)

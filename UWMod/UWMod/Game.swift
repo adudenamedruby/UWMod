@@ -31,6 +31,7 @@ class Game {
     private var _isNightPhase:                      Bool
     private var _werewolfEliminationsThisNight:     Int
     private var _timeGameStarted:                   Date
+    private var _timeGameEnded:                     Date!
     
     // Game settings
     private var _settings:                          GameSettings
@@ -141,6 +142,7 @@ class Game {
         get { return _wereTimer.isRunning }
     }
     
+    
     // MARK: - Initializer
     
     init(availableRoster: [Role], availablePlayers: [Player], withSettings: GameSettings = GameSettings()) {
@@ -171,7 +173,7 @@ class Game {
         
         
         // Team related variables
-        self._rolesInTheGame                = []
+        self._rolesInTheGame                 = []
         self._daytimeInfoCards               = []
         
         // Role related variables
@@ -207,12 +209,13 @@ class Game {
     }
     
     public func resetGame() {
+        stopTimer()
         GAME = Game(availableRoster: [], availablePlayers: [])
     }
     
     public func presentEndGameInfo () {
-//        let timeGameEnded = Date()
-//        let timePassed = timeGameEnded.timeIntervalSince(_timeGameStarted)
+//        self._timeGameEnded = Date()
+//        let timePassed = _timeGameEnded.timeIntervalSince(_timeGameStarted)
     }
     
     
