@@ -32,6 +32,7 @@ class AssignNumbersVC: UIViewController {
     let transition                          = CircularTransition()
     let standardDefaults                    = UserDefaults.standard
     var savedPlayers                        = [Person]()
+    var chosenPlayer:                       Player?
     
     var passedPlayers:                      [Player]!
 
@@ -49,12 +50,12 @@ class AssignNumbersVC: UIViewController {
         headerView.backgroundColor              = STYLE.Brown
         mainCard.layer.cornerRadius             = STYLE.CornerRadius
         
+        darknessView.isHidden                   = true
+        
         let headerTitle                         = "Assign Player Numbers"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
 
-//        nameField.delegate                      = self
-//        nameField.autocorrectionType            = UITextAutocorrectionType.yes
-
+        numberTextField.delegate                 = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -85,10 +86,33 @@ class AssignNumbersVC: UIViewController {
     // MARK: - Button functionality
 
     @IBAction func setNumberButtonPressed(_ sender: Any) {
+        if let newID = numberTextField.text, !newID.isEmpty {
+            chosenPlayer?.gameID    = Int(newID)!
+        }
+        
+        numberTextField.text        = ""
+        darknessView.isHidden       = true
+        dismissKeyboard()
+        tableView.reloadData()
+    }
+    
+    @IBAction func dismissDarknessTap(_ sender: Any) {
+        darknessView.isHidden = true
+        dismissKeyboard()
     }
     
     @IBAction func dismissButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func dismissKeyboard() {
+        numberTextField.endEditing(true)
+    }
+    
+    @IBAction func forwardButtonPressed(_ sender: Any) {
+        for player in passedPlayers {
+            player.setPlayerName()
+        }
     }
     
     // MARK: - Navigation
@@ -128,7 +152,10 @@ extension AssignNumbersVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        chosenPlayer = passedPlayers[indexPath.row]
+        darknessView.isHidden = false
+        numberTextField.becomeFirstResponder()
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -138,12 +165,6 @@ extension AssignNumbersVC: UITextFieldDelegate {
         
         if string.isEmpty {
             return true
-        }
-        
-        let characterSetNotAllowed = CharacterSet(charactersIn: "1234567890[]!@#$%^&*()){}|\\?+/=_\",<>:;")
-        if let _ = string.rangeOfCharacter(from: characterSetNotAllowed, options: .caseInsensitive) {
-            // They are trying to add caracters not allowed.
-            return false
         }
         
         return true
