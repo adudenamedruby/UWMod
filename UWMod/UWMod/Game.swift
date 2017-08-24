@@ -57,6 +57,7 @@ class Game {
     private var _werewolvesAreDiseased:             Bool
     private var _wolfRoles:                         [RoleType]
     private var _theWolfCubHasBeenSlain:            Bool
+    var dreamwolfIsPresent:                         Bool
     var aWerewolfHasBeenSlain:                      Bool
     var theBlobHasAbsorbed:                         Bool
     
@@ -123,7 +124,6 @@ class Game {
     var wolfRoles: [RoleType] {
         get { return _wolfRoles }
     }
-    
     
     var daytimeInfoCards: [DaytimeCardType] {
         get { return _daytimeInfoCards }
@@ -200,6 +200,7 @@ class Game {
                                                .FruitBrute,
                                                .Wolverine]
         self.aWerewolfHasBeenSlain          = false
+        self.dreamwolfIsPresent             = false
         self._theWolfCubHasBeenSlain        = false
         self.theBlobHasAbsorbed             = false
         
@@ -431,15 +432,17 @@ class Game {
         
         if firstNight {
             _firstNight = false
-            
-            // Why is this here? We shouldn't remove all availalbePlayers, right?
-            availablePlayers.removeAll()
-            availablePlayers = livingActors
+//            
+//            // Why is this here? We shouldn't remove all availalbePlayers, right?
+//            availablePlayers.removeAll()
+//            availablePlayers = livingActors
             
             if _playerAreAssignedNumbers {
+                availablePlayers.sort(by: { $0.gameID < $1.gameID } )
                 livingActors.sort(by: { $0.gameID < $1.gameID } )
                 
             } else {
+                availablePlayers.sort(by: { $0.name < $1.name } )
                 livingActors.sort(by: { $0.name < $1.name } )
             }
             
@@ -754,7 +757,9 @@ class Game {
         }
         
         if teamType == .TeamWerewolf {
+            
             teamPlayer.assignRole(role: WEREWOLF_TEAM)
+
         } else if teamType == .TeamVamprie {
             //teamPlayer.assignRole(role: VAMPIRE_TEAM)
         } else if teamType == .TeamBlob {

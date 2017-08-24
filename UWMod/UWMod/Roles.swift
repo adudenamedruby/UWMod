@@ -102,7 +102,7 @@ class Role {
     let type:                       RoleType
     let description:                String
     let roleExplanation:            String
-    let notes:                      String
+    var notes:                      String
     let impact:                     Int
     let priority:                   Int
     let team:                       [UWTeam]

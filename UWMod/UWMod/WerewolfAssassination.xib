@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="unW-JE-Nnh"/>
                 <outlet property="killVillagerButton" destination="zFE-9g-JAb" id="1DE-P1-9mV"/>
+                <outlet property="notesLabel" destination="pAU-mo-6FX" id="GMm-Lb-kLG"/>
                 <outlet property="timerLabel" destination="kEg-YP-gIJ" id="cFy-ww-AzD"/>
             </connections>
         </placeholder>
@@ -22,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFE-9g-JAb" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                    <rect key="frame" x="55" y="62.5" width="200" height="35"/>
+                    <rect key="frame" x="55" y="72.5" width="200" height="35"/>
                     <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="GNz-UD-V8I"/>
@@ -54,12 +55,20 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAU-mo-6FX">
+                    <rect key="frame" x="155" y="60" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="13"/>
+                    <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="zFE-9g-JAb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6JS-4a-XsS"/>
+                <constraint firstItem="pAU-mo-6FX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="96j-zB-fwy"/>
+                <constraint firstAttribute="bottom" secondItem="pAU-mo-6FX" secondAttribute="bottom" constant="80" id="Kpu-eb-yZt"/>
                 <constraint firstItem="kEg-YP-gIJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Qcd-tM-BUO"/>
-                <constraint firstItem="zFE-9g-JAb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="ePO-s7-7PG"/>
+                <constraint firstItem="zFE-9g-JAb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="20" id="ePO-s7-7PG"/>
                 <constraint firstItem="kEg-YP-gIJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="iyL-Ef-xvd"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

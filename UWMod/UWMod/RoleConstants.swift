@@ -17,6 +17,7 @@ let pregame_tempRoles: [Role] = [BEHOLDER,
                                  CUPID,
                                  CURSED,
                                  DISEASED,
+                                 DREAMWOLF,
                                  GHOST,
                                  HUNTER,
                                  INSOMNIAC,
@@ -89,6 +90,10 @@ let CURSED_WEREWOLF = Role(name: "Werewolf", type: .Werewolf, description: "Each
 
 
 let DISEASED = Role(name: "Diseased", type: .Diseased, description: "If you are eliminated by the Werewolves, they don't get to eliminate anyone the following night.", roleExplanation: "If the Werewolves target the Diseased player for elimination, they catch a viral infection which prevents them from eliminating anyone during the next night. If the game does not have role reveal, the werewolves still pick a target the following night, but that target is not eliminated.", impact: 3, priority: 88, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "diseased"), isNightActiveRole: .NotNightActiveRole)
+
+
+
+let DREAMWOLF = Role(name: "Dreamwolf", type: .Dreamwolf, description: "You only wake with the other Werewolves after a Werewolf has been killed.", roleExplanation: "The Dreamwolf is a werewolf, but doesn’t know who his fellow werewolves are and doesn’t wake up in the night with them until another werewolf is eliminated. His fellow werewolves don’t know who he is until he awakes with them at night. The Seer seems the Dreamwolf as a werewolf from the beginning of the game.", impact: -5, priority: 16, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "dreamwolf"), isNightActiveRole: .NightActiveRole)
 
 
 

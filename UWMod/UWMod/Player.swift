@@ -523,4 +523,8 @@ class Player {
     var rolePowerUsed: Bool {
         get { return _role.powerUsed }
     }
+    
+    public func setRoleNotes(newNotes: String) {
+        _role.notes = newNotes
+    }
 }

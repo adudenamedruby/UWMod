@@ -135,6 +135,9 @@ class ConfirmationPopup: UIViewController {
                 }
                 
             } else if reason == .AssignPlayer {
+                if role?.type == .Dreamwolf {
+                    GAME.dreamwolfIsPresent = true
+                }
                 chosenPlayer.assignRole(role: role!)
                 GAME.addPlayerToLivingActors(player: chosenPlayer)
                 
