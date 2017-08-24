@@ -30,6 +30,7 @@ class Game {
     private var _firstNight:                        Bool
     private var _isNightPhase:                      Bool
     private var _werewolfEliminationsThisNight:     Int
+    private var _playerAreAssignedNumbers:          Bool
     private var _timeGameStarted:                   Date
     private var _timeGameEnded:                     Date!
     
@@ -145,13 +146,21 @@ class Game {
     
     // MARK: - Initializer
     
-    init(availableRoster: [Role], availablePlayers: [Player], withSettings: GameSettings = GameSettings()) {
+    init(availableRoster: [Role], availablePlayers: [Player], withAssignedNumbers playerNumbers: Bool = false, withSettings: GameSettings = GameSettings()) {
         // Sort the roles by the role priority. This makes it easier to present the 
         // player list in some semblance of a correct order.
-        self.availablePlayers               = availablePlayers.sorted(by: { ($0.name) < ($1.name) })
         self.availableRoster                = availableRoster.sorted(by: { ($0.priority) < ($1.priority) })
+        
+        if playerNumbers {
+            self.availablePlayers               = availablePlayers.sorted(by: { ($0.gameID) < ($1.gameID) })
+            
+        } else {
+            self.availablePlayers               = availablePlayers.sorted(by: { ($0.name) < ($1.name) })
+
+        }
 
         // Game related variables
+        self._playerAreAssignedNumbers      = playerNumbers
         self._firstNight                    = true
         self._currentNight                  = 1
         self._currentDay                    = 1
@@ -422,9 +431,18 @@ class Game {
         
         if firstNight {
             _firstNight = false
+            
+            // Why is this here? We shouldn't remove all availalbePlayers, right?
             availablePlayers.removeAll()
             availablePlayers = livingActors
-            livingActors.sort(by: { $0.name < $1.name } )
+            
+            if _playerAreAssignedNumbers {
+                livingActors.sort(by: { $0.gameID < $1.gameID } )
+                
+            } else {
+                livingActors.sort(by: { $0.name < $1.name } )
+            }
+            
             determineRolesInTheGame()
         }
         
