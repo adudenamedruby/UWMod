@@ -211,6 +211,9 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             } else if player?.roleType == .Spellcaster && !((player?.hasActedTonight)!) {
                 presentSpellcasterView()
                 
+            } else if player?.roleType == .VirginiaWoolf && !((player?.hasActedTonight)!) {
+                presentVirginiasView()
+                
             }
         }
     }
@@ -282,6 +285,12 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
     private func presentSpellcasterView() {
         let localizedActionView = SpellcasterView(frame: actionViewFrame, withPlayer: player!)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    private func presentVirginiasView() {
+        let localizedActionView = VirginiasView(frame: actionViewFrame, withPlayer: player!)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }

@@ -286,6 +286,13 @@ class Game {
             
             if victim.roleType == .WolfCub {
                 _theWolfCubHasBeenSlain = true
+            
+            } else if victim.roleType == .VirginiaWoolf {
+                for player in self.livingActors {
+                    if player.isAffectedBy(condition: .Dependent) {
+                        eliminatePlayer(victim: player)
+                    }
+                }
             }
             
             if victim.killedBy != nil {

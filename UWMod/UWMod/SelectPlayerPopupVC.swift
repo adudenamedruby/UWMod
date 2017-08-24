@@ -21,6 +21,7 @@ enum SelectPlayerReason {
     case RoleClarification
     case BlobAbsorbtion
     case JoinTheCult
+    case VirginiaIsInTown
 }
 
 class SelectPlayerPopupVC: UIViewController {
@@ -130,6 +131,9 @@ class SelectPlayerPopupVC: UIViewController {
             } else if reason == .SilencePlayer {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
+            } else if reason == .VirginiaIsInTown {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
             }
             
         } else {
@@ -212,7 +216,8 @@ class SelectPlayerPopupVC: UIViewController {
         case .SilencePlayer:
             populatePlayersToSilence()
             
-            
+        case .VirginiaIsInTown:
+            populatePeopleToIntimidate()
             
         }
         
@@ -265,6 +270,9 @@ class SelectPlayerPopupVC: UIViewController {
             
         case .SilencePlayer:
             nc.post(name: NSNotification.Name(rawValue: SpellcasterSilenceFailureNotification), object: nil)
+            
+        case .VirginiaIsInTown:
+            nc.post(name: NSNotification.Name(rawValue: VirginiaIntimidationFailureNotification), object: nil)
             
         case .RoleClarification:
             break
@@ -458,6 +466,22 @@ extension SelectPlayerPopupVC {
         //unprotectedPlayersList.sort(by: { $0.name < $1.name })
         
         return possiblePlayers
+    }
+}
+
+extension SelectPlayerPopupVC {
+    
+    // Virginia Woolf!
+    func populatePeopleToIntimidate() {
+        availablePlayers.removeAll()
+        
+        for player in GAME.availablePlayers {
+            if !(player.isAffectedBy(condition: .Dependent)) && player.roleType != .VirginiaWoolf {
+                availablePlayers.append(player)
+            }
+        }
+        
+        //availablePlayers.sort(by: { $0.name < $1.name } )
     }
 }
 

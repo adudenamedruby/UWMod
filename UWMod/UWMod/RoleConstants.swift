@@ -21,7 +21,9 @@ let pregame_tempRoles: [Role] = [BEHOLDER,
                                  GHOST,
                                  HUNTER,
                                  INSOMNIAC,
+                                 LONE_WOLF,
                                  LYCAN,
+                                 MAD_BOMBER,
                                  MASON_ONE, MASON_TWO, MASON_THREE,
                                  MAYOR,
                                  MINION,
@@ -35,6 +37,7 @@ let pregame_tempRoles: [Role] = [BEHOLDER,
                                  THING,
                                  VILLAGE_IDIOT,
                                  VILLAGER_ONE, VILLAGER_TWO, VILLAGER_THREE, VILLAGER_FOUR, VILLAGER_FIVE, VILLAGER_SIX, VILLAGER_SEVEN, VILLAGER_EIGHT, VILLAGER_NINE, VILLAGER_TEN, VILLAGER_ELEVEN, VILLAGER_TWELVE, VILLAGER_THIRTEEN, VILLAGER_FOURTEEN, VILLAGER_FIFTEEN,
+                                 VIRGINIA_WOOLF,
                                  WEREWOLF_ONE, WEREWOLF_TWO, WEREWOLF_THREE, WEREWOLF_FOUR, WEREWOLF_FIVE, WEREWOLF_SIX, WEREWOLF_SEVEN, WEREWOLF_EIGHT, WEREWOLF_NINE, WEREWOLF_TEN, WEREWOLF_ELEVEN, WEREWOLF_TWELVE,
                                  WOLFCUB,
                                  WOLFMAN,
@@ -109,7 +112,15 @@ let INSOMNIAC = Role(name: "Insomniac", type: .Insomniac, description: "Each nig
 
 
 
+let LONE_WOLF = Role(name: "Lone Wolf", type: .LoneWolf, description: "Wake with the other Werewolves at night, but only win if you are the last wolf in the game.", roleExplanation: "The Lone Wolf only wins if he is the last player standing (or achieves parity with the village by having only one other non-werewolf player left in the game). The Lone Wolf wakes up with the werewolves to choose a target each night.", impact: -5, priority: 202, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "loneWolf"), isNightActiveRole: .NightActiveRole)
+
+
+
 let LYCAN = Role(name: "Lycan", type: .Lycan, description: "You are a Villager, but appear to the Seer as a Werewolf.", roleExplanation: "The Lycan is a villager of questionable parentage. Turns out, people were right to be slightly suspicios as the Lycan has a dormant drain of werewolfism, and appears to be a werewolf to the Seer even though she's not.", impact: -1, priority: 205, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "lycan"), isNightActiveRole: .NotNightActiveRole)
+
+
+
+let MAD_BOMBER = Role(name: "Mad Bomber", type: .MadBomber, description: "If you are eliminated, the players immediately to your left and right are eliminated as well.", roleExplanation: "If the Mad Bomber is eliminated, the player closest to him on both the right and left of him is eliminated instantly. The right player is eliminated before the left player (this can matter in certain situations).", impact: -2, priority: 109, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "madBomber"), isNightActiveRole: .NotNightActiveRole)
 
 
 
@@ -194,6 +205,11 @@ let VILLAGER_THIRTEEN = Role(name: "Villager", type: .Villager, description: "Fi
 let VILLAGER_FOURTEEN = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.", impact: 3, priority: 263, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
 
 let VILLAGER_FIFTEEN = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.", impact: 3, priority: 264, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+
+
+
+let VIRGINIA_WOOLF = Role(name: "The Provider", type: .VirginiaWoolf, description: "The first night, choose a player that depends on you. If you are eliminated, that player is also eliminated.", roleExplanation: "The Provider is a caring and giving individual. So much so, that some people come to rely soley on them. The first night, the Provider chooses someone who has become dependent on them. That player is woken up and shown who they depend on. If the Provider is eliminated, so is that player.", impact: -2, priority: 97, powerChoice: false, team: [.TeamVillage], availableEffects: [.Dependent], image: #imageLiteral(resourceName: "virginiaWoolf"), isNightActiveRole: .NotNightActiveRole)
+
 
 
 

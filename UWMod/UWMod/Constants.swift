@@ -83,3 +83,5 @@ let CupidLovestrikeSecondSuccessNotification        = "cupidLovestrikeSecondSucc
 let CupidLovestrikeFailureNotification              = "cupidLovestrikeFailureNotification"
 let SpellcasterSilenceSuccessNotification           = "spellcasterSilenceSuccessNotification"
 let SpellcasterSilenceFailureNotification           = "spellcasterSilenceFailureNotification"
+let VirginiaIntimidationSuccessNotification         = "virginiaIntimidationSuccessNotification"
+let VirginiaIntimidationFailureNotification         = "virginiaIntididationFailureNotification"

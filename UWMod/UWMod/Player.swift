@@ -424,11 +424,16 @@ class Player {
                                                    causedBy: self)
             
         case .VirginiaWoolf:
-            break
+            addTargetToPluralAffectingPlayerList(condition: .Dependent,
+                                                 affectedPlayer: playerToLink)
+            addTargetToPluralIneligibilityList(condition: .Dependent,
+                                               playerToAdd: playerToLink)
+            
+            playerToLink.addEffectFromOtherPlayers(condition: .Dependent,
+                                                   causedBy: self)
             
         default: break
         }
-        
     }
     
     /// Apply the Lobotomy effect to other players

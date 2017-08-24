@@ -68,6 +68,7 @@ enum PlayerEffects {
     case Ostracism
     case Lobotomy           // zombie
     case Lovestruck         // cupid
+    case Dependent          // Virginia Woolf
 }
 
 

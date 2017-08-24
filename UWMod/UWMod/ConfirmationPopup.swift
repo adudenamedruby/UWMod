@@ -87,6 +87,10 @@ class ConfirmationPopup: UIViewController {
                 headerTitle             = "Confirm Silence"
                 alternateAlertText      = "Are you sure you want to silence \(chosenPlayer.name)?"
   
+            } else if reason            == .VirginiaIsInTown {
+                headerTitle             = "Confirm Care"
+                alternateAlertText      = "Are you sure you want to choose \(chosenPlayer.name) as a dependent?"
+                
             }
         }
         
@@ -170,6 +174,10 @@ class ConfirmationPopup: UIViewController {
                 actingPlayer?.silence(playerToSilence: chosenPlayer)
                 actingPlayer?.hasActedTonight = true
                 
+            } else if reason == .VirginiaIsInTown {
+                actingPlayer?.linkPlayers(playerToLink: chosenPlayer)
+                actingPlayer?.hasActedTonight = true
+                
             }
         }
         
@@ -210,6 +218,9 @@ class ConfirmationPopup: UIViewController {
             } else if self.reason == .SilencePlayer {
                 self.notify(name: SpellcasterSilenceSuccessNotification)
             
+            } else if self.reason == .VirginiaIsInTown {
+                self.notify(name: VirginiaIntimidationSuccessNotification)
+                
             }
             
             
