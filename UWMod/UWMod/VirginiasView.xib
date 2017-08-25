@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CaviarDreams_Bold.ttf">
+            <string>CaviarDreams-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VirginiasView" customModule="UWMod" customModuleProvider="target">
             <connections>
@@ -27,7 +32,7 @@
                         <constraint firstAttribute="width" constant="200" id="K6X-CC-bMh"/>
                         <constraint firstAttribute="height" constant="35" id="RLh-ik-AU5"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
                     <state key="normal" title="Choose Dependent">
                         <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>

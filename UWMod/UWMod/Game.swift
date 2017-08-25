@@ -133,6 +133,10 @@ class Game {
         get { return _settings }
     }
     
+    var playersAreAssignedNumbers: Bool {
+        get { return _playerAreAssignedNumbers }
+    }
+    
     
     // Timer variables
     var currentTime: String {

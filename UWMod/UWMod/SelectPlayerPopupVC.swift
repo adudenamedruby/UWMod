@@ -330,8 +330,11 @@ extension SelectPlayerPopupVC {
                 availablePlayers.append(player)
             }
         }
-        
-        availablePlayers.sort(by: { $0.name < $1.name } )
+        if GAME.playersAreAssignedNumbers {
+            availablePlayers.sort(by: { $0.gameID < $1.gameID } )
+        } else {
+            availablePlayers.sort(by: { $0.name < $1.name } )
+        }
     }
 }
 
@@ -420,8 +423,16 @@ extension SelectPlayerPopupVC {
     func populateNonCultPlayers() {
         availablePlayers.removeAll()
         
-        for player in GAME.livingActors {
-            if !(player.team.contains(.TeamCult)) {
+        let array:      [Player]
+        
+        if GAME.firstNight {
+            array = GAME.availablePlayers
+        } else {
+            array = GAME.livingActors
+        }
+        
+        for player in array {
+            if !(player.team.contains(.TeamCult)) && player !== activePlayer {
                 availablePlayers.append(player)
             }
         }
@@ -477,7 +488,7 @@ extension SelectPlayerPopupVC {
         availablePlayers.removeAll()
         
         for player in GAME.availablePlayers {
-            if !(player.isAffectedBy(condition: .Dependent)) && player.roleType != .VirginiaWoolf {
+            if !(player.isAffectedBy(condition: .Dependent)) && player !== activePlayer {
                 availablePlayers.append(player)
             }
         }
