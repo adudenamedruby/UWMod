@@ -470,7 +470,6 @@ class Game {
     public func finishDay() {
         
         clearPhaseReport()
-        assignInfoCardsToPlayers()
         eliminatePlayers()
         resetPlayerDayActions()
         determineNumberOfWerewolfEliminations()

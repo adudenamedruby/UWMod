@@ -46,7 +46,6 @@ enum DaytimeCardType {
     case CountDraculaTeamCard
     case CultTeamCard
     case HoodlumTeamCard
-    case TannerTeamCard
     case VampireTeamCard
     case VillageTeamCard
     case WerewolfTeamCard
@@ -58,6 +57,8 @@ enum DaytimeCardType {
     // Indivitual cards - cards like the Witch who has protected AND poisoned someone.
     case WitchCard
     case TeenageWerewolfCard
+    case VirginiasCard
+    case TannerTeamCard
 }
 
 // To be added as time goes by.

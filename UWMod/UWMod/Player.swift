@@ -148,6 +148,12 @@ class Player {
         if currentConditions.contains(.Silence) {
             addAppropriateCard(daytimeCard: .SpellcasterSilenceCard)
         }
+        
+        if self._role.type == .VirginiaWoolf {
+            if (affectingPlayers[.Dependent]?[0].isAlive)! {
+                addAppropriateCard(daytimeCard: .VirginiasCard)
+            }
+        }
     }
     
     private func determineDaytimeInfoCardForTeam() {
@@ -165,6 +171,8 @@ class Player {
                 addAppropriateCard(daytimeCard: .CultTeamCard)
             } else if teamX == .TeamLovebirds {
                 addAppropriateCard(daytimeCard: .LovebirdTeamCard)
+            } else if teamX == .TeamTanner {
+                addAppropriateCard(daytimeCard: .TannerTeamCard)
             }
         }
     }
@@ -216,6 +224,8 @@ class Player {
                 }
             }
         }
+        
+        daytimeInfoCards.removeAll()
     }
     
     

@@ -32,6 +32,7 @@ let pregame_tempRoles: [Role] = [BEHOLDER,
                                  SEER,
                                  SORCERESS,
                                  SPELLCASTER,
+                                 TANNER,
                                  THE_BLOB,
                                  THE_COUNT,
                                  THING,
@@ -165,6 +166,10 @@ let THE_BLOB = Role(name: "The Blob", type: .TheBlob, description: "Each night, 
 
 
 let THE_COUNT = Role(name: "The Count", type: .TheCount, description: "The first night you are told how many Werewolves are in each half of the village.", roleExplanation: "The first night, The Count is told how many Werewolves are in each half of the village. The Moderator should indicate where the 'halfway' point is (ideally, across from the Count) and tell him the number of werewolves in each half.\n\nThe smaller the game, the more impact this has. It’s a bad idea to add the Count to a game where there is only one Werewolf (from the werewolves point of view).", impact: 5, priority: 106, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "theCount"), isNightActiveRole: .NotNightActiveRole)
+
+
+
+let TANNER = Role(name: "Tanner", type: .Tanner, description: "You hate your job and your life. You win if you are eliminated.", roleExplanation: "The Tanner only wins if he is eliminated. Victory conditions for the other teams are still present; the game continues after the Tanner wins.", impact: -2, priority: 58, powerChoice: false, team: [.TeamTanner], availableEffects: [], image: #imageLiteral(resourceName: "tanner"), isNightActiveRole: .NotNightActiveRole)
 
 
 

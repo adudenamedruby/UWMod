@@ -158,6 +158,10 @@ class DayVC: UIViewController {
                            forCellReuseIdentifier: "sweetheartCell")
         tableView.register(UINib(nibName: "SpellcasterCell", bundle: nil),
                            forCellReuseIdentifier: "spellcasterCell")
+        tableView.register(UINib(nibName: "TannerTeamCell", bundle: nil),
+                           forCellReuseIdentifier: "tannerTeamCell")
+        tableView.register(UINib(nibName: "VirginiaTeamCell", bundle: nil),
+                           forCellReuseIdentifier: "virginiaTeamCell")
     }
     
     private func fadeButtonsIn() {
@@ -224,6 +228,16 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
         } else if currentType == .ZombieTeamCard {
             let cell = tableView.dequeueReusableCell(withIdentifier: "zombieCell", for: indexPath) as! ZombieCell
             cell.playersAffectedByZombie = GAME.fetchPlayersAffectedByEffect(fromList: GAME.livingActors, affectedBy: .Lobotomy, withRole: false, separatedByComma: true)
+            cell.configureCell()
+            return cell
+            
+        } else if currentType == .TannerTeamCard {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "tannerTeamCell", for: indexPath) as! TannerTeamCell
+            cell.configureCell()
+            return cell
+            
+        } else if currentType == .VirginiasCard {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "virginiaTeamCell", for: indexPath) as! VirginiaTeamCell
             cell.configureCell()
             return cell
             
