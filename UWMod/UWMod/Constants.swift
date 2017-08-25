@@ -35,16 +35,17 @@ struct StyleConstants {
     
     let OldMenuTopFont      = UIFont(name: "OldWiseSketch", size: 60) // for menu title
     let OldMenuBottomFont   = UIFont(name: "OldWiseSketch", size: 70) // for menu title
-    let OldStandardFont     = UIFont(name: "OldWiseSketch", size: 40) // used throughout the app
+    let OldStandardFont     = UIFont(name: "EnchantedLand", size: 50) // used throughout the app
     let OldRoleFont         = UIFont(name: "OldWiseSketch", size: 50) // used for nightPhase card titles
     
-    let RegSmallFont        = UIFont(name: "AmericanTypewriter", size: 13)
-    let RegStandardFont     = UIFont(name: "AmericanTypewriter", size: 15)
-    let RegLargeFont        = UIFont(name: "AmericanTypewriter", size: 18)
-    let RegBoldSmallFont    = UIFont(name: "AmericanTypewriter-Bold", size: 13)
-    let RegBoldFont         = UIFont(name: "AmericanTypewriter-Bold", size: 16)
-    let RegBoldHeaderFont   = UIFont(name: "AmericanTypewriter-Bold", size: 20)
-    let RegBoldSettingsFont = UIFont(name: "AmericanTypewriter-Bold", size: 25)
+    let RegSmallFont        = UIFont(name: "CaviarDreams", size: 13)
+    let RegStandardFont     = UIFont(name: "CaviarDreams", size: 15)
+    let RegLargeFont        = UIFont(name: "CaviarDreams", size: 18)
+    let RegBoldSmallFont    = UIFont(name: "CaviarDreams-Bold", size: 13)
+    let RegBoldTableView    = UIFont(name: "CaviarDreams-Bold", size: 15)
+    let RegBoldFont         = UIFont(name: "CaviarDreams-Bold", size: 16)
+    let RegBoldHeaderFont   = UIFont(name: "CaviarDreams-Bold", size: 20)
+    let RegBoldSettingsFont = UIFont(name: "CaviarDreams-Bold", size: 25)
 
 }
 
@@ -83,3 +84,5 @@ let CupidLovestrikeSecondSuccessNotification        = "cupidLovestrikeSecondSucc
 let CupidLovestrikeFailureNotification              = "cupidLovestrikeFailureNotification"
 let SpellcasterSilenceSuccessNotification           = "spellcasterSilenceSuccessNotification"
 let SpellcasterSilenceFailureNotification           = "spellcasterSilenceFailureNotification"
+let VirginiaIntimidationSuccessNotification         = "virginiaIntimidationSuccessNotification"
+let VirginiaIntimidationFailureNotification         = "virginiaIntididationFailureNotification"

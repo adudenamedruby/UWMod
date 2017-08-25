@@ -57,6 +57,17 @@
 		127ACFEF1F46621B004E9779 /* PriestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACFEE1F46621B004E9779 /* PriestView.swift */; };
 		12960F9B1F49DB9100EA8A97 /* AssignNumbersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12960F9A1F49DB9100EA8A97 /* AssignNumbersVC.swift */; };
 		1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1298C8A21F3DD15D00261779 /* Notes.rtf */; };
+		12C8FDAB1F4F946900D36BF4 /* VirginiasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8FDAA1F4F946900D36BF4 /* VirginiasView.swift */; };
+		12C8FDAD1F4F949700D36BF4 /* VirginiasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C8FDAC1F4F949700D36BF4 /* VirginiasView.xib */; };
+		12C8FDB01F4F9B2E00D36BF4 /* VirginiaTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8FDAE1F4F9B2E00D36BF4 /* VirginiaTeamCell.swift */; };
+		12C8FDB11F4F9B2E00D36BF4 /* VirginiaTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C8FDAF1F4F9B2E00D36BF4 /* VirginiaTeamCell.xib */; };
+		12C8FDB41F4F9B4800D36BF4 /* TannerTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8FDB21F4F9B4800D36BF4 /* TannerTeamCell.swift */; };
+		12C8FDB51F4F9B4800D36BF4 /* TannerTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C8FDB31F4F9B4800D36BF4 /* TannerTeamCell.xib */; };
+		12C8FDBB1F4FA96300D36BF4 /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12C8FDB61F4FA96300D36BF4 /* CaviarDreams_Bold.ttf */; };
+		12C8FDBC1F4FA96300D36BF4 /* CaviarDreams_BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12C8FDB71F4FA96300D36BF4 /* CaviarDreams_BoldItalic.ttf */; };
+		12C8FDBD1F4FA96300D36BF4 /* CaviarDreams_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12C8FDB81F4FA96300D36BF4 /* CaviarDreams_Italic.ttf */; };
+		12C8FDBE1F4FA96300D36BF4 /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12C8FDB91F4FA96300D36BF4 /* CaviarDreams.ttf */; };
+		12C8FDBF1F4FA96300D36BF4 /* Enchanted Land.otf in Resources */ = {isa = PBXBuildFile; fileRef = 12C8FDBA1F4FA96300D36BF4 /* Enchanted Land.otf */; };
 		12CA22C71F49125700954370 /* Weretimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CA22C61F49125700954370 /* Weretimer.swift */; };
 		12CA22C91F4924E600954370 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CA22C81F4924E600954370 /* Person.swift */; };
 		12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */; };
@@ -163,6 +174,17 @@
 		127ACFEE1F46621B004E9779 /* PriestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriestView.swift; sourceTree = "<group>"; };
 		12960F9A1F49DB9100EA8A97 /* AssignNumbersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignNumbersVC.swift; sourceTree = "<group>"; };
 		1298C8A21F3DD15D00261779 /* Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
+		12C8FDAA1F4F946900D36BF4 /* VirginiasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirginiasView.swift; sourceTree = "<group>"; };
+		12C8FDAC1F4F949700D36BF4 /* VirginiasView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VirginiasView.xib; sourceTree = "<group>"; };
+		12C8FDAE1F4F9B2E00D36BF4 /* VirginiaTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirginiaTeamCell.swift; sourceTree = "<group>"; };
+		12C8FDAF1F4F9B2E00D36BF4 /* VirginiaTeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VirginiaTeamCell.xib; sourceTree = "<group>"; };
+		12C8FDB21F4F9B4800D36BF4 /* TannerTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TannerTeamCell.swift; sourceTree = "<group>"; };
+		12C8FDB31F4F9B4800D36BF4 /* TannerTeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TannerTeamCell.xib; sourceTree = "<group>"; };
+		12C8FDB61F4FA96300D36BF4 /* CaviarDreams_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams_Bold.ttf; sourceTree = "<group>"; };
+		12C8FDB71F4FA96300D36BF4 /* CaviarDreams_BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams_BoldItalic.ttf; sourceTree = "<group>"; };
+		12C8FDB81F4FA96300D36BF4 /* CaviarDreams_Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams_Italic.ttf; sourceTree = "<group>"; };
+		12C8FDB91F4FA96300D36BF4 /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams.ttf; sourceTree = "<group>"; };
+		12C8FDBA1F4FA96300D36BF4 /* Enchanted Land.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Enchanted Land.otf"; sourceTree = "<group>"; };
 		12CA22C61F49125700954370 /* Weretimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weretimer.swift; sourceTree = "<group>"; };
 		12CA22C81F4924E600954370 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		12D15E1D1F2D2E7E0057905E /* PMSuperButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSuperButton.swift; sourceTree = "<group>"; };
@@ -270,6 +292,7 @@
 				122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */,
 				127ACFE81F426660004E9779 /* SorceressView.swift */,
 				124A133A1F4769CB0037DA94 /* SpellcasterView.swift */,
+				12C8FDAA1F4F946900D36BF4 /* VirginiasView.swift */,
 				124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */,
 				12DFBB451F3E6BAD00D71944 /* ZombieLobotomy.swift */,
 			);
@@ -288,6 +311,7 @@
 				122FC69F1F392F9C00E0E2C9 /* SeerInspection.xib */,
 				127ACFEA1F42666F004E9779 /* SorceressView.xib */,
 				124A133C1F4769DB0037DA94 /* SpellcasterView.xib */,
+				12C8FDAC1F4F949700D36BF4 /* VirginiasView.xib */,
 				124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */,
 				12DFBB431F3E6B9700D71944 /* ZombieLobotomy.xib */,
 			);
@@ -329,7 +353,9 @@
 				127ACFE51F425986004E9779 /* JoinCultCell.xib */,
 				12DA2CE01F47978000D0193A /* SpellcasterCell.xib */,
 				124A13371F47410E0037DA94 /* SweetheartCell.xib */,
+				12C8FDB31F4F9B4800D36BF4 /* TannerTeamCell.xib */,
 				124F74EE1F3549BB00F03E49 /* VillageTeamCell.xib */,
+				12C8FDAF1F4F9B2E00D36BF4 /* VirginiaTeamCell.xib */,
 				124F74EA1F3530A200F03E49 /* WerewolfTeamCell.xib */,
 				12DFBB3C1F3E55E400D71944 /* ZombieCell.xib */,
 			);
@@ -457,6 +483,11 @@
 		12EC77F91F2BE1A70026C667 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				12C8FDB61F4FA96300D36BF4 /* CaviarDreams_Bold.ttf */,
+				12C8FDB71F4FA96300D36BF4 /* CaviarDreams_BoldItalic.ttf */,
+				12C8FDB81F4FA96300D36BF4 /* CaviarDreams_Italic.ttf */,
+				12C8FDB91F4FA96300D36BF4 /* CaviarDreams.ttf */,
+				12C8FDBA1F4FA96300D36BF4 /* Enchanted Land.otf */,
 				12EC77FA1F2BE1D40026C667 /* Old Wise Sketch.otf */,
 			);
 			name = Fonts;
@@ -481,7 +512,9 @@
 				127ACFE41F425986004E9779 /* JoinCultCell.swift */,
 				12DA2CDF1F47978000D0193A /* SpellcasterCell.swift */,
 				124A13361F47410E0037DA94 /* SweetheartCell.swift */,
+				12C8FDB21F4F9B4800D36BF4 /* TannerTeamCell.swift */,
 				124F74ED1F3549BB00F03E49 /* VillageTeamCell.swift */,
+				12C8FDAE1F4F9B2E00D36BF4 /* VirginiaTeamCell.swift */,
 				124F74E91F3530A200F03E49 /* WerewolfTeamCell.swift */,
 				12DFBB3B1F3E55E400D71944 /* ZombieCell.swift */,
 			);
@@ -551,7 +584,10 @@
 				120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */,
 				12EC77F61F2BDBE40026C667 /* DayPhase.storyboard in Resources */,
 				124F74EC1F3530A200F03E49 /* WerewolfTeamCell.xib in Resources */,
+				12C8FDBE1F4FA96300D36BF4 /* CaviarDreams.ttf in Resources */,
+				12C8FDBB1F4FA96300D36BF4 /* CaviarDreams_Bold.ttf in Resources */,
 				77B2B0071F34D7AC0032A36B /* Graveyard.xib in Resources */,
+				12C8FDBF1F4FA96300D36BF4 /* Enchanted Land.otf in Resources */,
 				123BD0D31F2F6BF600B99019 /* Popups.storyboard in Resources */,
 				12EC77F41F2BDBD90026C667 /* NightPhase.storyboard in Resources */,
 				12DA2CE21F47978000D0193A /* SpellcasterCell.xib in Resources */,
@@ -561,16 +597,21 @@
 				127ACFED1F466201004E9779 /* PriestView.xib in Resources */,
 				122FC6A01F392F9C00E0E2C9 /* SeerInspection.xib in Resources */,
 				1261C2BF1F32AA960099D759 /* GeneralInfo.xib in Resources */,
+				12C8FDB11F4F9B2E00D36BF4 /* VirginiaTeamCell.xib in Resources */,
 				12DFBB441F3E6B9700D71944 /* ZombieLobotomy.xib in Resources */,
 				124F74F81F35FF4D00F03E49 /* WerewolfAssassination.xib in Resources */,
+				12C8FDBC1F4FA96300D36BF4 /* CaviarDreams_BoldItalic.ttf in Resources */,
 				1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */,
 				123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */,
+				12C8FDB51F4F9B4800D36BF4 /* TannerTeamCell.xib in Resources */,
+				12C8FDAD1F4F949700D36BF4 /* VirginiasView.xib in Resources */,
 				127ACFE71F425986004E9779 /* JoinCultCell.xib in Resources */,
 				124A13391F47410E0037DA94 /* SweetheartCell.xib in Resources */,
 				122FC6981F377BCE00E0E2C9 /* BodyguardView.xib in Resources */,
 				12154A611F410229003A5D86 /* BlobCell.xib in Resources */,
 				12DA2CDE1F40DDE600D0193A /* BlobAbsorbtion.xib in Resources */,
 				127ACFEB1F42666F004E9779 /* SorceressView.xib in Resources */,
+				12C8FDBD1F4FA96300D36BF4 /* CaviarDreams_Italic.ttf in Resources */,
 				124A13351F4735CC0037DA94 /* CupidView.xib in Resources */,
 				124A133D1F4769DB0037DA94 /* SpellcasterView.xib in Resources */,
 				127ACFE31F4256AB004E9779 /* JoinCultView.xib in Resources */,
@@ -602,6 +643,7 @@
 				12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */,
 				77F9E1201F31040600E48211 /* OldTextLabels.swift in Sources */,
 				12D15E231F2EA8470057905E /* MainGameVC.swift in Sources */,
+				12C8FDB01F4F9B2E00D36BF4 /* VirginiaTeamCell.swift in Sources */,
 				12D15E201F2E82870057905E /* RoleSelectionCell.swift in Sources */,
 				12EC77E71F2BDAC00026C667 /* PlayerSelectVC.swift in Sources */,
 				127ACFEF1F46621B004E9779 /* PriestView.swift in Sources */,
@@ -655,9 +697,11 @@
 				12960F9B1F49DB9100EA8A97 /* AssignNumbersVC.swift in Sources */,
 				7736D0921F3399BC00555037 /* HelpVC.swift in Sources */,
 				1261C2B31F325AF20099D759 /* EliminatePlayerVC.swift in Sources */,
+				12C8FDAB1F4F946900D36BF4 /* VirginiasView.swift in Sources */,
 				123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */,
 				12DFBB461F3E6BAD00D71944 /* ZombieLobotomy.swift in Sources */,
 				124A13331F4735C20037DA94 /* CupidView.swift in Sources */,
+				12C8FDB41F4F9B4800D36BF4 /* TannerTeamCell.swift in Sources */,
 				7736D09C1F33A36700555037 /* HelpCellHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

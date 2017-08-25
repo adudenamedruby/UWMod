@@ -21,6 +21,7 @@ enum SelectPlayerReason {
     case RoleClarification
     case BlobAbsorbtion
     case JoinTheCult
+    case VirginiaIsInTown
 }
 
 class SelectPlayerPopupVC: UIViewController {
@@ -130,6 +131,9 @@ class SelectPlayerPopupVC: UIViewController {
             } else if reason == .SilencePlayer {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
+            } else if reason == .VirginiaIsInTown {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
             }
             
         } else {
@@ -212,7 +216,8 @@ class SelectPlayerPopupVC: UIViewController {
         case .SilencePlayer:
             populatePlayersToSilence()
             
-            
+        case .VirginiaIsInTown:
+            populatePeopleToIntimidate()
             
         }
         
@@ -266,6 +271,9 @@ class SelectPlayerPopupVC: UIViewController {
         case .SilencePlayer:
             nc.post(name: NSNotification.Name(rawValue: SpellcasterSilenceFailureNotification), object: nil)
             
+        case .VirginiaIsInTown:
+            nc.post(name: NSNotification.Name(rawValue: VirginiaIntimidationFailureNotification), object: nil)
+            
         case .RoleClarification:
             break
         }
@@ -288,12 +296,13 @@ extension SelectPlayerPopupVC: UITableViewDelegate, UITableViewDataSource {
         
         let row = indexPath.row
         if reason == .RoleClarification {
-            cell.textLabel?.text = availablePlayers[row].roleName
+            cell.textLabel?.text    = availablePlayers[row].roleName
         } else {
-            cell.textLabel?.text = availablePlayers[row].name
+            cell.textLabel?.text    = availablePlayers[row].name
         }
-        cell.textLabel?.textColor = STYLE.Brown
-        cell.selectionStyle = .none
+        cell.textLabel?.textColor   = STYLE.Brown
+        cell.textLabel?.font        = STYLE.RegBoldTableView
+        cell.selectionStyle         = .none
         
         return cell
     }
@@ -321,8 +330,11 @@ extension SelectPlayerPopupVC {
                 availablePlayers.append(player)
             }
         }
-        
-        availablePlayers.sort(by: { $0.name < $1.name } )
+        if GAME.playersAreAssignedNumbers {
+            availablePlayers.sort(by: { $0.gameID < $1.gameID } )
+        } else {
+            availablePlayers.sort(by: { $0.name < $1.name } )
+        }
     }
 }
 
@@ -411,8 +423,16 @@ extension SelectPlayerPopupVC {
     func populateNonCultPlayers() {
         availablePlayers.removeAll()
         
-        for player in GAME.livingActors {
-            if !(player.team.contains(.TeamCult)) {
+        let array:      [Player]
+        
+        if GAME.firstNight {
+            array = GAME.availablePlayers
+        } else {
+            array = GAME.livingActors
+        }
+        
+        for player in array {
+            if !(player.team.contains(.TeamCult)) && player !== activePlayer {
                 availablePlayers.append(player)
             }
         }
@@ -458,6 +478,22 @@ extension SelectPlayerPopupVC {
         //unprotectedPlayersList.sort(by: { $0.name < $1.name })
         
         return possiblePlayers
+    }
+}
+
+extension SelectPlayerPopupVC {
+    
+    // Virginia Woolf!
+    func populatePeopleToIntimidate() {
+        availablePlayers.removeAll()
+        
+        for player in GAME.availablePlayers {
+            if !(player.isAffectedBy(condition: .Dependent)) && player !== activePlayer {
+                availablePlayers.append(player)
+            }
+        }
+        
+        //availablePlayers.sort(by: { $0.name < $1.name } )
     }
 }
 

@@ -17,10 +17,13 @@ let pregame_tempRoles: [Role] = [BEHOLDER,
                                  CUPID,
                                  CURSED,
                                  DISEASED,
+                                 DREAMWOLF,
                                  GHOST,
                                  HUNTER,
                                  INSOMNIAC,
+                                 LONE_WOLF,
                                  LYCAN,
+                                 MAD_BOMBER,
                                  MASON_ONE, MASON_TWO, MASON_THREE,
                                  MAYOR,
                                  MINION,
@@ -29,11 +32,13 @@ let pregame_tempRoles: [Role] = [BEHOLDER,
                                  SEER,
                                  SORCERESS,
                                  SPELLCASTER,
+                                 TANNER,
                                  THE_BLOB,
                                  THE_COUNT,
                                  THING,
                                  VILLAGE_IDIOT,
                                  VILLAGER_ONE, VILLAGER_TWO, VILLAGER_THREE, VILLAGER_FOUR, VILLAGER_FIVE, VILLAGER_SIX, VILLAGER_SEVEN, VILLAGER_EIGHT, VILLAGER_NINE, VILLAGER_TEN, VILLAGER_ELEVEN, VILLAGER_TWELVE, VILLAGER_THIRTEEN, VILLAGER_FOURTEEN, VILLAGER_FIFTEEN,
+                                 VIRGINIA_WOOLF,
                                  WEREWOLF_ONE, WEREWOLF_TWO, WEREWOLF_THREE, WEREWOLF_FOUR, WEREWOLF_FIVE, WEREWOLF_SIX, WEREWOLF_SEVEN, WEREWOLF_EIGHT, WEREWOLF_NINE, WEREWOLF_TEN, WEREWOLF_ELEVEN, WEREWOLF_TWELVE,
                                  WOLFCUB,
                                  WOLFMAN,
@@ -92,6 +97,10 @@ let DISEASED = Role(name: "Diseased", type: .Diseased, description: "If you are 
 
 
 
+let DREAMWOLF = Role(name: "Dreamwolf", type: .Dreamwolf, description: "You only wake with the other Werewolves after a Werewolf has been killed.", roleExplanation: "The Dreamwolf is a werewolf, but doesn’t know who his fellow werewolves are and doesn’t wake up in the night with them until another werewolf is eliminated. His fellow werewolves don’t know who he is until he awakes with them at night. The Seer seems the Dreamwolf as a werewolf from the beginning of the game.", impact: -5, priority: 16, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "dreamwolf"), isNightActiveRole: .NightActiveRole)
+
+
+
 let GHOST = Role(name: "Phantom", type: .Ghost, description: "Perish on the first night. Observe the night round, and provide the village a single letter clue each day.", roleExplanation: "The Phantom is the spirit of a villager that has perished the first night. The Phantom will watch each night round and, for the first ten rounds, will provide a single letter clue, as a message from beyond to the village. There are a few limitations: the Phantom may not attempt to identify any player by name or initials. The Phantom should try to be as helpful as possible with their clues, but, must try and remain calm if people are mis-interpreting their clues.", impact: 2, priority: 1, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "ghost"), isNightActiveRole: .NotNightActiveRole)
 
 
@@ -104,7 +113,15 @@ let INSOMNIAC = Role(name: "Insomniac", type: .Insomniac, description: "Each nig
 
 
 
+let LONE_WOLF = Role(name: "Lone Wolf", type: .LoneWolf, description: "Wake with the other Werewolves at night, but only win if you are the last wolf in the game.", roleExplanation: "The Lone Wolf only wins if he is the last player standing (or achieves parity with the village by having only one other non-werewolf player left in the game). The Lone Wolf wakes up with the werewolves to choose a target each night.", impact: -5, priority: 202, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "loneWolf"), isNightActiveRole: .NightActiveRole)
+
+
+
 let LYCAN = Role(name: "Lycan", type: .Lycan, description: "You are a Villager, but appear to the Seer as a Werewolf.", roleExplanation: "The Lycan is a villager of questionable parentage. Turns out, people were right to be slightly suspicios as the Lycan has a dormant drain of werewolfism, and appears to be a werewolf to the Seer even though she's not.", impact: -1, priority: 205, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "lycan"), isNightActiveRole: .NotNightActiveRole)
+
+
+
+let MAD_BOMBER = Role(name: "Mad Bomber", type: .MadBomber, description: "If you are eliminated, the players immediately to your left and right are eliminated as well.", roleExplanation: "If the Mad Bomber is eliminated, the player closest to him on both the right and left of him is eliminated instantly. The right player is eliminated before the left player (this can matter in certain situations).", impact: -2, priority: 109, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "madBomber"), isNightActiveRole: .NotNightActiveRole)
 
 
 
@@ -152,6 +169,10 @@ let THE_COUNT = Role(name: "The Count", type: .TheCount, description: "The first
 
 
 
+let TANNER = Role(name: "Tanner", type: .Tanner, description: "You hate your job and your life. You win if you are eliminated.", roleExplanation: "The Tanner only wins if he is eliminated. Victory conditions for the other teams are still present; the game continues after the Tanner wins.", impact: -2, priority: 58, powerChoice: false, team: [.TeamTanner], availableEffects: [], image: #imageLiteral(resourceName: "tanner"), isNightActiveRole: .NotNightActiveRole)
+
+
+
 let THING = Role(name: "The Thing", type: .TheThing, description: "Each night, tap a player sitting immediately next to you.", roleExplanation: "The Thing (that goes bump in the night) awakes each night and must tap one of the players next to him. He may tap a player he’s already tapped, or pick a different player each night (as long as that player is next to him). If the player next to the Thing is eliminated, the Thing may tap the next player over. But each night, he must tap one of his neighbours (even if his original neighbours are eliminated).\n\nThe good 'thing' about the Thing is that if he is sitting next to players on the village team, they know they can trust him. However, if he is sitting next to even one Werewolf, it’s probably in the werewolves’ best interest to kill him off quickly, because otherwise he’ll be compelled to 'defend' the Thing during the day in order not to raise suspicion upon himself.\n\nNo other players may tap or touch anyone else during the Thing’s 'awakening' or at any other time during the night.", impact: 3, priority: 157, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "theThing"), isNightActiveRole: .NightActiveRole)
 
 
@@ -189,6 +210,11 @@ let VILLAGER_THIRTEEN = Role(name: "Villager", type: .Villager, description: "Fi
 let VILLAGER_FOURTEEN = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.", impact: 3, priority: 263, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
 
 let VILLAGER_FIFTEEN = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.", impact: 3, priority: 264, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+
+
+
+let VIRGINIA_WOOLF = Role(name: "The Provider", type: .VirginiaWoolf, description: "The first night, choose a player that depends on you. If you are eliminated, that player is also eliminated.", roleExplanation: "The Provider is a caring and giving individual. So much so, that some people come to rely soley on them. The first night, the Provider chooses someone who has become dependent on them. That player is woken up and shown who they depend on. If the Provider is eliminated, so is that player.", impact: -2, priority: 97, powerChoice: false, team: [.TeamVillage], availableEffects: [.Dependent], image: #imageLiteral(resourceName: "virginiaWoolf"), isNightActiveRole: .NotNightActiveRole)
+
 
 
 

@@ -148,6 +148,12 @@ class Player {
         if currentConditions.contains(.Silence) {
             addAppropriateCard(daytimeCard: .SpellcasterSilenceCard)
         }
+        
+        if self._role.type == .VirginiaWoolf {
+            if (affectingPlayers[.Dependent]?[0].isAlive)! {
+                addAppropriateCard(daytimeCard: .VirginiasCard)
+            }
+        }
     }
     
     private func determineDaytimeInfoCardForTeam() {
@@ -165,6 +171,8 @@ class Player {
                 addAppropriateCard(daytimeCard: .CultTeamCard)
             } else if teamX == .TeamLovebirds {
                 addAppropriateCard(daytimeCard: .LovebirdTeamCard)
+            } else if teamX == .TeamTanner {
+                addAppropriateCard(daytimeCard: .TannerTeamCard)
             }
         }
     }
@@ -216,6 +224,8 @@ class Player {
                 }
             }
         }
+        
+        daytimeInfoCards.removeAll()
     }
     
     
@@ -424,11 +434,16 @@ class Player {
                                                    causedBy: self)
             
         case .VirginiaWoolf:
-            break
+            addTargetToPluralAffectingPlayerList(condition: .Dependent,
+                                                 affectedPlayer: playerToLink)
+            addTargetToPluralIneligibilityList(condition: .Dependent,
+                                               playerToAdd: playerToLink)
+            
+            playerToLink.addEffectFromOtherPlayers(condition: .Dependent,
+                                                   causedBy: self)
             
         default: break
         }
-        
     }
     
     /// Apply the Lobotomy effect to other players
@@ -522,5 +537,9 @@ class Player {
     
     var rolePowerUsed: Bool {
         get { return _role.powerUsed }
+    }
+    
+    public func setRoleNotes(newNotes: String) {
+        _role.notes = newNotes
     }
 }

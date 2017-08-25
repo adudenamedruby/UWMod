@@ -318,9 +318,9 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
                                           y: 3,
                                           width: 50,
                                           height: 25))
-        label.text = savedPlayerSections[section]
-        label.textColor = STYLE.Brown
-        label.font = STYLE.RegBoldFont
+        label.text          = savedPlayerSections[section]
+        label.textColor     = STYLE.Brown
+        label.font          = STYLE.RegBoldFont
         
         myHeaderView.addSubview(label)
         
@@ -339,10 +339,11 @@ extension PlayerSelectVC: UITableViewDataSource, UITableViewDelegate {
         let sectionPlayer = sectionPlayers?[indexPath.row]
         
         //let row = indexPath.row
-        cell.textLabel?.text = "\(sectionPlayer?.firstName ?? "") \(sectionPlayer?.lastName ?? "")"
-        cell.textLabel?.textColor = STYLE.Brown
-        cell.accessoryType = cell.isSelected ? .checkmark : .none
-        cell.selectionStyle = .none
+        cell.textLabel?.text        = "\(sectionPlayer?.firstName ?? "") \(sectionPlayer?.lastName ?? "")"
+        cell.textLabel?.textColor   = STYLE.Brown
+        cell.textLabel?.font        = STYLE.RegBoldTableView
+        cell.accessoryType          = cell.isSelected ? .checkmark : .none
+        cell.selectionStyle         = .none
         
         return cell
     }

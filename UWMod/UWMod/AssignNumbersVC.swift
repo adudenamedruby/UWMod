@@ -21,6 +21,7 @@ class AssignNumbersVC: UIViewController {
     @IBOutlet var darknessView: UIView!
     @IBOutlet var numberTextField: UITextField!
     @IBOutlet var setNumberButton: UIButton!
+    @IBOutlet weak var errorMessageLabel: UILabel!
     
     @IBOutlet weak var forwardButton:       PMSuperButton!
     @IBOutlet weak var backButton:          PMSuperButton!
@@ -51,6 +52,9 @@ class AssignNumbersVC: UIViewController {
         mainCard.layer.cornerRadius             = STYLE.CornerRadius
         
         darknessView.isHidden                   = true
+        errorMessageLabel.alpha                 = 0
+        
+        passedPlayers.sort(by: { $0.gameID < $1.gameID } )
         
         let headerTitle                         = "Assign Player Numbers"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
@@ -63,6 +67,10 @@ class AssignNumbersVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    private func reorderAndReloadTable() {
+        passedPlayers.sort(by: { $0.gameID < $1.gameID } )
+        tableView.reloadData()
+    }
     
     // MARK: - Keyboard Functions
     
@@ -88,12 +96,16 @@ class AssignNumbersVC: UIViewController {
     @IBAction func setNumberButtonPressed(_ sender: Any) {
         if let newID = numberTextField.text, !newID.isEmpty {
             chosenPlayer?.gameID    = Int(newID)!
+            
+            numberTextField.text        = ""
+            darknessView.isHidden       = true
+            dismissKeyboard()
+            reorderAndReloadTable()
+            
+        } else {
+            errorMessageLabel.alpha     = 1
+            errorMessageLabel.fadeOut(duration: 1.0, delay: 0)
         }
-        
-        numberTextField.text        = ""
-        darknessView.isHidden       = true
-        dismissKeyboard()
-        tableView.reloadData()
     }
     
     @IBAction func dismissDarknessTap(_ sender: Any) {
@@ -144,9 +156,11 @@ extension AssignNumbersVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.textLabel?.text                = passedPlayers[indexPath.row].name
         cell.textLabel?.textColor           = STYLE.Brown
+        cell.textLabel?.font                = STYLE.RegBoldTableView
         
         cell.detailTextLabel?.text          = "\(passedPlayers[indexPath.row].gameID)"
         cell.detailTextLabel?.textColor     = STYLE.Brown
+        cell.detailTextLabel?.font          = STYLE.RegSmallFont
         cell.detailTextLabel?.alpha         = 0.7
   
         return cell

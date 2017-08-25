@@ -57,6 +57,7 @@ class Game {
     private var _werewolvesAreDiseased:             Bool
     private var _wolfRoles:                         [RoleType]
     private var _theWolfCubHasBeenSlain:            Bool
+    var dreamwolfIsPresent:                         Bool
     var aWerewolfHasBeenSlain:                      Bool
     var theBlobHasAbsorbed:                         Bool
     
@@ -124,13 +125,16 @@ class Game {
         get { return _wolfRoles }
     }
     
-    
     var daytimeInfoCards: [DaytimeCardType] {
         get { return _daytimeInfoCards }
     }
     
     var settings: GameSettings {
         get { return _settings }
+    }
+    
+    var playersAreAssignedNumbers: Bool {
+        get { return _playerAreAssignedNumbers }
     }
     
     
@@ -200,6 +204,7 @@ class Game {
                                                .FruitBrute,
                                                .Wolverine]
         self.aWerewolfHasBeenSlain          = false
+        self.dreamwolfIsPresent             = false
         self._theWolfCubHasBeenSlain        = false
         self.theBlobHasAbsorbed             = false
         
@@ -285,6 +290,13 @@ class Game {
             
             if victim.roleType == .WolfCub {
                 _theWolfCubHasBeenSlain = true
+            
+            } else if victim.roleType == .VirginiaWoolf {
+                for player in self.livingActors {
+                    if player.isAffectedBy(condition: .Dependent) {
+                        eliminatePlayer(victim: player)
+                    }
+                }
             }
             
             if victim.killedBy != nil {
@@ -431,15 +443,17 @@ class Game {
         
         if firstNight {
             _firstNight = false
-            
-            // Why is this here? We shouldn't remove all availalbePlayers, right?
-            availablePlayers.removeAll()
-            availablePlayers = livingActors
+//            
+//            // Why is this here? We shouldn't remove all availalbePlayers, right?
+//            availablePlayers.removeAll()
+//            availablePlayers = livingActors
             
             if _playerAreAssignedNumbers {
+                availablePlayers.sort(by: { $0.gameID < $1.gameID } )
                 livingActors.sort(by: { $0.gameID < $1.gameID } )
                 
             } else {
+                availablePlayers.sort(by: { $0.name < $1.name } )
                 livingActors.sort(by: { $0.name < $1.name } )
             }
             
@@ -460,7 +474,6 @@ class Game {
     public func finishDay() {
         
         clearPhaseReport()
-        assignInfoCardsToPlayers()
         eliminatePlayers()
         resetPlayerDayActions()
         determineNumberOfWerewolfEliminations()
@@ -754,7 +767,9 @@ class Game {
         }
         
         if teamType == .TeamWerewolf {
+            
             teamPlayer.assignRole(role: WEREWOLF_TEAM)
+
         } else if teamType == .TeamVamprie {
             //teamPlayer.assignRole(role: VAMPIRE_TEAM)
         } else if teamType == .TeamBlob {

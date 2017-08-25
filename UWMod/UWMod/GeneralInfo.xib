@@ -89,73 +89,84 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ap-bE-svY" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="118" y="114" width="29.5" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsU-oS-Kvp" customClass="RegGreenBold" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="130.5" y="94" width="17.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dead" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUK-S6-yoq" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="193" y="114" width="32" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf7-AS-5Kn" customClass="RegRedBold" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="208" y="94" width="17.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNa-IH-a2p" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="272.5" y="114" width="30" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42b-1s-7EA" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="285.5" y="94" width="17.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ek8-Lv-gca">
+                                        <rect key="frame" x="80.5" y="94" width="226.5" height="36.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="4EU-Ie-78Q">
+                                                <rect key="frame" x="0.0" y="0.0" width="75.5" height="36.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsU-oS-Kvp" customClass="RegGreenBold" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="58" y="0.0" width="17.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ap-bE-svY" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="46" y="20.5" width="29.5" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="agH-bo-dqt">
+                                                <rect key="frame" x="75.5" y="0.0" width="75.5" height="36.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf7-AS-5Kn" customClass="RegRedBold" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="58" y="0.0" width="17.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dead" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUK-S6-yoq" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="43.5" y="20.5" width="32" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="xA8-2a-aCa">
+                                                <rect key="frame" x="151" y="0.0" width="75.5" height="36.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42b-1s-7EA" customClass="RegBrownBold" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="58" y="0.0" width="17.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNa-IH-a2p" customClass="RegBrownSmall" customModule="UWMod" customModuleProvider="target">
+                                                        <rect key="frame" x="45.5" y="20.5" width="30" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="8ap-bE-svY" firstAttribute="top" secondItem="JsU-oS-Kvp" secondAttribute="bottom" constant="-0.5" id="0GY-lc-8l6"/>
                                     <constraint firstItem="XBX-M9-iag" firstAttribute="leading" secondItem="EA4-g7-S99" secondAttribute="leading" id="1qn-eR-Ipm"/>
                                     <constraint firstItem="vuK-Cz-trC" firstAttribute="top" secondItem="3gg-I4-Frn" secondAttribute="bottom" constant="49" id="22L-xB-0Y2"/>
-                                    <constraint firstItem="NNa-IH-a2p" firstAttribute="centerY" secondItem="UUK-S6-yoq" secondAttribute="centerY" id="23r-qg-3dk"/>
                                     <constraint firstItem="X0y-Wx-4GB" firstAttribute="top" secondItem="3gg-I4-Frn" secondAttribute="bottom" constant="14" id="3wA-dw-kJA"/>
-                                    <constraint firstItem="UUK-S6-yoq" firstAttribute="centerY" secondItem="8ap-bE-svY" secondAttribute="centerY" id="4Z2-xN-b5s"/>
-                                    <constraint firstItem="42b-1s-7EA" firstAttribute="leading" secondItem="Zf7-AS-5Kn" secondAttribute="trailing" constant="60" id="8PQ-TV-eKO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ek8-Lv-gca" secondAttribute="trailing" constant="20" id="B92-sy-qha"/>
                                     <constraint firstItem="dYB-XW-4Hx" firstAttribute="centerY" secondItem="EA4-g7-S99" secondAttribute="centerY" id="EoU-H5-K6N"/>
                                     <constraint firstItem="3gg-I4-Frn" firstAttribute="leading" secondItem="Jn7-x6-MpX" secondAttribute="leading" id="Ghi-63-ueC"/>
                                     <constraint firstItem="X0y-Wx-4GB" firstAttribute="centerX" secondItem="Jn7-x6-MpX" secondAttribute="centerX" id="IJL-UW-9DP"/>
                                     <constraint firstItem="EA4-g7-S99" firstAttribute="top" secondItem="vuK-Cz-trC" secondAttribute="bottom" constant="30" id="KlA-dW-de8"/>
                                     <constraint firstItem="NHa-dY-bg8" firstAttribute="centerY" secondItem="XBX-M9-iag" secondAttribute="centerY" id="LOP-nq-Nen"/>
-                                    <constraint firstItem="Zf7-AS-5Kn" firstAttribute="leading" secondItem="JsU-oS-Kvp" secondAttribute="trailing" constant="60" id="NJk-5n-udi"/>
+                                    <constraint firstItem="Ek8-Lv-gca" firstAttribute="top" secondItem="EWN-I7-Hlq" secondAttribute="bottom" constant="14" id="LgV-cp-bvE"/>
                                     <constraint firstItem="XBX-M9-iag" firstAttribute="top" secondItem="EA4-g7-S99" secondAttribute="bottom" constant="3" id="Oyb-C8-wRn"/>
-                                    <constraint firstItem="UUK-S6-yoq" firstAttribute="trailing" secondItem="Zf7-AS-5Kn" secondAttribute="trailing" id="PBX-iL-K2e"/>
                                     <constraint firstAttribute="bottom" secondItem="XBX-M9-iag" secondAttribute="bottom" constant="17.5" id="Rdc-As-5Ky"/>
                                     <constraint firstItem="NHa-dY-bg8" firstAttribute="trailing" secondItem="dYB-XW-4Hx" secondAttribute="trailing" id="SxL-qW-Ifp"/>
                                     <constraint firstItem="vuK-Cz-trC" firstAttribute="leading" secondItem="Jn7-x6-MpX" secondAttribute="leading" constant="15" id="TDc-nL-Ivn"/>
-                                    <constraint firstItem="8ap-bE-svY" firstAttribute="trailing" secondItem="JsU-oS-Kvp" secondAttribute="trailing" id="ZMO-Lv-HA4"/>
+                                    <constraint firstItem="Ek8-Lv-gca" firstAttribute="leading" secondItem="vuK-Cz-trC" secondAttribute="trailing" constant="10" id="X3Y-4f-gwJ"/>
                                     <constraint firstAttribute="trailing" secondItem="3gg-I4-Frn" secondAttribute="trailing" id="bp6-bC-X2D"/>
                                     <constraint firstItem="dYB-XW-4Hx" firstAttribute="leading" secondItem="EA4-g7-S99" secondAttribute="trailing" constant="20" id="c6W-c9-rwW"/>
-                                    <constraint firstItem="NNa-IH-a2p" firstAttribute="trailing" secondItem="42b-1s-7EA" secondAttribute="trailing" id="i15-M0-lNg"/>
                                     <constraint firstItem="EA4-g7-S99" firstAttribute="leading" secondItem="vuK-Cz-trC" secondAttribute="leading" id="imx-TV-fYf"/>
-                                    <constraint firstItem="JsU-oS-Kvp" firstAttribute="leading" secondItem="vuK-Cz-trC" secondAttribute="trailing" constant="60" id="kBC-9m-vul"/>
                                     <constraint firstItem="3gg-I4-Frn" firstAttribute="top" secondItem="Jn7-x6-MpX" secondAttribute="top" id="nCN-9u-rpH"/>
-                                    <constraint firstItem="JsU-oS-Kvp" firstAttribute="bottom" secondItem="vuK-Cz-trC" secondAttribute="bottom" id="wHd-dm-PmS"/>
-                                    <constraint firstItem="Zf7-AS-5Kn" firstAttribute="bottom" secondItem="JsU-oS-Kvp" secondAttribute="bottom" id="wYh-7g-LlP"/>
-                                    <constraint firstItem="42b-1s-7EA" firstAttribute="bottom" secondItem="Zf7-AS-5Kn" secondAttribute="bottom" id="yBV-Nw-J0s"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -15,6 +15,7 @@ class WerewolfAssassination: UIView {
     @IBOutlet var contentView:                  UIView!
     @IBOutlet weak var killVillagerButton:      PMSuperButton!
     @IBOutlet weak var timerLabel:              RegRedHeader!
+    @IBOutlet weak var notesLabel:              UILabel!
     
     
     // MARK: - Variables
@@ -52,6 +53,16 @@ class WerewolfAssassination: UIView {
                                                object: nil)
         
         contentView.backgroundColor             = STYLE.Tan
+        
+        if GAME.dreamwolfIsPresent {
+                if GAME.aWerewolfHasBeenSlain {
+                    notesLabel.text = "Including the Dreamwolf"
+                } else {
+                    notesLabel.text = "Excluding the Dreamwolf"
+                }
+        } else {
+            notesLabel.text = ""
+        }
 
         GAME.startTimer()
         
