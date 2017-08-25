@@ -144,9 +144,11 @@ extension AssignNumbersVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.textLabel?.text                = passedPlayers[indexPath.row].name
         cell.textLabel?.textColor           = STYLE.Brown
+        cell.textLabel?.font                = STYLE.RegBoldTableView
         
         cell.detailTextLabel?.text          = "\(passedPlayers[indexPath.row].gameID)"
         cell.detailTextLabel?.textColor     = STYLE.Brown
+        cell.detailTextLabel?.font          = STYLE.RegSmallFont
         cell.detailTextLabel?.alpha         = 0.7
   
         return cell

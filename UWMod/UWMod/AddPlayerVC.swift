@@ -107,6 +107,7 @@ class AddPlayerVC: UIViewController {
             statusLabel.fadeOut(duration: 1, delay: 1)
             nameField.text = ""
             firstNameField.text = ""
+            firstNameField.becomeFirstResponder()
             
         } else {
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)

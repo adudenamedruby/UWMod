@@ -296,12 +296,13 @@ extension SelectPlayerPopupVC: UITableViewDelegate, UITableViewDataSource {
         
         let row = indexPath.row
         if reason == .RoleClarification {
-            cell.textLabel?.text = availablePlayers[row].roleName
+            cell.textLabel?.text    = availablePlayers[row].roleName
         } else {
-            cell.textLabel?.text = availablePlayers[row].name
+            cell.textLabel?.text    = availablePlayers[row].name
         }
-        cell.textLabel?.textColor = STYLE.Brown
-        cell.selectionStyle = .none
+        cell.textLabel?.textColor   = STYLE.Brown
+        cell.textLabel?.font        = STYLE.RegBoldTableView
+        cell.selectionStyle         = .none
         
         return cell
     }
