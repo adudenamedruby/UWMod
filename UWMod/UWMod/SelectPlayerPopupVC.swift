@@ -22,6 +22,7 @@ enum SelectPlayerReason {
     case BlobAbsorbtion
     case JoinTheCult
     case VirginiaIsInTown
+    case StirUpTrouble
 }
 
 class SelectPlayerPopupVC: UIViewController {
@@ -219,6 +220,9 @@ class SelectPlayerPopupVC: UIViewController {
         case .VirginiaIsInTown:
             populatePeopleToIntimidate()
             
+        case .StirUpTrouble:
+            break
+            
         }
         
     }
@@ -275,6 +279,9 @@ class SelectPlayerPopupVC: UIViewController {
             nc.post(name: NSNotification.Name(rawValue: VirginiaIntimidationFailureNotification), object: nil)
             
         case .RoleClarification:
+            break
+            
+        case .StirUpTrouble:
             break
         }
     }

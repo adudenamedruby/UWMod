@@ -214,6 +214,9 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             } else if player?.roleType == .VirginiaWoolf && !((player?.hasActedTonight)!) {
                 presentVirginiasView()
                 
+            } else if player?.roleType == .Troublemaker && !((player?.hasActedTonight)!) && !(player?.rolePowerUsed)! {
+                presentTroublemakerView()
+                
             }
         }
     }
@@ -263,7 +266,6 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         let localizedActionView = JoinCultView(frame: actionViewFrame)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
-
     }
     
     private func presentSorceressView() {
@@ -291,6 +293,12 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
     private func presentVirginiasView() {
         let localizedActionView = VirginiasView(frame: actionViewFrame, withPlayer: player!)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    private func presentTroublemakerView() {
+        let localizedActionView = TroublemakerView(frame: actionViewFrame, withPlayer: player!)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }

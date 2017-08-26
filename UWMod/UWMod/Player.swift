@@ -446,6 +446,12 @@ class Player {
         }
     }
     
+    public func stirUpTrouble() {
+        self.addTargetToSingularAffectingPlayerList(condition: .Delinquency, affectedPlayer: self)
+        self.addTargetToSingularIneligibilityList(condition: .Delinquency, playerToAdd: self)
+        self.addEffectFromOtherPlayers(condition: .Delinquency, causedBy: self)
+    }
+    
     /// Apply the Lobotomy effect to other players
     public func eatBrains(ofVictim victim: Player) {
         

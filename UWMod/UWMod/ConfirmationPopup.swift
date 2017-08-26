@@ -42,7 +42,9 @@ class ConfirmationPopup: UIViewController {
         mainAlertView.backgroundColor       = STYLE.Tan
         headerView.backgroundColor          = STYLE.Brown
         
-        chosenPlayer                        = GAME.useChosenPlayer()
+        if reason != .StirUpTrouble {
+            chosenPlayer                        = GAME.useChosenPlayer()
+        }
         
         var headerTitle                     = "Confirm Elimination"
         
@@ -91,6 +93,10 @@ class ConfirmationPopup: UIViewController {
                 headerTitle             = "Confirm Care"
                 alternateAlertText      = "Are you sure you want to choose \(chosenPlayer.name) as a dependent?"
                 
+            } else if reason            == .StirUpTrouble {
+                headerTitle             = "Making Trouble?"
+                alternateAlertText      = "Are you sure \(actingPlayer!.name) is stirring up trouble?"
+                
             }
         }
         
@@ -109,7 +115,11 @@ class ConfirmationPopup: UIViewController {
     }
     
     @IBAction func noButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: {
+            if self.reason == .StirUpTrouble {
+                self.notify(name: TroublemakerDelinquencyFailureNotification)
+            }
+        })
     }
     
     func notify(name: String) {
@@ -178,54 +188,69 @@ class ConfirmationPopup: UIViewController {
                 actingPlayer?.linkPlayers(playerToLink: chosenPlayer)
                 actingPlayer?.hasActedTonight = true
                 
+            } else if reason == .StirUpTrouble {
+                actingPlayer?.stirUpTrouble()
+                actingPlayer?.hasActedTonight = true
+                actingPlayer?.hasUsedOneTimePower()
+                
             }
         }
         
-        let presentingVC = self.presentingViewController
+        if reason == .StirUpTrouble {
+            self.dismiss(animated: true, completion: nil)
+            
+        } else {
         
-        self.dismiss(animated: true, completion: {
+            let presentingVC = self.presentingViewController
             
-            if self.reason == .WerewolfElimination {
-                if self.eliminatedByType != nil && GAME.wolfRoles.contains(self.eliminatedByType!) {
-                    GAME.werewolvesHaveKilled()
-                    self.notify(name: EliminationByWerewolfSuccessNotification)
-                }
             
-            } else if self.reason == .AssignPlayer {
-                self.notify(name: AssignPlayerSuccessNotification)
-            
-            } else if self.reason == .BodyguardSelectProtectee {
-                self.notify(name: BodyguardProtectingSuccessNotification)
+            self.dismiss(animated: true, completion: {
                 
-            } else if self.reason == .PriestSelectProtectee {
-                self.notify(name: PriestProtectSuccessNotification)
-            
-            } else if self.reason == .CupidLovestrike {
-                var count = 0
-                for playerX in GAME.availablePlayers {
-                    if playerX.isAffectedBy(condition: .Lovestruck) {
-                        count += 1
+                if self.reason == .WerewolfElimination {
+                    if self.eliminatedByType != nil && GAME.wolfRoles.contains(self.eliminatedByType!) {
+                        GAME.werewolvesHaveKilled()
+                        self.notify(name: EliminationByWerewolfSuccessNotification)
+                    }
+                
+                } else if self.reason == .AssignPlayer {
+                    self.notify(name: AssignPlayerSuccessNotification)
+                
+                } else if self.reason == .BodyguardSelectProtectee {
+                    self.notify(name: BodyguardProtectingSuccessNotification)
+                    
+                } else if self.reason == .PriestSelectProtectee {
+                    self.notify(name: PriestProtectSuccessNotification)
+                
+                } else if self.reason == .CupidLovestrike {
+                    var count = 0
+                    for playerX in GAME.availablePlayers {
+                        if playerX.isAffectedBy(condition: .Lovestruck) {
+                            count += 1
+                        }
+                        
+                        if count == 2 {
+                            self.actingPlayer?.hasUsedOneTimePower()
+                            self.notify(name: CupidLovestrikeSecondSuccessNotification)
+                        } else if count == 1 {
+                            self.notify(name: CupidLovestrikeFirstSuccessNotification)
+                        }
                     }
                     
-                    if count == 2 {
-                        self.actingPlayer?.hasUsedOneTimePower()
-                        self.notify(name: CupidLovestrikeSecondSuccessNotification)
-                    } else if count == 1 {
-                        self.notify(name: CupidLovestrikeFirstSuccessNotification)
-                    }
+                } else if self.reason == .SilencePlayer {
+                    self.notify(name: SpellcasterSilenceSuccessNotification)
+                
+                } else if self.reason == .VirginiaIsInTown {
+                    self.notify(name: VirginiaIntimidationSuccessNotification)
+                    
+                } else if self.reason == .StirUpTrouble {
+                    self.notify(name: VirginiaIntimidationSuccessNotification)
+                    
                 }
                 
-            } else if self.reason == .SilencePlayer {
-                self.notify(name: SpellcasterSilenceSuccessNotification)
-            
-            } else if self.reason == .VirginiaIsInTown {
-                self.notify(name: VirginiaIntimidationSuccessNotification)
                 
-            }
-            
-            
-            presentingVC!.dismiss(animated: false, completion: nil)
-            
-        })
+                presentingVC!.dismiss(animated: false, completion: nil)
+                
+            })
+        }
     }
 }

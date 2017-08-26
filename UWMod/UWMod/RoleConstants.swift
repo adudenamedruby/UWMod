@@ -36,10 +36,12 @@ let pregame_tempRoles: [Role] = [BEHOLDER,
                                  THE_BLOB,
                                  THE_COUNT,
                                  THING,
+                                 TROUBLEMAKER,
                                  VILLAGE_IDIOT,
                                  VILLAGER_ONE, VILLAGER_TWO, VILLAGER_THREE, VILLAGER_FOUR, VILLAGER_FIVE, VILLAGER_SIX, VILLAGER_SEVEN, VILLAGER_EIGHT, VILLAGER_NINE, VILLAGER_TEN, VILLAGER_ELEVEN, VILLAGER_TWELVE, VILLAGER_THIRTEEN, VILLAGER_FOURTEEN, VILLAGER_FIFTEEN,
                                  VIRGINIA_WOOLF,
                                  WEREWOLF_ONE, WEREWOLF_TWO, WEREWOLF_THREE, WEREWOLF_FOUR, WEREWOLF_FIVE, WEREWOLF_SIX, WEREWOLF_SEVEN, WEREWOLF_EIGHT, WEREWOLF_NINE, WEREWOLF_TEN, WEREWOLF_ELEVEN, WEREWOLF_TWELVE,
+                                 WITCH,
                                  WOLFCUB,
                                  WOLFMAN,
                                  ZOMBIE]
@@ -177,6 +179,10 @@ let THING = Role(name: "The Thing", type: .TheThing, description: "Each night, t
 
 
 
+let TROUBLEMAKER = Role(name: "Troublemaker", type: .Troublemaker, description: "One night per game, stir up trouble by calling for players to be eliminated the following day.", roleExplanation: "Once per game, the Troublemaker can call for two eliminations the following day. Until she does this, she is woken up by the Moderator each night.", impact: -3, priority: 175, powerChoice: true, team: [.TeamVillage], availableEffects: [.Delinquency], image: #imageLiteral(resourceName: "troublemaker"), isNightActiveRole: .NightActiveRole)
+
+
+
 let VILLAGE_IDIOT = Role(name: "Village Idiot", type: .VillageIdiot, description: "Always votes for players to be eliminated.", roleExplanation: "The Village Idiot always votes to lynch players, causing havok amongst players' suspicions.", impact: 2, priority: 208, powerChoice: false, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villageIdiot"), isNightActiveRole: .NotNightActiveRole)
 
 
@@ -241,6 +247,10 @@ let WEREWOLF_TEN = Role(name: "Werewolf", type: .Werewolf, description: "Each ni
 let WEREWOLF_ELEVEN = Role(name: "Werewolf", type: .Werewolf, description: "Each night, wake with the other Werewolves and choose a player to eliminate.", roleExplanation: "The Werewolves learn the identity of the other Werewolves the first night; they do not kill the first night. Every night afterwards, the Werewolves must agree (only a majority is needed, and need not be unanimous) on a target to eliminate. If the Werewolves spend more than the alloted time determining a target for the night, they do not get to choose a target that night. The Werewolves may not target another Werewolf at night, unless the Leprechaun is in play.", impact: -6, priority: 25, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "werewolf"), isNightActiveRole: .NightActiveRole)
 
 let WEREWOLF_TWELVE = Role(name: "Werewolf", type: .Werewolf, description: "Each night, wake with the other Werewolves and choose a player to eliminate.", roleExplanation: "The Werewolves learn the identity of the other Werewolves the first night; they do not kill the first night. Every night afterwards, the Werewolves must agree (only a majority is needed, and need not be unanimous) on a target to eliminate. If the Werewolves spend more than the alloted time determining a target for the night, they do not get to choose a target that night. The Werewolves may not target another Werewolf at night, unless the Leprechaun is in play.", impact: -6, priority: 25, powerChoice: false, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "werewolf"), isNightActiveRole: .NightActiveRole)
+
+
+
+let WITCH = Role(name: "Witch", type: .Witch, description: "You may save or eliminate a player at night, once each per game.", roleExplanation: "The Witch may use her power to prevent someone from being eliminated once during the game to save someone targeted at night. She may also use her other power to eliminate a player once during the game to eliminate the player of her choice. The Moderator should call the With every night and ask if she would like to use either or both of her special powers, even if they have been used. Both powers may be used on the same night.", impact: 4, priority: 118, powerChoice: true, team: [.TeamVillage], availableEffects: [.Protection, .Poison], image: #imageLiteral(resourceName: "witch"), isNightActiveRole: .NightActiveRole)
 
 
 

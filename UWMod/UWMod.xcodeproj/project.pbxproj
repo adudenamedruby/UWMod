@@ -55,6 +55,8 @@
 		127ACFEB1F42666F004E9779 /* SorceressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127ACFEA1F42666F004E9779 /* SorceressView.xib */; };
 		127ACFED1F466201004E9779 /* PriestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127ACFEC1F466201004E9779 /* PriestView.xib */; };
 		127ACFEF1F46621B004E9779 /* PriestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127ACFEE1F46621B004E9779 /* PriestView.swift */; };
+		12875A9F1F52306B00E7ED00 /* TroublemakerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12875A9E1F52306B00E7ED00 /* TroublemakerView.xib */; };
+		12875AA11F5230DB00E7ED00 /* TroublemakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12875AA01F5230DB00E7ED00 /* TroublemakerView.swift */; };
 		12960F9B1F49DB9100EA8A97 /* AssignNumbersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12960F9A1F49DB9100EA8A97 /* AssignNumbersVC.swift */; };
 		1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1298C8A21F3DD15D00261779 /* Notes.rtf */; };
 		12C8FDAB1F4F946900D36BF4 /* VirginiasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8FDAA1F4F946900D36BF4 /* VirginiasView.swift */; };
@@ -172,6 +174,8 @@
 		127ACFEA1F42666F004E9779 /* SorceressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SorceressView.xib; sourceTree = "<group>"; };
 		127ACFEC1F466201004E9779 /* PriestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriestView.xib; sourceTree = "<group>"; };
 		127ACFEE1F46621B004E9779 /* PriestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriestView.swift; sourceTree = "<group>"; };
+		12875A9E1F52306B00E7ED00 /* TroublemakerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TroublemakerView.xib; sourceTree = "<group>"; };
+		12875AA01F5230DB00E7ED00 /* TroublemakerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TroublemakerView.swift; sourceTree = "<group>"; };
 		12960F9A1F49DB9100EA8A97 /* AssignNumbersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignNumbersVC.swift; sourceTree = "<group>"; };
 		1298C8A21F3DD15D00261779 /* Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
 		12C8FDAA1F4F946900D36BF4 /* VirginiasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirginiasView.swift; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 				122FC69D1F3927C500E0E2C9 /* SeerInspection.swift */,
 				127ACFE81F426660004E9779 /* SorceressView.swift */,
 				124A133A1F4769CB0037DA94 /* SpellcasterView.swift */,
+				12875AA01F5230DB00E7ED00 /* TroublemakerView.swift */,
 				12C8FDAA1F4F946900D36BF4 /* VirginiasView.swift */,
 				124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */,
 				12DFBB451F3E6BAD00D71944 /* ZombieLobotomy.swift */,
@@ -311,6 +316,7 @@
 				122FC69F1F392F9C00E0E2C9 /* SeerInspection.xib */,
 				127ACFEA1F42666F004E9779 /* SorceressView.xib */,
 				124A133C1F4769DB0037DA94 /* SpellcasterView.xib */,
+				12875A9E1F52306B00E7ED00 /* TroublemakerView.xib */,
 				12C8FDAC1F4F949700D36BF4 /* VirginiasView.xib */,
 				124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */,
 				12DFBB431F3E6B9700D71944 /* ZombieLobotomy.xib */,
@@ -602,6 +608,7 @@
 				124F74F81F35FF4D00F03E49 /* WerewolfAssassination.xib in Resources */,
 				12C8FDBC1F4FA96300D36BF4 /* CaviarDreams_BoldItalic.ttf in Resources */,
 				1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */,
+				12875A9F1F52306B00E7ED00 /* TroublemakerView.xib in Resources */,
 				123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */,
 				12C8FDB51F4F9B4800D36BF4 /* TannerTeamCell.xib in Resources */,
 				12C8FDAD1F4F949700D36BF4 /* VirginiasView.xib in Resources */,
@@ -641,6 +648,7 @@
 				12EC77E91F2BDAE00026C667 /* NightVC.swift in Sources */,
 				7734718B1F3CF42500AED5AD /* SelectPlayerPopupVC.swift in Sources */,
 				12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */,
+				12875AA11F5230DB00E7ED00 /* TroublemakerView.swift in Sources */,
 				77F9E1201F31040600E48211 /* OldTextLabels.swift in Sources */,
 				12D15E231F2EA8470057905E /* MainGameVC.swift in Sources */,
 				12C8FDB01F4F9B2E00D36BF4 /* VirginiaTeamCell.swift in Sources */,

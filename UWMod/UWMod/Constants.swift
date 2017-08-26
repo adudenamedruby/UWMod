@@ -86,3 +86,5 @@ let SpellcasterSilenceSuccessNotification           = "spellcasterSilenceSuccess
 let SpellcasterSilenceFailureNotification           = "spellcasterSilenceFailureNotification"
 let VirginiaIntimidationSuccessNotification         = "virginiaIntimidationSuccessNotification"
 let VirginiaIntimidationFailureNotification         = "virginiaIntididationFailureNotification"
+let TroublemakerDelinquencySuccessNotification      = "troublemakerDelinquencySuccessNotification"
+let TroublemakerDelinquencyFailureNotification      = "troublemakerDelinquencyFailureNotification"
