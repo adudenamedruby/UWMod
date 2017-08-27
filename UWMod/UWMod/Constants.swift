@@ -39,7 +39,8 @@ struct StyleConstants {
     let OldRoleFont         = UIFont(name: "OldWiseSketch", size: 50) // used for nightPhase card titles
     
     let RegSmallFont        = UIFont(name: "CaviarDreams", size: 13)
-    let RegFlavourFont      = UIFont(name: "CaviarDreams-Italic", size: 13)
+    let RegMedFont          = UIFont(name: "CaviarDreams", size: 14)
+    let RegFlavourFont      = UIFont(name: "CaviarDreams-Italic", size: 14)
     let RegStandardFont     = UIFont(name: "CaviarDreams", size: 15)
     let RegLargeFont        = UIFont(name: "CaviarDreams", size: 18)
     let RegBoldSmallFont    = UIFont(name: "CaviarDreams-Bold", size: 13)
@@ -89,3 +90,5 @@ let VirginiaIntimidationSuccessNotification         = "virginiaIntimidationSucce
 let VirginiaIntimidationFailureNotification         = "virginiaIntididationFailureNotification"
 let TroublemakerDelinquencySuccessNotification      = "troublemakerDelinquencySuccessNotification"
 let TroublemakerDelinquencyFailureNotification      = "troublemakerDelinquencyFailureNotification"
+let WitchActionSuccessNotification                  = "witchActionSuccessNotification"
+let WitchActionFailureNotification                  = "witchActionFailureNotification"

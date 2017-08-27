@@ -46,7 +46,7 @@ extension String {
         let distance        = self.distance(from: sIndex!, to: eIndex!) - 1
         
         let attributedText = NSMutableAttributedString(string: self,
-                                                       attributes: [NSFontAttributeName:STYLE.RegSmallFont!])
+                                                       attributes: [NSFontAttributeName:STYLE.RegMedFont!])
         attributedText.addAttribute(NSFontAttributeName,
                                     value: STYLE.RegFlavourFont!,
                                     range: NSRange(location:startIndx, length:distance))

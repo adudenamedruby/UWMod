@@ -97,6 +97,14 @@ class ConfirmationPopup: UIViewController {
                 headerTitle             = "Making Trouble?"
                 alternateAlertText      = "Are you sure \(actingPlayer!.name) is stirring up trouble?"
                 
+            } else if reason            == .WitchSelectProtectee {
+                headerTitle             = "Confirm Salvation?"
+                alternateAlertText      = "Are you sure you wish to save \(chosenPlayer.name)?"
+                
+            } else if reason            == .WitchPoison {
+                headerTitle             = "Confirm Poisoning?"
+                alternateAlertText      = "Are you sure  you wish to poison \(chosenPlayer.name)?"
+                
             }
         }
         
@@ -129,7 +137,7 @@ class ConfirmationPopup: UIViewController {
     
     @IBAction func yesButtonPressed(_ sender: Any) {
         
-        let eliminationReasons: [SelectPlayerReason] = [.WerewolfElimination, .VillageElimination]
+        let eliminationReasons: [SelectPlayerReason] = [.WerewolfElimination, .VillageElimination, .WitchPoison]
         
         if reason != nil {
             if eliminationReasons.contains(reason!) {
@@ -140,6 +148,14 @@ class ConfirmationPopup: UIViewController {
                 
                 if GAME.wolfRoles.contains(chosenPlayer.roleType) && !GAME.aWerewolfHasBeenSlain {
                     GAME.aWerewolfHasBeenSlain = true
+                }
+                
+                if reason == .WitchPoison {
+                    actingPlayer?.poisonSomebody(victim: chosenPlayer)
+                    
+                    if (actingPlayer?.playersIneligibleForEffect[.Protection] != nil) {
+                        actingPlayer?.hasUsedOneTimePower()
+                    }
                 }
                 
                 if chosenPlayer.roleType == .Cursed && reason == .WerewolfElimination {
@@ -155,12 +171,18 @@ class ConfirmationPopup: UIViewController {
                 chosenPlayer.assignRole(role: role!)
                 GAME.addPlayerToLivingActors(player: chosenPlayer)
                 
-            } else if reason == .BodyguardSelectProtectee || reason == .PriestSelectProtectee {
+            } else if reason == .BodyguardSelectProtectee || reason == .PriestSelectProtectee || reason == .WitchSelectProtectee {
                 actingPlayer?.protect(playerToProtect: chosenPlayer)
                 actingPlayer?.hasActedTonight = true
                 
                 if reason == .PriestSelectProtectee {
                     actingPlayer?.hasUsedOneTimePower()
+                }
+                
+                if reason == .WitchSelectProtectee {
+                    if actingPlayer?.playersIneligibleForEffect[.Poison] != nil {
+                        actingPlayer?.hasUsedOneTimePower()
+                    }
                 }
             
             } else if reason == .ZombieLobotomization {
@@ -245,11 +267,11 @@ class ConfirmationPopup: UIViewController {
                 } else if self.reason == .StirUpTrouble {
                     self.notify(name: VirginiaIntimidationSuccessNotification)
                     
+                } else if self.reason == .WitchSelectProtectee || self.reason == .WitchPoison {
+                    self.notify(name: WitchActionSuccessNotification)
                 }
                 
-                
                 presentingVC!.dismiss(animated: false, completion: nil)
-                
             })
         }
     }

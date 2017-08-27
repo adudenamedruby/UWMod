@@ -82,6 +82,8 @@
 		12DA2CDE1F40DDE600D0193A /* BlobAbsorbtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12DA2CDD1F40DDE600D0193A /* BlobAbsorbtion.xib */; };
 		12DA2CE11F47978000D0193A /* SpellcasterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA2CDF1F47978000D0193A /* SpellcasterCell.swift */; };
 		12DA2CE21F47978000D0193A /* SpellcasterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12DA2CE01F47978000D0193A /* SpellcasterCell.xib */; };
+		12DA2CE61F53367A00D0193A /* WitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA2CE51F53367A00D0193A /* WitchView.swift */; };
+		12DA2CE81F53368D00D0193A /* WitchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12DA2CE71F53368D00D0193A /* WitchView.xib */; };
 		12DFBB3D1F3E55E400D71944 /* ZombieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DFBB3B1F3E55E400D71944 /* ZombieCell.swift */; };
 		12DFBB3E1F3E55E400D71944 /* ZombieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12DFBB3C1F3E55E400D71944 /* ZombieCell.xib */; };
 		12DFBB441F3E6B9700D71944 /* ZombieLobotomy.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12DFBB431F3E6B9700D71944 /* ZombieLobotomy.xib */; };
@@ -201,6 +203,8 @@
 		12DA2CDD1F40DDE600D0193A /* BlobAbsorbtion.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlobAbsorbtion.xib; sourceTree = "<group>"; };
 		12DA2CDF1F47978000D0193A /* SpellcasterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpellcasterCell.swift; sourceTree = "<group>"; };
 		12DA2CE01F47978000D0193A /* SpellcasterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpellcasterCell.xib; sourceTree = "<group>"; };
+		12DA2CE51F53367A00D0193A /* WitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WitchView.swift; sourceTree = "<group>"; };
+		12DA2CE71F53368D00D0193A /* WitchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WitchView.xib; sourceTree = "<group>"; };
 		12DFBB3B1F3E55E400D71944 /* ZombieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZombieCell.swift; sourceTree = "<group>"; };
 		12DFBB3C1F3E55E400D71944 /* ZombieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZombieCell.xib; sourceTree = "<group>"; };
 		12DFBB431F3E6B9700D71944 /* ZombieLobotomy.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZombieLobotomy.xib; sourceTree = "<group>"; };
@@ -299,6 +303,7 @@
 				12875AA01F5230DB00E7ED00 /* TroublemakerView.swift */,
 				12C8FDAA1F4F946900D36BF4 /* VirginiasView.swift */,
 				124F74F31F35FF3000F03E49 /* WerewolfAssassination.swift */,
+				12DA2CE51F53367A00D0193A /* WitchView.swift */,
 				12DFBB451F3E6BAD00D71944 /* ZombieLobotomy.swift */,
 			);
 			name = ContainerViews;
@@ -319,6 +324,7 @@
 				12875A9E1F52306B00E7ED00 /* TroublemakerView.xib */,
 				12C8FDAC1F4F949700D36BF4 /* VirginiasView.xib */,
 				124F74F71F35FF4D00F03E49 /* WerewolfAssassination.xib */,
+				12DA2CE71F53368D00D0193A /* WitchView.xib */,
 				12DFBB431F3E6B9700D71944 /* ZombieLobotomy.xib */,
 			);
 			name = "Night XIBs";
@@ -607,6 +613,7 @@
 				12DFBB441F3E6B9700D71944 /* ZombieLobotomy.xib in Resources */,
 				124F74F81F35FF4D00F03E49 /* WerewolfAssassination.xib in Resources */,
 				12C8FDBC1F4FA96300D36BF4 /* CaviarDreams_BoldItalic.ttf in Resources */,
+				12DA2CE81F53368D00D0193A /* WitchView.xib in Resources */,
 				1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */,
 				12875A9F1F52306B00E7ED00 /* TroublemakerView.xib in Resources */,
 				123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */,
@@ -682,6 +689,7 @@
 				12EC77D11F26D4AA0026C667 /* AboutVC.swift in Sources */,
 				123317D01F407F7A000C3260 /* GameMenuPopupVC.swift in Sources */,
 				124F74EB1F3530A200F03E49 /* WerewolfTeamCell.swift in Sources */,
+				12DA2CE61F53367A00D0193A /* WitchView.swift in Sources */,
 				12EC77E11F297A3E0026C667 /* ArtifactConstants.swift in Sources */,
 				12EC77DB1F27541A0026C667 /* Player.swift in Sources */,
 				123BD0D71F2FE66400B99019 /* StringExtensions.swift in Sources */,

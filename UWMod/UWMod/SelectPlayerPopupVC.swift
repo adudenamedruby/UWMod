@@ -13,6 +13,8 @@ enum SelectPlayerReason {
     case AssignPlayer
     case BodyguardSelectProtectee
     case PriestSelectProtectee
+    case WitchSelectProtectee
+    case WitchPoison
     case CupidLovestrike
     case SilencePlayer
     case WerewolfElimination
@@ -135,6 +137,12 @@ class SelectPlayerPopupVC: UIViewController {
             } else if reason == .VirginiaIsInTown {
                 showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
                 
+            } else if reason == .WitchSelectProtectee {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
+            }else if reason == .WitchPoison {
+                showConfirmation(withEliminatingRoleType: nil, withActingPlayer: activePlayer, withReason: reason, withRole: nil, withAlternateTitle: nil, withAlternateText: nil)
+                
             }
             
         } else {
@@ -223,6 +231,12 @@ class SelectPlayerPopupVC: UIViewController {
         case .StirUpTrouble:
             break
             
+        case .WitchSelectProtectee:
+            populateForProtection()
+            
+        case .WitchPoison:
+            populateLivingPlayers()
+            
         }
         
     }
@@ -234,7 +248,11 @@ class SelectPlayerPopupVC: UIViewController {
                 availablePlayers.append(player)
         }
         
-        availablePlayers.sort(by: { $0.name < $1.name } )
+        if GAME.playersAreAssignedNumbers {
+            availablePlayers.sort(by: { $0.gameID < $1.gameID } )
+        } else {
+            availablePlayers.sort(by: { $0.name < $1.name } )
+        }
     }
 
     private func notify() {
@@ -283,6 +301,10 @@ class SelectPlayerPopupVC: UIViewController {
             
         case .StirUpTrouble:
             break
+            
+        case .WitchSelectProtectee, .WitchPoison:
+            nc.post(name: NSNotification.Name(rawValue: WitchActionFailureNotification), object: nil)
+            
         }
     }
 }
@@ -337,6 +359,7 @@ extension SelectPlayerPopupVC {
                 availablePlayers.append(player)
             }
         }
+        
         if GAME.playersAreAssignedNumbers {
             availablePlayers.sort(by: { $0.gameID < $1.gameID } )
         } else {

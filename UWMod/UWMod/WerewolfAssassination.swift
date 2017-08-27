@@ -16,7 +16,7 @@ class WerewolfAssassination: UIView {
     @IBOutlet weak var killVillagerButton:      PMSuperButton!
     @IBOutlet weak var timerLabel:              RegRedHeader!
     @IBOutlet weak var notesLabel:              UILabel!
-    @IBOutlet weak var eliminationDetails: UILabel!
+    @IBOutlet weak var eliminationDetails:      UILabel!
     
     
     // MARK: - Variables
@@ -95,9 +95,12 @@ class WerewolfAssassination: UIView {
     }
     
     func confirmKill() {
-        GAME.stopTimer()
-        timerLabel.isHidden                 = true
-        killVillagerButton.isHidden         = true
+        if !(GAME.werewolfEliminationsThisNight > 0) {
+            GAME.stopTimer()
+            timerLabel.isHidden                 = true
+            killVillagerButton.isHidden         = true
+            eliminationDetails.isHidden         = true
+        }
         //delegate?.updateCard()
     }
     

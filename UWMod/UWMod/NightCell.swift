@@ -217,6 +217,14 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             } else if player?.roleType == .Troublemaker && !((player?.hasActedTonight)!) && !(player?.rolePowerUsed)! {
                 presentTroublemakerView()
                 
+            } else if player?.roleType == .Witch && !(player?.rolePowerUsed)! && !GAME.firstNight {
+                
+                if (player?.playersIneligibleForEffect[.Protection] == nil) {
+                    presentWitchView()
+                } else if (player?.playersIneligibleForEffect[.Poison] == nil) {
+                    presentWitchView()
+                }
+        
             }
         }
     }
@@ -299,6 +307,12 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
     private func presentTroublemakerView() {
         let localizedActionView = TroublemakerView(frame: actionViewFrame, withPlayer: player!)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    private func presentWitchView() {
+        let localizedActionView = WitchView(frame: actionViewFrame, withPlayer: player!)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }
