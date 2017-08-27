@@ -26,6 +26,7 @@ extension String {
         return self.substring(from: index)
     }
     
+    /// Takes a string and returns an attributed string with a coloured first letter.
     func styleTitleLabel(withStringFont font: UIFont, withColour colour: UIColor) -> NSAttributedString  {
         let attributedText = NSMutableAttributedString(string: self,
                                                        attributes: [NSFontAttributeName:font])
@@ -36,6 +37,7 @@ extension String {
         return attributedText
     }
     
+    /// Takes a string and converts anything between [ and ] into italicized text.
     func styleFlavourText() -> NSAttributedString  {
         
         let sIndex          = self.characters.index(of: "[")

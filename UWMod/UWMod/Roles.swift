@@ -114,16 +114,15 @@ class Role {
     // a custom getter that returns a priority on whether a role is called or not.
     var isManuallyAssigned:         Bool
     var availableEffects:           [PlayerEffects]
-    var powerChoice:                Bool
     var powerUsed:                  Bool
     var isNightActiveRole:          NightActiveStatus
     var isActivated:                Bool
     
-    init(name: String, type: RoleType, description: String, roleExplanation: NSAttributedString, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], availableEffects: [PlayerEffects], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
+    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, team: [UWTeam], availableEffects: [PlayerEffects], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
         self.name                   = name
         self.type                   = type
         self.description            = description
-        self.roleExplanation        = roleExplanation
+        self.roleExplanation        = roleExplanation.styleFlavourText()
         self.notes                  = notes
         self.impact                 = impact
         self.priority               = priority
@@ -132,7 +131,6 @@ class Role {
         self.availableEffects       = availableEffects
         self.isManuallyAssigned     = true
         self.team                   = team
-        self.powerChoice            = powerChoice
         self.powerUsed              = false
         self.isNightActiveRole      = isNightActiveRole
         self.isActivated            = true
