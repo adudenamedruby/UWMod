@@ -557,14 +557,26 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IfE-IR-ME9">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="285"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Village" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juw-fP-CU1" customClass="OldMenuTop" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="95.5" y="217" width="165.5" height="63"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juw-fP-CU1" customClass="OldMenuTop" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="80" y="217" width="196.5" height="63"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="60"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0F-Zl-ANJ">
-                                                <rect key="frame" x="96" y="202" width="32.5" height="26.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brief" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uet-JX-rSO">
+                                                <rect key="frame" x="82" y="183" width="89" height="42"/>
+                                                <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="40"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0F-Zl-ANJ">
+                                                <rect key="frame" x="65" y="193.5" width="12" height="26.5"/>
+                                                <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="25"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="of" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaE-TH-fUS">
+                                                <rect key="frame" x="278" y="245" width="21" height="27"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="25"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -573,12 +585,16 @@
                                         <color key="backgroundColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="juw-fP-CU1" secondAttribute="bottom" constant="5" id="3yi-ZP-XFy"/>
-                                            <constraint firstItem="juw-fP-CU1" firstAttribute="top" secondItem="r0F-Zl-ANJ" secondAttribute="bottom" constant="-11.5" id="Ph8-Vw-0sc"/>
+                                            <constraint firstAttribute="bottom" secondItem="YaE-TH-fUS" secondAttribute="bottom" constant="13" id="6Pw-VW-2oI"/>
+                                            <constraint firstItem="Uet-JX-rSO" firstAttribute="leading" secondItem="r0F-Zl-ANJ" secondAttribute="trailing" constant="5" id="AUi-YA-dEn"/>
+                                            <constraint firstItem="juw-fP-CU1" firstAttribute="top" secondItem="r0F-Zl-ANJ" secondAttribute="bottom" constant="-3" id="Ph8-Vw-0sc"/>
                                             <constraint firstItem="juw-fP-CU1" firstAttribute="centerX" secondItem="IfE-IR-ME9" secondAttribute="centerX" id="SAH-MT-PCZ"/>
-                                            <constraint firstItem="r0F-Zl-ANJ" firstAttribute="leading" secondItem="juw-fP-CU1" secondAttribute="leading" id="oPc-zn-WZQ"/>
+                                            <constraint firstItem="YaE-TH-fUS" firstAttribute="leading" secondItem="juw-fP-CU1" secondAttribute="trailing" constant="1.5" id="WBb-10-uTp"/>
+                                            <constraint firstItem="r0F-Zl-ANJ" firstAttribute="leading" secondItem="juw-fP-CU1" secondAttribute="leading" constant="-15" id="oPc-zn-WZQ"/>
+                                            <constraint firstItem="Uet-JX-rSO" firstAttribute="bottom" secondItem="r0F-Zl-ANJ" secondAttribute="bottom" constant="5" id="uaN-xt-kc6"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wolf'd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3c9-GO-c9q" customClass="OldMenuBottom" customModule="UWMod" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terror" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3c9-GO-c9q" customClass="OldMenuBottom" customModule="UWMod" customModuleProvider="target">
                                         <rect key="frame" x="90.5" y="285" width="175.5" height="70"/>
                                         <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="67"/>
                                         <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
