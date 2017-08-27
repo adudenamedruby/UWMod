@@ -37,11 +37,17 @@ extension String {
     }
     
     func styleFlavourText() -> NSAttributedString  {
+        
+        let sIndex          = self.characters.index(of: "[")
+        let eIndex          = self.characters.index(of: "]")
+        let startIndx       = self.distance(from: self.startIndex, to: sIndex!) + 1
+        let distance        = self.distance(from: sIndex!, to: eIndex!) - 1
+        
         let attributedText = NSMutableAttributedString(string: self,
                                                        attributes: [NSFontAttributeName:STYLE.RegSmallFont!])
         attributedText.addAttribute(NSFontAttributeName,
                                     value: STYLE.RegFlavourFont!,
-                                    range: NSRange(location:0,length:6))
+                                    range: NSRange(location:startIndx, length:distance))
         
         return attributedText
     }
