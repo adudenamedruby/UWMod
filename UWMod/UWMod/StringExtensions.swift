@@ -36,7 +36,18 @@ extension String {
         return attributedText
     }
     
+    func styleFlavourText() -> NSAttributedString  {
+        let attributedText = NSMutableAttributedString(string: self,
+                                                       attributes: [NSFontAttributeName:STYLE.RegSmallFont!])
+        attributedText.addAttribute(NSFontAttributeName,
+                                    value: STYLE.RegFlavourFont!,
+                                    range: NSRange(location:0,length:6))
+        
+        return attributedText
+    }
+    
     subscript (i: Int) -> String {
         return String(self[index(startIndex, offsetBy: i)])
     }
 }
+

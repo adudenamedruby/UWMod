@@ -517,7 +517,7 @@ class Player {
         get { return _role.description }
     }
     
-    var roleExplanation: String {
+    var roleExplanation: NSAttributedString {
         get { return _role.roleExplanation }
     }
     

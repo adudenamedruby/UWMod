@@ -16,6 +16,7 @@ class WerewolfAssassination: UIView {
     @IBOutlet weak var killVillagerButton:      PMSuperButton!
     @IBOutlet weak var timerLabel:              RegRedHeader!
     @IBOutlet weak var notesLabel:              UILabel!
+    @IBOutlet weak var eliminationDetails: UILabel!
     
     
     // MARK: - Variables
@@ -63,6 +64,8 @@ class WerewolfAssassination: UIView {
         } else {
             notesLabel.text = ""
         }
+        
+        eliminationDetails.text = "(Eliminations available: \(GAME.werewolfEliminationsThisNight))"
 
         GAME.startTimer()
         

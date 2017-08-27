@@ -101,7 +101,7 @@ class Role {
     let name:                       String
     let type:                       RoleType
     let description:                String
-    let roleExplanation:            String
+    let roleExplanation:            NSAttributedString
     var notes:                      String
     let impact:                     Int
     let priority:                   Int
@@ -119,7 +119,7 @@ class Role {
     var isNightActiveRole:          NightActiveStatus
     var isActivated:                Bool
     
-    init(name: String, type: RoleType, description: String, roleExplanation: String, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], availableEffects: [PlayerEffects], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
+    init(name: String, type: RoleType, description: String, roleExplanation: NSAttributedString, impact: Int, priority: Int, powerChoice: Bool, team: [UWTeam], availableEffects: [PlayerEffects], image: UIImage, isNightActiveRole: NightActiveStatus, notes: String = "") {
         self.name                   = name
         self.type                   = type
         self.description            = description

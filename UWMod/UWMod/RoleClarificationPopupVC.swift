@@ -38,7 +38,7 @@ class RoleClarificationPopupVC: UIViewController {
         let headerTitle = "\(roleInfo.name)"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
         
-        roleDescriptionLabel.text = roleInfo.roleExplanation
+        roleDescriptionLabel.attributedText = roleInfo.roleExplanation
         roleImage.image = roleInfo.image
         
     }

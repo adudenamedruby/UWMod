@@ -146,14 +146,14 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             roleDescritpionLabel.text = player?.roleDescription
             roleDescritpionLabel.alpha = 1
             roleDescritpionLabel.textColor = STYLE.Brown
-            textView.text = player?.roleExplanation
+            textView.attributedText = player?.roleExplanation
             
         } else {
             roleIconImage.image = role?.image
             let roleTitle = role?.name
             roleTitleLabel.attributedText = roleTitle?.styleTitleLabel(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
             roleDescritpionLabel.text = role?.description
-            textView.text = role?.roleExplanation
+            textView.attributedText = role?.roleExplanation
         }
         
         textView.setContentOffset(CGPoint.zero, animated: false)
