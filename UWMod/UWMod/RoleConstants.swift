@@ -57,17 +57,17 @@ let ALL_GAME_ROLES: [Role]                  = pregame_tempRoles.sorted(by: { $0.
 
 func filterBy(roleTypeList: [RoleType]) -> [Role] {
     var tempList: [Role]    = []
-    
+
     for role in pregame_tempRoles {
         if roleTypeList.contains(role.type) {
             tempList.append(role)
         }
     }
-    
+
     tempList.sort(by: { $0.name < $1.name})
-    
+
     return tempList
-    
+
 }
 
 // Roles get instantiated here! Fancy!
@@ -177,8 +177,8 @@ let DREAMWOLF = Role(name: "Dreamwolf",
 
 let GHOST = Role(name: "Phantom",
                  type: .Ghost,
-                 description: "Perish on the first night. Observe the night round, and provide the village a single letter clue each day.",
-                 roleExplanation: "The Phantom is the spirit of a villager that has perished the first night. The Phantom will watch each night round and, for the first ten rounds, will provide a single letter clue, as a message from beyond to the village. There are a few limitations: the Phantom may not attempt to identify any player by name or initials. The Phantom should try to be as helpful as possible with their clues, but, must try and remain calm if people are mis-interpreting their clues.\n\n[]",
+                 description: "Dies on the first night and observes the night round. Then provides the village a single letter clue each day.",
+                 roleExplanation: "The Phantom is the spirit of a villager that has perished the first night. The Phantom will watch each night round and, for the first ten rounds, will provide a single letter clue, as a message from beyond to the village. There are a few limitations: the Phantom may not attempt to identify any player by name or initials. The Phantom should try to be as helpful as possible with their clues, but, must try and remain calm if people are mis-interpreting their clues.\n\n[An old woman, loved by her family friends, passes away in the night. Her soul, however, seems to linger, tied to her ancestral family home. That very soul witnesses the brutal werewolf attacks and tries to warn the village by leaving messages on steamed mirrors or in wet tea leaves at the bottom of empty cups.]",
                  impact: 2,
                  priority: 1,
                  team: [.TeamVillage],
@@ -188,23 +188,68 @@ let GHOST = Role(name: "Phantom",
 
 
 
-let HUNTER = Role(name: "Huntsman", type: .Hunter, description: "If you are eliminated, you may immediately eliminate another player.", roleExplanation: "When the Huntsman, a hunter of legendary fame, is eliminated - whether by wolves or by being lynched, he goes down fighting, letting loose an arrow from his crossbow. He will choose another player to be his target, and that player is also eliminated. The Huntsman may also choose to die nobly, if he doesn't suspect anyone, and fire his weapon in the air, resulting in no additional elimination. No one may speak while the Huntsman chooses a target. If eliminated at night, the Huntsman chooses his target first thing in the morning.\n\n[]", impact: 3, priority: 61, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "hunter"), isNightActiveRole: .NotNightActiveRole)
+let HUNTER = Role(name: "Huntsman",
+                  type: .Hunter,
+                  description: "If eliminated, the Huntsman may immediately eliminate another player.",
+                  roleExplanation: "When the Huntsman is eliminated - whether by wolves or by being lynched -  he will choose another player to be his target, and that player is also eliminated. The Huntsman may also choose to die nobly, if he doesn't suspect anyone, and fire his weapon in the air, resulting in no additional elimination. No one may speak while the Huntsman chooses a target. If eliminated at night, the Huntsman chooses his target first thing in the morning.\n\n[His legend preceeded him as he rode into the village and everyone instantly recognized the Huntsman as he sat astride his horse. Hired by the town's mayor to help kill the werewolves, the Huntsman knows that paranoia and fear can often lead a town astray, causing suspicion where there should be none. His face grim, he is prepared to go down fighting.]",
+                  impact: 3,
+                  priority: 61,
+                  team: [.TeamVillage],
+                  availableEffects: [],
+                  image: #imageLiteral(resourceName: "hunter"),
+                  isNightActiveRole: .NotNightActiveRole)
 
 
 
-let INSOMNIAC = Role(name: "Insomniac", type: .Insomniac, description: "Each night, learn if at least one of your neighbors has taken a night action.", roleExplanation: "Every night, the Insomniac wakes up last, and is told by the Moderator if anyone woke up at night who is sitting next to them.\n\nImportant note: the Moderator does not tell the Insomniac if which player sitting next to them woke up at night, just that at least one of those players woke up that night. Regular adjanceny rules apply with the expection that if a player next to to the Insomniac is eliminated at night, he is informed about that player's actions and not the player next to the eliminated player.\n\n[]", impact: 3, priority: 199, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "insomniac"), isNightActiveRole: .NightActiveRole)
+let INSOMNIAC = Role(name: "Insomniac",
+                     type: .Insomniac,
+                     description: "Each night, they are told if least one of their neighbors has taken a night action.",
+                     roleExplanation: "Waking up last every night, the Insomniac is told by the Moderator if anyone woke up at night who is sitting next to them. They are told this informaiton even if that role has an option to not use it's action - like the Witch. The Moderator should not tell the Insomniac which player sitting next to them woke up at night, just that at least one of those players woke up that night. Regular adjaceny rules apply with the expection that if a player next to to the Insomniac is eliminated at night, he is informed about that player's actions and not the player next to the eliminated player.\n\n[The night is long and some villagers can only manage a fitful sleep. Noises, natural or unnatural, easily startle the Insomniac, who, anxiously, waits for the night to pass under the covers.]",
+                     impact: 3,
+                     priority: 199,
+                     team: [.TeamVillage],
+                     availableEffects: [],
+                     image: #imageLiteral(resourceName: "insomniac"),
+                     isNightActiveRole: .NightActiveRole)
 
 
 
-let LONE_WOLF = Role(name: "Lone Wolf", type: .LoneWolf, description: "Wake with the other Werewolves at night, but only win if you are the last wolf in the game.", roleExplanation: "The Lone Wolf only wins if he is the last player standing (or achieves parity with the village by having only one other non-werewolf player left in the game). The Lone Wolf wakes up with the werewolves to choose a target each night.\n\n[]", impact: -5, priority: 202, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "loneWolf"), isNightActiveRole: .NightActiveRole)
+let LONE_WOLF = Role(name: "Lone Wolf",
+                     type: .LoneWolf,
+                     description: "Wakes with the other Werewolves at night, but only wins if they are the last wolf in the game.",
+                     roleExplanation: "The Lone Wolf only wins if he is the last player standing (or achieves parity with the village by having only one other non-werewolf player left in the game). The Lone Wolf, however, does wake up with the werewolves to choose a target each night.\n\n[Most wolves are pack animals... but this werewolf still retains much of the personality from when he was human. Strong willed and intelligent, the Lone Wolf prefers to spend time alone, away from the pack. Perhaps because he thinks that seeking cover in the crowd is an easy way to bring suspicion upon one's self.]",
+                     impact: -5,
+                     priority: 202,
+                     team: [.TeamWerewolf],
+                     availableEffects: [],
+                     image: #imageLiteral(resourceName: "loneWolf"),
+                     isNightActiveRole: .NightActiveRole)
 
 
 
-let LYCAN = Role(name: "Lycan", type: .Lycan, description: "You are a Villager, but appear to the Seer as a Werewolf.", roleExplanation: "The Lycan is a villager of questionable parentage. Turns out, people were right to be slightly suspicios as the Lycan has a dormant drain of werewolfism, and appears to be a werewolf to the Seer even though she's not.\n\n[]", impact: -1, priority: 205, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "lycan"), isNightActiveRole: .NotNightActiveRole)
+let LYCAN = Role(name: "Lycan",
+                 type: .Lycan,
+                 description: "A villager that appears as a Werewolf to the Seer.",
+                 roleExplanation: "The Lycan is a villager and plays for the village team. However, when the seer investigates her, she appears as a Werewolf.\n\n[An orphan whose parentage was always questionable, she learned to read and write and now works as a town notary. Unbeknownst to anyone, however, she has found out that her maily was affected by werewolfism far back in her family history. Trying to keep this information secret, she has burned all official documentation that makes mention of this. For now her secret is safe... unless the Seer decides to turn their gaze to her.]",
+                 impact: -1,
+                 priority: 205,
+                 team: [.TeamVillage],
+                 availableEffects: [],
+                 image: #imageLiteral(resourceName: "lycan"),
+                 isNightActiveRole: .NotNightActiveRole)
 
 
 
-let MAD_BOMBER = Role(name: "Mad Bomber", type: .MadBomber, description: "If you are eliminated, the players immediately to your left and right are eliminated as well.", roleExplanation: "If the Mad Bomber is eliminated, the player closest to him on both the right and left of him is eliminated instantly. The right player is eliminated before the left player (this can matter in certain situations).\n\n[]", impact: -2, priority: 109, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "madBomber"), isNightActiveRole: .NotNightActiveRole)
+let MAD_BOMBER = Role(name: "Mad Bomber",
+                      type: .MadBomber,
+                      description: "If you are eliminated, the players immediately to your left and right are eliminated as well.",
+                      roleExplanation: "If the Mad Bomber is eliminated, the player closest to him on both the right and left of him is eliminated instantly. The right player is eliminated before the left player (this can matter in certain situations).\n\n[]",
+                      impact: -2,
+                      priority: 109,
+                      team: [.TeamVillage],
+                      availableEffects: [],
+                      image: #imageLiteral(resourceName: "madBomber"),
+                      isNightActiveRole: .NotNightActiveRole)
 
 
 
