@@ -359,47 +359,199 @@ let THING = Role(name: "The Bother",
 
 
 
-let TROUBLEMAKER = Role(name: "Troublemaker", type: .Troublemaker, description: "One night per game, stir up trouble by calling for players to be eliminated the following day.", roleExplanation: "Once per game, the Troublemaker can call for two eliminations the following day. Until she does this, she is woken up by the Moderator each night.\n\n[]", impact: -3, priority: 175, team: [.TeamVillage], availableEffects: [.Delinquency], image: #imageLiteral(resourceName: "troublemaker"), isNightActiveRole: .NightActiveRole)
+let TROUBLEMAKER = Role(name: "Troublemaker",
+                        type: .Troublemaker,
+                        description: "One night per game, calls for an additional player to be eliminated the following day.",
+                        roleExplanation: "Once per game, the Troublemaker can call for two eliminations the following day. Until she does this, she is woken up by the Moderator each night.\n\n[Raised in the city, the Troublemaker was kicked out of the city after inciting trouble for the city guard. After wandering around for a while, she's decided to kick back and relax in the village inn for a while. Some might say, with the recent werewolves attack, that it was poor timing. But she just sees it as an interesting opportunity to raise more trouble.]",
+                        impact: -3,
+                        priority: 175,
+                        team: [.TeamVillage],
+                        availableEffects: [.Delinquency],
+                        image: #imageLiteral(resourceName: "troublemaker"),
+                        isNightActiveRole: .NightActiveRole)
 
 
 
-let VILLAGE_IDIOT = Role(name: "Village Idiot", type: .VillageIdiot, description: "Always votes for players to be eliminated.", roleExplanation: "The Village Idiot always votes to lynch players, causing havok amongst players' suspicions.\n\n[]", impact: 2, priority: 208, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villageIdiot"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGE_IDIOT = Role(name: "Village Idiot",
+                         type: .VillageIdiot,
+                         description: "Always votes for players to be eliminated.",
+                         roleExplanation: "The Village Idiot always votes to lynch players, causing havok amongst players' suspicions.\n\n[Always in the wrong place, at the wrong time, doing the wrong thing, to the wrong person. Will he never learn?]",
+                         impact: 2,
+                         priority: 208,
+                         team: [.TeamVillage],
+                         availableEffects: [],
+                         image: #imageLiteral(resourceName: "villageIdiot"),
+                         isNightActiveRole: .NotNightActiveRole)
 
 
 
-let VILLAGER_ONE = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 250, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_ONE = Role(name: "Villager",
+                        type: .Villager,
+                        description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                        roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]", impact: 3,
+                        priority: 250,
+                        team: [.TeamVillage],
+                        availableEffects: [],
+                        image: #imageLiteral(resourceName: "villager"),
+                        isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_TWO = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 251, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_TWO = Role(name: "Villager",
+                        type: .Villager,
+                        description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                        roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                        impact: 3,
+                        priority: 251,
+                        team: [.TeamVillage],
+                        availableEffects: [],
+                        image: #imageLiteral(resourceName: "villager"),
+                        isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_THREE = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 252, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_THREE = Role(name: "Villager",
+                          type: .Villager,
+                          description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                          roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                          impact: 3,
+                          priority: 252,
+                          team: [.TeamVillage],
+                          availableEffects: [],
+                          image: #imageLiteral(resourceName: "villager"),
+                          isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_FOUR = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 253, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_FOUR = Role(name: "Villager",
+                         type: .Villager,
+                         description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                         roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                         impact: 3,
+                         priority: 253,
+                         team: [.TeamVillage],
+                         availableEffects: [],
+                         image: #imageLiteral(resourceName: "villager"),
+                         isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_FIVE = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 254, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_FIVE = Role(name: "Villager",
+                         type: .Villager,
+                         description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                         roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                         impact: 3,
+                         priority: 254,
+                         team: [.TeamVillage],
+                         availableEffects: [],
+                         image: #imageLiteral(resourceName: "villager"),
+                         isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_SIX = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 255, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_SIX = Role(name: "Villager",
+                        type: .Villager,
+                        description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                        roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                        impact: 3,
+                        priority: 255,
+                        team: [.TeamVillage],
+                        availableEffects: [],
+                        image: #imageLiteral(resourceName: "villager"),
+                        isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_SEVEN = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 256, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_SEVEN = Role(name: "Villager",
+                          type: .Villager,
+                          description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                          roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                          impact: 3,
+                          priority: 256,
+                          team: [.TeamVillage],
+                          availableEffects: [],
+                          image: #imageLiteral(resourceName: "villager"),
+                          isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_EIGHT = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 257, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_EIGHT = Role(name: "Villager",
+                          type: .Villager,
+                          description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                          roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                          impact: 3,
+                          priority: 257,
+                          team: [.TeamVillage],
+                          availableEffects: [],
+                          image: #imageLiteral(resourceName: "villager"),
+                          isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_NINE = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 258, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_NINE = Role(name: "Villager",
+                         type: .Villager,
+                         description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                         roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                         impact: 3,
+                         priority: 258,
+                         team: [.TeamVillage],
+                         availableEffects: [],
+                         image: #imageLiteral(resourceName: "villager"),
+                         isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_TEN = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 259, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_TEN = Role(name: "Villager",
+                        type: .Villager,
+                        description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                        roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                        impact: 3,
+                        priority: 259,
+                        team: [.TeamVillage],
+                        availableEffects: [],
+                        image: #imageLiteral(resourceName: "villager"),
+                        isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_ELEVEN = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 260, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_ELEVEN = Role(name: "Villager",
+                           type: .Villager,
+                           description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                           roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                           impact: 3,
+                           priority: 260,
+                           team: [.TeamVillage],
+                           availableEffects: [],
+                           image: #imageLiteral(resourceName: "villager"),
+                           isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_TWELVE = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 261, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_TWELVE = Role(name: "Villager",
+                           type: .Villager,
+                           description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                           roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                           impact: 3,
+                           priority: 261,
+                           team: [.TeamVillage],
+                           availableEffects: [],
+                           image: #imageLiteral(resourceName: "villager"),
+                           isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_THIRTEEN = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 262, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_THIRTEEN = Role(name: "Villager",
+                             type: .Villager,
+                             description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                             roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                             impact: 3,
+                             priority: 262,
+                             team: [.TeamVillage],
+                             availableEffects: [],
+                             image: #imageLiteral(resourceName: "villager"),
+                             isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_FOURTEEN = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 263, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_FOURTEEN = Role(name: "Villager",
+                             type: .Villager,
+                             description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                             roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                             impact: 3,
+                             priority: 263,
+                             team: [.TeamVillage],
+                             availableEffects: [],
+                             image: #imageLiteral(resourceName: "villager"),
+                             isNightActiveRole: .NotNightActiveRole)
 
-let VILLAGER_FIFTEEN = Role(name: "Villager", type: .Villager, description: "Find the werewolves and eliminate them.", roleExplanation: "Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[]", impact: 3, priority: 264, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "villager"), isNightActiveRole: .NotNightActiveRole)
+let VILLAGER_FIFTEEN = Role(name: "Villager",
+                            type: .Villager,
+                            description: "Doesn't do anything special aside from finding the werewolves to eliminate them.",
+                            roleExplanation: "The Villager’s sole purpose is to find the Werewolves and eliminate them.\n\n[A farmer. A sheppard. A potter. A daughter. These are the innocents, average citizens of the village.]",
+                            impact: 3,
+                            priority: 264,
+                            team: [.TeamVillage],
+                            availableEffects: [],
+                            image: #imageLiteral(resourceName: "villager"),
+                            isNightActiveRole: .NotNightActiveRole)
 
 
 
-let VIRGINIA_WOOLF = Role(name: "The Provider", type: .VirginiaWoolf, description: "The first night, choose a player that depends on you. If you are eliminated, that player is also eliminated.", roleExplanation: "The Provider is a caring and giving individual. So much so, that some people come to rely soley on them. The first night, the Provider chooses someone who has become dependent on them. That player is woken up and shown who they depend on. If the Provider is eliminated, so is that player.\n\n[]", impact: -2, priority: 97, team: [.TeamVillage], availableEffects: [.Dependent], image: #imageLiteral(resourceName: "virginiaWoolf"), isNightActiveRole: .NotNightActiveRole)
+let VIRGINIA_WOOLF = Role(name: "The Provider", type: .VirginiaWoolf, description: "The first night, chooses a player. If the Provider is eliminated, that player is also eliminated.", roleExplanation: "The Provider is a caring and giving individual. So much so, that some people come to rely soley on them. The first night, the Provider chooses someone who has become dependent on them. That player is woken up and shown who they depend on. If the Provider is eliminated, so is that player.\n\n[]", impact: -2, priority: 97, team: [.TeamVillage], availableEffects: [.Dependent], image: #imageLiteral(resourceName: "virginiaWoolf"), isNightActiveRole: .NotNightActiveRole)
 
 
 
