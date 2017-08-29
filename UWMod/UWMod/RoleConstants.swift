@@ -277,15 +277,42 @@ let PRIEST = Role(name: "Priest", type: .Priest, description: "One night, once p
 
 
 
-let SEER = Role(name: "Seer", type: .Seer, description: "Each night choose a player to learn if he is a Villager or a Werewolf.", roleExplanation: "Each night, the Seer chooses a player by pointing at them, and the Moderator tells her, through a thumbs up - for villager - or a thumbs down - for a werewolf - what that player's affiliation is. While this is generally great information, the Seer should be careful when certain roles are in the game, like the Minior or the Lycan, as what they see is imperfect.\n\n[]", impact: 4, priority: 181, team: [.TeamVillage], availableEffects: [.Protection], image: #imageLiteral(resourceName: "seer"), isNightActiveRole: .NightActiveRole)
+let SEER = Role(name: "Seer",
+                type: .Seer,
+                description: "Each night chooses a player to learn if they are a Villager or a Werewolf.",
+                roleExplanation: "Each night, the Seer chooses a player by pointing at them, and the Moderator tells her, through a thumbs up - for villager - or a thumbs down - for a werewolf - what that player's affiliation is. While this is generally great information, the Seer should be careful when certain roles are in the game, like the Minion, the Wolfman or the Lycan, as the information they are receiving can be imperfect.\n\n[Despite being feared in the village, the village has begrudgingly come to accept and rely on the Seer. For everything from what the crops will be like to finding lost children, villagers visit the Seer's house on a daily basis and leave food, clothes and other items of sustenance as payment. The Seer, in return, helps as much as they can, knowing that their survival relies on the goodwill of the village.]",
+                impact: 4,
+                priority: 181,
+                team: [.TeamVillage],
+                availableEffects: [.Protection],
+                image: #imageLiteral(resourceName: "seer"),
+                isNightActiveRole: .NightActiveRole)
 
 
 
-let SORCERESS = Role(name: "Sorceress", type: .Sorceress, description: "Each night, you wake up and try to find the Seer.", roleExplanation: "After the first night, the Sorceress looks for the Seer each night (the Moderator shows a thumbs up if the Sorceress points to the Seer). The Werewolves do not know who the Sorceress is, and the Sorceress does not know who the Werewolves are. The Seer sees the Sorceress as a villager.\n\n[]", impact: -3, priority: 190, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "sorceress"), isNightActiveRole: .NightActiveRole)
+let SORCERESS = Role(name: "Sorceress",
+                     type: .Sorceress,
+                     description: "Wakse up every night tries to find the Seer.",
+                     roleExplanation: "Followingf the first night, the Sorceress wakes up and inspects a player each night to find out if that player is the Seer. The Moderator confirms the role with a simple thumbs up or thumbs down. Unlike the Minion, not only do the werewolves not know who the Sorceress is, she does not know who the werewolves are either.\n\n[The Sorceress arrived in the village but a fortnight ago and already, the men of the village have been captivated by her beauty. The women of the village are wary, for they know this sort of woman is dangerous, and so are trying to keep their husbands heads clear of her influence. But it may be too late, for she may have seduced information about the Seer from some weak willed men.]",
+                     impact: -3,
+                     priority: 190,
+                     team: [.TeamWerewolf],
+                     availableEffects: [],
+                     image: #imageLiteral(resourceName: "sorceress"),
+                     isNightActiveRole: .NightActiveRole)
 
 
 
-let SPELLCASTER = Role(name: "Spellcaster", type: .Spellcaster, description: "Each night, choose a player to silence the following day.", roleExplanation: "Each night, the Spellcaster may choose one player to be muted for the following day (that player may not speak but may communicate any other way). The Spellcaster may choose to mute themselves, but may not mute the same player twice during a single game.\n\n[]", impact: 1, priority: 148, team: [.TeamVillage], availableEffects: [.Silence], image: #imageLiteral(resourceName: "spellcaster"), isNightActiveRole: .NightActiveRole)
+let SPELLCASTER = Role(name: "Spellslinger",
+                       type: .Spellcaster,
+                       description: "Each night, chooses a player to silence the following day.",
+                       roleExplanation: "The Spellslinger's power is optional. However, they may use it each night to silence a player for the next day. That player cannot speak, but may try and communicate another way. If the Spellslinger wishes, they may silence themselves. Furthermore, they may only silence each player once per game.\n\n[Born to a wealthy land-owner, the Spellslinger realized their power at a young age and, wisely, decided to hide it. Now, they delight is causing some panic by secretly silencing people, unbeknownst to anyone else as to why people sometimes go mute.]",
+                       impact: 1,
+                       priority: 148,
+                       team: [.TeamVillage],
+                       availableEffects: [.Silence],
+                       image: #imageLiteral(resourceName: "spellcaster"),
+                       isNightActiveRole: .NightActiveRole)
 
 
 
@@ -293,11 +320,29 @@ let THE_BLOB = Role(name: "The Blob", type: .TheBlob, description: "Each night, 
 
 
 
-let THE_COUNT = Role(name: "The Count", type: .TheCount, description: "The first night you are told how many Werewolves are in each half of the village.", roleExplanation: "The first night, The Count is told how many Werewolves are in each half of the village. The Moderator should indicate where the 'halfway' point is (ideally, across from the Count) and tell him the number of werewolves in each half.\n\nThe smaller the game, the more impact this has. It’s a bad idea to add the Count to a game where there is only one Werewolf (from the werewolves point of view).\n\n[]", impact: 5, priority: 106, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "theCount"), isNightActiveRole: .NotNightActiveRole)
+let THE_COUNT = Role(name: "The Count",
+                     type: .TheCount,
+                     description: "Is told, on the first night, how many Werewolves are in each half of the village.",
+                     roleExplanation: "The Count wakes up on the first night. The Moderator, after indicating where the village splits in half directly across from the Count, shows the Count how many wolves are in each half of the village. He can do this by pointing to a half and holding up the number of fingers equal to the number of werewolves in that half. It should be noted that the smaller the game, the more effective this role is. It is also strongly reccommended to not use this role if there is only one werewolf in the game... unless everyone is a very experienced player.\n\n[The most important noble in the region, the Count keeps meticulous track of his accounts, crop yelds, and anything, really, that affects the village. As much a scholar as he is a gentleman of leisure, the Count frequently comes to some startling realizations about the village as he combs over the numbers in his ledgers.]",
+                     impact: 5,
+                     priority: 106,
+                     team: [.TeamVillage],
+                     availableEffects: [],
+                     image: #imageLiteral(resourceName: "theCount"),
+                     isNightActiveRole: .NotNightActiveRole)
 
 
 
-let TANNER = Role(name: "Tanner", type: .Tanner, description: "You hate your job and your life. You win if you are eliminated.", roleExplanation: "The Tanner only wins if he is eliminated. Victory conditions for the other teams are still present; the game continues after the Tanner wins.\n\n[]", impact: -2, priority: 58, team: [.TeamTanner], availableEffects: [], image: #imageLiteral(resourceName: "tanner"), isNightActiveRole: .NotNightActiveRole)
+let TANNER = Role(name: "Tanner",
+                  type: .Tanner,
+                  description: "You hate your job and your life. You win if you are eliminated.",
+                  roleExplanation: "The Tanner only wins if he is eliminated. Victory conditions for the other teams are still present; the game continues after the Tanner wins.\n\n[After years of tanning leather and hides, being surrounded by the smell of death handling the viscera of animals, the Tanner has lost sight of what makes life worth living. Now, all he can think about, is dying. But, as a religious man, he cannot kill himself. So his new purpose in life is to convince the village or the secret werewolves, that me must]",
+                  impact: -2,
+                  priority: 58,
+                  team: [.TeamTanner],
+                  availableEffects: [],
+                  image: #imageLiteral(resourceName: "tanner"),
+                  isNightActiveRole: .NotNightActiveRole)
 
 
 

@@ -193,7 +193,8 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             } else if player?.roleType == .Zombie && !GAME.firstNight {
                 presentZombieView()
                 
-            } else if (player?.team.contains(.TeamBlob))! && !GAME.theBlobHasAbsorbed {
+//            } else if (player?.team.contains(.TeamBlob))! && !GAME.theBlobHasAbsorbed {
+            } else if player?.roleType == .TheBlob && !GAME.theBlobHasAbsorbed {
                 presentBlobView()
                 
             } else if player?.roleType == .CultLeader && !(player?.hasActedTonight)! {

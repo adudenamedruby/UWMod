@@ -247,12 +247,6 @@ class SelectPlayerPopupVC: UIViewController {
         for player in GAME.livingActors {
                 availablePlayers.append(player)
         }
-        
-        if GAME.playersAreAssignedNumbers {
-            availablePlayers.sort(by: { $0.gameID < $1.gameID } )
-        } else {
-            availablePlayers.sort(by: { $0.name < $1.name } )
-        }
     }
 
     private func notify() {
@@ -358,12 +352,6 @@ extension SelectPlayerPopupVC {
             if !player.isAssigned {
                 availablePlayers.append(player)
             }
-        }
-        
-        if GAME.playersAreAssignedNumbers {
-            availablePlayers.sort(by: { $0.gameID < $1.gameID } )
-        } else {
-            availablePlayers.sort(by: { $0.name < $1.name } )
         }
     }
 }
