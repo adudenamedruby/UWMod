@@ -335,8 +335,8 @@ let THE_COUNT = Role(name: "The Count",
 
 let TANNER = Role(name: "Tanner",
                   type: .Tanner,
-                  description: "You hate your job and your life. You win if you are eliminated.",
-                  roleExplanation: "The Tanner only wins if he is eliminated. Victory conditions for the other teams are still present; the game continues after the Tanner wins.\n\n[After years of tanning leather and hides, being surrounded by the smell of death handling the viscera of animals, the Tanner has lost sight of what makes life worth living. Now, all he can think about, is dying. But, as a religious man, he cannot kill himself. So his new purpose in life is to convince the village or the secret werewolves, that me must]",
+                  description: "Only wins if he is eliminated.",
+                  roleExplanation: "The Tanner only wins if he is eliminated. Victory conditions for the other teams are still present and the game continues after the Tanner wins.\n\n[After years of tanning leather and hides, being surrounded by the smell of death handling the viscera of animals, the Tanner has lost sight of what makes life worth living. Now, all he can think about, is dying. But, as a religious man, he cannot kill himself. So his new purpose in life is to convince the village or the secret werewolves, that he should be killed.]",
                   impact: -2,
                   priority: 58,
                   team: [.TeamTanner],
@@ -346,7 +346,16 @@ let TANNER = Role(name: "Tanner",
 
 
 
-let THING = Role(name: "The Thing", type: .TheThing, description: "Each night, tap a player sitting immediately next to you.", roleExplanation: "The Thing (that goes bump in the night) awakes each night and must tap one of the players next to him. He may tap a player he’s already tapped, or pick a different player each night (as long as that player is next to him). If the player next to the Thing is eliminated, the Thing may tap the next player over. But each night, he must tap one of his neighbours (even if his original neighbours are eliminated).\n\nThe good 'thing' about the Thing is that if he is sitting next to players on the village team, they know they can trust him. However, if he is sitting next to even one Werewolf, it’s probably in the werewolves’ best interest to kill him off quickly, because otherwise he’ll be compelled to 'defend' the Thing during the day in order not to raise suspicion upon himself.\n\nNo other players may tap or touch anyone else during the Thing’s 'awakening' or at any other time during the night.\n\n[]", impact: 3, priority: 157, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "theThing"), isNightActiveRole: .NightActiveRole)
+let THING = Role(name: "The Bother",
+                 type: .TheThing,
+                 description: "Each night, taps a player sitting immediately next to him.",
+                 roleExplanation: "The Bother wakes up each night and must tap one of the players that sits next to him. Regular adjacency rules apply: the person next to you is the person next to you that is currently alive this round, regardless of what has happened this far (ie. even if they've been marked for elimination). While the Bother is in play, no other players may tap or touch anyone else or at any other time during the night.\n\n[He's that villger that always stands slightly too close, speaks slightly too loud, is friendlier with his hands than he should be. He has no concept of personal space and many people in the village ]",
+                 impact: 3,
+                 priority: 157,
+                 team: [.TeamVillage],
+                 availableEffects: [],
+                 image: #imageLiteral(resourceName: "theThing"),
+                 isNightActiveRole: .NightActiveRole)
 
 
 

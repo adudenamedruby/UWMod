@@ -576,7 +576,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="of" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaE-TH-fUS">
-                                                <rect key="frame" x="278" y="245" width="21" height="27"/>
+                                                <rect key="frame" x="278" y="245.5" width="21" height="26.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="25"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -640,10 +640,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30k-d3-TV5" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="67" y="492" width="220" height="40"/>
+                                        <rect key="frame" x="67" y="492" width="106" height="40"/>
                                         <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="220" id="FGP-bn-cI9"/>
                                             <constraint firstAttribute="height" constant="40" id="p14-gs-WZ0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="23"/>
@@ -705,7 +704,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oN8-Ty-Hyq" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="182" y="542" width="105" height="40"/>
+                                        <rect key="frame" x="181" y="542" width="106" height="40"/>
                                         <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="PXp-7d-R1A"/>
@@ -736,28 +735,61 @@
                                             <segue destination="n0u-sl-cK3" kind="show" identifier="aboutSegue" id="fOW-E5-EBo"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qH-4k-c5d" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="181" y="492" width="106" height="40"/>
+                                        <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ti4-ks-ZNQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="23"/>
+                                        <state key="normal" title="Roles">
+                                            <color key="titleColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                                <color key="value" red="0.46274509800000002" green="0.76078431369999999" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                                <color key="value" red="0.48914084029999999" green="0.82907677660000001" blue="0.48015020889999999" alpha="0.84144905820000004" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.090196078430000007" green="0.49803921569999998" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="oN8-Ty-Hyq" firstAttribute="width" secondItem="UWC-gm-xWO" secondAttribute="width" id="12A-1T-uQj"/>
                                     <constraint firstItem="UWC-gm-xWO" firstAttribute="top" secondItem="30k-d3-TV5" secondAttribute="bottom" constant="10" id="2Lw-BQ-1Xu"/>
-                                    <constraint firstItem="oN8-Ty-Hyq" firstAttribute="trailing" secondItem="30k-d3-TV5" secondAttribute="trailing" id="7Lp-Ci-tgU"/>
-                                    <constraint firstItem="oN8-Ty-Hyq" firstAttribute="width" secondItem="30k-d3-TV5" secondAttribute="width" multiplier="0.48" id="7ac-L4-ubd"/>
                                     <constraint firstItem="IfE-IR-ME9" firstAttribute="centerX" secondItem="FbT-5i-nj9" secondAttribute="centerX" id="9DC-qt-IKg"/>
-                                    <constraint firstItem="30k-d3-TV5" firstAttribute="centerX" secondItem="FbT-5i-nj9" secondAttribute="centerX" id="Bd3-EC-t6K"/>
+                                    <constraint firstItem="30k-d3-TV5" firstAttribute="leading" secondItem="EY0-Jo-xpJ" secondAttribute="leading" id="CU0-Q3-LoA"/>
                                     <constraint firstItem="IfE-IR-ME9" firstAttribute="top" secondItem="FbT-5i-nj9" secondAttribute="top" id="Ged-HQ-cDx"/>
                                     <constraint firstItem="TKv-XV-DKN" firstAttribute="top" secondItem="3c9-GO-c9q" secondAttribute="bottom" constant="8.5" id="LF3-45-tGN"/>
+                                    <constraint firstItem="oN8-Ty-Hyq" firstAttribute="trailing" secondItem="EY0-Jo-xpJ" secondAttribute="trailing" id="OQu-nD-CGo"/>
                                     <constraint firstItem="3c9-GO-c9q" firstAttribute="centerX" secondItem="FbT-5i-nj9" secondAttribute="centerX" id="PS2-AX-RB3"/>
                                     <constraint firstItem="30k-d3-TV5" firstAttribute="top" secondItem="EY0-Jo-xpJ" secondAttribute="bottom" constant="10" id="RaF-5c-kBC"/>
                                     <constraint firstItem="IfE-IR-ME9" firstAttribute="height" secondItem="FbT-5i-nj9" secondAttribute="height" multiplier="0.45" id="Tku-SY-xc6"/>
                                     <constraint firstItem="IfE-IR-ME9" firstAttribute="width" secondItem="FbT-5i-nj9" secondAttribute="width" id="Znc-6o-WRL"/>
+                                    <constraint firstItem="UWC-gm-xWO" firstAttribute="width" secondItem="EY0-Jo-xpJ" secondAttribute="width" multiplier="0.48" id="aiY-G6-afE"/>
                                     <constraint firstItem="oN8-Ty-Hyq" firstAttribute="top" secondItem="30k-d3-TV5" secondAttribute="bottom" constant="10" id="cEA-K2-Vpl"/>
+                                    <constraint firstItem="30k-d3-TV5" firstAttribute="width" secondItem="EY0-Jo-xpJ" secondAttribute="width" multiplier="0.48" id="ctU-Qv-VXv"/>
                                     <constraint firstItem="UWC-gm-xWO" firstAttribute="leading" secondItem="30k-d3-TV5" secondAttribute="leading" id="eV0-VO-Yec"/>
                                     <constraint firstItem="EY0-Jo-xpJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TKv-XV-DKN" secondAttribute="bottom" constant="20" id="f9Q-Ma-EC6"/>
+                                    <constraint firstItem="4qH-4k-c5d" firstAttribute="trailing" secondItem="EY0-Jo-xpJ" secondAttribute="trailing" id="mjc-gg-j4j"/>
                                     <constraint firstItem="3c9-GO-c9q" firstAttribute="top" secondItem="IfE-IR-ME9" secondAttribute="bottom" id="ogv-gJ-ERH"/>
                                     <constraint firstAttribute="bottom" secondItem="UWC-gm-xWO" secondAttribute="bottom" constant="50" id="oqv-3R-j4z"/>
                                     <constraint firstItem="TKv-XV-DKN" firstAttribute="centerX" secondItem="FbT-5i-nj9" secondAttribute="centerX" id="rDW-Rp-z2D"/>
+                                    <constraint firstItem="4qH-4k-c5d" firstAttribute="centerY" secondItem="30k-d3-TV5" secondAttribute="centerY" id="xeu-dT-MKM"/>
                                     <constraint firstItem="EY0-Jo-xpJ" firstAttribute="centerX" secondItem="FbT-5i-nj9" secondAttribute="centerX" id="xqH-aC-ZUU"/>
-                                    <constraint firstItem="UWC-gm-xWO" firstAttribute="width" secondItem="30k-d3-TV5" secondAttribute="width" multiplier="0.48" id="zeY-Vg-hCf"/>
+                                    <constraint firstItem="4qH-4k-c5d" firstAttribute="width" secondItem="30k-d3-TV5" secondAttribute="width" id="zK9-ir-qYL"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1306,12 +1338,25 @@
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJR-QN-AgA">
+                                                <rect key="frame" x="292" y="20" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="bGN-PC-faF"/>
+                                                    <constraint firstAttribute="height" constant="30" id="pHU-KK-OhL"/>
+                                                </constraints>
+                                                <state key="normal" image="menuButton"/>
+                                                <connections>
+                                                    <action selector="roleHelpButtonPressed:" destination="7Pw-Ep-Lh3" eventType="touchUpInside" id="fmW-h3-cnv"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.24705882352941178" green="0.16862745098039217" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstItem="tJR-QN-AgA" firstAttribute="centerY" secondItem="gJa-nz-lZZ" secondAttribute="centerY" id="Bcw-Dk-kiU"/>
                                             <constraint firstItem="Tuq-TL-lce" firstAttribute="centerY" secondItem="gJa-nz-lZZ" secondAttribute="centerY" id="NJa-qe-Xri"/>
                                             <constraint firstAttribute="height" constant="70" id="ONN-KL-yj7"/>
                                             <constraint firstItem="Tuq-TL-lce" firstAttribute="leading" secondItem="gJa-nz-lZZ" secondAttribute="leading" constant="15" id="a0O-et-h5O"/>
+                                            <constraint firstAttribute="trailing" secondItem="tJR-QN-AgA" secondAttribute="trailing" constant="15" id="iSa-lk-QqH"/>
                                             <constraint firstAttribute="trailing" secondItem="Tuq-TL-lce" secondAttribute="trailing" constant="15" id="nLY-nO-17x"/>
                                         </constraints>
                                     </view>
@@ -1528,7 +1573,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTP-dL-4kz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2762" y="124"/>
+            <point key="canvasLocation" x="2760.8000000000002" y="123.68815592203899"/>
         </scene>
         <!--AboutVC-->
         <scene sceneID="92H-Py-R30">
@@ -1571,7 +1616,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bout UWMod" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="OQv-Nl-JmZ" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="17.5" width="270" height="36.5"/>
+                                                <rect key="frame" x="15" y="17" width="270" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                 <color key="textColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1940,7 +1985,7 @@ Based on the Werewolf boardgame.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAb-mv-iMS">
-                                        <rect key="frame" x="20" y="110.5" width="33" height="19"/>
+                                        <rect key="frame" x="20" y="111" width="33" height="19"/>
                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="15"/>
                                         <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -1955,7 +2000,7 @@ Based on the Werewolf boardgame.</string>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhC-se-dgx">
-                                        <rect key="frame" x="20" y="79.5" width="33" height="19"/>
+                                        <rect key="frame" x="20" y="80" width="33" height="19"/>
                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="15"/>
                                         <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -2020,6 +2065,7 @@ Based on the Werewolf boardgame.</string>
         <image name="backArrow" width="512" height="512"/>
         <image name="checkNo" width="512" height="512"/>
         <image name="forwardArrow" width="512" height="512"/>
+        <image name="menuButton" width="512" height="512"/>
         <image name="nighttime" width="1242" height="2208"/>
     </resources>
     <inferredMetricsTieBreakers>
