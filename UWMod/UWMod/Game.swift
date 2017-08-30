@@ -154,12 +154,13 @@ class Game {
         // Sort the roles by the role priority. This makes it easier to present the 
         // player list in some semblance of a correct order.
         self.availableRoster                = availableRoster.sorted(by: { ($0.priority) < ($1.priority) })
+        self.availablePlayers               = availablePlayers
         
         if playerNumbers {
-            self.availablePlayers               = availablePlayers.sorted(by: { ($0.gameID) < ($1.gameID) })
+            self.availablePlayers.sort(by: { $0.gameID < $1.gameID } )
             
         } else {
-            self.availablePlayers               = availablePlayers.sorted(by: { ($0.name) < ($1.name) })
+            self.availablePlayers.sort(by: { $0.name < $1.name } )
 
         }
 
