@@ -54,7 +54,8 @@ class BlobCell: UITableViewCell {
     }
     
     func configureCell() {
-        self.originalBlobLabel.text             = "Original Blob: \(originalBlob.name)"
+        let originalBlobStatus                  = originalBlob.isAlive ? "(currently alive)" : "(dead)"
+        self.originalBlobLabel.text             = "Original Blob: \(originalBlob.name) \(originalBlobStatus)"
         
         let playerInfo                          = GAME.retrieveTeamVSTotalNumbers(team: .TeamBlob)
         let totalPlayers                        = playerInfo.total
