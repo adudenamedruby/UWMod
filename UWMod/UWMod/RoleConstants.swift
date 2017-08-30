@@ -230,7 +230,7 @@ let LONE_WOLF = Role(name: "Lone Wolf",
 let LYCAN = Role(name: "Lycan",
                  type: .Lycan,
                  description: "A villager that appears as a Werewolf to the Seer.",
-                 roleExplanation: "The Lycan is a villager and plays for the village team. However, when the seer investigates her, she appears as a Werewolf.\n\n[An orphan whose parentage was always questionable, she learned to read and write and now works as a town notary. Unbeknownst to anyone, however, she has found out that her maily was affected by werewolfism far back in her family history. Trying to keep this information secret, she has burned all official documentation that makes mention of this. For now her secret is safe... unless the Seer decides to turn their gaze to her.]",
+                 roleExplanation: "The Lycan is a villager and plays for the village team. However, when the seer investigates her, she appears as a Werewolf.\n\n[An orphan whose parentage was always questionable, she learned to read and write and now works as a town notary. Unbeknownst to anyone, however, she has found out that her maily was affected by werewolfism far back in her family history. Trying to keep this information secret, she has burned all official documentation that makes mention of this. For now her secret is safe... unless the Seer decides to turn his gaze to her.]",
                  impact: -1,
                  priority: 205,
                  team: [.TeamVillage],
@@ -242,8 +242,8 @@ let LYCAN = Role(name: "Lycan",
 
 let MAD_BOMBER = Role(name: "Mad Bomber",
                       type: .MadBomber,
-                      description: "If you are eliminated, the players immediately to your left and right are eliminated as well.",
-                      roleExplanation: "If the Mad Bomber is eliminated, the player closest to him on both the right and left of him is eliminated instantly. The right player is eliminated before the left player (this can matter in certain situations).\n\n[]",
+                      description: "If eliminated, the players immediately to the bomber's left and right are eliminated as well.",
+                      roleExplanation: "If the Mad Bomber is eliminated, the player closest to him on both the right and left of him is eliminated instantly. The right player is eliminated before the left player (this can matter in certain situations). The Moderator may also allow only one player to be eliminated. In that case, the Bomber chooses to eliminate either the player to their left or right.\n\n[Bombs! He loves boooooooooommmmmmmmbbbbbbbssssss!]",
                       impact: -2,
                       priority: 109,
                       team: [.TeamVillage],
@@ -253,31 +253,102 @@ let MAD_BOMBER = Role(name: "Mad Bomber",
 
 
 
-let MAYOR = Role(name: "Mayor", type: .Mayor, description: "Your vote counts twice.", roleExplanation: "As the democratically elected leader of the village, the Mayor’s voice carries weight in the community and, as such, their vote counts twice when voting to eliminate a player. This is done by the moderator secretly counting the Mayor’s vote twice.\n\n[]", impact: 2, priority: 124, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "mayor"), isNightActiveRole: .NotNightActiveRole)
+let MAYOR = Role(name: "Mayor",
+                 type: .Mayor,
+                 description: "The Mayor's vote counts twice.",
+                 roleExplanation: "As the democratically elected leader of the village, the Mayor’s voice carries weight in the community and, as such, their vote counts twice when voting to eliminate a player. This is done by the Moderator secretly counting the Mayor’s vote twice.\n\n[They called it democracy, but the last time an election was held in the village... well, dinasoaurs were what people were worried about then, not werewolves.]",
+                 impact: 2,
+                 priority: 124,
+                 team: [.TeamVillage],
+                 availableEffects: [],
+                 image: #imageLiteral(resourceName: "mayor"),
+                 isNightActiveRole: .NotNightActiveRole)
 
 
 
-let MASON_ONE = Role(name: "Mason", type: .Mason, description: "The first night, wake up to see who the other Masons are.", roleExplanation: "The first night the Moderator calls for the Masons to open their eyes and look for the other Masons. Starting on the first day, no one in the village may directly or indirectly speak of the Masons. There are two penalties for players that speak of them: the first person to speak of the Masons is visited by the Masons at night and is silenced... for the rest of the game! Any players that mention the Masons afterwards are eliminated that night by the secret society in order to keep it a secret. If they are eliminated by the secret society, they automatically lose, even if they are on a winning team.\n\nImportant notes for the Moderator: use discretion. It's much better for gameplay if the subject is never discussed directly or indirectly by the players. If a player says, 'Well, we know these three are safe.' that's a clear reference to the Masons, so that player should be eliminated.\n\n[]", impact: 2, priority: 121, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "mason"), isNightActiveRole: .NotNightActiveRole)
+let MASON_ONE = Role(name: "Mason",
+                     type: .Mason,
+                     description: "Wakes up the first night to see who the other Masons are.",
+                     roleExplanation: "The first night the Moderator calls for the Masons to open their eyes and look for the other Masons. Starting on the first day, no one in the village may directly or indirectly speak of the Masons. There are two penalties for players that speak of them: the first person to speak of the Masons is visited by the Masons at night and is silenced... for the rest of the game! Any players that mention the Masons afterwards are eliminated that night by the secret society in order to keep it a secret. If they are eliminated by the secret society, they automatically lose, even if they are on a winning team.\n\nImportant notes for the Moderator: use discretion. It's much better for gameplay if the subject is never discussed directly or indirectly by the players. If a player says, 'Well, we know these three are safe.' that's a clear reference to the Masons, so that player should be eliminated.\n\n[The first rule of the Masons Club is that you......]",
+                     impact: 2,
+                     priority: 121,
+                     team: [.TeamVillage],
+                     availableEffects: [],
+                     image: #imageLiteral(resourceName: "mason"),
+                     isNightActiveRole: .NotNightActiveRole)
 
-let MASON_TWO = Role(name: "Mason", type: .Mason, description: "The first night, wake up to see who the other Masons are.", roleExplanation: "The first night the Moderator calls for the Masons to open their eyes and look for the other Masons. Starting on the first day, no one in the village may directly or indirectly speak of the Masons. There are two penalties for players that speak of them: the first person to speak of the Masons is visited by the Masons at night and is silenced... for the rest of the game! Any players that mention the Masons afterwards are eliminated that night by the secret society in order to keep it a secret. If they are eliminated by the secret society, they automatically lose, even if they are on a winning team.\n\nImportant notes for the Moderator: use discretion. It's much better for gameplay if the subject is never discussed directly or indirectly by the players. If a player says, 'Well, we know these three are safe.' that's a clear reference to the Masons, so that player should be eliminated.\n\n[]", impact: 2, priority: 121, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "mason"), isNightActiveRole: .NotNightActiveRole)
+let MASON_TWO = Role(name: "Mason",
+                     type: .Mason,
+                     description: "Wakes up the first night to see who the other Masons are.",
+                     roleExplanation: "The first night the Moderator calls for the Masons to open their eyes and look for the other Masons. Starting on the first day, no one in the village may directly or indirectly speak of the Masons. There are two penalties for players that speak of them: the first person to speak of the Masons is visited by the Masons at night and is silenced... for the rest of the game! Any players that mention the Masons afterwards are eliminated that night by the secret society in order to keep it a secret. If they are eliminated by the secret society, they automatically lose, even if they are on a winning team.\n\nImportant notes for the Moderator: use discretion. It's much better for gameplay if the subject is never discussed directly or indirectly by the players. If a player says, 'Well, we know these three are safe.' that's a clear reference to the Masons, so that player should be eliminated.\n\n[The first rule of the Masons Club is that you......]",
+                     impact: 2,
+                     priority: 121,
+                     team: [.TeamVillage],
+                     availableEffects: [],
+                     image: #imageLiteral(resourceName: "mason"),
+                     isNightActiveRole: .NotNightActiveRole)
 
-let MASON_THREE = Role(name: "Mason", type: .Mason, description: "The first night, wake up to see who the other Masons are.", roleExplanation: "The first night the Moderator calls for the Masons to open their eyes and look for the other Masons. Starting on the first day, no one in the village may directly or indirectly speak of the Masons. There are two penalties for players that speak of them: the first person to speak of the Masons is visited by the Masons at night and is silenced... for the rest of the game! Any players that mention the Masons afterwards are eliminated that night by the secret society in order to keep it a secret. If they are eliminated by the secret society, they automatically lose, even if they are on a winning team.\n\nImportant notes for the Moderator: use discretion. It's much better for gameplay if the subject is never discussed directly or indirectly by the players. If a player says, 'Well, we know these three are safe.' that's a clear reference to the Masons, so that player should be eliminated.\n\n[]", impact: 2, priority: 121, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "mason"), isNightActiveRole: .NotNightActiveRole)
+let MASON_THREE = Role(name: "Mason",
+                       type: .Mason,
+                       description: "Wakes up the first night to see who the other Masons are.",
+                       roleExplanation: "The first night the Moderator calls for the Masons to open their eyes and look for the other Masons. Starting on the first day, no one in the village may directly or indirectly speak of the Masons. There are two penalties for players that speak of them: the first person to speak of the Masons is visited by the Masons at night and is silenced... for the rest of the game! Any players that mention the Masons afterwards are eliminated that night by the secret society in order to keep it a secret. If they are eliminated by the secret society, they automatically lose, even if they are on a winning team.\n\nImportant notes for the Moderator: use discretion. It's much better for gameplay if the subject is never discussed directly or indirectly by the players. If a player says, 'Well, we know these three are safe.' that's a clear reference to the Masons, so that player should be eliminated.\n\n[The first rule of the Masons Club is that you......]",
+                       impact: 2,
+                       priority: 121,
+                       team: [.TeamVillage],
+                       availableEffects: [],
+                       image: #imageLiteral(resourceName: "mason"),
+                       isNightActiveRole: .NotNightActiveRole)
 
 
 
-let MINION = Role(name: "Minion", type: .Minion, description: "You know who the werewolves are, but you do not wake up with them at night.", roleExplanation: "The first night, the Minion learns who the werewolves are, but does not wake with them at night. The Seer sees the Minion as a villager. They should use this information to sow disinformation and distrust amongst the villagers.\n\n[]", impact: -6, priority: 40, team: [.TeamWerewolf], availableEffects: [], image: #imageLiteral(resourceName: "minion"), isNightActiveRole: .NotNightActiveRole)
+let MINION = Role(name: "Minion",
+                  type: .Minion,
+                  description: "Finds out, on the first night, who the werewolves are, but does not wake up with them at night.",
+                  roleExplanation: "The first night, the Minion learns who the werewolves are, but does not wake with them at night. The Seer sees the Minion as a villager.\n\n[There's always one, isn't there? That one guy on the good guy team who tries to infiltrate the bad guys but gets lots and ends up being a puppet for them. This, is that guy.]",
+                  impact: -6,
+                  priority: 40,
+                  team: [.TeamWerewolf],
+                  availableEffects: [],
+                  image: #imageLiteral(resourceName: "minion"),
+                  isNightActiveRole: .NotNightActiveRole)
 
 
 
-let PACIFIST = Role(name: "Pacifist", type: .Pacifist, description: "You must always vote for players to not be eliminated.", roleExplanation: "The Pacifist, abhorring violence, always votes agaist a lynch. They are a very helpful for the Werewolves because it's one vote that they must not worry about, even if they don't know who the Pacifist is.\n\n[]", impact: -1, priority: 79, team: [.TeamVillage], availableEffects: [], image: #imageLiteral(resourceName: "pacifist"), isNightActiveRole: .NotNightActiveRole)
+let PACIFIST = Role(name: "Pacifist",
+                    type: .Pacifist,
+                    description: "Always votes for players to not be eliminated.",
+                    roleExplanation: "The Pacifist, abhorring violence, always votes agaist a lynch.\n\n[Damn hippies.]",
+                    impact: -1,
+                    priority: 79,
+                    team: [.TeamVillage],
+                    availableEffects: [],
+                    image: #imageLiteral(resourceName: "pacifist"),
+                    isNightActiveRole: .NotNightActiveRole)
 
 
 
-let PRIEST = Role(name: "Priest", type: .Priest, description: "One night, once per game, choose a player to be protected. That player may not be eliminated at night.", roleExplanation: "Every game, once per night, the Priest can choose someone to protect. The Moderator should wake the Priest, show them who is going to be eliminated, and give them the option to use their power to save that player from any form of elimination. The Priest cannot choose himself, even if he hasn't used his power and he is the current target.\n\n[]", impact: 3, priority: 172, team: [.TeamVillage], availableEffects: [.Protection], image: #imageLiteral(resourceName: "priest"), isNightActiveRole: .NightActiveRole)
+let PRIEST = Role(name: "Monk",
+                  type: .Priest,
+                  description: "One night, once per game, chooses a player to bless. That player may not be eliminated at night.",
+                  roleExplanation: "Every game, once per night, the Priest can choose someone to protect. The Moderator should wake the Priest, show them who is going to be eliminated, and give them the option to use their power to save that player from any form of elimination. The Priest cannot choose himself, even if he hasn't used his power and he is the current target.\n\n[Tending to the monestary at the edge of town, the Monk lives a solitary life. Despite the recent attacks on the village, he refuses to leave his home. He is ever ready to bless those who come seeking salvation.]",
+                  impact: 3,
+                  priority: 172,
+                  team: [.TeamVillage],
+                  availableEffects: [.Protection],
+                  image: #imageLiteral(resourceName: "priest"),
+                  isNightActiveRole: .NightActiveRole)
 
 
 
-let SEER = Role(name: "Seer", type: .Seer, description: "Each night choose a player to learn if he is a Villager or a Werewolf.", roleExplanation: "Each night, the Seer chooses a player by pointing at them, and the Moderator tells her, through a thumbs up - for villager - or a thumbs down - for a werewolf - what that player's affiliation is. While this is generally great information, the Seer should be careful when certain roles are in the game, like the Minior or the Lycan, as what they see is imperfect.\n\n[]", impact: 4, priority: 181, team: [.TeamVillage], availableEffects: [.Protection], image: #imageLiteral(resourceName: "seer"), isNightActiveRole: .NightActiveRole)
+let SEER = Role(name: "Seer",
+                type: .Seer,
+                description: "Each night choose a player to learn if he is a Villager or a Werewolf.",
+                roleExplanation: "Each night, the Seer chooses a player by pointing at them, and the Moderator tells her, through a thumbs up - for villager - or a thumbs down - for a werewolf - what that player's affiliation is. While this is generally great information, the Seer should be careful when certain roles are in the game, like the Minior or the Lycan, as what they see is imperfect.\n\n[]", impact: 4,
+                priority: 181,
+                team: [.TeamVillage],
+                availableEffects: [.Protection],
+                image: #imageLiteral(resourceName: "seer"),
+                isNightActiveRole: .NightActiveRole)
 
 
 
@@ -289,7 +360,16 @@ let SPELLCASTER = Role(name: "Spellcaster", type: .Spellcaster, description: "Ea
 
 
 
-let THE_BLOB = Role(name: "The Blob", type: .TheBlob, description: "Each night, the player to the right of The Blob is absorbed. If all players are part of The Blob, you win.", roleExplanation: "Each night, the Blob absorbs one player to the right of the Blob. If all players are part of The Blob, The Blob player wins, even if he has been eliminated.\n\n[]", impact: -1, priority: 151, team: [.TeamBlob], availableEffects: [], image: #imageLiteral(resourceName: "theBlob"), isNightActiveRole: .NightActiveRole)
+let THE_BLOB = Role(name: "The Hivemind",
+                    type: .TheBlob,
+                    description: "Each night, the Hivemind assimilates another player to the right of the last assimilated player. If all players are part of the Hivemind, you win.",
+                    roleExplanation: "Each night, the Hivemind absorbs one player to the right of the Blob. If all players are part of the Hivemind, the Hivemind player wins, even if he has been eliminated.\n\n[It started off with a child that stumbled into the forest in the middle of the night, chasing a shadow hanging in the sky. The next day, he was... different. And anyone that visited him and tried to help always came out of the hut acting the same way as the child. Nobody knows what's happening.]",
+                    impact: -1,
+                    priority: 151,
+                    team: [.TeamBlob],
+                    availableEffects: [],
+                    image: #imageLiteral(resourceName: "theBlob"),
+                    isNightActiveRole: .NightActiveRole)
 
 
 
@@ -405,7 +485,16 @@ let ZOMBIE = Role(name: "Zombie", type: .Zombie, description: "Each night, pick 
 
 // MARK: - Team roles
 
-let BLOB_TEAM = Role(name: "The Blob", type: .TheBlob, description: "Each night, the player to the right of The Blob is absorbed. If all players are part of The Blob, the original Blob players wins.", roleExplanation: "Each night, the Blob absorbs one player to the right of the Blob. If all players are part of The Blob, The Blob player wins, even if he has been eliminated.\n\n[]", impact: -1, priority: 151, team: [.TeamBlob], availableEffects: [], image: #imageLiteral(resourceName: "theBlob"), isNightActiveRole: .NightActiveRole)
+let BLOB_TEAM = Role(name: "The Hivemind",
+                     type: .TheBlob,
+                     description: "Each night, the Hivemind assimilates another player to the right of the last assimilated player. If all players are part of the Hivemind, you win.",
+                     roleExplanation: "Each night, the Hivemind absorbs one player to the right of the Blob. If all players are part of the Hivemind, the Hivemind player wins, even if he has been eliminated.\n\n[It started off with a child that stumbled into the forest in the middle of the night, chasing a shadow hanging in the sky. The next day, he was... different. And anyone that visited him and tried to help always came out of the hut acting the same way as the child. Nobody knows what's happening.]",
+                     impact: -1,
+                     priority: 151,
+                     team: [.TeamBlob],
+                     availableEffects: [],
+                     image: #imageLiteral(resourceName: "theBlob"),
+                     isNightActiveRole: .NightActiveRole)
 
 
 

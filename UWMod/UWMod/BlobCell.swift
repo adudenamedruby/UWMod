@@ -42,7 +42,7 @@ class BlobCell: UITableViewCell {
         mainCardView.layer.cornerRadius     = STYLE.InfoCardCornerRadius
         mainCardView.backgroundColor        = STYLE.Tan
         
-        let headerTitle                     = "The Blob"
+        let headerTitle                     = "The Hivemind"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                       withColour: STYLE.Red)
     }
