@@ -10,6 +10,7 @@
 		1209820A1F26BBE700EC5D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120982091F26BBE700EC5D21 /* AppDelegate.swift */; };
 		1209820F1F26BBE700EC5D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1209820D1F26BBE700EC5D21 /* Main.storyboard */; };
 		120982141F26BBE700EC5D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120982121F26BBE700EC5D21 /* LaunchScreen.storyboard */; };
+		120BF80A1F58C43B004DF595 /* MenuRoleHelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BF8091F58C43B004DF595 /* MenuRoleHelpVC.swift */; };
 		12154A601F410229003A5D86 /* BlobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12154A5E1F410229003A5D86 /* BlobCell.swift */; };
 		12154A611F410229003A5D86 /* BlobCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12154A5F1F410229003A5D86 /* BlobCell.xib */; };
 		122FC68F1F37660600E0E2C9 /* EndGamePopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */; };
@@ -131,6 +132,7 @@
 		1209820E1F26BBE700EC5D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		120982131F26BBE700EC5D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		120982151F26BBE700EC5D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		120BF8091F58C43B004DF595 /* MenuRoleHelpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuRoleHelpVC.swift; sourceTree = "<group>"; };
 		12154A5E1F410229003A5D86 /* BlobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlobCell.swift; sourceTree = "<group>"; };
 		12154A5F1F410229003A5D86 /* BlobCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlobCell.xib; sourceTree = "<group>"; };
 		122FC68E1F37660600E0E2C9 /* EndGamePopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGamePopupVC.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 				7736D0991F33A32000555037 /* HelpCell.swift */,
 				7736D09B1F33A36700555037 /* HelpCellHeader.swift */,
 				12EC78071F2BE9E50026C667 /* MenuVC.swift */,
+				120BF8091F58C43B004DF595 /* MenuRoleHelpVC.swift */,
 				12EC77E61F2BDAC00026C667 /* PlayerSelectVC.swift */,
 				12EC77E41F2BDAB00026C667 /* RoleSelectVC.swift */,
 				12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */,
@@ -653,6 +656,7 @@
 				123317D21F408E22000C3260 /* RoleClarificationPopupVC.swift in Sources */,
 				12EC77D91F26DD250026C667 /* Constants.swift in Sources */,
 				12EC77E91F2BDAE00026C667 /* NightVC.swift in Sources */,
+				120BF80A1F58C43B004DF595 /* MenuRoleHelpVC.swift in Sources */,
 				7734718B1F3CF42500AED5AD /* SelectPlayerPopupVC.swift in Sources */,
 				12D15E1E1F2D2E7E0057905E /* PMSuperButton.swift in Sources */,
 				12875AA11F5230DB00E7ED00 /* TroublemakerView.swift in Sources */,
