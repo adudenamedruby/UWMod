@@ -174,7 +174,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             
         } else if (player?.isAlive)! {
          
-            if player?.roleType == .Werewolf {
+            if GAME.wolfRoles.contains((player?.roleType)!) {
                 if !GAME.firstNight {
                     if GAME.werewolfEliminationsThisNight != 0 {
                         presentWerewolfAssassination()
@@ -194,16 +194,16 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
                 presentZombieView()
                 
 //            } else if (player?.team.contains(.TeamBlob))! && !GAME.theBlobHasAbsorbed {
-            } else if player?.roleType == .TheBlob && !GAME.theBlobHasAbsorbed {
+            } else if player?.roleType == .TheBlob && !GAME.theBlobHasAbsorbed && !GAME.firstNight {
                 presentBlobView()
                 
-            } else if player?.roleType == .CultLeader && !(player?.hasActedTonight)! {
+            } else if player?.roleType == .CultLeader && !(player?.hasActedTonight)! && !GAME.firstNight {
                 presentJoinCultView()
                 
-            } else if player?.roleType == .Sorceress {
+            } else if player?.roleType == .Sorceress && !GAME.firstNight {
                 presentSorceressView()
                 
-            } else if player?.roleType == .Priest && !((player?.rolePowerUsed)!) {
+            } else if player?.roleType == .Priest && !((player?.rolePowerUsed)!) && !GAME.firstNight {
                 presentPriestView()
                 
             } else if player?.roleType == .Cupid && !((player?.rolePowerUsed)!) {
@@ -215,7 +215,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             } else if player?.roleType == .VirginiaWoolf && !((player?.hasActedTonight)!) {
                 presentVirginiasView()
                 
-            } else if player?.roleType == .Troublemaker && !((player?.hasActedTonight)!) && !(player?.rolePowerUsed)! {
+            } else if player?.roleType == .Troublemaker && !((player?.hasActedTonight)!) && !(player?.rolePowerUsed)! && !GAME.firstNight {
                 presentTroublemakerView()
                 
             } else if player?.roleType == .Witch && !(player?.rolePowerUsed)! && !GAME.firstNight {
