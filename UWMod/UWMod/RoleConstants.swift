@@ -792,7 +792,7 @@ let WOLFCUB = Role(name: "Wolf Cub",
 let WOLFMAN = Role(name: "Wolf Man",
                    type: .WolfMan,
                    description: "Wakes with the other Werewolves every night. Seen as a villager by the Seer.",
-                   roleExplanation: "The Wolf Man is a Werewolf but the Seer sees him as a Villager.\n\n[Something ha]",
+                   roleExplanation: "The Wolf Man is a Werewolf but the Seer sees him as a Villager.\n\n[There are stories of a werewolf that doesn't change into wolf form, but looks like a man. No-one can even imagine what havok this wolf would wreak upon the village if those stories are true. Thank god they're just stories. Right?]",
                    impact: -9,
                    priority: 13,
                    team: [.TeamWerewolf],
@@ -802,7 +802,16 @@ let WOLFMAN = Role(name: "Wolf Man",
 
 
 
-let ZOMBIE = Role(name: "Zombie", type: .Zombie, description: "Each night, pick a player and eat their brains. That player may no longer vote.", roleExplanation: "The zombie eats the brains of a different player each night. The Moderator says whose brain was eaten when the village awakes. From that point on in the game, players with no brains may not take part in the vote to lynch during the day. If at any time all remaining players have no brains, the Zombie wins.\n\n[]", impact: -3, priority: 112, team: [.TeamZombie], availableEffects: [.Lobotomy], image: #imageLiteral(resourceName: "zombie"), isNightActiveRole: .NightActiveRole)
+let ZOMBIE = Role(name: "Zombie",
+                  type: .Zombie,
+                  description: "Each night, picks a player that player may no longer vote.",
+                  roleExplanation: "During the night, the Zombie chooses to bite another player. When the village wakes up in the morning, the Moderator informs the village who was infected. From that point on in the game, players with no brains may not take part in the vote to lynch during the day. To clarify, if there are ten players, and three are bitten, only seven players may vote, and the vote will pass with four votes, instead of the six that would normally be required. If at any time all remaining players have no brains, the Zombie wins.\n\n[Somehow, the walking dead has risen and walks around the village. And what does it eat? Brains. It eats brains.]",
+                  impact: -3,
+                  priority: 112,
+                  team: [.TeamZombie],
+                  availableEffects: [.Lobotomy],
+                  image: #imageLiteral(resourceName: "zombie"),
+                  isNightActiveRole: .NightActiveRole)
 
 
 // MARK: - Team roles
