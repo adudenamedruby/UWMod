@@ -209,9 +209,12 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             } else if player?.roleType == .Cupid && !((player?.rolePowerUsed)!) {
                 presentCupidView()
                 
-            } else if player?.roleType == .Spellcaster && !((player?.hasActedTonight)!) {
+            } else if player?.roleType == .Spellcaster && !((player?.hasActedTonight)!) && !GAME.firstNight {
                 presentSpellcasterView()
                 
+            } else if player?.roleType == .Beholder && !((player?.hasActedTonight)!) && GAME.firstNight {
+                presentSorceressView()
+            
             } else if player?.roleType == .VirginiaWoolf && !((player?.hasActedTonight)!) {
                 presentVirginiasView()
                 

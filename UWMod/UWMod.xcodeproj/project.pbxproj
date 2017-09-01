@@ -848,7 +848,7 @@
 				DEVELOPMENT_TEAM = 8DD4C7KK4P;
 				INFOPLIST_FILE = UWMod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.UWMod;
+				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.SecretWerewolf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -861,7 +861,7 @@
 				DEVELOPMENT_TEAM = 8DD4C7KK4P;
 				INFOPLIST_FILE = UWMod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.UWMod;
+				PRODUCT_BUNDLE_IDENTIFIER = com.acmelabs.SecretWerewolf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

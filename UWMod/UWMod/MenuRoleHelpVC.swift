@@ -104,6 +104,11 @@ extension MenuRoleHelpVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected \(availableRoles[indexPath.row].name)")
+        let storyboard              = UIStoryboard(name: "Popups", bundle: nil)
+        let roleClarification       = storyboard.instantiateViewController(withIdentifier: "roleClarificationPopupVC") as! RoleClarificationPopupVC
+        roleClarification.roleInfo  = availableRoles[indexPath.row]
+        self.present(roleClarification, animated: true, completion: nil)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

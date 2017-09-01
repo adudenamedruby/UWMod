@@ -187,6 +187,7 @@ class ConfirmationPopup: UIViewController {
             
             } else if reason == .ZombieLobotomization {
                 actingPlayer?.eatBrains(ofVictim: chosenPlayer)
+                chosenPlayer.addToTeam(team: .TeamZombie)
                 actingPlayer?.hasActedTonight = true
                 
             } else if reason == .BlobAbsorbtion {

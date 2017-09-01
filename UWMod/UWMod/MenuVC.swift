@@ -38,7 +38,7 @@ class MenuVC: UIViewController {
         mainCardView.backgroundColor            = STYLE.Tan
         brownView.backgroundColor               = STYLE.Brown
         
-        let bottomString = "Terror"
+        let bottomString = "Werewolf"
         bottomTitle.attributedText = bottomString.styleTitleLabel(withStringFont: STYLE.OldMenuBottomFont!, withColour: STYLE.Red)
     }
 
