@@ -146,14 +146,14 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             roleDescritpionLabel.text = player?.roleDescription
             roleDescritpionLabel.alpha = 1
             roleDescritpionLabel.textColor = STYLE.Brown
-            textView.text = player?.roleExplanation
+            textView.attributedText = player?.roleExplanation
             
         } else {
             roleIconImage.image = role?.image
             let roleTitle = role?.name
             roleTitleLabel.attributedText = roleTitle?.styleTitleLabel(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
             roleDescritpionLabel.text = role?.description
-            textView.text = role?.roleExplanation
+            textView.attributedText = role?.roleExplanation
         }
         
         textView.setContentOffset(CGPoint.zero, animated: false)
@@ -174,7 +174,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             
         } else if (player?.isAlive)! {
          
-            if player?.roleType == .Werewolf {
+            if GAME.wolfRoles.contains((player?.roleType)!) {
                 if !GAME.firstNight {
                     if GAME.werewolfEliminationsThisNight != 0 {
                         presentWerewolfAssassination()
@@ -193,27 +193,42 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             } else if player?.roleType == .Zombie && !GAME.firstNight {
                 presentZombieView()
                 
-            } else if (player?.team.contains(.TeamBlob))! && !GAME.theBlobHasAbsorbed {
+//            } else if (player?.team.contains(.TeamBlob))! && !GAME.theBlobHasAbsorbed {
+            } else if player?.roleType == .TheBlob && !GAME.theBlobHasAbsorbed && !GAME.firstNight {
                 presentBlobView()
                 
-            } else if player?.roleType == .CultLeader && !(player?.hasActedTonight)! {
+            } else if player?.roleType == .CultLeader && !(player?.hasActedTonight)! && !GAME.firstNight {
                 presentJoinCultView()
                 
-            } else if player?.roleType == .Sorceress {
+            } else if player?.roleType == .Sorceress && !GAME.firstNight {
                 presentSorceressView()
                 
-            } else if player?.roleType == .Priest && !((player?.rolePowerUsed)!) {
+            } else if player?.roleType == .Priest && !((player?.rolePowerUsed)!) && !GAME.firstNight {
                 presentPriestView()
                 
             } else if player?.roleType == .Cupid && !((player?.rolePowerUsed)!) {
                 presentCupidView()
                 
-            } else if player?.roleType == .Spellcaster && !((player?.hasActedTonight)!) {
+            } else if player?.roleType == .Spellcaster && !((player?.hasActedTonight)!) && !GAME.firstNight {
                 presentSpellcasterView()
                 
+            } else if player?.roleType == .Beholder && !((player?.hasActedTonight)!) && GAME.firstNight {
+                presentSorceressView()
+            
             } else if player?.roleType == .VirginiaWoolf && !((player?.hasActedTonight)!) {
                 presentVirginiasView()
                 
+            } else if player?.roleType == .Troublemaker && !((player?.hasActedTonight)!) && !(player?.rolePowerUsed)! && !GAME.firstNight {
+                presentTroublemakerView()
+                
+            } else if player?.roleType == .Witch && !(player?.rolePowerUsed)! && !GAME.firstNight {
+                
+                if (player?.playersIneligibleForEffect[.Protection] == nil) {
+                    presentWitchView()
+                } else if (player?.playersIneligibleForEffect[.Poison] == nil) {
+                    presentWitchView()
+                }
+        
             }
         }
     }
@@ -263,7 +278,6 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         let localizedActionView = JoinCultView(frame: actionViewFrame)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
-
     }
     
     private func presentSorceressView() {
@@ -291,6 +305,18 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
     private func presentVirginiasView() {
         let localizedActionView = VirginiasView(frame: actionViewFrame, withPlayer: player!)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    private func presentTroublemakerView() {
+        let localizedActionView = TroublemakerView(frame: actionViewFrame, withPlayer: player!)
+        localizedActionView.delegate = self
+        self.containerView.addSubview(localizedActionView)
+    }
+    
+    private func presentWitchView() {
+        let localizedActionView = WitchView(frame: actionViewFrame, withPlayer: player!)
         localizedActionView.delegate = self
         self.containerView.addSubview(localizedActionView)
     }

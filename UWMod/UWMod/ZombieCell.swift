@@ -16,6 +16,8 @@ class ZombieCell: UITableViewCell {
     @IBOutlet var mainCardView:             UIView!
     @IBOutlet var headerView:               UIView!
     @IBOutlet weak var headerTitleLabel:    RegTanHeader!
+    @IBOutlet weak var teamPlayerLabel:     RegTanHeader!
+    @IBOutlet weak var playerTotalsLabel:   RegTanHeaderSmall!
     
     @IBOutlet var playerLabel:              RegBrown!
     
@@ -48,6 +50,14 @@ class ZombieCell: UITableViewCell {
     }
     
     func configureCell() {
+        let playerInfo                          = GAME.retrieveTeamVSTotalNumbers(team: .TeamZombie)
+        let totalPlayers                        = playerInfo.total
+        let teamTotal                           = playerInfo.team
+        
+        self.teamPlayerLabel.text = "\(teamTotal)"
+        self.playerTotalsLabel.text = "/\(totalPlayers)"
+        
+        
         var zombiePlayer: Player!
         
         for player in GAME.livingActors {

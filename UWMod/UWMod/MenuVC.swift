@@ -38,7 +38,7 @@ class MenuVC: UIViewController {
         mainCardView.backgroundColor            = STYLE.Tan
         brownView.backgroundColor               = STYLE.Brown
         
-        let bottomString = "Wolf'd"
+        let bottomString = "Werewolf"
         bottomTitle.attributedText = bottomString.styleTitleLabel(withStringFont: STYLE.OldMenuBottomFont!, withColour: STYLE.Red)
     }
 
@@ -63,7 +63,7 @@ class MenuVC: UIViewController {
     // Setup the presenting animation
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
-        transition.startingPoint = aboutButton.center
+        transition.startingPoint = mainCardView.center
         transition.circleColour = brownView.backgroundColor!
         return transition
     }
@@ -86,6 +86,10 @@ extension MenuVC: UIViewControllerTransitioningDelegate {
             secondVC.modalPresentationStyle = .custom
         } else if segue.identifier == "helpSegue" {
             let secondVC = segue.destination as! HelpVC
+            secondVC.transitioningDelegate = self
+            secondVC.modalPresentationStyle = .custom
+        } else if segue.identifier == "menuRoleHelpSegue" {
+            let secondVC = segue.destination as! MenuRoleHelpVC
             secondVC.transitioningDelegate = self
             secondVC.modalPresentationStyle = .custom
         }

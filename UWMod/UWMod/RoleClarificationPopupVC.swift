@@ -13,6 +13,7 @@ class RoleClarificationPopupVC: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var mainCardView:            UIView!
+    @IBOutlet weak var cardBottomView: UIView!
     @IBOutlet weak var headerView:              UIView!
     @IBOutlet weak var headerTitleLabel:        OldBrownRole!
     @IBOutlet weak var roleDescriptionLabel:    UITextView!
@@ -29,16 +30,21 @@ class RoleClarificationPopupVC: UIViewController {
         super.viewDidLoad()
         
         mainCardView.layer.cornerRadius         = STYLE.CornerRadius
-        mainCardView.backgroundColor            = STYLE.Tan
+        mainCardView.backgroundColor            = STYLE.Brown
+        cardBottomView.layer.cornerRadius       = STYLE.CornerRadius
+        cardBottomView.backgroundColor          = STYLE.Tan
         headerView.backgroundColor              = STYLE.Brown
         
-        player                                  = GAME.useChosenPlayer()
-        roleInfo                                = player.role
+        if roleInfo == nil {
+            player                              = GAME.useChosenPlayer()
+            roleInfo                            = player.role
+        }
+        
         
         let headerTitle = "\(roleInfo.name)"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldRoleFont!, withColour: STYLE.Red)
         
-        roleDescriptionLabel.text = roleInfo.roleExplanation
+        roleDescriptionLabel.attributedText = roleInfo.roleExplanation
         roleImage.image = roleInfo.image
         
     }

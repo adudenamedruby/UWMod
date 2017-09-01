@@ -42,7 +42,7 @@ class BlobCell: UITableViewCell {
         mainCardView.layer.cornerRadius     = STYLE.InfoCardCornerRadius
         mainCardView.backgroundColor        = STYLE.Tan
         
-        let headerTitle                     = "The Blob"
+        let headerTitle                     = "The Hivemind"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                       withColour: STYLE.Red)
     }
@@ -54,7 +54,8 @@ class BlobCell: UITableViewCell {
     }
     
     func configureCell() {
-        self.originalBlobLabel.text             = "Original Blob: \(originalBlob.name)"
+        let originalBlobStatus                  = originalBlob.isAlive ? "(currently alive)" : "(dead)"
+        self.originalBlobLabel.text             = "Original Blob: \(originalBlob.name) \(originalBlobStatus)"
         
         let playerInfo                          = GAME.retrieveTeamVSTotalNumbers(team: .TeamBlob)
         let totalPlayers                        = playerInfo.total

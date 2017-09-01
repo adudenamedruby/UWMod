@@ -33,7 +33,7 @@ class RoleSelectionCell: UICollectionViewCell {
         imageBackgroundView.backgroundColor = STYLE.Brown
         
         let attributedText = NSMutableAttributedString(string: roleName,
-                                                       attributes: [NSFontAttributeName:STYLE.RegStandardFont!])
+                                                       attributes: [NSFontAttributeName:STYLE.RegBoldTableView!])
         attributedText.addAttribute(NSForegroundColorAttributeName,
                                     value: STYLE.Red,
                                     range: NSRange(location:0,length:1))

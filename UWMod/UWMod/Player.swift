@@ -13,6 +13,7 @@ class Player {
     private var _role:                      Role!
     private var _person:                    Person?
     private var _name:                      String!
+    private var _powerUsed:                 Bool
     var teamName:                           String?
     var gameID:                             Int
     var isAlive:                            Bool
@@ -45,6 +46,8 @@ class Player {
         self.gameID                         = 0
         self.team                           = []
         self.daytimeInfoCards               = []
+        
+        self._powerUsed                     = false
 
         self.isAlive                        = true
         self.isMute                         = false
@@ -397,7 +400,7 @@ class Player {
                 
             }
             
-        case .Priest:
+        case .Priest, .Witch:
             if canPerformEffect(condition: effect, player: playerToProtect) {
                 
                 // Keep track of a single protected target
@@ -446,6 +449,18 @@ class Player {
         }
     }
     
+    public func stirUpTrouble() {
+        self.addTargetToSingularAffectingPlayerList(condition: .Delinquency, affectedPlayer: self)
+        self.addTargetToSingularIneligibilityList(condition: .Delinquency, playerToAdd: self)
+        self.addEffectFromOtherPlayers(condition: .Delinquency, causedBy: self)
+    }
+    
+    public func poisonSomebody(victim: Player) {
+        self.addTargetToSingularIneligibilityList(condition: .Poison, playerToAdd: victim)
+        self.addTargetToSingularAffectingPlayerList(condition: .Poison, affectedPlayer: victim)
+        victim.addEffectFromOtherPlayers(condition: .Poison, causedBy: self)
+    }
+    
     /// Apply the Lobotomy effect to other players
     public func eatBrains(ofVictim victim: Player) {
         
@@ -492,7 +507,7 @@ class Player {
     // the Role object directly.
     
     func hasUsedOneTimePower() {
-        self._role.powerUsed = true
+        self._powerUsed = true
     }
     
     var role: Role! {
@@ -511,7 +526,7 @@ class Player {
         get { return _role.description }
     }
     
-    var roleExplanation: String {
+    var roleExplanation: NSAttributedString {
         get { return _role.roleExplanation }
     }
     
@@ -536,7 +551,7 @@ class Player {
     }
     
     var rolePowerUsed: Bool {
-        get { return _role.powerUsed }
+        get { return _powerUsed }
     }
     
     public func setRoleNotes(newNotes: String) {

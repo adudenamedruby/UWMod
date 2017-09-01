@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="CaviarDreams.ttf">
+            <string>CaviarDreams</string>
+        </array>
         <array key="CaviarDreams_Bold.ttf">
             <string>CaviarDreams-Bold</string>
         </array>
@@ -17,6 +20,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WerewolfAssassination" customModule="UWMod" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="unW-JE-Nnh"/>
+                <outlet property="eliminationDetails" destination="AEI-rD-Oba" id="klK-pa-E87"/>
                 <outlet property="killVillagerButton" destination="zFE-9g-JAb" id="1DE-P1-9mV"/>
                 <outlet property="notesLabel" destination="pAU-mo-6FX" id="GMm-Lb-kLG"/>
                 <outlet property="timerLabel" destination="kEg-YP-gIJ" id="cFy-ww-AzD"/>
@@ -66,11 +70,19 @@
                     <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eliminations Available: 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEI-rD-Oba">
+                    <rect key="frame" x="84.5" y="120.5" width="141" height="15.5"/>
+                    <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="AEI-rD-Oba" secondAttribute="bottom" constant="4" id="6A0-JR-ETy"/>
                 <constraint firstItem="zFE-9g-JAb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6JS-4a-XsS"/>
                 <constraint firstItem="pAU-mo-6FX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="96j-zB-fwy"/>
+                <constraint firstItem="AEI-rD-Oba" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Cdn-mL-6oI"/>
                 <constraint firstAttribute="bottom" secondItem="pAU-mo-6FX" secondAttribute="bottom" constant="80" id="Kpu-eb-yZt"/>
                 <constraint firstItem="kEg-YP-gIJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Qcd-tM-BUO"/>
                 <constraint firstItem="zFE-9g-JAb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="20" id="ePO-s7-7PG"/>

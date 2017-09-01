@@ -227,7 +227,7 @@ class RoleSelectVC: UIViewController {
             
         } else {
             // Begin the game
-            GAME = Game(availableRoster: selectedRoles, availablePlayers: passedPlayers!, withSettings: SETTINGS)
+            GAME = Game(availableRoster: selectedRoles, availablePlayers: passedPlayers!, withAssignedNumbers: playersAssignedNumbers!, withSettings: SETTINGS)
             
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let masterGameView = storyboard.instantiateViewController(withIdentifier: "MasterGameWindow") as! MainGameVC

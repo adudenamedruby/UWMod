@@ -63,13 +63,15 @@ enum DaytimeCardType {
 
 // To be added as time goes by.
 enum PlayerEffects {
-    case Protection
-    case Hypnosis
-    case Silence
-    case Ostracism
+    case Protection         // priest, bodyguard, witch
+    case Hypnosis           // mummy
+    case Silence            // spellcaster
+    case Ostracism          // old hag
     case Lobotomy           // zombie
     case Lovestruck         // cupid
     case Dependent          // Virginia Woolf
+    case Poison             // witch
+    case Delinquency        // troublemaker
 }
 
 
