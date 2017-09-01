@@ -60,6 +60,7 @@
 		12875AA11F5230DB00E7ED00 /* TroublemakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12875AA01F5230DB00E7ED00 /* TroublemakerView.swift */; };
 		12960F9B1F49DB9100EA8A97 /* AssignNumbersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12960F9A1F49DB9100EA8A97 /* AssignNumbersVC.swift */; };
 		1298C8A31F3DD15D00261779 /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1298C8A21F3DD15D00261779 /* Notes.rtf */; };
+		12A4C1861F597C8100609590 /* ExtrasMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A4C1851F597C8100609590 /* ExtrasMenuVC.swift */; };
 		12C8FDAB1F4F946900D36BF4 /* VirginiasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8FDAA1F4F946900D36BF4 /* VirginiasView.swift */; };
 		12C8FDAD1F4F949700D36BF4 /* VirginiasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C8FDAC1F4F949700D36BF4 /* VirginiasView.xib */; };
 		12C8FDB01F4F9B2E00D36BF4 /* VirginiaTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8FDAE1F4F9B2E00D36BF4 /* VirginiaTeamCell.swift */; };
@@ -182,6 +183,7 @@
 		12875AA01F5230DB00E7ED00 /* TroublemakerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TroublemakerView.swift; sourceTree = "<group>"; };
 		12960F9A1F49DB9100EA8A97 /* AssignNumbersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignNumbersVC.swift; sourceTree = "<group>"; };
 		1298C8A21F3DD15D00261779 /* Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Notes.rtf; sourceTree = "<group>"; };
+		12A4C1851F597C8100609590 /* ExtrasMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtrasMenuVC.swift; sourceTree = "<group>"; };
 		12C8FDAA1F4F946900D36BF4 /* VirginiasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirginiasView.swift; sourceTree = "<group>"; };
 		12C8FDAC1F4F949700D36BF4 /* VirginiasView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VirginiasView.xib; sourceTree = "<group>"; };
 		12C8FDAE1F4F9B2E00D36BF4 /* VirginiaTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirginiaTeamCell.swift; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 				12EC77D01F26D4AA0026C667 /* AboutVC.swift */,
 				1260ED321F2C2A78001A8F7B /* AddPlayerVC.swift */,
 				12960F9A1F49DB9100EA8A97 /* AssignNumbersVC.swift */,
+				12A4C1851F597C8100609590 /* ExtrasMenuVC.swift */,
 				77B2B00E1F3A1B580032A36B /* GameSettingsVC.swift */,
 				7736D0911F3399BC00555037 /* HelpVC.swift */,
 				7736D0991F33A32000555037 /* HelpCell.swift */,
@@ -678,6 +681,7 @@
 				127ACFE61F425986004E9779 /* JoinCultCell.swift in Sources */,
 				12DA2CDC1F40DDD100D0193A /* BlobAbsorbtion.swift in Sources */,
 				124F74FA1F368A0A00F03E49 /* ConfirmationPopup.swift in Sources */,
+				12A4C1861F597C8100609590 /* ExtrasMenuVC.swift in Sources */,
 				12F584081F361F5F00A98764 /* GeneralEnumerators.swift in Sources */,
 				7736D0981F33A2C600555037 /* UIViewExtensions.swift in Sources */,
 				1261C2BE1F32AA960099D759 /* GeneralInfo.swift in Sources */,

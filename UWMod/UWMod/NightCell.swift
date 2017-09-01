@@ -70,6 +70,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     }
     
     @IBAction func helpPressed(_ sender: Any) {
+        textView.scrollRangeToVisible(NSRange(location: 0, length: 0))
         fadePopupIn()
     }
     @IBAction func backButtonPRessed(_ sender: Any) {
@@ -155,8 +156,6 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             roleDescritpionLabel.text = role?.description
             textView.attributedText = role?.roleExplanation
         }
-        
-        textView.setContentOffset(CGPoint.zero, animated: false)
     }
     
     public func updateCard() {
