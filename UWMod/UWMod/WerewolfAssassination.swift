@@ -67,13 +67,15 @@ class WerewolfAssassination: UIView {
         
         eliminationDetails.text = "(Eliminations available: \(GAME.werewolfEliminationsThisNight))"
 
-        GAME.startTimer()
+        if !GAME.nightTimerTimeIsUp {
+            GAME.startTimer()
         
-        self.timer = Timer.scheduledTimer(timeInterval: 1,
-                                          target: self,
-                                          selector: #selector(updateTimer),
-                                          userInfo: nil,
-                                          repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 1,
+                                              target: self,
+                                              selector: #selector(updateTimer),
+                                              userInfo: nil,
+                                              repeats: true)
+        }
     }
     
     
@@ -106,5 +108,15 @@ class WerewolfAssassination: UIView {
     
     func updateTimer() {
         timerLabel.text = GAME.currentTime
+        
+        if GAME.currentTime == "--:--:--" {
+            GAME.nightTimerTimeIsUp = true
+        }
+        
+        if GAME.nightTimerTimeIsUp {
+            self.timer.invalidate()
+            timerLabel.text = "TIME'S UP!"
+            GAME.stopTimer()
+        }
     }
 }

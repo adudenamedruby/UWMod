@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         application.isIdleTimerDisabled = true
+        
+        checkAppVersion()
     
         return true
     }
@@ -42,6 +44,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func checkAppVersion() {
+        
+        let defaults        = UserDefaults.standard
+        
+        if let lastVersion = defaults.string(forKey: LastInstalledVersion) {
+            
+            let comparison = CurrentAppVersion as! String
+            if lastVersion != comparison {
+                recordNewAppVersion()
+            }
+        } else {
+            recordNewAppVersion()
+        }
+        
+    }
+    
+    func recordNewAppVersion() {
+        let defaults        = UserDefaults.standard
+        let currentVersion = CurrentAppVersion as! String
+        defaults.set(currentVersion, forKey: LastInstalledVersion)
+        defaults.set(false, forKey: HasPerformedWhatsNewCheck)
+        defaults.set(false, forKey: HasPresentedWhatsNewPopup)
+        
     }
 
 

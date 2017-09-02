@@ -60,6 +60,12 @@ var SETTINGS: GameSettings  = GameSettings()
 
 
 
+// App Version Variables
+let HasPerformedWhatsNewCheck       = "hasPerformedWhatsNewCheck"
+let HasPresentedWhatsNewPopup       = "hasPresentedWhatsNewPopup"
+let LastInstalledVersion            = "lastInstalledVersion"
+let CurrentAppVersion : AnyObject!  = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as AnyObject
+
 
 // Notification Variables
 let localizedActionFinishedNotification = "localizedActionFinishedNotification"

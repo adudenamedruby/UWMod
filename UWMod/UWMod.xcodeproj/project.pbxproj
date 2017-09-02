@@ -29,6 +29,7 @@
 		123BD0DC1F3000A000B99019 /* MainNightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0DB1F3000A000B99019 /* MainNightVC.swift */; };
 		123BD0E61F31474A00B99019 /* AssignPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123BD0E51F31474A00B99019 /* AssignPlayer.xib */; };
 		123BD0EE1F31555B00B99019 /* AssignPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123BD0ED1F31555B00B99019 /* AssignPlayer.swift */; };
+		1240761E1F5B103100ED9070 /* WhatsNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1240761D1F5B103100ED9070 /* WhatsNewVC.swift */; };
 		124787611F34150A00518532 /* SelectedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124787601F34150A00518532 /* SelectedItem.swift */; };
 		124A13331F4735C20037DA94 /* CupidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A13321F4735C20037DA94 /* CupidView.swift */; };
 		124A13351F4735CC0037DA94 /* CupidView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124A13341F4735CC0037DA94 /* CupidView.xib */; };
@@ -152,6 +153,7 @@
 		123BD0DB1F3000A000B99019 /* MainNightVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNightVC.swift; sourceTree = "<group>"; };
 		123BD0E51F31474A00B99019 /* AssignPlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignPlayer.xib; sourceTree = "<group>"; };
 		123BD0ED1F31555B00B99019 /* AssignPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignPlayer.swift; sourceTree = "<group>"; };
+		1240761D1F5B103100ED9070 /* WhatsNewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatsNewVC.swift; sourceTree = "<group>"; };
 		124787601F34150A00518532 /* SelectedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedItem.swift; sourceTree = "<group>"; };
 		124A13321F4735C20037DA94 /* CupidView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CupidView.swift; sourceTree = "<group>"; };
 		124A13341F4735CC0037DA94 /* CupidView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CupidView.xib; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				12EC77E61F2BDAC00026C667 /* PlayerSelectVC.swift */,
 				12EC77E41F2BDAB00026C667 /* RoleSelectVC.swift */,
 				12D15E1F1F2E82870057905E /* RoleSelectionCell.swift */,
+				1240761D1F5B103100ED9070 /* WhatsNewVC.swift */,
 			);
 			name = PreGameVCs;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				122FC68F1F37660600E0E2C9 /* EndGamePopupVC.swift in Sources */,
 				77B2B00F1F3A1B580032A36B /* GameSettingsVC.swift in Sources */,
 				7736D0961F33A25100555037 /* HelpConstants.swift in Sources */,
+				1240761E1F5B103100ED9070 /* WhatsNewVC.swift in Sources */,
 				7736D09A1F33A32000555037 /* HelpCell.swift in Sources */,
 				124F74F41F35FF3000F03E49 /* WerewolfAssassination.swift in Sources */,
 				12EC77EB1F2BDAEA0026C667 /* DayVC.swift in Sources */,

@@ -130,7 +130,7 @@ class WitchView: UIView {
         if GAME.playersToBeEliminated.count > 0 {
             for player in GAME.playersToBeEliminated {
                 if player.killedBy == .Werewolf {
-                    victimLabel.text    = "\(player.name) is werewolves victim."
+                    victimLabel.text    = "Werewolf target: \(player.name)"
                     victimPresented     = true
                     break
                 }

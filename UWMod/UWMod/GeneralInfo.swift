@@ -61,18 +61,30 @@ class GeneralInfo: UITableViewCell {
         numberOfNightsPassedLabel.text      = "\(GAME.currentNight - 1)"
         dayNumberLabel.text                 = "\(GAME.currentDay)"
         
-        if !GAME.timerIsRunning {
+        if !GAME.timerIsRunning && !GAME.dayTimerTimeIsUp {
             GAME.startTimer()
-        }
         
-        self.timer = Timer.scheduledTimer(timeInterval: 1,
-                                          target: self,
-                                          selector: #selector(updateTimeLabel),
-                                          userInfo: nil,
-                                          repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 1,
+                                              target: self,
+                                              selector: #selector(updateTimeLabel),
+                                              userInfo: nil,
+                                              repeats: true)
+        } else {
+            timeLabel.text = "TIME'S UP!"
+        }
     }
     
     func updateTimeLabel() {
         timeLabel.text = GAME.currentTime
+        
+        if GAME.currentTime == "--:--:--" {
+            GAME.dayTimerTimeIsUp = true
+        }
+        
+        if GAME.dayTimerTimeIsUp {
+            self.timer.invalidate()
+            timeLabel.text = "TIME'S UP!"
+            GAME.stopTimer()
+        }
     }
 }

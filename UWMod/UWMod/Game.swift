@@ -63,6 +63,8 @@ class Game {
     
     // Timer related variables
     private var _wereTimer:                         Weretimer
+    var dayTimerTimeIsUp:                           Bool
+    var nightTimerTimeIsUp:                         Bool
 
     
     // Custom, private getters
@@ -211,6 +213,8 @@ class Game {
         
         // Timer related variables
         self._wereTimer                     = Weretimer(withSettings: _settings)
+        self.dayTimerTimeIsUp               = false
+        self.nightTimerTimeIsUp             = false
         
     }
 
@@ -469,6 +473,7 @@ class Game {
         
         theBlobHasAbsorbed              = false
         _isNightPhase                   = false
+        nightTimerTimeIsUp              = false
         _currentNight += 1
     }
     
@@ -482,6 +487,7 @@ class Game {
         
         aWerewolfHasBeenSlain           = false
         _isNightPhase                   = true
+        dayTimerTimeIsUp                = false
         _currentDay += 1
     }
     
