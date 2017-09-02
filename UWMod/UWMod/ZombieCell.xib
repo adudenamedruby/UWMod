@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,28 +19,28 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFS-kJ-ced">
-                        <rect key="frame" x="3" y="1" width="495" height="431.5"/>
+                        <rect key="frame" x="5" y="0.0" width="491" height="430.5"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxz-7V-ccU">
-                                <rect key="frame" x="1" y="0.0" width="493" height="430.5"/>
+                                <rect key="frame" x="1" y="0.0" width="489" height="429.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJe-2y-199">
-                                        <rect key="frame" x="0.0" y="0.0" width="493" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="489" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erewolf Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyZ-ze-8Fm" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="178" y="10" width="137" height="25"/>
+                                                <rect key="frame" x="176" y="10" width="137" height="25"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGi-x1-h6t" customClass="RegTanHeaderSmall" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="461.5" y="19" width="16.5" height="16"/>
+                                                <rect key="frame" x="457.5" y="19" width="16.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="13"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="77" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cF-we-LFf" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
-                                                <rect key="frame" x="435.5" y="10" width="26.5" height="25"/>
+                                                <rect key="frame" x="431.5" y="10" width="26.5" height="25"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
                                                 <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -59,7 +58,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UI-JG-9HR" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="55" width="468" height="365.5"/>
+                                        <rect key="frame" x="15" y="55" width="464" height="364.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -88,10 +87,10 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="aFS-kJ-ced" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-7" id="Lkq-4K-xTv"/>
-                    <constraint firstItem="aFS-kJ-ced" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-5" id="MiO-oH-A3A"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="aFS-kJ-ced" secondAttribute="trailing" constant="-5" id="P0Y-Ai-aKa"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="aFS-kJ-ced" secondAttribute="bottom" constant="-5" id="uGj-bA-Rfk"/>
+                    <constraint firstItem="aFS-kJ-ced" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="W5R-am-GXJ"/>
+                    <constraint firstAttribute="trailing" secondItem="aFS-kJ-ced" secondAttribute="trailing" constant="5" id="WZV-Tz-rFs"/>
+                    <constraint firstAttribute="bottom" secondItem="aFS-kJ-ced" secondAttribute="bottom" constant="5" id="f1c-lU-TR5"/>
+                    <constraint firstItem="aFS-kJ-ced" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jFk-6T-ml0"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

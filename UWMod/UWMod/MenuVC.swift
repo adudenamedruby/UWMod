@@ -80,17 +80,13 @@ extension MenuVC: UIViewControllerTransitioningDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "aboutSegue" {
-            let secondVC = segue.destination as! AboutVC
-            secondVC.transitioningDelegate = self
+        if segue.identifier == "extrasSegue" {
+            let secondVC                    = segue.destination as! ExtrasMenuVC
+            secondVC.transitioningDelegate  = self
             secondVC.modalPresentationStyle = .custom
-        } else if segue.identifier == "helpSegue" {
-            let secondVC = segue.destination as! HelpVC
-            secondVC.transitioningDelegate = self
-            secondVC.modalPresentationStyle = .custom
-        } else if segue.identifier == "menuRoleHelpSegue" {
-            let secondVC = segue.destination as! MenuRoleHelpVC
-            secondVC.transitioningDelegate = self
+        } else if segue.identifier == "gameSettingsSegue" {
+            let secondVC                    = segue.destination as! GameSettingsVC
+            secondVC.transitioningDelegate  = self
             secondVC.modalPresentationStyle = .custom
         }
     }

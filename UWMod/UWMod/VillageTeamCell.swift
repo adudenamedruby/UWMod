@@ -39,7 +39,7 @@ class VillageTeamCell: UITableViewCell {
         mainCardView.layer.cornerRadius         = STYLE.InfoCardCornerRadius
         mainCardView.backgroundColor            = STYLE.Tan
         
-        let headerTitle                         = "Village Team"
+        let headerTitle                         = "The Village"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                       withColour: STYLE.Red)
     }

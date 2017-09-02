@@ -38,7 +38,7 @@ class WerewolfTeamCell: UITableViewCell {
         mainCardView.layer.cornerRadius         = STYLE.InfoCardCornerRadius
         mainCardView.backgroundColor            = STYLE.Tan
         
-        let headerTitle = "Werewolf Team"
+        let headerTitle = "The Werewolves"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                       withColour: STYLE.Brown)
     }
