@@ -41,8 +41,8 @@ class JoinCultCell: UITableViewCell {
         headerView.backgroundColor          = STYLE.Green
         mainCardView.layer.cornerRadius     = STYLE.InfoCardCornerRadius
         mainCardView.backgroundColor        = STYLE.Tan
-        
-        let headerTitle                     = "The Cult"
+
+        let headerTitle                     = "The Order of Chorazos"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                       withColour: STYLE.Red)
     }
@@ -54,7 +54,8 @@ class JoinCultCell: UITableViewCell {
     }
     
     func configureCell() {
-        self.cultLeaderLabel.text               = "The Cult Leader: \(cultLeader.name)"
+        let leaderStatus                        = cultLeader.isAlive ? "(currently alive)" : "(dead)"
+        self.cultLeaderLabel.text               = "Cult Leader: \(cultLeader.name) \(leaderStatus)"
         
         let playerInfo                          = GAME.retrieveTeamVSTotalNumbers(team: .TeamCult)
         let totalPlayers                        = playerInfo.total

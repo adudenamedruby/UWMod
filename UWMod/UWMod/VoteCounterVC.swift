@@ -17,6 +17,8 @@ class VoteCounterVC: UIViewController {
     @IBOutlet weak var headerTitleLabel:        OldTan!
     @IBOutlet weak var alertTextLabel:          RegBrown!
     @IBOutlet weak var ineligibleLabel:         RegBrown!
+    @IBOutlet weak var mayorLabel:              UILabel!
+    
     
     @IBOutlet weak var yesButton:               PMSuperButton!
     @IBOutlet weak var tallyButton:             PMSuperButton!
@@ -73,8 +75,7 @@ class VoteCounterVC: UIViewController {
     }
     
     private func fetchIneligiblePlayers() -> String {
-        var tempStr                             = "Players Ineligible to Vote:\n"
-        var mayorVote                           = ""
+        var tempStr                             = "Players ineligible to vote:\n"
         var allPlayersCanVote                   = true
         
         for player in GAME.livingActors {
@@ -85,7 +86,7 @@ class VoteCounterVC: UIViewController {
             
             if player.roleType == .Mayor {
                 mayorPresent = true
-                mayorVote = "\n\nRemember to count Mayor \(player.name)'s vote twice."
+                mayorLabel.text = "(Count Mayor \(player.name)'s vote twice.)"
             }
         }
         
@@ -93,8 +94,10 @@ class VoteCounterVC: UIViewController {
             tempStr = "All players can vote... for now."
         }
         
-        if mayorVote != "" {
-            tempStr = tempStr + mayorVote
+        if mayorPresent {
+            mayorLabel.isHidden         = false
+        } else {
+            mayorLabel.isHidden         = true
         }
         
         return tempStr

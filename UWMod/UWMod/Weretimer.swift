@@ -87,6 +87,7 @@ class Weretimer {
                 stopTimer()
                 _currentTime = "--:--:--"
             }
+            
         } else {
             _counter += 1
             _currentTime = timeString(time: TimeInterval(_counter))

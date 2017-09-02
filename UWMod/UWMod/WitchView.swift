@@ -15,6 +15,7 @@ class WitchView: UIView {
     @IBOutlet var contentView:              UIView!
     @IBOutlet weak var protectButton:       PMSuperButton!
     @IBOutlet weak var poisonButton:        PMSuperButton!
+    @IBOutlet weak var victimLabel: RegBrown!
     
     
     // MARK: - Variables
@@ -106,6 +107,7 @@ class WitchView: UIView {
         if currentPlayer?.playersIneligibleForEffect[.Protection] == nil {
             protectButton.alpha         = 1
             protectButton.isEnabled     = true
+            presentVictim()
             
         } else {
             protectButton.alpha         = 0.5
@@ -119,6 +121,24 @@ class WitchView: UIView {
         } else {
             poisonButton.alpha         = 0.5
             poisonButton.isEnabled     = false
+        }
+    }
+    
+    func presentVictim() {
+        var victimPresented             = false
+        
+        if GAME.playersToBeEliminated.count > 0 {
+            for player in GAME.playersToBeEliminated {
+                if player.killedBy == .Werewolf {
+                    victimLabel.text    = "\(player.name) is werewolves victim."
+                    victimPresented     = true
+                    break
+                }
+            }
+        }
+        
+        if !victimPresented {
+            victimLabel.text            = ""
         }
     }
     

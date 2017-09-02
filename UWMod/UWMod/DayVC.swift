@@ -227,7 +227,7 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
             
         } else if currentType == .ZombieTeamCard {
             let cell = tableView.dequeueReusableCell(withIdentifier: "zombieCell", for: indexPath) as! ZombieCell
-            cell.playersAffectedByZombie = GAME.fetchPlayersAffectedByEffect(fromList: GAME.livingActors, affectedBy: .Lobotomy, withRole: false, separatedByComma: true)
+            cell.playersAffectedByZombie = GAME.fetchPlayersAffectedByEffect(fromList: GAME.livingActors, affectedBy: .Lobotomy, withRole: false)
             cell.configureCell()
             return cell
             

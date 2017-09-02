@@ -38,7 +38,7 @@ class ZombieCell: UITableViewCell {
         mainCardView.layer.cornerRadius = STYLE.InfoCardCornerRadius
         mainCardView.backgroundColor = STYLE.Tan
         
-        let headerTitle = "Zombie Victims"
+        let headerTitle = "The Walking Dead"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                       withColour: STYLE.Brown)
     }
@@ -71,7 +71,7 @@ class ZombieCell: UITableViewCell {
         if playersAffectedByZombie != "" {
             concatenatedString = "\(zombiePlayer.name) has eaten the following people's brains (and they cannot vote):\n\n" + playersAffectedByZombie
         } else {
-            concatenatedString = "The zombie has not yet eaten brains!"
+            concatenatedString = "\(zombiePlayer.name) has not yet eaten brains!"
         }
         
         self.playerLabel.text = concatenatedString
