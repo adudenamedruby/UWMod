@@ -150,19 +150,19 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Werewolves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="DPi-9e-CxI" customClass="OldBrownRole" customModule="UWMod" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="226.5" width="310" height="58.5"/>
+                                                    <rect key="frame" x="10" y="226.5" width="310" height="52.5"/>
                                                     <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="50"/>
                                                     <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(John)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="nMC-fN-ITG" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="285" width="310" height="20"/>
+                                                    <rect key="frame" x="10" y="279" width="310" height="20"/>
                                                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                     <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-3n-Ybh" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="322" width="290" height="78"/>
+                                                    <rect key="frame" x="20" y="316" width="290" height="84"/>
                                                     <string key="text">Once per game following the elimination of a Werewolf during the day, you may turn the Werewolves target into a Werewolf instead of eliminating him.</string>
                                                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                                                     <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -208,7 +208,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="278" height="63"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ole Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8e8-N3-50z" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                                            <rect key="frame" x="74" y="11.5" width="129" height="41"/>
+                                                                            <rect key="frame" x="81.5" y="14" width="114" height="36.5"/>
                                                                             <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                                             <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <nil key="highlightedColor"/>
