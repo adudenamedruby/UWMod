@@ -197,6 +197,7 @@ class Game {
         self._werewolvesAreDiseased         = false
         self._wolfRoles                     = [.Werewolf,
                                                .WolfMan,
+                                               .LoneWolf,
                                                .WolfCub,
                                                .DireWolf,
                                                .TeenageWerewolf,
@@ -471,6 +472,7 @@ class Game {
         resetPlayerNightActions()
         setupInfoCards()
         
+        aWerewolfHasBeenSlain           = false
         theBlobHasAbsorbed              = false
         _isNightPhase                   = false
         nightTimerTimeIsUp              = false
@@ -485,7 +487,6 @@ class Game {
         determineNumberOfWerewolfEliminations()
         determineNightActors()
         
-        aWerewolfHasBeenSlain           = false
         _isNightPhase                   = true
         dayTimerTimeIsUp                = false
         _currentDay += 1
@@ -812,14 +813,7 @@ class Game {
         _nightActors.removeAll()
         for actor in self.availablePlayers {
             if actor.isNightActivePlayer {
-                
-                // FIX THIS LOGIC!
-                if actor.roleType == .Werewolf {
-                    if actor.isAlive {
-                        _nightActors.append(actor)
-                    }
-                    
-                } else {
+                if actor.isAlive {
                     _nightActors.append(actor)
                 }
             }

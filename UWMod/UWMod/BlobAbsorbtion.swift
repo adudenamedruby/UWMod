@@ -66,7 +66,7 @@ class BlobAbsorbtion: UIView {
         
         let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
         let selectPlayer = storyboard.instantiateViewController(withIdentifier: "selectPlayerPopupVC") as! SelectPlayerPopupVC
-        selectPlayer.popupTitle = "Player to Absorb"
+        selectPlayer.popupTitle = "Player to Assimilate"
         selectPlayer.reason = .BlobAbsorbtion
         
         var topVC = UIApplication.shared.keyWindow?.rootViewController

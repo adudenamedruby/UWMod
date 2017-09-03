@@ -56,18 +56,31 @@ class WerewolfAssassination: UIView {
         contentView.backgroundColor             = STYLE.Tan
         
         if GAME.dreamwolfIsPresent {
-                if GAME.aWerewolfHasBeenSlain {
-                    notesLabel.text = "Including the Dreamwolf"
-                } else {
-                    notesLabel.text = "Excluding the Dreamwolf"
+            var dreamwolfIsAlive        = false
+            
+            for player in GAME.livingActors {
+                if player.roleType == .Dreamwolf {
+                    dreamwolfIsAlive    = true
                 }
+            }
+            
+            if dreamwolfIsAlive {
+                if GAME.aWerewolfHasBeenSlain {
+                    notesLabel.text     = "Including the Dreamwolf"
+                } else {
+                    notesLabel.text     = "Excluding the Dreamwolf"
+                }
+                
+            } else {
+                notesLabel.text         = ""
+            }
         } else {
-            notesLabel.text = ""
+            notesLabel.text             = ""
         }
         
         eliminationDetails.text = "(Eliminations available: \(GAME.werewolfEliminationsThisNight))"
 
-        if !GAME.nightTimerTimeIsUp {
+        if !GAME.timerIsRunning && !GAME.nightTimerTimeIsUp {
             GAME.startTimer()
         
             self.timer = Timer.scheduledTimer(timeInterval: 1,
