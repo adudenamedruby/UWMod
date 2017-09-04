@@ -57,6 +57,9 @@ class Game {
     private var _werewolvesAreDiseased:             Bool
     private var _wolfRoles:                         [RoleType]
     private var _theWolfCubHasBeenSlain:            Bool
+    private var _dreamwolfShouldWake:               Bool
+    private var _invisibleCursedPlayer:             Player
+    private var _cursedPlayerHasBeenTurned:         Bool
     var dreamwolfIsPresent:                         Bool
     var aWerewolfHasBeenSlain:                      Bool
     var theBlobHasAbsorbed:                         Bool
@@ -121,6 +124,10 @@ class Game {
     
     var werewolfEliminationsThisNight: Int {
         get { return _werewolfEliminationsThisNight }
+    }
+    
+    var dreamwolfShouldWake: Bool {
+        get { return _dreamwolfShouldWake }
     }
     
     var wolfRoles: [RoleType] {
@@ -209,7 +216,17 @@ class Game {
                                                .Wolverine]
         self.aWerewolfHasBeenSlain          = false
         self.dreamwolfIsPresent             = false
+        self._dreamwolfShouldWake           = false
+
         self._theWolfCubHasBeenSlain        = false
+        
+        self._invisibleCursedPlayer         = Player(withIdentity: Person(firstName: "",
+                                                                          lastName: ""),
+                                                     withTeamName: "")
+        self._invisibleCursedPlayer.assignRole(role: CURSED)
+        self._invisibleCursedPlayer.isAlive = false
+        self._cursedPlayerHasBeenTurned     = false
+        
         self.theBlobHasAbsorbed             = false
         
         // Timer related variables
@@ -285,7 +302,12 @@ class Game {
     }
     
     private func eliminatePlayer(victim: Player) {
-        if self.livingActors.contains(where: { $0 === victim }) {
+        
+        if victim.roleType == .Cursed && victim.killedBy == .Werewolf {
+            victim.updateRole(withRole: CURSED_WEREWOLF)
+            cursedPlayerHasBeenTurned()
+            
+        } else if self.livingActors.contains(where: { $0 === victim }) {
             addToPhaseReport(player: victim)
             self.deadActors.append(victim)
             victim.isAlive = false
@@ -471,8 +493,8 @@ class Game {
         eliminatePlayers()
         resetPlayerNightActions()
         setupInfoCards()
+        shouldDreamwolfWake()
         
-        aWerewolfHasBeenSlain           = false
         theBlobHasAbsorbed              = false
         _isNightPhase                   = false
         nightTimerTimeIsUp              = false
@@ -486,10 +508,21 @@ class Game {
         resetPlayerDayActions()
         determineNumberOfWerewolfEliminations()
         determineNightActors()
+        shouldDreamwolfWake()
         
         _isNightPhase                   = true
         dayTimerTimeIsUp                = false
         _currentDay += 1
+    }
+    
+    private func shouldDreamwolfWake() {
+        if !self._dreamwolfShouldWake {
+            if aWerewolfHasBeenSlain {
+                self._dreamwolfShouldWake = true
+            }
+        }
+        
+        aWerewolfHasBeenSlain           = false
     }
     
     private func resetPlayerNightActions() {
@@ -625,11 +658,14 @@ class Game {
                                                  vampireList: vampireList)
         
         _consolidatedNightActors.removeAll()
-        _consolidatedNightActors = buildConsolidatedNightActors(withWerevolvesPresent: roleCount.werewolves,
-                                                                withVampiresPresent: roleCount.vampires,
-                                                                withPluralBlob: roleCount.theBlob,
-                                                                wolfList: _wolfRoles,
-                                                                vampireList: vampireList)
+        
+        if roleCount.werewolves > 1 || roleCount.vampires > 1 || roleCount.theBlob > 1 {
+            _consolidatedNightActors = buildConsolidatedNightActors(withWerevolvesPresent: roleCount.werewolves,
+                                                                    withVampiresPresent: roleCount.vampires,
+                                                                    withPluralBlob: roleCount.theBlob,
+                                                                    wolfList: _wolfRoles,
+                                                                    vampireList: vampireList)
+        }
     }
     
     private func buildConsolidatedNightActors(withWerevolvesPresent werewolves: Int, withVampiresPresent vampires: Int, withPluralBlob theBlob: Int, wolfList: [RoleType], vampireList: [RoleType]) -> [Player] {
@@ -650,29 +686,37 @@ class Game {
                                                  roleList: vampireList,
                                                  teamType: .TeamVamprie)
         
-        var wolfRoles = wolfList
-        wolfRoles.remove(at: (wolfRoles.index(of: .AlphaWolf))!)
+        let wolfRoles = wolfList
+        //wolfRoles.remove(at: (wolfRoles.index(of: .AlphaWolf))!)
         
         // Only create consolidated players if there is a need.
         if werewolves >= 2 || vampires >= 2 {
-            for player in livingActors {
+            for player in availablePlayers {
                 if player.isNightActivePlayer {
+                    if player.isAlive {
                     
-                    let playerRole = player.roleType
-                    if wolfRoles.contains(playerRole) && werewolves >= 2 {
-                        if !alreadyAddedWerewolfTeamCard {
-                            consolidatedPlayers.append(werewolfTeamPlayer)
-                            alreadyAddedWerewolfTeamCard = true
-                        }
-                        
-                    } else if vampireList.contains(playerRole) && vampires >= 2 {
-                        if !alreadyAddedVampireTeamCard {
-                            consolidatedPlayers.append(vampireTeamPlayer)
-                            alreadyAddedVampireTeamCard = true
+                        // Perform consolidation ONLY if we're operating on a living player
+                        let playerRole = player.roleType
+                        if wolfRoles.contains(playerRole) && werewolves >= 2 {
+                            if !alreadyAddedWerewolfTeamCard {
+                                consolidatedPlayers.append(werewolfTeamPlayer)
+                                alreadyAddedWerewolfTeamCard = true
+                            }
+                            
+                        } else if vampireList.contains(playerRole) && vampires >= 2 {
+                            if !alreadyAddedVampireTeamCard {
+                                consolidatedPlayers.append(vampireTeamPlayer)
+                                alreadyAddedVampireTeamCard = true
+                            }
+                            
+                        } else {
+                            if player.roleType != .TheBlob {
+                                consolidatedPlayers.append(player)
+                            }
                         }
                         
                     } else {
-                        if player.roleType != .TheBlob {
+                        if !wolfRoles.contains(player.roleType) && !vampireList.contains(player.roleType) {
                             consolidatedPlayers.append(player)
                         }
                     }
@@ -720,7 +764,9 @@ class Game {
             }
         }
         
-            
+        if self._cursedPlayerHasBeenTurned {
+            consolidatedPlayers.append(self._invisibleCursedPlayer)
+        }
             
         if consolidatedPlayers.count > 0 {
             consolidatedPlayers.sort(by: { ($0.rolePriority) < ($1.rolePriority) })
@@ -813,10 +859,18 @@ class Game {
         _nightActors.removeAll()
         for actor in self.availablePlayers {
             if actor.isNightActivePlayer {
-                if actor.isAlive {
+                if _wolfRoles.contains(actor.roleType) {
+                    if actor.isAlive {
+                        _nightActors.append(actor)
+                    }
+                } else {
                     _nightActors.append(actor)
                 }
             }
+        }
+        
+        if self._cursedPlayerHasBeenTurned {
+            _nightActors.append(self._invisibleCursedPlayer)
         }
         
         _nightActors.sort(by: { ($0.rolePriority) < ($1.rolePriority) })
@@ -875,5 +929,9 @@ class Game {
         if !_werewolvesHaveKilledThisNight {
             _werewolvesHaveKilledThisNight = true
         }
+    }
+    
+    public func cursedPlayerHasBeenTurned() {
+        self._cursedPlayerHasBeenTurned = true
     }
 }

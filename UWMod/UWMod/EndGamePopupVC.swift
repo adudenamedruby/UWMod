@@ -53,7 +53,8 @@ class EndGamePopupVC: UIViewController {
         self.dismiss(animated: false, completion: { () -> Void   in
             presentingVC!.dismiss(animated: false, completion: { () -> Void in
                 masterParentVC!.present(masterGameView, animated: false, completion: {
-                    GAME.stopTimer()
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: DayEndTimersNotification),
+                                                    object: nil)
                     GAME.resetGame()
                 })
             })

@@ -785,7 +785,7 @@ let WOLFCUB = Role(name: "Wolf Cub",
                    team: [.TeamWerewolf],
                    availableEffects: [],
                    image: #imageLiteral(resourceName: "wolfCub"),
-                   isNightActiveRole: .NotNightActiveRole)
+                   isNightActiveRole: .NightActiveRole)
 
 
 
@@ -829,7 +829,7 @@ let BLOB_TEAM = Role(name: "The Hivemind",
 
 
 
-let WEREWOLF_TEAM = Role(name: "Werewolf",
+let WEREWOLF_TEAM = Role(name: "Werewolves",
                          type: .Werewolf,
                          description: "Wake and choose a player to eliminate.",
                          roleExplanation: "The Werewolves wake up the first night to learn the identity of the other Werewolves. They do not kill at this time. Every night afterwards, the Werewolves must agree (only a majority is needed, and the victim need not be unanimously selected) on a target to eliminate. If the Werewolves spend more than the alloted time determining a target for the night, they do not get to choose a target that night. The Werewolves may not target another Werewolf at night, unless the Leprechaun is in play.\n\n[No-one knows where the Werewolves come from. Some say they are as old as fear itself, born of the terror of human's early days. Whatever their origin, one thing is for sure: they are an unwanted, violent predator. The best hope for people to survive this sudden onslaught, is to band together, figure out who to trust, and lynch the werewolves once and for all.]",

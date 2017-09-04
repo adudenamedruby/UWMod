@@ -53,8 +53,32 @@ class WerewolfAssassination: UIView {
                                                name: NSNotification.Name(rawValue: EliminationByWerewolfSuccessNotification),
                                                object: nil)
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(stopTimers),
+                                               name: NSNotification.Name(rawValue: NightEndTimersNotification),
+                                               object: nil)
+        
         contentView.backgroundColor             = STYLE.Tan
         
+        self.dreamwolfLabel()
+        
+        eliminationDetails.text = "(Eliminations available: \(GAME.werewolfEliminationsThisNight))"
+
+        if !GAME.timerIsRunning && !GAME.nightTimerTimeIsUp {
+            GAME.startTimer()
+        }
+        
+        if !isTrackingTime {
+            self.timer = Timer.scheduledTimer(timeInterval: 1,
+                                              target: self,
+                                              selector: #selector(updateTimer),
+                                              userInfo: nil,
+                                              repeats: true)
+            self.isTrackingTime = true
+        }
+    }
+    
+    func dreamwolfLabel() {
         if GAME.dreamwolfIsPresent {
             var dreamwolfIsAlive        = false
             
@@ -65,7 +89,7 @@ class WerewolfAssassination: UIView {
             }
             
             if dreamwolfIsAlive {
-                if GAME.aWerewolfHasBeenSlain {
+                if GAME.dreamwolfShouldWake {
                     notesLabel.text     = "Including the Dreamwolf"
                 } else {
                     notesLabel.text     = "Excluding the Dreamwolf"
@@ -76,18 +100,6 @@ class WerewolfAssassination: UIView {
             }
         } else {
             notesLabel.text             = ""
-        }
-        
-        eliminationDetails.text = "(Eliminations available: \(GAME.werewolfEliminationsThisNight))"
-
-        if !GAME.timerIsRunning && !GAME.nightTimerTimeIsUp {
-            GAME.startTimer()
-        
-            self.timer = Timer.scheduledTimer(timeInterval: 1,
-                                              target: self,
-                                              selector: #selector(updateTimer),
-                                              userInfo: nil,
-                                              repeats: true)
         }
     }
     
@@ -111,7 +123,7 @@ class WerewolfAssassination: UIView {
     
     func confirmKill() {
         if !(GAME.werewolfEliminationsThisNight > 0) {
-            GAME.stopTimer()
+            stopTimers()
             timerLabel.isHidden                 = true
             killVillagerButton.isHidden         = true
             eliminationDetails.isHidden         = true
@@ -120,16 +132,24 @@ class WerewolfAssassination: UIView {
     }
     
     func updateTimer() {
-        timerLabel.text = GAME.currentTime
+        self.timerLabel.text = GAME.currentTime
         
         if GAME.currentTime == "--:--:--" {
             GAME.nightTimerTimeIsUp = true
         }
         
         if GAME.nightTimerTimeIsUp {
-            self.timer.invalidate()
+            stopTimers()
             timerLabel.text = "TIME'S UP!"
-            GAME.stopTimer()
         }
+    }
+    
+    func stopTimers() {
+        if isTrackingTime {
+            self.timer.invalidate()
+            self.isTrackingTime = false
+        }
+        
+        GAME.stopTimer()
     }
 }

@@ -158,11 +158,8 @@ class ConfirmationPopup: UIViewController {
                     }
                 }
                 
-                if chosenPlayer.roleType == .Cursed && reason == .WerewolfElimination {
-                        chosenPlayer.updateRole(withRole: CURSED_WEREWOLF)
-                } else {
-                    GAME.prepareToEliminatePlayer(victim: chosenPlayer)
-                }
+                
+                GAME.prepareToEliminatePlayer(victim: chosenPlayer)
                 
             } else if reason == .AssignPlayer {
                 

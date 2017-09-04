@@ -28,6 +28,7 @@ class GeneralInfo: UITableViewCell {
     
     //MARK: - Variables
     private var timer:                              Timer!
+    private var isTrackingTime                      = false
     
     //MARK: - View Lifecycle & Configuration
     
@@ -44,6 +45,11 @@ class GeneralInfo: UITableViewCell {
         let headerTitle = "General Info"
         headerTitleLabel.attributedText     = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                           withColour: STYLE.Red)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(stopTimers),
+                                               name: NSNotification.Name(rawValue: DayEndTimersNotification),
+                                               object: nil)
         
     }
 
@@ -69,6 +75,9 @@ class GeneralInfo: UITableViewCell {
                                               selector: #selector(updateTimeLabel),
                                               userInfo: nil,
                                               repeats: true)
+            
+            self.isTrackingTime = true
+            
         } else {
             timeLabel.text = "TIME'S UP!"
         }
@@ -82,9 +91,17 @@ class GeneralInfo: UITableViewCell {
         }
         
         if GAME.dayTimerTimeIsUp {
-            self.timer.invalidate()
+            stopTimers()
             timeLabel.text = "TIME'S UP!"
-            GAME.stopTimer()
         }
+    }
+    
+    func stopTimers() {
+        if self.isTrackingTime {
+            self.timer.invalidate()
+            self.isTrackingTime = false
+        }
+        
+        GAME.stopTimer()
     }
 }

@@ -68,8 +68,11 @@ let CurrentAppVersion : AnyObject!  = Bundle.main.object(forInfoDictionaryKey: "
 
 
 // Notification Variables
-let localizedActionFinishedNotification = "localizedActionFinishedNotification"
-let NoNightActorsRemainNotification = "noNightActorsRemainNotification"
+let localizedActionFinishedNotification             = "localizedActionFinishedNotification"
+let NoNightActorsRemainNotification                 = "noNightActorsRemainNotification"
+
+let DayEndTimersNotification                        = "dayEndTimersNotification"
+let NightEndTimersNotification                      = "nightEndTimersNotification"
 
 let ReloadTableForNewPlayersNotification            = "reloadTableForNewPlayersNotification"
 let ReturnToPlayerSelectNotification                = "returnToPlayerSelectNotification"

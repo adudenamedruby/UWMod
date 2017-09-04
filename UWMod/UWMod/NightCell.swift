@@ -189,7 +189,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             } else if player?.roleType == .Seer && !GAME.firstNight {
                 presentSeerView()
                 
-            } else if player?.roleType == .Zombie && !GAME.firstNight {
+            } else if player?.roleType == .Zombie && !GAME.firstNight && !((player?.hasActedTonight)!) {
                 presentZombieView()
                 
 //            } else if (player?.team.contains(.TeamBlob))! && !GAME.theBlobHasAbsorbed {

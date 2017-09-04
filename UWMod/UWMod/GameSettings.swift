@@ -31,6 +31,8 @@ class GameSettings {
     private var _minimumDayLength:           Int
     private var _werewolfTime:               Int
     private var _timerType:                  TimekeepingType
+    private var _minimumSecondTime:          Int
+    private var _minimumMinuteTime:          Int
     private var secondIncrement:             Int
     private var minuteIncrement:             Int
     
@@ -66,6 +68,8 @@ class GameSettings {
         self._minimumDayLength          = minimumDayTime
         self._werewolfTime              = werewolfTimer
         self._timerType                 = timekeepingStyle
+        self._minimumSecondTime         = 10
+        self._minimumMinuteTime         = 60
         self.secondIncrement            = 10
         self.minuteIncrement            = 60
     }
@@ -90,26 +94,26 @@ class GameSettings {
         
         switch timer {
         case .FirstDay:
-            if _firstDayTime != 0 {
+            if _firstDayTime > _minimumSecondTime {
                 _firstDayTime -= secondIncrement
             }
             
         case .SubsequentDays:
-            if _subsequentDayTime != 0 {
+            if _subsequentDayTime > _minimumSecondTime {
                 _subsequentDayTime -= secondIncrement
             }
         case .SubstractFromDay:
-            if _changeDayBy != 0 {
+            if _changeDayBy > _minimumSecondTime {
                 _changeDayBy -= secondIncrement
             }
             
         case .MinimumDayTimeLength:
-            if _minimumDayLength != 0 {
+            if _minimumDayLength > _minimumSecondTime {
                 _minimumDayLength -= secondIncrement
             }
             
         case .WerewolfDecisionTimer:
-            if _werewolfTime != 0 {
+            if _werewolfTime > _minimumSecondTime {
                 _werewolfTime -= secondIncrement
             }
         }
@@ -135,27 +139,27 @@ class GameSettings {
         
         switch timer {
         case .FirstDay:
-            if _firstDayTime != 0 {
+            if _firstDayTime > _minimumMinuteTime {
                 _firstDayTime -= minuteIncrement
             }
             
         case .SubsequentDays:
-            if _subsequentDayTime != 0 {
+            if _subsequentDayTime > _minimumMinuteTime {
             _subsequentDayTime -= minuteIncrement
             }
             
         case .SubstractFromDay:
-            if _changeDayBy != 0 {
+            if _changeDayBy > _minimumMinuteTime {
                 _changeDayBy -= minuteIncrement
             }
             
         case .MinimumDayTimeLength:
-            if _minimumDayLength != 0 {
+            if _minimumDayLength > _minimumMinuteTime {
                 _minimumDayLength -= minuteIncrement
             }
             
         case .WerewolfDecisionTimer:
-            if _werewolfTime != 0 {
+            if _werewolfTime > _minimumMinuteTime {
                 _werewolfTime -= minuteIncrement
             }
         }
