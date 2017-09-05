@@ -28,6 +28,7 @@ class GeneralInfo: UITableViewCell {
     
     //MARK: - Variables
     private var timer:                              Timer!
+    private var isTrackingTime                      = false
     
     //MARK: - View Lifecycle & Configuration
     
@@ -45,6 +46,11 @@ class GeneralInfo: UITableViewCell {
         headerTitleLabel.attributedText     = headerTitle.styleTitleLabel(withStringFont: STYLE.RegBoldHeaderFont!,
                                                                           withColour: STYLE.Red)
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(stopTimers),
+                                               name: NSNotification.Name(rawValue: DayEndTimersNotification),
+                                               object: nil)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -61,18 +67,41 @@ class GeneralInfo: UITableViewCell {
         numberOfNightsPassedLabel.text      = "\(GAME.currentNight - 1)"
         dayNumberLabel.text                 = "\(GAME.currentDay)"
         
-        if !GAME.timerIsRunning {
+        if !GAME.timerIsRunning && !GAME.dayTimerTimeIsUp {
             GAME.startTimer()
-        }
         
-        self.timer = Timer.scheduledTimer(timeInterval: 1,
-                                          target: self,
-                                          selector: #selector(updateTimeLabel),
-                                          userInfo: nil,
-                                          repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 1,
+                                              target: self,
+                                              selector: #selector(updateTimeLabel),
+                                              userInfo: nil,
+                                              repeats: true)
+            
+            self.isTrackingTime = true
+            
+        } else {
+            timeLabel.text = "TIME'S UP!"
+        }
     }
     
     func updateTimeLabel() {
         timeLabel.text = GAME.currentTime
+        
+        if GAME.currentTime == "--:--:--" {
+            GAME.dayTimerTimeIsUp = true
+        }
+        
+        if GAME.dayTimerTimeIsUp {
+            stopTimers()
+            timeLabel.text = "TIME'S UP!"
+        }
+    }
+    
+    func stopTimers() {
+        if self.isTrackingTime {
+            self.timer.invalidate()
+            self.isTrackingTime = false
+        }
+        
+        GAME.stopTimer()
     }
 }

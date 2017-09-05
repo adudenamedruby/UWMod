@@ -51,7 +51,7 @@ class SelectPlayerPopupVC: UIViewController {
     var popupTitle:                         String?
     var role:                               Role?
     var reason: SelectPlayerReason          = .Default
-    var activePlayer:                      Player?
+    var activePlayer:                       Player?
     
     
     // MARK: - View lifecycle

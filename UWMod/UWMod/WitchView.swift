@@ -46,10 +46,10 @@ class WitchView: UIView {
     
     // Performs the initial setup.
     private func setupView() {
-        Bundle.main.loadNibNamed("WitchView", owner: self, options: nil)
+        let bundle = Bundle(for: type(of: self))
+        UINib(nibName: "WitchView", bundle: bundle).instantiate(withOwner: self, options: nil)
         addSubview(contentView)
-        contentView.frame               = self.bounds
-        contentView.autoresizingMask    = [.flexibleHeight, .flexibleWidth]
+        contentView.frame               = bounds
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(actionSuccess),
@@ -130,7 +130,7 @@ class WitchView: UIView {
         if GAME.playersToBeEliminated.count > 0 {
             for player in GAME.playersToBeEliminated {
                 if player.killedBy == .Werewolf {
-                    victimLabel.text    = "\(player.name) is werewolves victim."
+                    victimLabel.text    = "Werewolf target: \(player.name)"
                     victimPresented     = true
                     break
                 }

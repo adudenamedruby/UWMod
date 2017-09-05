@@ -64,9 +64,8 @@
                 <constraint firstItem="wBD-p6-axM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9ka-ug-5av"/>
                 <constraint firstAttribute="trailing" secondItem="cgv-eq-3RM" secondAttribute="trailing" constant="10" id="DHa-5Q-FHh"/>
                 <constraint firstItem="cgv-eq-3RM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="N3b-9L-6I1"/>
-                <constraint firstItem="wBD-p6-axM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cgv-eq-3RM" secondAttribute="bottom" constant="15" id="YB3-V7-Lzr"/>
                 <constraint firstItem="cgv-eq-3RM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="c2P-VJ-8zg"/>
-                <constraint firstAttribute="bottom" secondItem="wBD-p6-axM" secondAttribute="bottom" constant="30" id="eCL-D4-WPV"/>
+                <constraint firstItem="wBD-p6-axM" firstAttribute="top" secondItem="cgv-eq-3RM" secondAttribute="bottom" constant="48.5" id="jPN-gj-xWm"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

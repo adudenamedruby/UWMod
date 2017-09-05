@@ -104,7 +104,8 @@ class DayVC: UIViewController {
     }
     
     @IBAction func finishDayButton(_ sender: Any) {
-        GAME.stopTimer()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: DayEndTimersNotification),
+                                        object: nil)
         GAME.finishDay()
         self.modalTransitionStyle = .crossDissolve
         self.dismiss(animated: true, completion: nil)

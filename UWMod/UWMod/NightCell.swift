@@ -45,15 +45,20 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
         popupOuterView.layer.cornerRadius = STYLE.CornerRadius
         popupOuterView.backgroundColor = STYLE.Beige
         
-        actionViewFrame = CGRect(x: 0,
-                                 y: 0,
-                                 width: self.containerView.frame.size.width,
-                                 height: self.containerView.frame.size.height)
+//        actionViewFrame = CGRect(x: 0,
+//                                 y: 0,
+//                                 width: self.containerView.frame.size.width,
+//                                 height: self.containerView.frame.size.height)
         
         resetHelpView()
     }
     
     public func configureCell() {
+        
+        actionViewFrame = CGRect(x: 0,
+                                 y: 0,
+                                 width: self.containerView.frame.size.width,
+                                 height: self.containerView.frame.size.height)
         
         if GAME.firstNight {
             player = nil
@@ -167,6 +172,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
     
     private func loadSubviews() {
         clearSubview()
+        containerView.autoresizesSubviews = true
         
         if (GAME.firstNight && player == nil) {
             presentAssignPlayer()
@@ -189,7 +195,7 @@ class NightCell: TisprCardStackViewCell, UpdateCardDelegate {
             } else if player?.roleType == .Seer && !GAME.firstNight {
                 presentSeerView()
                 
-            } else if player?.roleType == .Zombie && !GAME.firstNight {
+            } else if player?.roleType == .Zombie && !GAME.firstNight && !((player?.hasActedTonight)!) {
                 presentZombieView()
                 
 //            } else if (player?.team.contains(.TeamBlob))! && !GAME.theBlobHasAbsorbed {

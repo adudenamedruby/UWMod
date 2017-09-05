@@ -53,27 +53,54 @@ class WerewolfAssassination: UIView {
                                                name: NSNotification.Name(rawValue: EliminationByWerewolfSuccessNotification),
                                                object: nil)
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(stopTimers),
+                                               name: NSNotification.Name(rawValue: NightEndTimersNotification),
+                                               object: nil)
+        
         contentView.backgroundColor             = STYLE.Tan
         
-        if GAME.dreamwolfIsPresent {
-                if GAME.aWerewolfHasBeenSlain {
-                    notesLabel.text = "Including the Dreamwolf"
-                } else {
-                    notesLabel.text = "Excluding the Dreamwolf"
-                }
-        } else {
-            notesLabel.text = ""
-        }
+        self.dreamwolfLabel()
         
         eliminationDetails.text = "(Eliminations available: \(GAME.werewolfEliminationsThisNight))"
 
-        GAME.startTimer()
+        if !GAME.timerIsRunning && !GAME.nightTimerTimeIsUp {
+            GAME.startTimer()
+        }
         
-        self.timer = Timer.scheduledTimer(timeInterval: 1,
-                                          target: self,
-                                          selector: #selector(updateTimer),
-                                          userInfo: nil,
-                                          repeats: true)
+        if !isTrackingTime {
+            self.timer = Timer.scheduledTimer(timeInterval: 1,
+                                              target: self,
+                                              selector: #selector(updateTimer),
+                                              userInfo: nil,
+                                              repeats: true)
+            self.isTrackingTime = true
+        }
+    }
+    
+    func dreamwolfLabel() {
+        if GAME.dreamwolfIsPresent {
+            var dreamwolfIsAlive        = false
+            
+            for player in GAME.livingActors {
+                if player.roleType == .Dreamwolf {
+                    dreamwolfIsAlive    = true
+                }
+            }
+            
+            if dreamwolfIsAlive {
+                if GAME.dreamwolfShouldWake {
+                    notesLabel.text     = "Including the Dreamwolf"
+                } else {
+                    notesLabel.text     = "Excluding the Dreamwolf"
+                }
+                
+            } else {
+                notesLabel.text         = ""
+            }
+        } else {
+            notesLabel.text             = ""
+        }
     }
     
     
@@ -96,7 +123,7 @@ class WerewolfAssassination: UIView {
     
     func confirmKill() {
         if !(GAME.werewolfEliminationsThisNight > 0) {
-            GAME.stopTimer()
+            stopTimers()
             timerLabel.isHidden                 = true
             killVillagerButton.isHidden         = true
             eliminationDetails.isHidden         = true
@@ -105,6 +132,24 @@ class WerewolfAssassination: UIView {
     }
     
     func updateTimer() {
-        timerLabel.text = GAME.currentTime
+        self.timerLabel.text = GAME.currentTime
+        
+        if GAME.currentTime == "--:--:--" {
+            GAME.nightTimerTimeIsUp = true
+        }
+        
+        if GAME.nightTimerTimeIsUp {
+            stopTimers()
+            timerLabel.text = "TIME'S UP!"
+        }
+    }
+    
+    func stopTimers() {
+        if isTrackingTime {
+            self.timer.invalidate()
+            self.isTrackingTime = false
+        }
+        
+        GAME.stopTimer()
     }
 }

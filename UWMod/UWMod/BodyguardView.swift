@@ -44,10 +44,10 @@ class BodyguardView: UIView {
     
     // Performs the initial setup.
     private func setupView() {
-        Bundle.main.loadNibNamed("BodyguardView", owner: self, options: nil)
+        let bundle = Bundle(for: type(of: self))
+        UINib(nibName: "BodyguardView", bundle: bundle).instantiate(withOwner: self, options: nil)
         addSubview(contentView)
-        contentView.frame               = self.bounds
-        contentView.autoresizingMask    = [.flexibleHeight, .flexibleWidth]
+        contentView.frame               = bounds
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(protectionSuccessful),

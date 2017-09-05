@@ -42,10 +42,10 @@ class BlobAbsorbtion: UIView {
     
     // Performs the initial setup.
     private func setupView() {
-        Bundle.main.loadNibNamed("BlobAbsorbtion", owner: self, options: nil)
+        let bundle = Bundle(for: type(of: self))
+        UINib(nibName: "BlobAbsorbtion", bundle: bundle).instantiate(withOwner: self, options: nil)
         addSubview(contentView)
-        contentView.frame               = self.bounds
-        contentView.autoresizingMask    = [.flexibleHeight, .flexibleWidth]
+        contentView.frame               = bounds
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(absorbtionSuccess),
@@ -66,7 +66,7 @@ class BlobAbsorbtion: UIView {
         
         let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
         let selectPlayer = storyboard.instantiateViewController(withIdentifier: "selectPlayerPopupVC") as! SelectPlayerPopupVC
-        selectPlayer.popupTitle = "Player to Absorb"
+        selectPlayer.popupTitle = "Player to Assimilate"
         selectPlayer.reason = .BlobAbsorbtion
         
         var topVC = UIApplication.shared.keyWindow?.rootViewController

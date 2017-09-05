@@ -40,6 +40,13 @@ class MenuVC: UIViewController {
         
         let bottomString = "Werewolf"
         bottomTitle.attributedText = bottomString.styleTitleLabel(withStringFont: STYLE.OldMenuBottomFont!, withColour: STYLE.Red)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        whatsNewPresentationCheck()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +54,27 @@ class MenuVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func whatsNewPresentationCheck() {
+        let defaults = UserDefaults.standard
+        let hasPerformedCheck = defaults.bool(forKey: HasPerformedWhatsNewCheck)
+        
+        if !hasPerformedCheck {
+            defaults.set(true, forKey: HasPerformedWhatsNewCheck)
+            let hasPresentedPopup = defaults.bool(forKey: HasPresentedWhatsNewPopup)
+            
+            if !hasPresentedPopup {
+                defaults.set(true, forKey: HasPresentedWhatsNewPopup)
+                
+                presentWhatsNewPopup()
+            }
+        }
+    }
+    
+    func presentWhatsNewPopup() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newView = storyboard.instantiateViewController(withIdentifier: "whatsNewVC") as! WhatsNewVC
+        self.present(newView, animated: true, completion: nil)
+    }
     
     // MARK: - Buttons
     

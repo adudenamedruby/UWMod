@@ -68,9 +68,8 @@ class MainNightVC: UIViewController, EndNightPotocol {
     
     @IBAction func acceptNightEnd(_ sender: Any) {
 
-        if GAME.timerIsRunning {
-            GAME.stopTimer()
-        }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NightEndTimersNotification),
+                                        object: nil)
         
         GAME.finishNight()
         self.dismiss(animated: true, completion: {

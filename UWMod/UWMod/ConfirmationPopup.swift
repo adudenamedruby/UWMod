@@ -70,8 +70,8 @@ class ConfirmationPopup: UIViewController {
                 alternateAlertText      = "Are you sure you want to eat \(chosenPlayer.name)'s brains?"
                 
             } else if reason            == .BlobAbsorbtion {
-                headerTitle             = "Confirm Absorbiton"
-                alternateAlertText      = "Are you sure you want to absorb \(chosenPlayer.name)?"
+                headerTitle             = "Confirm Assimilation"
+                alternateAlertText      = "Are you sure you want to assimilate \(chosenPlayer.name)?"
                 
             } else if reason            == .JoinTheCult {
                 headerTitle             = "Confirm Brainwashing"
@@ -158,16 +158,15 @@ class ConfirmationPopup: UIViewController {
                     }
                 }
                 
-                if chosenPlayer.roleType == .Cursed && reason == .WerewolfElimination {
-                        chosenPlayer.updateRole(withRole: CURSED_WEREWOLF)
-                } else {
-                    GAME.prepareToEliminatePlayer(victim: chosenPlayer)
-                }
+                
+                GAME.prepareToEliminatePlayer(victim: chosenPlayer)
                 
             } else if reason == .AssignPlayer {
+                
                 if role?.type == .Dreamwolf {
                     GAME.dreamwolfIsPresent = true
                 }
+                
                 chosenPlayer.assignRole(role: role!)
                 GAME.addPlayerToLivingActors(player: chosenPlayer)
                 

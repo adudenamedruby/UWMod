@@ -219,7 +219,7 @@ let LONE_WOLF = Role(name: "Lone Wolf",
                      description: "Wakes with the other Werewolves at night, but only wins if they are the last wolf in the game.",
                      roleExplanation: "The Lone Wolf only wins if he is the last player standing (or achieves parity with the village by having only one other non-werewolf player left in the game). The Lone Wolf, however, does wake up with the werewolves to choose a target each night.\n\n[Most wolves are pack animals... but this werewolf still retains much of the personality from when he was human. Strong willed and intelligent, the Lone Wolf prefers to spend time alone, away from the pack. Perhaps because he thinks that seeking cover in the crowd is an easy way to bring suspicion upon one's self.]",
                      impact: -5,
-                     priority: 202,
+                     priority: 38,
                      team: [.TeamWerewolf],
                      availableEffects: [],
                      image: #imageLiteral(resourceName: "loneWolf"),
@@ -232,7 +232,7 @@ let LYCAN = Role(name: "Lycan",
                  description: "A villager that appears as a Werewolf to the Seer.",
                  roleExplanation: "The Lycan is a villager and plays for the village team. However, when the seer investigates her, she appears as a Werewolf.\n\n[An orphan whose parentage was always questionable, she learned to read and write and now works as a town notary. Unbeknownst to anyone, however, she has found out that her maily was affected by werewolfism far back in her family history. Trying to keep this information secret, she has burned all official documentation that makes mention of this. For now her secret is safe... unless the Seer decides to turn his gaze to her.]",
                  impact: -1,
-                 priority: 205,
+                 priority: 177,
                  team: [.TeamVillage],
                  availableEffects: [],
                  image: #imageLiteral(resourceName: "lycan"),
@@ -624,7 +624,16 @@ let VILLAGER_FIFTEEN = Role(name: "Villager",
 
 
 
-let VIRGINIA_WOOLF = Role(name: "The Provider", type: .VirginiaWoolf, description: "Chooses a player on the first night. If the Provider is eliminated, that player is also eliminated.", roleExplanation: "The first night, the Provider chooses someone who has become dependent on them. That player is woken up and shown who they depend on. If the Provider is eliminated, so is that player.\n\n[The Provider is a caring and giving villager, doing charity work to help the poor and helpless. So much so, that some people come to rely soley on them. So much so that if something were to ever happen to the Provider, those villagers would surely perish.]", impact: -2, priority: 97, team: [.TeamVillage], availableEffects: [.Dependent], image: #imageLiteral(resourceName: "virginiaWoolf"), isNightActiveRole: .NotNightActiveRole)
+let VIRGINIA_WOOLF = Role(name: "The Provider",
+                          type: .VirginiaWoolf,
+                          description: "Chooses a player on the first night. If the Provider is eliminated, that player is also eliminated.",
+                          roleExplanation: "The first night, the Provider chooses someone who has become dependent on them. That player is woken up and shown who they depend on. If the Provider is eliminated, so is that player.\n\n[The Provider is a caring and giving villager, doing charity work to help the poor and helpless. So much so, that some people come to rely soley on them. So much so that if something were to ever happen to the Provider, those villagers would surely perish.]",
+                          impact: -2,
+                          priority: 97,
+                          team: [.TeamVillage],
+                          availableEffects: [.Dependent],
+                          image: #imageLiteral(resourceName: "virginiaWoolf"),
+                          isNightActiveRole: .NotNightActiveRole)
 
 
 
@@ -785,7 +794,7 @@ let WOLFCUB = Role(name: "Wolf Cub",
                    team: [.TeamWerewolf],
                    availableEffects: [],
                    image: #imageLiteral(resourceName: "wolfCub"),
-                   isNightActiveRole: .NotNightActiveRole)
+                   isNightActiveRole: .NightActiveRole)
 
 
 
@@ -829,7 +838,7 @@ let BLOB_TEAM = Role(name: "The Hivemind",
 
 
 
-let WEREWOLF_TEAM = Role(name: "Werewolf",
+let WEREWOLF_TEAM = Role(name: "Werewolves",
                          type: .Werewolf,
                          description: "Wake and choose a player to eliminate.",
                          roleExplanation: "The Werewolves wake up the first night to learn the identity of the other Werewolves. They do not kill at this time. Every night afterwards, the Werewolves must agree (only a majority is needed, and the victim need not be unanimously selected) on a target to eliminate. If the Werewolves spend more than the alloted time determining a target for the night, they do not get to choose a target that night. The Werewolves may not target another Werewolf at night, unless the Leprechaun is in play.\n\n[No-one knows where the Werewolves come from. Some say they are as old as fear itself, born of the terror of human's early days. Whatever their origin, one thing is for sure: they are an unwanted, violent predator. The best hope for people to survive this sudden onslaught, is to band together, figure out who to trust, and lynch the werewolves once and for all.]",
