@@ -624,7 +624,16 @@ let VILLAGER_FIFTEEN = Role(name: "Villager",
 
 
 
-let VIRGINIA_WOOLF = Role(name: "The Provider", type: .VirginiaWoolf, description: "Chooses a player on the first night. If the Provider is eliminated, that player is also eliminated.", roleExplanation: "The first night, the Provider chooses someone who has become dependent on them. That player is woken up and shown who they depend on. If the Provider is eliminated, so is that player.\n\n[The Provider is a caring and giving villager, doing charity work to help the poor and helpless. So much so, that some people come to rely soley on them. So much so that if something were to ever happen to the Provider, those villagers would surely perish.]", impact: -2, priority: 97, team: [.TeamVillage], availableEffects: [.Dependent], image: #imageLiteral(resourceName: "virginiaWoolf"), isNightActiveRole: .NotNightActiveRole)
+let VIRGINIA_WOOLF = Role(name: "The Provider",
+                          type: .VirginiaWoolf,
+                          description: "Chooses a player on the first night. If the Provider is eliminated, that player is also eliminated.",
+                          roleExplanation: "The first night, the Provider chooses someone who has become dependent on them. That player is woken up and shown who they depend on. If the Provider is eliminated, so is that player.\n\n[The Provider is a caring and giving villager, doing charity work to help the poor and helpless. So much so, that some people come to rely soley on them. So much so that if something were to ever happen to the Provider, those villagers would surely perish.]",
+                          impact: -2,
+                          priority: 97,
+                          team: [.TeamVillage],
+                          availableEffects: [.Dependent],
+                          image: #imageLiteral(resourceName: "virginiaWoolf"),
+                          isNightActiveRole: .NotNightActiveRole)
 
 
 

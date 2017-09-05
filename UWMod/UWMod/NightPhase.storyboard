@@ -162,17 +162,20 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-3n-Ybh" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="316" width="290" height="84"/>
-                                                    <string key="text">Once per game following the elimination of a Werewolf during the day, you may turn the Werewolves target into a Werewolf instead of eliminating him.</string>
+                                                    <rect key="frame" x="20" y="314" width="290" height="65"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="65" id="k1u-SE-Jfl"/>
+                                                    </constraints>
+                                                    <string key="text">Each night, the Hivemind assimilates another player to the right of the last assimilated player. If all players are part of the Hivemind, you win.</string>
                                                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                                                     <color key="textColor" red="0.2470588235" green="0.16862745100000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0p5-D9-xB8">
-                                                    <rect key="frame" x="16.5" y="403" width="297" height="140"/>
+                                                    <rect key="frame" x="10" y="384" width="310" height="176"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="FNG-wa-PaS"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Ud1-iu-XvF"/>
                                                     </constraints>
                                                 </view>
                                                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flY-A7-vZ6">
@@ -208,7 +211,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="278" height="63"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ole Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8e8-N3-50z" customClass="OldTan" customModule="UWMod" customModuleProvider="target">
-                                                                            <rect key="frame" x="81.5" y="14" width="114" height="36.5"/>
+                                                                            <rect key="frame" x="81.5" y="13.5" width="114" height="36.5"/>
                                                                             <fontDescription key="fontDescription" name="OldWiseSketch" family="Old Wise Sketch" pointSize="35"/>
                                                                             <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <nil key="highlightedColor"/>
@@ -247,24 +250,23 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.98823529409999999" green="0.93533202959999995" blue="0.77355562369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
-                                                <constraint firstItem="0p5-D9-xB8" firstAttribute="top" secondItem="ZIa-3n-Ybh" secondAttribute="bottom" constant="3" id="AD6-WB-KcR"/>
+                                                <constraint firstItem="0p5-D9-xB8" firstAttribute="top" secondItem="ZIa-3n-Ybh" secondAttribute="bottom" constant="5" id="AD6-WB-KcR"/>
                                                 <constraint firstItem="DPi-9e-CxI" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" constant="10" id="Bv2-tQ-Elt"/>
                                                 <constraint firstAttribute="trailing" secondItem="ojv-dJ-9tA" secondAttribute="trailing" constant="25" id="Etl-uO-x8D"/>
-                                                <constraint firstAttribute="bottom" secondItem="0p5-D9-xB8" secondAttribute="bottom" constant="22" id="G9y-G5-aW1"/>
+                                                <constraint firstAttribute="bottom" secondItem="0p5-D9-xB8" secondAttribute="bottom" constant="5" id="G9y-G5-aW1"/>
                                                 <constraint firstAttribute="bottom" secondItem="flY-A7-vZ6" secondAttribute="bottom" id="IDp-oG-EYR"/>
                                                 <constraint firstAttribute="trailing" secondItem="DPi-9e-CxI" secondAttribute="trailing" constant="10" id="Jvu-q0-UF3"/>
-                                                <constraint firstItem="ZIa-3n-Ybh" firstAttribute="top" secondItem="DPi-9e-CxI" secondAttribute="bottom" constant="37" id="K3f-9S-UkZ"/>
+                                                <constraint firstItem="ZIa-3n-Ybh" firstAttribute="top" secondItem="DPi-9e-CxI" secondAttribute="bottom" constant="35" id="K3f-9S-UkZ"/>
                                                 <constraint firstItem="ojv-dJ-9tA" firstAttribute="top" secondItem="GMg-MV-EH6" secondAttribute="top" constant="90" id="KuI-Nf-xxr"/>
                                                 <constraint firstItem="0p5-D9-xB8" firstAttribute="centerX" secondItem="GMg-MV-EH6" secondAttribute="centerX" id="MPW-6J-AA8"/>
                                                 <constraint firstItem="flY-A7-vZ6" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" id="OPu-5J-OvX"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0p5-D9-xB8" secondAttribute="trailing" constant="10" id="QFL-3N-zyi"/>
+                                                <constraint firstAttribute="trailing" secondItem="0p5-D9-xB8" secondAttribute="trailing" constant="10" id="QFL-3N-zyi"/>
                                                 <constraint firstItem="ojv-dJ-9tA" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" constant="25" id="QTx-dv-OM3"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZIa-3n-Ybh" secondAttribute="trailing" constant="20" id="REy-lb-TCw"/>
                                                 <constraint firstAttribute="trailing" secondItem="nMC-fN-ITG" secondAttribute="trailing" constant="10" id="Toy-Sl-62a"/>
                                                 <constraint firstItem="flY-A7-vZ6" firstAttribute="top" secondItem="GMg-MV-EH6" secondAttribute="top" id="UdT-9l-UBm"/>
-                                                <constraint firstItem="0p5-D9-xB8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GMg-MV-EH6" secondAttribute="leading" constant="10" id="Xt2-MN-8lh"/>
+                                                <constraint firstItem="0p5-D9-xB8" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" constant="10" id="Xt2-MN-8lh"/>
                                                 <constraint firstItem="ZIa-3n-Ybh" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" constant="20" id="dDE-Hz-Mca"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZIa-3n-Ybh" secondAttribute="bottom" constant="165" id="dgN-i2-kOq"/>
                                                 <constraint firstAttribute="bottom" secondItem="ojv-dJ-9tA" secondAttribute="bottom" constant="80" id="f5S-5K-rJ7"/>
                                                 <constraint firstItem="OPT-mT-Ica" firstAttribute="top" secondItem="GMg-MV-EH6" secondAttribute="top" id="fEY-jT-Bux"/>
                                                 <constraint firstItem="nMC-fN-ITG" firstAttribute="top" secondItem="DPi-9e-CxI" secondAttribute="bottom" id="hF0-va-sh1"/>
@@ -272,7 +274,6 @@
                                                 <constraint firstItem="nMC-fN-ITG" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" constant="10" id="iOL-Qn-flE"/>
                                                 <constraint firstItem="OPT-mT-Ica" firstAttribute="leading" secondItem="GMg-MV-EH6" secondAttribute="leading" id="ipE-R8-On4"/>
                                                 <constraint firstAttribute="trailing" secondItem="flY-A7-vZ6" secondAttribute="trailing" id="itV-fK-pEO"/>
-                                                <constraint firstItem="0p5-D9-xB8" firstAttribute="width" secondItem="GMg-MV-EH6" secondAttribute="width" multiplier="0.9" id="lWF-Vs-XKj"/>
                                                 <constraint firstItem="nMC-fN-ITG" firstAttribute="centerX" secondItem="GMg-MV-EH6" secondAttribute="centerX" id="lxI-m9-wWc"/>
                                                 <constraint firstItem="OPT-mT-Ica" firstAttribute="height" secondItem="GMg-MV-EH6" secondAttribute="height" multiplier="0.4" id="obY-Jv-Z2n"/>
                                                 <constraint firstItem="DPi-9e-CxI" firstAttribute="top" secondItem="OPT-mT-Ica" secondAttribute="bottom" id="uUy-Rq-l0A"/>
