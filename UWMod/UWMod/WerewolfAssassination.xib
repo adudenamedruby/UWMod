@@ -38,13 +38,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAU-mo-6FX">
-                    <rect key="frame" x="155" y="52" width="0.0" height="0.0"/>
+                    <rect key="frame" x="155" y="37" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="13"/>
                     <color key="textColor" red="0.30980392159999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFE-9g-JAb" customClass="PMSuperButton" customModule="UWMod" customModuleProvider="target">
-                    <rect key="frame" x="55" y="64" width="200" height="35"/>
+                    <rect key="frame" x="55" y="47" width="200" height="35"/>
                     <color key="backgroundColor" red="0.71764705880000002" green="0.64705882349999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="GNz-UD-V8I"/>
@@ -71,7 +71,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eliminations Available: 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEI-rD-Oba">
-                    <rect key="frame" x="84.5" y="109" width="141" height="15.5"/>
+                    <rect key="frame" x="84.5" y="92" width="141" height="15.5"/>
                     <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -85,8 +85,8 @@
                 <constraint firstItem="AEI-rD-Oba" firstAttribute="top" secondItem="zFE-9g-JAb" secondAttribute="bottom" constant="10" id="Jua-eX-RJ9"/>
                 <constraint firstItem="kEg-YP-gIJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="Qcd-tM-BUO"/>
                 <constraint firstItem="kEg-YP-gIJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="iyL-Ef-xvd"/>
-                <constraint firstItem="pAU-mo-6FX" firstAttribute="top" secondItem="kEg-YP-gIJ" secondAttribute="bottom" constant="37" id="v2N-DX-gDe"/>
-                <constraint firstItem="zFE-9g-JAb" firstAttribute="top" secondItem="pAU-mo-6FX" secondAttribute="bottom" constant="12" id="yV6-ga-6sA"/>
+                <constraint firstItem="pAU-mo-6FX" firstAttribute="top" secondItem="kEg-YP-gIJ" secondAttribute="bottom" constant="22" id="v2N-DX-gDe"/>
+                <constraint firstItem="zFE-9g-JAb" firstAttribute="top" secondItem="pAU-mo-6FX" secondAttribute="bottom" constant="10" id="yV6-ga-6sA"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

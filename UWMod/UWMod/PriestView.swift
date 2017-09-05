@@ -14,6 +14,7 @@ class PriestView: UIView {
     
     @IBOutlet var contentView:              UIView!
     @IBOutlet weak var protectButton:       PMSuperButton!
+    @IBOutlet weak var victimLabel:         UILabel!
     
     
     // MARK: - Variables
@@ -60,6 +61,7 @@ class PriestView: UIView {
                                                object: nil)
         
         contentView.backgroundColor     = STYLE.Tan
+        presentVictim()
         
     }
     
@@ -80,6 +82,25 @@ class PriestView: UIView {
         topVC?.present(selectPlayer, animated: true, completion: nil)
         
     }
+    
+    func presentVictim() {
+        var victimPresented             = false
+        
+        if GAME.playersToBeEliminated.count > 0 {
+            for player in GAME.playersToBeEliminated {
+                if player.killedBy == .Werewolf {
+                    victimLabel.text    = "Werewolf target: \(player.name)"
+                    victimPresented     = true
+                    break
+                }
+            }
+        }
+        
+        if !victimPresented {
+            victimLabel.text            = ""
+        }
+    }
+
     
     func protectionFailure() {
         protectButton.isHidden = false
