@@ -36,14 +36,15 @@ class SeerInspection: UIView {
     }
     
     private func setupView() {
-        playersToDisplay                    = playerAffiliations()
-        Bundle.main.loadNibNamed("SeerInspection", owner: self, options: nil)
+        
+        let bundle = Bundle(for: type(of: self))
+        UINib(nibName: "SeerInspection", bundle: bundle).instantiate(withOwner: self, options: nil)
         addSubview(contentView)
-        contentView.frame                   = self.bounds
-        contentView.autoresizingMask        = [.flexibleHeight, .flexibleWidth]
+        contentView.frame               = bounds
         
         contentView.backgroundColor         = STYLE.Tan
         
+        playersToDisplay                    = playerAffiliations()
         
         pickerView.delegate                 = self
         pickerView.dataSource               = self
