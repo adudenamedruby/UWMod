@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="zombieCell" rowHeight="436" id="KGk-i7-Jjw" customClass="ZombieCell" customModule="UWMod" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="501" height="436"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="501" height="435.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFS-kJ-ced">
+                        <rect key="frame" x="5" y="0.0" width="491" height="430.5"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxz-7V-ccU">
+                                <rect key="frame" x="1" y="0.0" width="489" height="429.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJe-2y-199">
+                                        <rect key="frame" x="0.0" y="0.0" width="489" height="45"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erewolf Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyZ-ze-8Fm" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="176" y="10" width="137" height="25"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGi-x1-h6t" customClass="RegTanHeaderSmall" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="457.5" y="19" width="16.5" height="16"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="13"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="77" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cF-we-LFf" customClass="RegTanHeader" customModule="UWMod" customModuleProvider="target">
+                                                <rect key="frame" x="431.5" y="10" width="26.5" height="25"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="dGi-x1-h6t" firstAttribute="bottom" secondItem="1cF-we-LFf" secondAttribute="bottom" id="1mO-gf-Cpu"/>
+                                            <constraint firstItem="lyZ-ze-8Fm" firstAttribute="centerY" secondItem="lJe-2y-199" secondAttribute="centerY" id="7pl-bj-MBb"/>
+                                            <constraint firstAttribute="trailing" secondItem="dGi-x1-h6t" secondAttribute="trailing" constant="15" id="GA4-wi-9AD"/>
+                                            <constraint firstAttribute="height" constant="45" id="GIi-q6-RSv"/>
+                                            <constraint firstItem="lyZ-ze-8Fm" firstAttribute="centerX" secondItem="lJe-2y-199" secondAttribute="centerX" id="mlR-Fy-t1n"/>
+                                            <constraint firstItem="dGi-x1-h6t" firstAttribute="leading" secondItem="1cF-we-LFf" secondAttribute="trailing" id="oFT-TD-Imc"/>
+                                            <constraint firstItem="1cF-we-LFf" firstAttribute="centerY" secondItem="lJe-2y-199" secondAttribute="centerY" id="zIW-1X-fbU"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UI-JG-9HR" customClass="RegBrown" customModule="UWMod" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="55" width="464" height="364.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.89019607840000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="7UI-JG-9HR" secondAttribute="bottom" constant="10" id="0LV-Fa-fbA"/>
+                                    <constraint firstAttribute="trailing" secondItem="7UI-JG-9HR" secondAttribute="trailing" constant="10" id="4m5-XF-0rF"/>
+                                    <constraint firstItem="lJe-2y-199" firstAttribute="leading" secondItem="Vxz-7V-ccU" secondAttribute="leading" id="QjB-bb-1Ei"/>
+                                    <constraint firstItem="7UI-JG-9HR" firstAttribute="leading" secondItem="Vxz-7V-ccU" secondAttribute="leading" constant="15" id="iZ4-ZB-3VX"/>
+                                    <constraint firstAttribute="trailing" secondItem="lJe-2y-199" secondAttribute="trailing" id="ldk-CM-vKO"/>
+                                    <constraint firstItem="7UI-JG-9HR" firstAttribute="top" secondItem="lJe-2y-199" secondAttribute="bottom" constant="10" id="mv0-WJ-pL5"/>
+                                    <constraint firstItem="lJe-2y-199" firstAttribute="top" secondItem="Vxz-7V-ccU" secondAttribute="top" id="xSJ-kV-mOY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vxz-7V-ccU" firstAttribute="top" secondItem="aFS-kJ-ced" secondAttribute="top" id="74D-0V-aQ1"/>
+                            <constraint firstAttribute="bottom" secondItem="Vxz-7V-ccU" secondAttribute="bottom" constant="1" id="JMC-SS-0L1"/>
+                            <constraint firstItem="Vxz-7V-ccU" firstAttribute="leading" secondItem="aFS-kJ-ced" secondAttribute="leading" constant="1" id="X92-Mk-nYP"/>
+                            <constraint firstAttribute="trailing" secondItem="Vxz-7V-ccU" secondAttribute="trailing" constant="1" id="sIS-id-ilP"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="aFS-kJ-ced" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="W5R-am-GXJ"/>
+                    <constraint firstAttribute="trailing" secondItem="aFS-kJ-ced" secondAttribute="trailing" constant="5" id="WZV-Tz-rFs"/>
+                    <constraint firstAttribute="bottom" secondItem="aFS-kJ-ced" secondAttribute="bottom" constant="5" id="f1c-lU-TR5"/>
+                    <constraint firstItem="aFS-kJ-ced" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jFk-6T-ml0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="headerTitleLabel" destination="lyZ-ze-8Fm" id="9eD-DS-fci"/>
+                <outlet property="headerView" destination="lJe-2y-199" id="tom-qu-2ok"/>
+                <outlet property="mainCardView" destination="Vxz-7V-ccU" id="dQg-ai-jID"/>
+                <outlet property="outlineView" destination="aFS-kJ-ced" id="DN5-rQ-etI"/>
+                <outlet property="playerLabel" destination="7UI-JG-9HR" id="Kn0-z3-rSm"/>
+                <outlet property="playerTotalsLabel" destination="dGi-x1-h6t" id="Nvs-X4-kjs"/>
+                <outlet property="teamPlayerLabel" destination="1cF-we-LFf" id="DHM-fG-lsa"/>
+            </connections>
+            <point key="canvasLocation" x="124.5" y="250"/>
+        </tableViewCell>
+    </objects>
+</document>
