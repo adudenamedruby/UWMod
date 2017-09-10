@@ -12,17 +12,17 @@ class MainGameVC: UIViewController {
 
     // MARK: - Outlets
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var forwardButton: PMSuperButton!
-    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var titleLabel:          UILabel!
+    @IBOutlet weak var forwardButton:       PMSuperButton!
+    @IBOutlet weak var backgroundImage:     UIImageView!
     
-    @IBOutlet var phaseReportView: UIView!
-    @IBOutlet var headerView: UIView!
-    @IBOutlet weak var headerTitleLabel: OldTan!
-    @IBOutlet weak var statusLabel: RegBrown!
+    @IBOutlet var phaseReportView:          UIView!
+    @IBOutlet var headerView:               UIView!
+    @IBOutlet weak var headerTitleLabel:    OldTan!
+    @IBOutlet weak var statusLabel:         RegBrown!
     @IBOutlet weak var playersReportedLabel: UITextView!
-    @IBOutlet weak var eliminatedButton: PMSuperButton!
-    @IBOutlet weak var savedButton: PMSuperButton!
+    @IBOutlet weak var eliminatedButton:    PMSuperButton!
+    @IBOutlet weak var savedButton:         PMSuperButton!
     
     // MARK: - Variables
     
@@ -74,7 +74,7 @@ class MainGameVC: UIViewController {
         self.titleLabel.fadeIn(completion: {
             (finished: Bool) -> Void in
             if GAME.firstNight {
-                self.forwardButton.fadeIn(duration: 1, delay: 0)
+                self.forwardButton.fadeIn(duration: 0.5, delay: 0)
             } else {
                 self.reportPhaseEliminationResults()
             }
