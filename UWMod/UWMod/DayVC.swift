@@ -290,4 +290,10 @@ extension DayVC: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cell = cell as? GeneralInfo {
+            cell.destroyCell()
+        }
+    }
+    
 }

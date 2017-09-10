@@ -30,6 +30,8 @@ class GeneralInfo: UITableViewCell {
     private var timer:                              Timer!
     private var isTrackingTime                      = false
     
+    var testTrak = 0
+    
     //MARK: - View Lifecycle & Configuration
     
     override func awakeFromNib() {
@@ -59,7 +61,6 @@ class GeneralInfo: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
     public func configureCell() {
         playersAliveLabel.text              = "\(GAME.livingActors.count)"
         playersDeadLabel.text               = "\(GAME.deadActors.count)"
@@ -67,9 +68,11 @@ class GeneralInfo: UITableViewCell {
         numberOfNightsPassedLabel.text      = "\(GAME.currentNight - 1)"
         dayNumberLabel.text                 = "\(GAME.currentDay)"
         
-        if !GAME.timerIsRunning && !GAME.dayTimerTimeIsUp {
-            GAME.startTimer()
-        
+        if !GAME.dayTimerTimeIsUp {
+            if !GAME.timerIsRunning {
+                GAME.startTimer()
+            }
+            
             self.timer = Timer.scheduledTimer(timeInterval: 1,
                                               target: self,
                                               selector: #selector(updateTimeLabel),
@@ -77,14 +80,21 @@ class GeneralInfo: UITableViewCell {
                                               repeats: true)
             
             self.isTrackingTime = true
-            
+
         } else {
             timeLabel.text = "TIME'S UP!"
         }
     }
     
+    public func destroyCell() {
+        self.timer.invalidate()
+    }
+    
     func updateTimeLabel() {
         timeLabel.text = GAME.currentTime
+        
+        testTrak += 1
+        print("Updating label: \(testTrak)")
         
         if GAME.currentTime == "--:--:--" {
             GAME.dayTimerTimeIsUp = true
