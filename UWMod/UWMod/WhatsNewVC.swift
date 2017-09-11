@@ -31,7 +31,7 @@ class WhatsNewVC: UIViewController {
         let headerTitle                     = "What's New (\(version))"
         headerTitleLabel.attributedText = headerTitle.styleTitleLabel(withStringFont: STYLE.OldStandardFont!, withColour: STYLE.Red)
         
-        textView.text = "Hey!\n\nThanks very much for purchasing The Secret Werewolf!\n\nWhat's new? Well, this is version 1.0, so.... all the things!! I hope you'll have an amazing time using the app to play whatever version of Werewolf you like to play. I'd suggest taking a few minutes to check out all the currently available roles, as well as the FAQ, both found in the Extras menu. Finally, all that's left to do is to get to playing Werewolf!\n\nMay you live through the night,\nRoux"
+        textView.text = "- Fixed a minor bug where the Witch couldn't save herself at night.\n- Fixed a few timer related bugs in the day view.\n- You can now add a player without giving them a last name.\n- Modified the Seer's card at night: now, instead of showing all players, it only shows players relevant to the Seer. If not there, then that player is assumed to be a villager.... of some sort.\n- Adjusted a few variables for better game balance."
         
         textView.scrollRangeToVisible(NSRange(location: 0, length: 0))
         
