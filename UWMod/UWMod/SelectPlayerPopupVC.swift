@@ -368,8 +368,16 @@ extension SelectPlayerPopupVC {
         var unprotectedPlayersList: [Player] = []
 
         for player in GAME.livingActors {
-            if (activePlayer?.canAffect(player: player, forCondition: .Protection))! && player !== activePlayer {
-                unprotectedPlayersList.append(player)
+            if (activePlayer?.canAffect(player: player, forCondition: .Protection))! {
+                
+                if (activePlayer?.roleType == .Bodyguard) {
+                    if player !== activePlayer {
+                        unprotectedPlayersList.append(player)
+                    }
+                    
+                } else {
+                    unprotectedPlayersList.append(player)
+                }
             }
         }
 

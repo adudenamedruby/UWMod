@@ -93,16 +93,24 @@ class AddPlayerVC: UIViewController {
     // MARK: - Button functionality
     
     @IBAction func savePlayerButton(_ sender: Any) {
-        if let lastName = nameField.text, let firstName = firstNameField.text, !lastName.isEmpty, !firstName.isEmpty {
+        if let lastName = nameField.text, let firstName = firstNameField.text, !firstName.isEmpty {
             let first = firstName.trimmingCharacters(in: .whitespacesAndNewlines)
             let last = lastName.trimmingCharacters(in: .whitespacesAndNewlines)
+            var name = ""
             
             let tempPerson = Person(firstName: first, lastName: last)
+            
+            if lastName.isEmpty {
+                name = "\(tempPerson.firstName)"
+            } else {
+                name = "\(tempPerson.firstName) \(tempPerson.lastName)"
+            }
+
             
             savedPlayers.append(tempPerson)
             savePlayers()
             
-            statusLabel.text = "Added \(tempPerson.firstName) \(tempPerson.lastName) to players."
+            statusLabel.text = "Added \(name) to players."
             statusLabel.alpha = 1
             statusLabel.fadeOut(duration: 1, delay: 1)
             nameField.text = ""

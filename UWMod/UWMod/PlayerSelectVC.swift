@@ -247,7 +247,7 @@ class PlayerSelectVC: UIViewController {
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.alertName = "Warning"
-            vc.alertText = "You need at least three people to play a game of Ultimate Werewolf."
+            vc.alertText = "You need at least three people to play a game of Werewolf."
             vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true, completion: nil)
             
@@ -258,7 +258,7 @@ class PlayerSelectVC: UIViewController {
             let storyboard: UIStoryboard = UIStoryboard(name: "Popups", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainAlert") as! AlertsVC
             vc.alertName = "Warning"
-            vc.alertText = "You can only play Ultimate Werewolf with a maximum of 75 people."
+            vc.alertText = "You can only play Werewolf with a maximum of 75 people."
             vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true, completion: nil)
             

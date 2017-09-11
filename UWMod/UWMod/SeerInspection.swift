@@ -55,23 +55,21 @@ class SeerInspection: UIView {
         var playerList:                     [String] = []
         
         for player in GAME.livingActors {
-            if player.isAssigned && player.roleType != .Seer {
+            if player.isAssigned {
                 
                 let tempTeamAssignment: String
                 if player.roleType == .WolfMan {
                     tempTeamAssignment = "Villager"
+                    playerList.append("\(player.name) - \(tempTeamAssignment)")
                     
                 } else if player.roleType == .Lycan {
                     tempTeamAssignment = "Werewolf"
+                    playerList.append("\(player.name) - \(tempTeamAssignment)")
                     
                 } else if GAME.wolfRoles.contains(player.roleType){
                     tempTeamAssignment = "Werewolf"
-                    
-                } else {
-                    tempTeamAssignment = "Villager"
+                    playerList.append("\(player.name) - \(tempTeamAssignment)")
                 }
-                
-                playerList.append("\(player.name) - \(tempTeamAssignment)")
             }
         }
         
